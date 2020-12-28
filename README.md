@@ -39,8 +39,8 @@ A collection of tutorials, information, and examples showing a wide swatch of us
 ```
 
 
-
-
+<p align="center">centered text</p>
+<p align="center">center test</p>
 
 <h1 style="text-align:center">Javascript Basics</h1>
 
