@@ -1,6 +1,5 @@
 
-
-<img src="assets/img/logo-javascript-480w.png" width="150px"> <img src="assets/img/logo-node-ltgreen-800w.png" width="150px">
+![js logo](assets/img/logo-javascript-150w.png) ![js logo](assets/img/logo-node-ltgreen-150w.png)
 
 # Javascript
 
