@@ -115,7 +115,7 @@ How to use bindings, logic, loops, and functions to let your code make decisions
 
 ```js
 var timeForPizza = function(){
-	let today = new Date();
+    let today = new Date();
 	if (today.getHours() > 10 && today.getHours() < 24){
 		return "yes, it is";
 	} else {
@@ -173,6 +173,8 @@ let values = [10,34,101];
 	- 7-2 Iterators (1-9)
 - Review
 	- Codecademy Key Concepts [arrays](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-arrays), [loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops), and [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
+
+
 	- Javascript: DOM, jQuery, Arrays / loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
 	- w3schools [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
 	w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp)
