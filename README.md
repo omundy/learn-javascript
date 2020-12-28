@@ -50,24 +50,24 @@ Each section or class period is structured similarly to the [Hunter Lesson Plan]
 ## 0-Introduction
 
 ```js
-// your first line of code!
+// let's write your first lines of Javascript!
 console.log("Hello world!");
+// You can execute this right in the Javascript console
 ```
 
 #### In class
 
 - Javascript: Introduction [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
+- Demo: Running Javascript in the Dev Console and on a Code Playground
 - Review:
-	- [Codecademy Javascript Introduction Key concepts](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-introduction/)
-	- w3schools [intro](https://www.w3schools.com/js/js_intro.asp), [where](https://www.w3schools.com/js/js_whereto.asp), [display](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [variables](https://www.w3schools.com/js/js_variables.asp)
-- Demo - How to "install" JS
+	- Codecademy [Key concepts](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-introduction/)
+	- w3schools [intro](https://www.w3schools.com/js/js_intro.asp), [where to install](https://www.w3schools.com/js/js_whereto.asp), [display](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [variables](https://www.w3schools.com/js/js_variables.asp)
 
 
 
 
 
-
-## 1-Variables & Operators
+## 1-Variables, Types, Operators
 
 ```js
 // how to manage state
