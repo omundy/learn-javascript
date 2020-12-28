@@ -36,7 +36,7 @@ Each section or class period is structured similarly to the [Hunter Lesson Plan]
 	- 1 hour - Independent practice* Do exercises in book
 	- 30 min - Review lecture from class, reference sheet, w3schools
 - In class (the class period, online or f2f)
-	- 20 min - Evaluation* Quiz on homework material
+	- 20 min - Evaluation* Quiz on and then review of homework material
 	- 20 min - Introduction* 10-20 min Lecture / demo on key points for *next week's* content
 	- 20-40 min - Guided practice* Everyone start next homework
 ```
@@ -49,6 +49,8 @@ Each section or class period is structured similarly to the [Hunter Lesson Plan]
 
 ## 0-Introduction
 
+What, where, and how to Javascript; expressions, statements, and operators
+
 ```js
 // let's write your first lines of Javascript!
 console.log("Hello world!");
@@ -58,10 +60,8 @@ console.log("Hello world!");
 #### In class
 
 - Javascript: Introduction [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
-- Demo: Running Javascript in the Dev Console and on a Code Playground
-- Review:
-	- Codecademy [Key concepts](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-introduction/)
-	- w3schools [intro](https://www.w3schools.com/js/js_intro.asp), [where to install](https://www.w3schools.com/js/js_whereto.asp), [display](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [variables](https://www.w3schools.com/js/js_variables.asp)
+- Demo: Run Javascript in the Dev Console and on a Code Playground
+
 
 
 
@@ -69,10 +69,14 @@ console.log("Hello world!");
 
 ## 1-Variables, Types, Operators
 
+How to keep track of and compare values and data types
+
 ```js
-// how to manage state
-let greeting = "variables are 👍";
+// bind a string, then concatenate it with the return value from an expression
+let question = "Can we celebrate yet? ";
+// the date object
 let today = new Date();
+console.log(question + (today.getFullYear() > 2020))
 ```
 
 #### Before class
@@ -83,24 +87,18 @@ let today = new Date();
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
 	- 1-1 Introduction to Javascript (1–8)
 	- 1-2 Variables (1–6)
-- Practice
-	- [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-	- [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-	- [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
+- Review:
+	- Codecademy Key Concepts [Javascript introduction](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-introduction/)
+	- w3schools [intro](https://www.w3schools.com/js/js_intro.asp), [where to install](https://www.w3schools.com/js/js_whereto.asp), [display](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [variables](https://www.w3schools.com/js/js_variables.asp), [the Date object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
 
 
 #### In class
 
 - Quiz 1
-- Slides introducing content for next week, using...
-	- Javascript: Control flow [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-scope
-	- w3schools [operators](https://www.w3schools.com/js/js_operators.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [types](https://www.w3schools.com/js/js_datatypes.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp)
-	- w3schools [functions](https://www.w3schools.com/js/js_functions.asp)
-- Demo
-	- Make your first game - The Lottery!
+- Review homework
+- Javascript: Control flow [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
+- Demo: Make your first game - The Lottery!
+- Start next week's homework...
 
 
 
@@ -109,14 +107,22 @@ let today = new Date();
 
 
 
-## 2-Functions, Control Flow
+
+
+## 2-Control Flow, Functions
+
+How to use bindings, logic, loops, and functions to let your code make decisions
 
 ```js
-// using state to make decisions
-if (today.getFullYear() > 2020){
-	greeting = "yay!";
+var timeForPizza = function(){
+	let today = new Date();
+	if (today.getHours() > 10 && today.getHours() < 24){
+		return "yes, it is";
+	} else {
+		return "I'm afraid not";
+	}
 }
-console.log(greeting);
+console.log(timeForPizza());
 ```
 
 #### Before class
@@ -128,18 +134,20 @@ console.log(greeting);
 	- 2-1 Conditional Statements (1–8)
 	- 3-1 Functions (1-7)
 	- 4-1 Scope (1-4)
+- Practice
+	- [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
+	- [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
+	- [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
+- Review
+	- Codecademy Key Concepts [control flow](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow),  [functions](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions), and [scope](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-scope)
+	- w3schools [operators](https://www.w3schools.com/js/js_operators.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [types](https://www.w3schools.com/js/js_datatypes.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [functions](https://www.w3schools.com/js/js_functions.asp)
+
 
 #### In class
 
 - Quiz 2
-- Slides introducing content for next week, using...
-	- Javascript: Arrays and Loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g57d35b35d3_0_0)
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-arrays
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators
-	- Javascript: DOM, jQuery, Arrays / loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
-	- w3schools [functions](https://www.w3schools.com/js/js_functions.asp), [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
-	w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp)
+- Review homework
+- Javascript: Arrays and Loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g57d35b35d3_0_0)
 - Demo
 
 
@@ -163,11 +171,16 @@ let values = [10,34,101];
 	- 6-1 Loops (1–7)
 	- 7-1 Higher-Order Functions (1-4)
 	- 7-2 Iterators (1-9)
-
+- Review
+	- Codecademy Key Concepts [arrays](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-arrays), [loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops), and [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
+	- Javascript: DOM, jQuery, Arrays / loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
+	- w3schools [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
+	w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp)
 
 #### In class
 
 - Quiz 3
+- Review homework
 - Slides introducing content for next week, using...
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes
@@ -202,6 +215,7 @@ xxx
 #### In class
 
 - Quiz 4
+- Review homework
 - Slides introducing content for next week, using...
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-transpilation
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-modules
@@ -233,6 +247,7 @@ xxx
 #### In class
 
 - Quiz 5
+- Review homework
 - Slides introducing content for next week, using...
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/asynch-js
@@ -265,6 +280,7 @@ xxx
 #### In class
 
 - Quiz 6
+- Review homework
 - Slides introducing content for next week, using...
 	- APIs
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-requests
@@ -297,6 +313,7 @@ window.alert(document.URL);
 #### In class
 
 - Quiz 7
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -325,6 +342,7 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 	- https://www.w3schools.com/html/html5_canvas.asp
 - Demo
@@ -360,6 +378,7 @@ node -v
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -384,6 +403,7 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -408,6 +428,7 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -431,6 +452,7 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -457,6 +479,7 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
 
@@ -507,5 +530,6 @@ xxx
 #### In class
 
 - Quiz xxx
+- Review homework
 - Slides introducing content for next week, using...
 - Demo
