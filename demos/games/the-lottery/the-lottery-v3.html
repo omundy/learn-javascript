@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Learning Javascript</title>
+	<style>
+		input {
+			border: 1px solid #333;
+			width: 50px;
+			text-align: right;
+			padding: 5px 8px;
+			margin: 5px 2px;
+		}
+
+		button {
+			border: none;
+			background: #000;
+			color: #fff;
+			padding: 5px 8px;
+			margin: 5px 2px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h3>The Lottery (game) v.3</h3>
+	<p>Introducing conditionals</p>
+
+	<form>
+		<input type="text" id="moneyLeft" value=""> Money left<br>
+		<input type="text" id="moneySpent" value=""> Money spent<br>
+		<input type="text" id="winningNumber" value=""> Winning number<br>
+		<input type="text" id="yourNumber" value=""> Your number<br>
+		<button type="button" id="playButton">Play</button>
+	</form>
+
+	<p id="lotteryOutcome"></p>
+
+
+	<script>
+		let moneySpent = 0,
+			moneyLeft = 5;
+
+		// show current money
+		document.getElementById("moneyLeft").value = "$" + moneyLeft;
+		document.getElementById("lotteryOutcome").innerHTML = "Welcome to the lottery. You have $" + moneyLeft + ". Click to play.";
+
+
+		// listener for button clicks
+		document.getElementById("playButton").addEventListener("click", playTheLottery);
+
+		// play the lottery function
+		function playTheLottery() {
+			// clear outcome
+			document.getElementById("lotteryOutcome").innerHTML = "";
+			// variable to hold new outcome
+			let lotteryOutcome = "";
+			// don't let them play if they have no money
+			if (moneyLeft <= 0) {
+				lotteryOutcome = "You are out of 💲";
+			} else {
+				// update $
+				moneySpent++;
+				moneyLeft--;
+				// generate values
+				let yourNumber = Math.ceil(Math.random() * 999);
+				let winningNumber = Math.ceil(Math.random() * 999);
+				// show on page
+				document.getElementById("moneyLeft").value = "$" + moneyLeft;
+				document.getElementById("moneySpent").value = "$" + moneySpent;
+				document.getElementById("winningNumber").value = winningNumber;
+				document.getElementById("yourNumber").value = yourNumber;
+				// was it a winner?
+				if (winningNumber === yourNumber) {
+					lotteryOutcome = "You win! 🎉";
+				} else {
+					lotteryOutcome = "Not a winning ticket 🤑";
+					// check if they are out of money
+					if (moneyLeft <= 0) {
+						lotteryOutcome += "<br>You are out of 💲 Game over 😿"
+					}
+				}
+			}
+			// adds a slight delay to the out come to make it look like a process is happening
+			setTimeout(function() {
+				document.getElementById("lotteryOutcome").innerHTML = lotteryOutcome;
+			}, 250);
+
+		};
+	</script>
+
+</body>
+
+</html>
