@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Learning Javascript</title>
+</head>
+
+<body>
+
+	<h3>Example errors</h3>
+
+	<p>Open the console to the error messages. You may have to comment some out to see all of them.</p>
+
+
+
+
+<script>
+
+
+var foo;
+// trying to access a property that doesn't exist
+console.log(foo.bar);
+
+// trying to access a method that doesn't exist
+this.baz();
+
+// trying to access an index of an array that doesn't exist
+var arr = new Array(1);
+function recursive(arr){
+	arr[0] = new Array(1);
+	recursive(arr[0]);
+}
+recursive(arr);
+
+
+
+</script>
+
+
+</body>
+
+</html>

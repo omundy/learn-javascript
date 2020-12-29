@@ -97,7 +97,7 @@ console.log(question + (today.getFullYear() > 2020))
 - Quiz 1
 - Review homework
 - Javascript: Control flow [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
-- Demo: Make your first game - The Lottery!
+- Exercise: Make your first game - The Lottery!
 - Start next week's homework...
 
 
@@ -139,7 +139,7 @@ console.log(timeForPizza());
 	- [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
 	- [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
 - Review
-	- Codecademy Key Concepts [control flow](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow),  [functions](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions), and [scope](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-scope)
+	- Codecademy Key Concepts [control flow](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow), [functions](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions), and [scope](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-scope)
 	- w3schools [operators](https://www.w3schools.com/js/js_operators.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [types](https://www.w3schools.com/js/js_datatypes.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [functions](https://www.w3schools.com/js/js_functions.asp)
 
 
@@ -149,6 +149,8 @@ console.log(timeForPizza());
 - Review homework
 - Javascript: Arrays and Loops [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g57d35b35d3_0_0)
 - Demo
+- Exercise: Make your first game - The Lottery!
+- Start next week's homework...
 
 
 
