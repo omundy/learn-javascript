@@ -61,6 +61,7 @@ console.log("Hello world!");
 
 - Javascript: Introduction [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
 - Demo: Run Javascript in the Dev Console and on a Code Playground
+- Exercise: [Test expressions in the Dev Console](exercises/00-expressions.md)
 
 
 
