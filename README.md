@@ -49,7 +49,7 @@ Each section or class period is structured following the [Hunter Lesson Plan](ht
 
 ## 0-Introduction
 
-What, where, and how to run Javascript; Introduction to expressions, statements, and operators
+**Summary** - What, where, and how to run Javascript; Introduction to expressions, statements, and operators
 
 ```js
 // You can execute this code right in the Javascript console
@@ -61,18 +61,18 @@ console.log(typeof "1");
 
 #### In class
 
-- Lecture: [Javascript Introduction](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing) and [Data & Variables](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44)
+- Lecture: [Javascript Introduction](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing) and [Data & Variables](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44) (introduction to next week's work)
 - Demo: Run Javascript expressions in the Dev Console and in a Code Playground
-- Exercise: [Test expressions in the Dev Console](exercises/00-expressions.md)
+- Exercise: [Test expressions in the Dev Console](exercises/00-expressions.md). Start next week's homework...
 
 
 
 
 
 
-## 1-Variables, Types, Operators
+## 1-Values, Types, Operators
 
-How to store and compare values and data types
+**Summary** - How to store and compare values and data types
 
 ```js
 // bind a string
@@ -99,9 +99,9 @@ console.log(question + " " + (today.getFullYear() > 2020))
 #### In class
 
 - Quiz 1
-- Lecture: [Control flow](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
+- Lecture: [Control flow](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g53c97a02bb_0_99)
 - Demo: Make your first game! [The Lottery v.1](demos/games/the-lottery/)
-- Start next week's homework...
+- Exercise: [Gradebook Conditions Exercise](exercises/02-grade-book.md) Start next week's homework...
 
 
 
@@ -114,7 +114,7 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 ## 2-Control Flow, Functions
 
-How to use bindings, conditionals, loops, and functions to let your code make decisions
+**Summary** - How to use bindings, conditionals, loops, and functions to let your code make decisions
 
 ```js
 const isItTimeForPizza = () => {

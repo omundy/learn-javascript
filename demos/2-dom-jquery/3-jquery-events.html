@@ -17,16 +17,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
-// this assigns an event to all div
+// this assigns an event to all divs
 $("div").mouseenter();
 
-// ... but we need an anonymous function inside the
-// parentheses to determine what should happen
-// So, when we hoever over a div all the code inside the 
-// anonymous function is performed.
+// to determine what should happen we need a callback function
+// now, when we hover over a div this code is executed
 $("div").mouseenter(function(){
 	// this code simply logs a message
-    console.log("This is a div!!!!");
+    console.log("mouse has entered!");
 });
 
 // this assigns a click event to .myClass
