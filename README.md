@@ -28,17 +28,17 @@ Anyone is welcome to fork the repo and run the demos, or view the [github.io](ht
 
 ## Structure
 
-Each section or class period is structured similarly to the [Hunter Lesson Plan](https://thesecondprinciple.com/teaching-essentials/models-of-teaching/madeline-hunter-lesson-plan-model/) with approximate time estimates:
+Each section or class period is structured following the [Hunter Lesson Plan](https://thesecondprinciple.com/teaching-essentials/models-of-teaching/madeline-hunter-lesson-plan-model/) with approximate time estimates:
 ```
 - Before class ("Homework" items to be completed prior to each class)
 	- 2 hours - Read book chapters
 	- 1 hour - Do Codecademy practice
-	- 1 hour - Independent practice* Do exercises in book
+	- 1 hour - Independent practice - Do exercises in book
 	- 30 min - Review lecture from class, reference sheet, w3schools
 - In class (the class period, online or f2f)
-	- 20 min - Evaluation* Quiz on and then review of homework material
-	- 20 min - Introduction* 10-20 min Lecture / demo on key points for *next week's* content
-	- 20-40 min - Guided practice* Everyone start next homework
+	- 20 min - Evaluation - Quiz on, and then review of, homework material
+	- 20 min - Introduction - 10-20 min Lecture / Demo on key points for *next week's* content
+	- 20-40 min - Guided practice - Start next homework
 ```
 
 
@@ -49,18 +49,20 @@ Each section or class period is structured similarly to the [Hunter Lesson Plan]
 
 ## 0-Introduction
 
-What, where, and how to Javascript; expressions, statements, and operators
+What, where, and how to run Javascript; Introduction to expressions, statements, and operators
 
 ```js
-// let's write your first lines of Javascript!
+// You can execute this code right in the Javascript console
 console.log("Hello world!");
-// You can execute this right in the Javascript console
+console.log(1 + 1);
+console.log(1 + "1");
+console.log(typeof "1");
 ```
 
 #### In class
 
 - Lecture: [Javascript Introduction](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing) and [Data & Variables](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44)
-- Demo: Run Javascript in the Dev Console and on a Code Playground
+- Demo: Run Javascript expressions in the Dev Console and in a Code Playground
 - Exercise: [Test expressions in the Dev Console](exercises/00-expressions.md)
 
 
@@ -74,16 +76,16 @@ How to store and compare values and data types
 
 ```js
 // bind a string
-let question = "Can we celebrate yet? ";
-// the date object
+let question = "Can we celebrate yet?";
+// store an instance of the date object
 let today = new Date();
-// concatenate the string with the return value from an expression
-console.log(question + (today.getFullYear() > 2020))
+// concatenate the string binding with the return value from an expression
+console.log(question + " " + (today.getFullYear() > 2020))
 ```
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Introduction](https://eloquentjavascript.net/00_intro.html) (1-8)
 	- [Ch1 Values, Types, and Operators](https://eloquentjavascript.net/01_values.html) (10-20)
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
@@ -115,7 +117,7 @@ console.log(question + (today.getFullYear() > 2020))
 How to use bindings, conditionals, loops, and functions to let your code make decisions
 
 ```js
-var timeForPizza = function(){
+const isItTimeForPizza = () => {
     let today = new Date();
 	if (today.getHours() > 10 && today.getHours() < 24){
 		return "yes, it is";
@@ -123,12 +125,12 @@ var timeForPizza = function(){
 		return "I'm afraid not";
 	}
 }
-console.log(timeForPizza());
+console.log(isItTimeForPizza());
 ```
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-37)
 	- [Ch3 Functions](https://eloquentjavascript.net/03_functions.html) (39-55)
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
@@ -158,15 +160,19 @@ console.log(timeForPizza());
 
 
 
-## 3-Data Structures & Loops
+## 3-Data Structures, Loops
 
 ```js
-let values = [10,34,101];
+let myArray = [10,34,101];
+let myObject = {
+	"color1": "blue",
+	"color2": "gold"
+};
 ```
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch4 Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html) (57-79)
 	- [Ch5 Higher-order Functions](https://eloquentjavascript.net/05_higher_order.html) (82-95)
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
@@ -175,14 +181,10 @@ let values = [10,34,101];
 	- 7-1 Higher-Order Functions (1-4)
 	- 7-2 Iterators (1-9)
 - Exercises:
-	-
+	- Ch4:
 - Review
 	- Codecademy Key Concepts [arrays](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-arrays), [loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops), and [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
-
-
-	- Lecture: [DOM, jQuery, Arrays / loops](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
-	- w3schools [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
-	w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp)
+	- w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp)
 
 #### In class
 
@@ -192,13 +194,19 @@ let values = [10,34,101];
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes
 	- Lecture: [Topics: SPAs](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_76)
-	- jQuery [intro](http://www.w3schools.com/jQuery/jquery_intro.asp)[, ](http://campus.fsu.edu)[install](http://www.w3schools.com/jQuery/jquery_install.asp)[, ](http://campus.fsu.edu)[syntax](http://www.w3schools.com/jQuery/jquery_syntax.asp), [selectors](http://www.w3schools.com/jQuery/jquery_selectors.asp), [event methods](http://www.w3schools.com/jQuery/jquery_events.asp)
-	- w3schools jQuery [Intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [Syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [Selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [Events](https://www.w3schools.com/jquery/jquery_events.asp)
 - Demo
 
 
 
 
+
+
+
+
+
+- jQuery [Intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [Selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [events](https://www.w3schools.com/jquery/jquery_events.asp)
+- w3schools [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
+- Lecture: [DOM, jQuery, Arrays / loops](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
 
 
 
@@ -210,7 +218,7 @@ xxx
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115)
 	- [Ch7 Project: A Robot](https://eloquentjavascript.net/07_robot.html) (117-126)
 	- [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142)
@@ -246,7 +254,7 @@ xxx
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch9 Regular Expressions](https://eloquentjavascript.net/09_regexp.html) (143-165)
 	- [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
@@ -281,7 +289,7 @@ xxx
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
 	- [Ch12 Project: A Programming Language](https://eloquentjavascript.net/12_language.html) (202-214)
 - [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
@@ -314,7 +322,7 @@ window.alert(document.URL);
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222)
 	- [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
 	- [Ch15 Handling Events](https://eloquentjavascript.net/15_event.html) (243-259)
@@ -348,7 +356,7 @@ xxx
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch16 Project: A Platform Game](https://eloquentjavascript.net/16_game.html) (261-282)
 	- [Ch17 Drawing on Canvas](https://eloquentjavascript.net/17_canvas.html) (284-306)
 	- [Ch18 HTTP and Forms](https://eloquentjavascript.net/18_http.html) (308-328)
@@ -382,7 +390,7 @@ node -v
 
 #### Before class
 
-- [Haverbeke](https://eloquentjavascript.net/)
+- Haverbeke
 	- [Ch20 Node.js](https://eloquentjavascript.net/20_node.html) (350-367)
 	- [Ch21 Project: Skill-Sharing Website](https://eloquentjavascript.net/21_skillsharing.html) (369-387)
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
