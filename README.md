@@ -11,9 +11,9 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 - Building a Node/Express website and API server
 - Creating browser extensions with Javascript
 
-This path to Javascript unites my materials (lectures, demos, milestones, exercises, etc.) with the corresponding homework (book chapters, practice, exercises, etc.) to support my web courses, DIG 245 Critical Web Design and DIG 345 Radical Software respectively, in [Digital Studies](https://www.davidson.edu/academic-departments/digital-studies) at Davidson College.
+This path to Javascript unites many materials (lectures, demos, milestones, exercises, etc.) with corresponding homework (book chapters, practice, exercises, etc.) to support my web courses, DIG 245 Critical Web Design and DIG 345 Radical Software in [Digital Studies](https://www.davidson.edu/academic-departments/digital-studies) at Davidson College.
 
-Anyone is welcome to fork the repo and run the demos, or view the [github.io](https://omundy.github.io/learn-javascript/) version and execute them there. You will need the following books, prior experience with HTML and CSS, and accounts with Github, Codecademy, and Codepen.io:
+Anyone is welcome to fork the repo and use this course structure. You can view the [github.io](https://omundy.github.io/learn-javascript/) version and execute examples there. You will need the following books, prior experience with HTML and CSS, and accounts with Github, Codecademy, and Codepen.io:
 
 - Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [solutions](https://github.com/marijnh/Eloquent-JavaScript/tree/master/code/solutions)
 - Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019)
@@ -31,7 +31,7 @@ Anyone is welcome to fork the repo and run the demos, or view the [github.io](ht
 Each section or class period is structured following the [Hunter Lesson Plan](https://thesecondprinciple.com/teaching-essentials/models-of-teaching/madeline-hunter-lesson-plan-model/) with approximate time estimates:
 ```
 - Homework (items to be completed prior to each class)
-	- 2 hours: Read book chapters
+	- 1 hour: Read book chapters
 	- 1 hour: Do Codecademy practice
 	- 1 hour: Independent practice, exercises in book
 	- 30 min: Review lecture from class, reference sheet, w3schools
@@ -45,7 +45,10 @@ Each section or class period is structured following the [Hunter Lesson Plan](ht
 
 
 
-<h1 align="center">Javascript Basics</h1>
+<h1 align="center">Javascript Part.1</h1>
+<p align="center">Introduction to the language</p>
+
+
 
 ## 0-Introduction
 
@@ -85,7 +88,7 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 #### Homework
 
-- Haverbeke: [Introduction](https://eloquentjavascript.net/00_intro.html) (1-8), [Ch1 Values, Types, and Operators](https://eloquentjavascript.net/01_values.html) (10-20)
+- Haverbeke: [Introduction](https://eloquentjavascript.net/00_intro.html) (1-8), [Ch1 Values, Types, and Operators](https://eloquentjavascript.net/01_values.html) (10-20), [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
 - Codecademy: [1-1 Introduction to Javascript](https://www.codecademy.com/learn/introduction-to-javascript) (1–8), [1-2 Variables](https://www.codecademy.com/learn/introduction-to-javascript) (1–6)
 
 **Assessment**: Quiz 1
@@ -105,9 +108,9 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 **Overview**: How to use bindings, conditionals, loops, and functions to let your code make decisions
 
-- Lecture: [Control flow](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g53c97a02bb_0_99)
-- Demo: Make your first game! [The Lottery v.1](demos/games/the-lottery/)
-- Exercise: [Gradebook Conditions](exercises/02-grade-book.md). Start homework...
+- Lecture: [Control flow](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g53c97a02bb_0_99), [Functions & Scope](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_28)
+- Demo: [The Lottery v.1](demos/games/the-lottery/) - your first game!
+- Exercise: With a partner: [Gradebook Conditions](exercises/02-grade-book.md). Start homework...
 
 ```js
 const isItTimeForPizza = () => {
@@ -123,9 +126,9 @@ console.log(isItTimeForPizza());
 
 #### Homework
 
-- Haverbeke: [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-37), [Ch3 Functions](https://eloquentjavascript.net/03_functions.html) (39-55)
+- Haverbeke: [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (26-37), [Ch3 Functions](https://eloquentjavascript.net/03_functions.html) (39-55)
 - Codecademy: [2-1 Conditional Statements](https://www.codecademy.com/learn/introduction-to-javascript) (1–8), [3-1 Functions](https://www.codecademy.com/learn/introduction-to-javascript) (1-7), [4-1 Scope](https://www.codecademy.com/learn/introduction-to-javascript) (1-4)
-- Exercises (complete at least one from each chapter)
+- Exercises:
 	- Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
 	- Ch3 [Minimum](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do), [Recursion](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do), [Bean Counting](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do)
 
@@ -141,43 +144,161 @@ console.log(isItTimeForPizza());
 
 ## 3-Data Structures
 
-**Overview**: How to ...
+**Overview**: How to use arrays, objects, properties, methods, and loops
 
-- Lecture: [Arrays and Loops](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g57d35b35d3_0_0)
-
+- Lecture: [Data Structures](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_0)
+- Demo: Arrays, Methods, Properties, Objects on the console
 
 ```js
+// a new array
 let myArray = [10,34,101];
+// use the push() method to add a new value
+myArray.push(521);
+// get the length property
+console.log(myArray.length);
+// -> 4
+// a new object
 let myObject = {
-	"color1": "blue",
-	"color2": "gold"
+	color1: "blue",
+	color2: "gold"
 };
 ```
 
 #### Homework
 
 - Haverbeke: [Ch4 Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html) (57-79)
-	- [Ch5 Higher-order Functions](https://eloquentjavascript.net/05_higher_order.html) (82-95)
-- Codecademy
-	- [5-1 Arrays](https://www.codecademy.com/learn/introduction-to-javascript) (1–7)
-	- [6-1 Loops](https://www.codecademy.com/learn/introduction-to-javascript) (1–7)
-	- [7-1 Higher-Order Functions](https://www.codecademy.com/learn/introduction-to-javascript) (1-4)
-	- [7-2 Iterators](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
-- Exercises:
-	- Ch4:
-- Review
-	- Codecademy Key Concepts [arrays](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-arrays), [loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops), and [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
-	- w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp)
-
+- Codecademy: [5-1 Arrays](https://www.codecademy.com/learn/introduction-to-javascript) (1–7), [6-1 Loops](https://www.codecademy.com/learn/introduction-to-javascript) (1–7)
+- Exercises: [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
 
 **Assessment**: Quiz 3; Homework review
+
+
+
+
+
+
+
+
+
+## 4-jQuery and The DOM
+
+**Overview**: How to access properties and methods in the HTML DOM with Javascript and jQuery
+
+
+```js
+// get the current URL
+window.alert(document.URL);
+// set a new value for the bgColor property
+window.document.bgColor = "red"
+// replace the content of the body
+window.document.body.innerText = "😃"
+// select all divs, set backgrounds red
+$('div').css({ 'background': 'red' });
+// select all elements with myClass, add text to end
+$('.myClass').append(' - here is some new text');
+```
+
+- Lecture: [The DOM](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_52), [jQuery](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.gb2d4fd0026_0_24)
+- Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
+- Exercise: Add a way to spend more money in the lottery game
+
+#### Homework
+
+- Haverbeke: [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222), [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
+- Codecademy: none
+- Exercises:
+	- Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
+
+
+**Assessment**: Quiz 4; Homework review
+
+
+
+
+
+
+
+
+
+## 5-Forms & Events
+
+**Overview**: How to use forms with Javascript and jQuery
+
+
+- Lecture: [Forms & Events](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_115)
+- Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
+- Exercise: Add a way to spend more money in the lottery game
+
+
+#### Homework
+
+- Haverbeke: [Ch15 Handling Events](https://eloquentjavascript.net/15_event.html) (243-259), [Ch18 HTTP and Forms](https://eloquentjavascript.net/18_http.html) (308-328)
+- Codecademy: none
+- Exercises:
+	- Ch15 [Balloon](https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA), [Mouse trail](https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st), [Tabs](https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ)
+	- Ch18 [Content negotiation](https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf), [A JavaScript workbench](https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds), [Conway’s Game of Life](https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN)
+
+
+
+**Assessment**: Quiz 5; Homework review
+
+
+
+
+
+
+
+
+
+
+
+<h1 align="center">Javascript Part.2</h1>
+<p align="center">Advanced topics</p>
+
+
+
+
+## 6-Higher-order functions
+
+**Overview**: How to ...
+
+- Lecture:
+- Demo:
+- Exercise:
+
+
+#### Homework
+
+- Haverbeke: [Ch5 Higher-order Functions](https://eloquentjavascript.net/05_higher_order.html) (82-95)
+- Codecademy: [7-1 Higher-Order Functions](https://www.codecademy.com/learn/introduction-to-javascript) (1-4), [7-2 Iterators](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
+
+
+
+- Review
+	- Codecademy [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
+	- w3schools
+
+
+
+
+
+
+
+
+
+## 7-Object Oriented Programming
+
+**Overview**: How to ...
+
+- Lecture:
+- Demo:
+- Exercise:
 
 
 - Slides introducing content for next week, using...
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects
 	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes
 	- Lecture: [Topics: SPAs](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_76)
-- Demo
 
 
 
@@ -187,13 +308,7 @@ let myObject = {
 
 
 
-- jQuery [Intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [Selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [events](https://www.w3schools.com/jquery/jquery_events.asp)
-- w3schools [events](https://www.w3schools.com/js/js_events.asp), [DOM](https://www.w3schools.com/js/js_htmldom.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [html](https://www.w3schools.com/js/js_htmldom_html.asp)
-- Lecture: [DOM, jQuery, Arrays / loops](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit?usp=sharing)
 
-
-
-## 4-Object Oriented Programming
 
 ```js
 xxx
@@ -225,11 +340,14 @@ xxx
 
 
 
-<h1 align="center">Advanced Javascript</h1>
 
 
 
-## 5-Regular Expressions & Modules
+
+
+
+
+## 8-Regular Expressions & Modules
 
 ```js
 xxx
@@ -297,18 +415,16 @@ xxx
 
 
 
-## 7-The DOM & Events
+## xx
 
 ```js
-window.alert(document.URL);
+
 ```
 
 #### Homework
 
 - Haverbeke
-	- [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222)
-	- [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
-	- [Ch15 Handling Events](https://eloquentjavascript.net/15_event.html) (243-259)
+
 - Codecademy
 	- Requests I (1-10)
 	- Requests II (1-17)
@@ -331,34 +447,16 @@ window.alert(document.URL);
 
 
 
-## 8-HTML Canvas
-
-```js
-xxx
-```
-
-#### Homework
-
-- Haverbeke
-	- [Ch16 Project: A Platform Game](https://eloquentjavascript.net/16_game.html) (261-282)
-	- [Ch17 Drawing on Canvas](https://eloquentjavascript.net/17_canvas.html) (284-306)
-	- [Ch18 HTTP and Forms](https://eloquentjavascript.net/18_http.html) (308-328)
-	- [Ch19 Project: A Pixel Art Editor](https://eloquentjavascript.net/19_paint.html) (330-348)
-
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-	- https://www.w3schools.com/html/html5_canvas.asp
-- Demo
-
-
 
 
 
 
 <h1 align="center">Node / Express</h1>
+<p align="center">Using Node, Express for server-side, desktop, and mobile development</p>
+
+
+
+
 
 
 
