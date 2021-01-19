@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learning Javascript</title>
+</head>
+<body>
+
+<h3>Javascript Functions</h3>
+<p>Open the console to see messages</p>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+
+
+"use strict";
+
+// define a global variable
+let globalVariable = "hello";
+
+function doSomething(){
+	// define a local variable
+	let localVariable = 123;
+	// this works because the variable was defined globally
+	globalVariable = "goodbye";
+}
+doSomething();
+
+// this value was updated
+console.log("globalVariable", globalVariable);
+// -> "goodbye?"
+
+// but this will fail
+console.log("localVariable", localVariable);
+
+
+
+</script>
+</body>
+</html>
