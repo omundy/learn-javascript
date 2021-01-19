@@ -13,7 +13,10 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 This path to Javascript unites many materials (lectures, demos, milestones, exercises, etc.) with corresponding homework (book chapters, practice, exercises, etc.) to support my web courses, DIG 245 Critical Web Design and DIG 345 Radical Software in [Digital Studies](https://www.davidson.edu/academic-departments/digital-studies) at Davidson College.
 
-Anyone is welcome to fork the repo and use this course structure. You can view the [github.io](https://omundy.github.io/learn-javascript/) version and execute examples there. You will need the following books, prior experience with HTML and CSS, and accounts with Github, Codecademy, and Codepen.io:
+
+### Requirements
+
+Anyone is welcome to fork the repo and use this course structure. You can view the [github.io](https://omundy.github.io/learn-javascript/) version and execute examples there. You will need the following books, prior experience with HTML and CSS, and (potentially) accounts with Github, Codecademy, and Codepen:
 
 - Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [solutions](https://github.com/marijnh/Eloquent-JavaScript/tree/master/code/solutions)
 - Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019)
@@ -26,7 +29,7 @@ Anyone is welcome to fork the repo and use this course structure. You can view t
 
 
 
-## Structure
+### Structure
 
 Each section or class period is structured following the [Hunter Lesson Plan](https://thesecondprinciple.com/teaching-essentials/models-of-teaching/madeline-hunter-lesson-plan-model/) with approximate time estimates:
 ```
@@ -184,7 +187,6 @@ let myObject = {
 
 **Overview**: How to access properties and methods in the HTML DOM with Javascript and jQuery
 
-
 ```js
 // get the current URL
 window.alert(document.URL);
@@ -222,8 +224,17 @@ $('.myClass').append(' - here is some new text');
 
 ## 5-Forms and Events
 
-**Overview**: How to use forms with Javascript and jQuery
+**Overview**: Events and using forms with Javascript and jQuery
 
+```js
+// click event with callback
+$('#submitButton').click(function() {
+	// set the value of a form element
+	$('#color').val("purple");
+	// do not perform the default form action
+	return false;
+});
+```
 
 - Lecture: [Forms & Events](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_115)
 - Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
@@ -239,8 +250,11 @@ $('.myClass').append(' - here is some new text');
 	- Ch18 [Content negotiation](https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf), [A JavaScript workbench](https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds), [Conway’s Game of Life](https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN)
 
 
-
 **Assessment**: Quiz 5; Homework review
+
+
+
+
 
 
 
@@ -260,23 +274,28 @@ $('.myClass').append(' - here is some new text');
 
 ## 6-Higher-order functions
 
-**Overview**: How to ...
+**Overview**: Callbacks, `filter()`, `map()`, and `reduce()`.
 
-- Lecture:
-- Demo:
-- Exercise:
-
+```js
+// filter an array based on a rule
+console.log([5, 233, -21, 507, 14].filter(n => n > 10));
+// apply a transformation to each item in an array
+console.log(["red","blue","green"].map(c => "light" + c));
+// reduce an array to a single value using some function
+console.log([1, 2, 3, 4].reduce((a, b) => a + b));
+// return true if any elements in an array pass a test
+console.log([5, 233, -21, 507, 14].some(n => n > 10));
+```
 
 #### Homework
 
 - Haverbeke: [Ch5 Higher-order Functions](https://eloquentjavascript.net/05_higher_order.html) (82-95)
 - Codecademy: [7-1 Higher-Order Functions](https://www.codecademy.com/learn/introduction-to-javascript) (1-4), [7-2 Iterators](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
-
-
-
 - Review
 	- Codecademy [iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
-	- w3schools
+	- w3schools [Array.forEach()](https://www.w3schools.com/jsref/jsref_foreach.asp), [Array.filter()](https://www.w3schools.com/jsref/jsref_filter.asp), [Array.map()](https://www.w3schools.com/jsref/jsref_map.asp), [Array.reduce()](https://www.w3schools.com/jsref/jsref_reduce.asp), [Array.some()](https://www.w3schools.com/jsref/jsref_some.asp)
+
+**Assessment**: Homework review
 
 
 
@@ -290,40 +309,101 @@ $('.myClass').append(' - here is some new text');
 
 **Overview**: How to ...
 
+```js
+// code example
+```
+
 - Lecture:
 - Demo:
 - Exercise:
 
+#### Homework
 
-- Slides introducing content for next week, using...
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes
-	- Lecture: [Topics: SPAs](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_76)
+- Haverbeke: [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115)
+- Codecademy: [8-1 Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [8-2 Advanced Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [9-1 Classes](https://www.codecademy.com/learn/introduction-to-javascript) (1-12)
+- Review
+	- Codecademy [objects](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects), [classes](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes)
+	- w3schools
 
-
-
-
-
-
+**Assessment**: Quiz x; Homework review
 
 
 
 
+
+
+
+
+
+
+
+## x-title
+
+**Overview**: How to ...
 
 ```js
-xxx
+// code example
 ```
+
+- Lecture:
+- Demo:
+- Exercise:
+
+#### Homework
+
+- Haverbeke:
+- Codecademy:
+- Review
+
+**Assessment**: Quiz x; Homework review
+
+
+
+
+
+
+
+## x-title
+
+**Overview**: How to ...
+
+```js
+// code example
+```
+
+- Lecture:
+- Demo:
+- Exercise:
+
+#### Homework
+
+- Haverbeke:
+- Codecademy:
+- Review
+
+**Assessment**: Quiz x; Homework review
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Homework
 
 - Haverbeke
-	- [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115)
+	-
 	- [Ch7 Project: A Robot](https://eloquentjavascript.net/07_robot.html) (117-126)
 	- [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142)
 - Codecademy
-	- 8-1 Objects (1-10)
-	- 8-2 Advanced Objects (1-11)
-	- 9-1 Classes (1-12)
+
 - Exercises:
 	-
 
