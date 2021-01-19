@@ -220,7 +220,7 @@ $('.myClass').append(' - here is some new text');
 
 
 
-## 5-Forms & Events
+## 5-Forms and Events
 
 **Overview**: How to use forms with Javascript and jQuery
 
