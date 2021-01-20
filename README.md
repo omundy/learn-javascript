@@ -319,7 +319,7 @@ console.log([5, 233, -21, 507, 14].some(n => n > 10));
 
 #### Homework
 
-- Haverbeke: [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115)
+- Haverbeke: [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115), [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142)
 - Codecademy: [8-1 Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [8-2 Advanced Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [9-1 Classes](https://www.codecademy.com/learn/introduction-to-javascript) (1-12)
 - Review
 	- Codecademy [objects](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-objects), [classes](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-classes)
@@ -336,8 +336,72 @@ console.log([5, 233, -21, 507, 14].some(n => n > 10));
 
 
 
+## 8-Modules
 
-## x-title
+**Overview**: How to ...
+
+```js
+// code example
+```
+
+- Lecture:
+- Demo:
+- Exercise:
+
+#### Homework
+
+- Haverbeke: [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
+- Codecademy: [10-1 Browser Compatibility and Transpilation](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [11-1 Intermediate Javascript Modules](https://www.codecademy.com/learn/introduction-to-javascript) (1-15)
+- Review
+	- Codecademy [transpilation](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-transpilation), [modules](https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-modules)
+
+**Assessment**: Quiz x; Homework review
+
+
+
+
+
+
+
+
+
+
+## 9-Asynchronous Programming
+
+**Overview**: How to ...
+
+```js
+// code example
+```
+
+- Lecture:
+- Demo:
+- Exercise:
+
+#### Homework
+
+- Haverbeke: [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
+- Codecademy: [12-1 Javascript Promises](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [13-1 Async-Await](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
+- Review
+	- Codecademy [promises](https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises), [Async-js](https://www.codecademy.com/learn/introduction-to-javascript/modules/asynch-js)
+
+**Assessment**: Quiz x; Homework review
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## x-Requests
 
 **Overview**: How to ...
 
@@ -352,172 +416,13 @@ console.log([5, 233, -21, 507, 14].some(n => n > 10));
 #### Homework
 
 - Haverbeke:
-- Codecademy:
+- Codecademy: [Requests I](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [Requests II](https://www.codecademy.com/learn/introduction-to-javascript) (1-17)
 - Review
+	- Codecademy [Requests](https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-requests)
 
 **Assessment**: Quiz x; Homework review
 
 
-
-
-
-
-
-## x-title
-
-**Overview**: How to ...
-
-```js
-// code example
-```
-
-- Lecture:
-- Demo:
-- Exercise:
-
-#### Homework
-
-- Haverbeke:
-- Codecademy:
-- Review
-
-**Assessment**: Quiz x; Homework review
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Homework
-
-- Haverbeke
-	-
-	- [Ch7 Project: A Robot](https://eloquentjavascript.net/07_robot.html) (117-126)
-	- [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142)
-- Codecademy
-
-- Exercises:
-	-
-
-#### In class
-
-- Quiz 4
-- Homework review
-- Slides introducing content for next week, using...
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-transpilation
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-modules
-- Demo
-
-
-
-
-
-
-
-
-
-
-
-
-## 8-Regular Expressions & Modules
-
-```js
-xxx
-```
-
-#### Homework
-
-- Haverbeke
-	- [Ch9 Regular Expressions](https://eloquentjavascript.net/09_regexp.html) (143-165)
-	- [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
-- Codecademy
-	- 10-1 Browser Compatibility and Transpilation (1-11)
-	- 11-1 Intermediate Javascript Modules (1-15)
-- Exercises:
-	-
-
-#### In class
-
-- Quiz 5
-- Homework review
-- Slides introducing content for next week, using...
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/asynch-js
-- Demo
-
-
-
-
-
-
-
-
-
-
-## 6-Asynchronous Programming
-
-```js
-xxx
-```
-
-#### Homework
-
-- Haverbeke
-	- [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
-	- [Ch12 Project: A Programming Language](https://eloquentjavascript.net/12_language.html) (202-214)
-- Codecademy
-	- 12-1 Javascript Promises (1-11)
-	- 13-1 Async-Await (1-9)
-- Exercises:
-	-
-
-#### In class
-
-- Quiz 6
-- Homework review
-- Slides introducing content for next week, using...
-	- APIs
-	- https://www.codecademy.com/learn/introduction-to-javascript/modules/intermediate-javascript-requests
-- Demo
-
-
-
-
-
-
-
-
-## xx
-
-```js
-
-```
-
-#### Homework
-
-- Haverbeke
-
-- Codecademy
-	- Requests I (1-10)
-	- Requests II (1-17)
-- Exercises:
-	-
-
-
-#### In class
-
-- Quiz 7
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
 
 
 
@@ -538,34 +443,42 @@ xxx
 
 
 
-
-
 ## 9-Node Introduction
 
+**Overview**: How to ...
+
 ```bash
-# create a node project
-npm init
 # get the node version
 node -v
+# install nodemon globally
+npm install -g nodemon
+# make a new directory and move to it
+mkdir sample-node-express-site && cd sample-node-express-site
+# create a node project
+npm init
+# install express
+npm install express
+# initialize git
+git init
 ```
+
+
+
+
+
+
+- Lecture:
+- Demo:
+- Exercise:
 
 #### Homework
 
-- Haverbeke
-	- [Ch20 Node.js](https://eloquentjavascript.net/20_node.html) (350-367)
-	- [Ch21 Project: Skill-Sharing Website](https://eloquentjavascript.net/21_skillsharing.html) (369-387)
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch1 Introducing Express (1-9)
-	- Ch2 Getting Started with Node (10-20)
+	- Ch2 Getting Started with Node (11-20)
 	- Ch3 Saving Time with Express (21-30)
 
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
-
+**Assessment**: Quiz x; Homework review
 
 
 
@@ -574,24 +487,23 @@ node -v
 
 ## 10-Node Testing
 
+**Overview**: How to ... MVC, testing, linting, debugging
+
 ```js
-xxx
+// code example
 ```
+
+- Lecture:
+- Demo:
+- Exercise:
 
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch4 Tidying Up (31–40)
-	- Ch5 Quality Assurance (51–58)
+	- Ch4 Tidying Up (31–39)
+	- Ch5 Quality Assurance (41–58)
 
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
-
-
+**Assessment**: Quiz x; Homework review
 
 
 
@@ -599,9 +511,15 @@ xxx
 
 ## 11-Requests & Templating
 
+**Overview**: How to ... Express request, response, Handlebars, MVC
+
 ```js
-xxx
+// code example
 ```
+
+- Lecture:
+- Demo:
+- Exercise:
 
 #### Homework
 
@@ -609,13 +527,7 @@ xxx
 	- Ch6 Request and Response (59-72)
 	- Ch7 Templating with Handlebars (73-88)
 
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
-
+**Assessment**: Quiz x; Homework review
 
 
 
@@ -623,25 +535,23 @@ xxx
 
 ## 12-Forms & Sessions
 
+**Overview**: How to ... Express web forms, sessions
+
 ```js
-xxx
+// code example
 ```
+
+- Lecture:
+- Demo:
+- Exercise:
 
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch8 Form Handling (89-101)
-	- Ch9 Cookies and Sessions (102-113)
+	- Ch8 Form Handling (89-100)
+	- Ch9 Cookies and Sessions (103-112)
 
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
-
-
-
+**Assessment**: Quiz x; Homework review
 
 
 
@@ -649,71 +559,57 @@ xxx
 
 ## 13-Middleware & Production
 
+**Overview**: How to use middleware, send email, PM2
+
 ```js
-xxx
+// code example
 ```
+
+- Lecture:
+- Demo:
+- Exercise:
 
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch10 Middleware (114-120)
+	- Ch10 Middleware (113-120)
 	- Ch11 Sending Email (121-131)
 	- Ch12 Production Concerns (133-145)
 
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
+**Assessment**: Quiz x; Homework review
 
 
 
 
 
 
+
+### Express and databases
 
 - Ch13 Persistence (147-172)
 
 
+### Express routes, APIs, JSON
 
 - Ch14 Routing (173-184)
 - Ch15 REST APIs and JSON (185-192)
 
 
+### Express SPAs, static content
 
-- Ch16 Single-Page Applications (193-214)
-- Ch17 Static Content (215-222)
+- Ch16 Single-Page Applications (193-212)
+- Ch17 Static Content (215-221)
 
 
+### Express security, APIs
 
 - Ch18 Security (223-248)
-- Ch19 Third Party APIs (249-265)
+- Ch19 Third Party APIs (249-263)
 
 
+
+### Express debugging, production
 
 - Ch20 Debugging (265-275)
-- Ch21 Going Live (276-289)
+- Ch21 Going Live (277-288)
 - Ch22 Maintenance (291-300)
-
-
-
-
-
-## xxx
-
-```js
-xxx
-```
-
-#### Homework
-
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	-
-
-#### In class
-
-- Quiz xxx
-- Homework review
-- Slides introducing content for next week, using...
-- Demo
