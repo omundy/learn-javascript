@@ -962,6 +962,14 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 - https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59
 
 
+### Games
+
+- https://phaser.io/
+- https://piqnt.com/planck.js/
+- https://impactjs.com/
+- https://colorlib.com/wp/javascript-engines-for-building-games/
+
+
 ### Mapping
 
 - https://leafletjs.com/
