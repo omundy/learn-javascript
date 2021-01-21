@@ -33,9 +33,7 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 	- [Asynchronous Javascript Part.1](#asynchronous-javascript-part1)
 	- [Asynchronous Javascript Part.2](#asynchronous-javascript-part2)
 - [Node Express Part.1](#node-express-part1)
-	- [Node Introduction](#node-introduction)
-- [get the node version](#get-the-node-version)
-	- [Node and Express](#node-and-express)
+	- [Node Express Introduction](#node-express-introduction)
 	- [Node Testing](#node-testing)
 	- [Requests & Templating](#requests-templating)
 	- [Forms & Sessions](#forms-sessions)
@@ -604,56 +602,30 @@ Introduction to Node and Express
 comments
 -->
 
-## Node Introduction
+## Node Express Introduction
 
-**Overview**: How to ...
+**Overview**: How to get started with node and express
 
 ```bash
-# get the node version
-node -v
-### install nodemon globally
-npm install -g nodemon
-### make a new directory and move to it
-mkdir sample-node-express-site && cd sample-node-express-site
-### create a node project
-npm init
-### initialize git
-git init
-### install express
-npm install express
+node -v                                # get the node version
+mkdir express-site && cd express-site  # make a new directory and move to it
+npm init                               # create a node project
+git init                               # initialize git
+npm install express                    # install express
 ```
-<!--
-- Lecture:
-- Demo:
-- Exercise:
--->
-
-#### Homework
-
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch1 Introducing Express (1-9)
-	- Ch2 Getting Started with Node (11-20)
-	- Ch3 Saving Time with Express (21-30)
-
-**Assessment**: Homework review
-
-
-
-
-
-
-
-
-<!---
-comments
--->
-
-## Node and Express
-
-**Overview**: How to ...
 
 ```js
+const express = require('express')
+const app = express()
+const port = 3000
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
 ```
 <!--
 - Lecture:
@@ -667,6 +639,10 @@ comments
 	- Ch1 Introducing Express (1-9)
 	- Ch2 Getting Started with Node (11-20)
 	- Ch3 Saving Time with Express (21-30)
+
+#### Review
+
+- Express [hello world](https://expressjs.com/en/starter/hello-world.html), [basic routing](https://expressjs.com/en/starter/basic-routing.html), [static files](https://expressjs.com/en/starter/static-files.html)
 
 **Assessment**: Homework review
 
