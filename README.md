@@ -1,7 +1,7 @@
 
 ![js logo](assets/img/logo-javascript-150w.png) ![js logo](assets/img/logo-node-ltgreen-150w.png)
 
-<h1 align="center">Javascript & Node</h1>
+<h1>Javascript & Node</h1>
 
 
 A linear progression through full stack Javascript, with tutorials, exercises, and examples demonstrating uses like:
@@ -19,30 +19,32 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Javascript - Part.1](#javascript-part1)
+- [Javascript Part.1](#javascript-part1)
 	- [Introduction](#introduction)
 	- [Values, Types, Operators](#values-types-operators)
 	- [Control Flow, Functions, Loops](#control-flow-functions-loops)
 	- [Data Structures](#data-structures)
 	- [jQuery and The DOM](#jquery-and-the-dom)
 	- [Forms and Events](#forms-and-events)
-- [Javascript - Part.2](#javascript-part2)
+- [Javascript Part.2](#javascript-part2)
 	- [Higher-order functions](#higher-order-functions)
 	- [Object Oriented Programming](#object-oriented-programming)
 	- [Modules](#modules)
-	- [Asynchronous Programming](#asynchronous-programming)
-- [Node Express - Part.1](#node-express-part1)
+	- [Asynchronous Javascript Part.1](#asynchronous-javascript-part1)
+	- [Asynchronous Javascript Part.2](#asynchronous-javascript-part2)
+- [Node Express Part.1](#node-express-part1)
 	- [Node Introduction](#node-introduction)
 	- [Node Testing](#node-testing)
 	- [Requests & Templating](#requests-templating)
 	- [Forms & Sessions](#forms-sessions)
 	- [Middleware & Production](#middleware-production)
-- [Node Express - Part.2](#node-express-part2)
+- [Node Express Part.2](#node-express-part2)
 	- [Express and databases](#express-and-databases)
 	- [Express routes, APIs, JSON](#express-routes-apis-json)
 	- [Express SPAs, static content](#express-spas-static-content)
 	- [Express security, APIs](#express-security-apis)
 	- [Express debugging, production](#express-debugging-production)
+- [Other Javascript Frameworks and Libraries](#other-javascript-frameworks-and-libraries)
 
 <!-- /TOC -->
 
@@ -80,7 +82,7 @@ Each section or class period is structured following the [Hunter Lesson Plan](ht
 
 
 
-# Javascript - Part.1
+# Javascript Part.1
 A quick introduction to the language
 
 
@@ -141,7 +143,7 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 #### Review
 
-- Codecademy [Javascript Introduction](reference-sheets/JS-01-Introduction.pdf)
+- Codecademy Cheatsheet(s) [Javascript Introduction](reference-sheets/JS-01-Introduction.pdf)
 - w3schools [variables](https://www.w3schools.com/js/js_variables.asp), [data types](https://www.w3schools.com/js/js_datatypes.asp), [Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
 
 **Assessment**: Quiz 1
@@ -187,7 +189,7 @@ console.log(isItTimeForPizza());
 
 #### Review
 
-- Codecademy [Conditionals](reference-sheets/JS-02-Conditionals.pdf), [functions](reference-sheets/JS-03-Functions.pdf), [scope](reference-sheets/JS-04-Scope.pdf)
+- Codecademy Cheatsheet(s) [Conditionals](reference-sheets/JS-02-Conditionals.pdf), [functions](reference-sheets/JS-03-Functions.pdf), [scope](reference-sheets/JS-04-Scope.pdf)
 - w3schools [operators](https://www.w3schools.com/js/js_operators.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [functions](https://www.w3schools.com/js/js_functions.asp), [arrow functions](https://www.w3schools.com/js/js_arrow_function.asp)
 
 **Assessment**: Quiz 2; Homework review
@@ -232,7 +234,7 @@ let myObject = {
 
 #### Review
 
-- Codecademy [arrays](reference-sheets/JS-05-Arrays.pdf), [loops](reference-sheets/JS-06-Loops.pdf)
+- Codecademy Cheatsheet(s) [arrays](reference-sheets/JS-05-Arrays.pdf), [loops](reference-sheets/JS-06-Loops.pdf)
 - w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp)
 
 **Assessment**: Quiz 3; Homework review
@@ -337,7 +339,7 @@ $('#submitButton').click(function() {
 
 
 
-# Javascript - Part.2
+# Javascript Part.2
 Advanced Javascript topics
 
 
@@ -347,7 +349,7 @@ comments
 
 ## Higher-order functions
 
-**Overview**: Callbacks, `filter()`, `map()`, and `reduce()`.
+**Overview**: How to use higher-order functions with arrays in Javascript
 
 ```js
 // filter an array based on a rule
@@ -367,9 +369,8 @@ console.log([5, 233, -21, 507, 14].some(n => n > 10));
 
 #### Review
 
-- Codecademy [iterators](reference-sheets/JS-07-Iterators.pdf)
+- Codecademy Cheatsheet(s) [iterators](reference-sheets/JS-07-Iterators.pdf)
 - w3schools [Array.forEach()](https://www.w3schools.com/jsref/jsref_foreach.asp), [Array.filter()](https://www.w3schools.com/jsref/jsref_filter.asp), [Array.map()](https://www.w3schools.com/jsref/jsref_map.asp), [Array.reduce()](https://www.w3schools.com/jsref/jsref_reduce.asp), [Array.some()](https://www.w3schools.com/jsref/jsref_some.asp)
-
 
 **Assessment**: Homework review
 
@@ -385,25 +386,39 @@ comments
 
 ## Object Oriented Programming
 
-**Overview**: How to ...
+**Overview**: How to create custom objects and classes, and use properties, methods, and prototypes
 
 ```js
-// code example
+class Dog {
+	constructor(name) {
+	  	this._name = name;  
+	}
+	introduce() {
+		console.log('This is ' + this._name + ' !');  
+	}
+	// a static method
+	static bark() {
+		console.log('Woof!');  
+	}
+}
+const hankDog = new Dog('Hank');
+hankDog.introduce();
+Dog.bark();
 ```
-
+<!--
 - Lecture:
 - Demo:
 - Exercise:
-
+-->
 #### Homework
 
-- Haverbeke: [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115), [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142)
+- Haverbeke: [Ch6 The Secret Life of Objects](https://eloquentjavascript.net/06_object.html) (97-115)
 - Codecademy: [8-1 Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [8-2 Advanced Objects](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [9-1 Classes](https://www.codecademy.com/learn/introduction-to-javascript) (1-12)
 
 #### Review
 
-- Codecademy [Objects](reference-sheets/JS-08-Objects.pdf), [Classes](reference-sheets/JS-09-Classes.pdf)
-- w3schools [objects](https://www.w3schools.com/js/js_object_definition.asp), [properties](https://www.w3schools.com/js/js_object_properties.asp), [methods](https://www.w3schools.com/js/js_object_methods.asp), [classes](https://www.w3schools.com/js/js_class_intro.asp)
+- Codecademy Cheatsheet(s) [Objects](reference-sheets/JS-08-Objects.pdf), [Classes](reference-sheets/JS-09-Classes.pdf)
+- w3schools [this](https://www.w3schools.com/js/js_this.asp), [objects](https://www.w3schools.com/js/js_object_definition.asp), [properties](https://www.w3schools.com/js/js_object_properties.asp), [methods](https://www.w3schools.com/js/js_object_methods.asp), [classes](https://www.w3schools.com/js/js_class_intro.asp), [prototypes](https://www.w3schools.com/js/js_object_prototypes.asp)
 
 **Assessment**: Homework review
 
@@ -420,25 +435,38 @@ comments
 
 ## Modules
 
-**Overview**: How to ...
+**Overview**: How to create reusable code (classes or libraries) with standard interfaces
 
 ```js
-// code example
-```
+// module example 1
+let Course = {};
+Course.name = "Javascript Node.js"
+module.exports = Course;
 
+// module example 2
+// hello.js
+export function hello(user) {
+	console.log(`Hello, ${user}!`);
+}
+// main.js
+import {hello} from './hello.js';
+hello('John'); // Hello, John!
+```
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
-- Haverbeke: [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
+- Haverbeke: [Ch8 Bugs and Errors](https://eloquentjavascript.net/08_error.html) (128-142), [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
 - Codecademy: [10-1 Browser Compatibility and Transpilation](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [11-1 Intermediate Javascript Modules](https://www.codecademy.com/learn/introduction-to-javascript) (1-15)
 
 #### Review
 
-- Codecademy [transpilation](reference-sheets/JS-10-Compatibility.pdf), [modules](reference-sheets/JS-11-Modules.pdf)
-- w3schools
+- Codecademy Cheatsheet(s) [transpilation](reference-sheets/JS-10-Compatibility.pdf), [modules](reference-sheets/JS-11-Modules.pdf)
+- w3schools [use strict](https://www.w3schools.com/js/js_strict.asp), [debugging](https://www.w3schools.com/js/js_debugging.asp)
 
 **Assessment**: Homework review
 
@@ -453,27 +481,60 @@ comments
 comments
 -->
 
-## Asynchronous Programming
+## Asynchronous Javascript Part.1
 
-**Overview**: How to ...
+**Overview**: How to deal with events and latency using callbacks, promises, and async/await
 
 ```js
-// code example
-```
+// callback example
+function logTheAnswer(answer) {
+	console.log("The answer is " + answer);
+}
+function calc(n1, n2, callback) {
+	// passed function is invoked at function end
+	callback(n1 + n2);
+}
+// pass the function as a callback
+calc(5, 5, logTheAnswer);
 
+// promise example
+function waitForPromise(param) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(param);
+		}, 2000);
+	});
+}
+async function test() {
+	// binding to
+	let str = "";
+	str += await waitForPromise("🤡");
+	console.log(str);
+	str += await waitForPromise(" lurks");
+	console.log(str);
+	str += await waitForPromise(" in the shadows");
+	console.log(str);
+}
+test();
+```
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
 - Haverbeke: [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
-- Codecademy: [12-1 Javascript Promises](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [13-1 Async-Await](https://www.codecademy.com/learn/introduction-to-javascript) (1-9), [Requests I](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [Requests II](https://www.codecademy.com/learn/introduction-to-javascript) (1-17)
+- Codecademy: [12-1 Javascript Promises](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [13-1 Async-Await](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
+- Exercises: Ch11: [Tracking the scalpel](https://eloquentjavascript.net/11_async.html#i_UvyahfUnfl), [Building Promise.all](https://eloquentjavascript.net/11_async.html#i_Ug+Dv9Mmsw)
+
 
 #### Review
 
-- Codecademy [promises](reference-sheets/JS-12-Promises.pdf), [Async-Await](reference-sheets/JS-13-Async-Await.pdf), [Requests](reference-sheets/JS-14-Requests.pdf)
-- w3schools [callbacks](https://www.w3schools.com/js/js_callback.asp), [asynchronous](https://www.w3schools.com/js/js_asynchronous.asp), [promises](https://www.w3schools.com/js/js_promise.asp), [async-await](https://www.w3schools.com/js/js_async.asp), [AJAX](https://www.w3schools.com/jquery/jquery_ajax_intro.asp), [jquery get/post](https://www.w3schools.com/jquery/jquery_ajax_get_post.asp), [fetch](https://www.w3schools.com/js/js_api_fetch.asp)
+- Codecademy Cheatsheet(s) [promises](reference-sheets/JS-12-Promises.pdf), [Async-Await](reference-sheets/JS-13-Async-Await.pdf)
+- w3schools [callbacks](https://www.w3schools.com/js/js_callback.asp), [asynchronous](https://www.w3schools.com/js/js_asynchronous.asp), [promises](https://www.w3schools.com/js/js_promise.asp), [async-await](https://www.w3schools.com/js/js_async.asp)
+- See also: [Modern Asynchronous JavaScript with Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 
 **Assessment**: Homework review
 
@@ -489,13 +550,51 @@ comments
 
 
 
+<!---
+comments
+-->
+
+## Asynchronous Javascript Part.2
+
+**Overview**: Get, Post, Put, Ajax, Fetch,
+
+```js
+fetch('https://jsonplaceholder.typicode.com/todos')
+	.then(response => response.json())
+	.then(json => {
+		console.log(json);
+	});
+```
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- Codecademy: [14-1 Requests I](https://www.codecademy.com/learn/introduction-to-javascript) (1-10), [14-2 Requests II](https://www.codecademy.com/learn/introduction-to-javascript) (1-17)
+
+#### Review
+
+- Codecademy Cheatsheet(s) [Requests](reference-sheets/JS-14-Requests.pdf)
+- w3schools [AJAX](https://www.w3schools.com/jquery/jquery_ajax_intro.asp), [jquery get/post](https://www.w3schools.com/jquery/jquery_ajax_get_post.asp), [fetch](https://www.w3schools.com/js/js_api_fetch.asp)
+
+**Assessment**: Homework review
 
 
 
 
 
 
-# Node Express - Part.1
+
+
+
+
+
+
+
+# Node Express Part.1
 Introduction to Node and Express
 
 
@@ -522,10 +621,11 @@ npm install express
 ### initialize git
 git init
 ```
-
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
@@ -556,9 +656,11 @@ comments
 // code example
 ```
 
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
@@ -587,9 +689,11 @@ comments
 // code example
 ```
 
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
@@ -616,9 +720,11 @@ comments
 // code example
 ```
 
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
@@ -646,9 +752,11 @@ comments
 // code example
 ```
 
+<!--
 - Lecture:
 - Demo:
 - Exercise:
+-->
 
 #### Homework
 
@@ -664,7 +772,7 @@ comments
 
 
 
-# Node Express - Part.2
+# Node Express Part.2
 Using Node, Express for server-side, desktop, and mobile application development
 
 
@@ -697,5 +805,71 @@ Using Node, Express for server-side, desktop, and mobile application development
 ## Express debugging, production
 
 - Ch20 Debugging (265-275)
-- Ch21 Going Live (277-288)
+- Ch21 Going Live (277-288) - https://heroku.com/
 - Ch22 Maintenance (291-300)
+
+
+
+
+
+
+
+# Other Javascript Frameworks and Libraries
+Javascript / Node for data visualization, mapping, browser extensions, desktop and mobile apps, and more...
+
+
+
+### Visualization
+
+https://www.chartjs.org/
+https://d3js.org/
+https://github.com/d3/d3
+https://www.npmjs.com/package/d3
+
+
+### Animation
+
+https://animejs.com/
+https://threejs.org/
+https://www.createjs.com/tweenjs
+https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59
+
+
+### Leaflet
+
+https://leafletjs.com/
+https://leafletjs.com/examples.html
+https://www.npmjs.com/package/leaflet
+
+
+### Browser Extensions
+
+https://developer.chrome.com/docs/extensions/mv2/getstarted/
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension
+
+
+### UI Frameworks
+
+https://vuejs.org/
+https://reactjs.org/
+https://angular.io/
+
+
+### Desktop Applications
+
+https://www.electronjs.org/
+https://techbeacon.com/app-dev-testing/how-use-nodejs-build-premise-desktop-apps
+https://livebook.manning.com/book/cross-platform-desktop-applications/part-1/
+
+
+### Mobile Applications
+
+https://ionicframework.com/
+https://code.janeasystems.com/nodejs-mobile
+https://rapidapi.com/blog/how-to-create-a-mobile-app-with-nodejs/
+
+
+### More Possibilities
+
+https://getflywheel.com/layout/best-javascript-libraries-frameworks-2020/
+https://en.wikipedia.org/wiki/List_of_JavaScript_libraries
