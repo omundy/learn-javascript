@@ -10,12 +10,12 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 - Using libraries like jQuery, Anime.js, etc.
 - Running Javascript, Node.js, and NPM on the command line
 - Building a Node/Express website and API server
-- Creating browser extensions with Javascript
+- Creating browser extensions, visualizations, games, and other UIs with Javascript
 
 This path to Javascript unites many materials (lectures, demos, milestones, exercises, etc.) with corresponding homework (book chapters, practice, exercises, etc.) to support my web courses, DIG 245 Critical Web Design and DIG 345 Radical Software in [Digital Studies](https://www.davidson.edu/academic-departments/digital-studies) at Davidson College.
 
 
-### Outline
+### Contents
 
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -615,17 +615,21 @@ npm install express                    # install express
 ```
 
 ```js
-const express = require('express')
-const app = express()
-const port = 3000
-
+// import package
+const express = require('express');
+// create express app
+const app = express();
+// set port either from env file or default
+const port = process.env.PORT || 3000;
+// add routes
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+	res.send('Hello World!');
+});
+// start server and listen on <port>
+app.listen(port, () => console.log(
+	`Express started on http://localhost:${port}; press Ctrl-C to terminate.`
+));
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
 ```
 <!--
 - Lecture:
@@ -635,10 +639,7 @@ app.listen(port, () => {
 
 #### Homework
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch1 Introducing Express (1-9)
-	- Ch2 Getting Started with Node (11-20)
-	- Ch3 Saving Time with Express (21-30)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/): Ch1 Introducing Express (1-9), Ch2 Getting Started with Node (11-20), Ch3 Saving Time with Express (21-30)
 
 #### Review
 

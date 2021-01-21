@@ -1,0 +1,4 @@
+[submodule "book-assets/web-development-with-node-and-express-2e"]
+	path = book-assets/Learning-C-8-by-Developing-Games-with-Unity-2020
+	url = https://github.com/EthanRBrown/web-development-with-node-and-express-2e
+	ignore = dirty
