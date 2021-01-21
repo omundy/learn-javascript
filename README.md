@@ -34,6 +34,8 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 	- [Asynchronous Javascript Part.2](#asynchronous-javascript-part2)
 - [Node Express Part.1](#node-express-part1)
 	- [Node Introduction](#node-introduction)
+- [get the node version](#get-the-node-version)
+	- [Node and Express](#node-and-express)
 	- [Node Testing](#node-testing)
 	- [Requests & Templating](#requests-templating)
 	- [Forms & Sessions](#forms-sessions)
@@ -230,7 +232,7 @@ let myObject = {
 
 - Haverbeke: [Ch4 Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html) (57-79)
 - Codecademy: [5-1 Arrays](https://www.codecademy.com/learn/introduction-to-javascript) (1–7), [6-1 Loops](https://www.codecademy.com/learn/introduction-to-javascript) (1–7)
-- Exercises: [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
+- Exercises: CH4 [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
 
 #### Review
 
@@ -273,8 +275,7 @@ $('.myClass').append(' - here is some new text');
 
 - Haverbeke: [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222), [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
 - Codecademy: none
-- Exercises:
-	- Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
+- Exercises: Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
 
 #### Review
 
@@ -527,8 +528,7 @@ test();
 
 - Haverbeke: [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
 - Codecademy: [12-1 Javascript Promises](https://www.codecademy.com/learn/introduction-to-javascript) (1-11), [13-1 Async-Await](https://www.codecademy.com/learn/introduction-to-javascript) (1-9)
-- Exercises: Ch11: [Tracking the scalpel](https://eloquentjavascript.net/11_async.html#i_UvyahfUnfl), [Building Promise.all](https://eloquentjavascript.net/11_async.html#i_Ug+Dv9Mmsw)
-
+- Exercises: Ch11 [Tracking the scalpel](https://eloquentjavascript.net/11_async.html#i_UvyahfUnfl), [Building Promise.all](https://eloquentjavascript.net/11_async.html#i_Ug+Dv9Mmsw)
 
 #### Review
 
@@ -599,6 +599,7 @@ Introduction to Node and Express
 
 
 
+
 <!---
 comments
 -->
@@ -608,7 +609,7 @@ comments
 **Overview**: How to ...
 
 ```bash
-### get the node version
+# get the node version
 node -v
 ### install nodemon globally
 npm install -g nodemon
@@ -616,10 +617,43 @@ npm install -g nodemon
 mkdir sample-node-express-site && cd sample-node-express-site
 ### create a node project
 npm init
-### install express
-npm install express
 ### initialize git
 git init
+### install express
+npm install express
+```
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch1 Introducing Express (1-9)
+	- Ch2 Getting Started with Node (11-20)
+	- Ch3 Saving Time with Express (21-30)
+
+**Assessment**: Homework review
+
+
+
+
+
+
+
+
+<!---
+comments
+-->
+
+## Node and Express
+
+**Overview**: How to ...
+
+```js
+
 ```
 <!--
 - Lecture:
@@ -778,35 +812,154 @@ Using Node, Express for server-side, desktop, and mobile application development
 
 
 
+
+
+
+<!---
+comments
+-->
+
 ## Express and databases
 
-- Ch13 Persistence (147-172)
+**Overview**: How to ...
 
+```js
+// code example
+```
+
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch13 Persistence (147-172)
+
+**Assessment**: Homework review
+
+
+
+
+
+
+<!---
+comments
+-->
 
 ## Express routes, APIs, JSON
 
-- Ch14 Routing (173-184)
-- Ch15 REST APIs and JSON (185-192)
+**Overview**: How to ...
 
+```js
+// code example
+```
+
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch14 Routing (173-184)
+	- Ch15 REST APIs and JSON (185-192)
+
+**Assessment**: Homework review
+
+
+
+
+<!---
+comments
+-->
 
 ## Express SPAs, static content
 
-- Ch16 Single-Page Applications (193-212)
-- Ch17 Static Content (215-221)
+**Overview**: How to ...
 
+```js
+// code example
+```
+
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch16 Single-Page Applications (193-212)
+	- Ch17 Static Content (215-221)
+
+**Assessment**: Homework review
+
+
+
+
+
+<!---
+comments
+-->
 
 ## Express security, APIs
 
-- Ch18 Security (223-248)
-- Ch19 Third Party APIs (249-263)
+**Overview**: How to ...
+
+```js
+// code example
+```
+
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch18 Security (223-248)
+	- Ch19 Third Party APIs (249-263)
+
+**Assessment**: Homework review
 
 
+
+
+
+<!---
+comments
+-->
 
 ## Express debugging, production
 
-- Ch20 Debugging (265-275)
-- Ch21 Going Live (277-288) - https://heroku.com/
-- Ch22 Maintenance (291-300)
+**Overview**: How to ...
+
+```js
+// code example
+```
+
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
+	- Ch20 Debugging (265-275)
+	- Ch21 Going Live (277-288) - https://heroku.com/
+	- Ch22 Maintenance (291-300)
+
+**Assessment**: Homework review
 
 
 
@@ -821,55 +974,55 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 
 ### Visualization
 
-https://www.chartjs.org/
-https://d3js.org/
-https://github.com/d3/d3
-https://www.npmjs.com/package/d3
+- https://www.chartjs.org/
+- https://d3js.org/
 
 
 ### Animation
 
-https://animejs.com/
-https://threejs.org/
-https://www.createjs.com/tweenjs
-https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59
+- https://animejs.com/
+- https://threejs.org/
+- https://www.createjs.com/tweenjs
+- https://blog.bitsrc.io/11-javascript-animation-libraries-for-2018-9d7ac93a2c59
 
 
-### Leaflet
+### Mapping
 
-https://leafletjs.com/
-https://leafletjs.com/examples.html
-https://www.npmjs.com/package/leaflet
+- https://leafletjs.com/
+- https://openlayers.org/
+- https://www.mapbox.com/
+- https://developers.google.com/maps/documentation
+- https://developers.arcgis.com/
 
 
 ### Browser Extensions
 
-https://developer.chrome.com/docs/extensions/mv2/getstarted/
-https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension
+- https://developer.chrome.com/docs/extensions/mv2/getstarted/
+- https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension
 
 
 ### UI Frameworks
 
-https://vuejs.org/
-https://reactjs.org/
-https://angular.io/
+- https://vuejs.org/
+- https://reactjs.org/
+- https://angular.io/
 
 
 ### Desktop Applications
 
-https://www.electronjs.org/
-https://techbeacon.com/app-dev-testing/how-use-nodejs-build-premise-desktop-apps
-https://livebook.manning.com/book/cross-platform-desktop-applications/part-1/
+- https://www.electronjs.org/
+- https://techbeacon.com/app-dev-testing/how-use-nodejs-build-premise-desktop-apps
+- https://livebook.manning.com/book/cross-platform-desktop-applications/part-1/
 
 
 ### Mobile Applications
 
-https://ionicframework.com/
-https://code.janeasystems.com/nodejs-mobile
-https://rapidapi.com/blog/how-to-create-a-mobile-app-with-nodejs/
+- https://ionicframework.com/
+- https://code.janeasystems.com/nodejs-mobile
+- https://rapidapi.com/blog/how-to-create-a-mobile-app-with-nodejs/
 
 
 ### More Possibilities
 
-https://getflywheel.com/layout/best-javascript-libraries-frameworks-2020/
-https://en.wikipedia.org/wiki/List_of_JavaScript_libraries
+- https://getflywheel.com/layout/best-javascript-libraries-frameworks-2020/
+- https://en.wikipedia.org/wiki/List_of_JavaScript_libraries
