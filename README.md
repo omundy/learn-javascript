@@ -1,16 +1,16 @@
 
-![js logo](assets/img/logo-javascript-150w.png) ![js logo](assets/img/logo-node-ltgreen-150w.png)
+![js logo](reference-sheets/images/logo-javascript-150w.png) ![js logo](reference-sheets/images/logo-node-ltgreen-150w.png)
 
 <h1>Javascript & Node</h1>
 
 
-A linear progression through full stack Javascript, with tutorials, exercises, and examples demonstrating uses like:
+A linear progression through full stack Javascript, with tutorials, exercises, and examples to:
 
-- Interacting with the DOM, HTML, and CSS inside web browsers
-- Using libraries like jQuery, Anime.js, etc.
-- Running Javascript, Node.js, and NPM on the command line
-- Building a Node/Express website and API server
-- Creating browser extensions, visualizations, games, and other UIs with Javascript
+- Interact with the DOM, HTML, and CSS inside web browsers
+- Use libraries like jQuery, Anime.js, etc.
+- Run Javascript, Node.js, and NPM on the command line
+- Build a dynamic Node/Express website and API server
+- Create browser extensions, data visualization, games, desktop and mobile apps and other UIs with Javascript
 
 This path to Javascript unites many materials (lectures, demos, milestones, exercises, etc.) with corresponding homework (book chapters, practice, exercises, etc.) to support my web courses, DIG 245 Critical Web Design and DIG 345 Radical Software in [Digital Studies](https://www.davidson.edu/academic-departments/digital-studies) at Davidson College.
 
@@ -19,6 +19,8 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Prerequisites](#prerequisites)
+	- [HTML and CSS](#html-and-css)
 - [Javascript Part.1](#javascript-part1)
 	- [Introduction](#introduction)
 	- [Values, Types, Operators](#values-types-operators)
@@ -27,14 +29,16 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 	- [jQuery and The DOM](#jquery-and-the-dom)
 	- [Forms and Events](#forms-and-events)
 - [Javascript Part.2](#javascript-part2)
+	- [Regular Expressions](#regular-expressions)
 	- [Higher-order functions](#higher-order-functions)
 	- [Object Oriented Programming](#object-oriented-programming)
 	- [Modules](#modules)
 	- [Asynchronous Javascript Part.1](#asynchronous-javascript-part1)
 	- [Asynchronous Javascript Part.2](#asynchronous-javascript-part2)
 - [Node Express Part.1](#node-express-part1)
+	- [Node Installation](#node-installation)
 	- [Node Express Introduction](#node-express-introduction)
-	- [Node Testing](#node-testing)
+	- [File Organization and Testing](#file-organization-and-testing)
 	- [Requests & Templating](#requests-templating)
 	- [Forms & Sessions](#forms-sessions)
 	- [Middleware & Production](#middleware-production)
@@ -45,6 +49,7 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 	- [Express security, APIs](#express-security-apis)
 	- [Express debugging, production](#express-debugging-production)
 - [Other Javascript Frameworks and Libraries](#other-javascript-frameworks-and-libraries)
+- [Tools](#tools)
 
 <!-- /TOC -->
 
@@ -52,8 +57,8 @@ This path to Javascript unites many materials (lectures, demos, milestones, exer
 
 Anyone is welcome to fork the repo and use this course structure. You can view the [github.io](https://omundy.github.io/learn-javascript/) version and execute examples there. You will need the following books, prior experience with HTML and CSS, and (potentially) accounts with Github, Codecademy, and Codepen:
 
-- Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [solutions](https://github.com/marijnh/Eloquent-JavaScript/tree/master/code/solutions)
-- Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019)
+- Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [github](https://github.com/marijnh/Eloquent-JavaScript)
+- Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019) [github](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
 
 
 
@@ -80,6 +85,29 @@ Each section or class period is structured following the [Hunter Lesson Plan](ht
 
 
 
+# Prerequisites
+A review of the command line, Git, HTML, CSS, and Bootstrap
+
+## HTML and CSS
+
+1. HTML (Hyper-Text Markup Language) provides the structure for web pages
+1. CSS (Cascading Style Sheets) is the language used to control the **presentation** of the HTML
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>A simple web page</title>
+		<style>
+			h1 { background: magenta; }
+		</style>
+	</head>
+	<body>
+		<h1>Hello world!</h1>
+	</body>
+</html>
+```
 
 
 # Javascript Part.1
@@ -342,6 +370,66 @@ $('#submitButton').click(function() {
 Advanced Javascript topics
 
 
+
+
+
+
+
+<!---
+comments
+-->
+
+## Regular Expressions
+
+**Overview**: How to use regular expressions in Javascript
+
+```js
+let input = "A string with 3 numbers in it... 42 and 88.";
+let number = /\b\d+\b/g;
+let match;
+while (match = number.exec(input)) {
+	console.log("Found", match[0], "at", match.index);
+}
+// → Found 3 at 14
+//   Found 42 at 33
+//   Found 88 at 40
+```
+
+#### Homework
+
+- Haverbeke: [Ch9 Regular Expressions](https://eloquentjavascript.net/09_regexp.html) (82-95)
+
+
+#### Review
+
+- w3schools [](https://www.w3schools.com/js/js_regexp.asp)
+
+#### Related
+
+- Regular Expressions (REGEX) https://gist.github.com/omundy/0edffc81af41f514d778e555b9bab954
+
+**Assessment**: Homework review
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!---
 comments
 -->
@@ -598,6 +686,64 @@ Introduction to Node and Express
 
 
 
+
+
+<!---
+comments
+-->
+
+## Node Installation
+
+**Overview**: Installing node using a package manager will give you flexibility to update or change versions later.
+
+**Mac** - Install [homebrew](https://brew.sh/)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Then install [node](https://formulae.brew.sh/formula/node) ([issues?](https://dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew))
+
+```bash
+brew install node
+```
+
+
+**Windows** - Install [chocolatey](https://chocolatey.org/) (a windows package manager) using [these instructions](https://www.google.com/search?q=how+to+install+chocoalty&rlz=1C5CHFA_enUS903US909&oq=how+to+install+chocoalty&aqs=chrome..69i57j69i64.4387j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_keUMYLibKvep5NoPn_S56AI15)
+
+```bash
+choco install nodejs
+```
+Then [install node](https://chocolatey.org/packages/nodejs)
+
+```bash
+brew install node                      # install node
+```
+
+
+
+
+#### After node is installed
+
+```bash
+node -v                                # check the version
+npm -v                                 # check the version
+npm install -g nodemon                 # install nodemon globally
+```
+
+
+
+
+
+- Lecture: [DIG 245 Review](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_58), [Web Applications](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_22), [Node Introduction](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_27), [Asynchronous Programming](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_247), [Node Installation](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_236)
+- Demo: Installation
+
+
+
+
+
+
+
+
 <!---
 comments
 -->
@@ -606,8 +752,8 @@ comments
 
 **Overview**: How to get started with node and express
 
+Create project
 ```bash
-node -v                                # get the node version
 mkdir express-site && cd express-site  # make a new directory and move to it
 npm init                               # create a node project
 git init                               # initialize git
@@ -631,15 +777,16 @@ app.listen(port, () => console.log(
 ));
 
 ```
-<!--
-- Lecture:
+
+- Lecture: [Node Express](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_33)
 - Demo:
-- Exercise:
--->
+- Exercise: Start homework...
+
 
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/): Ch1 Introducing Express (1-9), Ch2 Getting Started with Node (11-20), Ch3 Saving Time with Express (21-30)
+- Exercise: Begin Meadowlark Website
 
 #### Review
 
@@ -659,12 +806,18 @@ app.listen(port, () => console.log(
 comments
 -->
 
-## Node Testing
+## File Organization and Testing
 
-**Overview**: How to ... MVC, testing, linting, debugging
+**Overview**: How to use linters and write unit and integration tests
 
 ```js
-// code example
+// 1. add and use custom module
+const fortune = require('./lib/fortune');
+app.get('/about', (req, res) => {
+	res.render('about', { fortune: fortune.getFortune() });
+});
+
+// 2.
 ```
 
 <!--
@@ -675,9 +828,8 @@ comments
 
 #### Homework
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch4 Tidying Up (31–39)
-	- Ch5 Quality Assurance (41–58)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/): Ch4 Tidying Up (31–39), Ch5 Quality Assurance (41–58)
+- Exercise: Add testing to Meadowlark Website
 
 **Assessment**: Homework review
 
@@ -814,6 +966,10 @@ comments
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch13 Persistence (147-172)
+
+#### Related Topics
+
+- [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), [Revealing Module](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md), and other [Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 **Assessment**: Homework review
 
@@ -995,7 +1151,7 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 
 ### Desktop Applications
 
-- https://www.electronjs.org/
+- https://www.electronjs.org/ [Quick start](https://www.electronjs.org/docs/tutorial/quick-start#prerequisites)
 - https://techbeacon.com/app-dev-testing/how-use-nodejs-build-premise-desktop-apps
 - https://livebook.manning.com/book/cross-platform-desktop-applications/part-1/
 
@@ -1011,3 +1167,12 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 
 - https://getflywheel.com/layout/best-javascript-libraries-frameworks-2020/
 - https://en.wikipedia.org/wiki/List_of_JavaScript_libraries
+
+
+
+
+# Tools
+
+
+- https://jshint.com/
+- https://euangoddard.github.io/clipboard2markdown/
