@@ -2,7 +2,11 @@
 
 const madge = require('madge');
 
-let appPath, graphName;
+// Visualize your project dependencies
+// also requires graphiviz
+
+let appPath,
+	graphName;
 
 appPath = '/Users/owenmundy/Sites/Tally/_code/tally-api/app.js';
 graphName = 'output/graph-tally-api.svg';

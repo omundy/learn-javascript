@@ -1,5 +1,5 @@
 
-![js logo](reference-sheets/images/logo-javascript-150w.png) ![js logo](reference-sheets/images/logo-node-ltgreen-150w.png)
+![js logo](reference-sheets/images/logo-javascript-150w.png) ![node logo](reference-sheets/images/logo-node-ltgreen-150w.png)
 
 <h1>Javascript & Node</h1>
 
@@ -109,6 +109,15 @@ A review of the command line, Git, HTML, CSS, and Bootstrap
 </html>
 ```
 
+
+
+
+
+
+
+
+
+![js logo](reference-sheets/images/logo-javascript-75w.png)
 
 # Javascript Part.1
 A quick introduction to the language
@@ -364,7 +373,7 @@ $('#submitButton').click(function() {
 
 
 
-
+![js logo](reference-sheets/images/logo-javascript-75w.png)
 
 # Javascript Part.2
 Advanced Javascript topics
@@ -678,7 +687,7 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 
 
 
-
+![node logo](reference-sheets/images/logo-node-ltgreen-75w.png)
 
 # Node Express Part.1
 Introduction to Node and Express
@@ -694,40 +703,34 @@ comments
 
 ## Node Installation
 
-**Overview**: Installing node using a package manager will give you flexibility to update or change versions later.
+**Overview**: How to install node and npm on your machine. There are three ways, I recommend #2
 
-**Mac** - Install [homebrew](https://brew.sh/)
+1. Use an [installer via node website](https://nodejs.org/en/download/). **Not recommended** because it is difficult to upgrade.
+1. Installing using a system package manager (below) gives you flexibility to update or change versions later.
+1. Installing using [nvm](https://github.com/nvm-sh/nvm) is the most flexible method but potentially adds complexity for new users.
+
+**Mac** - Install [homebrew](https://brew.sh/) (Mac package manager), then [node](https://formulae.brew.sh/formula/node)
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Then install [node](https://formulae.brew.sh/formula/node) ([issues?](https://dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew))
-
-```bash
 brew install node
 ```
 
 
-**Windows** - Install [chocolatey](https://chocolatey.org/) (a windows package manager) using [these instructions](https://www.google.com/search?q=how+to+install+chocoalty&rlz=1C5CHFA_enUS903US909&oq=how+to+install+chocoalty&aqs=chrome..69i57j69i64.4387j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_keUMYLibKvep5NoPn_S56AI15)
+**Windows** - Install [chocolatey](https://chocolatey.org/) (Windows package manager) using [these instructions](https://www.google.com/search?q=how+to+install+chocoalty&rlz=1C5CHFA_enUS903US909&oq=how+to+install+chocoalty&aqs=chrome..69i57j69i64.4387j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_keUMYLibKvep5NoPn_S56AI15), then [node](https://chocolatey.org/packages/nodejs)
 
 ```bash
 choco install nodejs
 ```
-Then [install node](https://chocolatey.org/packages/nodejs)
-
-```bash
-brew install node                      # install node
-```
-
 
 
 
 #### After node is installed
 
 ```bash
-node -v                                # check the version
-npm -v                                 # check the version
-npm install -g nodemon                 # install nodemon globally
+node -v                    # check node version
+npm -v                     # check npm version
+npm install -g nodemon     # install nodemon globally, auto-restart projects on file change
 ```
 
 
@@ -933,7 +936,7 @@ comments
 
 
 
-
+![node logo](reference-sheets/images/logo-node-ltgreen-75w.png)
 
 # Node Express Part.2
 Using Node, Express for server-side, desktop, and mobile application development
