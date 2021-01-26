@@ -793,7 +793,7 @@ comments
 brew install node
 ```
 
-**Windows** - Install [chocolatey](https://chocolatey.org/) (Windows package manager) using [these instructions](https://www.google.com/search?q=how+to+install+chocoalty&rlz=1C5CHFA_enUS903US909&oq=how+to+install+chocoalty&aqs=chrome..69i57j69i64.4387j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_keUMYLibKvep5NoPn_S56AI15), then [node](https://chocolatey.org/packages/nodejs)
+**Windows** - Install [chocolatey](https://chocolatey.org/) (Windows package manager) using [these instructions](https://www.youtube.com/watch?v=KTUO1g_Btfk&ab_channel=SonarSystems)
 
 ```bash
 choco install nodejs
