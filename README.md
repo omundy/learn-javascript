@@ -931,7 +931,7 @@ app.get('/about', (req, res) => {
 <!---
 comments
 -->
-## Requests & Templating
+## Requests and Templating
 
 **Overview**: How to ... Express request, response, Handlebars, MVC
 
@@ -971,7 +971,7 @@ app.get ('/api/tours', (req, res) => res.json(tours));
 <!---
 comments
 -->
-## Forms & Sessions
+## Forms and Sessions
 
 **Overview**: How to ... Express web forms, sessions
 
@@ -1006,7 +1006,7 @@ app.post ( '/api/newsletter-signup', handlers.api.newsletterSignup );
 <!---
 comments
 -->
-## Middleware & Production
+## Middleware and Production
 
 **Overview**: How to use middleware, send email, PM2
 
