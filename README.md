@@ -811,6 +811,11 @@ npm install -g nodemon     # install nodemon globally, auto-restart projects on 
 - Lecture: [DIG 245 Review](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_58), [Web Applications](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_22), [Node Introduction](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_27), [Node Installation](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_236), [Asynchronous Programming](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_247)
 - Demo: Install node, confirm version #
 
+#### Homework
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/):
+	- Ch1 Introducing Express (1-9)
+	- Ch2 Getting Started with Node (11-20)
 
 #### Review
 - w3schools [nodejs](https://www.w3schools.com/nodejs/default.asp), [intro](https://www.w3schools.com/nodejs/default.asp), [command line](https://www.w3schools.com/nodejs/nodejs_get_started.asp), [npm](https://www.w3schools.com/nodejs/nodejs_npm.asp)
@@ -860,9 +865,8 @@ app.listen(port, () => console.log(
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/):
-	- Ch1 Introducing Express (1-9)
-	- Ch2 Getting Started with Node (11-20)
 	- Ch3 Saving Time with Express (21-30)
+	- Ch4 Tidying Up (31–39)
 - Exercise: Begin Meadowlark Website
 
 #### Review
@@ -885,7 +889,7 @@ app.listen(port, () => console.log(
 <!---
 comments
 -->
-## File Organization and Testing
+## Testing
 
 **Overview**: How to use linters and write unit and integration tests
 
@@ -908,9 +912,11 @@ app.get('/about', (req, res) => {
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/):
-	- Ch4 Tidying Up (31–39)
 	- Ch5 Quality Assurance (41–58)
 - Exercise: Add testing to Meadowlark Website
+
+#### Review
+
 
 **Assessment**: Homework review
 
@@ -930,7 +936,11 @@ comments
 **Overview**: How to ... Express request, response, Handlebars, MVC
 
 ```js
-// code example
+const tours = [
+	{ id: 0, name: 'Hood River', price: 99.99 },
+	{ id: 1, name: 'Oregon Coast', price: 149.95 },
+];
+app.get ('/api/tours', (req, res) => res.json(tours));
 ```
 
 <!--
@@ -944,6 +954,11 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch6 Request and Response (59-72)
 	- Ch7 Templating with Handlebars (73-88)
+
+#### Review
+
+- APIs
+
 
 **Assessment**: Homework review
 
@@ -961,7 +976,8 @@ comments
 **Overview**: How to ... Express web forms, sessions
 
 ```js
-// code example
+app.get ( '/newsletter', handlers.newsletter );
+app.post ( '/api/newsletter-signup', handlers.api.newsletterSignup );
 ```
 
 <!--
@@ -975,6 +991,8 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch8 Form Handling (89-100)
 	- Ch9 Cookies and Sessions (103-112)
+
+#### Review
 
 **Assessment**: Homework review
 
@@ -993,7 +1011,11 @@ comments
 **Overview**: How to use middleware, send email, PM2
 
 ```js
-// code example
+app.use (( req, res, next ) => {
+	console.log ( `processing request for ${ req.url } ....` );
+	next ();
+});
+
 ```
 
 <!--
@@ -1008,6 +1030,8 @@ comments
 	- Ch10 Middleware (113-120)
 	- Ch11 Sending Email (121-131)
 	- Ch12 Production Concerns (133-145)
+
+#### Review
 
 **Assessment**: Homework review
 
@@ -1043,7 +1067,10 @@ comments
 **Overview**: How to ...
 
 ```js
-// code example
+const mongoose = require ( 'mongoose' );
+const { connectionString } = credentials.mongo;
+mongoose.connect ( connectionString );
+
 ```
 
 <!--
@@ -1057,7 +1084,7 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch13 Persistence (147-172)
 
-#### Related Topics
+#### Review
 
 - [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), [Revealing Module](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md), and other [Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
@@ -1077,7 +1104,14 @@ comments
 **Overview**: How to ...
 
 ```js
-// code example
+app.get ( '/user(name)?', ( req, res ) => res.render ( 'user' ));
+app.get ( '/staff/:name', ( req, res ) => {
+	const info = staff [ req.params.name ];
+	if ( !info ) return next (); // will eventually fall through to 404
+	res.render ( 'staff', info );
+});
+
+
 ```
 
 <!--
@@ -1091,6 +1125,8 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch14 Routing (173-184)
 	- Ch15 REST APIs and JSON (185-192)
+
+#### Review
 
 **Assessment**: Homework review
 
@@ -1106,7 +1142,9 @@ comments
 **Overview**: How to ...
 
 ```js
-// code example
+import React from 'react';
+
+// ...
 ```
 
 <!--
@@ -1120,6 +1158,8 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch16 Single-Page Applications (193-212)
 	- Ch17 Static Content (215-221)
+
+#### Review
 
 **Assessment**: Homework review
 
@@ -1136,7 +1176,10 @@ comments
 **Overview**: How to ...
 
 ```js
-// code example
+const passport = require ( 'passport' );
+const db = require ( '../db' );
+
+// ...
 ```
 
 <!--
@@ -1150,6 +1193,8 @@ comments
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch18 Security (223-248)
 	- Ch19 Third Party APIs (249-263)
+
+#### Review
 
 **Assessment**: Homework review
 
@@ -1165,8 +1210,8 @@ comments
 
 **Overview**: How to ...
 
-```js
-// code example
+```bash
+node inspect index.js
 ```
 
 <!--
@@ -1181,6 +1226,9 @@ comments
 	- Ch20 Debugging (265-275)
 	- Ch21 Going Live (277-288) - https://heroku.com/
 	- Ch22 Maintenance (291-300)
+
+#### Review
+
 
 **Assessment**: Homework review
 
