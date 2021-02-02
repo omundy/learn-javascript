@@ -379,6 +379,7 @@ $('#submitButton').click(function() {
 
 - Codecademy Cheatsheet(s) [jquery events](reference-sheets/jquery-03-events.pdf), [style methods](reference-sheets/jquery-04-style-methods.pdf), [dom traversing](reference-sheets/jquery-05-dom-traversing.pdf)
 - w3schools [jQuery intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [event methods](https://www.w3schools.com/jquery/jquery_events.asp)
+- w3schools [Javascript practice](https://www.w3schools.com/js/exercise_js.asp)
 
 **Assessment**: Quiz 5; Homework review
 
@@ -651,15 +652,15 @@ comments
 
 ```js
 // callback example
-function logTheAnswer(answer) {
+function log(answer) {
 	console.log("The answer is " + answer);
 }
-function calc(n1, n2, callback) {
-	// passed function is invoked at function end
+function sum(n1, n2, callback) {
+	// sum n1, n2 and invoke callback function
 	callback(n1 + n2);
 }
-// pass the function as a callback
-calc(5, 5, logTheAnswer);
+// pass a function as a callback
+sum(5, 5, log);
 
 // promise example
 function waitForPromise(param) {
@@ -669,9 +670,10 @@ function waitForPromise(param) {
 		}, 2000);
 	});
 }
+// async function
 async function test() {
-	// binding to
 	let str = "";
+	// use await to wait for promise in synchronous code
 	str += await waitForPromise("🤡");
 	console.log(str);
 	str += await waitForPromise(" lurks");
@@ -836,7 +838,6 @@ Setup your project
 ```bash
 mkdir express-site && cd express-site  # make a new directory and move to it
 npm init                               # create a node project in the new directory
-git init                               # initialize git
 npm install express                    # install express
 ```
 
