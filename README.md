@@ -944,11 +944,10 @@ const tours = [
 app.get ('/api/tours', (req, res) => res.json(tours));
 ```
 
-<!--
-- Lecture:
-- Demo:
-- Exercise:
--->
+- Lecture: [Node, Express, Handlebars, Heroku - Part 1 - Set up a node express project template
+](https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gafb807d421_0_39)
+- Demo: [omundy/sample-node-express-template](https://github.com/omundy/sample-node-express-template) and [live demo](https://sample-node-express-template.herokuapp.com/)
+
 
 #### Homework
 
@@ -958,7 +957,7 @@ app.get ('/api/tours', (req, res) => res.json(tours));
 
 #### Review
 
-- APIs
+- APIs 
 
 
 **Assessment**: Homework review
@@ -981,11 +980,8 @@ app.get ( '/newsletter', handlers.newsletter );
 app.post ( '/api/newsletter-signup', handlers.api.newsletterSignup );
 ```
 
-<!--
-- Lecture:
-- Demo:
-- Exercise:
--->
+- Lecture: [Node, Express, Handlebars, Heroku - Part 2 - Use API data, add a frontend](https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gbcac1199e9_0_15)
+- Demo: [omundy/sample-node-express-username-generator](https://github.com/omundy/sample-node-express-username-generator) and [live demo](https://sample-node-express-username.herokuapp.com/)
 
 #### Homework
 
