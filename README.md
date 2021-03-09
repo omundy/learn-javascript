@@ -1252,6 +1252,15 @@ Extensions literally "extend" what browsers can do by adding additional function
 See this page [js-topics-extensions.md](js-topics-extensions.md) for information about developing browser extensions.
 
 
+### Mapping
+
+See this page [js-topics-maps.md](js-topics-mapping.md) for information about developing interactive maps with Javascript.
+
+
+
+
+
+
 
 
 ## Animation
@@ -1269,14 +1278,6 @@ See this page [js-topics-extensions.md](js-topics-extensions.md) for information
 - https://impactjs.com/
 - https://colorlib.com/wp/javascript-engines-for-building-games/
 
-
-### Mapping
-
-- https://leafletjs.com/
-- https://openlayers.org/
-- https://www.mapbox.com/
-- https://developers.google.com/maps/documentation
-- https://developers.arcgis.com/
 
 
 
