@@ -1240,21 +1240,18 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 
 
 
-## Data Visualization
-Data visualization with Javascript
 
-See this page [js-topics-visualization.md](js-topics-visualization.md) for information about developing charts and data visualizations with Javascript.
+
+## Data Visualization
+See [topics-visualization.md](topics-visualization.md) for information about developing charts and data visualizations with Javascript.
 
 
 ## Browser Extensions
-Extensions literally "extend" what browsers can do by adding additional functionality
-
-See this page [js-topics-extensions.md](js-topics-extensions.md) for information about developing browser extensions.
+See [topics-extensions.md](topics-extensions.md) for information about developing browser extensions.
 
 
 ### Mapping
-
-See this page [js-topics-maps.md](js-topics-mapping.md) for information about developing interactive maps with Javascript.
+See [topics-maps.md](topics-maps.md) for information about developing interactive maps with Javascript.
 
 
 

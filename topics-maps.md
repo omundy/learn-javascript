@@ -5,13 +5,12 @@ Developing interactive maps with Javascript
 #### Contents
 
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Maps](#maps)
-			- [Contents](#contents)
-	- [Tutorials](#tutorials)
-			- [Samples](#samples)
-	- [FAQ & Tips](#faq-tips)
+		- [Contents](#contents)
+- [Tutorials](#tutorials)
+		- [Samples](#samples)
+- [FAQ & Tips](#faq-tips)
 
 <!-- /TOC -->
 
