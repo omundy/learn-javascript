@@ -20,6 +20,7 @@ Tutorials, references, and tips for cross-browser extension development
 	- [What web browsers should I target?](#what-web-browsers-should-i-target)
 	- [What are some notable examples of browser extensions?](#what-are-some-notable-examples-of-browser-extensions)
 	- [What do I need to know about CSS and browser extensions?](#what-do-i-need-to-know-about-css-and-browser-extensions)
+	- [Common Errors and Issues](#common-errors-and-issues)
 
 <!-- /TOC -->
 
@@ -184,3 +185,9 @@ These tips help ensure your code won't inherit other styles (listed in increasin
 ```css
 #uniquePrefix p { color: black !important; }
 ```
+
+### Common Errors and Issues
+
+
+#### Uncaught Error: Extension context invalidated.
+The error, `Uncaught Error: Extension context invalidated`, can occur when you update an in-development extension and then interact with a web page without refreshing the page to get the newly updated extension. The issue is that the (now outdated) content scripts injected and running on the page have attempted to access an extension that no longer exists (since it was updated).
