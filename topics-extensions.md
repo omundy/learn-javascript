@@ -80,7 +80,8 @@ Browser extensions are made using HTML, CSS, and Javascript code. They are insta
 
 
 
-
+![extension architecture](reference-sheets/images/browser-extensions-architecture.png)
+<small>Diagram showing basic structure and contexts of a browser extension</small>
 
 
 
