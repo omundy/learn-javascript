@@ -7,12 +7,12 @@ Tutorials, references, and tips for cross-browser extension development
 
 - [What is a browser extension?](#what-is-a-browser-extension)
 - [Tutorials](#tutorials)
+	- [Getting Started](#getting-started)
+	- [Create The Extension](#create-the-extension)
+	- [How to Install In-Development Extensions](#how-to-install-in-development-extensions)
 	- [Browser Blowup Tutorial](#browser-blowup-tutorial)
 	- [MDN Web Docs Tutorial](#mdn-web-docs-tutorial)
 	- [Sample Browser Extensions](#sample-browser-extensions)
-- [How to Install Development Versions](#how-to-install-development-versions)
-	- [Chrome, Brave, and Opera Development Installation](#chrome-brave-and-opera-development-installation)
-	- [Firefox Development Installation](#firefox-development-installation)
 - [Documentation](#documentation)
 	- [Cross-browser compatibility](#cross-browser-compatibility)
 	- [Publishing](#publishing)
@@ -37,24 +37,55 @@ Browser extensions are software that add features to a web browser. The function
 ## Tutorials
 
 
-Most browser extensions are made using HTML, CSS, and Javascript code. They are installed to the browser either locally (for development and testing) or packaged and then published on the Chrome Web Store or the Firefox Add-ons page. The simplest possible browser extension contains a single `manifest.json` file, which specifies only the metadata required to load an extension into the browser.
+
+### Getting Started
+
+Browser extensions are made using HTML, CSS, and Javascript code. They are installed to the browser either locally (for development and testing) or packaged and then published on the Chrome Web Store or the Firefox Add-ons page. The simplest possible browser extension contains a single `manifest.json` file, which specifies only the metadata required to load an extension into the browser.
 
 ```
 {
-	"name": "The name of your extension",
-	"description": "The description appears under the name",
+	"name": "My First Browser Extension",
+	"description": "",
 	"version": "1.0",
 	"manifest_version": 2
 }
 ```
 
-Note: Google Chrome recently released manifest version 3 which has some significant changes. Much is the same, like in the [Chrome Getting started](https://developer.chrome.com/docs/extensions/mv2/getstarted/) guide, but some things are not (for example all background scripts now use service workers). If you are reading this in 2021 I suggest you stick to manifest v2 as you'll find more resources to support your work.
+> Note: Google recently released manifest version 3 which has some significant changes. Much is the same, like in the [Chrome Getting started](https://developer.chrome.com/docs/extensions/mv2/getstarted/) guide, but some things are not (for example all background scripts now use service workers). If you are reading this in 2021 I suggest you stick to manifest v2 as you'll find more resources to support your work.
+
+
+### Create The Extension
+
+1. Create a new folder named `extension`. All your files will live inside this folder.
+1. Create a new file inside `extension` named `manifest.json` and copy and paste into it the contents above.
+1. Install the extension in your browser using the appropriate instructions below.
+
+
+### How to Install In-Development Extensions
+
+
+#### In Chrome, Brave, and Opera
+
+1. In Chrome, go to `chrome://extensions`
+1. Enable Developer mode by ticking the checkbox in the upper-right corner.
+1. Click "Load unpacked extension..."
+1. Select the directory containing your unpacked extension.
+
+#### In Firefox
+
+1. In Firefox, go to `about:debugging#/runtime/this-firefox`
+1. Click "Load Temporary Add-on"
+1. Select *the manifest file* in the directory containing your unpacked extension.
+
+
+
+
 
 
 
 ### Browser Blowup Tutorial
 
-This tutorial, [Browser Blowup: Explode Web Pages Containing Third-Party Trackers](https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf), was published in [Signal Culture Cookbook Vol.2](http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4) (2019), and uses manifest version 2.
+The above information comes from the tutorial, [Browser Blowup: Explode Web Pages Containing Third-Party Trackers](https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf), published in [Signal Culture Cookbook Vol.2](http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4) (2019). You can continue reading or follow one of the tutorials below.
 
 
 
@@ -69,32 +100,13 @@ This tutorial, [Browser Blowup: Explode Web Pages Containing Third-Party Tracker
 ### Sample Browser Extensions
 
 - [omundy/sample-extension-messages](https://github.com/omundy/sample-extension-messages)
-- [omundy/sample-extension-listener](https://github.com/omundy/sample-extension-listener)
+- [omundy/sample-extension-observer](https://github.com/omundy/sample-extension-observer)
 - [omundy/sample-extension-github-tools](https://github.com/omundy/sample-extension-github-tools)
 - [sneakaway-studio/explode-the-web](https://github.com/sneakaway-studio/explode-the-web)
 - [sneakaway-studio/stop-slide-scrolling](https://github.com/sneakaway-studio/stop-slide-scrolling)
 - [sneakaway-studio/tally-extension](https://github.com/sneakaway-studio/tally-extension)
 
 
-
-
-
-## How to Install Development Versions
-
-
-### Chrome, Brave, and Opera Development Installation
-
-1. In Chrome, go to `chrome://extensions`
-1. Enable Developer mode by ticking the checkbox in the upper-right corner.
-1. Click on the "Load unpacked extension..." button.
-1. Select the directory containing your unpacked extension.
-
-### Firefox Development Installation
-
-1. Open Firefox browser and navigate to `about:debugging#/runtime/this-firefox`
-1. Click the "Load Temporary Add-on" button.
-1. Select the directory containing your unpacked extension.
-1. Then select the manifest file.
 
 
 
