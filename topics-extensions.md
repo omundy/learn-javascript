@@ -6,16 +6,19 @@ Tutorials, references, and tips for cross-browser extension development
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [What is a browser extension?](#what-is-a-browser-extension)
-- [Tutorials](#tutorials)
-	- [Getting Started](#getting-started)
-	- [Create The Extension](#create-the-extension)
-	- [How to Install In-Development Extensions](#how-to-install-in-development-extensions)
+- [Hello World Tutorial](#hello-world-tutorial)
+	- [1. Create the manifest file](#1-create-the-manifest-file)
+	- [2. Install In-Development Extension](#2-install-in-development-extension)
+	- [3. Browser extension files](#3-browser-extension-files)
+	- [4. Add content and background scripts](#4-add-content-and-background-scripts)
+- [More Tutorials](#more-tutorials)
 	- [Browser Blowup Tutorial](#browser-blowup-tutorial)
 	- [MDN Web Docs Tutorial](#mdn-web-docs-tutorial)
 	- [Sample Browser Extensions](#sample-browser-extensions)
 - [Documentation](#documentation)
 	- [Cross-browser compatibility](#cross-browser-compatibility)
 	- [Publishing](#publishing)
+	- [Packaging](#packaging)
 - [FAQ & Tips](#faq-tips)
 	- [What web browsers should I target?](#what-web-browsers-should-i-target)
 	- [What are some notable examples of browser extensions?](#what-are-some-notable-examples-of-browser-extensions)
@@ -35,59 +38,104 @@ Browser extensions are software that add features to a web browser. The function
 
 
 
-## Tutorials
 
-
-
-### Getting Started
+## Hello World Tutorial
 
 Browser extensions are made using HTML, CSS, and Javascript code. They are installed to the browser either locally (for development and testing) or packaged and then published on the Chrome Web Store or the Firefox Add-ons page. The simplest possible browser extension contains a single `manifest.json` file, which specifies only the metadata required to load an extension into the browser.
 
-```
+```json
 {
 	"name": "My First Browser Extension",
-	"description": "",
+	"description": "🐌",
 	"version": "1.0",
 	"manifest_version": 2
 }
 ```
 
-> Note: Google recently released manifest version 3 which has some significant changes. Much is the same, like in the [Chrome Getting started](https://developer.chrome.com/docs/extensions/mv2/getstarted/) guide, but some things are not (for example all background scripts now use service workers). If you are reading this in 2021 I suggest you stick to manifest v2 as you'll find more resources to support your work.
+### 1. Create the manifest file
 
-
-### Create The Extension
-
-1. Create a new folder named `extension`. All your files will live inside this folder.
-1. Create a new file inside `extension` named `manifest.json` and copy and paste into it the contents above.
+1. Create a new folder named `hello-extension`. All your files will live inside this folder.
+1. Create a new file inside `hello-extension` named `manifest.json` and paste the above example into it.
 1. Install the extension in your browser using the appropriate instructions below.
 
 
-### How to Install In-Development Extensions
 
+### 2. Install In-Development Extension
 
 #### In Chrome, Brave, and Opera
 
-1. In Chrome, go to `chrome://extensions`
+1. Go to `chrome://extensions`
 1. Enable Developer mode by ticking the checkbox in the upper-right corner.
-1. Click "Load unpacked extension..."
-1. Select the directory containing your unpacked extension.
+1. Click "Load unpacked extension..." and select the directory containing your unpacked extension.
 
 #### In Firefox
 
-1. In Firefox, go to `about:debugging#/runtime/this-firefox`
-1. Click "Load Temporary Add-on"
-1. Select *the manifest file* in the directory containing your unpacked extension.
+1. Go to `about:debugging#/runtime/this-firefox`
+1. Click "Load Temporary Add-on" and select *the manifest file* in your unpacked extension.
 
 
+
+### 3. Browser extension files
+
+Browser extensions contain multiple types of scripts, each of which run in a different context and with specific permissions.
 
 ![extension architecture](reference-sheets/images/browser-extensions-architecture.png)
 <small>Diagram showing basic structure and contexts of a browser extension</small>
+
+Script | Description
+--- | ---
+Content scripts | Loaded (a.k.a. "injected") into *each* page a user visits and therefore the only scripts in your extension that can access web page content.
+Browser action | a.k.a. "popup script" is the page that appears when a user clicks on the extension icon at the top right of the browser.
+Background scripts | Loaded once, when a user installs the extension, and operate continuously in the background. While the background is the only script which can use certain browser APIs (e.g. [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), you can [send messages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#communicating_with_background_scripts) between all scripts.
+
+> Manifest v.3 was recently released and has some significant changes (background scripts now use service workers). If you are reading this in 2021 I suggest you stick to manifest v2 as you'll find more resources.
+
+
+### 4. Add content and background scripts
+
+Update your `manifest.json` file to look like
+```json
+{
+	"name": "My First Browser Extension",
+	"description": "🐌",
+	"version": "1.1",
+	"manifest_version": 2,
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+	}],
+	"background": {
+		"scripts": ["background.js"]
+	}
+}
+```
+
+Add a `content.js` with the following,
+```js
+console.log("Hello from the content script at " + window.location.href);
+```
+a `background.js` file with,
+```js
+console.log("Hello from the background script!");
+```
+and then click the "refresh" button on the extension at `chrome://extensions` to reload the program.
+
+The content script is injected in the page, so you can see this message in the regular dev tools on any page. To see the message from the background script, click on "Inspect views background page" at `chrome://extensions`
+
+
+
+
+
+
+
+
+## More Tutorials
 
 
 
 ### Browser Blowup Tutorial
 
-The above information comes from the tutorial, [Browser Blowup: Explode Web Pages Containing Third-Party Trackers](https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf), published in [Signal Culture Cookbook Vol.2](http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4) (2019). You can continue reading or follow one of the tutorials below.
+The above steps come from the [Browser Blowup: Explode Web Pages Containing Third-Party Trackers](https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf) tutorial published in [Signal Culture Cookbook Vol.2](http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4) (2019). You can continue reading or follow one of the tutorials below.
 
 
 
@@ -97,6 +145,8 @@ The above information comes from the tutorial, [Browser Blowup: Explode Web Page
 1. [Your first extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension)
 1. [Anatomy of an extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension)
 1. [Building a cross-browser extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension)
+1. [Example Extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Examples) ([Github](https://github.com/mdn/webextensions-examples))
+1. [Content scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts)
 
 
 ### Sample Browser Extensions
@@ -123,6 +173,7 @@ The above information comes from the tutorial, [Browser Blowup: Explode Web Page
 
 ## Documentation
 
+- [Chrome Getting started](https://developer.chrome.com/docs/extensions/mv2/getstarted/) guide
 - Chrome [download](https://www.google.com/chrome/), [Chrome Web Store](https://chrome.google.com/webstore/), [Developer Console](https://chrome.google.com/u/1/webstore/devconsole), [API Reference](https://developer.chrome.com/docs/extensions/reference/)
 - Chromium [download](https://www.chromium.org/getting-involved/download-chromium)
 - Firefox [Addons Store](https://addons.mozilla.org/en-US/firefox/), [Developer Hub](https://addons.mozilla.org/en-US/developers/), [Documentation](https://extensionworkshop.com/)
@@ -141,7 +192,7 @@ The above information comes from the tutorial, [Browser Blowup: Explode Web Page
 
 See links above for platforms.
 
-#### Packaging
+### Packaging
 
 1. Zip extension files
 	- Chrome: Zip the `extension/` directory
