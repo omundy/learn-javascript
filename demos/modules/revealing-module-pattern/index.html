@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<title>Javascript Modules - Revealing Module Pattern</title>
+</head>
+<body>
+
+<div class="container">
+	<h3>Revealing Module Pattern</h3>
+	<p>Open the console to see messages</p>
+</div>
+
+
+<script src="ColorModule.js"></script>
+<script>
+
+	// since we import the "module" above
+	// we can call the "public" methods like so
+	ColorModule.rand(); // -> "red"
+	ColorModule.rand(); // -> "green"
+	ColorModule.currentColor = "magenta";
+	console.log(ColorModule.color); // -> "magenta"
+	console.log(ColorModule.palette); // -> undefined
+
+</script>
+</body>
+</html>
