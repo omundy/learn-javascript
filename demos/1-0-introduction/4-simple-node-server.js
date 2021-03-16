@@ -1,4 +1,4 @@
-"use strict";
+
 
 // include the HTTP module
 var http = require('http');

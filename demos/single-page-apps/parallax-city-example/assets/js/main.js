@@ -1,4 +1,4 @@
-"use strict";
+
 
 // after web page has loaded
 $(document).ready(function () {

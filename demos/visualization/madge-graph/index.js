@@ -1,4 +1,4 @@
-"use strict";
+
 
 const madge = require('madge');
 

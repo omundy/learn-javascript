@@ -1,4 +1,4 @@
-"use strict";
+
 
 /*******************************************************
 1. Start by defining all the data needed for the game
