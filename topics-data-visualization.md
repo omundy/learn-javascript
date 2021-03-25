@@ -32,6 +32,15 @@ Data visualization with Javascript
 
 
 
+
+
+
+1. Create a [scale](https://www.tutorialsteacher.com/d3js/scales-in-d3) based on the type of data then use that to make the [axis](https://www.tutorialsteacher.com/d3js/axes-in-d3). Scale is essentially a map function, where you have input range (domain) and output range (actually called “range”) which you can reuse to “map” values in your data to positions in pixels in your graph.
+
+
+
+
+
 #### Samples
 
 - The Tally Saves the Internet [Leaderboard](https://tallysavestheinternet.com/leaderboard#month) and [Player Profiles](https://tallysavestheinternet.com/profile/grumpyprinter37#month) use Chart.js

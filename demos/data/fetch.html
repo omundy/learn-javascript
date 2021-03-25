@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<title>Javascript - fetch() example</title>
+</head>
+<body>
+
+<div class="container">
+	<h3>fetch() example</h3>
+	<p>Open the console to see messages</p>
+	<p>NOTE: Because of CORS you <a href="../../topics-data.md#cors">must run this file in a server environment</a></p>
+</div>
+
+
+
+<script>
+
+fetch('../data-samples/cat-facts.json') // request an external resource
+    .then(response => {
+        console.log(response.status); // -> 200
+	    console.log(response.statusText); // -> "OK"
+	    console.log(response); // log the response object
+        return response.json(); // parse response body (convert to JSON)
+    })
+    .then(data => {
+        console.log(data); // log the object
+    });
+
+</script>
+</body>
+</html>

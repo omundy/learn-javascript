@@ -1,6 +1,8 @@
 
 # Browser Extensions
-Tutorials, references, and tips for cross-browser extension development
+Tutorials, references, and tips for cross-browser extension development 
+
+
 
 
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -32,6 +34,8 @@ Tutorials, references, and tips for cross-browser extension development
 
 
 ## What is a browser extension?
+
+Watch the video [Radical Software - Browser Extensions](https://www.youtube.com/watch?v=IKsM8fWyBvs&list=PLhpnnpt3tw-SGxCwGuTLMgKpf4I74Ftdn&index=2&ab_channel=OwenMundy) (44:41)
 
 Browser extensions are software that add features to a web browser. The functionality they add can be useful, like the [Wayback Machine extension](https://web.archive.org/) that shows you what a web page looked like in the past, even if it was deleted, or [Google Translate](https://translate.google.com/) which changes text on a web page into any language. Others are more whimsical, such as the [Meow Met](https://chrome.google.com/webstore/detail/meow-met/annljkgbhnihbghkbfammlacnlfkdclp?hl=en) (2015) extension created by Emily McAllister at the Metropolitan Museum of Art, which displays a new random image from their collection that contains a cat whenever you open a new browser window or tab.
 
