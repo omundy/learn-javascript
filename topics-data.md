@@ -13,19 +13,17 @@
 - [Using External Data](#using-external-data)
 	- [Tabular Data (CSV, TSV, etc.)](#tabular-data-csv-tsv-etc)
 	- [JSON Data](#json-data)
-- [Data Sources](#data-sources)
+	- [CORS](#cors)
+	- [How to get data from an API](#how-to-get-data-from-an-api)
+	- [Export Google Sheets data for your project](#export-google-sheets-data-for-your-project)
+- [Tips for Storing Data](#tips-for-storing-data)
 	- [Static Data](#static-data)
 	- [Flat files](#flat-files)
-	- [Databases](#databases)
-	- [APIs](#apis)
+	- [Storage](#storage)
 - [Data Cleaning](#data-cleaning)
 	- [How to clean data using find / replace with regex](#how-to-clean-data-using-find-replace-with-regex)
 - [Data Conversion](#data-conversion)
 	- [Export spreadsheet data, convert CSV to JSON](#export-spreadsheet-data-convert-csv-to-json)
-- [Accessing external data with Javascript](#accessing-external-data-with-javascript)
-	- [CORS](#cors)
-	- [Working with APIs](#working-with-apis)
-	- [Export Google Sheets data for your project](#export-google-sheets-data-for-your-project)
 - [FAQ & Tips](#faq-tips)
 - [Other Tutorials](#other-tutorials)
 
@@ -216,6 +214,61 @@ console.log(JSON.stringify(str));
 
 
 
+### CORS
+
+[Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) controls how Javascript *in the browser* can access external resources. This means you may only import files from *the same* [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin)...
+
+- A script at `https://foo.com` ***can*** [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) a file of the same origin `https://foo.com/data.json`
+
+But ([unless the other server enables it](https://expressjs.com/en/resources/middleware/cors.html)), you cannot access data across origins:
+
+- A script at `https://foo.com` ***cannot*** access a resource at a different origin `https://bar.com/data.json`
+
+CORS also says that to use the fetch() API, 'URL schemes must be "http" or "https" for CORS request'. So...
+
+- Even though they have the same `file://` protocol, a script at `file:///Users/username/coolwebsite/index.html` ***cannot*** fetch() `file:///Users/username/coolwebsite/data.json`
+
+
+
+
+
+
+
+
+### How to get data from an API
+
+1. Read the documentation
+	- Many APIs require that you register and make requests using a key or token.
+		- For example, when [requesting data](https://pro.dp.la/developers/requests#url) from the [DPLA](https://dp.la/) you must include your `api_key` in the request `https://api.dp.la/v2/items?q=kittens&api_key=<here>`
+	- Many APIs use rate limiting to prevent abuse. They identify your requests using your key.
+1. Start with a tool that makes it easy to see what is returned:
+	- Use the browser + [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US)
+	- Use [Postman](https://www.postman.com/) to test an API
+1. Start coding once you are sure your requests are working
+	- Save sample responses locally so you can develop your application with test data without bumping into a rate limit.
+1. Things to remember
+	- APIs introduce latency so use asynchronous programming (`async`/`await`, promises, etc.)
+	- If your code isn't working check that the API is returning results using a browser or Postman.
+	- APIs are always changing based on needs and resources. In the early days of Facebook and Instagram anyone (artists, researchers, [anti-press authoritarian governments](https://www.scu.edu/ethics-spotlight/social-media-and-democracy/weaponization-of-social-media-by-authoritarian-states/)) could collect their entire databases via their APIs. Thanks to various [cultural](https://iknowwhereyourcatlives.com/) works [this](https://givememydata.com/) is no longer the case.
+
+
+Some example APIS
+
+
+- [Public APIs](https://github.com/public-apis/public-apis) - A collective list of free APIs for use in software and web development
+- [Data / Functionality API Resource List](https://docs.google.com/spreadsheets/d/196CgwxBIkX5v6VeitOFWTYfd07OU_5A-HC4Gu7gy6xE/edit#gid=0) - My own list
+- [Digital Public Library of America API](https://pro.dp.la/developers/api-codex)
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
+
+
+
+### Export Google Sheets data for your project
+
+Follow below, or their [tutorial](https://developers.google.com/sheets/api/quickstart/nodejs). Also see [documentation](https://developers.google.com/sheets/api)
+
+1. [Enable](https://developers.google.com/sheets/api/quickstart/nodejs#step_1_turn_on_the) the Google Sheets API
+1. [Install](https://developers.google.com/sheets/api/quickstart/nodejs#step_2_install_the_client_library) the client library
+1. [Setup and run the sample](https://developers.google.com/sheets/api/quickstart/nodejs#step_3_set_up_the_sample)
 
 
 
@@ -235,14 +288,26 @@ console.log(JSON.stringify(str));
 
 
 
-## Data Sources
 
-When you use data sources you primarily need to ask yourself the following questions:
 
-1. What is the best format to use in my project?
-1. Will I be saving any data from my application?
-1. Will I be allowing users to input data?
+## Tips for Storing Data
 
+When you use data in a project you should address which of the following applies to your application:
+
+1. Is your data **static** (unchanging) or **dynamic** (and how often does it changes)?
+1. Do you need to **insert** or **update** data (from users, a scraper, or other means)?
+1. Will you need to **query** the data (by searching, sorting, etc.)?
+1. How much data will you need to **store** or **request** across a network?
+1. What data **formats** do you have / will you need?
+1. Do you need to **clean** or **transform** your data (e.g. some fields are incorrect or need to be altered)?
+1. Do all of your datasets need to be treated the same?
+
+Some example situations:
+
+- I already have a spreadsheet, but it has many columns I do not need `static`, `clean`
+- I want users to be able to add, edit, and search content (see )
+
+ (perhaps some collections are large but static, but others user-submitted but)
 
 
 
@@ -256,22 +321,30 @@ Static data is content that you download into your own project and doesn't chang
 
 ### Flat files
 
-A "flat file" is any single or collection of data files. They can be plain text, CSV, TSV, JSON, or any type you prefer.
+A "flat file" is any single or collection of plain text files that store data (e.g. CSV, TSV, JSON, etc.)
 
-- You can write
+1. Pros
+	1. Easy to store, and can be
+	1. You can write
+1. Cons
+	1. "Queries" (searching or sorting these files) can require a lot of time
+	1.
 
 
+### Storage
 
-### Databases
+
+#### Browser-based storage
+
+- localStorage
+- cookies
+
+#### Databases
 
 A database
 
 
 
-### APIs
-
-https://github.com/public-apis/public-apis
-https://docs.google.com/spreadsheets/d/196CgwxBIkX5v6VeitOFWTYfd07OU_5A-HC4Gu7gy6xE/edit#gid=0
 
 
 
@@ -329,51 +402,6 @@ We could make these stock symbols into a Javascript array using
 
 
 
-## Accessing external data with Javascript
-
-
-
-
-### CORS
-
-[Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) controls how Javascript *in the browser* can access external resources. This means you may only import files from *the same* [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin)...
-
-- A script at `https://foo.com` ***can*** [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) a file of the same origin `https://foo.com/data.json`
-
-But ([unless the other server enables it](https://expressjs.com/en/resources/middleware/cors.html)), you cannot access data across origins:
-
-- A script at `https://foo.com` ***cannot*** access a resource at a different origin `https://bar.com/data.json`
-
-CORS also says that to use the fetch() API, 'URL schemes must be "http" or "https" for CORS request'. So...
-
-- Even though they have the same `file://` protocol, a script at `file:///Users/username/coolwebsite/index.html` ***cannot*** fetch() `file:///Users/username/coolwebsite/data.json`
-
-
-
-
-
-
-
-
-### Working with APIs
-
-
-### Export Google Sheets data for your project
-
-Follow below, or their [tutorial](https://developers.google.com/sheets/api/quickstart/nodejs). Also see [documentation](https://developers.google.com/sheets/api)
-
-1. [Enable](https://developers.google.com/sheets/api/quickstart/nodejs#step_1_turn_on_the) the Google Sheets API
-1. [Install](https://developers.google.com/sheets/api/quickstart/nodejs#step_2_install_the_client_library) the client library
-1. [Setup and run the sample](https://developers.google.com/sheets/api/quickstart/nodejs#step_3_set_up_the_sample)
-
-
-- automate
-
-
-
-
-
-
 ## FAQ & Tips
 
 
@@ -381,24 +409,22 @@ Follow below, or their [tutorial](https://developers.google.com/sheets/api/quick
 
 ## Other Tutorials
 
-Daniel Shiffman's - Working with Data & APIs in Javascript ([playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X))
-
-- [Introduction](https://www.youtube.com/watch?v=DbcLg8nRWEg&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=1)
-- [Setup](https://www.youtube.com/watch?v=hPbDyqzxQfU&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=2)
-- [1.1 fetch()](https://www.youtube.com/watch?v=tc8DU14qX6I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=3)
-- [1.2 Tabular Data](https://www.youtube.com/watch?v=RfMkdvN-23o&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=4)
-- [1.3 Graphing with Chart.js](https://www.youtube.com/watch?v=5-ptp9tRApM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=5)
-- [1.4 JSON](https://www.youtube.com/watch?v=uxf0--uiX0I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=6)
-- [1.6 Refreshing Data with setInterval()](https://www.youtube.com/watch?v=jKQUHGpOHqg&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=8)
-- [2.1 Server-side with Node.js](https://www.youtube.com/watch?v=wxbQP1LMZsw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=9)
-- [2.2 Geolocation Web API](https://www.youtube.com/watch?v=3ls013DBcww&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=10)
-- [2.3 HTTP Post Request with fetch()](https://www.youtube.com/watch?v=Kw5tC5nQMRY&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=11)
-- [2.4 Saving to a Database](https://www.youtube.com/watch?v=xVYa20DCUv0&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=12)
-- [2.5 Database Query](https://www.youtube.com/watch?v=q-lUgFxwjEM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=13)
-- [2.6 Saving Images and Base64 Encoding](https://www.youtube.com/watch?v=9Rhsb3GU2Iw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=14)
-- [2.7 Project Wrap-up: Accessibility and Design](https://www.youtube.com/watch?v=1mnpn6q25FI&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=15)
-- [3.1 API calls from Node.js (Weather data from Dark Sky)](https://www.youtube.com/watch?v=ZtLVbJk7KcM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=16)
-- [3.2 Open Air Quality API in Node.js](https://www.youtube.com/watch?v=Tiot877orkU&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=17)
-- [3.3 Mapping Database Entries with Leaflet.js](https://www.youtube.com/watch?v=r94kI6my0QQ&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=18)
-- [3.4 Hiding API Keys with Environment Variables (dotenv) and Pushing Code to GitHub](https://www.youtube.com/watch?v=17UVejOw3zA&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=19)
-- [3.5 Web Application Deployment (Glitch and Heroku) ](https://www.youtube.com/watch?v=Rz886HkV1j4&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=20)
+- Daniel Shiffman's - Working with Data & APIs in Javascript ([playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X))
+	- [Introduction](https://www.youtube.com/watch?v=DbcLg8nRWEg&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=1) and [Setup](https://www.youtube.com/watch?v=hPbDyqzxQfU&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=2)
+	- [1.1 fetch()](https://www.youtube.com/watch?v=tc8DU14qX6I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=3)
+	- [1.2 Tabular Data](https://www.youtube.com/watch?v=RfMkdvN-23o&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=4)
+	- [1.3 Graphing with Chart.js](https://www.youtube.com/watch?v=5-ptp9tRApM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=5)
+	- [1.4 JSON](https://www.youtube.com/watch?v=uxf0--uiX0I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=6)
+	- [1.6 Refreshing Data with setInterval()](https://www.youtube.com/watch?v=jKQUHGpOHqg&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=8)
+	- [2.1 Server-side with Node.js](https://www.youtube.com/watch?v=wxbQP1LMZsw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=9)
+	- [2.2 Geolocation Web API](https://www.youtube.com/watch?v=3ls013DBcww&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=10)
+	- [2.3 HTTP Post Request with fetch()](https://www.youtube.com/watch?v=Kw5tC5nQMRY&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=11)
+	- [2.4 Saving to a Database](https://www.youtube.com/watch?v=xVYa20DCUv0&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=12)
+	- [2.5 Database Query](https://www.youtube.com/watch?v=q-lUgFxwjEM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=13)
+	- [2.6 Saving Images and Base64 Encoding](https://www.youtube.com/watch?v=9Rhsb3GU2Iw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=14)
+	- [2.7 Project Wrap-up: Accessibility and Design](https://www.youtube.com/watch?v=1mnpn6q25FI&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=15)
+	- [3.1 API calls from Node.js (Weather data from Dark Sky)](https://www.youtube.com/watch?v=ZtLVbJk7KcM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=16)
+	- [3.2 Open Air Quality API in Node.js](https://www.youtube.com/watch?v=Tiot877orkU&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=17)
+	- [3.3 Mapping Database Entries with Leaflet.js](https://www.youtube.com/watch?v=r94kI6my0QQ&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=18)
+	- [3.4 Hiding API Keys with Environment Variables (dotenv) and Pushing Code to GitHub](https://www.youtube.com/watch?v=17UVejOw3zA&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=19)
+	- [3.5 Web Application Deployment (Glitch and Heroku) ](https://www.youtube.com/watch?v=Rz886HkV1j4&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=20)

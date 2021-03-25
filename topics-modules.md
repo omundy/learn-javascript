@@ -1,5 +1,5 @@
 
-# Javascript Modules and Other Patterns
+# Javascript Modules
 Tutorials, references, and tips
 
 

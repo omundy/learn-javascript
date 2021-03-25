@@ -16,6 +16,13 @@ Data visualization with Javascript
 
 
 
+## Inspiration
+
+
+https://flowingdata.com/
+
+
+
 
 ## Tutorials
 
