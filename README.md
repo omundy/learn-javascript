@@ -1239,18 +1239,24 @@ node inspect index.js
 Javascript / Node for data visualization, mapping, browser extensions, desktop and mobile apps, and more...
 
 
+## Working with Dates and Times
+See [topics-time.md](topics-time.md) to work with time, events, or running code at specific times.
 
+
+
+## Working with Data
+See [topics-data.md](topics-data.md) to learn how to work with, import, clean, and transform data with Javascript.
 
 
 ## Data Visualization
-See [topics-visualization.md](topics-visualization.md) for information about developing charts and data visualizations with Javascript.
+See [topics-data-visualization.md](topics-data-visualization.md) for information about developing charts and data visualizations with Javascript.
 
 
 ## Browser Extensions
 See [topics-extensions.md](topics-extensions.md) for information about developing browser extensions.
 
 
-### Mapping
+## Mapping
 See [topics-maps.md](topics-maps.md) for information about developing interactive maps with Javascript.
 
 
@@ -1274,10 +1280,6 @@ See [topics-maps.md](topics-maps.md) for information about developing interactiv
 - https://piqnt.com/planck.js/
 - https://impactjs.com/
 - https://colorlib.com/wp/javascript-engines-for-building-games/
-
-
-
-
 
 
 ### UI Frameworks
@@ -1307,10 +1309,7 @@ See [topics-maps.md](topics-maps.md) for information about developing interactiv
 - https://en.wikipedia.org/wiki/List_of_JavaScript_libraries
 
 
-
-
 # Tools
-
 
 - https://jshint.com/
 - https://euangoddard.github.io/clipboard2markdown/

@@ -1,7 +1,99 @@
+← [Learn Javascript](README.md)
 
-# Dates, Times, Timers, and Cron with Javascript
-Tutorials, references, and tips for dealing with time, events, or running code over or at specific times.
+# Date, Time, Timers, and Cron Jobs with Javascript
+Tutorials, references, and tips for dealing with time, events, or running code at specific times.
 
+
+
+
+
+
+
+
+## The `Date` Object
+
+The `Date` object ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), [w3schools](https://www.w3schools.com/js/js_dates.asp)) in Javascript represents a single moment in time and provides a series of methods for changing or displaying that moment.
+
+Create a `new Date` instance from the current time and print the hour. Date objects are static. Once stored the time doesn't update with passing time.
+```js
+let today = new Date();
+console.log(today.getHours()); // -> 11
+```
+
+Create a `new Date` instance by passing a specific date and time string to the constructor
+```js
+let berlinWall = new Date("9 November 1989 18:53 UTC+1"); // CET (Berlin) time
+console.log(berlinWall.getHours()); // -> 12 EST (NYC) time
+```
+
+The `Date` default is Coordinated Universal Time (UTC). Months and hours are zero-indexed
+```js
+let d = new Date(Date.UTC(2000, 0, 0, 0, 0, 0));
+console.log(d); // -> "Thu Dec 30 1999 19:00:00 GMT-0500 (Eastern Standard Time)"
+```
+
+
+### Exercises
+
+<details><summary>
+1. Create a Date object and alert the current date and time. (click to reveal answer)</summary>
+
+```js
+let d = new Date();
+alert(d);
+```
+</details>
+
+<details><summary>
+2. Use the correct Date method to extract the year (four digits) out of a date object.
+</summary>
+
+```js
+let d = new Date();
+alert(d.getFullYear());
+```
+</details>
+
+<details><summary>
+3. Use the correct Date method to get the month (0-11) out of a date object.
+</summary>
+
+```js
+let d = new Date();
+alert(d.getMonth());
+```
+</details>
+
+
+
+## Tools for Formatting date and time
+
+[luxon](https://moment.github.io/luxon/) (which [replaced moment](https://momentjs.com/docs/#/-project-status/)) is a great library to [make using time more intuitive in Javascript](https://moment.github.io/luxon/docs/manual/moment.html).
+
+To [install](https://moment.github.io/luxon/docs/manual/install.html) add this to HTML
+```html
+<script src="luxon.js"></script>
+```
+
+Then use this to simplify access to the luxon [`DateTime`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html) class
+```js
+var DateTime = luxon.DateTime;
+```
+
+And now you can
+```js
+var dt = DateTime.now();
+alert(dt.toString()); // -> "2021-03-31T12:41:34.091-05:00" ISO-formatted date string with timezone
+alert(dt.year; // -> 2021
+alert(dt.month; // -> 3
+```
+
+```js
+
+DateTime.utc(2000, 0, 0, 0, 0, 0);
+let d = new Date(Date.UTC(2000, 0, 0, 0, 0, 0));
+console.log(d); // -> "Thu Dec 30 1999 19:00:00 GMT-0500 (Eastern Standard Time)"
+```
 
 
 
@@ -50,11 +142,6 @@ let timer = setInterval(() => {
 
 
 
-
-
-## Formatting date and time
-
-moment() is dead
 
 
 

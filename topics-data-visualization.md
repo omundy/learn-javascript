@@ -1,3 +1,4 @@
+← [Learn Javascript](README.md)
 
 #  Data Visualization
 Data visualization with Javascript
@@ -19,7 +20,18 @@ Data visualization with Javascript
 ## Inspiration
 
 
-https://flowingdata.com/
+- Collections
+	- https://flowingdata.com/
+- [Stefanie Posavec](http://www.stefanieposavec.com/)
+- [Giorgia Lupi](http://giorgialupi.com/)
+- Mike Bostock
+	- [Revenue by Music Format, 1973–2018](https://observablehq.com/@mbostock/revenue-by-music-format-1973-2018) (2020)
+	- [The Wealth & Health of Nations](https://observablehq.com/@mbostock/the-wealth-health-of-nations) (2019) per-capita income, life expectancy and population of 180 nations over the last 209 years
+	- [Tadpoles](https://observablehq.com/@mbostock/tadpoles) (2018) flocking example
+	- [Phases of the Moon](https://observablehq.com/@mbostock/phases-of-the-moon)(2018)
+- Books
+	- Giorgia Lupi and Stefanie Posavec [Dear Data](http://www.dear-data.com/theproject) (2016)
+
 
 
 

@@ -1,29 +1,38 @@
+← [Learn Javascript](README.md)
 
 # Javascript – Working with Data
 
 "<em>Above all else, show the data.</em>"– Edward R. Tufte
 
 
-
-<!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Data Collection Types](#data-collection-types)
 	- [Arrays](#arrays)
 	- [Objects](#objects)
-- [Using External Data](#using-external-data)
+- [External Data](#external-data)
 	- [Tabular Data (CSV, TSV, etc.)](#tabular-data-csv-tsv-etc)
-	- [JSON Data](#json-data)
-	- [CORS](#cors)
+	- [Hierarchical (JSON, XML)](#hierarchical-json-xml)
+- [Using External Data](#using-external-data)
+	- [Cross-Origin Resource Sharing](#cross-origin-resource-sharing)
+	- [Serialization and Deserialization](#serialization-and-deserialization)
+- [Loading External Data](#loading-external-data)
+	- [Fetch](#fetch)
+	- [D3 (.json, .csv, ...)](#d3-json-csv-)
+	- [Loading data from Google Sheets](#loading-data-from-google-sheets)
+		- [Method 1 - Download it manually](#method-1-download-it-manually)
+		- [Method 2 – Make it publicly accessible](#method-2-make-it-publicly-accessible)
+		- [Method 3 - Use the Google Sheets API](#method-3-use-the-google-sheets-api)
 	- [How to get data from an API](#how-to-get-data-from-an-api)
-	- [Export Google Sheets data for your project](#export-google-sheets-data-for-your-project)
-- [Tips for Storing Data](#tips-for-storing-data)
-	- [Static Data](#static-data)
-	- [Flat files](#flat-files)
-	- [Storage](#storage)
+		- [Example APIs](#example-apis)
+- [Data Storage](#data-storage)
+	- [Static vs. Dynamic](#static-vs-dynamic)
+	- [Flat files vs. Databases](#flat-files-vs-databases)
+	- [Browser-based storage](#browser-based-storage)
 - [Data Cleaning](#data-cleaning)
 	- [How to clean data using find / replace with regex](#how-to-clean-data-using-find-replace-with-regex)
 - [Data Conversion](#data-conversion)
-	- [Export spreadsheet data, convert CSV to JSON](#export-spreadsheet-data-convert-csv-to-json)
+	- [Convert CSV to JSON](#convert-csv-to-json)
 - [FAQ & Tips](#faq-tips)
 - [Other Tutorials](#other-tutorials)
 
@@ -31,18 +40,9 @@
 
 
 
-
-
 ## Data Collection Types
 
-In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) ...
-
-```js
-let bool = true;
-let num = 3.14;
-let str = "hello world";
-```
-Javascript has built-in structural types to store complex entities, hierarchical collections, and lists.
+In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (`boolean`, `number`, `string`), Javascript has built-in structural types to store complex entities, hierarchical collections, and lists.
 
 
 ### Arrays
@@ -77,15 +77,15 @@ console.log(dates[1].toUTCString()); // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berl
 
 ### Objects
 
-A Javascript [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) stores `key:value` relationships where `key` is a string, and `value` can be a primitive, array, or object. The values are then references by their keys using either square brackets or dot notation.
+A Javascript [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) stores `key:value` relationships where `key` is a string, and `value` can be a primitive, array, or object. The values are then referenced with their keys using either square brackets or dot notation.
 ```js
 const color = {
 	name: "red",
 	hex: "#ff0000",
 	rgb: [255,0,0]
 }
-console.log(color.name); // -> "red"
-console.log(color['name']); // -> "red"
+console.log(color.name); // -> "red" via dot notation
+console.log(color['name']); // -> "red" via square brackets
 ```
 
 You can also store functions ([called methods when stored inside an object](https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27)).
@@ -108,9 +108,12 @@ console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
 
 
 
-## Using External Data
+## External Data
 
-Datasets can be stored within a Javascript file, as in the previous examples, or imported into your program from an external file, database, or API server. When you import data from an external source, typically tabular (CSV, TSV) or JSON data, it arrives as a string (serialized) and must then be deserialized (converted to readable Javascript arrays or objects) before you can use it in your program.
+Datasets can be stored within scripts, as in the previous examples, or imported from an external file, database, or API server. Data files are usually tabular (e.g. CSV, TSV) or hierarchical (e.g. JSON or XML).
+
+
+
 
 
 ### Tabular Data (CSV, TSV, etc.)
@@ -136,19 +139,43 @@ C, F, description
 100, 212, boiling point of water
 ```
 
-and finally, as deserialized Javascript code. A two-dimensional array is the closest equivalent data structure in Javascript for tabular data, depending on your application you may want to [convert it to JSON](https://www.npmjs.com/package/csvtojson) so the columns can be referenced by their keys.
+and finally, as deserialized Javascript code. A two-dimensional array is the closest equivalent data structure in Javascript for tabular data.
 ```js
 const tempsArr = [
-	[-273.15, -459.67, 'absolute zero temperature'],
-	[0, 32.0, 'freezing/melting point of water'],
-	[21, 69.8, 'room temperature'],
+	['C', 'F', 'description']
+	['-273.15', '-459.67', 'absolute zero temperature'],
+	['0', '32.0', 'freezing/melting point of water'],
+	['21', '69.8', 'room temperature'],
 	...
 ];
 ```
 
+Depending on your application you may want to [convert your data](#data-conversion) to make it easier to use. Below, each row has been converted to a JSON object where the column values can be referenced by their keys, and those which are numbers have been retyped from a `string` to `number` type.
+```js
+const tempsObjectsArr = [
+	{
+		C: -273.15,
+		F: -459.67,
+		description: 'absolute zero temperature'
+	},{
+		C: 0,
+		F: 32.0,
+		description: 'freezing/melting point of water'
+	},{
+		C: 21,
+		F: 69.8,
+		description: 'room temperature'
+	}
+	...
+];
+console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} F`);
+// -> 'room temperature is about 69.8 F'
+```
 
 
-### JSON Data
+
+
+### Hierarchical (JSON, XML)
 
 [Javascript Object Notation (JSON)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) is a hierarchical data format for storing serialized Javascript objects. While similar to a Javascript object, JSON is different in that
 - JSON is serialized (a string)
@@ -163,44 +190,18 @@ const tempsArr = [
 }
 ```
 
-#### Serialization and Deserialization
+[Extensible Markup Language (XML)](https://www.w3schools.com/xml/xml_examples.asp) is another common hierarchical format for storing and transporting data. The following example is an XML representation of the above JSON object. You will note it shows how XML is similar in capability and structure, yet due to the higher file size (96 vs. 61 characters) and popularity of Javascript which works well with JSON, XML has become a less popular option.
 
-Data imported from an external source (e.g. [this random cat facts API](https://alexwohlbruck.github.io/cat-facts/docs/) saved at [`demos/data-samples/cat-facts.json`](demos/data-samples/cat-facts.json)) is technically a `string` when Javascript imports it. That is to say, all readable objects have been [serialized](https://en.wikipedia.org/wiki/Serialization) into string data so that it can be stored, or sent across a network.
-
-```string
-[{"type": "cat","text": "In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."},{"type": "cat","text": "Cats mark you as their territory when they rub their faces and bodies against you, as they have scent glands in those areas."},{"type": "cat","text": "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."}]
-```
-
-Thus to use external data you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can use. For example, if using `fetch()` you can deserialize the body with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json) ...
-```js
-fetch('../data-samples/cat-facts.json') // request an external resource
-    .then(response => {
-        console.log(response.status); // -> 200
-	    console.log(response.statusText); // -> "OK"
-	    console.log(response); // log the response object
-        return response.json(); // parse response body (convert to JSON)
-    })
-    .then(data => {
-        console.log(data); // log the object
-    });
-```
-![fetch](reference-sheets/images/demo-fetch.png)
-
-
-#### Converting JSON to string or vice versa
-
-Convert a string to JSON with [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse), and back to a string with [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
-```js
-// string > json
-const str = '{"name":"Sue","favColor":"purple"}';
-console.log(JSON.parse(str));
-
-// json > string
-const obj = {
-	name: "Joe",
-	favColor: "pink"
-};
-console.log(JSON.stringify(str));
+```xml
+<color>
+	<name>red</name>
+	<hex>#ff0000</hex>
+	<rgb>
+		<r>255</r>
+		<g>0</g>
+		<b>0</b>
+	</rgb>
+</color>
 ```
 
 
@@ -209,16 +210,17 @@ console.log(JSON.stringify(str));
 
 
 
+## Using External Data
+
+There are two important concepts around *access* and *use* when loading external data, regardless whether it is located in your own project or it from across a network.
 
 
 
+### Cross-Origin Resource Sharing
 
+[Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) controls how Javascript *in the browser* can access external resources. This means you may only import files from *the same* [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) as the file you are importing it into.
 
-### CORS
-
-[Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) controls how Javascript *in the browser* can access external resources. This means you may only import files from *the same* [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin)...
-
-- A script at `https://foo.com` ***can*** [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) a file of the same origin `https://foo.com/data.json`
+- A script at `https://foo.com` ***can*** access a file of the same origin `https://foo.com/data.json`
 
 But ([unless the other server enables it](https://expressjs.com/en/resources/middleware/cors.html)), you cannot access data across origins:
 
@@ -232,43 +234,182 @@ CORS also says that to use the fetch() API, 'URL schemes must be "http" or "http
 
 
 
+### Serialization and Deserialization
+
+Data imported from an external source is technically a `string` when Javascript loads it. That is to say, all readable objects have been [serialized](https://en.wikipedia.org/wiki/Serialization) into string data so that it can be stored or sent across a network as a single entity. For example, [`data`](demos/data-samples/cat-facts.json) returned from this [random cat facts API](https://cat-fact.herokuapp.com/facts/random) ([docs](https://alexwohlbruck.github.io/cat-facts/docs/)) is just one large string:
+
+```string
+const str = '[{"type":"cat","text":"In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."},{"type":"cat","text":"Cats mark you as their territory when they rub their faces and bodies against you, as they have scent glands in those areas."},{"type":"cat","text":"When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."}]';
+```
+
+Thus to use external data in your code you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can read and use. For example, [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can be used to convert a string of serialized JSON data into a Javascript Object.
+
+```js
+let obj = JSON.parse(str);
+console.log(obj[2].text);
+// -> "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
+```
+
+After the above, the JSON string has now been deserialized, and is an object that Javascript can use.
+```json
+[{
+	"type": "cat",
+	"text": "In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."
+}, {
+	"type": "cat",
+	"text": "Cats mark you as their territory when they rub their faces and bodies against you, as they have scent glands in those areas."
+}, {
+	"type": "cat",
+	"text": "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
+}]
+```
+
+You can also convert a Javascript Object back to a string with [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+```js
+console.log(JSON.stringify(str)); // -> "[{"type":"cat","text":"In the original Italian version ... ]"
+```
+
+
+
+
+
+
+
+## Loading External Data
+
+
+### Fetch
+
+[`Fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) is the most common method to load (or send) external data in Javascript. You start with an HTTP request, passing in the URI for your resource. Fetch is asynchronous, and will first return a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object, which will then be resolved upon the eventual completion (or failure) of the asynchronous operation.
+
+```js
+fetch('https://cat-fact.herokuapp.com/facts/random').then(response => console.log(response));
+// -> Promise {<pending>}
+// -> Response {type: "cors", url: "https://cat-fact.herokuapp.com/facts/random", redirected: false, status: 200, ok: true, ...}
+```
+
+In order to use the data that fetch returns we must deserialize the `response.body` with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json)
+```js
+fetch('https://cat-fact.herokuapp.com/facts/random') // request external resource
+    .then(response => {
+		console.log(response); // the response object
+	    console.log(response.status, response.statusText); // -> 200, "OK"
+        return response.json(); // parse response.body (convert to JSON), pass to next .then()
+    })
+    .then(data => { // data = the deserialized data of the external file
+        console.log(data); // log the object
+    });
+```
+![fetch](reference-sheets/images/demo-fetch.png)
+
+
+
+
+### D3 (.json, .csv, ...)
+
+D3's `d3-fetch` module provides [several methods](https://github.com/d3/d3-fetch/tree/v2.0.0) to load and deserialize external data via HTTP request. For more information see the [documentation](https://github.com/d3/d3/blob/master/API.md) or this [Data Loading in D3](https://www.tutorialsteacher.com/d3js/loading-data-from-file-in-d3js) tutorial.
+
+Install D3 in your HTML
+```html
+<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+```
+
+[`d3.json()`](https://github.com/d3/d3-fetch/tree/v2.0.0) return a Javascript object from JSON
+```js
+// as of v5 D3 uses a promise-based syntax  
+d3.csv("/path/to/file.csv").then(function(data) {
+	console.log(data); // use data here
+});
+```
+
+[`d3.csv()`](https://github.com/d3/d3-fetch/tree/v2.0.0) return a Javascript object from CSV
+```js
+d3.csv("/path/to/file.csv").then(function(data) {
+	console.log(data); // use data here
+});
+```
+
+
+
+Several other CSV parsers exist, including:
+
+- [jquery-csv](https://github.com/typeiii/jquery-csv) - a jQuery CSV parser (returns a 2D array from CSV string)
+- [CSV](https://github.com/vanillaes/csv) - a universal JavaScript CSV parser (returns a 2D array from CSV string)
+
+
+
+
+
+
+
+### Loading data from Google Sheets
+
+
+
+#### Method 1 - Download it manually
+
+While the easiest to start, it will quickly become tedious if you plan to update your spreadsheet often.
+
+1. In Google Sheets, choose File > Download > Comma-separated values
+1. Move the CSV file into your project and import it directly using one of the above methods, or [convert it permanently to JSON](#data-conversion).
+
+
+#### Method 2 – Make it publicly accessible
+
+Fairly simple to implement, this method allows you to reimport your data instantly with a single command line script. See [`sample-node-tools/node-projects/export-google-sheets`](https://github.com/omundy/sample-node-tools/tree/main/node-projects/export-google-sheets) for a working example.
+
+1. Install code
+1. Make your Google Sheet publicly accessible and publish it to the web
+1. Define the spreadsheet URL (see this [guide](https://sites.google.com/view/metricrat-ai2/guides/use-gviz-to-get-and-query-google-sheet-data)) or optionally, the [query documentation](https://developers.google.com/chart/interactive/docs/querylanguage))
+1. Fetch and return JSON data
+
+
+
+#### Method 3 - Use the Google Sheets API
+
+This is the most involved method. See their [tutorial](https://developers.google.com/sheets/api/quickstart/nodejs) and [documentation](https://developers.google.com/sheets/api).
+
+1. [Enable the Google Sheets API](https://developers.google.com/sheets/api/quickstart/nodejs)
+	1. Give it an obvious name
+	1. Choose Desktop as the client
+	1. Download the client configuration and save the file `credentials.json` to your working directory.
+1. [Install the client library](https://developers.google.com/sheets/api/quickstart/nodejs#step_1_install_the_client_library)
+1. [Set up the sample](https://developers.google.com/sheets/api/quickstart/nodejs#step_2_set_up_the_sample) and name it `quickstart.js`
+1. [Run the sample](https://developers.google.com/sheets/api/quickstart/nodejs#step_3_run_the_sample)
+
+
+
+
+
 
 
 
 ### How to get data from an API
+
+Basic tips for working with APIs...
 
 1. Read the documentation
 	- Many APIs require that you register and make requests using a key or token.
 		- For example, when [requesting data](https://pro.dp.la/developers/requests#url) from the [DPLA](https://dp.la/) you must include your `api_key` in the request `https://api.dp.la/v2/items?q=kittens&api_key=<here>`
 	- Many APIs use rate limiting to prevent abuse. They identify your requests using your key.
 1. Start with a tool that makes it easy to see what is returned:
-	- Use the browser + [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US)
-	- Use [Postman](https://www.postman.com/) to test an API
-1. Start coding once you are sure your requests are working
-	- Save sample responses locally so you can develop your application with test data without bumping into a rate limit.
+	- Use the browser + [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US) to see the structure of the returned data
+	- Use [Postman](https://www.postman.com/) for even more advanced API testing
+1. Make sure your requests work in the browser or Postman before you start coding
+ 	- Save sample responses (test data) locally so you can develop your application without bumping into a rate limit.
 1. Things to remember
 	- APIs introduce latency so use asynchronous programming (`async`/`await`, promises, etc.)
 	- If your code isn't working check that the API is returning results using a browser or Postman.
-	- APIs are always changing based on needs and resources. In the early days of Facebook and Instagram anyone (artists, researchers, [anti-press authoritarian governments](https://www.scu.edu/ethics-spotlight/social-media-and-democracy/weaponization-of-social-media-by-authoritarian-states/)) could collect their entire databases via their APIs. Thanks to various [cultural](https://iknowwhereyourcatlives.com/) works [this](https://givememydata.com/) is no longer the case.
+	- APIs are always changing based on needs and resources. In the early days of Facebook and Instagram anyone (artists, researchers, [anti-press authoritarian governments](https://www.scu.edu/ethics-spotlight/social-media-and-democracy/weaponization-of-social-media-by-authoritarian-states/)) could collect entire databases via their APIs. Thanks to various [cultural](https://iknowwhereyourcatlives.com/) works [this](https://givememydata.com/) is no longer the case.
 
 
-Some example APIS
+#### Example APIs
 
-
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
 - [Public APIs](https://github.com/public-apis/public-apis) - A collective list of free APIs for use in software and web development
 - [Data / Functionality API Resource List](https://docs.google.com/spreadsheets/d/196CgwxBIkX5v6VeitOFWTYfd07OU_5A-HC4Gu7gy6xE/edit#gid=0) - My own list
 - [Digital Public Library of America API](https://pro.dp.la/developers/api-codex)
-- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
-
-
-
-### Export Google Sheets data for your project
-
-Follow below, or their [tutorial](https://developers.google.com/sheets/api/quickstart/nodejs). Also see [documentation](https://developers.google.com/sheets/api)
-
-1. [Enable](https://developers.google.com/sheets/api/quickstart/nodejs#step_1_turn_on_the) the Google Sheets API
-1. [Install](https://developers.google.com/sheets/api/quickstart/nodejs#step_2_install_the_client_library) the client library
-1. [Setup and run the sample](https://developers.google.com/sheets/api/quickstart/nodejs#step_3_set_up_the_sample)
 
 
 
@@ -287,10 +428,7 @@ Follow below, or their [tutorial](https://developers.google.com/sheets/api/quick
 
 
 
-
-
-
-## Tips for Storing Data
+## Data Storage
 
 When you use data in a project you should address which of the following applies to your application:
 
@@ -304,44 +442,30 @@ When you use data in a project you should address which of the following applies
 
 Some example situations:
 
-- I already have a spreadsheet, but it has many columns I do not need `static`, `clean`
-- I want users to be able to add, edit, and search content (see )
-
- (perhaps some collections are large but static, but others user-submitted but)
-
-
-
-### Static Data
-
-Static data is content that you download into your own project and doesn't change.
-
-- You can clean, modify, or improve it
+- I already have a spreadsheet, but it has many columns I do not need; It is `static` not `clean`
+- I want users to be able to add, edit, and search content; It is `dynamic`, I need to `insert`, `update`, and `query`
+- I want to use live data via a remote API; It is `dynamic` accessed via a `request`
 
 
 
-### Flat files
 
-A "flat file" is any single or collection of plain text files that store data (e.g. CSV, TSV, JSON, etc.)
+### Static vs. Dynamic
 
-1. Pros
-	1. Easy to store, and can be
-	1. You can write
-1. Cons
-	1. "Queries" (searching or sorting these files) can require a lot of time
-	1.
+- Static data is content that you download into your own project and doesn't change. You can clean, modify, or improve it to make it easier to use in your project.
+- Dynamic data is always changing. It could be due to users editing content, or sensor readings from a weather station. To use dynamic data you'll need to evaluate how often you need to update your own content, whether you'll save data, based on the needs of your project.
 
+### Flat files vs. Databases
 
-### Storage
+- A "flat file" is any single or collection of plain text files that stores data (e.g. CSV, TSV, JSON, etc.) They are easy to write, transform, or transmit, but since they must be read from memory they are slow and difficult to `query`.
+- A database requires some additional work to set up the software and write the code that uses it. The benefit is that it is easy to `insert`, `update`, and `query` your data.
 
 
-#### Browser-based storage
+### Browser-based storage
 
-- localStorage
-- cookies
+- localStorage - For Storing data locally in your users' browser. Can be used by extensions or websites.
+- cookies - Another form of storage, typically used to identify users who are logged-in to an application.
 
-#### Databases
 
-A database
 
 
 
@@ -387,7 +511,7 @@ We could make these stock symbols into a Javascript array using
 
 ## Data Conversion
 
-### Export spreadsheet data, convert CSV to JSON
+### Convert CSV to JSON
 
 1. Download a CSV from your spreadsheet
 1. Use Node and [csvtojson](https://www.npmjs.com/package/csvtojson) to convert the file

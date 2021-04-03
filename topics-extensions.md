@@ -1,6 +1,7 @@
+← [Learn Javascript](README.md)
 
 # Browser Extensions
-Tutorials, references, and tips for cross-browser extension development 
+Tutorials, references, and tips for cross-browser extension development
 
 
 
