@@ -230,6 +230,15 @@ CORS also says that to use the fetch() API, 'URL schemes must be "http" or "http
 
 - Even though they have the same `file://` protocol, a script at `file:///Users/username/coolwebsite/index.html` ***cannot*** fetch() `file:///Users/username/coolwebsite/data.json`
 
+#### Fixing CORS frontend issues
+
+If you see this error it likely means you are trying to access an API on a server that hasn't enabled CORS. To get around this, [create a proxy server and run it on a live server (e.g. Heroku)](https://github.com/omundy/sample-node-proxy-server).
+
+```js
+Access to fetch at '<remote-url>' from origin '<your-website-url>' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```
+
+
 
 
 
@@ -346,6 +355,8 @@ Several other CSV parsers exist, including:
 ### Loading data from Google Sheets
 
 
+I cover this in a video [How to export JSON data from google sheets](https://youtu.be/z1lFmwKgzNY) (34:00)
+
 
 #### Method 1 - Download it manually
 
@@ -361,7 +372,7 @@ Fairly simple to implement, this method allows you to reimport your data instant
 
 1. Install code
 1. Make your Google Sheet publicly accessible and publish it to the web
-1. Define the spreadsheet URL (see this [guide](https://sites.google.com/view/metricrat-ai2/guides/use-gviz-to-get-and-query-google-sheet-data)) or optionally, the [query documentation](https://developers.google.com/chart/interactive/docs/querylanguage))
+1. Define the spreadsheet URL (see this [guide](https://sites.google.com/view/metricrat-ai2/guides/use-gviz-to-get-and-query-google-sheet-data)) or optionally, the [query documentation](https://developers.google.com/chart/interactive/docs/querylanguage). Also see this [post](https://stackoverflow.com/questions/33713084/download-link-for-google-spreadsheets-csv-export-with-multiple-sheets/33727897#33727897))
 1. Fetch and return JSON data
 
 
