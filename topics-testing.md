@@ -18,13 +18,17 @@ Software testing automates checking whether code is defect free and that its out
 Javascript website and application testing falls generally into the following categories:
 
 
-A **Unit Test** will test individual units like functions or classes. It supplies input and confirms output is as expected.
+### Unit tests
+
+A Unit Test tests individual units of software like functions or classes. It supplies input and confirms output is as expected. Below, we test a function called `sum()` which returns the sum of two numbers.
 
 ```js
 expect(sum(3,7)).to.be(10) // -> true
 ```
 
-**Integration Tests** check processes *across* several units, including their side effects.
+### Integration Tests
+
+These tests check processes *across* several units, including their side effects. This example checks multiple parts of an app.
 
 ```js
 // get button, initiate click
@@ -37,7 +41,9 @@ app.checkIfColorChanged().then(colorChanged => assert(colorChanged))
 ```
 
 
-**End-to-end Tests** (a.k.a. e2e or functional tests) test scenarios on the product itself, by controlling the browser or the website. These test the app as if it were a black box, with no access to internal code.
+### End-to-end Tests
+
+Also called **e2e** or **functional** tests, these test the end product by controlling the browser or the website. These test the app as if it were a black box, with no access to internal code, automating things a user might do. Below, pseudocode showing how a login form might be tested.
 
 ```js
 Go to page "https://localhost:3000"
@@ -77,19 +83,6 @@ Term | Description
 
 
 
-## Tutorials
-
-
-### Getting Started
-
-
-### Samples
-
-
-## Documentation
-
-
-## FAQ & Tips
 
 
 ## References
