@@ -51,6 +51,13 @@ Data visualization with Javascript
 
 
 
+### D3 Essential Knowlege
+
+- Know what version you are using! Code examples you find online might be the wrong version and won't work. Because D3 is somewhat of a specialized project, there are changes each new version.
+- D3 documentation is a pain: Github > D3 organization 
+
+
+
 
 
 

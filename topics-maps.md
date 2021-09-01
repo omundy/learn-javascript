@@ -1,11 +1,10 @@
+← [Learn Javascript](README.md)
 
-#  Maps
-Developing interactive maps with Javascript
-
-#### Contents
+# Developing interactive maps with Javascript
+Tutorials, references, and tips
 
 
-<!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 		- [Contents](#contents)
 - [Tutorials](#tutorials)
@@ -15,8 +14,24 @@ Developing interactive maps with Javascript
 <!-- /TOC -->
 
 
+
+
+
+## Getting Started
+
+
+I highly recommend using [geojson](https://geojson.org/) as your data format. Leaflet has [methods for using geojson](https://leafletjs.com/examples/geojson/) and there are great tools like the [geojson.io](https://geojson.io/) editor to visualize and create your data. 
+
+
+
+
+
+
 ## Tutorials
 
+
+Library | Cost | Description
+--- | --- | ---
 
 - https://leafletjs.com/
 - https://openlayers.org/
@@ -34,8 +49,6 @@ Developing interactive maps with Javascript
 
 
 
-
-
-
+## Documentation
 
 ## FAQ & Tips

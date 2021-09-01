@@ -89,7 +89,6 @@ alert(dt.month; // -> 3
 ```
 
 ```js
-
 DateTime.utc(2000, 0, 0, 0, 0, 0);
 let d = new Date(Date.UTC(2000, 0, 0, 0, 0, 0));
 console.log(d); // -> "Thu Dec 30 1999 19:00:00 GMT-0500 (Eastern Standard Time)"
@@ -140,8 +139,17 @@ let timer = setInterval(() => {
 ```
 
 
-
-
+You can also use recursion to call `setTimeout`, like in this example that [repeatedly adds new content to a web page](https://codepen.io/owenmundy/pen/eYgajNq?editors=1111), in order to control the interval duration.
+```js
+let count = 0;
+function showNextResult(duration) {
+  setTimeout(function () {
+	  console.log(`This function has called itself ${++count} times! It will run again in ${100 * count} millis`);
+	  showNextResult(100 * count);    
+  }, duration);
+}
+showNextResult(); // start
+```
 
 
 

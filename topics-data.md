@@ -489,34 +489,9 @@ Some example situations:
 ## Data Cleaning
 
 
-### How to clean data using find / replace with regex
+Moved to https://github.com/omundy/learn-computing/blob/main/topics-data-cleaning.md
 
-Let's say we want to copy and paste [these advertising categories](https://developers.google.com/adwords/api/docs/appendix/verticals) into a spreadsheet where all the tiers are represented in their own columns.
 
-1. Select all, copy, and paste them into a new document in Atom.
-1. Press CMD+F (CTL+F) to search for all the `/` (forward slashes) in the text.
-1. Copy and paste a tab character into the replace field. [Whitespace characters](https://en.wikipedia.org/wiki/Whitespace_character) (tabs, spaces, line breaks) are invisible, but you can still use them in search or replace.
-1. Now press Find All, then Replace All to
-1. Select all, copy, and paste back into the spreadsheet, which will recognize that we are pasting tab-separated content and add each field to its own column.
-
-We could do the same with [these stock symbols](ftp://ftp.nasdaqtrader.com/symboldirectory/nasdaqtraded.txt), which will require a slightly more involved find/replace action.
-
-1. Select all, copy, and paste them into a new document in Atom.
-1. Searching for all the pipes `|` shows some of what we do and don't want.
-1. Enabled Regular Expressions and Case Sensitive in Atom
-1. Search for each of the following
- 	1. `[A-Z]` - Any capitalized letters
-	1. `[A-Z]{1,5}` - Any capitalized letters, one to five characters long
- 	1. `^[A-Z]{1,5}` - Any capitalized letters, one to five characters long, at the start of a string
- 	1. `(^[A-Z]{1,5})` - Wrap this match in a capture group
-	1. `(^[A-Z]{1,5})+(.*)` - Add a second group that matches any number of any character
-1. Add to the replace `$1` to copy the result of the first capture group
-1. And Find All / Replace All
-
-We could make these stock symbols into a Javascript array using
-
-1. Find `(^[A-Z]{1,5})` and Replace: `'$1',`
-1. Adding `const arr = [` to the beginning and `];` to the end
 
 
 

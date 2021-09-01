@@ -154,6 +154,11 @@ The above steps come from the [Browser Blowup: Explode Web Pages Containing Thir
 1. [Content scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts)
 
 
+### Advanced
+
+- [Setting up Chrome Extensions for use with ES6](https://www.coreycleary.me/setting-up-chrome-extensions-for-use-with-es6) - Webpack, testing, modules
+
+
 ### Sample Browser Extensions
 
 - [omundy/sample-extension-messages](https://github.com/omundy/sample-extension-messages)
@@ -162,7 +167,7 @@ The above steps come from the [Browser Blowup: Explode Web Pages Containing Thir
 - [sneakaway-studio/explode-the-web](https://github.com/sneakaway-studio/explode-the-web)
 - [sneakaway-studio/stop-slide-scrolling](https://github.com/sneakaway-studio/stop-slide-scrolling)
 - [sneakaway-studio/tally-extension](https://github.com/sneakaway-studio/tally-extension)
-
+- [mdn/webextensions-examples](https://github.com/mdn/webextensions-examples)
 
 
 
