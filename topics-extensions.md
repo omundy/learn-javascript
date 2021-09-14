@@ -84,7 +84,7 @@ Browser extensions are made using HTML, CSS, and Javascript code. They are insta
 
 Browser extensions contain multiple types of scripts, each of which run in a different context and with specific permissions.
 
-![extension architecture](reference-sheets/images/browser-extensions-architecture.png)
+![extension architecture](assets/img/browser-extensions-architecture.png)
 <small>Diagram showing basic structure and contexts of a browser extension</small>
 
 Script | Description

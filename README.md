@@ -1,5 +1,5 @@
 
-![js logo](reference-sheets/images/logo-javascript-150w.png) ![node logo](reference-sheets/images/logo-node-ltgreen-150w.png)
+![js logo](assets/img/logo-javascript-150w.png) ![node logo](assets/img/logo-node-ltgreen-150w.png)
 
 <h1>Javascript & Node</h1>
 
@@ -119,11 +119,14 @@ A review of the command line, Git, HTML, CSS, and Bootstrap
 
 &nbsp;
 
-![js logo](reference-sheets/images/logo-javascript-75w.png)
+![js logo](assets/img/logo-javascript-75w.png)
 
 # Javascript Part.1
 A quick introduction to the language
 
+
+
+Moving this to [1-1/javascript-1-1.md](1-1/javascript-1-1.md)
 
 
 &nbsp;
@@ -395,7 +398,7 @@ $('#submitButton').click(function() {
 
 &nbsp;
 
-![js logo](reference-sheets/images/logo-javascript-75w.png)
+![js logo](assets/img/logo-javascript-75w.png)
 
 # Javascript Part.2
 Advanced Javascript topics
@@ -766,7 +769,7 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 comments
 -->
 
-![node logo](reference-sheets/images/logo-node-ltgreen-75w.png) &nbsp; ![express logo](reference-sheets/images/logo-express-200w.png)
+![node logo](assets/img/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logo-express-200w.png)
 
 # Node Express Part.1
 Introduction to Node and Express
@@ -1046,7 +1049,7 @@ app.use (( req, res, next ) => {
 comments
 -->
 
-![node logo](reference-sheets/images/logo-node-ltgreen-75w.png) &nbsp; ![express logo](reference-sheets/images/logo-express-200w.png)
+![node logo](assets/img/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logo-express-200w.png)
 
 # Node Express Part.2
 Using Node, Express for server-side, desktop, and mobile application development

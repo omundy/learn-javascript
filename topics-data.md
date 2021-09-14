@@ -309,7 +309,7 @@ fetch('https://cat-fact.herokuapp.com/facts/random') // request external resourc
         console.log(data); // log the object
     });
 ```
-![fetch](reference-sheets/images/demo-fetch.png)
+![fetch](assets/img/demo-fetch.png)
 
 
 
