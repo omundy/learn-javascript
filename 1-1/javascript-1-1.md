@@ -1,5 +1,5 @@
 
-![js logo](assets/img/logo-javascript-75w.png)
+![js logo](../assets/img/logo-javascript-75w.png)
 
 # Javascript 1-1
 
@@ -12,15 +12,8 @@ Full lecture [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNr
 ## What is programming?
 
 - Programming is simply the act of “writing instructions for a computer.”
-- Programming languages are used to manage data on computers.
-
-
-# What is Javascript?
-
 - Javascript is the programming language used in web pages.
 - Javascript can run in a browser or a computer (using Node)
-
-
 
 
 ## 👉 Try it out
