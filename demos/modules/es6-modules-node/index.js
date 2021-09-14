@@ -1,4 +1,6 @@
-// to use this module
+
+// note: run this file with "node index.js" to test 
+
 let ColorModule = require('./nodeColorModule');
 ColorModule.rand(); // -> "green"
 ColorModule.rand(); // -> "blue"

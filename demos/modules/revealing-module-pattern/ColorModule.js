@@ -1,4 +1,4 @@
-// add a new binding to the window object
+// add a new "global" binding to the window object 
 window.ColorModule = (function() {
 	// vars and methods are private by default unless we expose them
 	let color = "",
