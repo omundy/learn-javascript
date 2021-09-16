@@ -1,5 +1,5 @@
 
-![js logo](assets/img/logo-javascript-150w.png) ![node logo](assets/img/logo-node-ltgreen-150w.png)
+![js logo](assets/img/logos/logo-javascript-150w.png) ![node logo](assets/img/logos/logo-node-ltgreen-150w.png)
 
 <h1>Javascript & Node</h1>
 
@@ -119,14 +119,20 @@ A review of the command line, Git, HTML, CSS, and Bootstrap
 
 &nbsp;
 
-![js logo](assets/img/logo-javascript-75w.png)
+![js logo](assets/img/logos/logo-javascript-75w.png)
 
-# Javascript Part.1
-A quick introduction to the language
+## Javascript Part.1
+An introduction to the language
 
 
+### Javascript 1-0
+- Introduction to Javascript, expressions, statements, and operators
+- [javascript-1/1-0-introduction.md](javascript-1/1-0-introduction.md)
 
-Moving this to [1-1/javascript-1-1.md](1-1/javascript-1-1.md)
+### Javascript 1-1
+- How to store and compare values and data types
+- [javascript-1/1-0-introduction.md](javascript-1/1-0-introduction.md)
+
 
 
 &nbsp;
@@ -398,7 +404,7 @@ $('#submitButton').click(function() {
 
 &nbsp;
 
-![js logo](assets/img/logo-javascript-75w.png)
+![js logo](assets/img/logos/logo-javascript-75w.png)
 
 # Javascript Part.2
 Advanced Javascript topics
@@ -769,7 +775,7 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 comments
 -->
 
-![node logo](assets/img/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logo-express-200w.png)
+![node logo](assets/img/logos/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logos/logo-express-200w.png)
 
 # Node Express Part.1
 Introduction to Node and Express
@@ -1049,7 +1055,7 @@ app.use (( req, res, next ) => {
 comments
 -->
 
-![node logo](assets/img/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logo-express-200w.png)
+![node logo](assets/img/logos/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logos/logo-express-200w.png)
 
 # Node Express Part.2
 Using Node, Express for server-side, desktop, and mobile application development
