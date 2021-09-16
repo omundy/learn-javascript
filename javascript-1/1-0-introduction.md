@@ -5,9 +5,7 @@
 
 # Javascript 1-0
 
-Introduction to Javascript, expressions, statements, and operators
-
-
+Introduction to expressions, statements, and operators
 
 
 
@@ -21,7 +19,7 @@ Review the following sections and perform the activities on your own or with you
 
 Students who complete this module will be able to:
 
-- Describe three methods to run Javascript in web browser (a web page, code playground, and console).
+- Demonstrate how to run Javascript in a web browser (a web page, code playground, and console).
 - List data types supported by Javascript.
 - Compare Javascript data, expressions, and statements.
 
@@ -272,7 +270,8 @@ console.log(1 < 2);
 
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
 1. Try example expressions in the [Exercise](#exercise) below.
-1. Continue learning about [Javascript variables](1-1-variables.md) in the next lesson.
+1. Start working on homework listed in the schedule 
+1. Continue learning about [Javascript Data & Variables](1-1-variables.md) in the next lesson.
 
 
 
@@ -308,14 +307,12 @@ Math.ceil(1.2)
 /[aeiouAEIOU]/.test("a")
 ```
 
-
 </details>
-
-
-
 
 
 
 ## References
 
 - Madhu M [JavaScript Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74) (2018)
+#### Review
+- W3schools Javascript [intro](https://www.w3schools.com/js/js_intro.asp), [installation](https://www.w3schools.com/js/js_whereto.asp), [output](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [operators](https://www.w3schools.com/js/js_operators.asp)
