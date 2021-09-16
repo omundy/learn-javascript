@@ -1,4 +1,5 @@
-← [Learn Javascript](README.md)
+
+← [Learn Javascript](../README.md)
 
 #  Data Visualization
 Data visualization with Javascript

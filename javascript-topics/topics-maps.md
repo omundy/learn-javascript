@@ -1,4 +1,5 @@
-← [Learn Javascript](README.md)
+
+← [Learn Javascript](../README.md)
 
 # Developing interactive maps with Javascript
 Tutorials, references, and tips

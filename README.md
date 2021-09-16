@@ -114,7 +114,11 @@ A review of the command line, Git, HTML, CSS, and Bootstrap
 
 
 
-
+Introduction - Javascript, expressions, statements, and operators
+Data & Variables - How to store and compare values and data types
+Control Flow - Comparison and logical operators, conditional statements
+Functions & Scope - Reusing code, protecting variables
+Data Structures - How to use arrays, objects, properties, methods, and loops
 
 
 &nbsp;
@@ -125,9 +129,9 @@ A review of the command line, Git, HTML, CSS, and Bootstrap
 An introduction to the language
 
 
-### Javascript 1-0
-- Introduction to Javascript, expressions, statements, and operators
-- [javascript-1/1-0-introduction.md](javascript-1/1-0-introduction.md)
+
+- [javascript-1/1-0-introduction.md](javascript-1/1-0-introduction.md) - Introduction to Javascript, expressions, statements, and operators
+-
 
 ### Javascript 1-1
 - How to store and compare values and data types

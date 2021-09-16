@@ -1,4 +1,5 @@
-← [Learn Javascript](README.md)
+
+← [Learn Javascript](../README.md)
 
 # Javascript – Working with Data
 

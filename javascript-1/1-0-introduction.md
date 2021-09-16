@@ -1,5 +1,5 @@
 
-[<](README.md)
+← [Learn Javascript](../README.md)
 
 ![js logo](../assets/img/logos/logo-javascript-75w.png)
 
@@ -7,17 +7,9 @@
 
 Introduction to Javascript, expressions, statements, and operators
 
-### Contents
 
-1. [Introduction](#introduction)
-1. [What is Programming?](#what-is-programming) `2 min`
-1. [What is Javascript?](#what-is-javascript) `2 min`
-1. [How to use Javascript](#how-to-use-javascript) `5 min`
-1. [Data Types](#data-types) `5 min`
-1. [Expressions](#expressions) `5 min`
-1. [Statements](#statements) `5 min`
-1. [Keep practicing](#keep-practicing)
-1. [References](#references)
+
+
 
 
 ## Introduction
@@ -29,12 +21,27 @@ Review the following sections and perform the activities on your own or with you
 
 Students who complete this module will be able to:
 
-- Describe three ways to run Javascript in web browser (a web page, code playground, and console).
-- List data types supported by Javascript
+- Describe three methods to run Javascript in web browser (a web page, code playground, and console).
+- List data types supported by Javascript.
 - Compare Javascript data, expressions, and statements.
 
 </details>
 
+<details>
+<summary>Contents</summary>
+
+1. [Introduction](#introduction)
+1. [What is Programming?](#what-is-programming) `2 min`
+1. [What is Javascript?](#what-is-javascript) `2 min`
+1. [How to use Javascript](#how-to-use-javascript) `5 min`
+1. [Data Types](#data-types) `5 min`
+1. [Expressions](#expressions) `5 min`
+1. [Statements](#statements) `5 min`
+1. [Next steps](#next-steps)
+1. [Exercise](#exercise)
+1. [References](#references)
+
+</details>
 
 
 
@@ -70,15 +77,15 @@ Javascript is the programming language of the web. With Javascript you can
 
 Javascript can run in multiple locations in your browser, as well as your computer (using Node).
 
-In a **web page**, you can add Javascript inside a `<script>` element.
+You can add Javascript to a **web page** inside a `<script>` element.
 
 ```html
 <script>
-	alert("hello world!");
+alert("hello world!");
 </script>
 ```
 
-or load it from an external `.js` file.
+or load it into your page from an external `.js` file.
 
 ```html
 <!-- index.html -->
@@ -93,12 +100,17 @@ alert("hello world!");
 ⚠️ Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
 
 
-👉 **Try it out** - A great place to test Javascript is right in the Console. Open DevTools and paste this into the console. You will see a simple HTML alert.
+👉 **Try it out** - There are two other great places to test Javascript.
+
+1. **In the Console** - Open DevTools and paste this into the console. You will see a simple HTML alert.
 
 ```js
 alert("hello world!");
 ```
 
+2. **Code playgrounds** like [jsfiddle.net](https://jsfiddle.net) and [codepen.io](https://codepen.io/) make it easy to quickly test and share Javascript in a "web environment" (you can also add HTML and CSS files). Here are some examples from class: [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW), [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY), [Choropleth map with Mapbox](https://jsfiddle.net/ow3n/sw6ek1wb/). Add the code above to one of these playgrounds to test it out.
+
+![code playground](../assets/img/code-playground-jsfiddle.png)
 
 
 
@@ -236,9 +248,7 @@ A statement is any instruction to perform a specific action. I like to think of 
 ![true](../assets/img/javascript-anatomy-statement.png)
 
 
-
-
-These are statements with **side effects**. Instead of returning a value, they evaluate the expression and then produce some other effect. The built-in alert() function opens a popup window to show the value that is returned from the expression.
+These are statements with **side effects**. Instead of returning a value, they evaluate the expression and then produce some other effect. The built-in `alert()` function opens a popup window to show the value that is returned from the expression.
 
 ```js
 alert(1 + 1);
@@ -246,16 +256,6 @@ console.log(1 < 2);
 ```
 
 
-
-
-
-<!-- You can convert the type using Number('3.14') -->
-
-
-
-
-
-The data, conditions, and events of Javascript can be seen at work in [this lamp demo](https://omundy.github.io/learn-javascript/1-1/demos/javascript-lamp/index.html)
 
 
 
@@ -270,16 +270,18 @@ The data, conditions, and events of Javascript can be seen at work in [this lamp
 
 ## Next steps
 
-1. View the DIG 245 Javascript lecture [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39)
-1.
+1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
+1. Try example expressions in the [Exercise](#exercise) below.
+1. Continue learning about [Javascript variables](1-1-variables.md) in the next lesson.
 
-### Keep practicing
+
+
+
+## Exercise
 
 👉 **Try it out** - Example Expressions
 
-1. Expand the section below to view more example expressions.
-1. Run each of these in your browser dev console or a code playground.
-1. See if you can guess the return value before you run each.
+Expand the section below to view more example expressions. See if you can guess the return value of each before you run them in your browser dev console or a code playground.
 
 <details>
 <summary>Example Expressions</summary>
@@ -306,14 +308,8 @@ Math.ceil(1.2)
 /[aeiouAEIOU]/.test("a")
 ```
 
+
 </details>
-
-
-
-
-
-
-Read more about JavaScript [Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
 
 
 
@@ -322,4 +318,4 @@ Read more about JavaScript [Expressions and Statements](https://medium.com/launc
 
 ## References
 
-- [JavaScript Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
+- Madhu M [JavaScript Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74) (2018)

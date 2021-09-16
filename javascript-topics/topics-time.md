@@ -1,4 +1,5 @@
-← [Learn Javascript](README.md)
+
+← [Learn Javascript](../README.md)
 
 # Date, Time, Timers, and Cron Jobs with Javascript
 Tutorials, references, and tips for dealing with time, events, or running code at specific times.
