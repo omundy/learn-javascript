@@ -152,27 +152,34 @@ comment */
 
 
 
-
+<img src="../assets/img/variables-zwift.png" width="170" align="right">
 
 ## Variables
 
-Recall this diagram showing the anatomy of a Javascript statement from the previous [lesson](1-0-introduction.md).
+Variables are used to store values in your program.
+
+I always share the example of a water bottle when talking about variables. Like variables, you can put things in water bottles, and get them back out later when you need to.
+
+Recall this diagram from the previous [lesson](1-0-introduction.md) of the anatomy of a Javascript statement .
 
 ![true](../assets/img/javascript-anatomy-statement.png)
 
+This statement creates new variable named `greeting` and **assigns** (using the assignment operator) the string `"hello"` as the value.
 
-Creates new variable named “greeting”, stores the string “hello” in the value.
-
-
-Variables are used to store values in your program
-And yes, they are variable, because you can change the value.
+> This process is also called "binding", because technically the data is stored in the memor of the computer, not the variable.
 
 
 
-Javascript variables are non-typed so you can store any primitive (number, string, boolean) or complex data type (collections like arrays or objects). That said, Javascript still keeps track of data types.
+
+You don’t have to supply a data type when you create a variable in Javascript. That said, Javascript still keeps track of data types.
+
+primitive (number, string, boolean) or object data type (collections like arrays or objects).
 
 
-
+```js
+let answer = true;
+console.log(typeof answer);
+```
 
 
 ```js
@@ -186,12 +193,23 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 
 
+
+
+
+
+
+
 ### var, let, and const
 
-The Javascript language is based on the ECMAScript standard, which since 2015 (ES6) supports two new variable declaration keywords: `let` and `const`.
-The differences mainly have to do with scope – where these variables are available for use.
-With the original method, var, variables are globally scoped or function/locally scoped. This can create issues if you use the same name.
-A variable declared in a block with let  is only available for use within that block.
+The Javascript language is based on the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), which in 2015 (ES6) added support for two new variable declaration keywords. The differences between the original method `var`, and the additions, `let` and `const`, mainly have to do with scope, which determines where these variables are able to be accessed.
+
+With the original method `var`, variables could be redeclared and globally accessed. [This creates some issues](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/).
+
+- With `let` and `const`, you can't use a variable before it is declared.
+- With `let` and `const`, declarations can only be accessed within the block `{ ... }` they were declared.
+- Variables declared using `const` cannot be updated or re-declared
+
+
 
 
 
@@ -207,7 +225,7 @@ A variable declared in a block with let  is only available for use within that b
 
 ## Syntax
 
-While slightly more forgiving than other languages, Javascript still requires your syntax be correct or your code won’t work as expected. For example, it is a good practice to always include the trailing semicolon. Read on for more tips and suggestions:
+While slightly more forgiving than other languages, Javascript still requires your syntax to be correct or your code won’t work as expected. For example, it is a good practice to always include the trailing semicolon. Read on for more tips and suggestions:
 
 
 #### Use a linter
