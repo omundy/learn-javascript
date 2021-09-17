@@ -1,9 +1,9 @@
 
-← [Learn Javascript](../README.md)
+← [Introduction](1-0-introduction.md) | [Control Flow](1-2-control-flow.md) →
 
-![js logo](../assets/img/logos/logo-javascript-75w.png)
+[![js logo](../assets/img/logos/logo-javascript-75w.png)](../README.md)
 
-# Javascript 1-1
+# 1-1 Variables
 
 How to store and compare values and data types
 
@@ -70,9 +70,7 @@ Students who complete this module will be able to:
 
 You can add Javascript to a **web page** inside a `<script>` element, or load it into your page from an external `.js` file. The browser will run your code when it loads the page, or in response to a user’s actions.
 
-⚠️ Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
-
-Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. [See the code in action](1-1-demos/0-hello.html).
+Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. [See this code in action](1-1-demos/0-hello.html).
 
 ```js
 // 0-hello.js
@@ -86,6 +84,9 @@ console.log("Hello from an external Javascript file!");
 <head>
 <meta charset="UTF-8">
 <title>Learning Javascript</title>
+<style>
+    body { font-family: sans-serif; }
+</style>
 </head>
 <body>
 <h1>Javascript "hello world!"</h1>
@@ -99,6 +100,16 @@ alert("hello from the script tag!");
 </body>
 </html>
 ```
+
+
+
+#### ⚠️ Order matters
+
+Load external files into an HTML page in the following order:
+
+1. **CSS** - Ensure HTML elements and content can access the styles *before* they display, unstyled.
+1. **HTML** - All visible content comes next.
+1. **Javascript** - Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
 
 
 
@@ -181,6 +192,14 @@ The Javascript language is based on the ECMAScript standard, which since 2015 (E
 The differences mainly have to do with scope – where these variables are available for use.
 With the original method, var, variables are globally scoped or function/locally scoped. This can create issues if you use the same name.
 A variable declared in a block with let  is only available for use within that block.
+
+
+
+
+
+
+
+
 
 
 

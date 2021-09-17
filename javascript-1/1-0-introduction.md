@@ -1,9 +1,9 @@
 
-← [Learn Javascript](../README.md) | [Installation & Variables](1-1-variables.md) →
+← [Learn Javascript]((../README.md) | [Variables](1-1-variables.md) →
 
-![js logo](../assets/img/logos/logo-javascript-75w.png)
+[![js logo](../assets/img/logos/logo-javascript-75w.png)](../README.md)
 
-# Javascript 1-0
+# 1-0 Introduction
 
 Introduction to expressions, statements, and operators
 
@@ -230,17 +230,7 @@ A statement is any instruction to perform a specific action. I like to think of 
 
 ![true](../assets/img/javascript-anatomy-statement.png)
 
-
-These are statements with **side effects**. Instead of returning a value, they evaluate the expression and then produce some other effect. The built-in `alert()` function opens a popup window to show the value that is returned from the expression.
-
-```js
-alert(1 + 1);
-console.log(1 < 2);
-```
-
-
-
-
+In the next section we will install Javascript and start using variables.
 
 
 
@@ -256,7 +246,7 @@ console.log(1 < 2);
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
 1. Try example expressions in the [Exercise](#exercise) below.
 1. Start working on homework listed in the schedule.
-1. Continue learning about [Javascript Data & Variables](1-1-variables.md) in the next lesson.
+1. Continue learning about Variables in the [next lesson](1-1-variables.md).
 
 
 
@@ -299,5 +289,4 @@ Math.ceil(1.2)
 ## References
 
 - Madhu M [JavaScript Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74) (2018)
-#### Review
 - W3schools Javascript [intro](https://www.w3schools.com/js/js_intro.asp), [installation](https://www.w3schools.com/js/js_whereto.asp), [output](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [operators](https://www.w3schools.com/js/js_operators.asp)
