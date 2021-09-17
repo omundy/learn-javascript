@@ -1,5 +1,5 @@
 
-← [Learn Javascript](../README.md)
+← [Learn Javascript](../README.md) | [Installation & Variables](1-1-variables.md) →
 
 ![js logo](../assets/img/logos/logo-javascript-75w.png)
 
@@ -19,9 +19,10 @@ Review the following sections and perform the activities on your own or with you
 
 Students who complete this module will be able to:
 
-- Demonstrate how to run Javascript in a web browser (a web page, code playground, and console).
+- Explain what Javascript can do.
+- Run Javascript code in a web browser console and code playground.
 - List data types supported by Javascript.
-- Compare Javascript data, expressions, and statements.
+- Classify and demonstrate Javascript data types, expressions, and statements.
 
 </details>
 
@@ -55,9 +56,9 @@ Programming is simply the act of “writing instructions for a computer to execu
 - **Events** - Things that happen, like user input, that may change the state.
 
 
-[![true](../assets/img/javascript-diagram-lamp.png)](1-0-demos/javascript-lamp/)
+[![true](../assets/img/javascript-diagram-lamp.png)](1-0-demos/javascript-lamp/index.html)
 
-<sup>A [flowchart](1-0-demos/javascript-lamp/) showing the flow or structure of a “turn the lamp on” program. Note the logic (decisions the computer makes) based on state (the status of variables in your program) and events (e.g. user input) directing the computer towards its goal.</sup>
+<sup>Above, the <a href="./1-0-demos/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
 
 
 ## What is Javascript?
@@ -73,44 +74,28 @@ Javascript is the programming language of the web. With Javascript you can
 
 ## How to use Javascript
 
-Javascript can run in multiple locations in your browser, as well as your computer (using Node).
+Javascript can run in any web browser or on your computer (using Node). The [next lesson](1-1-variables.md#add-javascript-to-a-web-page) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
 
-You can add Javascript to a **web page** inside a `<script>` element.
+👉 **Try it out** - Two places to test Javascript.
 
-```html
-<script>
-alert("hello world!");
-</script>
-```
+The **browser console** is an excellent tool for checking messages and warnings, as well as allowing you to test code.
 
-or load it into your page from an external `.js` file.
-
-```html
-<!-- index.html -->
-<script src="assets/js/main.js"></script>
-```
-
-```js
-// main.js
-alert("hello world!");
-```
-
-⚠️ Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
-
-
-👉 **Try it out** - There are two other great places to test Javascript.
-
-1. **In the Console** - Open DevTools and paste this into the console. You will see a simple HTML alert.
+1. Open DevTools and paste the below into the console at the bottom `>`. You will see a simple HTML alert.
 
 ```js
 alert("hello world!");
 ```
+**Code playgrounds** like [jsfiddle.net](https://jsfiddle.net) and [codepen.io](https://codepen.io/) make it easy to quickly test and share Javascript (and HTML and CSS files) in a "web environment".
 
-2. **Code playgrounds** like [jsfiddle.net](https://jsfiddle.net) and [codepen.io](https://codepen.io/) make it easy to quickly test and share Javascript in a "web environment" (you can also add HTML and CSS files). Here are some examples from class: [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW), [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY), [Choropleth map with Mapbox](https://jsfiddle.net/ow3n/sw6ek1wb/). Add the code above to one of these playgrounds to test it out.
+2. Add the code above to one of these playgrounds to test it out.
 
 ![code playground](../assets/img/code-playground-jsfiddle.png)
 
+Some examples from class:
 
+- codepen.io [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW)
+- codepen.io [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY)
+- jsfiddle.net [Choropleth map with Mapbox](https://jsfiddle.net/ow3n/sw6ek1wb/)
 
 
 
@@ -270,7 +255,7 @@ console.log(1 < 2);
 
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
 1. Try example expressions in the [Exercise](#exercise) below.
-1. Start working on homework listed in the schedule 
+1. Start working on homework listed in the schedule.
 1. Continue learning about [Javascript Data & Variables](1-1-variables.md) in the next lesson.
 
 

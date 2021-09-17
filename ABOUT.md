@@ -3,7 +3,7 @@
 
 ![js logo](assets/img/logos/logo-javascript-150w.png) ![node logo](assets/img/logos/logo-node-ltgreen-150w.png)
 
-# About this project
+# About this content
 
 A linear progression through full stack Javascript, with tutorials, exercises, and examples to:
 
@@ -15,14 +15,13 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 
 
-## Requirements
+## Why did I create this?
 
-Anyone is welcome to fork the repo and use this course structure. You can view the [github.io](https://omundy.github.io/learn-javascript/) version and execute examples there. You will need the following books, prior experience with HTML and CSS, and (potentially) accounts with Github, Codecademy, and Codepen:
+"There lots of Javascript books and resources online, why did I make this?"
 
-- Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [github](https://github.com/marijnh/Eloquent-JavaScript)
-- Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019) [github](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
-
-
+- While there are some exceptions (Codecademy, which I use for homework) I have found most books and websites that teach Javascript too verbose. You could say the material in my project contains the highlights, or essentials, to get up and running with Javascript.
+- The Javascript instruction is only part of what I teach. I pair this with other materials focused on computing, culture, and critical design & technology perspectives. Specifically, I teach Part.1 in DIG 245 Critical Web Design and Part.2 in DIG 345 Radical Software.
+- I believe in hands-on, active learning. I often will have students work on this in pairs, where they gain the knowledge and *experience* running the examples, answering the prompts, etc.  
 
 
 
@@ -41,6 +40,16 @@ Each section or class period is structured following the [Hunter Lesson Plan](ht
 	- 20-40 min: Guided practice - Exercises and start homework
 ```
 
+
+
+
+
+## Other materials
+
+Anyone is welcome to fork the repo and use this course structure. You will need the following books, prior experience with HTML and CSS, and (potentially) accounts with Github, Codecademy, and Codepen:
+
+- Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [github](https://github.com/marijnh/Eloquent-JavaScript)
+- Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019) [github](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
 
 
 
@@ -76,7 +85,7 @@ Before you begin, you should have basic knowledge of the following:
 
 ## Credit
 
-Owen Mundy [Learn Computing: Active Learning Modules for Computer Literacy](https://github.com/omundy/learn-computing) 2021.
+Owen Mundy [Learn Javascript](https://github.com/omundy/learn-javascript) 2021.
 
 
 ## License

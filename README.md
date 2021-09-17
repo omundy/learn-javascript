@@ -5,9 +5,6 @@
 
 A linear progression through full stack Javascript, with tutorials, exercises, and examples.
 
-
-
-
 ## About
 
 - [Requirements](ABOUT.md#requirements) - Accounts, materials, etc.
@@ -16,11 +13,8 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 - [Credit](ABOUT.md#credit) & [License](ABOUT.md#license)
 
 
-
-
-
-
 ## Javascript Part.1
+
 An introduction to the language
 
 - [Introduction](javascript-1/1-0-introduction.md) - Introduction to Javascript, expressions, statements, and operators
@@ -33,42 +27,7 @@ An introduction to the language
 
 
 
-&nbsp;
-<!---
-comments
--->
-## Values, Types, Operators
 
-**Overview**: How to store and compare values and data types
-
-- Lecture: [Data & Variables](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44)
-- Exercise: Start homework...
-
-```js
-// bind a string
-let question = "Can we celebrate yet?";
-// store an instance of the date object
-let today = new Date();
-// concatenate the string binding with the return value from an expression
-console.log(question + " " + (today.getFullYear() > 2020))
-```
-
-#### Homework
-
-- Haverbeke:
-	- [Introduction](https://eloquentjavascript.net/00_intro.html) (1-8)
-	- [Ch1 Values, Types, and Operators](https://eloquentjavascript.net/01_values.html) (10-20)
-	- [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
-- Codecademy:
- 	- [1-1 Introduction to Javascript](https://www.codecademy.com/learn/introduction-to-javascript) (1–8)
-	- [1-2 Variables](https://www.codecademy.com/learn/introduction-to-javascript) (1–6)
-
-#### Review
-
-- Codecademy Cheatsheet(s) [Javascript Introduction](reference-sheets/js-01-introduction.pdf)
-- w3schools [variables](https://www.w3schools.com/js/js_variables.asp), [data types](https://www.w3schools.com/js/js_datatypes.asp), [Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-
-**Assessment**: Quiz 1
 
 
 
