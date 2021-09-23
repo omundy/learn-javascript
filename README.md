@@ -17,11 +17,11 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 An introduction to the language
 
-- [Introduction](javascript-1/1-0-introduction.md) - Introduction to Javascript, expressions, statements, and operators
-- [Data & Variables](javascript-1/1-1-variables.md) - How to store and compare values and data types
-- [Control Flow](javascript-1/1-2-control-flow.md) - Comparison and logical operators, conditional statements
-- [Functions & Scope](javascript-1/1-3-functions-scope.md) - Reusing code, protecting variables
-- [Data Structures](javascript-1/1-4-data-structures.md) - How to use arrays, objects, properties, methods, and loops
+- [Introduction](javascript-1/1-0-introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
+- [Data & Variables](javascript-1/1-1-variables/variables.md) - How to store and compare values and data types
+- [Control Flow](javascript-1/1-2-control-flow/control-flow.md) - Comparison and logical operators, conditional statements
+- [Functions & Scope](javascript-1/1-3-functions-scope/functions-scope.md) - Reusing code, protecting variables
+- [Data Structures](javascript-1/1-4-data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
 
 
 

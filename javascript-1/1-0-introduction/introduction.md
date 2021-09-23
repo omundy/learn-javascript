@@ -7,6 +7,7 @@
 
 Introduction to expressions, statements, and operators
 
+
 ### Contents
 
 1. [Introduction](#introduction)
@@ -18,7 +19,6 @@ Introduction to expressions, statements, and operators
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
-
 
 
 ## Introduction
@@ -37,7 +37,12 @@ Students who complete this module will be able to:
 
 </details>
 
+<details>
+<summary>Homework</summary>
 
+- [Codecademy: JS 1-1 Introduction to Javascript](https://www.codecademy.com/learn/introduction-to-javascript) (1–8)
+
+</details>
 
 
 

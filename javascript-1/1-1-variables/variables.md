@@ -1,5 +1,5 @@
 
-← [Introduction](1-0-introduction.md) | [Control Flow](1-2-control-flow.md) →
+← [Introduction](../1-0-introduction/introduction.md) | [Control Flow](../1-2-control-flow/control-flow.md) →
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
@@ -13,7 +13,7 @@ How to store and compare values and data types
 1. [Introduction](#introduction)
 1. [Add Javascript to a web page](#add-javascript-to-a-web-page) `3 min`
 1. [Keep the Console open](##keep-the-console-open) `3 min`
-1. [Variables](#variables) `5 min`
+1. [Variables](#variables) `10 min`
 1. [Syntax](#syntax) `5 min`
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
@@ -39,10 +39,8 @@ Students who complete this module will be able to:
 <details>
 <summary>Homework</summary>
 
-- [Codecademy: JS 1-1 Introduction to Javascript](https://www.codecademy.com/learn/introduction-to-javascript) (1–8)
 - [Codecademy: JS 1-2 Variables](https://www.codecademy.com/learn/introduction-to-javascript) (1–6)
-
-**Assessment**: Quiz 1
+- Quiz 6 - JS Intro & Variables
 
 </details>
 
