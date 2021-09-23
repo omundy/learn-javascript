@@ -232,7 +232,7 @@ $('#submitButton').click(function() {
 
 &nbsp;
 
-![js logo](assets/img/logos/logo-javascript-75w.png)
+<a href="README.md"><img width="150" src="assets/img/logos/logo-javascript-150w.png"></a>
 
 # Javascript Part.2
 Advanced Javascript topics

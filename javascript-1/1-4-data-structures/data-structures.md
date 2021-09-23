@@ -1,7 +1,7 @@
 
 ← [Functions & Scope](1-3-functions-scope.md) | [jQuery](1-3-functions-scope.md) →
 
-[![js logo](../assets/img/logos/logo-javascript-75w.png)](../README.md)
+<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # 1-4 Data Structures
 

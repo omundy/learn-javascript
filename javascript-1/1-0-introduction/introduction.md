@@ -1,12 +1,23 @@
 
-← [Learn Javascript]((../README.md) | [Variables](1-1-variables.md) →
+← [Learn Javascript]((../../README.md) | [Variables](../1-1-variables/variables.md) →
 
-[![js logo](../assets/img/logos/logo-javascript-75w.png)](../README.md)
+<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # 1-0 Introduction
 
 Introduction to expressions, statements, and operators
 
+### Contents
+
+1. [Introduction](#introduction)
+1. [What is Javascript?](#what-is-javascript) `5 min`
+1. [How to use Javascript](#how-to-use-javascript) `5 min`
+1. [Data Types](#data-types) `5 min`
+1. [Expressions](#expressions) `5 min`
+1. [Statements](#statements) `2 min`
+1. [Next steps](#next-steps)
+1. [Exercises](#exercises)
+1. [References](#references)
 
 
 
@@ -26,39 +37,13 @@ Students who complete this module will be able to:
 
 </details>
 
-<details>
-<summary>Contents</summary>
-
-1. [Introduction](#introduction)
-1. [What is Programming?](#what-is-programming) `2 min`
-1. [What is Javascript?](#what-is-javascript) `2 min`
-1. [How to use Javascript](#how-to-use-javascript) `5 min`
-1. [Data Types](#data-types) `5 min`
-1. [Expressions](#expressions) `5 min`
-1. [Statements](#statements) `5 min`
-1. [Next steps](#next-steps)
-1. [Exercise](#exercise)
-1. [References](#references)
-
-</details>
 
 
 
 
 
-## What is Programming?
-
-Programming is simply the act of “writing instructions for a computer to execute.” Programming usually involves:
-
-- **Flow** - The order in which statements are executed.
-- **State** - The status of data (variables) in your program.
-- **Logic** - Making decisions based on conditions (state).
-- **Events** - Things that happen, like user input, that may change the state.
 
 
-[![true](../assets/img/javascript-diagram-lamp.png)](1-0-demos/javascript-lamp/index.html)
-
-<sup>Above, the <a href="./1-0-demos/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
 
 
 ## What is Javascript?
@@ -71,10 +56,25 @@ Javascript is the programming language of the web. With Javascript you can
 - and much more.
 
 
+**Programming**, the act of “writing instructions for a computer to execute,” usually involves:
+
+- **Flow** - The order in which statements are executed.
+- **State** - The status of data (variables) in your program.
+- **Logic** - Making decisions based on conditions (state).
+- **Events** - Things that happen, like user input, that may change the state.
+
+
+[![true](../../assets/img/javascript-diagram-lamp.png)](javascript-lamp/index.html)
+
+<sup>Above, the <a href="javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
+
+
+
+
 
 ## How to use Javascript
 
-Javascript can run in any web browser or on your computer (using Node). The [next lesson](1-1-variables.md#add-javascript-to-a-web-page) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
+Javascript can run in any web browser or on your computer (using Node). The [next lesson](../1-1-variables/variables.md#add-javascript-to-a-web-page) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
 
 👉 **Try it out** - Two places to test Javascript.
 
@@ -89,7 +89,7 @@ alert("hello world!");
 
 2. Add the code above to one of these playgrounds to test it out.
 
-![code playground](../assets/img/code-playground-jsfiddle.png)
+![code playground](../../assets/img/code-playground-jsfiddle.png)
 
 Some examples from class:
 
@@ -111,7 +111,7 @@ false
 
 Javascript is a loosely-typed language. This means Javascript will infer the data type of variables so you don't have to. Javascript organizes data by primitive and non-primitive types:
 
-![true](../assets/img/javascript-diagram-data-types.png)
+![true](../../assets/img/javascript-diagram-data-types.png)
 
 The Javascript **`number`** type does not distinguish integer from float values.
 ```js
@@ -226,11 +226,11 @@ typeof (typeof (4 > 5))
 
 ## Statements
 
-A statement is any instruction to perform a specific action. I like to think of a statement as a sentence—they even have punctuation (a semicolon `;`) at the end to tell Javascript the instruction is complete. The statement in the diagram uses an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) to assign a value to variable, `greeting`, on the left.
+A statement is any instruction to perform a specific action. I like to think of a statement as a sentence—they even have punctuation (a semicolon `;`) at the end to tell Javascript the instruction is complete.
 
-![true](../assets/img/javascript-anatomy-statement.png)
+![true](../../assets/img/javascript-anatomy-statement.png)
 
-In the next section we will install Javascript and start using variables.
+The statement in the diagram uses an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) to assign a value to variable, `greeting`, on the left. In the next section we will install Javascript and start using variables.
 
 
 
@@ -244,14 +244,14 @@ In the next section we will install Javascript and start using variables.
 ## Next steps
 
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
-1. Try example expressions in the [Exercise](#exercise) below.
+1. Try example expressions in the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue learning about Variables in the [next lesson](1-1-variables.md).
+1. Continue learning about Variables in the [next lesson](../1-1-variables/variables.md).
 
 
 
 
-## Exercise
+## Exercises
 
 👉 **Try it out** - Example Expressions
 
@@ -286,7 +286,9 @@ Math.ceil(1.2)
 
 
 
+
+
 ## References
 
 - Madhu M [JavaScript Expressions and Statements](https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74) (2018)
-- W3schools Javascript [intro](https://www.w3schools.com/js/js_intro.asp), [installation](https://www.w3schools.com/js/js_whereto.asp), [output](https://www.w3schools.com/js/js_output.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp), [operators](https://www.w3schools.com/js/js_operators.asp)
+- W3schools [intro](https://www.w3schools.com/js/js_intro.asp), [data types](https://www.w3schools.com/js/js_datatypes.asp), [statements](https://www.w3schools.com/js/js_statements.asp), [operators](https://www.w3schools.com/js/js_operators.asp)

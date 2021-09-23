@@ -1,7 +1,7 @@
 
 ← [Introduction](1-0-introduction.md) | [Functions & Scope](1-3-functions-scope.md) →
 
-[![js logo](../assets/img/logos/logo-javascript-75w.png)](../README.md)
+<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # 1-1 Control Flow
 
@@ -33,3 +33,13 @@ document.addEventListener("submit", function(e){
 })
 
 https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+
+
+
+The data, conditions, and events of Javascript can be seen at work in [this lamp demo](https://omundy.github.io/learn-javascript/1-0-introduction/javascript-lamp/index.html)
+
+
+
+
+
+ [output](https://www.w3schools.com/js/js_output.asp),
