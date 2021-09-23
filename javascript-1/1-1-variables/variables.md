@@ -362,9 +362,11 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 ## Exercises
 
-👉 **Try it out** - ???
+👉 **Try it out** - Practice with variables
 
-Expand the section below to view ...
+1. Create three variables to store your age, name, and a boolean value (e.g. the result of this statement: "I like vanilla ice cream").
+1. Concatenate them all together in one variable called `sentence` and log it to the console.
+
 
 
 
