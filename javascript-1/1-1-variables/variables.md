@@ -379,6 +379,5 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 - Haverbeke [Introduction](https://eloquentjavascript.net/00_intro.html) (1-8)
 - Haverbeke [Ch1 Values, Types, and Operators](https://eloquentjavascript.net/01_values.html) (10-20)
-- Haverbeke [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
 - Codecademy Cheatsheet(s) [Javascript Introduction](../../reference-sheets/js-01-introduction.pdf)
 - W3schools [installation](https://www.w3schools.com/js/js_whereto.asp), [variables](https://www.w3schools.com/js/js_variables.asp), [syntax](https://www.w3schools.com/js/js_syntax.asp), [comments](https://www.w3schools.com/js/js_comments.asp)

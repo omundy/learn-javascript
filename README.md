@@ -36,51 +36,6 @@ An introduction to the language
 
 
 
-&nbsp;
-<!---
-comments
--->
-## Control Flow, Functions, Loops
-
-**Overview**: How to use bindings, conditionals, loops, and functions to let your code make decisions
-
-- Lecture: [Control flow](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g53c97a02bb_0_99), [Functions & Scope](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_28)
-- Demo: [The Lottery v.1](demos/games/the-lottery/) - your first game!
-- Exercise: With a partner: [Gradebook Conditions](exercises/02-grade-book.md). Start homework...
-
-```js
-const isItTimeForPizza = () => {
-    let today = new Date();
-	if (today.getHours() > 10 && today.getHours() < 24){
-		return "yes, it is";
-	} else {
-		return "I'm afraid not";
-	}
-}
-console.log(isItTimeForPizza());
-```
-
-#### Homework
-
-- Haverbeke:
-	- [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (26-37)
-	- [Ch3 Functions](https://eloquentjavascript.net/03_functions.html) (39-55)
-- Codecademy:
- 	- [2-1 Conditional Statements](https://www.codecademy.com/learn/introduction-to-javascript) (1–8)
-	- [3-1 Functions](https://www.codecademy.com/learn/introduction-to-javascript) (1-7)
-	- [4-1 Scope](https://www.codecademy.com/learn/introduction-to-javascript) (1-4)
-- Exercises:
-	- Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-	- Ch3 [Minimum](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do), [Recursion](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do), [Bean Counting](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do)
-
-#### Review
-
-- Codecademy Cheatsheet(s) [conditionals](reference-sheets/js-02-conditionals.pdf), [functions](reference-sheets/js-03-functions.pdf), [scope](reference-sheets/js-04-scope.pdf)
-- w3schools [operators](https://www.w3schools.com/js/js_operators.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [functions](https://www.w3schools.com/js/js_functions.asp), [arrow functions](https://www.w3schools.com/js/js_arrow_function.asp)
-
-**Assessment**: Quiz 2; Homework review
-
-
 
 
 

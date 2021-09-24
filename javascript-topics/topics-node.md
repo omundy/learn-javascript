@@ -134,7 +134,7 @@ app.listen(port, () => console.log(
 
 #### Review
 
-- Codecademy Cheatsheet(s) [node introduction](reference-sheets/node-01-introduction.pdf)
+- Codecademy Cheatsheet(s) [node introduction](../reference-sheets/node-01-introduction.pdf)
 - w3schools [modules](https://www.w3schools.com/nodejs/nodejs_modules.asp), [http module](https://www.w3schools.com/nodejs/nodejs_http.asp), [file system module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp), [url module](https://www.w3schools.com/nodejs/nodejs_url.asp)
 - Express [hello world](https://expressjs.com/en/starter/hello-world.html), [basic routing](https://expressjs.com/en/starter/basic-routing.html), [static files](https://expressjs.com/en/starter/static-files.html)
 

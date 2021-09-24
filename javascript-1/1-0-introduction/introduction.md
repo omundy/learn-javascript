@@ -144,15 +144,18 @@ new Date()
 
 
 
-
+<!-- Variations of this section:
+learn-javascript/javascript-1/1-0-introduction.md
+learn-computing/topics-data-types.md
+-->
 
 ## Expressions
 
-An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) is any unit of code that resolves to a value. Expressions are the fundamental building blocks of code, and use [operators](https://www.w3schools.com/js/js_operators.asp) to perform assignments, math, logic, or string calculations.
+An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) is any unit of code that resolves to a data value. Expressions are the fundamental building blocks of code, and use data ("operands") with [operators](https://www.w3schools.com/js/js_operators.asp) to perform math, logic, or string calculations.
 
 
 
-👉 **Try it out** - Read about and test the following expressions in the Console.
+### 👉 **Try it out** - Explore data types using the Javascript Console
 
 1. **Primary expressions** - If you pass data to Javascript it will simply **return** the data's value.
 
@@ -160,7 +163,7 @@ An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Ex
 12
 ```
 
-2. However, if you use an [arithmetic operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators), Javascript will **evaluate** the code, multiplying the values to return a new value: `144`.
+2. Adding an [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators) operator and another data value will prompt Javascript to **evaluate** the code, multiplying the values to **return** (*output*) the *new* value `144` produced.
 
 ```js
 12 * 12
@@ -200,7 +203,7 @@ The [strict equality operator](https://developer.mozilla.org/en-US/docs/Web/Java
 <details>
 <summary>Solution</summary>
 
-A: It will return `false` because `1` is a `number` and `"1"` is a `string`.
+It will return `false` because `1` is a `number` and `"1"` is a `string`.
 
 </details>
 
@@ -215,6 +218,11 @@ typeof (typeof (4 > 5))
 
 <details>
 <summary>Solution</summary>
+
+```js
+typeof (4 > 5) // -> "boolean"
+typeof (typeof (4 > 5)) // -> "string"
+```
 
 `4 > 5` uses a comparison operator so it will return `false`. But since `typeof` returns a string, the first line will return `"boolean"` (note the double quotes), and the second line will return `"string"`
 
