@@ -7,11 +7,61 @@
 
 
 
+
+## Install NVM, Node, NPM
+
+https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x
+
+1. Install [Homebrew](https://brew.sh/)
+2. Update then install NVM (Node Version Manager)
+```bash
+brew update
+brew upgrade
+brew install nvm
+```
+
+
+
+
+### Update NVM
+
+```bash
+brew update
+brew upgrade # to install
+```
+
+### Update Node using NVM
+
+The [latest](https://nodejs.org/en/) node version
+
+```bash
+nvm install v16.10.0
+nvm ls
+nvm use 16
+```
+
+The [latest LTS](https://nodejs.org/en/about/releases/) (Long Term Support) node version
+
+```bash
+nvm install --lts
+nvm ls
+nvm use <NUMBER>
+```
+
+### Update NPM using NVM
+
+```bash
+nvm install-latest-npm
+```
+
+
 #### Upgrade packages in your repository
 
-[npm-upgrade](https://www.npmjs.com/package/npm-upgrade)
+[npm-upgrade](https://www.npmjs.com/package/npm-upgrade) is an interactive CLI utility to easily update outdated NPM dependencies
+
 ```js
 npm i -g npm-upgrade
+npm-upgrade check
 ```
 
 
