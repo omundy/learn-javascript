@@ -67,3 +67,16 @@ let myObject = {
 - w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp)
 
 **Assessment**: Quiz 3; Homework review
+
+
+
+
+
+
+## Exercises
+
+👉 **Try it out**
+
+1. [Lottery v.1](../../javascript-topics/games/the-lottery/README.md) - Build your first game!
+1. [Gradebook](../../javascript-topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
+1. Exercises from Eloquent Javascript Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)

@@ -144,4 +144,6 @@ https://medium.com/javascript-scene/master-the-javascript-interview-what-is-func
 
 👉 **Try it out**
 
-1. [Lottery v.3](../../javascript-topics/games/the-lottery/README.md) - Show results of the game in
+1. [Lottery v.3](../../javascript-topics/games/the-lottery/README.md) - Show results of the game in HTML
+1. [Gradebook](../../javascript-topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
+1. Revisit [this lamp demo](../../javascript-topics/single-page-apps/javascript-lamp/index.html) to explore how it uses loops

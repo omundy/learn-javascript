@@ -13,6 +13,7 @@ Comparison and logical operators, conditional statements
 1. [Introduction](#introduction)
 1. [Operators](#operators) `5 min`
 1. [Conditions](#conditions) `5 min`
+1. [Combining conditionals with logical operators](#combining-conditionals-with-logical-operators) `5 min`
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
@@ -27,10 +28,9 @@ Review the following sections and perform the activities on your own or with you
 
 Students who complete this module will be able to:
 
-- Demonstrate how to
-- Explain
-- Use Javascript to
-- List
+- Demonstrate how to use arithmetic and assignment operators.
+- Explain how conditional statements can control the flow of a program
+- Use Javascript to create a simple gradebook using conditional statements
 
 </details>
 
@@ -144,33 +144,6 @@ Greater than / greater than or equal to
 
 
 
-### [Logical operators](https://www.w3schools.com/js/js_comparisons.asp)
-
-Used to determine the logic between variables or values
-
-
-Use `&&` ("and") to test if *both* expressions are `true`
-
-```js
-(1 < 2 && 3 > 4) // -> false
-```
-
-Use `||` ("or") to test if *either* expression is `true`
-
-```js
-(1 < 2 || 3 > 4) // -> true
-```
-
-Use `!` ("not") to test if the expression is not `true`
-
-```js
-!true // -> false
-!false // -> true
-!(1 < 2) // -> false
-```
-
-
-
 
 ## Conditions
 
@@ -194,16 +167,19 @@ You can use **conditionals** to do this.
 
 In the above diagram, an **`if`** statement is used to either run the statement block, or not, depending on whether the condition is true or false.
 
-Here is the syntax for a basic `if` statement. In this case, if the value stored in `apples` is a number greater than 3, then the message will be logged to the console.
+Here is the syntax for a basic `if` statement.
 
 <img src="../../assets/img/javascript-anatomy-if-code-block.png" width="800">
 
+In this case, if the value stored in `apples` is a number greater than 3, then the message will be logged to the console.
 
-We use an **`if/else`** to execute different code, if the first condition is not met.
+
+
+We can use an **`else`** to execute different code, if the first condition is not met.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if-else.png" width="800">
 
-Here is the apples example in practice:
+Here is `else` in practice:
 
 ```js
 let apples = 2;
@@ -215,7 +191,63 @@ if (apples > 3) {
 ```
 
 
+We can use `if` `if/else` and `else` together like so:
 
+```js
+let apples = 2;
+if (apples > 5) {
+	console.log("we can make cider!")
+} else if (apples > 3) {
+	console.log("we can make pie!")
+} else {
+	console.log("we need more apples")
+}
+```
+
+
+
+
+
+## Combining conditionals with logical operators
+
+Finally, we can combine conditional statements with logical operators to account for more than one variable in a program. Recall that [logical operators](https://www.w3schools.com/js/js_comparisons.asp) are used to determine the logic between variables or values.
+
+
+Use `&&` ("and") to test if ***both*** expressions are `true`
+
+```js
+(1 < 2 && 3 > 4) // -> false
+```
+
+Use `||` ("or") to test if ***either*** expression is `true`
+
+```js
+(1 < 2 || 3 > 4) // -> true
+```
+
+Use `!` ("not") to test if the expression is ***not*** `true`
+
+```js
+!true // -> false
+!false // -> true
+!(1 < 2) // -> false
+```
+
+
+And, putting it all together, evaluate more than one condition in an if, if else statement
+
+
+```js
+let apples = 2,
+    blueberries = 4;
+if (apples >= 2 && blueberries >= 4) {
+	console.log("we can make fruit salad")
+} else if (apples > 3 || blueberries > 2) {
+	console.log("we can make pie!")
+} else {
+	console.log("we need more fruit")
+}
+```
 
 
 
@@ -239,13 +271,8 @@ if (apples > 3) {
 👉 **Try it out**
 
 1. [Lottery v.1](../../javascript-topics/games/the-lottery/README.md) - Build your first game!
-2. [Gradebook Conditions](../1-3-functions-scope/exercise-grade-book.md) - Use conditions, functions, and jquery to code a gradebook app.
-3. Exercises from Eloquent Javascript Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-
-
-
-The data, conditions, and events of Javascript can be seen at work in [this lamp demo](https://omundy.github.io/learn-javascript/1-0-introduction/javascript-lamp/index.html)
-
+1. [Gradebook](../../javascript-topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
+1. Revisit [this lamp demo](../../javascript-topics/single-page-apps/javascript-lamp/index.html) to explore how it uses conditions.
 
 
 ## References
