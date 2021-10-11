@@ -1,10 +1,7 @@
 
 # Exercise: Gradebook
 
-Conditionals
-
-
-With a partner, write a function that returns the correct letter grade given the percentage.
+With a partner, write a function that uses conditionals to return the correct letter grade given the percentage.
 
 1. Start with [this code playground](https://codepen.io/owenmundy/pen/mdEOJzx).
 1. Let the least experienced coder start by sharing their screen.
