@@ -1,5 +1,5 @@
 
-← [Introduction](../1-0-introduction/introduction.md) | [Control Flow](../1-2-control-flow/control-flow.md) →
+← [Learn Javascript](../../README.md)
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 

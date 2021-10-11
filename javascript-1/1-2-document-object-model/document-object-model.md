@@ -1,5 +1,5 @@
 
-← [Variables](../1-1-variables/variables.md) | [Functions & Scope](../1-3-functions-scope/functions-scope.md) →
+← [Learn Javascript](../../README.md)
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 

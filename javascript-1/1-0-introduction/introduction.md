@@ -1,5 +1,5 @@
 
-← [Learn Javascript]((../../README.md) | [Variables](../1-1-variables/variables.md) →
+← [Learn Javascript](../../README.md)
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 

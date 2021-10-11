@@ -1,5 +1,5 @@
 
-← [Control Flow](1-2-control-flow.md) | [Functions & Scope](1-3-functions-scope.md) →
+← [Learn Javascript](../../README.md)
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
