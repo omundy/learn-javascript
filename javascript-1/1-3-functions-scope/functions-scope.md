@@ -17,9 +17,50 @@ Reusing code, protecting variables, callback functions
 
 
 
+Functions are the next step in creating control structures. Say we have the code from the previous lesson
+
+```js
+let apples = 2;
+if (apples > 3) {
+	console.log("we can make pie!")
+} else {
+	console.log("we need more apples")
+}
+apples = apples + 10;
+console.log(`We have ${apples} apples!`);
+```
+
+What if we wanted to make it so a user could change the value stored in `apples` and then run the check again? This is where functions come in...
+
+```js
+let apples = 2;
+console.log(`We have ${apples} apples!`);
+
+function checkApples(_apples){
+    if (_apples > 3) {
+    	return "we can make pie!";
+    } else {
+    	return "we need more apples";
+    }
+}
 
 
 
+
+apples = apples + 10;
+
+```
+
+
+There are a few things going on in here:
+
+1. The conditional that formerly outputted a string is now inside a *reusable* function.
+1. The variable that we evaluate in the function is **scoped** only to that function. We use an underscore before it to remember that. See functional programming for more.
+
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+
+
+https://en.wikipedia.org/wiki/Side_effect_(computer_science)
 
 
 
@@ -89,3 +130,18 @@ console.log(1 < 2);
 ```
 
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+
+
+
+## Next steps
+
+1. Try the [Exercises](#exercises) below.
+1. Start working on homework listed in the schedule.
+1. Continue to the [next lesson](../../README.md#javascript-part1).
+
+
+## Exercises
+
+👉 **Try it out**
+
+1. [Lottery v.3](../../javascript-topics/games/the-lottery/README.md) - Show results of the game in

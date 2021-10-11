@@ -11,15 +11,8 @@ Comparison and logical operators, conditional statements
 ## Contents
 
 1. [Introduction](#introduction)
-1. [Selecting HTML elements](#selecting-html-elements) `5 min`
 1. [Operators](#operators) `5 min`
 1. [Conditions](#conditions) `5 min`
-
-
-
-
-
-
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
@@ -50,25 +43,6 @@ Students who complete this module will be able to:
 - Quiz 7 - JS Control Flow
 
 </details>
-
-
-
-
-
-
-
-## Selecting HTML elements
-
-In order for Javascript to change values on a web page, we have to use it to **select** elements. There are several ways to do this.
-
-
-Type this into the Console and hit return.
-
-```js
-window
-```
-
-The window is your key to accessing the DOM (Document Object Model) with Javascript. You can set or get any value stored in the page, or use any method (function) that is built in. Try some of these:
 
 
 
@@ -200,55 +174,46 @@ Use `!` ("not") to test if the expression is not `true`
 
 ## Conditions
 
-Control flow determines what code is executed and the order in which it will happen.
-
-The default behavior of Javascript is to execute the statements it finds, line by line.
+Control flow determines what code is executed and the order in which it will happen. To illustrate this, first consider the default behavior of Javascript.
 
 <img src="../../assets/img/javascript-diagram-control-structures-sequence.png" width="800">
 
+As the program runs, it will execute the instructions it finds, line by line, until the end.
 
-However, you will often want your code to perform different actions for different situations. You can use **conditionals** to do this.
+```js
+let apples = 0;
+apples = apples + 10;
+console.log(`We have ${apples} apples!`);
+```
+
+However, this is not very interesting. Instead, you will often want your code to perform *different* actions depending on the **state** of variables in your program.
+
+You can use **conditionals** to do this.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if.png" width="800">
 
-In the above diagram, an if statement is used to either skip the statement block or not, depending on whether the condition is true or false.
+In the above diagram, an **`if`** statement is used to either run the statement block, or not, depending on whether the condition is true or false.
 
 Here is the syntax for a basic `if` statement. In this case, if the value stored in `apples` is a number greater than 3, then the message will be logged to the console.
 
 <img src="../../assets/img/javascript-anatomy-if-code-block.png" width="800">
 
-We use an `if/else` to execute different code, if the first condition is not met.
+
+We use an **`if/else`** to execute different code, if the first condition is not met.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if-else.png" width="800">
 
+Here is the apples example in practice:
 
-
-
-
-
-
-
-
-
-## Web Forms
-
-
+```js
+let apples = 2;
+if (apples > 3) {
+	console.log("we can make pie!")
+} else {
+	console.log("we need more apples")
+}
 ```
 
-<form action="#">
-
-  <input type="text" id="hi">
-  <input type="submit">
-</form>
-
-```
-
-document.addEventListener("submit", function(e){
-	console.log(document.getElementById("hi").value);
-  e.preventDefault();
-})
-
-https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 
 
@@ -259,44 +224,32 @@ https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 
 
- ## Next steps
 
- 1. Try examples in the [Exercises](#exercises) below.
- 1. Start working on homework listed in the schedule.
- 1. Continue learning about Control Flow in the [next lesson](../1-2-control-flow/control-flow.md).
+## Next steps
 
-
-
-
- ## Exercises
-
- 👉 **Try it out** - ...
-
-
-
- Demo: [The Lottery v.1](demos/games/the-lottery/) - your first game!
-
- Exercise: With a partner: [Gradebook Conditions](exercises/02-grade-book.md). Start homework...
-
-
- - Exercises:
- 	- Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-
-
-
-    The data, conditions, and events of Javascript can be seen at work in [this lamp demo](https://omundy.github.io/learn-javascript/1-0-introduction/javascript-lamp/index.html)
+1. Try the [Exercises](#exercises) below.
+1. Start working on homework listed in the schedule.
+1. Continue to the [next lesson](../../README.md#javascript-part1).
 
 
 
 
+## Exercises
+
+👉 **Try it out**
+
+1. [Lottery v.1](../../javascript-topics/games/the-lottery/README.md) - Build your first game!
+2. [Gradebook Conditions](../1-3-functions-scope/exercise-grade-book.md) - Use conditions, functions, and jquery to code a gradebook app.
+3. Exercises from Eloquent Javascript Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
 
 
 
+The data, conditions, and events of Javascript can be seen at work in [this lamp demo](https://omundy.github.io/learn-javascript/1-0-introduction/javascript-lamp/index.html)
 
 
 
- ## References
+## References
 
- - Haverbeke [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
- - Codecademy Cheatsheet(s) [Conditionals](../../reference-sheets/js-02-conditionals.pdf)
- - W3schools [operators](https://www.w3schools.com/js/js_operators.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [output](https://www.w3schools.com/js/js_output.asp)
+- Haverbeke [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
+- Codecademy Cheatsheet(s) [Conditionals](../../reference-sheets/js-02-conditionals.pdf)
+- W3schools [operators](https://www.w3schools.com/js/js_operators.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [output](https://www.w3schools.com/js/js_output.asp)

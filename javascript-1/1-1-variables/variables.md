@@ -351,10 +351,9 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 ## Next steps
 
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44) that accompany this section.
-1. Try examples in the [Exercises](#exercises) below.
+1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue learning about Control Flow in the [next lesson](../1-2-control-flow/control-flow.md).
-
+1. Continue to the [next lesson](../../README.md#javascript-part1).
 
 
 

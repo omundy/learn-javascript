@@ -257,9 +257,10 @@ The statement in the diagram uses an [assignment operator](https://developer.moz
 ## Next steps
 
 1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
-1. Try example expressions in the [Exercises](#exercises) below.
+1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue learning about Variables in the [next lesson](../1-1-variables/variables.md).
+1. Continue to the [next lesson](../../README.md#javascript-part1).
+
 
 
 

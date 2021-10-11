@@ -471,6 +471,7 @@ Some example situations:
 - A "flat file" is any single or collection of plain text files that stores data (e.g. CSV, TSV, JSON, etc.) They are easy to write, transform, or transmit, but since they must be read from memory they are slow and difficult to `query`.
 - A database requires some additional work to set up the software and write the code that uses it. The benefit is that it is easy to `insert`, `update`, and `query` your data.
 
+https://flaviocopes.com/mysql-how-to-install/
 
 ### Browser-based storage
 

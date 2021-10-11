@@ -50,7 +50,7 @@ Anyone is welcome to fork the repo and use this course structure. You will need 
 
 - Marijn Haverbeke [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd edition (2018) [github](https://github.com/marijnh/Eloquent-JavaScript)
 - Ethan Brown [Web Development with Node & Express](https://www.oreilly.com/library/view/web-development-with/9781492053507/) 2nd Edition (2019) [github](https://github.com/EthanRBrown/web-development-with-node-and-express-2e)
-
+- [javascript.info](https://javascript.info/)
 
 
 
