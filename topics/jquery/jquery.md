@@ -1,3 +1,4 @@
+<!-- paginate: true -->
 
 ← [Learn Javascript](../../README.md)
 
@@ -7,19 +8,37 @@
 
 How to use jquery for interaction, display, and data
 
+<sup class="small"><a href="../../slides/jquery/jquery.html">slides</a> | <a href="../../topics/jquery/jquery.md">markdown</a> </sup>
+
+
+<!--
+Presentation comments ...
+-->
+
+
+---
+
 
 ## Contents
 
 1. [Introduction](#introduction)
-
+1. [What is jquery](#what-is-jquery)
+1. [Installation](#installation)
+1. [Selectors](#selectors)
+1. [Events](#eevnt)
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
 
 
+---
+
+
 ## Introduction
 
 Review the following sections and perform the activities on your own or with your group.
+
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -54,60 +73,208 @@ Students who complete this module will be able to:
 ---
 
 
-
 ## What is jquery
 
-- jquery is a library that reduces the complexity of using Javascript with HTML.
-- The goal is to "write less, do more" including:
-    - Write to web pages to change content, elements, or styles - HTML/CSS/DOM manipulation
-    - Listen for user and page events
-    - Add effects like showing, hiding, or animating content
-    - Can get external or remote data from API using AJAX (asynchronous Javascript)
-    - Fix cross browser issues
+jquery is a library that reduces the complexity of using Javascript with HTML.
+
+It's goal, "write less, do more", helps with:
+
+- **Selection** - Simplifies selecting one or multiple elements with Javascript
+- **DOM manipulation** - Change content, elements, or styles on web pages
+- **Events** - Listen for user and page events
+- **Effects** - Like showing, hiding, or animating content
+- **Data** - Get external or remote data from API using AJAX
 
 
 
+---
 
 ## Installation
 
-Like many frameworks, jquery can be installed with one line of code. You can [download](https://jquery.com/download/) the file to your project, [install it with NPM](https://jquery.com/download/#downloading-jquery-using-npm-or-yarn), or [link to a CDN](https://jquery.com/download/#using-jquery-with-a-cdn).
+Like many libraries, jquery can be installed with one line of code. You can [download](https://jquery.com/download/) it to your project, but a CDN is the simplest method (and [good for performance](https://jquery.com/download/#using-jquery-with-a-cdn)).
 
-> CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe. This also offers an advantage that if the visitor to your webpage has already downloaded a copy of jQuery from the same CDN, it won't have to be re-downloaded.
-
-After you import the framework into the page and you can access jquery functions via $
-
-
+The [google hosted library](https://developers.google.com/speed/libraries#jquery) includes the `<script>` tags, making it easy to copy and paste.
 
 ```js
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 // now you can use jquery!
-
-// select all divs, set backgrounds red
-$('div').css({ 'background': 'red' });
-
-
 </script>
 ```
 
-
-## document.ready()
-
-For the same reason you add Javascript after the page elements have loaded, you can only use jquery functions after you import the library.
+For the same reason you add Javascript after the page elements have loaded, you can only use jquery functions ***after you import the library***.
 
 
+---
+
+
+## jQuery syntax
+
+After you import the framework into the page and you can access jquery functions via `$`
+
+jQuery uses CSS selectors to select and perform actions on elements. The syntax is:
+
+```js
+$(selector).action()
+```
+
+1. The `$` sign accesses jQuery library functions
+1. The `(selector)` "queries" (or "finds") HTML elements
+1. The `action()` to be performed on the element(s)
+
+
+---
+
+
+## jQuery examples
+
+Classic CSS selectors
+
+```js
+$("p").hide() // hides all <p> elements.
+```
+```js
+$(".test").hide() // hides all elements with class="test".
+```
+```js
+$("#test").hide() // hides the element with id="test".
+```
+
+jquery can also use the `this` keyword to reference to the current element
+
+```js
+$(this).hide() // hides the current element.
+```
+
+
+---
+
+## 👉 Try it out
+
+1. Create a new HTML page `jquery.html` in your current class project
+1. Copy / paste the [Bootstrap starter template](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template) to the page
+1. Install jquery using the Google hosted library [above](#installation)
+1. Add this code to a `<script>` tag ***after*** you imported the library
+    `$("h1").animate({left: '100%'}, "slow");`
+1. Open your page in a web browser
+
+
+---
+
+## Events
+
+An **event** is "fired" when things happen on a page or a user does something.
+
+For example, clicking or moving a mouse over an element, or selecting a radio button, can "trigger" an event the moment it occurs.
+
+Here are some common DOM events:
+
+- Mouse Events: `click`, `dblclick`, `mouseenter`, `mouseleave`
+- Keyboard Events: `keypress`, `keydown`, `keyup`
+- Form Events: `submit`, `change`, `focus`, `blur`
+- Document/Window: `load`, `resize`, `scroll`, `unload`
 
 
 
-## Selectors
+---
 
-Anytime
+## The document.ready() event
+
+If you add your code to the end of your document, it is still possible some images will take longer than expected.
+
+It's good to wait for the document to be fully loaded and ready before working with it.
+
+👉 **Try it out** - Wrap your previous animate code with the document.ready() event
+
+```js
+$(document).ready(function(){
+    $("h1").animate({left: '100%'}, "slow");
+});
+```
+When an event is fired, the [**callback function**](https://www.w3schools.com/jquery/jquery_callback.asp) will **handle** the event.
+
+
+---
+
+
+## click() Event
+
+The `click()` method ("function") attaches an **event handler** to an element, which is "fired" when the event happens.
+
+👉 **Try it out**
+
+1. Add a button to the page
+```html
+<button class="btn btn-primary">Move it!</button>
+```
+
+2. Wrap your animate code in a click event listener and callback function
+
+```js
+$(document).ready(function(){
+    $("button").click(function(){
+        $("h1").animate({left: '100%'}, "slow");
+    });
+});
+```
+
+
+
+---
+
+
+## Method chaining
+
+With jQuery, you can chain together actions/methods to run multiple methods on the same element in a single statement.
+
+
+👉 **Try it out** - Chain `.css()`, `.slideUp()`, and `.slideDown` methods
+
+```js
+$(document).ready(function(){
+    $("button").click(function(){
+        $("h1")
+            .css("color", "red")
+            .slideUp(2000)
+            .slideDown(2000);
+    });
+});
+```
 
 
 
 
 
+---
 
+## val() to get / set data from a form
+
+👉 **Try it out** - [Get data](https://www.w3schools.com/jquery/jquery_dom_get.asp) from a form
+
+1. Add an input
+```html
+<input type="text" id="myInput" value="">
+```
+
+2.
+```js
+$(document).ready(function(){
+    $("button").click(function(){
+        $("h1")
+            .css("color", "red")
+            .slideUp(2000)
+            .slideDown(2000);
+    });
+    console.log("Value: " + $("#myInput").val());
+});
+
+
+```
+
+
+
+
+---
 
 ## Selecting classes
 
@@ -138,9 +305,18 @@ $('.myClass').append(' ## new data (jquery)');
 
 
 
+---
+
+## AJAX (asynchronous Javascript)
+
+Next class we will use jquery AJAX to fetch data from APIs.
 
 
 
+
+
+
+---
 
 
 ## Next steps
@@ -152,12 +328,18 @@ $('.myClass').append(' ## new data (jquery)');
 
 
 
+---
+
+
 ## Exercises
 
 👉 **Try it out**
 
 1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses conditions.
+
+
+---
 
 
 ## References
