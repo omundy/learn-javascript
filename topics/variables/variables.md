@@ -69,7 +69,7 @@ console.log("Hello from an external Javascript file!");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Learning Javascript</title>
+<title>Learn Javascript</title>
 <style>
     body { font-family: sans-serif; }
 </style>

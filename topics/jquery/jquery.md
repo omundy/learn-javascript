@@ -182,12 +182,11 @@ $(this).hide() // hides the current element.
 
 ## 👉 Try it out
 
-1. Create a new HTML page `jquery.html` in your current class project
-1. Copy / paste the [Bootstrap starter template](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template) to the page
+1. Save this file [`jquery-demo.html`](../../topics/jquery/demos/jquery-demo.html) to your current class project
 1. Install jquery using the Google hosted library [above](#installation)
 1. Add this code to a `<script>` tag ***after*** you imported the library
     `$("h1").animate({left: '100%'}, "slow");`
-1. Open your page in a web browser
+1. Open your page in a web browser. If the title moves you are using jquery!
 
 
 
@@ -230,6 +229,9 @@ $(document).ready(function(){
 When an event is fired, the [**callback function**](https://www.w3schools.com/jquery/jquery_callback.asp) will **handle** the event.
 
 
+
+
+
 ---
 
 
@@ -239,12 +241,7 @@ The `click()` method ("function") attaches an **event handler** to an element, w
 
 👉 **Try it out**
 
-1. Add a button to the page
-```html
-<button class="btn btn-primary">Move it!</button>
-```
-
-2. Wrap your animate code in a click event listener and callback function
+Wrap your animate code in a click event listener and callback function
 
 ```js
 $(document).ready(function(){
@@ -264,47 +261,39 @@ $(document).ready(function(){
 With jQuery, you can chain together actions/methods to run multiple methods on the same element in a single statement.
 
 
-👉 **Try it out** - Chain `.css()`, `.slideUp()`, and `.slideDown` methods
+👉 **Try it out** - Chain `.css()` method to `.animate()`
 
 ```js
 $(document).ready(function(){
     $("button").click(function(){
-        $("h1")
+        $("h1").animate({left: '100%'}, "slow")
             .css("color", "red")
-            .slideUp(2000)
-            .slideDown(2000);
     });
 });
 ```
 
+<div class="caption">Note: whitespace doesn't matter when using chained methods.</div>
 
 
 
 
 ---
 
-## val() to get / set data from a form
+## val() method
 
-👉 **Try it out** - [Get data](https://www.w3schools.com/jquery/jquery_dom_get.asp) from a form
+Use `.val()` to [get or set data in a form element]((https://www.w3schools.com/jquery/jquery_dom_get.asp)).
 
-1. Add an input
-```html
-<input type="text" id="myInput" value="">
-```
+👉 **Try it out**
 
-2.
 ```js
 $(document).ready(function(){
+    $("#myInput").val("hello world!"); // set data on ready() event
     $("button").click(function(){
-        $("h1")
+        $("h1").animate({left: '100%'}, "slow")
             .css("color", "red")
-            .slideUp(2000)
-            .slideDown(2000);
+        console.log("Value: " + $("#myInput").val()); // get data on click
     });
-    console.log("Value: " + $("#myInput").val());
 });
-
-
 ```
 
 

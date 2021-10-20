@@ -166,12 +166,11 @@ footer {
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> Try it out</h2>
 <ol>
-<li>Create a new HTML page <code>jquery.html</code> in your current class project</li>
-<li>Copy / paste the <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template">Bootstrap starter template</a> to the page</li>
+<li>Save this file <a href="../../topics/jquery/demos/jquery-demo.html"><code>jquery-demo.html</code></a> to your current class project</li>
 <li>Install jquery using the Google hosted library <a href="#installation">above</a></li>
 <li>Add this code to a <code>&lt;script&gt;</code> tag <em><strong>after</strong></em> you imported the library<br />
 <code>$(&quot;h1&quot;).animate({left: '100%'}, &quot;slow&quot;);</code></li>
-<li>Open your page in a web browser</li>
+<li>Open your page in a web browser. If the title moves you are using jquery!</li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
@@ -201,14 +200,7 @@ footer {
 <h2>click() Event</h2>
 <p>The <code>click()</code> method (&quot;function&quot;) attaches an <strong>event handler</strong> to an element, which is &quot;fired&quot; when the event happens.</p>
 <p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong></p>
-<ol>
-<li>Add a button to the page</li>
-</ol>
-<pre><code class="language-html"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span>&gt;</span>Move it!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-</span></span></foreignObject></svg></code></pre>
-<ol start="2">
-<li>Wrap your animate code in a click event listener and callback function</li>
-</ol>
+<p>Wrap your animate code in a click event listener and callback function</p>
 <pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
     $(<span class="hljs-string">&quot;button&quot;</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
         $(<span class="hljs-string">&quot;h1&quot;</span>).animate({<span class="hljs-attr">left</span>: <span class="hljs-string">&#x27;100%&#x27;</span>}, <span class="hljs-string">&quot;slow&quot;</span>);
@@ -220,39 +212,28 @@ footer {
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Method chaining</h2>
 <p>With jQuery, you can chain together actions/methods to run multiple methods on the same element in a single statement.</p>
-<p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong> - Chain <code>.css()</code>, <code>.slideUp()</code>, and <code>.slideDown</code> methods</p>
+<p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong> - Chain <code>.css()</code> method to <code>.animate()</code></p>
 <pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
     $(<span class="hljs-string">&quot;button&quot;</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-        $(<span class="hljs-string">&quot;h1&quot;</span>)
+        $(<span class="hljs-string">&quot;h1&quot;</span>).animate({<span class="hljs-attr">left</span>: <span class="hljs-string">&#x27;100%&#x27;</span>}, <span class="hljs-string">&quot;slow&quot;</span>)
             .css(<span class="hljs-string">&quot;color&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>)
-            .slideUp(<span class="hljs-number">2000</span>)
-            .slideDown(<span class="hljs-number">2000</span>);
     });
 });
 </span></span></foreignObject></svg></code></pre>
+<div class="caption">Note: whitespace doesn't matter when using chained methods.</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" data-marpit-pagination="14" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
-<h2>val() to get / set data from a form</h2>
-<p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong> - <a href="https://www.w3schools.com/jquery/jquery_dom_get.asp">Get data</a> from a form</p>
-<ol>
-<li>Add an input</li>
-</ol>
-<pre><code class="language-html"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myInput&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-</span></span></foreignObject></svg></code></pre>
-<ol start="2">
-<li></li>
-</ol>
+<h2>val() method</h2>
+<p>Use <code>.val()</code> to <a href="(https://www.w3schools.com/jquery/jquery_dom_get.asp)">get or set data in a form element</a>.</p>
+<p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong></p>
 <pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    $(<span class="hljs-string">&quot;#myInput&quot;</span>).val(<span class="hljs-string">&quot;hello world!&quot;</span>); <span class="hljs-comment">// set data on ready() event</span>
     $(<span class="hljs-string">&quot;button&quot;</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-        $(<span class="hljs-string">&quot;h1&quot;</span>)
+        $(<span class="hljs-string">&quot;h1&quot;</span>).animate({<span class="hljs-attr">left</span>: <span class="hljs-string">&#x27;100%&#x27;</span>}, <span class="hljs-string">&quot;slow&quot;</span>)
             .css(<span class="hljs-string">&quot;color&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>)
-            .slideUp(<span class="hljs-number">2000</span>)
-            .slideDown(<span class="hljs-number">2000</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Value: &quot;</span> + $(<span class="hljs-string">&quot;#myInput&quot;</span>).val()); <span class="hljs-comment">// get data on click</span>
     });
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Value: &quot;</span> + $(<span class="hljs-string">&quot;#myInput&quot;</span>).val());
 });
-
-
 </span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" data-marpit-pagination="15" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
