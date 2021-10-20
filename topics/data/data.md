@@ -8,12 +8,8 @@
 
 <!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Data Collection Types](#data-collection-types)
-	- [Arrays](#arrays)
-	- [Objects](#objects)
-- [External Data](#external-data)
-	- [Tabular Data (CSV, TSV, etc.)](#tabular-data-csv-tsv-etc)
-	- [Hierarchical (JSON, XML)](#hierarchical-json-xml)
+- [Data Collections](#data-collections)
+- [Data Exchange Formats](#external-data)
 - [Using External Data](#using-external-data)
 	- [Cross-Origin Resource Sharing](#cross-origin-resource-sharing)
 	- [Serialization and Deserialization](#serialization-and-deserialization)
@@ -31,7 +27,6 @@
 	- [Flat files vs. Databases](#flat-files-vs-databases)
 	- [Browser-based storage](#browser-based-storage)
 - [Data Cleaning](#data-cleaning)
-	- [How to clean data using find / replace with regex](#how-to-clean-data-using-find-replace-with-regex)
 - [Data Conversion](#data-conversion)
 	- [Convert CSV to JSON](#convert-csv-to-json)
 - [FAQ & Tips](#faq-tips)
@@ -41,169 +36,97 @@
 
 
 
-## Data Collection Types
-
-In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (`boolean`, `number`, `string`), Javascript has built-in structural types to store complex entities, hierarchical collections, and lists.
 
 
-### Arrays
 
-A Javascript [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is a list of values, separated by commas. Arrays are zero-indexed, and their values can be set or retrieved using their index.
+
+
+
+
+## Data Collections
+
+In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) like `boolean`, `number`, and `string`, Javascript has types classified as data collections, which can include `arrays`, `objects`, as well as more complex entities, hierarchical collections, and lists.
+
+A Javascript array
+
 ```js
-const numberArr = [-2, -1, 0, 1, 2]; // array of numbers
-const colorArr = ["red", "green", "blue"]; // array of strings
-console.log(colorArr[0]); // -> "red"
+let primaries = ["red", "green", "blue"];
 ```
 
-Arrays can also store other arrays
+A Javascript object. Note, Arrays and objects can be used together, such as here where multiple similar objects ("albums") are collected together.
+
 ```js
-const tableArr = [
-	['name', 'age', 'favoriteColor'],
-	['Mary', 18, 'mauve'],
-	['Chalet', 81, 'chartreuse']
-];
-```
-as well as complex objects.
-```js
-// array of date objects
-const dates = [
-	new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
-	new Date("9 November 1989 18:53 UTC+1"), // BERLIN
-	new Date("November 9, 1989 12:53 UTC-5") // NYC
-];
-console.log(dates[1].toUTCString()); // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
-```
-
-
-
-### Objects
-
-A Javascript [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) stores `key:value` relationships where `key` is a string, and `value` can be a primitive, array, or object. The values are then referenced with their keys using either square brackets or dot notation.
-```js
-const color = {
-	name: "red",
-	hex: "#ff0000",
-	rgb: [255,0,0]
-}
-console.log(color.name); // -> "red" via dot notation
-console.log(color['name']); // -> "red" via square brackets
-```
-
-You can also store functions ([called methods when stored inside an object](https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27)).
-```js
-const ev = {
-	name: "Fall of the Berlin Wall",
-	link: "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-	date: new Date(Date.UTC(1989, 10, 9, 17, 53, 0)),
-	timeZone: "CET",
-	getLocalTimeStr: function(){
-		return this.date.toLocaleString('de-DE', {timeZone: this.timeZone})
-	}
+var singer = {
+    "name": "Bruce Springsteen",
+    "albums": [
+        {
+            "name": "Born to Run",
+            "year": 1975
+        }, {
+            "name": "Born in the U.S.A.",
+            "year": 1984
+        }, {
+            "name": "The Ghost of Tom Joad",
+            "year": 1995
+        }
+    ]
 };
-console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`); // -> "Fall of the Berlin Wall, 1989"
-console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
 ```
 
+See these lessons for more on arrays, objects, and other collections.
+
+- [Learn Javascript / Data Structures](../../javascript-1/1-4-data-structures/data-structures.md)
+- [Learn Computing / Data Types / Data Collections](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md#data-collections)
 
 
 
 
 
-## External Data
-
-Datasets can be stored within scripts, as in the previous examples, or imported from an external file, database, or API server. Data files are usually tabular (e.g. CSV, TSV) or hierarchical (e.g. JSON or XML).
 
 
 
+## Data Exchange Formats
 
+Data collections can be stored inside code files, or more often, imported from external files, databases, or API servers. Data exchange formats help to standardize how data is stored and transmitted when you import external data and generally fall into one of the below categories:
 
-### Tabular Data (CSV, TSV, etc.)
+1. Tabular data exchange formats (e.g. `CSV`, `TSV`)
 
-[Tabular data](https://www.w3.org/TR/tabular-data-model/), like a spreadsheet or database table, is structured into rows and columns. It is most often exported as comma (CSV) or tab-separated values (TSV), though you can technically delineate the columns with any unique character. Each row should contain the same number of columns, even if the cell is empty. Following are the contents of [`demos/data-samples/temps.csv`](demos/data-samples/temps.csv) shown as an HTML table ...
-
-C | F | description
---- | --- | ---
--273.15 | -459.67 | absolute zero temperature
-0 | 32.0 | freezing/melting point of water
-21 | 69.8 | room temperature
-37 | 98.6 | average body temperature
-100 | 212 | boiling point of water
-
-
-shown as serialized data in a plain text CSV file ...
-```data
-C, F, description
--273.15, -459.67, absolute zero temperature
-0, 32.0, freezing/melting point of water
-21, 69.8, room temperature
-37, 98.6, average body temperature
-100, 212, boiling point of water
+```
+"make", "model", "year"
+"Pontiac", "Vibe", 2009
+"Honda", "Fit", 2007
+"Chevrolet", "Blazer", 2000
+"Toyota", "RAV4", 1999
 ```
 
-and finally, as deserialized Javascript code. A two-dimensional array is the closest equivalent data structure in Javascript for tabular data.
-```js
-const tempsArr = [
-	['C', 'F', 'description']
-	['-273.15', '-459.67', 'absolute zero temperature'],
-	['0', '32.0', 'freezing/melting point of water'],
-	['21', '69.8', 'room temperature'],
-	...
-];
-```
-
-Depending on your application you may want to [convert your data](#data-conversion) to make it easier to use. Below, each row has been converted to a JSON object where the column values can be referenced by their keys, and those which are numbers have been retyped from a `string` to `number` type.
-```js
-const tempsObjectsArr = [
-	{
-		C: -273.15,
-		F: -459.67,
-		description: 'absolute zero temperature'
-	},{
-		C: 0,
-		F: 32.0,
-		description: 'freezing/melting point of water'
-	},{
-		C: 21,
-		F: 69.8,
-		description: 'room temperature'
-	}
-	...
-];
-console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} F`);
-// -> 'room temperature is about 69.8 F'
-```
-
-
-
-
-### Hierarchical (JSON, XML)
-
-[Javascript Object Notation (JSON)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) is a hierarchical data format for storing serialized Javascript objects. While similar to a Javascript object, JSON is different in that
-- JSON is serialized (a string)
-- JSON cannot store methods
-- JSON has [a stricter syntax](https://jsonlint.com/) (e.g. JSON keys must be wrapped in double quotes).
+1. Hierarchical data exchange formats (e.g. `JSON` or `XML`).
 
 ```json
 {
-    "name": "red",
-    "hex": "#ff0000",
-    "rgb": [255,0,0]
+    "cars": [{
+            "make": "Pontiac",
+            "model": "Vibe",
+            "year": 2009
+        }, {
+            "make": "Honda",
+            "model": "Fit",
+            "year": 2007
+        }, {
+            "make": "Chevrolet",
+            "model": "Blazer",
+            "year": 2000
+        }, {
+            "make": "Toyota",
+            "model": "RAV4",
+            "year": 1999
+        }]
 }
 ```
 
-[Extensible Markup Language (XML)](https://www.w3schools.com/xml/xml_examples.asp) is another common hierarchical format for storing and transporting data. The following example is an XML representation of the above JSON object. You will note it shows how XML is similar in capability and structure, yet due to the higher file size (96 vs. 61 characters) and popularity of Javascript which works well with JSON, XML has become a less popular option.
+See this lesson for more on data exchange formats
 
-```xml
-<color>
-	<name>red</name>
-	<hex>#ff0000</hex>
-	<rgb>
-		<r>255</r>
-		<g>0</g>
-		<b>0</b>
-	</rgb>
-</color>
-```
+- [Learn Computing / Data Types / Data Exchange Formats](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md#data-exchange-formats)
+
 
 
 
@@ -213,31 +136,49 @@ console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} 
 
 ## Using External Data
 
-There are two important concepts around *access* and *use* when loading external data, regardless whether it is located in your own project or it from across a network.
+There are two important concepts to know about when importing external data into your program:
+
+- Your program must be given **access** to the data by the [CORS policy](#cross-origin-resource-sharing) of the data host.
+- A `json` file is plain text, and so it must be **deserialized** and stored in computer memory to use it.
+
+
 
 
 
 ### Cross-Origin Resource Sharing
 
-[Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) controls how Javascript *in the browser* can access external resources. This means you may only import files from *the same* [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) as the file you are importing it into.
+Cross-Origin Resource Sharing (a.k.a. [CORS policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)) control how Javascript *in the browser* can access external resources. Unless [explicitly enabled by the host](https://expressjs.com/en/resources/middleware/cors.html) defaults are:
 
-- A script at `https://foo.com` ***can*** access a file of the same origin `https://foo.com/data.json`
+- You **can** import files [from the same origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) as the file you are importing it into.
+    - ✅ - a script at `https://foo.com` ***can*** access a file at `https://foo.com/data.json` because they have the same origin.
+- You **cannot** import data *across* origins without permission.
+    - 🚫 - a script at `https://foo.com` ***cannot*** access a resource at a different origin `https://bar.com/data.json`
+- You **cannot** import data using the *file://* protocol, even with the same origin.
+    - 🚫 - a script at `file:///Users/username/coolwebsite/index.html` ***cannot*** fetch() `file:///Users/username/coolwebsite/data.json` because ['URL schemes must be "http" or "https" for CORS request'](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp)
 
-But ([unless the other server enables it](https://expressjs.com/en/resources/middleware/cors.html)), you cannot access data across origins:
+Just imagine if any website you visited could access this location! `file:///Users/username/allYourPersonalData`
 
-- A script at `https://foo.com` ***cannot*** access a resource at a different origin `https://bar.com/data.json`
 
-CORS also says that to use the fetch() API, 'URL schemes must be "http" or "https" for CORS request'. So...
 
-- Even though they have the same `file://` protocol, a script at `file:///Users/username/coolwebsite/index.html` ***cannot*** fetch() `file:///Users/username/coolwebsite/data.json`
+### How to fix CORS
 
-#### Fixing CORS frontend issues
+If you see the following error it likely means you are trying to access an API on a server that hasn't enabled CORS.
 
-If you see this error it likely means you are trying to access an API on a server that hasn't enabled CORS. To get around this, [create a proxy server and run it on a live server (e.g. Heroku)](https://github.com/omundy/sample-node-proxy-server).
-
-```js
-Access to fetch at '<remote-url>' from origin '<your-website-url>' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```text
+Access to fetch at '<remote-url>' from origin '<your-website-url>' has been blocked by CORS policy
+No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
+
+To get around this while you are developing locally, you can do one of the following:
+
+- Run a web server on your own computer and test locally
+    - Beginner: Enable Apache (a.k.a. "localhost") on your computer:
+        - [Configuring Apache2 on macOS Big Sur 11.1 (2021) to serve a local website.](https://tintinve.medium.com/serving-a-local-website-from-apache2-on-macos-big-sur-11-1-2021-472f8acea8a0)
+    - Advanced: [Create a proxy server and run it on a live server (e.g. Heroku)](https://github.com/omundy/sample-node-proxy-server)
+- Upload your files to a web server to test
+    - Essentially, commit and push your code to Github.io each time you make a change. This can be very tedious.
+
+
 
 
 
@@ -246,13 +187,17 @@ Access to fetch at '<remote-url>' from origin '<your-website-url>' has been bloc
 
 ### Serialization and Deserialization
 
-Data imported from an external source is technically a `string` when Javascript loads it. That is to say, all readable objects have been [serialized](https://en.wikipedia.org/wiki/Serialization) into string data so that it can be stored or sent across a network as a single entity. For example, [`data`](demos/data-samples/cat-facts.json) returned from this [random cat facts API](https://cat-fact.herokuapp.com/facts/random) ([docs](https://alexwohlbruck.github.io/cat-facts/docs/)) is just one large string:
+Data imported from an external source is technically a `string` when Javascript loads it. Data that is in text form, or [serialized](https://en.wikipedia.org/wiki/Serialization) into a [data exchange format](https://en.wikipedia.org/wiki/Data_exchange#Popular_languages_used_for_data_exchange), can be stored or sent across a network as a single entity.
+
+For example, [`data`](../datasets/cat-facts.json) returned from this [random cat facts API](https://cat-fact.herokuapp.com/facts/random) ([docs](https://alexwohlbruck.github.io/cat-facts/docs/)) is just one large string:
 
 ```string
 const str = '[{"type":"cat","text":"In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."},{"type":"cat","text":"Cats mark you as their territory when they rub their faces and bodies against you, as they have scent glands in those areas."},{"type":"cat","text":"When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."}]';
 ```
 
-Thus to use external data in your code you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can read and use. For example, [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can be used to convert a string of serialized JSON data into a Javascript Object.
+Before you can use external data in your code, you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can read and use.
+
+For example, [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can be used to convert a string of serialized JSON data into a Javascript Object.
 
 ```js
 let obj = JSON.parse(str);
@@ -310,7 +255,7 @@ fetch('https://cat-fact.herokuapp.com/facts/random') // request external resourc
         console.log(data); // log the object
     });
 ```
-![fetch](assets/img/demo-fetch.png)
+![fetch](../../assets/img/demo-fetch.png)
 
 
 
@@ -504,6 +449,57 @@ Moved to https://github.com/omundy/learn-computing/blob/main/topics-data-cleanin
 1. Download a CSV from your spreadsheet
 1. Use Node and [csvtojson](https://www.npmjs.com/package/csvtojson) to convert the file
 1. Save as a file using [`writeFile`](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+
+
+
+
+
+For example, to convert this file [`../datasets/temps.csv`](../datasets/temps.csv)
+
+```data
+C, F, description
+-273.15, -459.67, absolute zero temperature
+0, 32.0, freezing/melting point of water
+21, 69.8, room temperature
+37, 98.6, average body temperature
+100, 212, boiling point of water
+```
+
+to deserialized Javascript code, two-dimensional array would be the closest equivalent data structure in Javascript for tabular data.
+
+```js
+const tempsArr = [
+	['C', 'F', 'description']
+	['-273.15', '-459.67', 'absolute zero temperature'],
+	['0', '32.0', 'freezing/melting point of water'],
+	['21', '69.8', 'room temperature'],
+	...
+];
+```
+
+Depending on your application you may want to convert your data to a Javascript object to make it easier to use. Below, each row has been converted so that the column values can be referenced by their keys, and those which are numbers have been retyped from a `string` to `number` type.
+
+```js
+const tempsObjectsArr = [
+	{
+		C: -273.15,
+		F: -459.67,
+		description: 'absolute zero temperature'
+	},{
+		C: 0,
+		F: 32.0,
+		description: 'freezing/melting point of water'
+	},{
+		C: 21,
+		F: 69.8,
+		description: 'room temperature'
+	}
+	...
+];
+console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} F`);
+// -> 'room temperature is about 69.8 F'
+```
+
 
 
 

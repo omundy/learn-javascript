@@ -69,9 +69,9 @@ Javascript is the programming language of the web. With Javascript you can
 - **Events** - Things that happen, like user input, that may change the state.
 
 
-[![true](../../assets/img/javascript-diagram-lamp.png)](../../javascript-topics/single-page-apps/javascript-lamp/index.html)
+[![true](../../assets/img/javascript-diagram-lamp.png)](../../topics/single-page-apps/javascript-lamp/index.html)
 
-<sup>Above, the <a href="../../javascript-topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
+<sup>Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
 
 
 
