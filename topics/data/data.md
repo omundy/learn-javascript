@@ -75,7 +75,7 @@ var singer = {
 
 See these lessons for more on arrays, objects, and other collections.
 
-- [Learn Javascript / Data Structures](../../javascript-1/1-4-data-structures/data-structures.md)
+- [Learn Javascript / Data Structures](../../topics/data-structures/data-structures.md)
 - [Learn Computing / Data Types / Data Collections](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md#data-collections)
 
 

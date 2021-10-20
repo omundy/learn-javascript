@@ -3,7 +3,7 @@
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# 1-1 Variables
+# Variables
 
 How to store and compare values and data types
 

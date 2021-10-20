@@ -3,7 +3,7 @@
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# 1-0 Introduction
+# Introduction
 
 Introduction to expressions, statements, and operators
 
@@ -79,7 +79,7 @@ Javascript is the programming language of the web. With Javascript you can
 
 ## How to use Javascript
 
-Javascript can run in any web browser or on your computer (using Node). The [next lesson](../1-1-variables/variables.md#add-javascript-to-a-web-page) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
+Javascript can run in any web browser or on your computer (using Node). The [next lesson](../../README.md#javascript-part1) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
 
 👉 **Try it out** - Two places to test Javascript.
 
@@ -145,7 +145,7 @@ new Date()
 
 
 <!-- Variations of this section:
-learn-javascript/javascript-1/1-0-introduction.md
+learn-javascript/topics/introduction.md
 learn-computing/topics-data-types.md
 -->
 

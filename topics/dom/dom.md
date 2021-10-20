@@ -3,7 +3,7 @@
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# 1-2 Document Object Model (DOM)
+# Document Object Model (DOM)
 
 Comparison and logical operators, conditional statements
 

@@ -1,0 +1,50 @@
+{
+    "name": "learn-javascript",
+    "version": "1.0.0",
+    "description": "A linear progression through full stack Javascript, with tutorials, exercises, and examples",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/omundy/learn-javascript.git"
+    },
+    "author": "Owen Mundy",
+    "license": "Attribution-NonCommercial 4.0 International",
+    "bugs": {
+        "url": "https://github.com/omundy/learn-javascript/issues"
+    },
+    "homepage": "https://github.com/omundy/learn-javascript#readme",
+
+    "marp": {
+        "author": "Owen Mundy",
+        "title": "Learn Javascript",
+        "keywords": "javascript, js, jquery",
+
+
+
+        "allowLocalFiles": true,
+        "html": true,
+        "inputDir": "topics",
+        "output": "slides",
+        "watch": true,
+
+"bespoke": {
+    "progress": true
+},
+
+
+
+        "theme": "owen",
+        "themeSet": ["assets/css/"],
+        "minifyCSS": false,
+
+
+        "script": {
+
+            "source":["assets/js/"]
+        }
+    }
+
+}
