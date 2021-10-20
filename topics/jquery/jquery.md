@@ -23,7 +23,10 @@ Presentation comments ...
 
 1. [Introduction](#introduction)
 1. [What is jquery](#what-is-jquery)
+1. [Write less, do more](#write-less-do-more)
 1. [Installation](#installation)
+1. [jQuery syntax](#jquery-syntax)
+1. [jQuery examples](#jquery-examples)
 1. [Selectors](#selectors)
 1. [Events](#eevnt)
 1. [Next steps](#next-steps)
@@ -75,7 +78,9 @@ Students who complete this module will be able to:
 
 ## What is jquery
 
-jquery is a library that reduces the complexity of using Javascript with HTML.
+jquery is a Javascript library that reduces the complexity of working with HTML.
+
+It is the most [widely deployed Javascript library](https://w3techs.com/technologies/overview/javascript_library) (just ahead of Bootstrap)
 
 It's goal, "write less, do more", helps with:
 
@@ -84,6 +89,32 @@ It's goal, "write less, do more", helps with:
 - **Events** - Listen for user and page events
 - **Effects** - Like showing, hiding, or animating content
 - **Data** - Get external or remote data from API using AJAX
+
+
+
+
+
+---
+
+## Write less, do more
+
+These [codes](../../topics/jquery/demos/jquery-vs-vanilla.html) do the same thing, adding data to multiple elements on a page, yet jquery is much easier to write and less error prone.
+
+Pure ("vanilla") Javascript
+
+```js
+var ele = document.getElementsByClassName('myClass'); // array of elements
+for (var i = 0; i < ele.length; ++i) {
+	var item = ele[i];
+	item.innerHTML += ' 🤨 new data added via pure javascript)';
+}
+```
+
+Javascript + jQuery
+
+```js
+$('.myClass').append(' 🎉 new data added with jquery library');
+```
 
 
 
@@ -159,6 +190,11 @@ $(this).hide() // hides the current element.
 1. Open your page in a web browser
 
 
+
+
+
+
+
 ---
 
 ## Events
@@ -218,7 +254,7 @@ $(document).ready(function(){
 });
 ```
 
-
+[More event examples](../../topics/jquery/demos/jquery-events.html)
 
 ---
 
@@ -272,31 +308,6 @@ $(document).ready(function(){
 ```
 
 
-
-
----
-
-## Selecting classes
-
-These [samples](demos/1-dom-vanilla-vs-jquery.html) do the same thing, adding data to multiple elements on a page, yet the jquery version is much easier to write and less error prone.
-
-
-
-Pure Javascript
-
-```js
-var ele = document.getElementsByClassName('myClass'); // array of elements
-for (var i = 0; i < ele.length; ++i) {
-	var item = ele[i];
-	item.innerHTML += ' ++ new data (pure js)';
-}
-```
-
-Javascript + jQuery
-
-```js
-$('.myClass').append(' ## new data (jquery)');
-```
 
 
 

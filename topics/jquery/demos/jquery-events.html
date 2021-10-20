@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learning Javascript</title>
+</head>
+<body>
+
+<div id="myId1">myId1</div>
+<div id="myId2">myId2</div>
+
+<div class="aClassToHide">aClassToHide 1</div>
+<div class="aClassToHide">aClassToHide 2</div>
+<div class="aClassToHide">aClassToHide 3</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+// this assigns an event to all divs, but doesn't have a callback function
+$("div").mouseenter();
+
+// to determine what should happen we need a callback function
+$("div").mouseenter(function(){
+	// now, when we hover over a div this code is executed
+    console.log("mouse has entered!");
+});
+
+// this assigns a click event to every element with .aClassToHide
+$(".aClassToHide").click(function(){
+	// $(this) is shorthand to refer to the current selection
+	// we could also say $(".aClassToHide") but $(this) is easier to type
+	$(this).hide();
+});
+
+</script>
+</body>
+</html>

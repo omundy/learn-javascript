@@ -59,7 +59,10 @@ footer {
 <ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#what-is-jquery">What is jquery</a></li>
+<li><a href="#write-less-do-more">Write less, do more</a></li>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#jquery-syntax">jQuery syntax</a></li>
+<li><a href="#jquery-examples">jQuery examples</a></li>
 <li><a href="#selectors">Selectors</a></li>
 <li><a href="#eevnt">Events</a></li>
 <li><a href="#next-steps">Next steps</a></li>
@@ -99,7 +102,8 @@ footer {
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>What is jquery</h2>
-<p>jquery is a library that reduces the complexity of using Javascript with HTML.</p>
+<p>jquery is a Javascript library that reduces the complexity of working with HTML.</p>
+<p>It is the most <a href="https://w3techs.com/technologies/overview/javascript_library">widely deployed Javascript library</a> (just ahead of Bootstrap)</p>
 <p>It's goal, &quot;write less, do more&quot;, helps with:</p>
 <ul>
 <li><strong>Selection</strong> - Simplifies selecting one or multiple elements with Javascript</li>
@@ -110,6 +114,20 @@ footer {
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+<h2>Write less, do more</h2>
+<p>These <a href="../../topics/jquery/demos/jquery-vs-vanilla.html">codes</a> do the same thing, adding data to multiple elements on a page, yet jquery is much easier to write and less error prone.</p>
+<p>Pure (&quot;vanilla&quot;) Javascript</p>
+<pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">var</span> ele = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&#x27;myClass&#x27;</span>); <span class="hljs-comment">// array of elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; ele.length; ++i) {
+	<span class="hljs-keyword">var</span> item = ele[i];
+	item.innerHTML += <span class="hljs-string">&#x27; <img class="emoji" draggable="false" alt="🤨" src="https://twemoji.maxcdn.com/2/svg/1f928.svg" data-marp-twemoji=""/> new data added via pure javascript)&#x27;</span>;
+}
+</span></span></foreignObject></svg></code></pre>
+<p>Javascript + jQuery</p>
+<pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-string">&#x27;.myClass&#x27;</span>).append(<span class="hljs-string">&#x27; <img class="emoji" draggable="false" alt="🎉" src="https://twemoji.maxcdn.com/2/svg/1f389.svg" data-marp-twemoji=""/> new data added with jquery library&#x27;</span>);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Installation</h2>
 <p>Like many libraries, jquery can be installed with one line of code. You can <a href="https://jquery.com/download/">download</a> it to your project, but a CDN is the simplest method (and <a href="https://jquery.com/download/#using-jquery-with-a-cdn">good for performance</a>).</p>
 <p>The <a href="https://developers.google.com/speed/libraries#jquery">google hosted library</a> includes the <code>&lt;script&gt;</code> tags, making it easy to copy and paste.</p>
@@ -120,7 +138,7 @@ footer {
 </span></span></foreignObject></svg></code></pre>
 <p>For the same reason you add Javascript after the page elements have loaded, you can only use jquery functions <em><strong>after you import the library</strong></em>.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>jQuery syntax</h2>
 <p>After you import the framework into the page and you can access jquery functions via <code>$</code></p>
 <p>jQuery uses CSS selectors to select and perform actions on elements. The syntax is:</p>
@@ -132,7 +150,7 @@ footer {
 <li>The <code>action()</code> to be performed on the element(s)</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>jQuery examples</h2>
 <p>Classic CSS selectors</p>
 <pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-string">&quot;p&quot;</span>).hide() <span class="hljs-comment">// hides all &lt;p&gt; elements.</span>
@@ -145,7 +163,7 @@ footer {
 <pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-built_in">this</span>).hide() <span class="hljs-comment">// hides the current element.</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> Try it out</h2>
 <ol>
 <li>Create a new HTML page <code>jquery.html</code> in your current class project</li>
@@ -156,7 +174,7 @@ footer {
 <li>Open your page in a web browser</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Events</h2>
 <p>An <strong>event</strong> is &quot;fired&quot; when things happen on a page or a user does something.</p>
 <p>For example, clicking or moving a mouse over an element, or selecting a radio button, can &quot;trigger&quot; an event the moment it occurs.</p>
@@ -168,7 +186,7 @@ footer {
 <li>Document/Window: <code>load</code>, <code>resize</code>, <code>scroll</code>, <code>unload</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>The document.ready() event</h2>
 <p>If you add your code to the end of your document, it is still possible some images will take longer than expected.</p>
 <p>It's good to wait for the document to be fully loaded and ready before working with it.</p>
@@ -179,7 +197,7 @@ footer {
 </span></span></foreignObject></svg></code></pre>
 <p>When an event is fired, the <a href="https://www.w3schools.com/jquery/jquery_callback.asp"><strong>callback function</strong></a> will <strong>handle</strong> the event.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>click() Event</h2>
 <p>The <code>click()</code> method (&quot;function&quot;) attaches an <strong>event handler</strong> to an element, which is &quot;fired&quot; when the event happens.</p>
 <p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong></p>
@@ -197,8 +215,9 @@ footer {
     });
 });
 </span></span></foreignObject></svg></code></pre>
+<p><a href="../../topics/jquery/demos/jquery-events.html">More event examples</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Method chaining</h2>
 <p>With jQuery, you can chain together actions/methods to run multiple methods on the same element in a single statement.</p>
 <p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong> - Chain <code>.css()</code>, <code>.slideUp()</code>, and <code>.slideDown</code> methods</p>
@@ -212,7 +231,7 @@ footer {
 });
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" data-marpit-pagination="14" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>val() to get / set data from a form</h2>
 <p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong> - <a href="https://www.w3schools.com/jquery/jquery_dom_get.asp">Get data</a> from a form</p>
 <ol>
@@ -234,20 +253,6 @@ footer {
 });
 
 
-</span></span></foreignObject></svg></code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" data-marpit-pagination="14" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
-<h2>Selecting classes</h2>
-<p>These <a href="demos/1-dom-vanilla-vs-jquery.html">samples</a> do the same thing, adding data to multiple elements on a page, yet the jquery version is much easier to write and less error prone.</p>
-<p>Pure Javascript</p>
-<pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">var</span> ele = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&#x27;myClass&#x27;</span>); <span class="hljs-comment">// array of elements</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; ele.length; ++i) {
-	<span class="hljs-keyword">var</span> item = ele[i];
-	item.innerHTML += <span class="hljs-string">&#x27; ++ new data (pure js)&#x27;</span>;
-}
-</span></span></foreignObject></svg></code></pre>
-<p>Javascript + jQuery</p>
-<pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>$(<span class="hljs-string">&#x27;.myClass&#x27;</span>).append(<span class="hljs-string">&#x27; ## new data (jquery)&#x27;</span>);
 </span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" data-marpit-pagination="15" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
