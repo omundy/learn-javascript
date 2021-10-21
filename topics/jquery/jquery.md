@@ -307,17 +307,53 @@ $(document).ready(function(){
 
 ---
 
-## AJAX (asynchronous Javascript)
 
-Next class we will use jquery AJAX to fetch data from APIs.
+## What is AJAX?
 
+AJAX, or Asynchronous JavaScript and XML, is a method for loading data in the background of web pages. The page doesn't refresh to show new data so it is great for:
+
+- Single page applications (SPAs) (e.g. Gmail, Google Maps, Facebook)
+- Data-driven pages (dashboards or visualizations, where data changes frequently)
+- Fetching data from remote sources (like APIs)
+
+jquery simplifies writing AJAX, providing [functions](https://www.w3schools.com/jquery/jquery_ref_ajax.asp) to load text, XML, or JSON using post (to submit data) or get (to request data) [methods](https://www.w3schools.com/tags/ref_httpmethods.asp).
+
+---
+
+## get() method
+
+The $.get() method requests data from the server with an HTTP GET request. Syntax:
+
+```js
+$.get(URL,callback);
+```
+
+1. **URL** (required) specifies the path to request.
+1. **callback** (optional) the function to be executed if the request succeeds.
+
+```js
+$("button").click(function(){
+    $.get("http://www.boredapi.com/api/activity/", function(data, status){
+        console.log("Data: " + data + "\nStatus: " + status);
+    });
+});
+```
+
+<a href="../../topics/jquery/demos/jquery-ajax.html" target="_blank">See live example</a>
+
+---
+
+## AJAX notes
+
+1. CORS (Cross Origin Resource Sharing) ...
+1. Loading data locally requires a server
+1. Test with Postman to be sure API is actually working (lots of moving parts)
 
 
 
 
 
 ---
-
 
 ## Next steps
 
