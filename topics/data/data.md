@@ -21,7 +21,6 @@
 		- [Method 2 – Make it publicly accessible](#method-2-make-it-publicly-accessible)
 		- [Method 3 - Use the Google Sheets API](#method-3-use-the-google-sheets-api)
 	- [How to get data from an API](#how-to-get-data-from-an-api)
-		- [Example APIs](#example-apis)
 - [Data Storage](#data-storage)
 	- [Static vs. Dynamic](#static-vs-dynamic)
 	- [Flat files vs. Databases](#flat-files-vs-databases)
@@ -76,7 +75,7 @@ var singer = {
 See these lessons for more on arrays, objects, and other collections.
 
 - [Learn Javascript / Data Structures](../../topics/data-structures/data-structures.md)
-- [Learn Computing / Data Types / Data Collections](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md#data-collections)
+- [Learn Computing / Data Types / Data Collections](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md)
 
 
 
@@ -125,8 +124,7 @@ Data collections can be stored inside code files, or more often, imported from e
 
 See this lesson for more on data exchange formats
 
-- [Learn Computing / Data Types / Data Exchange Formats](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md#data-exchange-formats)
-
+- [Learn Computing / Data Types / Data Exchange Formats](https://github.com/omundy/learn-computing/blob/main/topics-data-types.md)
 
 
 
@@ -340,44 +338,28 @@ This is the most involved method. See their [tutorial](https://developers.google
 
 
 
-
+---
 
 ### How to get data from an API
 
-Basic tips for working with APIs...
-
-1. Read the documentation
-	- Many APIs require that you register and make requests using a key or token.
-		- For example, when [requesting data](https://pro.dp.la/developers/requests#url) from the [DPLA](https://dp.la/) you must include your `api_key` in the request `https://api.dp.la/v2/items?q=kittens&api_key=<here>`
-	- Many APIs use rate limiting to prevent abuse. They identify your requests using your key.
-1. Start with a tool that makes it easy to see what is returned:
-	- Use the browser + [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US) to see the structure of the returned data
-	- Use [Postman](https://www.postman.com/) for even more advanced API testing
-1. Make sure your requests work in the browser or Postman before you start coding
- 	- Save sample responses (test data) locally so you can develop your application without bumping into a rate limit.
-1. Things to remember
-	- APIs introduce latency so use asynchronous programming (`async`/`await`, promises, etc.)
-	- If your code isn't working check that the API is returning results using a browser or Postman.
-	- APIs are always changing based on needs and resources. In the early days of Facebook and Instagram anyone (artists, researchers, [anti-press authoritarian governments](https://www.scu.edu/ethics-spotlight/social-media-and-democracy/weaponization-of-social-media-by-authoritarian-states/)) could collect entire databases via their APIs. Thanks to various [cultural](https://iknowwhereyourcatlives.com/) works [this](https://givememydata.com/) is no longer the case.
-
-
-#### Example APIs
-
-- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
-- [Public APIs](https://github.com/public-apis/public-apis) - A collective list of free APIs for use in software and web development
-- [Data / Functionality API Resource List](https://docs.google.com/spreadsheets/d/196CgwxBIkX5v6VeitOFWTYfd07OU_5A-HC4Gu7gy6xE/edit#gid=0) - My own list
-- [Digital Public Library of America API](https://pro.dp.la/developers/api-codex)
+See https://omundy.github.io/learn-computing/slides/data-apis.html
 
 
 
+---
+
+### Tips for writing code using APIs
+
+When you use remote data it adds additional latency and points where problems can occur:
 
 
+- There are more points where things can fail.
+    - Make sure your requests work in the browser or Postman
+- Save sample responses (test data) locally so you can develop your application without bumping into a rate limit.
+- APIs introduce latency so use asynchronous programming (`async`/`await`, promises, etc.)
+- Many APIs use rate limiting to prevent abuse. They identify your requests using your key.
 
-
-
-
-
-
+Start with a tool that makes it easy to see what is returned:
 
 
 
@@ -435,9 +417,7 @@ https://flaviocopes.com/mysql-how-to-install/
 
 ## Data Cleaning
 
-
-Moved to https://github.com/omundy/learn-computing/blob/main/topics-data-cleaning.md
-
+See https://omundy.github.io/learn-computing/slides/data-cleaning.html
 
 
 

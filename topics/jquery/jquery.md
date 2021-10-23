@@ -318,6 +318,14 @@ AJAX, or Asynchronous JavaScript and XML, is a method for loading data in the ba
 
 jquery simplifies writing AJAX, providing [functions](https://www.w3schools.com/jquery/jquery_ref_ajax.asp) to load text, XML, or JSON using post (to submit data) or get (to request data) [methods](https://www.w3schools.com/tags/ref_httpmethods.asp).
 
+
+---
+
+## What is an API?
+
+See this presentation for an introduction to APIs 
+https://omundy.github.io/learn-computing/slides/data-apis.html
+
 ---
 
 ## get() method
@@ -345,6 +353,8 @@ $("button").click(function(){
 
 ## AJAX notes
 
+A few caveats and complications when it comes to using AJAX
+
 1. CORS (Cross Origin Resource Sharing) ...
 1. Loading data locally requires a server
 1. Test with Postman to be sure API is actually working (lots of moving parts)
@@ -360,7 +370,7 @@ $("button").click(function(){
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the [next lesson](../../README.md#javascript-part1).
-
+1. Test your knowledge with the W3Schools [jquery quiz](https://www.w3schools.com/jquery/jquery_quiz.asp)
 
 
 

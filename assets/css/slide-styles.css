@@ -1,14 +1,22 @@
 /* @theme owen */
 @import 'default';
 
-/* @import 'gaia'; */
-/* @import 'uncover'; */
+/* Styles for slides only, they don't work on github.com */
+
 .caption {
     color: #999;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
 }
 
 .small {
     font-size: .7rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+.block {
+    display: block;
 }
 
 section {
@@ -16,22 +24,20 @@ section {
     color: #333;
 }
 
+/* Create two col layout */
+.twocolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: left;
+}
 
-
-
-
-
-
-
-/* Add "Page" prefix and total page number
-local pagination directive is still required */
+/* Adds "Page" prefix and total page number
+local pagination directive still required */
 section::after {
     font-size: .9rem !important;
     content: attr(data-marpit-pagination) ' / 'attr(data-marpit-pagination-total);
 }
-
-
-
 
 /*
 
