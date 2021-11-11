@@ -22,28 +22,20 @@
         "title": "Learn Javascript",
         "keywords": "javascript, js, jquery",
 
-
-
         "allowLocalFiles": true,
         "html": true,
         "inputDir": "topics",
         "output": "slides",
         "watch": true,
-
-"bespoke": {
-    "progress": true
-},
-
-
-
+        "bespoke": {
+            "progress": true
+        },
         "theme": "owen",
         "themeSet": ["assets/css/"],
         "minifyCSS": false,
-
-
         "script": {
 
-            "source":["assets/js/"]
+            "source": ["assets/js/"]
         }
     }
 
