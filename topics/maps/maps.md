@@ -21,8 +21,23 @@ Tutorials, references, and tips
 ## Getting Started
 
 
-I highly recommend using [geojson](https://geojson.org/) as your data format. Leaflet has [methods for using geojson](https://leafletjs.com/examples/geojson/) and there are great tools like the [geojson.io](https://geojson.io/) editor to visualize and create your data. 
+I highly recommend using [geojson](https://geojson.org/) as your data format. Leaflet has [methods for using geojson](https://leafletjs.com/examples/geojson/) and there are great tools like the [geojson.io](https://geojson.io/) editor to visualize and create your data.
 
+
+
+
+
+### Leaflet Maps
+
+* [Leaflet: Make a web map!](https://maptimeboston.github.io/leaflet-intro/)
+* [Web Map Workshop](http://duspviz.mit.edu/web-map-workshop/)
+
+
+
+### Data
+
+* [jsonlint.com](https://jsonlint.com/) - The JSON validator
+* [geojson.io](http://geojson.io/) - The missing GUI for GEOJSON files
 
 
 

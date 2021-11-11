@@ -323,7 +323,7 @@ jquery simplifies writing AJAX, providing [functions](https://www.w3schools.com/
 
 ## What is an API?
 
-See this presentation for an introduction to APIs 
+See this presentation for an introduction to APIs
 https://omundy.github.io/learn-computing/slides/data-apis.html
 
 ---
@@ -341,7 +341,7 @@ $.get(URL,callback);
 
 ```js
 $("button").click(function(){
-    $.get("http://www.boredapi.com/api/activity/", function(data, status){
+    $.get("https://www.boredapi.com/api/activity/", function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
     });
 });
