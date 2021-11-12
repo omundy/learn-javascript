@@ -151,11 +151,12 @@ $("#main").load('views/intro.html');
 
 ## More examples
 
+Other simple examples that manage state / change views:
 
 - [javascript-lamp](../../topics/single-page-apps/javascript-lamp/index.html)
 - [games/gnome-dragger](../../topics/games/gnome-dragger/index.html)
 - [games/bug-selector](../../topics/games/bug-selector/index.html)
-
+- [quiz-simple](../../topics/single-page-apps/quiz-simple/index.html)
 
 
 
