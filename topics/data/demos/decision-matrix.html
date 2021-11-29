@@ -23,7 +23,7 @@
                 <p>Click random, or select options, then submit.</p>
             </div>
         </div>
-    </div> 
+    </div>
 
 
 
@@ -179,7 +179,7 @@
             // begin column and select
             let str = `
                 <div class="col-auto">
-                <select class="form-select ${key}" aria-label="Default select example">
+                <select id="${key}" class="form-select ${key}" aria-label="Default select example">
                 <option value="-1">--- select ---</option>
             `;
             // loop through options
@@ -192,43 +192,43 @@
             str += `</select></div>`;
             $('.optionsRow').append(str);
         }
-
-
-
-        $(document).ready(() => {
-            // add options to the page from the arrays
-            addOptionsToPage('adjective');
-            addOptionsToPage('color');
-            addOptionsToPage('animal');
-            // for testing on refresh
-            setAllRandom();
-        });
-
-
         // return a random element from arr
         function returnRandomArrElement(arr) {
             // unselect all
             return arr[Math.floor(Math.random() * arr.length)]
         }
+
+        function randomIntFromInterval(min, max) { // min and max included
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
         // set options to random, if callback then will checkValues too
-        function setAllRandom(callback) {
-            setRandomOption('animal');
-            setRandomOption('color');
-            setRandomOption('adjective');
+        function setAllOptionsRandom(callback) {
+            setOptionRandom('adjective');
+            setOptionRandom('color');
+            setOptionRandom('animal');
+            console.log(
+                $("#adjective option:selected").index(),
+                $("#color option:selected").index(),
+                $("#animal option:selected").index()
+            );
+
             if (callback) callback();
         }
         // set all options to random val
-        function setRandomOption(key) {
+        function setOptionRandom(key) {
             // get a random value from the array
-            let val = returnRandomArrElement(options[key]);
+
+            let numOptions = $(`#${key} option`).length;
+            let randomOptionIndex = randomIntFromInterval(1, numOptions - 1)
+
             // test
-            // console.log(key, val);
-            // remove selected from all, add selected to new value
-            $(`.${key} option`)
-                .removeAttr('selected')
-                .filter(`[value="${val}"]`)
-                .attr('selected', true);
+            console.log("setOptionRandom()", key, randomOptionIndex, numOptions);
+            // remove selected from all
+            $(`#${key} option`).removeAttr('selected');
+            // select new value
+            $(`#${key} option`)[randomOptionIndex].selected = true;
         }
+
         // check all the values for matches in the decision matrix
         function checkValues() {
 
@@ -280,12 +280,35 @@ animalVal = ${animalVal}
 
 
         // listeners
-        $('.random').click(async () => {
-            // send a reference to checkValues for callback
-            setAllRandom(checkValues);
+
+        $(document).ready(function() {
+            // add options to the page from the arrays
+            addOptionsToPage('adjective');
+            addOptionsToPage('color');
+            addOptionsToPage('animal');
+            // for testing on refresh
+            setAllOptionsRandom();
         });
-        $('.submit').click(() => {
+
+        $('.random').click(function() {
+            // send a reference to checkValues for callback
+            setAllOptionsRandom(checkValues);
+        });
+        $('.submit').click(function() {
             checkValues();
+        });
+        $(document.body).on('change', 'select', function(e) {
+
+
+            var optionSelected = $("option:selected", this);
+            var valueSelected = this.value;
+            console.log(e.target.id, optionSelected, valueSelected)
+
+            // remove selected from all, add selected to new value
+            $(`#${e.target.id} option`)
+                .removeAttr('selected')
+                .filter(`[value="${valueSelected}"]`)
+                .attr('selected', true);
         });
     </script>
 
