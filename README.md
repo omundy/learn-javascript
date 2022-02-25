@@ -23,3 +23,24 @@ An introduction to the language
 1. [Functions & Scope](topics/functions-scope/functions-scope.md) - Reusing code, protecting variables
 1. [Data Structures](topics/data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
 1. [jquery](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
+
+
+1. [Single Page Apps](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
+
+
+
+THINGS TO FILE
+
+
+
+Technical references
+
+* W3Schools [Javascript](https://www.w3schools.com/jsref/default.asp) reference
+* [Async JavaScript, a Pocket Reference: Learn asynchronous programming in JavaScript](https://medium.com/@ajmeyghani/async-javascript-a-pocket-reference-2bb16ac40d21)
+* [W3Schools: Console Object](https://www.w3schools.com/jsref/obj_console.asp)
+* [Boost your JavaScript Debugging Skills With These Console Tricks](https://medium.com/better-programming/boost-your-javascript-debugging-skills-with-these-console-tricks-ab984c70298a)
+
+
+Common JS problems
+
+- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)

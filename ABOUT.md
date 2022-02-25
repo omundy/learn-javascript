@@ -82,10 +82,23 @@ Before you begin, you should have basic knowledge of the following:
 
 
 
+## Code formatting
+
+Currently using [Prism](https://prismjs.com/) (and plugins: [normalize whitespace](https://prismjs.com/plugins/normalize-whitespace/)) thanks to [this article](https://www.taniarascia.com/adding-syntax-highlighting-to-code-snippets/)
+
+Themes
+https://github.com/PrismJS/prism-themes
+https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.css
+
+
+
+
 
 ## Credit
 
 Owen Mundy [Learn Javascript](https://github.com/omundy/learn-javascript) 2021.
+
+The slides were generated using https://marp.app/ - details in https://github.com/omundy/learn-computing
 
 
 ## License
