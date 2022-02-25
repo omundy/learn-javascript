@@ -1,0 +1,21 @@
+:: StoryTitle
+Your story title goes Here
+
+:: StoryData
+{
+        "ifid": "64529EA0-81BF-4E45-A1D1-AE2F14624200",
+        "start": "Start",
+        "format": "SugarCube",
+        "format-version": "2.32.0"
+}
+
+:: StoryInit
+/*
+This is a comment. Tweego won't do anything with it.
+The StoryInit passage is where you set up all the variables
+you're going to use, and anything else you want to happen
+as the game loads.
+*/
+
+:: Start
+This is the first passage. Nothing is happening here yet.
