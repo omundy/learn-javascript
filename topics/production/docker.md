@@ -1,24 +1,67 @@
+<!-- paginate: true -->
 
+← [Learn Javascript](../README.md)
 
 # Docker
 
+Use containerization to make deploying apps easier
+
+
+<!--
+Presentation comments ...
+-->
 
 
 
 
-## About
 
-Docker is an open-source software designed to facilitate and simplify application development.
+---
 
+## What is Docker?
 
-
-A **Docker container** is an isolated virtualized environment for building, deploying, and testing applications. They are compact, portable units that allow developers to reproduce a specific filesystem, data, and application dependencies.
-
-A **Docker image** is a "snapshot" of a container at a specific point in time. This includes its source code and dependencies needed to run an application. An image is a template, so when you create a container it runs an instance of the image, including all the source code inside. [1](https://phoenixnap.com/kb/docker-image-vs-container)
-
-The details of an image and its environment are stored in a **Dockerfile**.
+- **Docker** is an open-source software designed to facilitate and simplify application development through "containerization".
+- A **container** is a standardized environment that packages an application with its server dependencies.
+- Containers are compact and portable units that can reproduce a specific filesystem, data, and application dependencies across any machine.
 
 
+
+---
+
+## Docker Images
+
+- A **Docker image** is a "snapshot" (source code and dependencies needed to run) of a container at a specific point in time.
+- An image is a template, so when you create a container it runs an instance of the image, including all the source code inside. [[1](https://phoenixnap.com/kb/docker-image-vs-container)]
+
+
+
+---
+
+## Dockerfile
+
+- The details of an image and its environment are stored in a [**Dockerfile**](https://docs.docker.com/engine/reference/builder/).
+- For example, [this file](https://github.com/jkrup/express-docker-up/blob/master/Dockerfile) contains information to install the dependencies for a node app and start the server.
+
+```bash
+FROM node:10-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY index.js .
+CMD ["node", "index.js"]
+```
+
+
+---
+
+## Tutorials
+
+- [Docker: Get Started](https://docs.docker.com/get-started/)
+
+
+
+---
+
+## Docker CLI
 
 Command | Description
 --- | ---
@@ -44,6 +87,7 @@ https://docs.docker.com/get-started/
 
 
 
+---
 
 ## Use LSDTopoTools with Docker
 

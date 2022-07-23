@@ -11,6 +11,8 @@ Presentation comments ...
 -->
 
 
+
+
 ---
 
 ### Contents
@@ -20,7 +22,6 @@ Presentation comments ...
 1. [Sample Browser Extensions](#sample-browser-extensions) - Code samples to get started
 1. [Documentation](#documentation) - Cross-browser compatibility, publishing, packaging
 1. [FAQ & Tips](#faq-tips) - Browsers, specific issues
-
 
 
 
