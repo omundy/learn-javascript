@@ -9,4 +9,5 @@ desktop.ini
 .Trashes
 ._*
 
+# JS
 node_modules

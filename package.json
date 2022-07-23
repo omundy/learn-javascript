@@ -11,17 +11,16 @@
         "url": "git+https://github.com/omundy/learn-javascript.git"
     },
     "author": "Owen Mundy",
+    "title": "Learn Javascript",
     "license": "Attribution-NonCommercial 4.0 International",
     "bugs": {
         "url": "https://github.com/omundy/learn-javascript/issues"
     },
     "homepage": "https://github.com/omundy/learn-javascript#readme",
-
     "marp": {
         "author": "Owen Mundy",
         "title": "Learn Javascript",
         "keywords": "javascript, js, jquery",
-
         "allowLocalFiles": true,
         "html": true,
         "inputDir": "topics",
@@ -31,12 +30,20 @@
             "progress": true
         },
         "theme": "owen",
-        "themeSet": ["assets/css/"],
+        "themeSet": [
+            "assets/css/slide-styles.css"
+        ],
         "minifyCSS": false,
         "script": {
-
-            "source": ["assets/js/"]
+            "source": [
+                "assets/js/"
+            ]
         }
+    },
+    "devDependencies": {
+        "grunt-contrib-jshint": "^3.2.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-md2html": "^0.6.1",
+        "grunt-shell": "^4.0.0"
     }
-
 }
