@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - introduction/introduction</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <p>← <a href="../../README.md">Learn Javascript</a></p>
+<p><a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Introduction to expressions, statements, and operators</p>
+<h3 id="contents">Contents</h3>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-javascript">What is Javascript?</a> <code>5 min</code></li>
+<li><a href="#how-to-use-javascript">How to use Javascript</a> <code>5 min</code></li>
+<li><a href="#data-types">Data Types</a> <code>5 min</code></li>
+<li><a href="#expressions">Expressions</a> <code>5 min</code></li>
+<li><a href="#statements">Statements</a> <code>2 min</code></li>
+<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#exercises">Exercises</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h2 id="introduction-1">Introduction</h2>
+<p>Review the following sections and perform the activities on your own or with your group.</p>
+<p>Perform the task(s) when you see this 👉  emoji </p>
+<details>
+<summary>Learning Objectives</summary>
+
+<p>Students who complete this module will be able to:</p>
+<ul>
+<li>Explain what Javascript can do.</li>
+<li>Run Javascript code in a web browser console and code playground.</li>
+<li>List data types supported by Javascript.</li>
+<li>Classify and demonstrate Javascript data types, expressions, and statements.</li>
+</ul>
+</details>
+
+<details>
+<summary>Homework</summary>
+
+<ul>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy: JS 1-1 Introduction to Javascript</a> (1–8)</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+<h2 id="what-is-javascript">What is Javascript?</h2>
+<p>Javascript is the programming language of the web. With Javascript you can</p>
+<ul>
+<li>change HTML, CSS, or content of a web page</li>
+<li>respond to user events, animate or display content or media</li>
+<li>(using Node.js) run on a server, query to databases, publish mobile apps</li>
+<li>and much more.</li>
+</ul>
+<p><strong>Programming</strong>, the act of “writing instructions for a computer to execute,” usually involves:</p>
+<ul>
+<li><strong>Flow</strong> - The order in which statements are executed.</li>
+<li><strong>State</strong> - The status of data (variables) in your program.</li>
+<li><strong>Logic</strong> - Making decisions based on conditions (state).</li>
+<li><strong>Events</strong> - Things that happen, like user input, that may change the state.</li>
+</ul>
+<p><a href="../../topics/single-page-apps/javascript-lamp/index.html"><img src="../../assets/img/javascript-diagram-lamp.png" alt="true"></a></p>
+<p><sup>Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup></p>
+<h2 id="how-to-use-javascript">How to use Javascript</h2>
+<p>Javascript can run in any web browser or on your computer (using Node). The <a href="../../README.md#javascript-part1">next lesson</a> covers how to add scripts to a web page, but first let&#39;s look at two quick ways to <strong>test</strong> Javascript.</p>
+<p>👉 <strong>Try it out</strong> - Two places to test Javascript.</p>
+<p>The <strong>browser console</strong> is an excellent tool for checking messages and warnings, as well as allowing you to test code.</p>
+<ol>
+<li>Open DevTools and paste the below into the console at the bottom <code>&gt;</code>. You will see a simple HTML alert.</li>
+</ol>
+<pre><code class="language-js">alert(&quot;hello world!&quot;);
+</code></pre>
+<p><strong>Code playgrounds</strong> like <a href="https://jsfiddle.net">jsfiddle.net</a> and <a href="https://codepen.io/">codepen.io</a> make it easy to quickly test and share Javascript (and HTML and CSS files) in a &quot;web environment&quot;.</p>
+<ol start="2">
+<li>Add the code above to one of these playgrounds to test it out.</li>
+</ol>
+<p><img src="../../assets/img/code-playground-jsfiddle.png" alt="code playground"></p>
+<p>Some examples from class:</p>
+<ul>
+<li>codepen.io <a href="https://codepen.io/owenmundy/pen/PomvjqW">Random Article Generator</a></li>
+<li>codepen.io <a href="https://codepen.io/owenmundy/pen/OJRWQoY">Javascript / jQuery Cat Image Swapper</a></li>
+<li>jsfiddle.net <a href="https://jsfiddle.net/ow3n/sw6ek1wb/">Choropleth map with Mapbox</a></li>
+</ul>
+<h2 id="data-types">Data Types</h2>
+<p>All programming languages use data to manage their state. Data has both a <strong>value</strong> and a <strong>type</strong>. Below, the <strong><code>boolean</code></strong> <em>type</em> can only have one of two <em>values</em>: <code>true</code> or <code>false</code>.</p>
+<pre><code class="language-js">true
+false
+</code></pre>
+<p>Javascript is a loosely-typed language. This means Javascript will infer the data type of variables so you don&#39;t have to. Javascript organizes data by primitive and non-primitive types:</p>
+<p><img src="../../assets/img/javascript-diagram-data-types.png" alt="true"></p>
+<p>The Javascript <strong><code>number</code></strong> type does not distinguish integer from float values.</p>
+<pre><code class="language-js">1
+3.14
+-491143422
+</code></pre>
+<p>The <strong><code>string</code></strong> type includes any character as its value, wrapped using a single <code>&#39;words&#39;</code> or double <code>&quot;other words&quot;</code> quotes. The number <code>3.14</code> below is technically a string because it is wrapped in quotes.</p>
+<pre><code class="language-js">&quot;hello world 🥰&quot;
+&#39;3.14&#39;
+`strings wrapped
+ using back ticks support
+ multiple lines`
+</code></pre>
+<p>A later lesson will discuss types categorized as <code>Objects</code> (collections like <code>arrays</code>, <code>objects</code>, <code>Date</code>, etc.).</p>
+<pre><code class="language-js">[4,1,2]
+{key: &quot;value&quot;}
+new Date()
+</code></pre>
+<!-- Variations of this section:
+learn-javascript/topics/introduction.md
+learn-computing/topics-data-types.md
+-->
+
+<h2 id="expressions">Expressions</h2>
+<p>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators">expression</a> is any unit of code that resolves to a data value. Expressions are the fundamental building blocks of code, and use data (&quot;operands&quot;) with <a href="https://www.w3schools.com/js/js_operators.asp">operators</a> to perform math, logic, or string calculations.</p>
+<h3 id="👉-try-it-out---explore-data-types-using-the-javascript-console">👉 <strong>Try it out</strong> - Explore data types using the Javascript Console</h3>
+<ol>
+<li><strong>Primary expressions</strong> - If you pass data to Javascript it will simply <strong>return</strong> the data&#39;s value.</li>
+</ol>
+<pre><code class="language-js">12
+</code></pre>
+<ol start="2">
+<li>Adding an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators">arithmetic</a> operator and another data value will prompt Javascript to <strong>evaluate</strong> the code, multiplying the values to <strong>return</strong> (<em>output</em>) the <em>new</em> value <code>144</code> produced.</li>
+</ol>
+<pre><code class="language-js">12 * 12
+</code></pre>
+<ol start="3">
+<li>If you use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"><code>typeof</code></a> operator, Javascript will return a string describing the data&#39;s <em>type</em>.</li>
+</ol>
+<pre><code class="language-js">typeof 12
+</code></pre>
+<ol start="4">
+<li>The following <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators">comparison operators</a> will return a logical <code>boolean</code> value based on whether the comparison in the expression is true.</li>
+</ol>
+<pre><code class="language-js">4 &gt; 5
+</code></pre>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality">equality operator</a> <code>==</code> checks to see if two values are equal, <code>true</code></p>
+<pre><code class="language-js">1 == 1
+</code></pre>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality">inequality operator</a> <code>!=</code> checks whether its two operands are <em>not equal</em>.</p>
+<pre><code class="language-js">1 != 1
+</code></pre>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality">strict equality operator</a> <code>===</code> will compare the value <strong>and type</strong>, and is specific to Javascript. <strong>What will these return?</strong></p>
+<pre><code class="language-js">1 === &quot;1&quot;
+</code></pre>
+<details>
+<summary>Solution</summary>
+
+<p>It will return <code>false</code> because <code>1</code> is a <code>number</code> and <code>&quot;1&quot;</code> is a <code>string</code>.</p>
+</details>
+
+
+
+<p>If you combine expressions, Javascript will evaluate each in the appropriate order. <strong>What will these return?</strong></p>
+<pre><code class="language-js">typeof (4 &gt; 5)
+typeof (typeof (4 &gt; 5))
+</code></pre>
+<details>
+<summary>Solution</summary>
+
+<pre><code class="language-js">typeof (4 &gt; 5) // -&gt; &quot;boolean&quot;
+typeof (typeof (4 &gt; 5)) // -&gt; &quot;string&quot;
+</code></pre>
+<p><code>4 &gt; 5</code> uses a comparison operator so it will return <code>false</code>. But since <code>typeof</code> returns a string, the first line will return <code>&quot;boolean&quot;</code> (note the double quotes), and the second line will return <code>&quot;string&quot;</code></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<h2 id="statements">Statements</h2>
+<p>A statement is any instruction to perform a specific action. I like to think of a statement as a sentence—they even have punctuation (a semicolon <code>;</code>) at the end to tell Javascript the instruction is complete.</p>
+<p><img src="../../assets/img/javascript-anatomy-statement.png" alt="true"></p>
+<p>The statement in the diagram uses an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators">assignment operator</a> to assign a value to variable, <code>greeting</code>, on the left. In the next section we will install Javascript and start using variables.</p>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li>Review additional information in the <a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39">slides</a> that accompany this section.</li>
+<li>Try the <a href="#exercises">Exercises</a> below.</li>
+<li>Start working on homework listed in the schedule.</li>
+<li>Continue to the <a href="../../README.md#javascript-part1">next lesson</a>.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<p>👉 <strong>Try it out</strong> - Example Expressions</p>
+<p>Expand the section below to view more example expressions. See if you can guess the return value of each before you run them in your browser dev console or a code playground.</p>
+<details>
+<summary>Example Expressions</summary>
+
+<pre><code class="language-js">1 == 1
+1 === 1
+1 === &quot;1&quot;
+1 == true
+1 === true
+1 != false
+1 !== false
+100 == 100
+100 == &quot;100&quot;
+1 != 2
+true != false
+true != !false
+true != !!false
+true != !!!!!!!!false
+Math.random()*100
+Math.ceil(1.2)
+/[aeiouAEIOU]/.test(123)
+/[aeiouAEIOU]/.test(&quot;b&quot;)
+/[aeiouAEIOU]/.test(&quot;a&quot;)
+</code></pre>
+</details>
+
+
+
+
+
+<h2 id="references">References</h2>
+<ul>
+<li>Madhu M <a href="https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74">JavaScript Expressions and Statements</a> (2018)</li>
+<li>W3schools <a href="https://www.w3schools.com/js/js_intro.asp">intro</a>, <a href="https://www.w3schools.com/js/js_datatypes.asp">data types</a>, <a href="https://www.w3schools.com/js/js_statements.asp">statements</a>, <a href="https://www.w3schools.com/js/js_operators.asp">operators</a></li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

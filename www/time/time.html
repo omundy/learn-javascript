@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - time/time</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <p>← <a href="../README.md">Learn Javascript</a></p>
+<h1 id="date-time-timers-and-cron-jobs-with-javascript">Date, Time, Timers, and Cron Jobs with Javascript</h1>
+<p>Tutorials, references, and tips for dealing with time, events, or running code at specific times.</p>
+<h2 id="the-date-object">The <code>Date</code> Object</h2>
+<p>The <code>Date</code> object (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">MDN</a>, <a href="https://www.w3schools.com/js/js_dates.asp">w3schools</a>) in Javascript represents a single moment in time and provides a series of methods for changing or displaying that moment.</p>
+<p>Create a <code>new Date</code> instance from the current time and print the hour. Date objects are static. Once stored the time doesn&#39;t update with passing time.</p>
+<pre><code class="language-js">let today = new Date();
+console.log(today.getHours()); // -&gt; 11
+</code></pre>
+<p>Create a <code>new Date</code> instance by passing a specific date and time string to the constructor</p>
+<pre><code class="language-js">let berlinWall = new Date(&quot;9 November 1989 18:53 UTC+1&quot;); // CET (Berlin) time
+console.log(berlinWall.getHours()); // -&gt; 12 EST (NYC) time
+</code></pre>
+<p>The <code>Date</code> default is Coordinated Universal Time (UTC). Months and hours are zero-indexed</p>
+<pre><code class="language-js">let d = new Date(Date.UTC(2000, 0, 0, 0, 0, 0));
+console.log(d); // -&gt; &quot;Thu Dec 30 1999 19:00:00 GMT-0500 (Eastern Standard Time)&quot;
+</code></pre>
+<h3 id="exercises">Exercises</h3>
+<details><summary>
+1. Create a Date object and alert the current date and time. (click to reveal answer)</summary>
+
+<pre><code class="language-js">let d = new Date();
+alert(d);
+</code></pre>
+</details>
+
+<details><summary>
+2. Use the correct Date method to extract the year (four digits) out of a date object.
+</summary>
+
+<pre><code class="language-js">let d = new Date();
+alert(d.getFullYear());
+</code></pre>
+</details>
+
+<details><summary>
+3. Use the correct Date method to get the month (0-11) out of a date object.
+</summary>
+
+<pre><code class="language-js">let d = new Date();
+alert(d.getMonth());
+</code></pre>
+</details>
+
+
+
+<h2 id="tools-for-formatting-date-and-time">Tools for Formatting date and time</h2>
+<p><a href="https://moment.github.io/luxon/">luxon</a> (which <a href="https://momentjs.com/docs/#/-project-status/">replaced moment</a>) is a great library to <a href="https://moment.github.io/luxon/docs/manual/moment.html">make using time more intuitive in Javascript</a>.</p>
+<p>To <a href="https://moment.github.io/luxon/docs/manual/install.html">install</a> add this to HTML</p>
+<pre><code class="language-html">&lt;script src=&quot;luxon.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Then use this to simplify access to the luxon <a href="https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html"><code>DateTime</code></a> class</p>
+<pre><code class="language-js">var DateTime = luxon.DateTime;
+</code></pre>
+<p>And now you can</p>
+<pre><code class="language-js">var dt = DateTime.now();
+alert(dt.toString()); // -&gt; &quot;2021-03-31T12:41:34.091-05:00&quot; ISO-formatted date string with timezone
+alert(dt.year; // -&gt; 2021
+alert(dt.month; // -&gt; 3
+</code></pre>
+<pre><code class="language-js">DateTime.utc(2000, 0, 0, 0, 0, 0);
+let d = new Date(Date.UTC(2000, 0, 0, 0, 0, 0));
+console.log(d); // -&gt; &quot;Thu Dec 30 1999 19:00:00 GMT-0500 (Eastern Standard Time)&quot;
+</code></pre>
+<h2 id="how-to-create-a-timer-in-javascript">How to create a timer in Javascript</h2>
+<p>A loop will run any code repeatedly. <strong>But</strong> it does not give you control over the time intervals between execution.</p>
+<pre><code class="language-js">for(let i=0; i&lt;10; i++){
+    console.log(`this is loop #${i} `);
+}
+// -&gt; this is loop #0
+// -&gt; this is loop #1
+// ...
+</code></pre>
+<p>To make something happen repeatedly, <strong>where you have control over the time interval</strong>, use either <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp"><code>setTimeout()</code></a> or <a href="https://www.w3schools.com/jsref/met_win_setinterval.asp"><code>setInterval()</code></a>. The main difference is that <code>setTimeout()</code> runs only once, after a set number of milliseconds...</p>
+<pre><code class="language-js">setTimeout(() =&gt; {
+    console.log(`this message will appear just once, after 5 seconds`);
+}, 5000);
+</code></pre>
+<p>To run a block of code <strong>repeatedly</strong> use <code>setInterval()</code>.</p>
+<pre><code class="language-js">setInterval(() =&gt; {
+    console.log(`this message will appear once every second, forever`);
+}, 1000);
+</code></pre>
+<p>If you store a reference to setInterval then you can control the timer. Here is a basic countdown timer in Javascript...</p>
+<pre><code class="language-js">let counter = 20;
+let timer = setInterval(() =&gt; {
+    console.log(`you have ${--counter} seconds until this page explodes!!`);
+    // use clearInterval to stop time  
+    if (counter &lt;= 0) {
+        clearInterval(timer);
+        console.log(`💥`);
+    }
+}, 1000);
+</code></pre>
+<p>You can also use recursion to call <code>setTimeout</code>, like in this example that <a href="https://codepen.io/owenmundy/pen/eYgajNq?editors=1111">repeatedly adds new content to a web page</a>, in order to control the interval duration.</p>
+<pre><code class="language-js">let count = 0;
+function showNextResult(duration) {
+  setTimeout(function () {
+      console.log(`This function has called itself ${++count} times! It will run again in ${100 * count} millis`);
+      showNextResult(100 * count);    
+  }, duration);
+}
+showNextResult(); // start
+</code></pre>
+<h2 id="what-is-a-cronjob">What is a Cronjob?</h2>
+<p>See this <a href="https://github.com/omundy/dig333-physical-computing/tree/master/raspberry-pi/cron-example">cron example using Python</a></p>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

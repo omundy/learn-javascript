@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - functions/functions-scope</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <p>← <a href="../../README.md">Learn Javascript</a></p>
+<p><a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a></p>
+<h1 id="functions--scope">Functions &amp; Scope</h1>
+<p>Reusing code, protecting variables, callback functions</p>
+<p>Functions are the next step in creating control structures. Say we have the code from the previous lesson</p>
+<pre><code class="language-js">let apples = 2;
+if (apples &gt; 3) {
+    console.log(&quot;we can make pie!&quot;)
+} else {
+    console.log(&quot;we need more apples&quot;)
+}
+apples = apples + 10;
+console.log(`We have ${apples} apples!`);
+</code></pre>
+<p>What if we wanted to make it so a user could change the value stored in <code>apples</code> and then run the check again? This is where functions come in...</p>
+<pre><code class="language-js">let apples = 2;
+console.log(`We have ${apples} apples!`);
+
+function checkApples(_apples){
+    if (_apples &gt; 3) {
+        return &quot;we can make pie!&quot;;
+    } else {
+        return &quot;we need more apples&quot;;
+    }
+}
+
+
+
+
+apples = apples + 10;
+</code></pre>
+<p>There are a few things going on in here:</p>
+<ol>
+<li>The conditional that formerly outputted a string is now inside a <em>reusable</em> function.</li>
+<li>The variable that we evaluate in the function is <strong>scoped</strong> only to that function. We use an underscore before it to remember that. See functional programming for more.</li>
+</ol>
+<p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0">https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">https://en.wikipedia.org/wiki/Side_effect_(computer_science)</a></p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="control-flow-functions-loops">Control Flow, Functions, Loops</h2>
+<p><strong>Overview</strong>: How to use bindings, conditionals, loops, and functions to let your code make decisions</p>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_28">Functions &amp; Scope</a></li>
+<li></li>
+<li></li>
+</ul>
+<pre><code class="language-js">const isItTimeForPizza = () =&gt; {
+    let today = new Date();
+    if (today.getHours() &gt; 10 &amp;&amp; today.getHours() &lt; 24){
+        return &quot;yes, it is&quot;;
+    } else {
+        return &quot;I&#39;m afraid not&quot;;
+    }
+}
+console.log(isItTimeForPizza());
+</code></pre>
+<h4 id="homework">Homework</h4>
+<ul>
+<li><h2 id="haverbeke">Haverbeke:</h2>
+<ul>
+<li><a href="https://eloquentjavascript.net/03_functions.html">Ch3 Functions</a> (39-55)</li>
+</ul>
+</li>
+<li><h2 id="codecademy">Codecademy:</h2>
+<ul>
+<li><p><a href="https://www.codecademy.com/learn/introduction-to-javascript">3-1 Functions</a> (1-7)</p>
+</li>
+<li><p><a href="https://www.codecademy.com/learn/introduction-to-javascript">4-1 Scope</a> (1-4)</p>
+</li>
+<li><p>Ch3 <a href="https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do">Minimum</a>, <a href="https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do">Recursion</a>, <a href="https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do">Bean Counting</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="review">Review</h4>
+<ul>
+<li>Codecademy Cheatsheet(s) <a href="reference-sheets/js-03-functions.pdf">functions</a>, <a href="reference-sheets/js-04-scope.pdf">scope</a></li>
+<li>w3schools <a href="https://www.w3schools.com/js/js_functions.asp">functions</a>, <a href="https://www.w3schools.com/js/js_arrow_function.asp">arrow functions</a></li>
+</ul>
+<h3 id="side-effects">Side Effects</h3>
+<p>These are statements with <strong>side effects</strong>. Instead of returning a value, they evaluate the expression and then produce some other effect. The built-in <code>alert()</code> function opens a popup window to show the value that is returned from the expression.</p>
+<pre><code class="language-js">alert(1 + 1);
+console.log(1 &lt; 2);
+</code></pre>
+<p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0">https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0</a></p>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li>Try the <a href="#exercises">Exercises</a> below.</li>
+<li>Start working on homework listed in the schedule.</li>
+<li>Continue to the <a href="../../README.md#javascript-part1">next lesson</a>.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<p>👉 <strong>Try it out</strong></p>
+<ol>
+<li><a href="../../topics/games/the-lottery/README.md">Lottery v.3</a> - Show results of the game in HTML</li>
+<li><a href="../../topics/single-page-apps/grade-book/README.md">Gradebook</a> - Code a gradebook app using conditions, functions, and jquery.</li>
+<li>Revisit <a href="../../topics/single-page-apps/javascript-lamp/index.html">this lamp demo</a> to explore how it uses loops</li>
+</ol>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+<!-- paginate: true -->
 
 ← [Learn Javascript](../../README.md)
 
@@ -7,6 +8,17 @@
 
 Comparison and logical operators, conditional statements
 
+<span class="slides-small"><a href="../slides/control-flow.html">slides</a> | <a href="../www/control-flow.html">HTML</a> | <a href="../topics/control-flow.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
+
+
+
+
+
+---
 
 ## Contents
 
@@ -19,11 +31,14 @@ Comparison and logical operators, conditional statements
 1. [References](#references)
 
 
+
+---
+
 ## Introduction
 
 Review the following sections and perform the activities on your own or with your group.
 
-Perform the task(s) when you see this 👉  emoji 
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -57,11 +72,15 @@ Students who complete this module will be able to:
 
 
 
+---
 
 ## Operators
 
 Let's review some of the [operators](https://www.w3schools.com/js/js_operators.asp) we've seen thus far.
 
+
+
+---
 
 ### [Arithmetic operators](https://www.w3schools.com/js/js_arithmetic.asp)
 
@@ -80,6 +99,13 @@ count ++; // -> 2
 count --; // -> 1
 ```
 
+
+
+
+---
+
+### [Arithmetic operators](https://www.w3schools.com/js/js_arithmetic.asp)
+
 Modulus `%` to return the remainder from a division operation
 
 ```js
@@ -93,6 +119,8 @@ The `+` operator can also be used to concatenate (add) strings
 ```
 
 
+
+---
 
 ### [Assignment operators](https://www.w3schools.com/js/js_assignment.asp)
 
@@ -116,6 +144,8 @@ apples += " apples"; // -> "111 apples"
 ```
 
 
+
+---
 
 ### [Comparison operators](https://www.w3schools.com/js/js_comparisons.asp)
 
@@ -145,7 +175,7 @@ Greater than / greater than or equal to
 
 
 
-
+---
 
 ## Conditions
 
@@ -161,13 +191,23 @@ apples = apples + 10;
 console.log(`We have ${apples} apples!`);
 ```
 
-However, this is not very interesting. Instead, you will often want your code to perform *different* actions depending on the **state** of variables in your program.
 
-You can use **conditionals** to do this.
+---
+
+## Conditions
+
+However, this is not very interesting. Instead, you will often want your code to perform *different* actions depending on the **state** of variables in your program. You can use **conditionals** to do this.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if.png" width="800">
 
 In the above diagram, an **`if`** statement is used to either run the statement block, or not, depending on whether the condition is true or false.
+
+
+
+---
+
+## Conditions
+
 
 Here is the syntax for a basic `if` statement.
 
@@ -176,10 +216,19 @@ Here is the syntax for a basic `if` statement.
 In this case, if the value stored in `apples` is a number greater than 3, then the message will be logged to the console.
 
 
+---
+
+## Conditions
 
 We can use an **`else`** to execute different code, if the first condition is not met.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if-else.png" width="800">
+
+
+---
+
+## Conditions
+
 
 Here is `else` in practice:
 
@@ -192,6 +241,9 @@ if (apples > 3) {
 }
 ```
 
+---
+
+## Conditions
 
 We can use `if` `if/else` and `else` together like so:
 
@@ -208,7 +260,7 @@ if (apples > 5) {
 
 
 
-
+---
 
 ## Combining conditionals with logical operators
 
@@ -220,6 +272,13 @@ Use `&&` ("and") to test if ***both*** expressions are `true`
 ```js
 (1 < 2 && 3 > 4) // -> false
 ```
+
+
+
+---
+
+## Combining conditionals with logical operators
+
 
 Use `||` ("or") to test if ***either*** expression is `true`
 
@@ -235,6 +294,12 @@ Use `!` ("not") to test if the expression is ***not*** `true`
 !(1 < 2) // -> false
 ```
 
+
+
+
+---
+
+## Combining conditionals with logical operators
 
 And, putting it all together, evaluate more than one condition in an if, if else statement
 
@@ -257,7 +322,7 @@ if (apples >= 2 && blueberries >= 4) {
 
 
 
-
+---
 
 ## Next steps
 
@@ -266,7 +331,7 @@ if (apples >= 2 && blueberries >= 4) {
 1. Continue to the [next lesson](../../README.md#javascript-part1).
 
 
-
+---
 
 ## Exercises
 
@@ -276,6 +341,9 @@ if (apples >= 2 && blueberries >= 4) {
 1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses conditions.
 
+
+
+---
 
 ## References
 

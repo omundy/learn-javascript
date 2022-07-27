@@ -23,8 +23,6 @@
         "keywords": "javascript, js, jquery",
         "allowLocalFiles": true,
         "html": true,
-        "inputDir": "topics",
-        "output": "slides",
         "watch": false,
         "bespoke": {
             "progress": true

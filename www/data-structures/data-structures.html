@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - data-structures/data-structures</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <p>← <a href="../../README.md">Learn Javascript</a></p>
+<p><a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a></p>
+<h1 id="data-structures">Data Structures</h1>
+<p>How to use arrays, objects, properties, methods, and loops</p>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#exercises">Exercises</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<p>Review the following sections and perform the activities on your own or with your group.</p>
+<p>Perform the task(s) when you see this 👉  emoji </p>
+<details>
+<summary>Learning Objectives</summary>
+
+<p>Students who complete this module will be able to:</p>
+<ul>
+<li>Demonstrate</li>
+<li>Explain</li>
+<li>Create</li>
+</ul>
+</details>
+
+<details>
+<summary>Homework</summary>
+
+<ul>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy: JS 5-1 Arrays</a> (1–7)</li>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy: JS 6-1 Loops</a> (1–7)</li>
+</ul>
+</details>
+
+
+
+
+
+<ul>
+<li>Lecture: <a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_0">Data Structures</a></li>
+</ul>
+<h2 id="data-collections">Data Collections</h2>
+<p>In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">primitive data types</a> (<code>boolean</code>, <code>number</code>, <code>string</code>), Javascript has data types to store data collections, which can include <code>arrays</code>, <code>objects</code>, as well as more complex entities, hierarchical collections, and lists.</p>
+<h3 id="arrays">Arrays</h3>
+<p>A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> is a list of values, separated by commas. Arrays are zero-indexed, and their values can be set or retrieved using their index.</p>
+<pre><code class="language-js">const numberArr = [-2, -1, 0, 1, 2]; // array of numbers
+const colorArr = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]; // array of strings
+console.log(colorArr[0]); // -&gt; &quot;red&quot;
+</code></pre>
+<p>Arrays can also store other arrays</p>
+<pre><code class="language-js">const tableArr = [
+    [&#39;name&#39;, &#39;age&#39;, &#39;favoriteColor&#39;],
+    [&#39;Mary&#39;, 18, &#39;mauve&#39;],
+    [&#39;Chalet&#39;, 81, &#39;chartreuse&#39;]
+];
+</code></pre>
+<p>as well as complex objects.</p>
+<pre><code class="language-js">// array of date objects
+const dates = [
+    new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
+    new Date(&quot;9 November 1989 18:53 UTC+1&quot;), // BERLIN
+    new Date(&quot;November 9, 1989 12:53 UTC-5&quot;) // NYC
+];
+console.log(dates[1].toUTCString()); // -&gt; &quot;Thu, 09 Nov 1989 17:53:00 GMT&quot; (Berlin local time)
+</code></pre>
+<h3 id="objects">Objects</h3>
+<p>A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> stores <code>key:value</code> relationships where <code>key</code> is a string, and <code>value</code> can be a primitive, array, or object. The values are then referenced with their keys using either square brackets or dot notation.</p>
+<pre><code class="language-js">const color = {
+    name: &quot;red&quot;,
+    hex: &quot;#ff0000&quot;,
+    rgb: [255,0,0]
+}
+console.log(color.name); // -&gt; &quot;red&quot; via dot notation
+console.log(color[&#39;name&#39;]); // -&gt; &quot;red&quot; via square brackets
+</code></pre>
+<p>You can also store functions (<a href="https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27">called methods when stored inside an object</a>).</p>
+<pre><code class="language-js">const ev = {
+    name: &quot;Fall of the Berlin Wall&quot;,
+    link: &quot;https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall&quot;,
+    date: new Date(Date.UTC(1989, 10, 9, 17, 53, 0)),
+    timeZone: &quot;CET&quot;,
+    getLocalTimeStr: function(){
+        return this.date.toLocaleString(&#39;de-DE&#39;, {timeZone: this.timeZone})
+    }
+};
+console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`); // -&gt; &quot;Fall of the Berlin Wall, 1989&quot;
+console.log(ev.getLocalTimeStr()); // -&gt; &quot;9.11.1989, 18:53:00&quot;
+</code></pre>
+<pre><code class="language-js">// a new array
+let myArray = [10,34,101];
+// use the push() method to add a new value
+myArray.push(521);
+// get the length property
+console.log(myArray.length);
+// -&gt; 4
+// a new object
+let myObject = {
+    color1: &quot;blue&quot;,
+    color2: &quot;gold&quot;
+};
+</code></pre>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li>Try the <a href="#exercises">Exercises</a> below.</li>
+<li>Start working on homework listed in the schedule.</li>
+<li>Continue to the <a href="../../README.md#javascript-part1">next lesson</a>.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<p>👉 <strong>Try it out</strong></p>
+<ol>
+<li><a href="../../topics/games/the-lottery/README.md">Lottery v.1</a> - Build your first game!</li>
+<li><a href="../../topics/single-page-apps/grade-book/README.md">Gradebook</a> - Code a gradebook app using conditions, functions, and jquery.</li>
+<li>Exercises from Eloquent Javascript Ch2 <a href="https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe">Looping a triangle</a>, <a href="https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe">FizzBuzz</a>, <a href="https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe">Chessboard</a></li>
+</ol>
+<ul>
+<li>Exercises: CH4 <a href="https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/">The sum of a range</a>, <a href="https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5">Reversing an array</a>, <a href="https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M">A list</a>, <a href="https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC">Deep comparison</a></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>Haverbeke: <a href="https://eloquentjavascript.net/04_data.html">Ch4 Data Structures: Objects and Arrays</a> (57-79)</li>
+<li>Codecademy Cheatsheet(s) <a href="reference-sheets/js-05-arrays.pdf">arrays</a>, <a href="reference-sheets/js-06-loops.pdf">loops</a></li>
+<li>w3schools <a href="https://www.w3schools.com/js/js_arrays.asp">arrays</a>, <a href="https://www.w3schools.com/js/js_objects.asp">objects</a>, <a href="https://www.w3schools.com/js/js_json_intro.asp">json</a>, <a href="https://www.w3schools.com/js/js_json_syntax.asp">json syntax</a>, <a href="https://www.w3schools.com/js/js_htmldom_methods.asp">methods</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp">for loop</a>, <a href="https://www.w3schools.com/js/js_break.asp">break</a></li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

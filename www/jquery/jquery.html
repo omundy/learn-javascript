@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - jquery/jquery</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <!-- paginate: true -->
+
+<p>← <a href="../../README.md">Learn Javascript</a></p>
+<p><a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a> <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-jquery-240sq.png"></a></p>
+<h1 id="jquery">jquery</h1>
+<p>How to use jquery for interaction, display, and data</p>
+<p><sup class="small"><a href="../../slides/jquery/jquery.html">slides</a> | <a href="../../topics/jquery/jquery.md">markdown</a> </sup></p>
+<!--
+Presentation comments ...
+-->
+
+
+<hr>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-jquery">What is jquery</a></li>
+<li><a href="#write-less-do-more">Write less, do more</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#jquery-syntax">jQuery syntax</a></li>
+<li><a href="#jquery-examples">jQuery examples</a></li>
+<li><a href="#selectors">Selectors</a></li>
+<li><a href="#eevnt">Events</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#exercises">Exercises</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Review the following sections and perform the activities on your own or with your group.</p>
+<p>Perform the task(s) when you see this 👉  emoji</p>
+<details>
+<summary>Learning Objectives</summary>
+
+<p>Students who complete this module will be able to:</p>
+<ul>
+<li>Demonstrate how to import and use jquery library in a web page</li>
+<li>Explain how jquery selectors, chaining (dot notation), and callback functions operate.</li>
+<li>Use Javascript and jquery to listen for user events, get and set data, and control the display of elements on a web page</li>
+</ul>
+</details>
+
+<details>
+<summary>Homework</summary>
+
+<ul>
+<li><a href="../../README.md">Previous lessons and homework</a></li>
+<li>Codecademy jquery Cheatsheets<ul>
+<li><a href="../../reference-sheets/jquery-01-introduction.pdf">Introduction</a></li>
+<li><a href="../../reference-sheets/jquery-02-effects.pdf">Effects</a></li>
+<li><a href="../../reference-sheets/jquery-03-events.pdf">Event Handlers</a></li>
+<li><a href="../../reference-sheets/jquery-04-style-methods.pdf">Style Methods</a></li>
+<li><a href="../../reference-sheets/jquery-05-dom-traversing.pdf">Traversing the DOM</a></li>
+</ul>
+</li>
+<li>Quiz 10 - JS jQuery and the DOM</li>
+</ul>
+</details>
+
+
+
+
+
+
+<hr>
+<h2 id="what-is-jquery">What is jquery</h2>
+<p>jquery is a Javascript library that reduces the complexity of working with HTML.</p>
+<p>It is the most <a href="https://w3techs.com/technologies/overview/javascript_library">widely deployed Javascript library</a> (just ahead of Bootstrap)</p>
+<p>It&#39;s goal, &quot;write less, do more&quot;, helps with:</p>
+<ul>
+<li><strong>Selection</strong> - Simplifies selecting one or multiple elements with Javascript</li>
+<li><strong>DOM manipulation</strong> - Change content, elements, or styles on web pages</li>
+<li><strong>Events</strong> - Listen for user and page events</li>
+<li><strong>Effects</strong> - Like showing, hiding, or animating content</li>
+<li><strong>Data</strong> - Get external or remote data from API using AJAX</li>
+</ul>
+<hr>
+<h2 id="write-less-do-more">Write less, do more</h2>
+<p>These <a href="../../topics/jquery/demos/jquery-vs-vanilla.html">codes</a> do the same thing, adding data to multiple elements on a page, yet jquery is much easier to write and less error prone.</p>
+<p>Pure (&quot;vanilla&quot;) Javascript</p>
+<pre><code class="language-js">var ele = document.getElementsByClassName(&#39;myClass&#39;); // array of elements
+for (var i = 0; i &lt; ele.length; ++i) {
+    var item = ele[i];
+    item.innerHTML += &#39; 🤨 new data added via pure javascript)&#39;;
+}
+</code></pre>
+<p>Javascript + jQuery</p>
+<pre><code class="language-js">$(&#39;.myClass&#39;).append(&#39; 🎉 new data added with jquery library&#39;);
+</code></pre>
+<hr>
+<h2 id="installation">Installation</h2>
+<p>Like many libraries, jquery can be installed with one line of code. You can <a href="https://jquery.com/download/">download</a> it to your project, but a CDN is the simplest method (and <a href="https://jquery.com/download/#using-jquery-with-a-cdn">good for performance</a>).</p>
+<p>The <a href="https://developers.google.com/speed/libraries#jquery">google hosted library</a> includes the <code>&lt;script&gt;</code> tags, making it easy to copy and paste.</p>
+<pre><code class="language-js">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+// now you can use jquery!
+&lt;/script&gt;
+</code></pre>
+<p>For the same reason you add Javascript after the page elements have loaded, you can only use jquery functions <em><strong>after you import the library</strong></em>.</p>
+<hr>
+<h2 id="jquery-syntax">jQuery syntax</h2>
+<p>After you import the framework into the page and you can access jquery functions via <code>$</code></p>
+<p>jQuery uses CSS selectors to select and perform actions on elements. The syntax is:</p>
+<pre><code class="language-js">$(selector).action()
+</code></pre>
+<ol>
+<li>The <code>$</code> sign accesses jQuery library functions</li>
+<li>The <code>(selector)</code> &quot;queries&quot; (or &quot;finds&quot;) HTML elements</li>
+<li>The <code>action()</code> to be performed on the element(s)</li>
+</ol>
+<hr>
+<h2 id="jquery-examples">jQuery examples</h2>
+<p>Classic CSS selectors</p>
+<pre><code class="language-js">$(&quot;p&quot;).hide() // hides all &lt;p&gt; elements.
+</code></pre>
+<pre><code class="language-js">$(&quot;.test&quot;).hide() // hides all elements with class=&quot;test&quot;.
+</code></pre>
+<pre><code class="language-js">$(&quot;#test&quot;).hide() // hides the element with id=&quot;test&quot;.
+</code></pre>
+<p>jquery can also use the <code>this</code> keyword to reference to the current element</p>
+<pre><code class="language-js">$(this).hide() // hides the current element.
+</code></pre>
+<hr>
+<h2 id="👉-try-it-out">👉 Try it out</h2>
+<ol>
+<li>Save this file <a href="../../topics/jquery/demos/jquery-demo.html"><code>jquery-demo.html</code></a> to your current class project</li>
+<li>Install jquery using the Google hosted library <a href="#installation">above</a></li>
+<li>Add this code to a <code>&lt;script&gt;</code> tag <em><strong>after</strong></em> you imported the library
+ <code>$(&quot;h1&quot;).animate({left: &#39;100%&#39;}, &quot;slow&quot;);</code></li>
+<li>Open your page in a web browser. If the title moves you are using jquery!</li>
+</ol>
+<hr>
+<h2 id="events">Events</h2>
+<p>An <strong>event</strong> is &quot;fired&quot; when things happen on a page or a user does something.</p>
+<p>For example, clicking or moving a mouse over an element, or selecting a radio button, can &quot;trigger&quot; an event the moment it occurs.</p>
+<p>Here are some common DOM events:</p>
+<ul>
+<li>Mouse Events: <code>click</code>, <code>dblclick</code>, <code>mouseenter</code>, <code>mouseleave</code></li>
+<li>Keyboard Events: <code>keypress</code>, <code>keydown</code>, <code>keyup</code></li>
+<li>Form Events: <code>submit</code>, <code>change</code>, <code>focus</code>, <code>blur</code></li>
+<li>Document/Window: <code>load</code>, <code>resize</code>, <code>scroll</code>, <code>unload</code></li>
+</ul>
+<hr>
+<h2 id="the-documentready-event">The document.ready() event</h2>
+<p>If you add your code to the end of your document, it is still possible some images will take longer than expected.</p>
+<p>It&#39;s good to wait for the document to be fully loaded and ready before working with it.</p>
+<p>👉 <strong>Try it out</strong> - Wrap your previous animate code with the document.ready() event</p>
+<pre><code class="language-js">$(document).ready(function(){
+    $(&quot;h1&quot;).animate({left: &#39;100%&#39;}, &quot;slow&quot;);
+});
+</code></pre>
+<p>When an event is fired, the <a href="https://www.w3schools.com/jquery/jquery_callback.asp"><strong>callback function</strong></a> will <strong>handle</strong> the event.</p>
+<hr>
+<h2 id="click-event">click() Event</h2>
+<p>The <code>click()</code> method (&quot;function&quot;) attaches an <strong>event handler</strong> to an element, which is &quot;fired&quot; when the event happens.</p>
+<p>👉 <strong>Try it out</strong></p>
+<p>Wrap your animate code in a click event listener and callback function</p>
+<pre><code class="language-js">$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;h1&quot;).animate({left: &#39;100%&#39;}, &quot;slow&quot;);
+    });
+});
+</code></pre>
+<p><a href="../../topics/jquery/demos/jquery-events.html">More event examples</a></p>
+<hr>
+<h2 id="method-chaining">Method chaining</h2>
+<p>With jQuery, you can chain together actions/methods to run multiple methods on the same element in a single statement.</p>
+<p>👉 <strong>Try it out</strong> - Chain <code>.css()</code> method to <code>.animate()</code></p>
+<pre><code class="language-js">$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;h1&quot;).animate({left: &#39;100%&#39;}, &quot;slow&quot;)
+            .css(&quot;color&quot;, &quot;red&quot;)
+    });
+});
+</code></pre>
+<div class="caption">Note: whitespace doesn't matter when using chained methods.</div>
+
+
+
+
+<hr>
+<h2 id="val-method">val() method</h2>
+<p>Use <code>.val()</code> to <a href="(https://www.w3schools.com/jquery/jquery_dom_get.asp)">get or set data in a form element</a>.</p>
+<p>👉 <strong>Try it out</strong></p>
+<pre><code class="language-js">$(document).ready(function(){
+    $(&quot;#myInput&quot;).val(&quot;hello world!&quot;); // set data on ready() event
+    $(&quot;button&quot;).click(function(){
+        $(&quot;h1&quot;).animate({left: &#39;100%&#39;}, &quot;slow&quot;)
+            .css(&quot;color&quot;, &quot;red&quot;)
+        console.log(&quot;Value: &quot; + $(&quot;#myInput&quot;).val()); // get data on click
+    });
+});
+</code></pre>
+<hr>
+<h2 id="what-is-ajax">What is AJAX?</h2>
+<p>AJAX, or Asynchronous JavaScript and XML, is a method for loading data in the background of web pages. The page doesn&#39;t refresh to show new data so it is great for:</p>
+<ul>
+<li>Single page applications (SPAs) (e.g. Gmail, Google Maps, Facebook)</li>
+<li>Data-driven pages (dashboards or visualizations, where data changes frequently)</li>
+<li>Fetching data from remote sources (like APIs)</li>
+</ul>
+<p>jquery simplifies writing AJAX, providing <a href="https://www.w3schools.com/jquery/jquery_ref_ajax.asp">functions</a> to load text, XML, or JSON using post (to submit data) or get (to request data) <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">methods</a>.</p>
+<hr>
+<h2 id="what-is-an-api">What is an API?</h2>
+<p>See this presentation for an introduction to APIs
+<a href="https://omundy.github.io/learn-computing/slides/data-apis.html">https://omundy.github.io/learn-computing/slides/data-apis.html</a></p>
+<hr>
+<h2 id="get-method">get() method</h2>
+<p>The $.get() method requests data from the server with an HTTP GET request. Syntax:</p>
+<pre><code class="language-js">$.get(URL,callback);
+</code></pre>
+<ol>
+<li><strong>URL</strong> (required) specifies the path to request.</li>
+<li><strong>callback</strong> (optional) the function to be executed if the request succeeds.</li>
+</ol>
+<pre><code class="language-js">$(&quot;button&quot;).click(function(){
+    $.get(&quot;https://www.boredapi.com/api/activity/&quot;, function(data, status){
+        console.log(&quot;Data: &quot; + data + &quot;\nStatus: &quot; + status);
+    });
+});
+</code></pre>
+<p><a href="../../topics/jquery/demos/jquery-ajax.html" target="_blank">See live example</a></p>
+<hr>
+<h2 id="ajax-notes">AJAX notes</h2>
+<p>A few caveats and complications when it comes to using AJAX</p>
+<ol>
+<li>CORS (Cross Origin Resource Sharing) ...</li>
+<li>Loading data locally requires a server</li>
+<li>Test with Postman to be sure API is actually working (lots of moving parts)</li>
+</ol>
+<hr>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li>Try the <a href="#exercises">Exercises</a> below.</li>
+<li>Start working on homework listed in the schedule.</li>
+<li>Continue to the <a href="../../README.md#javascript-part1">next lesson</a>.</li>
+<li>Test your knowledge with the W3Schools <a href="https://www.w3schools.com/jquery/jquery_quiz.asp">jquery quiz</a></li>
+</ol>
+<hr>
+<h2 id="exercises">Exercises</h2>
+<p>👉 <strong>Try it out</strong></p>
+<ol>
+<li><a href="../../topics/single-page-apps/grade-book/README.md">Gradebook</a> - Code a gradebook app using conditions, functions, and jquery.</li>
+<li>Revisit <a href="../../topics/single-page-apps/javascript-lamp/index.html">this lamp demo</a> to explore how it uses conditions.</li>
+</ol>
+<hr>
+<h2 id="references">References</h2>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - node/node</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <p>← <a href="../README.md">Learn Javascript</a></p>
+<h1 id="npm-node">NPM, Node</h1>
+<h2 id="install-nvm-node-npm">Install NVM, Node, NPM</h2>
+<p><a href="https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x">https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x</a></p>
+<ol>
+<li>Install <a href="https://brew.sh/">Homebrew</a></li>
+<li>Update then install NVM (Node Version Manager)</li>
+</ol>
+<pre><code class="language-bash">brew update
+brew upgrade
+brew install nvm
+</code></pre>
+<h3 id="update-nvm">Update NVM</h3>
+<pre><code class="language-bash">brew update
+brew upgrade # to install
+</code></pre>
+<h3 id="update-node-using-nvm">Update Node using NVM</h3>
+<p>The <a href="https://nodejs.org/en/">latest</a> node version</p>
+<pre><code class="language-bash">nvm install v16.10.0
+nvm ls
+nvm use 16
+</code></pre>
+<p>The <a href="https://nodejs.org/en/about/releases/">latest LTS</a> (Long Term Support) node version</p>
+<pre><code class="language-bash">nvm install --lts
+nvm ls
+nvm use &lt;NUMBER&gt;
+</code></pre>
+<h3 id="update-npm-using-nvm">Update NPM using NVM</h3>
+<pre><code class="language-bash">nvm install-latest-npm
+</code></pre>
+<h4 id="upgrade-packages-in-your-repository">Upgrade packages in your repository</h4>
+<p><a href="https://www.npmjs.com/package/npm-upgrade">npm-upgrade</a> is an interactive CLI utility to easily update outdated NPM dependencies</p>
+<pre><code class="language-js">npm i -g npm-upgrade
+npm-upgrade check
+</code></pre>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+
+<p><img src="assets/img/logos/logo-node-ltgreen-75w.png" alt="node logo"> &nbsp; <img src="assets/img/logos/logo-express-200w.png" alt="express logo"></p>
+<h1 id="node-express-part1">Node Express Part.1</h1>
+<p>Introduction to Node and Express</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="node-installation">Node Installation</h2>
+<p><strong>Overview</strong>: How to install node and npm on your machine. There are three ways, I recommend #2</p>
+<ol>
+<li>Use an <a href="https://nodejs.org/en/download/">installer via node website</a>. <strong>Not recommended</strong> because it is difficult to upgrade.</li>
+<li>Installing using a system package manager (below) gives you flexibility to update or change versions later.</li>
+<li>Installing using <a href="https://github.com/nvm-sh/nvm">nvm</a> is the most flexible method but potentially adds complexity for new users.</li>
+</ol>
+<p><strong>Mac</strong> - Install <a href="https://brew.sh/">homebrew</a> (Mac package manager), then <a href="https://formulae.brew.sh/formula/node">node</a></p>
+<pre><code class="language-bash">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+brew install node
+</code></pre>
+<p><strong>Windows</strong> - Install <a href="https://chocolatey.org/">chocolatey</a> (Windows package manager) using <a href="https://www.youtube.com/watch?v=KTUO1g_Btfk&amp;ab_channel=SonarSystems">these instructions</a></p>
+<pre><code class="language-bash">choco install nodejs
+</code></pre>
+<h4 id="after-node-is-installed">After node is installed</h4>
+<pre><code class="language-bash">node -v                    # check node version
+npm -v                     # check npm version
+npm install -g nodemon     # install nodemon globally, auto-restart projects on file change
+</code></pre>
+<ul>
+<li>Lecture: <a href="https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_58">DIG 245 Review</a>, <a href="https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_22">Web Applications</a>, <a href="https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_27">Node Introduction</a>, <a href="https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_236">Node Installation</a>, <a href="https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_247">Asynchronous Programming</a></li>
+<li>Demo: Install node, confirm version #</li>
+</ul>
+<h4 id="homework">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a>:<ul>
+<li>Ch1 Introducing Express (1-9)</li>
+<li>Ch2 Getting Started with Node (11-20)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review">Review</h4>
+<ul>
+<li>w3schools <a href="https://www.w3schools.com/nodejs/default.asp">nodejs</a>, <a href="https://www.w3schools.com/nodejs/default.asp">intro</a>, <a href="https://www.w3schools.com/nodejs/nodejs_get_started.asp">command line</a>, <a href="https://www.w3schools.com/nodejs/nodejs_npm.asp">npm</a></li>
+</ul>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="node-express-introduction">Node Express Introduction</h2>
+<p><strong>Overview</strong>: How to get started with node and express</p>
+<p>Setup your project</p>
+<pre><code class="language-bash">mkdir express-site &amp;&amp; cd express-site  # make a new directory and move to it
+npm init                               # create a node project in the new directory
+npm install express                    # install express
+</code></pre>
+<pre><code class="language-js">// import package
+const express = require(&#39;express&#39;);
+// create express app
+const app = express();
+// set port either from env file or default
+const port = process.env.PORT || 3000;
+// add routes
+app.get(&#39;/&#39;, (req, res) =&gt; {
+    res.send(&#39;Hello World!&#39;);
+});
+// start server and listen on &lt;port&gt;
+app.listen(port, () =&gt; console.log(
+    `Express started on http://localhost:${port}; press Ctrl-C to terminate.`
+));
+</code></pre>
+<ul>
+<li>Lecture: <a href="https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gafb807d421_0_33">Node Express Introduction</a></li>
+<li>Demo:</li>
+<li>Exercise: Start homework...</li>
+</ul>
+<h4 id="homework-1">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a>:<ul>
+<li>Ch3 Saving Time with Express (21-30)</li>
+<li>Ch4 Tidying Up (31–39)</li>
+</ul>
+</li>
+<li>Exercise: Begin Meadowlark Website</li>
+</ul>
+<h4 id="review-1">Review</h4>
+<ul>
+<li>Codecademy Cheatsheet(s) <a href="../reference-sheets/node-01-introduction.pdf">node introduction</a></li>
+<li>w3schools <a href="https://www.w3schools.com/nodejs/nodejs_modules.asp">modules</a>, <a href="https://www.w3schools.com/nodejs/nodejs_http.asp">http module</a>, <a href="https://www.w3schools.com/nodejs/nodejs_filesystem.asp">file system module</a>, <a href="https://www.w3schools.com/nodejs/nodejs_url.asp">url module</a></li>
+<li>Express <a href="https://expressjs.com/en/starter/hello-world.html">hello world</a>, <a href="https://expressjs.com/en/starter/basic-routing.html">basic routing</a>, <a href="https://expressjs.com/en/starter/static-files.html">static files</a></li>
+</ul>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="testing">Testing</h2>
+<p><strong>Overview</strong>: How to use linters and write unit and integration tests</p>
+<pre><code class="language-js">// 1. add and use custom module
+const fortune = require(&#39;./lib/fortune&#39;);
+app.get(&#39;/about&#39;, (req, res) =&gt; {
+    res.render(&#39;about&#39;, { fortune: fortune.getFortune() });
+});
+
+// 2.
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-2">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a>:<ul>
+<li>Ch5 Quality Assurance (41–58)</li>
+</ul>
+</li>
+<li>Exercise: Add testing to Meadowlark Website</li>
+</ul>
+<h4 id="review-2">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="requests-and-templating">Requests and Templating</h2>
+<p><strong>Overview</strong>: How to ... Express request, response, Handlebars, MVC</p>
+<pre><code class="language-js">const tours = [
+    { id: 0, name: &#39;Hood River&#39;, price: 99.99 },
+    { id: 1, name: &#39;Oregon Coast&#39;, price: 149.95 },
+];
+app.get (&#39;/api/tours&#39;, (req, res) =&gt; res.json(tours));
+</code></pre>
+<ul>
+<li>Lecture: <a href="https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gafb807d421_0_39">Node, Express, Handlebars, Heroku - Part 1 - Set up a node express project template
+</a></li>
+<li>Demo: <a href="https://github.com/omundy/sample-node-express-template">omundy/sample-node-express-template</a> and <a href="https://sample-node-express-template.herokuapp.com/">live demo</a></li>
+</ul>
+<h4 id="homework-3">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch6 Request and Response (59-72)</li>
+<li>Ch7 Templating with Handlebars (73-88)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-3">Review</h4>
+<ul>
+<li>APIs</li>
+</ul>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="forms-and-sessions">Forms and Sessions</h2>
+<p><strong>Overview</strong>: How to ... Express web forms, sessions</p>
+<pre><code class="language-js">app.get ( &#39;/newsletter&#39;, handlers.newsletter );
+app.post ( &#39;/api/newsletter-signup&#39;, handlers.api.newsletterSignup );
+</code></pre>
+<ul>
+<li>Lecture: <a href="https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gbcac1199e9_0_15">Node, Express, Handlebars, Heroku - Part 2 - Use API data, add a frontend</a></li>
+<li>Demo: <a href="https://github.com/omundy/sample-node-express-username-generator">omundy/sample-node-express-username-generator</a> and <a href="https://sample-node-express-username.herokuapp.com/">live demo</a></li>
+</ul>
+<h4 id="homework-4">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch8 Form Handling (89-100)</li>
+<li>Ch9 Cookies and Sessions (103-112)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-4">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="middleware-and-production">Middleware and Production</h2>
+<p><strong>Overview</strong>: How to use middleware, send email, PM2</p>
+<pre><code class="language-js">app.use (( req, res, next ) =&gt; {
+    console.log ( `processing request for ${ req.url } ....` );
+    next ();
+});
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-5">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch10 Middleware (113-120)</li>
+<li>Ch11 Sending Email (121-131)</li>
+<li>Ch12 Production Concerns (133-145)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-5">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+
+<p><img src="assets/img/logos/logo-node-ltgreen-75w.png" alt="node logo"> &nbsp; <img src="assets/img/logos/logo-express-200w.png" alt="express logo"></p>
+<h1 id="node-express-part2">Node Express Part.2</h1>
+<p>Using Node, Express for server-side, desktop, and mobile application development</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="express-and-databases">Express and databases</h2>
+<p><strong>Overview</strong>: How to ...</p>
+<pre><code class="language-js">const mongoose = require ( &#39;mongoose&#39; );
+const { connectionString } = credentials.mongo;
+mongoose.connect ( connectionString );
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-6">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch13 Persistence (147-172)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-6">Review</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>, <a href="https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md">Revealing Module</a>, and other <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">Javascript Design Patterns</a></li>
+</ul>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="express-routes-apis-json">Express routes, APIs, JSON</h2>
+<p><strong>Overview</strong>: How to ...</p>
+<pre><code class="language-js">app.get ( &#39;/user(name)?&#39;, ( req, res ) =&gt; res.render ( &#39;user&#39; ));
+app.get ( &#39;/staff/:name&#39;, ( req, res ) =&gt; {
+    const info = staff [ req.params.name ];
+    if ( !info ) return next (); // will eventually fall through to 404
+    res.render ( &#39;staff&#39;, info );
+});
+
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-7">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch14 Routing (173-184)</li>
+<li>Ch15 REST APIs and JSON (185-192)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-7">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="express-spas-static-content">Express SPAs, static content</h2>
+<p><strong>Overview</strong>: How to ...</p>
+<pre><code class="language-js">import React from &#39;react&#39;;
+
+// ...
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-8">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch16 Single-Page Applications (193-212)</li>
+<li>Ch17 Static Content (215-221)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-8">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="express-security-apis">Express security, APIs</h2>
+<p><strong>Overview</strong>: How to ...</p>
+<pre><code class="language-js">const passport = require ( &#39;passport&#39; );
+const db = require ( &#39;../db&#39; );
+
+// ...
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-9">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch18 Security (223-248)</li>
+<li>Ch19 Third Party APIs (249-263)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-9">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+<p>&nbsp;</p>
+<!---
+comments
+-->
+<h2 id="express-debugging-production">Express debugging, production</h2>
+<p><strong>Overview</strong>: How to ...</p>
+<pre><code class="language-bash">node inspect index.js
+</code></pre>
+<!--
+- Lecture:
+- Demo:
+- Exercise:
+-->
+
+<h4 id="homework-10">Homework</h4>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a><ul>
+<li>Ch20 Debugging (265-275)</li>
+<li>Ch21 Going Live (277-288) - <a href="https://heroku.com/">https://heroku.com/</a></li>
+<li>Ch22 Maintenance (291-300)</li>
+</ul>
+</li>
+</ul>
+<h4 id="review-10">Review</h4>
+<p><strong>Assessment</strong>: Homework review</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

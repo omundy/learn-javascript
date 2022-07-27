@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - single-page-apps/single-page-apps</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <!-- paginate: true -->
+
+<p>← <a href="../../README.md">Learn Javascript</a></p>
+<p><a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a></p>
+<h1 id="single-page-applications">Single Page Applications</h1>
+<p>A simple introduction</p>
+<p><sup class="small"><a href="../../slides/single-page-apps/single-page-apps.html">slides</a> | <a href="../../topics/single-page-apps/single-page-apps.md">markdown</a> </sup></p>
+<!--
+Presentation comments ...
+-->
+
+<!--
+---
+
+
+## Contents
+
+1. [Introduction](#introduction)
+
+1. [Next steps](#next-steps)
+1. [Exercises](#exercises)
+1. [References](#references) -->
+
+
+<hr>
+<h2 id="traditional-websites">Traditional websites</h2>
+<p><img src="../../assets/img/javascript-spa-traditional-website.png" alt="true"></p>
+<p>In a traditional approach to loading new content, users click on a hyperlink, leave the current page, and the browser loads an <strong>entirely new page</strong> (including all its resources).</p>
+<hr>
+<h2 id="single-page-applications-1">Single Page Applications</h2>
+<p><img src="../../assets/img/javascript-spa-single-page-app.png" alt="true"></p>
+<p>A single-page application (SPA) is a web app or website that dynamically rewrites the web page with new data from the server.</p>
+<hr>
+<h2 id="benefits">Benefits</h2>
+<p>One big benefit of SPAs, is that you can build web applications that manage state and run in the client. This makes an app much easier to host, as you don&#39;t need a server that can run PHP, Node, etc. to perform the functions of your app.</p>
+<p>Another bonus is speed:</p>
+<ul>
+<li>Data can load asynchronously (in the background) to give users new content faster.</li>
+<li>The browser doesn’t have to load and re-render a brand new page.</li>
+<li>These seamless transitions also make a website feel more responsive to input, like a native app.</li>
+</ul>
+<hr>
+<h2 id="considerations">Considerations</h2>
+<p>The main cons with SPAs are related to the fact they load data without changing the URL.</p>
+<ul>
+<li>To let users link directly to internal pages, developers can rewrite the url in the browser.</li>
+<li>If implemented correctly, the back button will also work.</li>
+<li>Search engines can&#39;t see content if it doesn&#39;t exist on a page. Not so much an issue with &quot;apps&quot;</li>
+<li>Site analytics have to be handled specific to the solution.</li>
+</ul>
+<hr>
+<h2 id="frameworks">Frameworks</h2>
+<p>There are several frameworks for generating SPAs.</p>
+<p>Companies like Facebook are usually the drivers of the apps used to make SPAs:</p>
+<ul>
+<li>Angular (developed/used by Google)</li>
+<li>Vue (developed by ex-Google employees)</li>
+<li><a href="https://reactjs.org/">React</a> (developed/used by Facebook, Instagram, and WhatsApp)</li>
+</ul>
+<p><a href="https://www.codeinwp.com/blog/angular-vs-vue-vs-react/">Angular vs React vs Vue: Which Framework to Choose</a></p>
+<p>Take for example a massive scrolling page like the Facebook feed. With so much going on in the page it makes sense to speed up the fetching of resources any way possible.</p>
+<hr>
+<h2 id="simple-spa---update-specific-text">Simple SPA - Update specific text</h2>
+<p>It is quite easy to tap into the benefits of an SPA with simpler solutions.</p>
+<p>This <a href="../../topics/single-page-apps/simple-spa/solution/index.html">simple SPA</a> uses a Javascript object to store and update specific content inside the page:</p>
+<pre><code class="language-js">var pages = {
+    &quot;home&quot;: {
+        &quot;title&quot;: &quot;This is the home page&quot;,
+        &quot;content&quot;: &quot;This is the content of the home page&quot;
+    },
+    &quot;about&quot;: {
+        &quot;title&quot;: &quot;This is the about page&quot;,
+        &quot;content&quot;: &quot;This is the content of the about page&quot;
+    },
+    ...
+};
+</code></pre>
+<hr>
+<h2 id="simple-spa-chart---update-a-section-of-the-page">Simple SPA Chart - Update a section of the page</h2>
+<p>This <a href="../../topics/single-page-apps/simple-spa-chart/solution/index.html">simple SPA chart</a> uses &quot;views&quot;, or small sections of html pages</p>
+<pre><code class="language-html">&lt;!-- contents of intro.html --&gt;
+&lt;h1&gt;Intro&lt;/h1&gt;
+</code></pre>
+<p>...which are loaded dynamically into <code>div#main</code> of index.html.</p>
+<pre><code class="language-js">$(&quot;#main&quot;).load(&#39;views/intro.html&#39;);
+</code></pre>
+<hr>
+<h2 id="more-examples">More examples</h2>
+<p>Other simple examples that manage state / change views:</p>
+<ul>
+<li><a href="../../topics/single-page-apps/javascript-lamp/index.html">javascript-lamp</a></li>
+<li><a href="../../topics/games/gnome-dragger/index.html">games/gnome-dragger</a></li>
+<li><a href="../../topics/games/bug-selector/index.html">games/bug-selector</a></li>
+<li><a href="../../topics/single-page-apps/quiz-simple/index.html">quiz-simple</a></li>
+</ul>
+<hr>
+<h2 id="can-you-spot-one">Can you spot one?</h2>
+<p>Think of an example website that might be an SPA to see if you can spot one:</p>
+<ol>
+<li>Does the content in the page change very quickly?</li>
+<li>Do text, images, or sections of the page change without the browser showing a loading bar or &quot;refresh state&quot;, or changing the scroll bar position?</li>
+</ol>
+<hr>
+<h2 id="can-you-spot-one-1">Can you spot one?</h2>
+<p>To test the example, open the Network tab in Dev Tools and browse the site. Are small bits of content loading in the background through <a href="https://www.w3schools.com/xml/xml_http.asp">asynchronous XHR requests</a>?</p>
+<p><img src="../../assets/img/console-spa-xhr.png" alt="true"></p>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.itechart.com/blog/pros-cons-of-single-page-applications/">The pros and cons of single page applications (SPAs)</a></li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

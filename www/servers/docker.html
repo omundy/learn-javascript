@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Javascript - servers/docker</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/icons/favicon_io/site.webmanifest">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icons/favicon_io/favicon.ico"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../assets/css/www-styles.css">
+
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <!-- paginate: true -->
+
+<p>← <a href="../README.md">Learn Javascript</a></p>
+<h1 id="docker">Docker</h1>
+<p>Use containerization to make deploying apps easier</p>
+<!--
+Presentation comments ...
+-->
+
+
+
+
+
+<hr>
+<h2 id="what-is-docker">What is Docker?</h2>
+<ul>
+<li><strong>Docker</strong> is an open-source software designed to facilitate and simplify application development through &quot;containerization&quot;.</li>
+<li>A <strong>container</strong> is a standardized environment that packages an application with its server dependencies.</li>
+<li>Containers are compact and portable units that can reproduce a specific filesystem, data, and application dependencies across any machine.</li>
+</ul>
+<hr>
+<h2 id="docker-images">Docker Images</h2>
+<ul>
+<li>A <strong>Docker image</strong> is a &quot;snapshot&quot; (source code and dependencies needed to run) of a container at a specific point in time.</li>
+<li>An image is a template, so when you create a container it runs an instance of the image, including all the source code inside. [<a href="https://phoenixnap.com/kb/docker-image-vs-container">1</a>]</li>
+</ul>
+<hr>
+<h2 id="dockerfile">Dockerfile</h2>
+<ul>
+<li>The details of an image and its environment are stored in a <a href="https://docs.docker.com/engine/reference/builder/"><strong>Dockerfile</strong></a>.</li>
+<li>For example, <a href="https://github.com/jkrup/express-docker-up/blob/master/Dockerfile">this file</a> contains information to install the dependencies for a node app and start the server.</li>
+</ul>
+<pre><code class="language-bash">FROM node:10-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY index.js .
+CMD [&quot;node&quot;, &quot;index.js&quot;]
+</code></pre>
+<hr>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://docs.docker.com/get-started/">Docker: Get Started</a></li>
+</ul>
+<hr>
+<h2 id="docker-cli">Docker CLI</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>docker images</code></td>
+<td>List all images</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code></td>
+<td>List all containers</td>
+</tr>
+<tr>
+<td><code>docker ps -as</code></td>
+<td>List all containers with size</td>
+</tr>
+<tr>
+<td><code>docker ps</code></td>
+<td>List your running containers</td>
+</tr>
+<tr>
+<td>`history</td>
+<td>grep docker`</td>
+</tr>
+<tr>
+<td><code>docker -d</code></td>
+<td>Detach shell and run container in background</td>
+</tr>
+<tr>
+<td><code>docker system prune</code></td>
+<td>Remove all unused containers</td>
+</tr>
+</tbody></table>
+<p>Complete cleanup: stop everything, remove containers, then remove images.</p>
+<pre><code>docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+</code></pre>
+<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
+<hr>
+<h2 id="use-lsdtopotools-with-docker">Use LSDTopoTools with Docker</h2>
+<p>From <a href="https://lsdtopotools.github.io/LSDTT_documentation/LSDTT_installation.html">Installing LSDTopoTools using Docker</a></p>
+<ol>
+<li>Download and install Docker. Make sure its running.</li>
+<li>Create and change into a directory for the docker containers on your desktop</li>
+</ol>
+<pre><code class="language-bash">cd Desktop
+mkdir LSDTopoTools
+cd LSDTopoTools
+</code></pre>
+<ol start="3">
+<li>Pull the full LSDTopoTools container and run it, <a href="https://blog.container-solutions.com/understanding-volumes-docker">making your folder a linked volume</a>. <code>--rm</code> will automatically remove the container when it exits.</li>
+</ol>
+<pre><code class="language-bash">docker run --rm -it -v /Users/owenmundy/Desktop/LSDTopoTools:/LSDTopoTools lsdtopotools/lsdtt_pcl_docker
+</code></pre>
+<ol start="4">
+<li>Inside the running instance (in Docker Desktop open CLI), start LSDTopoTools.</li>
+</ol>
+<pre><code class="language-bash">Start_LSDTT.sh
+</code></pre>
+<ol start="5">
+<li>Get the test data - Run this once to add a data directory to the linked volume in your instance <code>/LSDTopoTools/data</code> (also is visible on your computer at <code>/Users/owenmundy/Desktop/LSDTopoTools/data</code>)</li>
+</ol>
+<pre><code class="language-bash">Get_LSDTT_example_data.sh
+</code></pre>
+<ol start="6">
+<li>Change into the correct data directory and run your first analysis <a href="https://lsdtopotools.github.io/LSDTT_documentation/LSDTT_basic_usage.html">Basic analyses in LSDTopoTools using the lsdtt-basic-metrics program</a>. If you have installed LSDTopoTools correctly this will spit out some information to you screen and make a hillshade of the DEM, which is called WA_FirstExample_hs.bil.</li>
+</ol>
+<pre><code class="language-bash">cd /LSDTopoTools/data
+cd ExampleTopoDatasets/BasicMetricsData
+lsdtt-basic-metrics WA_BasicMetrics01.driver
+</code></pre>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>
