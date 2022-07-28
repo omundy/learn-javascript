@@ -1,22 +1,34 @@
+<!-- paginate: true -->
 
 ← [Learn Javascript](../README.md)
 
+<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+
 # Developing interactive maps with Javascript
+
 Tutorials, references, and tips
 
+<span class="slides-small"><a href="../slides/maps.html">slides</a> | <a href="../www/maps.html">HTML</a> | <a href="../topics/maps.md">md</a></span>
 
-<!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!--
+Presentation comments ...
+-->
 
-		- [Contents](#contents)
+
+
+---
+
+## Contents
+
 - [Tutorials](#tutorials)
-		- [Samples](#samples)
+- [Samples](#samples)
 - [FAQ & Tips](#faq-tips)
 
-<!-- /TOC -->
 
 
 
 
+---
 
 ## Getting Started
 
@@ -25,7 +37,7 @@ I highly recommend using [geojson](https://geojson.org/) as your data format. Le
 
 
 
-
+---
 
 ### Leaflet Maps
 
@@ -34,6 +46,8 @@ I highly recommend using [geojson](https://geojson.org/) as your data format. Le
 
 
 
+---
+
 ### Data
 
 * [jsonlint.com](https://jsonlint.com/) - The JSON validator
@@ -41,7 +55,7 @@ I highly recommend using [geojson](https://geojson.org/) as your data format. Le
 
 
 
-
+---
 
 ## Tutorials
 
@@ -56,6 +70,8 @@ Library | Cost | Description
 - https://developers.arcgis.com/
 
 
+---
+
 #### Samples
 
 - [I Know Where Your Cat Lives](https://iknowwhereyourcatlives.com/) uses the Google Maps API to display cats by the lat/lng where they were taken.
@@ -63,8 +79,10 @@ Library | Cost | Description
 
 
 
-
+---
 
 ## Documentation
+
+---
 
 ## FAQ & Tips
