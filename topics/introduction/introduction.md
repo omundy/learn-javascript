@@ -1,3 +1,4 @@
+<!-- paginate: true -->
 
 ← [Learn Javascript](../../README.md)
 
@@ -7,6 +8,12 @@
 
 Introduction to expressions, statements, and operators
 
+<!--
+Presentation comments ...
+-->
+
+
+---
 
 ### Contents
 
@@ -21,11 +28,14 @@ Introduction to expressions, statements, and operators
 1. [References](#references)
 
 
+---
+
+
 ## Introduction
 
 Review the following sections and perform the activities on your own or with your group.
 
-Perform the task(s) when you see this 👉  emoji 
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -51,6 +61,7 @@ Students who complete this module will be able to:
 
 
 
+---
 
 
 ## What is Javascript?
@@ -63,6 +74,13 @@ Javascript is the programming language of the web. With Javascript you can
 - and much more.
 
 
+
+---
+
+
+<div class="twocolumn">
+<div class="col">
+
 **Programming**, the act of “writing instructions for a computer to execute,” usually involves:
 
 - **Flow** - The order in which statements are executed.
@@ -70,20 +88,42 @@ Javascript is the programming language of the web. With Javascript you can
 - **Logic** - Making decisions based on conditions (state).
 - **Events** - Things that happen, like user input, that may change the state.
 
+</div>
+<div class="col">
 
 [![true](../../assets/img/javascript-diagram-lamp.png)](../../topics/single-page-apps/javascript-lamp/index.html)
 
-<sup>Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</sup>
+<div class="caption slides-small">Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</div>
 
 
 
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+---
 
 
 ## How to use Javascript
 
 Javascript can run in any web browser or on your computer (using Node). The [next lesson](../../README.md#javascript-part1) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
 
-👉 **Try it out** - Two places to test Javascript.
+
+
+
+
+---
+
+
+👉 **Try it out** - Two places to test Javascript - 1
 
 The **browser console** is an excellent tool for checking messages and warnings, as well as allowing you to test code.
 
@@ -94,31 +134,52 @@ alert("hello world!");
 ```
 **Code playgrounds** like [jsfiddle.net](https://jsfiddle.net) and [codepen.io](https://codepen.io/) make it easy to quickly test and share Javascript (and HTML and CSS files) in a "web environment".
 
+
+
+---
+
+👉 **Try it out** - Two places to test Javascript - 2
+
 2. Add the code above to one of these playgrounds to test it out.
 
 ![code playground](../../assets/img/code-playground-jsfiddle.png)
 
 Some examples from class:
 
-- codepen.io [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW)
-- codepen.io [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY)
+- codepen.io [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW) and [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY)
 - jsfiddle.net [Choropleth map with Mapbox](https://jsfiddle.net/ow3n/sw6ek1wb/)
 
 
 
 
+
+
+---
+
+
 ## Data Types
 
-All programming languages use data to manage their state. Data has both a **value** and a **type**. Below, the **`boolean`** *type* can only have one of two *values*: `true` or `false`.
+- Javascript is a "loosely-typed" language.
+- It will infer the type of data you store in a variable (unlike other languages).
+
+![true](../../assets/img/javascript-diagram-data-types.png)
+
+<div class="caption slides-small">Javascript organizes data by primitive and non-primitive types</div>
+
+---
+
+## Data Types
+
+- All programming languages use data to manage their state.
+- Data has both a **value** and a **type**.
+- Below, the **`boolean`** *type* can only have one of two *values*: `true` or `false`.
 
 ```js
 true
 false
 ```
 
-Javascript is a loosely-typed language. This means Javascript will infer the data type of variables so you don't have to. Javascript organizes data by primitive and non-primitive types:
 
-![true](../../assets/img/javascript-diagram-data-types.png)
 
 The Javascript **`number`** type does not distinguish integer from float values.
 ```js
@@ -126,6 +187,11 @@ The Javascript **`number`** type does not distinguish integer from float values.
 3.14
 -491143422
 ```
+
+
+
+---
+
 
 The **`string`** type includes any character as its value, wrapped using a single `'words'` or double `"other words"` quotes. The number `3.14` below is technically a string because it is wrapped in quotes.
 ```js
@@ -146,6 +212,12 @@ new Date()
 
 
 
+
+
+---
+
+
+
 <!-- Variations of this section:
 learn-javascript/topics/introduction.md
 learn-computing/topics-data-types.md
@@ -155,6 +227,9 @@ learn-computing/topics-data-types.md
 
 An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) is any unit of code that resolves to a data value. Expressions are the fundamental building blocks of code, and use data ("operands") with [operators](https://www.w3schools.com/js/js_operators.asp) to perform math, logic, or string calculations.
 
+
+
+---
 
 
 ### 👉 **Try it out** - Explore data types using the Javascript Console
@@ -170,6 +245,9 @@ An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Ex
 ```js
 12 * 12
 ```
+
+---
+
 
 3. If you use the [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator, Javascript will return a string describing the data's *type*.
 
@@ -188,6 +266,9 @@ The [equality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 ```js
 1 == 1
 ```
+
+---
+
 
 The [inequality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality) `!=` checks whether its two operands are *not equal*.
 
@@ -209,6 +290,7 @@ It will return `false` because `1` is a `number` and `"1"` is a `string`.
 
 </details>
 
+---
 
 
 If you combine expressions, Javascript will evaluate each in the appropriate order. **What will these return?**
@@ -237,15 +319,16 @@ typeof (typeof (4 > 5)) // -> "string"
 
 
 
+---
 
 
 ## Statements
 
-A statement is any instruction to perform a specific action. I like to think of a statement as a sentence—they even have punctuation (a semicolon `;`) at the end to tell Javascript the instruction is complete.
+A statement is any instruction to perform a specific action. Think of a statement as a sentence—they even have punctuation (a semicolon `;`) at the end to tell Javascript the instruction is complete.
 
 ![true](../../assets/img/javascript-anatomy-statement.png)
 
-The statement in the diagram uses an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) to assign a value to variable, `greeting`, on the left. In the next section we will install Javascript and start using variables.
+This statement uses an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) to assign a value to variable, `greeting`, on the left. In the next section we will install Javascript and start using variables.
 
 
 
@@ -254,6 +337,7 @@ The statement in the diagram uses an [assignment operator](https://developer.moz
 
 
 
+---
 
 
 ## Next steps
@@ -265,6 +349,7 @@ The statement in the diagram uses an [assignment operator](https://developer.moz
 
 
 
+---
 
 
 ## Exercises
@@ -302,6 +387,7 @@ Math.ceil(1.2)
 
 
 
+---
 
 
 ## References

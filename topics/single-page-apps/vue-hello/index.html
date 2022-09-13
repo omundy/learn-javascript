@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+	<script type="importmap">
+		{
+	    "imports": {
+	      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+	    }
+	  }
+	</script>
+
+	<div id="app">
+		<!-- make this button work -->
+		<button @click="increment">count is: {{ count }}</button>
+
+<br><br>
+
+		<input v-model="text" placeholder="Type here">
+		<p>{{ text }}</p>
+	</div>
+
+	<script type="module">
+		import {
+			createApp
+		} from 'vue'
+
+		createApp({
+			data() {
+				return {
+					count: 0,
+					text: ''
+				}
+			},
+			methods: {
+				increment() {
+					// update component state
+					this.count++
+				},
+				onInput(e) {
+					this.text = e.target.value
+				}
+			}
+		}).mount('#app')
+
+	</script>
+
+
+
+
+
+</body>
+</html>
+
+
+<!--
+https://vuejs.org/guide/introduction.html#what-is-vue
+https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
+https://vuejs.org/tutorial/
+
+If you directly open the above index.html in your browser, you will find that it throws an error because ES modules cannot work over the file:// protocol. In order for this to work, you need to serve your index.html over the http:// protocol, with a local HTTP server.
+
+To start a local HTTP server, first install Node.js, and then run npx serve from the command line in the same directory where your HTML file is. You can also use any other HTTP server that can serve static files with correct MIME types.
+ -->
