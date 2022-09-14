@@ -1,3 +1,4 @@
+<!-- paginate: true -->
 
 ← [Learn Javascript](../../README.md)
 
@@ -7,6 +8,12 @@
 
 How to store and compare values and data types
 
+<!--
+Presentation comments ...
+-->
+
+
+---
 
 ## Contents
 
@@ -20,11 +27,13 @@ How to store and compare values and data types
 1. [References](#references)
 
 
+---
+
 ## Introduction
 
 Review the following sections and perform the activities on your own or with your group.
 
-Perform the task(s) when you see this 👉  emoji 
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -52,32 +61,27 @@ Students who complete this module will be able to:
 
 
 
+---
+
 ## Add Javascript to a web page
 
-You can add Javascript to a **web page** inside a `<script>` element, or load it into your page from an external `.js` file. The browser will run your code when it loads the page, or in response to a user’s actions.
+<div class="twocolumn">
+<div class="col">
 
-Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. View this page [demos/0-hello.html](demos/0-hello.html).
+Add Javascript to a **web page** inside a `<script>` element, or load it into your page from an external `.js` file. The browser will run your code when it loads the page, or in response to a user’s actions.
 
-```js
-// 0-hello.js
-console.log("Hello from an external Javascript file!");
-```
+</div>
+<div class="col">
 
 ```html
 <!-- 0-hello.html -->
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Learn Javascript</title>
-<style>
-    body { font-family: sans-serif; }
-</style>
 </head>
 <body>
 <h1>Javascript "hello world!"</h1>
-
-<script src="0-hello.js"></script>
 <script>
 
 alert("hello from the script tag!");
@@ -87,42 +91,123 @@ alert("hello from the script tag!");
 </html>
 ```
 
+</div>
+</div>
 
+
+---
+
+
+## Add Javascript to a web page
+
+<div class="twocolumn">
+<div class="col">
+
+Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. View this page [demos/0-hello.html](demos/0-hello.html).
+
+</div>
+<div class="col">
+
+
+```js
+// 0-hello.js
+console.log("Hello from an external .js!");
+```
+
+```html
+<!-- 0-hello.html -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learn Javascript</title>
+</head>
+<body>
+<h1>Javascript "hello world!"</h1>
+
+<script src="0-hello.js"></script>
+</body>
+</html>
+```
+
+</div>
+</div>
+
+
+
+
+
+---
 
 #### ⚠️ Order matters
 
 Load external files into an HTML page in the following order:
 
+<div class="twocolumn">
+<div class="col">
+
 1. **CSS** - Ensure HTML elements and content can access the styles *before* they display, unstyled.
 1. **HTML** - All visible content comes next.
 1. **Javascript** - Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
 
+</div>
+<div class="col">
+
+```html
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learn Javascript</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<h1>Content of your web page</h1>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+```
+
+</div>
+</div>
 
 
+
+
+
+
+
+
+---
 
 ## Keep the Console open
 
-
-In the example above, the Console displayed a message from the `console.log()` **function**, as well as the line number where it was called in your code.
+Here, the Console displays a message from the `console.log()` **function**, as well as the line number where it was called in your code.
 
 ![true](../../assets/img/console-hello.png)
 
-<sup>View this file: [demos/0-hello.html](demos/0-hello.html)</sup>
-
+<div class="slides-small">View this file: <a href="../../topics/variables/demos/0-hello.html" target="_blank">demos/0-hello.html</a></div>
 
 If you have warnings or errors in your code then the Console will show a red error flag and log the error message and line where it happened.
 
 ![true](../../assets/img/console-errors.png)
 
-<sup>View this file: [demos/1-console-errors.html](demos/1-console-errors.html)</sup>
+<div class="slides-small">View this file: <a href="../../topics/variables/demos/1-console-errors.html" target="_blank">demos/1-console-errors.html</a></div>
 
 
-Tips for using the Console:
+
+
+---
+
+
+## Tips for using the Console:
 
 - If the Console shows it recognizes what you are typing, press "Tab" to autocomplete.
 - Press the up ↑ arrow to see the last command you entered.
 - You can add multiple expressions to `console.log()` function by separating them with commas.
 - Keep the Console open when coding Javascript so it will show you warnings and errors from your code.
+
+
+
+---
 
 👉 **Try it out** - Tricks for the console
 
@@ -144,6 +229,8 @@ console.log(true, 1, 3.14, "abc");
 
 
 
+
+---
 
 
 ## Variables
@@ -168,6 +255,8 @@ Refer to the below diagram of the anatomy of a Javascript statement from the pre
 
 
 
+---
+
 ### var, let, and const
 
 The Javascript language is based on the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), which in 2015 (ES6) added support for two new variable declaration keywords. The differences between the original method `var`, and the additions, `let` and `const`, mainly have to do with scope, which determines where these variables are able to be accessed.
@@ -180,6 +269,8 @@ With the original method `var`, variables could be redeclared and globally acces
 
 
 
+
+---
 
 ### Update the value stored in a variable
 
@@ -208,6 +299,8 @@ myNumber += "10"; // -> ?
 
 
 
+---
+
 👉 **Try it out** - Examine code examples
 
 1. View the source of this page [demos/2-variables.html](demos/2-variables.html).
@@ -218,6 +311,8 @@ myNumber += "10"; // -> ?
 
 
 
+
+---
 
 ### Variable data types
 
@@ -254,6 +349,9 @@ true "boolean"
 
 
 
+
+---
+
 👉 **Try it out** - Storing and using complex data types
 
 You can store complex types like the [Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp) in variables as well.
@@ -283,11 +381,16 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 
 
+---
+
 ## Syntax
 
 While slightly more forgiving than other languages, Javascript still requires your syntax to be correct or your code won’t work as expected. For example, it is a good practice to always include the trailing semicolon. Read on for more tips and suggestions:
 
 
+
+
+---
 
 ### Comments
 
@@ -300,6 +403,9 @@ Comments can be used to add notes about code. They are preceded by `//` or enclo
 comment */
 ```
 
+
+
+---
 
 ### Whitespace
 
@@ -318,6 +424,9 @@ if (true)
 Some rich text editors will also have hidden whitespace characters that can cause errors. Copying / pasting code from Slack sometimes cause this issue.
 
 
+
+---
+
 ### Smart quotes
 
 Take care when copying / pasting from rich text editors (like Word or HTML pages) which sometimes use smart quotes (a.k.a. “curly quotes”). Note in the example below how the text color formatting is broken on the first example. Smart quotes are not acceptable for wrapping string data and will cause errors.
@@ -327,6 +436,9 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 " An example string with dumb quotes 😀 "
 ```
 
+
+---
+
 👉 **Try it out** - Locate a syntax error in the console
 
 1. View the source of this page [demos/3-syntax-quotes.html](demos/3-syntax-quotes.html).
@@ -334,6 +446,8 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 1. Open the console to verify.
 
 
+
+---
 
 ### Use a linter
 
@@ -350,14 +464,17 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 
 
+---
+
 ## Next steps
 
-1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga0a6e47c90_0_44) that accompany this section.
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the [next lesson](../../README.md#javascript-part1).
 
 
+
+---
 
 ## Exercises
 
@@ -374,7 +491,7 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 
 
-
+---
 
 ## References
 

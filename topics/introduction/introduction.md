@@ -324,11 +324,13 @@ typeof (typeof (4 > 5)) // -> "string"
 
 ## Statements
 
-A statement is any instruction to perform a specific action. Think of a statement as a sentence—they even have punctuation (a semicolon `;`) at the end to tell Javascript the instruction is complete.
+- A **statement** is an instruction that performs a specific action.
+- Like a sentence—statements have punctuation (a semicolon `;`) to note when the instruction is complete.
+- This statement assigns a value to the `greeting` variable with an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators).
 
 ![true](../../assets/img/javascript-anatomy-statement.png)
 
-This statement uses an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) to assign a value to variable, `greeting`, on the left. In the next section we will install Javascript and start using variables.
+
 
 
 
@@ -342,10 +344,9 @@ This statement uses an [assignment operator](https://developer.mozilla.org/en-US
 
 ## Next steps
 
-1. Review additional information in the [slides](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.g3f99f37dc1_8_39) that accompany this section.
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the next lesson: [Variables](../../slides/variables/variables.html).
 
 
 
@@ -354,12 +355,22 @@ This statement uses an [assignment operator](https://developer.mozilla.org/en-US
 
 ## Exercises
 
+<div class="twocolumn">
+<div class="col">
+
 👉 **Try it out** - Example Expressions
 
-Expand the section below to view more example expressions. See if you can guess the return value of each before you run them in your browser dev console or a code playground.
+See if you can guess the return value of each of these expressions before you run them in the dev console.
 
-<details>
-<summary>Example Expressions</summary>
+Explore the functions and properties
+- [JS Operators](https://www.w3schools.com/jsref/jsref_operators.asp)
+- [`Math.random()`](https://www.w3schools.com/jsref/jsref_random.asp)
+- [`Math.ceil()`](https://www.w3schools.com/jsref/jsref_ceil.asp)
+- [`.length`](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [`.test()`](https://www.w3schools.com/jsref/jsref_regexp_test.asp)
+
+</div>
+<div class="col">
 
 ```js
 1 == 1
@@ -375,15 +386,18 @@ Expand the section below to view more example expressions. See if you can guess 
 true != false
 true != !false
 true != !!false
-true != !!!!!!!!false
 Math.random()*100
 Math.ceil(1.2)
+"hello".length
 /[aeiouAEIOU]/.test(123)
 /[aeiouAEIOU]/.test("b")
 /[aeiouAEIOU]/.test("a")
 ```
 
-</details>
+</div>
+</div>
+
+
 
 
 
