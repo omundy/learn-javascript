@@ -1,12 +1,15 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Variables
 
 How to store and compare values and data types
+
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="variables.md">md</a></span>
+
 
 <!--
 Presentation comments ...
@@ -103,7 +106,7 @@ alert("hello from the script tag!");
 <div class="twocolumn">
 <div class="col">
 
-Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. View this page [demos/0-hello.html](demos/0-hello.html).
+Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. View this page <a href="demos/0-hello.html" target="_blank">demos/0-hello.html</a>.
 
 </div>
 <div class="col">
@@ -140,36 +143,33 @@ console.log("Hello from an external .js!");
 
 #### ⚠️ Order matters
 
-Load external files into an HTML page in the following order:
-
-<div class="twocolumn">
-<div class="col">
-
-1. **CSS** - Ensure HTML elements and content can access the styles *before* they display, unstyled.
-1. **HTML** - All visible content comes next.
-1. **Javascript** - Always add `<script>` tags at the end, right before the closing `</body>` tag, to be sure all the HTML elements have loaded and are ready to be used by your code.
-
-</div>
-<div class="col">
+Place CSS and JS into your HTML page in the following order:
 
 ```html
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Learn Javascript</title>
-<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- 1. CSS in the <head> so HTML can access when it loads and renders -->
+<link rel="stylesheet" href="styles.css">
+<style> h1 { color: blue; } </style>
+
 </head>
 <body>
+
+<!-- 2. HTML tags and visible content go in the body -->
 <h1>Content of your web page</h1>
-<script src="assets/js/main.js"></script>
+
+<!-- 3. Javascript goes after all content to ensure HTML elements have loaded and
+are ready to be used by your code. -->
+<script src="main.js"></script>
+<script> alert("Hello world!"); </script>
+
 </body>
 </html>
 ```
 
-</div>
-</div>
-
-
 
 
 
@@ -178,19 +178,25 @@ Load external files into an HTML page in the following order:
 
 ---
 
-## Keep the Console open
+## Keep that Console open
 
-Here, the Console displays a message from the `console.log()` **function**, as well as the line number where it was called in your code.
+
+The Console displays a message from the `console.log()` **function**, as well as the line number where it was called in your code.
 
 ![true](../../assets/img/console-hello.png)
 
-<div class="slides-small">View this file: <a href="../../topics/variables/demos/0-hello.html" target="_blank">demos/0-hello.html</a></div>
+<div class="slides-small">
+	<a href="demos/0-hello.html" target="_blank">demos/0-hello.html</a>
+</div>
 
-If you have warnings or errors in your code then the Console will show a red error flag and log the error message and line where it happened.
+
+Errors in your code appear with a red flag and the line number where you can fix it!
 
 ![true](../../assets/img/console-errors.png)
 
-<div class="slides-small">View this file: <a href="../../topics/variables/demos/1-console-errors.html" target="_blank">demos/1-console-errors.html</a></div>
+<div class="slides-small">
+	<a href="demos/1-console-errors.html" target="_blank">demos/1-console-errors.html</a>
+</div>
 
 
 
@@ -198,29 +204,32 @@ If you have warnings or errors in your code then the Console will show a red err
 ---
 
 
-## Tips for using the Console:
-
-- If the Console shows it recognizes what you are typing, press "Tab" to autocomplete.
-- Press the up ↑ arrow to see the last command you entered.
-- You can add multiple expressions to `console.log()` function by separating them with commas.
-- Keep the Console open when coding Javascript so it will show you warnings and errors from your code.
+## 👉 Try it out - Tips for using the Console
 
 
+<div class="twocolumn">
+<div class="col">
 
----
+- The Console shows hints while you type; press "Tab" to autocomplete.
+- Press up ↑ to show previous commands you entered.
+- Add multiple expressions to `console.log()` separated by a comma.
 
-👉 **Try it out** - Tricks for the console
-
-Run these in the DevTools Console
+</div>
+<div class="col">
 
 ```js
-console.log("hello", "world!");
-console.log(true, 1, 3.14, "abc");
+document.title = "hello"
+console.log("abc", 123);
 ```
-
 
 <img src="../../assets/img/console-meme.png" width="500">
 
+<div class="slides-small">
+	Keep the Console open when coding to be notified of problems with your code.
+</div>
+
+</div>
+</div>
 
 
 
@@ -235,18 +244,41 @@ console.log(true, 1, 3.14, "abc");
 
 ## Variables
 
+<div class="twocolumn">
+<div class="col">
+
+- Use **Variables** to store data in your program.
+- Variables, like water bottles, can store things to use later when you need to.
+
+</div>
+<div class="col">
+
 <img src="../../assets/img/variables-zwift.png" width="170" align="right">
 
-Variables are used to store values in your program.
+<div class="slides-small">
+	Keep the Console open when coding to be notified of problems with your code.
+</div>
 
-My favorite visual for thinking about variables is a water bottle. Like variables, you can put things in water bottles, and get them back out later when you need to.
+</div>
+</div>
 
-Refer to the below diagram of the anatomy of a Javascript statement from the previous lesson. Reading from the left, this statement
 
-1. Creates a new variable named `greeting`
-1. **Assigns** the string `"hello"` as the value (using the assignment operator)
+
+
+
+
+
+
+---
+
+## Variables
+
 
 ![true](../../assets/img/javascript-anatomy-statement.png)
+
+From the left, this statement
+1. **Creates** a new variable named `greeting` and
+2. **Assigns** the string `"hello"` as the value (using the assignment operator)
 
 > The assignment process is also referred to as "binding", because the data is actually stored in the memory of the computer, not the variable.
 
@@ -259,13 +291,16 @@ Refer to the below diagram of the anatomy of a Javascript statement from the pre
 
 ### var, let, and const
 
-The Javascript language is based on the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), which in 2015 (ES6) added support for two new variable declaration keywords. The differences between the original method `var`, and the additions, `let` and `const`, mainly have to do with scope, which determines where these variables are able to be accessed.
+Javascript is based on the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), which in [ES6](https://www.w3schools.com/js/js_es6.asp) added new variable declaration keywords to address [issues](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
 
-With the original method `var`, variables could be redeclared and globally accessed. [This creates some issues](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/).
+**`var`** (old method, still works)
+- Variables can be redeclared
+- Variable have global scope
 
-- With `let` and `const`, you can't use a variable before it is declared.
-- With `let` and `const`, declarations can only be accessed within the block `{ ... }` they were declared.
-- Variables declared using `const` cannot be updated or re-declared
+**`let` and `const`**
+- You can't use a variable before it is declared.
+- Variables can only be accessed in the block `{ ... }` they were declared.
+- `const` variables cannot be changed ("**const**ant")
 
 
 
@@ -276,14 +311,14 @@ With the original method `var`, variables could be redeclared and globally acces
 
 Just like a water bottle, you can replace the value stored in a variable.
 
-👉 **Try it out** - What is the value in `myVar` after each of these statements? Feel free to [check the documentation](https://www.w3schools.com/js/js_operators.asp) on the `+` operator.
+👉 **Try it out** - What is the value in `num` after each of these statements? Feel free to [check the documentation](https://www.w3schools.com/js/js_operators.asp) on the `+` operator.
 
 ```js
-var myNumber = 1000; // -> ?
-myNumber = myNumber + 10; // -> ?
-myNumber += 10; // -> ?
-myNumber ++; // -> ?
-myNumber += "10"; // -> ?
+var num = 1000; // -> ?
+num = num + 10; // -> ?
+num += 10; // -> ?
+num ++; // -> ?
+num += "10"; // -> ?
 ```
 
 <details>
@@ -303,7 +338,7 @@ myNumber += "10"; // -> ?
 
 👉 **Try it out** - Examine code examples
 
-1. View the source of this page [demos/2-variables.html](demos/2-variables.html).
+1. View the source of this page <a href="demos/2-variables.html" target="_blank">demos/2-variables.html</a>
 1. Try to determine what each `console.log()` function will output?
 1. Open the console to verify.
 
@@ -324,6 +359,10 @@ Unlike some other languages, with Javascript, you don’t have to supply a data 
 1. Try to determine what each `console.log()` function will output?
 1. Open the console to verify.
 
+
+<div class="twocolumn">
+<div class="col">
+
 ```js
 let answer = true;
 console.log(answer, typeof answer);
@@ -335,6 +374,9 @@ answer = Boolean(answer);
 console.log(answer, typeof answer);
 ```
 
+</div>
+<div class="col">
+
 <details>
 <summary>Solution</summary>
 
@@ -345,6 +387,10 @@ true "boolean"
 true "boolean"
 ```
 </details>
+
+</div>
+</div>
+
 
 
 
@@ -441,7 +487,7 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 
 👉 **Try it out** - Locate a syntax error in the console
 
-1. View the source of this page [demos/3-syntax-quotes.html](demos/3-syntax-quotes.html).
+1. View the source of this page <a href="demos/3-syntax-quotes.html" target="_blank">demos/3-syntax-quotes.html</a>
 1. Try to determine what line number console will report for the error?
 1. Open the console to verify.
 
@@ -470,7 +516,7 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the next lesson: **Control Flow** [slides](../control-flow/slides.html) | [md](../control-flow/control-flow.md)
 
 
 

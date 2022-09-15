@@ -1,14 +1,14 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../index.html)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Introduction
 
 Introduction to expressions, statements, and operators
- 
-<span class="slides-small"><a href="../../slides/introduction/introduction.html">slides</a> | <a href="../../www/introduction/introduction.html">HTML</a> | <a href="../../topics/introduction/introduction.md">md</a></span>
+
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="introduction.md">md</a></span>
 
 <!--
 Presentation comments ...
@@ -116,7 +116,7 @@ Javascript is the programming language of the web. With Javascript you can
 
 ## How to use Javascript
 
-Javascript can run in any web browser or on your computer (using Node). The [next lesson](../../README.md#javascript-part1) covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
+Javascript can run in any web browser (or on your computer using Node). The next lesson covers how to add scripts to a web page, but first let's look at two quick ways to **test** Javascript.
 
 
 
@@ -348,8 +348,8 @@ typeof (typeof (4 > 5)) // -> "string"
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the next lesson: [Variables](../../slides/variables/variables.html).
-
+1. Continue to the next lesson: [Variables](../variables/slides.html).
+1. Continue to the next lesson: **Variables** [slides](../variables/slides.html) | [md](../variables/variables.md)
 
 
 ---

@@ -1,12 +1,21 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Data Structures
 
 How to use arrays, objects, properties, methods, and loops
 
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
+
+
+---
 
 ## Contents
 
@@ -20,7 +29,7 @@ How to use arrays, objects, properties, methods, and loops
 
 Review the following sections and perform the activities on your own or with your group.
 
-Perform the task(s) when you see this 👉  emoji 
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -50,6 +59,9 @@ Students who complete this module will be able to:
 
 
 
+
+---
+
 ## Data Collections
 
 In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (`boolean`, `number`, `string`), Javascript has data types to store data collections, which can include `arrays`, `objects`, as well as more complex entities, hierarchical collections, and lists.
@@ -57,6 +69,9 @@ In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/G
 
 
 
+
+
+---
 
 ### Arrays
 
@@ -66,6 +81,10 @@ const numberArr = [-2, -1, 0, 1, 2]; // array of numbers
 const colorArr = ["red", "green", "blue"]; // array of strings
 console.log(colorArr[0]); // -> "red"
 ```
+
+
+---
+
 
 Arrays can also store other arrays
 ```js
@@ -87,6 +106,7 @@ console.log(dates[1].toUTCString()); // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berl
 ```
 
 
+---
 
 ### Objects
 
@@ -100,6 +120,9 @@ const color = {
 console.log(color.name); // -> "red" via dot notation
 console.log(color['name']); // -> "red" via square brackets
 ```
+
+
+---
 
 You can also store functions ([called methods when stored inside an object](https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27)).
 ```js
@@ -129,6 +152,9 @@ console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
 
 
 
+---
+
+
 ```js
 // a new array
 let myArray = [10,34,101];
@@ -153,12 +179,18 @@ let myObject = {
 
 
 
+---
+
+
 ## Next steps
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the [next lesson](../../README.md#javascript-part1).
 
+
+
+---
 
 ## Exercises
 
@@ -172,8 +204,11 @@ let myObject = {
 - Exercises: CH4 [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
 
 
-## References
 
+
+---
+
+## References
 
 - Haverbeke: [Ch4 Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html) (57-79)
 - Codecademy Cheatsheet(s) [arrays](reference-sheets/js-05-arrays.pdf), [loops](reference-sheets/js-06-loops.pdf)

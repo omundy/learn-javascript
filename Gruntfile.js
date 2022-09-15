@@ -27,26 +27,27 @@ module.exports = function(grunt) {
 					dest: 'index.html'
 				}]
 			},
-			multiple_files: {
-				options: {
-					layout: "assets/md2html/templates/bootstrap.html",
-					templateData: {
-						basePath: "../",
-						author: pkgJson.author,
-						projectTitle: pkgJson.title,
-						filename: function(src) {
-							return src[0].match(/\/(.*).md/);
-						},
-					},
-				},
-				files: [{
-					expand: true,
-					cwd: 'topics',
-					src: ['*/*.md'],
-					dest: 'www', // destination directory
-					ext: '.html' // new file ext
-				}]
-			}
+		// 	multiple_files: {
+		// 		options: {
+		// 			layout: "assets/md2html/templates/bootstrap.html",
+		// 			templateData: {
+		// 				basePath: "../",
+		// 				author: pkgJson.author,
+		// 				projectTitle: pkgJson.title,
+		// 				filename: function(src) {
+		// 					// return src[0].match(/\/(.*).md/); // original
+		// 					return "index.html";
+		// 				},
+		// 			},
+		// 		},
+		// 		files: [{
+		// 			expand: true,
+		// 			cwd: 'topics', // base path to md files
+		// 			src: ['*/*.md'], // only md files in the first dir
+		// 			dest: 'www', // destination directory
+		// 			ext: '.html' // new file ext
+		// 		}]
+		// 	}
 		},
 		watch: {
 			configFiles: {
@@ -76,7 +77,7 @@ module.exports = function(grunt) {
 	// see build_slides.sh for more
 	grunt.task.registerTask('build_slides', '', function() {
 		var exec = require('child_process').execSync;
-		var result = exec("./build_slides.sh", {
+		var result = exec("./build-tools/build_slides.sh", {
 			encoding: 'utf8'
 		});
 		grunt.log.writeln(result);

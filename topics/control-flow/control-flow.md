@@ -1,21 +1,18 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Control Flow
 
 Comparison and logical operators, conditional statements
 
-<span class="slides-small"><a href="../slides/control-flow.html">slides</a> | <a href="../www/control-flow.html">HTML</a> | <a href="../topics/control-flow.md">md</a></span>
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="control-flow.md">md</a></span>
 
 <!--
 Presentation comments ...
 -->
-
-
-
 
 
 ---
