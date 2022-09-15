@@ -17,30 +17,26 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 An introduction to the language
 
-1. [Introduction](topics/introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
-1. [Data & Variables](topics/variables/variables.md) - How to store and compare values and data types
-1. [Control Flow](topics/control-flow/control-flow.md) - Comparison and logical operators, conditional statements
-1. [Functions & Scope](topics/functions-scope/functions-scope.md) - Reusing code, protecting variables
-1. [Data Structures](topics/data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
-1. [jquery](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
-
-
-1. [Single Page Apps](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
-
-
-
-THINGS TO FILE
+1. Introduction [slides](topics/introduction/slides.html) | [md](topics/introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
+1. Data & Variables [slides](topics/variables/slides.html) | [md](topics/variables/variables.md) - How to store and compare values and data types
+1. Control Flow [slides](topics/control-flow/slides.html) | [md](topics/control-flow/control-flow.md) - Comparison and logical operators, conditional statements
+1. Functions [slides](topics/functions/slides.html) | [md](topics/functions/functions.md) - Reusing code, protecting variables
+1. Data Structures [slides](topics/data-structures/slides.html) | [md](topics/data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
+1. jquery [slides](topics/jquery/slides.html) | [md](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
+1. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
 
 
 
-Technical references
+## Examples / Demos
+
+- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)
+
+
+
+
+## Technical references
 
 * W3Schools [Javascript](https://www.w3schools.com/jsref/default.asp) reference
 * [Async JavaScript, a Pocket Reference: Learn asynchronous programming in JavaScript](https://medium.com/@ajmeyghani/async-javascript-a-pocket-reference-2bb16ac40d21)
 * [W3Schools: Console Object](https://www.w3schools.com/jsref/obj_console.asp)
 * [Boost your JavaScript Debugging Skills With These Console Tricks](https://medium.com/better-programming/boost-your-javascript-debugging-skills-with-these-console-tricks-ab984c70298a)
-
-
-Common JS problems
-
-- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)

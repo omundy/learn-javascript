@@ -1,8 +1,8 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../index.html)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Introduction
 

@@ -1,21 +1,21 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# Functions & Scope
+# Functions
 
 Reusing code, protecting variables, callback functions
 
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="functions.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
 
 
-
-
-
-
-
-
-
+---
 
 Functions are the next step in creating control structures. Say we have the code from the previous lesson
 
@@ -70,6 +70,9 @@ https://en.wikipedia.org/wiki/Side_effect_(computer_science)
 
 
 
+---
+
+
 &nbsp;
 <!---
 comments
@@ -93,6 +96,9 @@ const isItTimeForPizza = () => {
 }
 console.log(isItTimeForPizza());
 ```
+
+
+---
 
 #### Homework
 
@@ -120,6 +126,9 @@ console.log(isItTimeForPizza());
 
 
 
+---
+
+
 ### Side Effects
 
 These are statements with **side effects**. Instead of returning a value, they evaluate the expression and then produce some other effect. The built-in `alert()` function opens a popup window to show the value that is returned from the expression.
@@ -133,12 +142,18 @@ https://medium.com/javascript-scene/master-the-javascript-interview-what-is-func
 
 
 
+
+---
+
 ## Next steps
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the [next lesson](../../README.md#javascript-part1).
 
+
+
+---
 
 ## Exercises
 

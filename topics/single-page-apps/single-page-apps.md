@@ -1,19 +1,21 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Single Page Applications
 
 A simple introduction
 
-<sup class="small"><a href="../../slides/single-page-apps/single-page-apps.html">slides</a> | <a href="../../topics/single-page-apps/single-page-apps.md">markdown</a> </sup>
-
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="single-page-apps.md">md</a></span>
 
 <!--
 Presentation comments ...
 -->
+
+
+---
 
 <!--
 ---

@@ -1,15 +1,14 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a> <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-jquery-240sq.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-jquery-240sq.png"></a>
 
 # jquery
 
 How to use jquery for interaction, display, and data
 
-<sup class="small"><a href="../../slides/jquery/jquery.html">slides</a> | <a href="../../topics/jquery/jquery.md">markdown</a> </sup>
-
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="jquery.md">md</a></span>
 
 <!--
 Presentation comments ...
