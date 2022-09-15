@@ -130,7 +130,7 @@ If you store a reference to setInterval then you can control the timer. Here is 
 let counter = 20;
 let timer = setInterval(() => {
 	console.log(`you have ${--counter} seconds until this page explodes!!`);
-	// use clearInterval to stop time  
+	// use clearInterval to stop time
 	if (counter <= 0) {
 		clearInterval(timer);
 		console.log(`💥`);
@@ -146,7 +146,7 @@ let count = 0;
 function showNextResult(duration) {
   setTimeout(function () {
 	  console.log(`This function has called itself ${++count} times! It will run again in ${100 * count} millis`);
-	  showNextResult(100 * count);    
+	  showNextResult(100 * count);
   }, duration);
 }
 showNextResult(); // start
@@ -157,3 +157,74 @@ showNextResult(); // start
 ## What is a Cronjob?
 
 See this [cron example using Python](https://github.com/omundy/dig333-physical-computing/tree/master/raspberry-pi/cron-example)
+
+
+
+
+
+
+
+
+
+
+
+
+# Date and Time
+
+An overview of using the Date() object in JS. These are basic uses, Open your browser's console to run the sample code.
+
+
+Javascript has a [Date object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+```js
+// get the current UTC time in ISO-8601
+new Date();
+// -> 2020-12-06T14:20:21.062Z
+```
+
+Store and use Date()
+```js
+// store Date object using constructor
+const currentDate = new Date();
+// use  built in methods
+const currentDayOfMonth = currentDate.getDate();
+const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+const currentYear = currentDate.getFullYear();
+const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
+// -> "27-11-2020"
+```
+
+A time stamp is the number of milliseconds that have passed since January 1, 1970.
+```js
+const currentDate = new Date();
+const timestamp = currentDate.now();
+// -> 1607265575863
+```
+
+Parse a date string using Date()
+```js
+new Date("Wed, 27 July 2016 13:30:00")
+// -> "2016-07-27T17:30:00.000Z"
+new Date("July 2000")
+// -> "2000-07-01T04:00:00.000Z"
+```
+
+Compare two dates using their Date()
+```js
+const date1 = new Date("July 19, 2014");
+const date2 = new Date("July 28, 2014");
+
+if(date1 > date2) {
+    console.log("First date is more recent");
+} else {
+    console.log("Second date is more recent");
+}
+// -> "Second date is more recent"
+```
+
+
+
+
+
+Articles
+- [The Definitive Guide to DateTime Manipulation](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)
+- Moment.js is dead; [some alternatives](https://momentjs.com/docs/#/-project-status/recommendations/)

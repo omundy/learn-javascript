@@ -21,3 +21,7 @@
 Scenario: You have four different functions that can all change the login status of a user. Since you update this with several pieces of logic it is not only redundant and hard to maintain, but very difficult to debug.
 
 Fix: Keep all logic that changes global variables in a central location.
+
+
+
+## D.R.Y.
