@@ -9,11 +9,22 @@ echo 💩💩💩💩💩💩💩💩💩💩💩💩💩💩 build_slides 💩�
 ################ MARP ################
 ######################################
 
-for FN in topics/*/*.md;
+# ORIGINAL
+# for FN in topics/*/*.md;
+# do
+# 	BFN=${FN%.md};
+# 	# echo "marp ${FN} -o test/${BFN#*/}.html;"
+# 	marp $FN -o slides/${BFN#*/}.html;
+# done
+
+
+for FILEPATH in topics/*/*.md;
 do
-	BFN=${FN%.md};
-	# echo "marp ${FN} -o test/${BFN#*/}.html;"
-	marp $FN -o slides/${BFN#*/}.html;
+	FILE=$(basename ${FILEPATH})
+	TOPIC=${FILE%.md};
+	echo "FILEPATH='${FILEPATH}', FILENAME='${FILE}', TOPIC='${TOPIC}'"
+	# echo "marp ${FILEPATH} -o topics/${TOPIC}/slides.html;"
+	marp ${FILEPATH} -o topics/${TOPIC}/slides.html;
 done
 
 

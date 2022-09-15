@@ -8,6 +8,9 @@
 
 How to store and compare values and data types
 
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="variables.md">md</a></span>
+
+
 <!--
 Presentation comments ...
 -->
@@ -184,13 +187,13 @@ Here, the Console displays a message from the `console.log()` **function**, as w
 
 ![true](../../assets/img/console-hello.png)
 
-<div class="slides-small">View this file: <a href="../../topics/variables/demos/0-hello.html" target="_blank">demos/0-hello.html</a></div>
+<div class="slides-small">View this file: <a href="demos/0-hello.html" target="_blank">demos/0-hello.html</a></div>
 
 If you have warnings or errors in your code then the Console will show a red error flag and log the error message and line where it happened.
 
 ![true](../../assets/img/console-errors.png)
 
-<div class="slides-small">View this file: <a href="../../topics/variables/demos/1-console-errors.html" target="_blank">demos/1-console-errors.html</a></div>
+<div class="slides-small">View this file: <a href="demos/1-console-errors.html" target="_blank">demos/1-console-errors.html</a></div>
 
 
 
@@ -470,7 +473,7 @@ Using a Javascript Linter in your code editor can save hours of frustration. My 
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the next lesson: **Control Flow** [slides](../control-flow/slides.html) | [md](../control-flow/control-flow.md)
 
 
 

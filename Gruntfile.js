@@ -9,45 +9,45 @@ module.exports = function(grunt) {
 				jshintrc: true // tell JSHint to search for .jshintrc
 			}
 		},
-		md2html: {
-			one_file: {
-				options: {
-					layout: "assets/md2html/templates/bootstrap.html",
-					templateData: {
-						basePath: "",
-						author: pkgJson.author,
-						projectTitle: pkgJson.title,
-						filename: function(src) {
-							return src[0].match(/\/(.*).md/);
-						},
-					},
-				},
-				files: [{
-					src: ['README.md'],
-					dest: 'index.html'
-				}]
-			},
-			multiple_files: {
-				options: {
-					layout: "assets/md2html/templates/bootstrap.html",
-					templateData: {
-						basePath: "../",
-						author: pkgJson.author,
-						projectTitle: pkgJson.title,
-						filename: function(src) {
-							return src[0].match(/\/(.*).md/);
-						},
-					},
-				},
-				files: [{
-					expand: true,
-					cwd: 'topics',
-					src: ['*/*.md'],
-					dest: 'www', // destination directory
-					ext: '.html' // new file ext
-				}]
-			}
-		},
+		// md2html: {
+		// 	one_file: {
+		// 		options: {
+		// 			layout: "assets/md2html/templates/bootstrap.html",
+		// 			templateData: {
+		// 				basePath: "",
+		// 				author: pkgJson.author,
+		// 				projectTitle: pkgJson.title,
+		// 				filename: function(src) {
+		// 					return src[0].match(/\/(.*).md/);
+		// 				},
+		// 			},
+		// 		},
+		// 		files: [{
+		// 			src: ['README.md'],
+		// 			dest: 'index.html'
+		// 		}]
+		// 	},
+		// 	multiple_files: {
+		// 		options: {
+		// 			layout: "assets/md2html/templates/bootstrap.html",
+		// 			templateData: {
+		// 				basePath: "../",
+		// 				author: pkgJson.author,
+		// 				projectTitle: pkgJson.title,
+		// 				filename: function(src) {
+		// 					return src[0].match(/\/(.*).md/);
+		// 				},
+		// 			},
+		// 		},
+		// 		files: [{
+		// 			expand: true,
+		// 			cwd: 'topics',
+		// 			src: ['*/*.md'],
+		// 			dest: 'www', // destination directory
+		// 			ext: '.html' // new file ext
+		// 		}]
+		// 	}
+		// },
 		watch: {
 			configFiles: {
 				files: ['Gruntfile.js'], // watch/validate grunt config
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 			},
 			grunt: {
 				files: ['Gruntfile.js', 'topics/*/*.md', 'README.md', 'assets/css/*', 'assets/md2html/templates/*'],
-				tasks: ['shell', 'md2html', 'build_slides', 'alldone']
+				tasks: ['shell', /*'md2html',*/ 'build_slides', 'alldone']
 			},
 		},
 		shell: {
@@ -76,10 +76,10 @@ module.exports = function(grunt) {
 	// see build_slides.sh for more
 	grunt.task.registerTask('build_slides', '', function() {
 		var exec = require('child_process').execSync;
-		var result = exec("./build_slides.sh", {
+		var result = exec("./build-tools/build_slides.sh", {
 			encoding: 'utf8'
 		});
-		grunt.log.writeln(result);
+		grunt.log.writeln(result);      
 	});
 
 	// a custom task
@@ -88,11 +88,11 @@ module.exports = function(grunt) {
 	});
 
 	// enable plugins
-	grunt.task.loadNpmTasks('grunt-md2html');
+	// grunt.task.loadNpmTasks('grunt-md2html');
 	grunt.task.loadNpmTasks('grunt-contrib-jshint');
 	grunt.task.loadNpmTasks('grunt-contrib-watch');
 	grunt.task.loadNpmTasks('grunt-shell');
 
 	// register tasks
-	grunt.task.registerTask('default', ['jshint', 'md2html', 'build_slides', 'alldone']);
+	grunt.task.registerTask('default', ['jshint', /*'md2html',*/ 'build_slides', 'alldone']);
 };
