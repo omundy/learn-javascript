@@ -1,12 +1,14 @@
 <!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../index.html)
 
 <a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Introduction
 
 Introduction to expressions, statements, and operators
+ 
+<span class="slides-small"><a href="../../slides/introduction/introduction.html">slides</a> | <a href="../../www/introduction/introduction.html">HTML</a> | <a href="../../topics/introduction/introduction.md">md</a></span>
 
 <!--
 Presentation comments ...
