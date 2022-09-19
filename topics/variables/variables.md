@@ -253,11 +253,8 @@ console.log("abc", 123);
 </div>
 <div class="col">
 
-<img src="../../assets/img/variables-zwift.png" width="170" align="right">
+<img src="../../assets/img/variables-zwift.png" width="320">
 
-<div class="slides-small">
-	Keep the Console open when coding to be notified of problems with your code.
-</div>
 
 </div>
 </div>
