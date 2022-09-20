@@ -23,7 +23,7 @@ Comparison and logical operators, conditional statements
 
 Review the following sections and perform the activities on your own or with your group.
 
-Perform the task(s) when you see this 👉  emoji 
+Perform the task(s) when you see this 👉  emoji
 
 <details>
 <summary>Learning Objectives</summary>
@@ -166,7 +166,7 @@ $('.myClass').append(' - here is some new text');
 - Codecademy Cheatsheet(s) [jquery introduction](reference-sheets/jquery-01-introduction.pdf), [effects](reference-sheets/jquery-02-effects.pdf)
 - w3schools [DOM](https://www.w3schools.com/js/js_htmldom.asp), [HTML DOM](https://www.w3schools.com/js/js_htmldom_html.asp)
 
-**Assessment**: Quiz 4; Homework review
+**Assessment**: Quiz; Homework review
 
 
 
@@ -215,7 +215,7 @@ $('#submitButton').click(function() {
 - w3schools [jQuery intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [event methods](https://www.w3schools.com/jquery/jquery_events.asp)
 - w3schools [Javascript practice](https://www.w3schools.com/js/exercise_js.asp)
 
-**Assessment**: Quiz 5; Homework review
+**Assessment**: Quiz; Homework review
 
 
 

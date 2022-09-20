@@ -54,7 +54,7 @@ Students who complete this module will be able to:
 <summary>Homework</summary>
 
 - [Codecademy: JS 1-2 Variables](https://www.codecademy.com/learn/introduction-to-javascript) (1–6)
-- Quiz 6 - JS Intro & Variables
+- Quiz - JS Intro & Variables
 
 </details>
 

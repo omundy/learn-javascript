@@ -54,7 +54,7 @@ Students who complete this module will be able to:
 - [Codecademy: JS 2-1 Conditional Statements ](https://www.codecademy.com/learn/introduction-to-javascript) (1–8)
 - [Codecademy: HTML 3-1 Forms](https://www.codecademy.com/learn/learn-html) (1-14)
 - [Codecademy: HTML 3-2 Form Validation](https://www.codecademy.com/learn/learn-html) (1-6)
-- Quiz 7 - JS Control Flow
+- Quiz - JS Control Flow
 
 </details>
 
@@ -109,7 +109,7 @@ Modulus `%` to return the remainder from a division operation
 5 % 2 = 1
 ```
 
-The `+` operator can also be used to concatenate (add) strings
+The `+` operator is also used to concatenate (add) strings
 
 ```js
 "Hello" + " world!" // -> "Hello world!"
@@ -146,9 +146,7 @@ apples += " apples"; // -> "111 apples"
 
 ### [Comparison operators](https://www.w3schools.com/js/js_comparisons.asp)
 
-These operators are used to test for `true` or `false`.
-
-The double `==` compares value only. If operands of different types are used then Javascript will convert to the type on the left and compare.
+A double `==` compares values only then returns `true` or `false`. If operands of different types are used, Javascript will first convert to the type **on the left** and compare.
 
 ```js
 1 == 1 // -> true
@@ -176,7 +174,7 @@ Greater than / greater than or equal to
 
 ## Conditions
 
-Control flow determines what code is executed and the order in which it will happen. To illustrate this, first consider the default behavior of Javascript.
+Control flow determines which code is executed and the order in which it will happen. To illustrate this, first consider the default behavior of Javascript.
 
 <img src="../../assets/img/javascript-diagram-control-structures-sequence.png" width="800">
 
@@ -193,7 +191,7 @@ console.log(`We have ${apples} apples!`);
 
 ## Conditions
 
-However, this is not very interesting. Instead, you will often want your code to perform *different* actions depending on the **state** of variables in your program. You can use **conditionals** to do this.
+However, this is not very interesting. Instead, you will want your code to perform *different* actions depending on the **state** of variables in your program. Use **conditionals** to do this.
 
 <img src="../../assets/img/javascript-diagram-control-structures-if.png" width="800">
 
@@ -210,7 +208,7 @@ Here is the syntax for a basic `if` statement.
 
 <img src="../../assets/img/javascript-anatomy-if-code-block.png" width="800">
 
-In this case, if the value stored in `apples` is a number greater than 3, then the message will be logged to the console.
+In this case, if of `apples` is a number greater than 3, then the message will be logged to the console.
 
 
 ---
@@ -261,7 +259,7 @@ if (apples > 5) {
 
 ## Combining conditionals with logical operators
 
-Finally, we can combine conditional statements with logical operators to account for more than one variable in a program. Recall that [logical operators](https://www.w3schools.com/js/js_comparisons.asp) are used to determine the logic between variables or values.
+Finally, we can combine conditional statements with logical operators to account for more than one variable in a program. [Logical operators](https://www.w3schools.com/js/js_comparisons.asp) are used to determine how to combine true and false values using logical and `&&`, or `||`, not `!`.
 
 
 Use `&&` ("and") to test if ***both*** expressions are `true`
@@ -302,8 +300,9 @@ And, putting it all together, evaluate more than one condition in an if, if else
 
 
 ```js
-let apples = 2,
+let apples = 2, // a comma separates multiple variable declarations
     blueberries = 4;
+
 if (apples >= 2 && blueberries >= 4) {
 	console.log("we can make fruit salad")
 } else if (apples > 3 || blueberries > 2) {

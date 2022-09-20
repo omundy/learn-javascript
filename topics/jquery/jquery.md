@@ -63,7 +63,7 @@ Students who complete this module will be able to:
     - [Event Handlers](../../reference-sheets/jquery-03-events.pdf)
     - [Style Methods](../../reference-sheets/jquery-04-style-methods.pdf)
     - [Traversing the DOM](../../reference-sheets/jquery-05-dom-traversing.pdf)
-- Quiz 10 - JS jQuery and the DOM
+- Quiz - JS jQuery and the DOM
 
 </details>
 
