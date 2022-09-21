@@ -324,7 +324,7 @@ if (apples >= 2 && blueberries >= 4) {
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the next lesson: **Functions** [slides](../functions/slides.html) | [md](../functions/functions.md)
 
 
 ---
