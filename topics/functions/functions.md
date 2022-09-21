@@ -66,14 +66,34 @@ Students who complete this module will be able to:
 </div>
 
 
+
+
 ---
 
 ## Function I/O
 
-- Define a function with the `function` keyword, a unique name, two parentheses, and a statement block.
-- The code inside the statement block (the curly braces `{ ... }` ) is executed when the function is **called**.
+- `function` - Keyword to declare a new function
+- `multiply` - A unique identifier / name
+- `()` - Can be empty or accept input **parameters**
+- `{ ... }` - Statement block contains code that will run when the function is **called**
+- `return` - Return value from the function
 
-<img src="../../assets/img/javascript-anatomy-function.png" width="800">
+<!-- <img src="../../assets/img/javascript-anatomy-function.png" width="400"> -->
+
+```js
+// Declare a new function that accepts two input parameters
+function multiply(num1, num2){
+	// Code inside the statement block (curly braces)
+	// will run every time the function is called
+	return num1 * num2;
+}
+// call the function with different inputs
+console.log(multiply(2, 2)); // -> 4
+console.log(multiply(10, 3)); // -> 30
+```
+
+
+
 
 
 
@@ -81,9 +101,9 @@ Students who complete this module will be able to:
 
 ---
 
-## Function Example
+## Example #1
 
-Look at the code from the previous lesson. This code runs once and that is all.
+This is the code from the previous lesson. This code runs just once.
 
 ```js
 let apples = 2;
@@ -99,15 +119,15 @@ if (apples > 3) {
 
 ---
 
-## Function Example
+## Example #1
 
 <div class="twocolumn">
 <div class="col">
 
-Wrapping the code with a function block lets us
+Wrapping the previous code inside a *reusable* function lets us...
 
+1. Run the code multiple times with different values
 1. Change the value that determines the logical flow
-2. Run the code multiple times with different values
 
 </div>
 <div class="col">
@@ -143,43 +163,14 @@ console.log(`${pieChance("berries", 101)}`);
 
 ---
 
-There are a few things going on in here:
+## Function Expressions
 
-1. The conditional that formerly output a string is now inside a *reusable* function.
-1. The variable that we evaluate in the function is **scoped** only to that function.
-
-
-
-
-
-
-
-
----
-
-## Another Example
-
-```js
-
-function isSandwich(str) {
-	let result = str.match(/[🥖🍞🥞🫓🥐🧇🥯🥨][🥩🍖🥓🍤🍗🥚🧀🥑🥬🍅🥒🌶️🫒🥔🧅🥜🍌]+[🥖🍞🥞🫓🥐🧇🥯🥨]|[🥪🍔🌭🥙]/gi);
-
-
-	return false;
-}
-
-```
-
-
-
-
----
-
-## Another Example
+- Previously we used the [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) to define a function.
+- Another common method is the [function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function), seen below with the "fat arrow" ([arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)) syntax
 
 ```js
 const isItTimeForPizza = () => {
-    let today = new Date();
+	let today = new Date();
 	if (today.getHours() > 10 && today.getHours() < 24){
 		return "yes, it is";
 	} else {
@@ -191,36 +182,68 @@ console.log(isItTimeForPizza());
 
 
 
+---
+
+## Anonymous Functions
+
+- **Anonymous functions** are function expressions that are not assigned to a name.
+- They are often used as callbacks from jquery and other event listeners.
+- Variables declared in anonymous functions won't conflict with other code used in your project, so they are  also often used as [IIFE (Immediately Invoked Function Expressions)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) to [limit global variables](https://developer.mozilla.org/en-US/docs/Glossary/IIFE#avoid_polluting_the_global_namespace) (see scope on next slide)
+
+<div class="twocolumn">
+<div class="col">
+
+```js
+$("form").submit(function() {
+	// the code in this function
+	// is used as a callback from
+	// the submit listener
+});
+```
+</div>
+<div class="col">
+
+```js
+(function(){
+	// an IIFE runs immediately but
+	// the variables declared here
+	// do not have global scope
+})();
+```
+
+</div>
+</div>
+
+
+
 
 ---
 
 ## Scope
 
-All variables have scope—the part of your program in which it can be accessed. There are two types:
+Where you declare a variable determines its **scope**, or how it can be accessed:
 
-- **Global** - Variables can be accessed anywhere in your program
+- **Global Scope** - Variables can be accessed anywhere in your program
 - **Local Scope** - Variables are accessible only within their statement block
 
 
 ```js
-
+// ✅ global variables can be accessed anywhere
 let foo = "hello";
 if (true) {
-	// ✅ global variables can be accessed anywhere
 	foo = "goodbye";
 }
-console.log("foo =", foo);
-// -> "goodbye?"
+console.log("foo =", foo); // -> "goodbye"
 
-if (true){
-	// a local variable
-	let bar = 123;
-}
 // ❌ this will fail because it was defined (scoped) in a block
-console.log("bar =", bar);
-
+if (true){
+	let bar = 123; // a local variable
+}
+console.log("bar =", bar); // -> "Uncaught ReferenceError: bar is not defined"
 ```
-
+<div class="slides-small">
+	<a href="demos/functions-scope.html" target="_blank">demos/functions-scope.html</a>
+</div>
 
 
 
@@ -243,7 +266,7 @@ console.log("bar =", bar);
 
 👉 **Try it out**
 
-1. [Lottery v.3](../../topics/games/the-lottery/README.md) - Show results of the game in HTML
+1. [Lottery v.2](../../topics/games/the-lottery/README.md) - Show results of the game in HTML
 1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses loops
 

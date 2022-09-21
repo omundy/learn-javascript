@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Learn Javascript</title>
+</head>
+
+<body>
+
+	<h3>Javascript Functions / Scope</h3>
+	<p>Open the console to see messages</p>
+
+	<script>
+
+
+let foo = "hello";
+if (true) {
+	// ✅ global variables can be accessed anywhere
+	foo = "goodbye";
+}
+console.log("foo =", foo);
+// -> "goodbye?"
+
+if (true){
+	// a local variable
+	let bar = 123;
+}
+// ❌ this will fail because it was defined (scoped) in a block
+console.log("bar =", bar);
+
+
+	</script>
+</body>
+
+</html>
