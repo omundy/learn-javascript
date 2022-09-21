@@ -58,7 +58,7 @@ Students who complete this module will be able to:
 - A function is a reusable block of instructions.
 - Functions can receive values (**parameters**) to change their **return values**.
 
-<img src="../../assets/img/javascript-diagram-function-io.png" width="800">
+<img src="../../assets/img/javascript-diagram-function-io.png" width="100%">
 
 
 <div class="caption slides-small">
@@ -145,8 +145,8 @@ console.log(`${pieChance("berries", 101)}`);
 
 There are a few things going on in here:
 
-1. The conditional that formerly outputted a string is now inside a *reusable* function.
-1. The variable that we evaluate in the function is **scoped** only to that function. We use an underscore before it to remember that. See functional programming for more.
+1. The conditional that formerly output a string is now inside a *reusable* function.
+1. The variable that we evaluate in the function is **scoped** only to that function.
 
 
 
@@ -162,17 +162,9 @@ There are a few things going on in here:
 ```js
 
 function isSandwich(str) {
-	let result = true;
-
-	if (str[0] != "🥖" || str[0] != "🍞") result = false;
-	if (str[str.length-1] != "🥖" || str[str.length-1] != "🍞") result = false;
+	let result = str.match(/[🥖🍞🥞🫓🥐🧇🥯🥨][🥩🍖🥓🍤🍗🥚🧀🥑🥬🍅🥒🌶️🫒🥔🧅🥜🍌]+[🥖🍞🥞🫓🥐🧇🥯🥨]|[🥪🍔🌭🥙]/gi);
 
 
-	if (str.match < 1 "🥓" && b == "🥬" && c == "🍅")  result = false;
-	else if (a == "🥖" && b == "🧀" && c == "🥖")  result = false;
-	else if (a == "🥖" && b == "🥓" && c == "🥖")  result = false;
-	else if (a == "🥖" && b == "🥓" && c == "🧀" && d == "🥖")  result = false;
-	else if (a == "🍔" || a == "🌭")  result = false;
 	return false;
 }
 
@@ -206,10 +198,28 @@ console.log(isItTimeForPizza());
 
 All variables have scope—the part of your program in which it can be accessed. There are two types:
 
-- Global: A variable is accessible by the whole program
-- Local: A variable is accessible only within its statement block
+- **Global** - Variables can be accessed anywhere in your program
+- **Local Scope** - Variables are accessible only within their statement block
 
 
+```js
+
+let foo = "hello";
+if (true) {
+	// ✅ global variables can be accessed anywhere
+	foo = "goodbye";
+}
+console.log("foo =", foo);
+// -> "goodbye?"
+
+if (true){
+	// a local variable
+	let bar = 123;
+}
+// ❌ this will fail because it was defined (scoped) in a block
+console.log("bar =", bar);
+
+```
 
 
 
