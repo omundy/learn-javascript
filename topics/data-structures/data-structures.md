@@ -6,7 +6,7 @@
 
 # Data Structures
 
-How to use arrays, objects, properties, methods, and loops
+How to use arrays, objects, and loops
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span>
 
@@ -16,14 +16,6 @@ Presentation comments ...
 
 
 ---
-
-## Contents
-
-1. [Introduction](#introduction)
-1. [Next steps](#next-steps)
-1. [Exercises](#exercises)
-1. [References](#references)
-
 
 ## Introduction
 
@@ -54,77 +46,138 @@ Students who complete this module will be able to:
 
 
 
-- Lecture: [Data Structures](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_0)
-
-
-
-
 
 ---
 
 ## Data Collections
 
-In addition to [primitive data types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (`boolean`, `number`, `string`), Javascript has data types to store data collections, which can include `arrays`, `objects`, as well as more complex entities, hierarchical collections, and lists.
+In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primitive data types</a>, Javascript can store collections of data like `arrays`, `objects`, as well as more complex entities.
 
 
-
+![true](../../assets/img/javascript-diagram-data-types.png)
 
 
 
 ---
 
-### Arrays
+## Arrays
 
-A Javascript [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is a list of values, separated by commas. Arrays are zero-indexed, and their values can be set or retrieved using their index.
+- A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">array</a> is a list of values, separated by commas.
+- Arrays are zero-indexed, and their values can be set or retrieved using their index.
+
 ```js
-const numberArr = [-2, -1, 0, 1, 2]; // array of numbers
-const colorArr = ["red", "green", "blue"]; // array of strings
-console.log(colorArr[0]); // -> "red"
+let numbers = [-2, -1, 0, 1, 2]; // array of numbers
+let colors = ["red", "green", "blue"]; // array of strings
+colors[0]; // -> "red"
 ```
 
 
+
+
+
+
+
+
+
 ---
 
+## Array Methods
 
-Arrays can also store other arrays
+<div class="twocolumn">
+<div class="col">
+
+- Like other Javascript types, the console can list properties and methods specific to arrays.
+
+👉 **Try it out** - Run these in the console
+
 ```js
-const tableArr = [
+// the array constructor
+[]
+
+// e.g. length
+["abc", 123].length // -> 2
+
+// arrays are technically objects
+typeof([]) // -> 'object'
+
+// create this array
+let colors = ["red", "green", "blue"];
+colors.length // -> 3
+colors.slice(1,3) // -> ["green", "blue"]
+```
+
+</div>
+<div class="col">
+
+<img width="350" src="../../assets/img/console-array-methods.png">
+
+</div>
+</div>
+
+
+
+
+
+---
+
+## Multi-Dimensional Arrays
+
+- Javascript allows different data types to be stored in arrays (e.g. `["abc", 123]`), including other arrays, objects, and complex types.
+
+```js
+// an array of arrays
+const table = [
 	['name', 'age', 'favoriteColor'],
 	['Mary', 18, 'mauve'],
 	['Chalet', 81, 'chartreuse']
 ];
-```
-as well as complex objects.
-```js
+table[1][2] // -> 'mauve'
+
 // array of date objects
 const dates = [
 	new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
 	new Date("9 November 1989 18:53 UTC+1"), // BERLIN
 	new Date("November 9, 1989 12:53 UTC-5") // NYC
 ];
-console.log(dates[1].toUTCString()); // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
+dates[1].toUTCString() // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
 ```
+
+
 
 
 ---
 
-### Objects
+## Objects
 
-A Javascript [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) stores `key:value` relationships where `key` is a string, and `value` can be a primitive, array, or object. The values are then referenced with their keys using either square brackets or dot notation.
+- Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">objects</a> store `key:value` relationships where `key` is a string, and `value` can be any type.
+- You can get or set object values using the key and dot notation.
+
 ```js
 const color = {
-	name: "red",
-	hex: "#ff0000",
-	rgb: [255,0,0]
+	"name": "red",
+	"hex": "#ff0000",
+	"rgb": [255,0,0]
 }
 console.log(color.name); // -> "red" via dot notation
 console.log(color['name']); // -> "red" via square brackets
 ```
 
+<div class="caption slides-small">
+	You can also use square brackets to fetch the value, particularly if there is a special character or space in the key name.
+</div>
+
+
+
+
+
 
 ---
 
-You can also store functions ([called methods when stored inside an object](https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27)).
+## Objects
+
+- Objects can store methods
+
+
 ```js
 const ev = {
 	name: "Fall of the Berlin Wall",
@@ -173,6 +226,43 @@ let myObject = {
 
 
 
+---
+
+## Loops
+
+- One of the biggest benefits to working with arrays is that you can loop through them
+
+
+
+
+
+
+
+
+
+
+---
+
+## Encapsulation
+
+- Objects are handy because they <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)" target="_blank">encapsulate</a> data, grouping like information inside a single container, and standardizing access.
+
+```js
+
+var people = [
+	{ name: "Joel", age: 99 },
+	{ name: "John", age: 66 },
+	{ name: "Jack", age: 33 }
+];
+people.forEach(function(item, index){
+	console.log(`${item.name} is ${item.age} years old`);
+});
+// -> Joel is 99 years old
+// -> John is 66 years old
+// -> Jack is 33 years old
+```
+
+
 
 
 
@@ -186,7 +276,7 @@ let myObject = {
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the next lesson: **Data Structures** [slides](../jquery/slides.html) | [md](../jquery/jquery.md)
 
 
 

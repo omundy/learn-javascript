@@ -31,7 +31,9 @@ Perform the task(s) when you see this 👉  emoji
 
 Students who complete this module will be able to:
 
--
+- Explain the benefits of using functions
+- Compare global and local scope
+- Create a function and call it from javascript code
 
 </details>
 
@@ -55,16 +57,14 @@ Students who complete this module will be able to:
 
 ## About Functions
 
-- A function is a reusable block of instructions.
+- A function is a reusable block of instructions, and help to keep your code <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">D.R.Y.</a>
 - Functions can receive values (**parameters**) to change their **return values**.
 
 <img src="../../assets/img/javascript-diagram-function-io.png" width="100%">
 
-
 <div class="caption slides-small">
-	Functions help to keep your code <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">D.R.Y.</a>
+	Functions are also called "methods", especially in OOP (Object Oriented Programming). <a href="https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27" target="_blank">JavaScript Functions vs Methods (and other helpful tips)</a>
 </div>
-
 
 
 

@@ -93,11 +93,9 @@ Javascript is the programming language of the web. With Javascript you can
 </div>
 <div class="col">
 
-[![true](../../assets/img/javascript-diagram-lamp.png)](../../topics/single-page-apps/javascript-lamp/index.html)
+<img src="../../assets/img/javascript-diagram-lamp.png">
 
-<div class="caption slides-small">Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</div>
-
-
+<div class="caption slides-small">Above, the <a href="../../topics/single-page-apps/javascript-lamp/index.html" target="_blank">structure of a “turn the lamp on” program</a>. Note the logic (decisions the computer makes) based on state (the status of variables in the program) and events (e.g. user input) directing the computer towards its goal.</div>
 
 </div>
 </div>
@@ -134,7 +132,12 @@ The **browser console** is an excellent tool for checking messages and warnings,
 ```js
 alert("hello world!");
 ```
-**Code playgrounds** like [jsfiddle.net](https://jsfiddle.net) and [codepen.io](https://codepen.io/) make it easy to quickly test and share Javascript (and HTML and CSS files) in a "web environment".
+**Code playgrounds** like <a href="https://jsfiddle.net" target="_blank">jsfiddle.net</a> and <a href="https://codepen.io/" target="_blank">codepen.io</a> make it easy to quickly test and share Javascript (and HTML and CSS files) in a "web environment".
+
+
+
+
+
 
 
 
@@ -148,8 +151,8 @@ alert("hello world!");
 
 Some examples from class:
 
-- codepen.io [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW) and [Javascript / jQuery Cat Image Swapper](https://codepen.io/owenmundy/pen/OJRWQoY)
-- jsfiddle.net [Choropleth map with Mapbox](https://jsfiddle.net/ow3n/sw6ek1wb/)
+- codepen.io <a href="https://codepen.io/owenmundy/pen/PomvjqW" target="_blank">Random Article Generator</a> and <a href="https://codepen.io/owenmundy/pen/OJRWQoY" target="_blank">Javascript / jQuery Cat Image Swapper</a>
+- jsfiddle.net <a href="https://jsfiddle.net/ow3n/sw6ek1wb/" target="_blank">Choropleth map with Mapbox</a>
 
 
 
@@ -227,7 +230,7 @@ learn-computing/topics-data-types.md
 
 ## Expressions
 
-An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) is any unit of code that resolves to a data value. Expressions are the fundamental building blocks of code, and use data ("operands") with [operators](https://www.w3schools.com/js/js_operators.asp) to perform math, logic, or string calculations.
+An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">expression</a> is any unit of code that resolves to a data value. Expressions are the fundamental building blocks of code, and use data ("operands") with <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">operators</a> to perform math, logic, or string calculations.
 
 
 
@@ -242,44 +245,51 @@ An [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Ex
 12
 ```
 
-2. Adding an [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators) operator and another data value will prompt Javascript to **evaluate** the code, multiplying the values to **return** (*output*) the *new* value `144` produced.
+2. Adding an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators" target="_blank">arithmetic</a> operator and another data value will prompt Javascript to **evaluate** the code, multiplying the values to **return** (*output*) the *new* value `144` produced.
 
 ```js
 12 * 12
 ```
 
+
+
+
 ---
 
 
-3. If you use the [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator, Javascript will return a string describing the data's *type*.
+3. If you use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank">typeof</a> operator, Javascript will return a string describing the data's *type*.
 
 ```js
 typeof 12
 ```
 
-4. The following [comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators) will return a logical `boolean` value based on whether the comparison in the expression is true.
+4. The following <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators" target="_blank">comparison operators</a> will return a logical `boolean` value based on whether the comparison in the expression is true.
 
 ```js
 4 > 5
 ```
 
-The [equality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) `==` checks to see if two values are equal, `true`
+The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality" target="_blank">equality operator</a> `==` checks to see if two values are equal, `true`
 
 ```js
 1 == 1
 ```
 
+
+
 ---
 
 
-The [inequality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality) `!=` checks whether its two operands are *not equal*.
+The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality" target="_blank">inequality operator</a> `!=` checks whether its two operands are *not equal*.
 
 ```js
 1 != 1
 ```
 
 
-The [strict equality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) `===` will compare the value **and type**, and is specific to Javascript. **What will these return?**
+
+
+The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality" target="_blank">strict equality operator</a> `===` will compare the value **and type**, and is specific to Javascript. **What will these return?**
 
 ```js
 1 === "1"
@@ -328,9 +338,11 @@ typeof (typeof (4 > 5)) // -> "string"
 
 - A **statement** is an instruction that performs a specific action.
 - Like a sentence—statements have punctuation (a semicolon `;`) to note when the instruction is complete.
-- This statement assigns a value to the `greeting` variable with an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators).
+- This statement assigns a value to the `greeting` variable with an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators" target="_blank">assignment operator</a>.
 
 ![true](../../assets/img/javascript-anatomy-statement.png)
+
+
 
 
 
