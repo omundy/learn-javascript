@@ -58,7 +58,9 @@ module.exports = function(grunt) {
 				}
 			},
 			grunt: {
-				files: ['Gruntfile.js', 'topics/*/*.md', 'README.md', 'assets/css/*', 'assets/md2html/templates/*'],
+				files: [
+					'package.json', 'Gruntfile.js', 'topics/*/*.md', 'README.md',
+					'assets/css/*', 'assets/js/*', 'assets/md2html/templates/*'],
 				tasks: ['shell', 'md2html', 'build_slides', 'alldone']
 			},
 		},

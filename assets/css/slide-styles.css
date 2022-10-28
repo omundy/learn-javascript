@@ -2,6 +2,11 @@
 /* Styles for slides only, they don't work on github.com */
 @import 'default';
 
+
+/* @import "../../assets/libs/prism/1.25.0/prism.min.css";
+@import "../../assets/libs/prism/themes/prism-vsc-dark-plus.css"; */
+
+
 /* PROJECT-SPECIFIC
 ***********************************************************/
 /* TEXT
@@ -54,4 +59,10 @@ section::after {
 a[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     margin: 0 3px 0 5px;
+}
+
+
+
+pre {
+	line-height: 125%;
 }

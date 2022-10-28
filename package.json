@@ -21,22 +21,29 @@
         "author": "Owen Mundy",
         "title": "Learn Javascript",
         "keywords": "javascript, js, jquery",
+
         "allowLocalFiles": true,
         "html": true,
-        "watch": false,
         "bespoke": {
             "progress": true
         },
+		"template": "bespoke",
         "theme": "owen",
         "themeSet": [
             "assets/css/slide-styles.css"
         ],
-        "minifyCSS": false,
-        "script": {
-            "source": [
-                "assets/js/main.js"
-            ]
-        }
+
+		"options":{
+			"script": {
+	            "source": [
+	                "assets/js/main.js"
+	            ]
+	        },
+			"minifyCSS": false
+		},
+
+
+        "watch": false
     },
     "devDependencies": {
         "grunt": "^1.4.1",
