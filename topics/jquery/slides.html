@@ -1308,10 +1308,22 @@ div#p > svg > foreignObject > section .block {
     display: block;
 }
 
-/* Create two col layout */
+/* two col layout */
 div#p > svg > foreignObject > section .twocolumn {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: left;
+}
+div#p > svg > foreignObject > section .twocolumn2x1 {
+	display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    text-align: left;
+}
+div#p > svg > foreignObject > section .twocolumn1x2 {
+	display: grid;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
     text-align: left;
 }

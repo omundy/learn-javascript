@@ -6,7 +6,7 @@
 
 # Data Structures
 
-How to use arrays, objects, and loops
+How to use Javascript arrays, objects, and loops
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span>
 
@@ -28,9 +28,9 @@ Perform the task(s) when you see this 👉  emoji
 
 Students who complete this module will be able to:
 
-- Demonstrate
-- Explain
-- Create
+- Explain the difference between arrays and objects
+- Demonstrate how to loop through an array to display its values in HTML
+- Create a Javascript object to represent some real life entity
 
 </details>
 
@@ -51,8 +51,7 @@ Students who complete this module will be able to:
 
 ## Data Collections
 
-In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primitive data types</a>, Javascript can store collections of data like `arrays`, `objects`, as well as more complex entities.
-
+In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primitive data types</a>, Javascript can store **collections** of data like `arrays` and `objects`, as well as more complex entities.
 
 ![true](../../assets/img/javascript-diagram-data-types.png)
 
@@ -63,13 +62,64 @@ In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primit
 ## Arrays
 
 - A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">array</a> is a list of values, separated by commas.
-- Arrays are zero-indexed, and their values can be set or retrieved using their index.
+- You can **get** or **set** an array value using its index.
+- Arrays are zero-indexed. Their length counts from `1`, but the first index is `0`.
 
 ```js
 let numbers = [-2, -1, 0, 1, 2]; // array of numbers
-let colors = ["red", "green", "blue"]; // array of strings
+let colors = ["purple", "green", "blue"]; // array of strings
+colors.length; // -> 3
+colors[0]; // -> "purple"
+colors[0] = "red"; // set the value of the first index
 colors[0]; // -> "red"
 ```
+
+
+
+---
+
+## Array Methods
+
+<div class="twocolumn2x1">
+<div class="col">
+
+Like other Javascript types, the console can list properties and methods specific to arrays.
+
+👉 **Try it out** - Run these in the console
+
+```js
+// the array constructor
+[]
+
+// how many indexes?
+["abc", 123].length
+// create array, confirm length
+let colors = ["red", "green", "blue"]
+// what is the index of "green"?
+colors.indexOf("green")
+// what will this return?
+colors.slice(1,3)
+```
+
+<details>
+<summary>Solution</summary>
+
+```js
+["abc", 123].length // -> 2
+colors.indexOf("green") // -> 1
+colors.slice(1,3) // -> ["green", "blue"]
+```
+
+</details>
+
+</div>
+<div class="col">
+
+<img width="340" src="../../assets/img/console-array-methods-light.png">
+
+</div>
+</div>
+
 
 
 
@@ -81,39 +131,56 @@ colors[0]; // -> "red"
 
 ---
 
-## Array Methods
+## Loops
+
+- One of the biggest benefits to working with arrays is that you can loop through them.
+- A loop will repeat a block of code based on some condition.
+
+<img src="../../assets/img/javascript-diagram-control-structures-loop.png">
+
+
+---
+
+## Loop Anatomy
+
+The `for` loop in Javascript explicitly shows the three parts of its control structure: 1) Create control variable 2) Test the condition 3) Iterate on each loop
+
+<img  src="../../assets/img/javascript-anatomy-loop-for.png">
+
+
+
+---
+
+## Loops
 
 <div class="twocolumn">
 <div class="col">
 
-- Like other Javascript types, the console can list properties and methods specific to arrays.
-
-👉 **Try it out** - Run these in the console
-
-```js
-// the array constructor
-[]
-
-// e.g. length
-["abc", 123].length // -> 2
-
-// arrays are technically objects
-typeof([]) // -> 'object'
-
-// create this array
-let colors = ["red", "green", "blue"];
-colors.length // -> 3
-colors.slice(1,3) // -> ["green", "blue"]
-```
+- This code shows both the `for` loop and the `forEach` built-in to the `Array` type.
+- `Array.forEach` uses a callback function that receives the value and iterator (here we name it `index`)
+- These both output the same values
 
 </div>
 <div class="col">
 
-<img width="350" src="../../assets/img/console-array-methods.png">
+```js
+// for loop
+for (var i = 0; i < colors.length; i++){
+	console.log(i, colors[i]);
+}
 
+// built-in array forEach
+colors.forEach(function(value, index){
+	console.log(index, value);
+});
+
+// -> 0 "red"
+// -> 1 "green"
+// -> 2 "blue"
+
+```
 </div>
 </div>
-
 
 
 
@@ -122,25 +189,48 @@ colors.slice(1,3) // -> ["green", "blue"]
 
 ## Multi-Dimensional Arrays
 
-- Javascript allows different data types to be stored in arrays (e.g. `["abc", 123]`), including other arrays, objects, and complex types.
+You can store different data types in a JS array. This includes other arrays.
 
 ```js
 // an array of arrays
 const table = [
 	['name', 'age', 'favoriteColor'],
 	['Mary', 18, 'mauve'],
+	['Pam', 33, 'periwinkle'],
 	['Chalet', 81, 'chartreuse']
 ];
 table[1][2] // -> 'mauve'
+```
 
+👉 How would you loop through this array to output all the values?
+
+<details>
+<summary>Solution</summary>
+
+A loop inside a loop
+
+</details>
+
+
+---
+
+## Multi-Dimensional Arrays
+
+You can also store objects and other complex types.
+
+```js
 // array of date objects
 const dates = [
 	new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
 	new Date("9 November 1989 18:53 UTC+1"), // BERLIN
 	new Date("November 9, 1989 12:53 UTC-5") // NYC
 ];
-dates[1].toUTCString() // -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
+dates[1].toUTCString()
+// -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
 ```
+
+
+
 
 
 
@@ -163,8 +253,51 @@ console.log(color['name']); // -> "red" via square brackets
 ```
 
 <div class="caption slides-small">
-	You can also use square brackets to fetch the value, particularly if there is a special character or space in the key name.
+	You can also use square brackets to fetch the value, which is required if there is a special character or space in the key name.
 </div>
+
+
+
+
+
+
+---
+
+## Object Methods
+
+👉 **Try it out** - Run these in the console
+
+```js
+// expand object the constructor to see more methods
+{}
+// create instance of Date() object
+let d = new Date()
+// the following methods are specific to the Date object
+d.getFullYear()
+// and show how objects can "encapsulate" their properties and methods
+d.toISOString()
+// to make them easier to work with
+d.valueOf()
+```
+
+<details>
+<summary>Solution</summary>
+
+```js
+// -> 2022
+// -> '2022-10-29T12:00:04.566Z'
+// -> 1667044804566
+```
+[`Date.toISOString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) converts to the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) date format
+[`Date.valueOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf) returns date and time as milliseconds since January 1, 1970 00:00:00 UTC
+
+</details>
+
+<!--
+// arrays are technically objects
+typeof([]) // -> 'object' -->
+
+
 
 
 
@@ -175,8 +308,7 @@ console.log(color['name']); // -> "red" via square brackets
 
 ## Objects
 
-- Objects can store methods
-
+- In addition to storing virtually any other datatype, custom objects can store methods ("functions") and reference internal data with the `this` keyword.
 
 ```js
 const ev = {
@@ -188,10 +320,36 @@ const ev = {
 		return this.date.toLocaleString('de-DE', {timeZone: this.timeZone})
 	}
 };
-console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`); // -> "Fall of the Berlin Wall, 1989"
+console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`);
+// -> "Fall of the Berlin Wall, 1989"
 console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
 ```
 
+
+
+
+
+
+---
+
+## Encapsulation
+
+- Objects in arrays are handy because they <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)" target="_blank">encapsulate</a> data, grouping like information inside a single container, and standardizing access.
+
+```js
+
+var people = [
+	{ name: "Joel", age: 99 },
+	{ name: "John", age: 66 },
+	{ name: "Jack", age: 33 }
+];
+people.forEach(function(item, index){
+	console.log(`${item.name} is ${item.age} years old`);
+});
+// -> Joel is 99 years old
+// -> John is 66 years old
+// -> Jack is 33 years old
+```
 
 
 
@@ -226,41 +384,12 @@ let myObject = {
 
 
 
----
-
-## Loops
-
-- One of the biggest benefits to working with arrays is that you can loop through them
 
 
 
 
 
 
-
-
-
-
----
-
-## Encapsulation
-
-- Objects are handy because they <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)" target="_blank">encapsulate</a> data, grouping like information inside a single container, and standardizing access.
-
-```js
-
-var people = [
-	{ name: "Joel", age: 99 },
-	{ name: "John", age: 66 },
-	{ name: "Jack", age: 33 }
-];
-people.forEach(function(item, index){
-	console.log(`${item.name} is ${item.age} years old`);
-});
-// -> Joel is 99 years old
-// -> John is 66 years old
-// -> Jack is 33 years old
-```
 
 
 

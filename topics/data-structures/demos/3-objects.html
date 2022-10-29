@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Learn Javascript</title>
 </head>
+
 <body>
 
 <h3>Javascript Objects</h3>
@@ -12,41 +14,70 @@
 
 <script>
 
+
+
+// CUSTOM OBJECT EXAMPLE
+console.log("\nCUSTOM OBJECT EXAMPLE");
+
+const ev = {
+	name: "Fall of the Berlin Wall",
+	link: "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+	date: new Date(Date.UTC(1989, 10, 9, 17, 53, 0)),
+	timeZone: "CET",
+	getLocalTimeStr: function(){
+		return this.date.toLocaleString('de-DE', {timeZone: this.timeZone})
+	}
+};
+console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`);
+// -> "Fall of the Berlin Wall, 1989"
+console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
+
+
+
 // CREATE OBJECTS
+console.log("\nCREATE OBJECTS");
 
 // this is an object with two properties
-var myFirstObject = { make: "Honda", model: "CRV" };
+var myFirstObject = {
+	make: "Honda",
+	model: "CRV"
+};
 // this is also an object (with whitespace)
 var mySecondObject = {
 	fname: "Jane",
 	lname: "Doe"
 };
-console.log("myFirstObject",myFirstObject);
-console.log("mySecondObject",mySecondObject);
+console.log("myFirstObject", myFirstObject);
+console.log("mySecondObject", mySecondObject);
 
 
-// MAKE CHANGES
+// CHANGE OBJECTS
+console.log("\nCHANGE OBJECTS");
+
 
 // change a property on the object (dot notation)
 mySecondObject.fname = "Janet";
 
 // log after update
-console.log("mySecondObject",mySecondObject);
+console.log("mySecondObject", mySecondObject);
 
 // add a new property to the object
 mySecondObject["age"] = 23;
 
 // log after update
-console.log("mySecondObject",mySecondObject);
+console.log("mySecondObject", mySecondObject);
 
 // print a single property to the console
 console.log("The lname property is: " + mySecondObject.lname);
 
 // prints undefined, no length prop on objects
-console.log("mySecondObject.length",mySecondObject.length);
+console.log("mySecondObject.length", mySecondObject.length);
+
+
 
 
 
 </script>
 </body>
+
 </html>
