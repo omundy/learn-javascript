@@ -215,8 +215,7 @@ Other simple examples that manage state / change views:
 <div class="twocolumn">
 <div class="col">
 
-- Vue ("view") is a JS framework for building user interfaces.
-- It uses a component-based programming model and ...
+- Vue ("view") is a JS framework that uses a component-based programming model for building user interfaces.
 - **Declarative Rendering** Vue extends standard HTML with a template syntax `{{ }}` to describe output from your program.
 - **Reactivity** Vue automatically tracks and updates the DOM when your program state changes.
 

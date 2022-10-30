@@ -1,10 +1,138 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 1rem;
+			padding: 1rem;
+		}
+
+		.demo {
+			background: #ccc;
+		}
+
+		.section {
+			padding: 1rem;
+			background: #ddd;
+		}
+
+		.section-heading {
+			margin-bottom: 1rem;
+			font-weight: bold;
+			color: #666;
+		}
+
+		.red {
+			color: red;
+		}
+
+	</style>
+
+</head>
 
 <body>
 
+
+
+	<h2>Vue Demo</h2>
+
+	<div id="app" class="demo">
+		<div class="grid-container">
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/guide/introduction.html" target="_blank">Declarative Rendering</a>
+				</div>
+				<h3>{{ title }}</h3>
+				<button @click="changeText">Change the text</button>
+			</div>
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/guide/essentials/event-handling.html" target="_blank">Event Listener</a>
+				</div>
+				<button @click="increment">count is: {{ count }}</button>
+			</div>
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/guide/essentials/forms.html" target="_blank">Form Bindings</a>
+				</div>
+				<input v-model="text" placeholder="Type here">
+				<p>Vue is copying your input here: {{ text }}<br>
+					And again, here: <span :class="text">{{ text }}</span><br>
+					<small>hint: type "red" to see attribute binding in action</small>
+				</p>
+			</div>
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/guide/essentials/conditional.html" target="_blank">Conditional Rendering</a>
+				</div>
+				<button @click="toggle">Toggle: awesome is {{ awesome }}</button>
+				<h3 v-if="awesome">Vue is awesome!</h3>
+				<h3 v-else>Oh no 😢</h3>
+			</div>
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/guide/essentials/list.html" target="_blank">List Rendering</a>
+				</div>
+				<form @submit.prevent="addTodo">
+					<input v-model="newTodo">
+					<button>Add Todo</button>
+				</form>
+				<ul>
+					<li v-for="todo in todos" :key="todo.id">
+						{{ todo.text }}
+						<button @click="removeTodo(todo)">X</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="section">
+				<div class="section-heading">
+					<a href="https://vuejs.org/api/built-in-special-attributes.html#ref" target="_blank">Refs</a> and <a href="https://vuejs.org/guide/essentials/watchers.html" target="_blank">Watchers</a>
+				</div>
+				<p ref="p">hello</p>
+				<p>
+					See also <a href="https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram" target="_blank">Lifecycle Hooks</a>
+				</p>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div>
+		<h3>About this demo</h3>
+
+		<p>This demo shows multiple Vue.js features (from the <a href="https://vuejs.org/tutorial/" target="_blank">Tutorial</a>) in a single page. </p>
+
+		<ul>
+			<li><a href="https://vuejs.org/guide/introduction.html#what-is-vue" target="_blank">Vue Introduction - What is Vue?</a></li>
+			<li><a href="https://vuejs.org/guide/quick-start.html#using-vue-from-cdn" target="_blank">Vue Quick Start - Using Vue from CDN</a></li>
+		</ul>
+
+		<p>
+			Note that all the code is contained within this file. Eventually, you will want to split up your project into separate modules. But <a href="https://vuejs.org/guide/quick-start.html#using-vue-from-cdn">there is a catch</a>: If you run this locally (not on a server), you will find that it throws an error because ES modules cannot work over the file:// protocol. In order for this to work, you need to serve your index.html over the http:// protocol, with a local HTTP server. <a href="https://github.com/omundy/learn-javascript/blob/main/topics/single-page-apps/single-page-apps.md#how-to-start-a-web-server">How to start a local HTTP server</a>.
+		</p>
+
+	</div>
+
+	<!-- import and run view -->
 	<script type="importmap">
 		{
 	    "imports": {
@@ -13,55 +141,83 @@
 	  }
 	</script>
 
-	<div id="app">
-		<!-- make this button work -->
-		<button @click="increment">count is: {{ count }}</button>
-
-<br><br>
-
-		<input v-model="text" placeholder="Type here">
-		<p>{{ text }}</p>
-	</div>
-
+	<!-- type=module is required -->
 	<script type="module">
+		// give each todo a unique id
+		let id = 0
+		// create the app using vue
 		import {
 			createApp
 		} from 'vue'
-
+		// the createApp function
 		createApp({
+			// component options, // declare some reactive state here.
 			data() {
+				// return all the data components
 				return {
-					count: 0,
-					text: ''
+					title: "This text rendered by Vue.js", // 1
+					count: 0, // 2
+					text: '', // 3
+					awesome: true, // 4
+					newTodo: '', // 5
+					todos: [{
+							id: id++,
+							text: 'Learn HTML'
+						},
+						{
+							id: id++,
+							text: 'Learn JavaScript'
+						},
+						{
+							id: id++,
+							text: 'Learn Vue'
+						}
+					]
 				}
 			},
 			methods: {
+				changeText() {
+					// update component state
+					this.title = this.title.split(" - ")[0] + " - " + new Date().toISOString()
+				},
 				increment() {
 					// update component state
 					this.count++
 				},
 				onInput(e) {
 					this.text = e.target.value
-				}
-			}
-		}).mount('#app')
+				},
+				toggle() {
+					this.awesome = !this.awesome
+				},
 
+				addTodo() {
+					if (!this.newTodo) return;
+					this.todos.push({
+						id: id++,
+						text: this.newTodo
+					})
+					this.newTodo = ''
+				},
+				removeTodo(todo) {
+					this.todos = this.todos.filter((t) => t !== todo)
+				}
+			},
+			watch: {
+				// whenever question changes, this function will run
+				count(newCount, oldCount) {
+					if (newCount % 2 == 0)
+						this.$refs.p.textContent = "Count is even";
+					else
+						this.$refs.p.textContent = "Count is odd";
+				}
+			},
+		}).mount('#app')
+		// the ^ id where the app will be mounted
 	</script>
 
 
 
-
-
 </body>
+
 </html>
-
-
-<!--
-https://vuejs.org/guide/introduction.html#what-is-vue
-https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
-https://vuejs.org/tutorial/
-
-If you directly open the above index.html in your browser, you will find that it throws an error because ES modules cannot work over the file:// protocol. In order for this to work, you need to serve your index.html over the http:// protocol, with a local HTTP server.
-
-To start a local HTTP server, first install Node.js, and then run npx serve from the command line in the same directory where your HTML file is. You can also use any other HTTP server that can serve static files with correct MIME types.
- -->

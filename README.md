@@ -26,10 +26,28 @@ An introduction to the language
 1. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
 
 
-
 ## Examples / Demos
 
-- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)
+- Basics
+	- [Cycle through all RGB values](https://codepen.io/owenmundy/pen/ExEWjXW)
+	- [Power of Two (Po2) Visualization](https://codepen.io/owenmundy/pen/RwjPwNB)
+	- [JS - Passing functions as values](https://codepen.io/owenmundy/pen/vYXogwV?editors=1111)
+- Strings
+	- [Every Character](https://codepen.io/owenmundy/pen/ZEoyZYV)
+	- [JS Exercise - String functions](https://codepen.io/owenmundy/pen/YzWZeQX)
+- Randomness
+	- [Random Article Generator](https://codepen.io/owenmundy/pen/PomvjqW)
+	- [Data / Technology Question Generator](https://codepen.io/owenmundy/pen/WNjOgGg)
+	- [Javascript washing machine](https://codepen.io/owenmundy/pen/dyXzNdY)
+- Interaction
+	- [Visibility + Presence with JS + CSS Animation](https://codepen.io/owenmundy/pen/OJvLaOW?editors=0111)
+	- [Secret Knock Detector](https://codepen.io/owenmundy/pen/abErxLv)
+- DOM manipulation
+	- [Create an SVG with vanilla JS](https://codepen.io/owenmundy/pen/abGQENR)
+	- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)
+	- [Add new content to a web page with JS (overlay, setTimeout)](https://codepen.io/owenmundy/pen/eYgajNq)
+Tools
+	- [How to Create Bookmarklets!](https://codepen.io/owenmundy/pen/ZEoBPzZ)
 
 
 

@@ -1,12 +1,21 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../../README.md)
+← [Learn Javascript](../../)
 
-<a href="../../README.md"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Document Object Model (DOM)
 
-Comparison and logical operators, conditional statements
+Working with the dom
 
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
+
+
+---
 
 ## Contents
 
@@ -18,6 +27,9 @@ Comparison and logical operators, conditional statements
 1. [Exercises](#exercises)
 1. [References](#references)
 
+
+
+---
 
 ## Introduction
 
@@ -46,6 +58,8 @@ Students who complete this module will be able to:
 
 
 
+---
+
 ## DOM
 
 
@@ -66,6 +80,8 @@ Students who complete this module will be able to:
 
 
 
+
+---
 
 ## Selecting HTML elements
 
@@ -92,6 +108,8 @@ The window is your key to accessing the DOM (Document Object Model) with Javascr
 
 
 
+
+---
 
 ## Web Forms
 
@@ -126,10 +144,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 
 
-&nbsp;
-<!---
-comments
--->
+
+---
+
 ## jQuery and The DOM
 
 
@@ -177,10 +194,8 @@ $('.myClass').append(' - here is some new text');
 
 
 
-&nbsp;
-<!---
-comments
--->
+---
+
 ## Forms and Events
 
 **Overview**: Events and using forms with Javascript and jQuery
@@ -199,6 +214,7 @@ $('#submitButton').click(function() {
 - Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
 - Exercise: Add a way to spend more money in the lottery game
 
+---
 
 #### Homework
 
@@ -208,6 +224,11 @@ $('#submitButton').click(function() {
 - Exercises:
 	- Ch15 [Balloon](https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA), [Mouse trail](https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st), [Tabs](https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ)
 	- Ch18 [Content negotiation](https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf), [A JavaScript workbench](https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds), [Conway’s Game of Life](https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN)
+
+
+
+
+---
 
 #### Review
 
@@ -227,14 +248,15 @@ $('#submitButton').click(function() {
 
 
 
+---
+
 ## Next steps
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the [next lesson](../../README.md#javascript-part1).
 
-
-
+---
 
 ## References
 
