@@ -88,9 +88,7 @@ Like other Javascript types, the console can list properties and methods specifi
 👉 **Try it out** - Run these in the console
 
 ```js
-// the array constructor
-[]
-
+[] // the array constructor
 // how many indexes?
 ["abc", 123].length
 // create array, confirm length
@@ -143,7 +141,7 @@ colors.slice(1,3) // -> ["green", "blue"]
 
 ## Loop Anatomy
 
-The `for` loop in Javascript explicitly shows the three parts of its control structure: 1) Create control variable 2) Test the condition 3) Iterate on each loop
+The `for` loop in Javascript explicitly shows the three parts of a loop control structure: 1) Create control variable 2) Test the condition 3) Iterate on each loop
 
 <img  src="../../assets/img/javascript-anatomy-loop-for.png">
 
@@ -179,6 +177,11 @@ colors.forEach(function(value, index){
 // -> 2 "blue"
 
 ```
+
+<div class="caption slides-small">
+	While <code>.forEach</code> is syntactically simpler to write, one small issue is <a href="https://futurestud.io/tutorials/how-to-exit-stop-or-break-an-array-foreach-loop-in-javascript-or-node-js#:~:text=There%20is%20no%20way%20to,method%20is%20the%20wrong%20tool." target="_blank">they are not easy to break from</a>.
+</div>
+
 </div>
 </div>
 
@@ -202,7 +205,7 @@ const table = [
 table[1][2] // -> 'mauve'
 ```
 
-👉 How would you loop through this array to output all the values?
+👉 How would you loop through this array to output all individual the values?
 
 <details>
 <summary>Solution</summary>
@@ -216,7 +219,7 @@ A loop inside a loop
 
 ## Multi-Dimensional Arrays
 
-You can also store objects and other complex types.
+Arrays can also store objects and other complex types.
 
 ```js
 // array of date objects
@@ -239,8 +242,9 @@ dates[1].toUTCString()
 
 ## Objects
 
-- Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">objects</a> store `key:value` relationships where `key` is a string, and `value` can be any type.
-- You can get or set object values using the key and dot notation.
+- A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">object</a> is another hierarchical format for storing collections.
+- A key difference from arrays: data in objects must be stored with `key:value` relationships where `key` is a string, and `value` is any data type.
+- You can **get** or **set** object values using dot notation and the key.
 
 ```js
 const color = {
@@ -270,13 +274,13 @@ console.log(color['name']); // -> "red" via square brackets
 ```js
 // expand object the constructor to see more methods
 {}
-// create instance of Date() object
+// create instance of built-in Date() object
 let d = new Date()
-// the following methods are specific to the Date object
+// The following methods are specific to the Date object
 d.getFullYear()
-// and show how objects can "encapsulate" their properties and methods
+// and show how objects can "encapsulate" their properties
 d.toISOString()
-// to make them easier to work with
+// and methods to make them easier use.
 d.valueOf()
 ```
 
@@ -296,34 +300,6 @@ d.valueOf()
 <!--
 // arrays are technically objects
 typeof([]) // -> 'object' -->
-
-
-
-
-
-
-
-
----
-
-## Objects
-
-- In addition to storing virtually any other datatype, custom objects can store methods ("functions") and reference internal data with the `this` keyword.
-
-```js
-const ev = {
-	name: "Fall of the Berlin Wall",
-	link: "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-	date: new Date(Date.UTC(1989, 10, 9, 17, 53, 0)),
-	timeZone: "CET",
-	getLocalTimeStr: function(){
-		return this.date.toLocaleString('de-DE', {timeZone: this.timeZone})
-	}
-};
-console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`);
-// -> "Fall of the Berlin Wall, 1989"
-console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
-```
 
 
 
@@ -356,39 +332,65 @@ people.forEach(function(item, index){
 
 
 
+---
 
+## JSON
 
+- <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a> (JavaScript object notation) is a serialized (saved as a string, not as memory) Javascript object that can be saved in / retrieved from `.json` files by your program.
+- Just like objects, you can store any* type in a JSON file, including arrays and other objects.
 
+```json
+[
+	{ "color":"red", "rgb": [255,0,0] },
+	{ "color":"orange", "rgb": [255,165,0] },
+	{ "color":"yellow", "rgb": [255,255,0] },
+	{ "color":"green", "rgb": [0,255,0] },
+	{ "color":"blue", "rgb": [0,0,255] },
+	{ "color":"indigo", "rgb": [75,0,130] },
+	{ "color":"violet", "rgb": [238,130,238] },
+]
+```
+
+<script>
+let colors = [
+	{ "color":"red", "rgb": [255,0,0] },
+	{ "color":"orange", "rgb": [255,165,0] },
+	{ "color":"yellow", "rgb": [255,255,0] },
+	{ "color":"green", "rgb": [0,255,0] },
+	{ "color":"blue", "rgb": [0,0,255] },
+	{ "color":"indigo", "rgb": [75,0,130] },
+	{ "color":"violet", "rgb": [238,130,238] },
+];
+console.log("JSON output to string");
+colors.forEach(function(item, index){
+	console.log(JSON.stringify(item));
+});
+</script>
+
+<div class="caption slides-small">
+	*Any type except methods
+</div>
 
 
 
 
 ---
 
+## JSON Examples
 
-```js
-// a new array
-let myArray = [10,34,101];
-// use the push() method to add a new value
-myArray.push(521);
-// get the length property
-console.log(myArray.length);
-// -> 4
-// a new object
-let myObject = {
-	color1: "blue",
-	color2: "gold"
-};
-```
+<div class="twocolumn">
+<div class="col">
 
+- Practically every mobile app you use is sending and receiving JSON data “behind the scenes”.
+- Here are some examples from Tally Saves the Internet! <a href="https://tallysavestheinternet.com/api/" target="_blank">hello</a>, <a href="https://tallysavestheinternet.com/api/user/verifyUser" target="_blank">auth</a>, <a href="https://tallysavestheinternet.com/api/user/getTallyUser" target="_blank">game data</a>, <a href="https://tallysavestheinternet.com/api/anonyname" target="_blank">anonyname</a> and I Know Where Your Cat Lives <a href="https://iknowwhereyourcatlives.com/inc/get_data.php?action=select_random" target="_blank">random cat</a>, <a href="https://iknowwhereyourcatlives.com/inc/get_data.php?action=select_cat&guid=thisisnotaguid&init=true" target="_blank">cat not found</a>
 
+</div>
+<div class="col">
 
+<img width="70%"  src="../../assets/img/json-tally-user.png">
 
-
-
-
-
-
+</div>
+</div>
 
 
 
@@ -405,7 +407,7 @@ let myObject = {
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the next lesson: **Data Structures** [slides](../jquery/slides.html) | [md](../jquery/jquery.md)
+1. Continue to the next lesson: **jQuery** [slides](../jquery/slides.html) | [md](../jquery/jquery.md)
 
 
 
@@ -415,12 +417,10 @@ let myObject = {
 
 👉 **Try it out**
 
-1. [Lottery v.1](../../topics/games/the-lottery/README.md) - Build your first game!
-1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
-1. Exercises from Eloquent Javascript Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
-
-
-- Exercises: CH4 [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
+1. [Lottery v.3](https://omundy.github.io/learn-javascript/topics/games/the-lottery/) - Display all results within the HTML of the page
+1. Exercises from Eloquent Javascript
+	1. Ch2 [Looping a triangle](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe), [Chessboard](https://eloquentjavascript.net/02_program_structure.html#h_TcUD2vzyMe)
+	1. CH4 [The sum of a range](https://eloquentjavascript.net/04_data.html#i_8ZspxiCEC/), [Reversing an array](https://eloquentjavascript.net/04_data.html#i_6xTmjj4Rf5), [A list](https://eloquentjavascript.net/04_data.html#i_nSTX34CM1M), [Deep comparison](https://eloquentjavascript.net/04_data.html#i_IJBU+aXOIC)
 
 
 
@@ -429,6 +429,39 @@ let myObject = {
 
 ## References
 
+- Lili Ouaknin Felsen [Functional vs Object-Oriented vs Procedural Programming](https://medium.com/@LiliOuakninFelsen/functional-vs-object-oriented-vs-procedural-programming-a3d4585557f3) 2017
 - Haverbeke: [Ch4 Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html) (57-79)
 - Codecademy Cheatsheet(s) [arrays](reference-sheets/js-05-arrays.pdf), [loops](reference-sheets/js-06-loops.pdf)
 - w3schools [arrays](https://www.w3schools.com/js/js_arrays.asp), [objects](https://www.w3schools.com/js/js_objects.asp), [json](https://www.w3schools.com/js/js_json_intro.asp), [json syntax](https://www.w3schools.com/js/js_json_syntax.asp), [methods](https://www.w3schools.com/js/js_htmldom_methods.asp), [for loop](https://www.w3schools.com/js/js_loop_for.asp), [break](https://www.w3schools.com/js/js_break.asp)
+
+
+
+
+---
+
+## Advanced Array, Object, Loop Concepts
+
+Continue for more concepts.
+
+
+
+---
+
+## Objects
+
+- In addition to storing virtually any other datatype, custom objects can store methods ("functions") and reference internal data with the `this` keyword.
+
+```js
+const ev = {
+	name: "Fall of the Berlin Wall",
+	link: "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+	date: new Date(Date.UTC(1989, 10, 9, 17, 53, 0)),
+	timeZone: "CET",
+	getLocalTimeStr: function(){
+		return this.date.toLocaleString('de-DE', {timeZone: this.timeZone})
+	}
+};
+console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`);
+// -> "Fall of the Berlin Wall, 1989"
+console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
+```

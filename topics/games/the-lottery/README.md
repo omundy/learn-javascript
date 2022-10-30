@@ -1,17 +1,17 @@
 
 # The Lottery (game)
 
-A simple exercise to illustrate variables, conditionals, functions, event listeners, and html DOM manipulation using pure (a.k.a. "vanilla") Javascript.
-https://codepen.io/owenmundy/pen/ZEoyMGw?editors=1011
+This exercise illustrates variables, conditionals, functions, event listeners, and html DOM manipulation using pure (a.k.a. "vanilla") Javascript.
+
 
 
 ## Instructions
 
-Typically in application development, one builds a simple prototype to work out the core logic of their program. Then, each successive version builds on top of the original, adding features and polishing.
+Typically, in application development, one builds a simple prototype to work out the core logic of their program. Then, each successive version builds on top of the original, adding features and polishing. We'll do the same here:
 
-1. Try to code each version of The Lottery without viewing the Javascript source.
 1. Start with the template [on codepen.io](https://codepen.io/owenmundy/pen/ZEoyMGw?editors=1011) or [the file](the-lottery-v0.html)
-1. We will build each next version in class.
+1. Try to code each version of The Lottery without viewing the Javascript source.
+1. You can look at the console, but not the source code. 
 
 
 ## Versions

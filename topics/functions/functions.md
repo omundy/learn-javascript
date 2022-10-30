@@ -18,6 +18,8 @@ Presentation comments ...
 
 
 
+
+
 ---
 
 ## Introduction
@@ -332,7 +334,7 @@ var myCallback = function() {
 
 👉 **Try it out**
 
-1. [Lottery v.2](../../topics/games/the-lottery/README.md) - Show results of the game in HTML
+1. [Lottery v.2](https://omundy.github.io/learn-javascript/topics/games/the-lottery/) - Show results of the game in HTML
 1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses functions
 

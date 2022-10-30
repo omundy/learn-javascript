@@ -333,7 +333,7 @@ if (apples >= 2 && blueberries >= 4) {
 
 👉 **Try it out**
 
-1. [Lottery v.1](../../topics/games/the-lottery/README.md) - Build your first game!
+1. [Lottery v.1](https://omundy.github.io/learn-javascript/topics/games/the-lottery/) - Build your first game!
 1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses conditions.
 
