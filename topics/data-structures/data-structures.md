@@ -405,6 +405,7 @@ colors.forEach(function(item, index){
 
 ## Next steps
 
+1. Explore [More Concepts](#more-concepts) at the end
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the next lesson: **jQuery** [slides](../jquery/slides.html) | [md](../jquery/jquery.md)
@@ -439,9 +440,9 @@ colors.forEach(function(item, index){
 
 ---
 
-## Advanced Array, Object, Loop Concepts
+## More Concepts
 
-Continue for more concepts.
+Continue for more related concepts.
 
 
 

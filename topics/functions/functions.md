@@ -293,7 +293,7 @@ var myCallback = function() {
 
 ## Next steps
 
-1. Explore [More Function Concepts](#more-function-concepts) at the end
+1. Explore [More Concepts](#more-concepts) at the end
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the next lesson: **Data Structures** [slides](../data-structures/slides.html) | [md](../data-structures/data-structures.md)
@@ -326,9 +326,9 @@ var myCallback = function() {
 
 ---
 
-## More Function Concepts
+## More Concepts
 
-Continue for more concepts.
+Continue for more related concepts.
 
 
 
