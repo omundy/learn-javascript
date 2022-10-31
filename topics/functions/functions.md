@@ -285,35 +285,6 @@ var myCallback = function() {
 
 
 
----
-
-## Anonymous Functions
-
-
-<div class="twocolumn">
-<div class="col">
-
-- Variables declared in anonymous functions won't conflict with other code used in your project.
-- An IIFE [(Immediately Invoked Function Expressions)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) will run as soon as your code runs and helps to [limit global variables](https://developer.mozilla.org/en-US/docs/Glossary/IIFE#avoid_polluting_the_global_namespace) and conflicts.
-
-</div>
-<div class="col">
-
-```js
-(function(){
-	// an IIFE runs immediately but
-	// the variables declared here
-	// do not have global scope
-})();
-```
-
-</div>
-</div>
-
-
-
-
-
 
 
 
@@ -322,6 +293,7 @@ var myCallback = function() {
 
 ## Next steps
 
+1. Explore [More Function Concepts](#more-function-concepts) at the end
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
 1. Continue to the next lesson: **Data Structures** [slides](../data-structures/slides.html) | [md](../data-structures/data-structures.md)
@@ -354,9 +326,42 @@ var myCallback = function() {
 
 ---
 
-## Advanced Function Concepts
+## More Function Concepts
 
 Continue for more concepts.
+
+
+
+
+
+
+
+---
+
+## IIFE
+
+
+<div class="twocolumn">
+<div class="col">
+
+- Variables declared in anonymous functions won't conflict with other code used in your project.
+- An IIFE [(Immediately Invoked Function Expressions)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) will run as soon as your code runs and helps to [limit global variables](https://developer.mozilla.org/en-US/docs/Glossary/IIFE#avoid_polluting_the_global_namespace) and conflicts.
+
+</div>
+<div class="col">
+
+```js
+(function(){
+	// an IIFE runs immediately but
+	// the variables declared here
+	// do not have global scope
+})();
+```
+
+</div>
+</div>
+
+
 
 
 
