@@ -8,7 +8,7 @@
 
 Working with the dom
 
-<span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span>
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="dom.md">md</a></span>
 
 <!--
 Presentation comments ...
@@ -21,8 +21,6 @@ Presentation comments ...
 
 1. [Introduction](#introduction)
 1. [Selecting HTML elements](#selecting-html-elements) `5 min`
-
-
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
@@ -49,54 +47,46 @@ Students who complete this module will be able to:
 
 </details>
 
-<details>
-<summary>Homework</summary>
-
-
-
-</details>
 
 
 
 ---
 
-## DOM
+## About the DOM
+
+- Every time a web page loads, a new DOM object is created.
+- Accessible at `window.document` or just `document` it points to the page structure, content, and properties.
+
+<img src="../../assets/img/javascript-diagram-dom.png" width="100%">
 
 
 
 ## Selecting HTML elements
 
+<div class="twocolumn2x1">
+<div class="col">
 
+- There are several methods to select an element in the DOM.
+- [`document.querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) returns the first Element within the document that matches the specified selector, or group of selectors.
 
-## JQuery for selection
+</div>
+<div class="col">
 
-
-
-## Forms
-
-
-##
-
-
-
-
-
----
-
-## Selecting HTML elements
-
-In order for Javascript to change values on a web page, we have to use it to **select** elements. There are several ways to do this.
-
-
-Type this into the Console and hit return.
-
-```js
-window
+```html
+<p id="greeting">Hello world</p>
 ```
 
-The window is your key to accessing the DOM (Document Object Model) with Javascript. You can set or get any value stored in the page, or use any method (function) that is built in. Try some of these:
+```js
+// store a reference to the dom element using the id to select it
+let element = document.querySelector("p#greeting");
+// get the text
+console.log(element.textContent);
+// set the text
+element.textContent = "Hello world!";
+```
 
-
+</div>
+</div>
 
 
 
@@ -114,20 +104,19 @@ The window is your key to accessing the DOM (Document Object Model) with Javascr
 ## Web Forms
 
 
-```
-
+```html
 <form action="#">
-
   <input type="text" id="hi">
   <input type="submit">
 </form>
-
 ```
 
+```js
 document.addEventListener("submit", function(e){
 	console.log(document.getElementById("hi").value);
   e.preventDefault();
 })
+```
 
 https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
@@ -177,6 +166,9 @@ $('.myClass').append(' - here is some new text');
 	- [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222)
 	- [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
 - Exercises: Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
+
+
+
 
 #### Review
 

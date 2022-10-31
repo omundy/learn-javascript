@@ -1332,9 +1332,17 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
 }
-</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-theme="owen" style="--theme:owen;">
-<p>← <a href="../README.md">Learn Javascript</a></p>
-<h1>NPM, Node</h1>
+</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+<p>← <a href="../../">Learn Javascript</a></p>
+<p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-node-ltgreen-150w.png" /></a></p>
+<h1>NPM &amp; Node</h1>
+<p>Introduction to NPM and Node</p>
+<p><span class="slides-small"><a href="slides.html">slides</a> | <a href="node.md">md</a></span></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+<h2>About Node</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
 <h2>Install NVM, Node, NPM</h2>
 <p><a href="https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x">https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x</a></p>
 <ol>
@@ -1344,24 +1352,6 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">brew update
 brew upgrade
 brew install nvm
-</code></pre>
-<h3>Update NVM</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">brew update
-brew upgrade <span class="hljs-comment"># to install</span>
-</code></pre>
-<h3>Update Node using NVM</h3>
-<p>The <a href="https://nodejs.org/en/">latest</a> node version</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install v16.10.0
-nvm <span class="hljs-built_in">ls</span>
-nvm use 16
-</code></pre>
-<p>The <a href="https://nodejs.org/en/about/releases/">latest LTS</a> (Long Term Support) node version</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install --lts
-nvm <span class="hljs-built_in">ls</span>
-nvm use &lt;NUMBER&gt;
-</code></pre>
-<h3>Update NPM using NVM</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install-latest-npm
 </code></pre>
 <h4>Upgrade packages in your repository</h4>
 <p><a href="https://www.npmjs.com/package/npm-upgrade">npm-upgrade</a> is an interactive CLI utility to easily update outdated NPM dependencies</p>
@@ -1669,7 +1659,40 @@ app.<span class="hljs-property">get</span> ( <span class="hljs-string">&#x27;/st
 <h4>Review</h4>
 <p><strong>Assessment</strong>: Homework review</p>
 </section>
-<script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>comments</p><p>comments</p><p>comments</p><p>comments</p><p>- Lecture:
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+<h2>Install Node using NVM</h2>
+<p><a href="https://github.com/nvm-sh/nvm#intro">Node Version Manager</a> (NVM) allows you to quickly install and use different versions of node via the command line.</p>
+<ol>
+<li>Install <a href="https://brew.sh/">Homebrew</a></li>
+<li>Update then install NVM</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">brew update
+brew upgrade
+brew install nvm
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x">Reference</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+<h2>How to update NVM</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">brew update
+brew upgrade <span class="hljs-comment"># to install</span>
+</code></pre>
+<h3>How to install Node using NVM</h3>
+<p>The <a href="https://nodejs.org/en/">latest</a> node version</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install v16.10.0
+nvm <span class="hljs-built_in">ls</span>
+nvm use 16
+</code></pre>
+<p>The <a href="https://nodejs.org/en/about/releases/">latest LTS</a> (Long Term Support) node version</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install --lts
+nvm <span class="hljs-built_in">ls</span>
+nvm use &lt;NUMBER&gt;
+</code></pre>
+<h4>Update NPM using NVM</h4>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">nvm install-latest-npm
+</code></pre>
+</section>
+<script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><div class="bespoke-marp-note" data-index="2" tabindex="0"><p>comments</p><p>comments</p><p>comments</p><p>comments</p><p>- Lecture:
 - Demo:
 - Exercise:</p><p>comments</p><p>comments</p><p>comments</p><p>- Lecture:
 - Demo:
