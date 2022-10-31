@@ -1337,26 +1337,16 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a></p>
 <h1>Document Object Model (DOM)</h1>
 <p>Working with the dom</p>
-<p><span class="slides-small"><a href="slides.html">slides</a> | <a href="data-structures.md">md</a></span></p>
+<p><span class="slides-small"><a href="slides.html">slides</a> | <a href="dom.md">md</a></span></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
 <h2>Contents</h2>
 <ol>
-<li>
-<p><a href="#introduction">Introduction</a></p>
-</li>
-<li>
-<p><a href="#selecting-html-elements">Selecting HTML elements</a> <code>5 min</code></p>
-</li>
-<li>
-<p><a href="#next-steps">Next steps</a></p>
-</li>
-<li>
-<p><a href="#exercises">Exercises</a></p>
-</li>
-<li>
-<p><a href="#references">References</a></p>
-</li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#selecting-html-elements">Selecting HTML elements</a> <code>5 min</code></li>
+<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#exercises">Exercises</a></li>
+<li><a href="#references">References</a></li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
@@ -1375,78 +1365,81 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 </details>
 <details>
 <summary>Homework</summary>
+<ul>
+<li><a href="https://eloquentjavascript.net/13_browser.html">Haverbeke Ch13 JavaScript and the Browser</a> (216-222)</li>
+<li><a href="https://eloquentjavascript.net/14_dom.html">Haverbeke Ch14 The Document Object Model</a> (224-241)</li>
+<li><a href="https://eloquentjavascript.net/15_event.html">Haverbeke Ch15 Handling Events</a> (243-259)</li>
+<li><a href="https://eloquentjavascript.net/18_http.html">Haverbeke Ch18 HTTP and Forms</a> (308-328)</li>
+</ul>
 </details>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2>DOM</h2>
-<h2>Selecting HTML elements</h2>
-<h2>JQuery for selection</h2>
-<h2>Forms</h2>
-<h2></h2>
+<h2>About the DOM</h2>
+<ul>
+<li>Every time a web page loads, a new DOM object is created.</li>
+<li>Accessible at <code>window.document</code> or just <code>document</code> it points to the page structure, content, and properties.</li>
+</ul>
+<img src="../../assets/img/javascript-diagram-dom.png" width="100%" />
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
 <h2>Selecting HTML elements</h2>
-<p>In order for Javascript to change values on a web page, we have to use it to <strong>select</strong> elements. There are several ways to do this.</p>
-<p>Type this into the Console and hit return.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-variable language_">window</span>
-</code></pre>
-<p>The window is your key to accessing the DOM (Document Object Model) with Javascript. You can set or get any value stored in the page, or use any method (function) that is built in. Try some of these:</p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2>Web Forms</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>
-&lt;form action=&quot;#&quot;&gt;
-
-  &lt;input type=&quot;text&quot; id=&quot;hi&quot;&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-</code></pre>
-<p>document.addEventListener(&quot;submit&quot;, function(e){<br />
-console.log(document.getElementById(&quot;hi&quot;).value);<br />
-e.preventDefault();<br />
-})</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault</a></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2>jQuery and The DOM</h2>
-<p>NOTE: <a href="https://youmightnotneedjquery.com/">https://youmightnotneedjquery.com/</a></p>
-<p><strong>Overview</strong>: How to access properties and methods in the HTML DOM with Javascript and jQuery</p>
+<p>Many properties can be access with &quot;vanilla&quot; Javascript</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// get the current URL</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">URL</span>);
 <span class="hljs-comment">// set a new value for the bgColor property</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">bgColor</span> = <span class="hljs-string">&quot;red&quot;</span>
 <span class="hljs-comment">// replace the content of the body</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">innerText</span> = <span class="hljs-string">&quot;<img class="emoji" draggable="false" alt="😃" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f603.svg" data-marp-twemoji=""/>&quot;</span>
-<span class="hljs-comment">// select all divs, set backgrounds red</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
+<h2>Selecting HTML elements</h2>
+<div class="twocolumn2x1">
+<div class="col">
+<ul>
+<li>There are several methods to select an element in the DOM.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>document.querySelector()</code></a> returns the first Element within the document that matches the specified selector, or group of selectors.</li>
+</ul>
+</div>
+<div class="col">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;greeting&quot;</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// store a reference to the dom element using the id to select it</span>
+<span class="hljs-keyword">let</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;p#greeting&quot;</span>);
+<span class="hljs-comment">// get the text</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(element.<span class="hljs-property">textContent</span>);
+<span class="hljs-comment">// set the text</span>
+element.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Hello world!&quot;</span>;
+</code></pre>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
+<h2>jQuery and The DOM</h2>
+<p>How to access properties and methods in the HTML DOM with Javascript and jQuery</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// select all divs, set backgrounds red</span>
 $(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">css</span>({ <span class="hljs-string">&#x27;background&#x27;</span>: <span class="hljs-string">&#x27;red&#x27;</span> });
 <span class="hljs-comment">// select all elements with myClass, add text to end</span>
 $(<span class="hljs-string">&#x27;.myClass&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27; - here is some new text&#x27;</span>);
 </code></pre>
-<ul>
-<li>Lecture: <a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_52">The DOM</a>, <a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.gb2d4fd0026_0_24">jQuery</a></li>
-<li>Demo: <a href="demos/games/the-lottery/">The Lottery v.2</a> - responding to events, <a href="demos/games/the-lottery/">The Lottery v.3</a> - displaying content in the browser</li>
-<li>Exercise: Add a way to spend more money in the lottery game</li>
-</ul>
-<h4>Homework</h4>
-<ul>
-<li>Haverbeke:
-<ul>
-<li><a href="https://eloquentjavascript.net/13_browser.html">Ch13 JavaScript and the Browser</a> (216-222)</li>
-<li><a href="https://eloquentjavascript.net/14_dom.html">Ch14 The Document Object Model</a> (224-241)</li>
-</ul>
-</li>
-<li>Exercises: Ch14 <a href="https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe">Build a table</a>, <a href="https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV">Elements by tag name</a>, <a href="https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo">The cat’s hat</a></li>
-</ul>
-<h4>Review</h4>
-<ul>
-<li>Codecademy Cheatsheet(s) <a href="reference-sheets/jquery-01-introduction.pdf">jquery introduction</a>, <a href="reference-sheets/jquery-02-effects.pdf">effects</a></li>
-<li>w3schools <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM</a>, <a href="https://www.w3schools.com/js/js_htmldom_html.asp">HTML DOM</a></li>
-</ul>
-<p><strong>Assessment</strong>: Quiz; Homework review</p>
+<p>NOTE: <a href="https://youmightnotneedjquery.com/">https://youmightnotneedjquery.com/</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
 <h2>Forms and Events</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hi&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;submit&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>){
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;hi&quot;</span>).<span class="hljs-property">value</span>);
+  e.<span class="hljs-title function_">preventDefault</span>();
+})
+</code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
+<h2>Forms and Events with jQuery</h2>
 <p><strong>Overview</strong>: Events and using forms with Javascript and jQuery</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// click event with callback</span>
 $(<span class="hljs-string">&#x27;#submitButton&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
@@ -1456,44 +1449,31 @@ $(<span class="hljs-string">&#x27;#submitButton&#x27;</span>).<span class="hljs-
 	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
 });
 </code></pre>
-<ul>
-<li>Lecture: <a href="https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_115">Forms &amp; Events</a></li>
-<li>Demo: <a href="demos/games/the-lottery/">The Lottery v.2</a> - responding to events, <a href="demos/games/the-lottery/">The Lottery v.3</a> - displaying content in the browser</li>
-<li>Exercise: Add a way to spend more money in the lottery game</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h4>Homework</h4>
-<ul>
-<li>Haverbeke:
-<ul>
-<li><a href="https://eloquentjavascript.net/15_event.html">Ch15 Handling Events</a> (243-259)</li>
-<li><a href="https://eloquentjavascript.net/18_http.html">Ch18 HTTP and Forms</a> (308-328)</li>
-</ul>
-</li>
-<li>Exercises:
-<ul>
-<li>Ch15 <a href="https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA">Balloon</a>, <a href="https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st">Mouse trail</a>, <a href="https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ">Tabs</a></li>
-<li>Ch18 <a href="https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf">Content negotiation</a>, <a href="https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds">A JavaScript workbench</a>, <a href="https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN">Conway’s Game of Life</a></li>
-</ul>
-</li>
-</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h4>Review</h4>
-<ul>
-<li>Codecademy Cheatsheet(s) <a href="reference-sheets/jquery-03-events.pdf">jquery events</a>, <a href="reference-sheets/jquery-04-style-methods.pdf">style methods</a>, <a href="reference-sheets/jquery-05-dom-traversing.pdf">dom traversing</a></li>
-<li>w3schools <a href="https://www.w3schools.com/jquery/jquery_intro.asp">jQuery intro</a>, <a href="https://www.w3schools.com/jquery/jquery_get_started.asp">Get Started</a>, <a href="https://www.w3schools.com/jquery/jquery_syntax.asp">syntax</a>, <a href="https://www.w3schools.com/jquery/jquery_selectors.asp">selectors</a>, <a href="https://www.w3schools.com/jquery/jquery_events.asp">event methods</a></li>
-<li>w3schools <a href="https://www.w3schools.com/js/exercise_js.asp">Javascript practice</a></li>
-</ul>
-<p><strong>Assessment</strong>: Quiz; Homework review</p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
 <h2>Next steps</h2>
 <ol>
 <li>Try the <a href="#exercises">Exercises</a> below.</li>
 <li>Start working on homework listed in the schedule.</li>
-<li>Continue to the <a href="../../README.md#javascript-part1">next lesson</a>.</li>
+<li>Continue to the <a href="../../">next lesson</a>.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
+<h2>Exercises</h2>
+<p><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f449.svg" data-marp-twemoji=""/> <strong>Try it out</strong></p>
+<ol>
+<li><a href="demos/games/the-lottery/">The Lottery v.2</a> - responding to events, <a href="demos/games/the-lottery/">The Lottery v.3</a> - displaying content in the browser
+<ul>
+<li>Already finished? Add a way to spend more money in the lottery game</li>
+</ul>
+</li>
+<li>Exercises from Eloquent Javascript
+<ul>
+<li>Exercises: Ch14 <a href="https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe">Build a table</a>, <a href="https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV">Elements by tag name</a>, <a href="https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo">The cat’s hat</a></li>
+<li>Ch15 <a href="https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA">Balloon</a>, <a href="https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st">Mouse trail</a>, <a href="https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ">Tabs</a></li>
+<li>Ch18 <a href="https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf">Content negotiation</a>, <a href="https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds">A JavaScript workbench</a>, <a href="https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN">Conway’s Game of Life</a></li>
+</ul>
+</li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
@@ -1501,7 +1481,9 @@ $(<span class="hljs-string">&#x27;#submitButton&#x27;</span>).<span class="hljs-
 <ul>
 <li>Haverbeke <a href="https://eloquentjavascript.net/02_program_structure.html">Ch2 Program Structure</a> (22-26)</li>
 <li>Codecademy Cheatsheet(s) <a href="../../reference-sheets/js-02-conditionals.pdf">Conditionals</a></li>
-<li>W3schools <a href="https://www.w3schools.com/js/js_operators.asp">operators</a>, <a href="https://www.w3schools.com/js/js_assignment.asp">assignment</a>, <a href="https://www.w3schools.com/js/js_arithmetic.asp">arithmetic</a>, <a href="https://www.w3schools.com/js/js_comparisons.asp">comparisons</a>, <a href="https://www.w3schools.com/js/js_if_else.asp">conditions</a>, <a href="https://www.w3schools.com/js/js_output.asp">output</a></li>
+<li>Codecademy Cheatsheet(s) <a href="reference-sheets/jquery-01-introduction.pdf">jquery introduction</a>, <a href="reference-sheets/jquery-02-effects.pdf">effects</a>, <a href="reference-sheets/jquery-03-events.pdf">jquery events</a>, <a href="reference-sheets/jquery-04-style-methods.pdf">style methods</a>, <a href="reference-sheets/jquery-05-dom-traversing.pdf">dom traversing</a></li>
+<li>w3schools <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM</a>, <a href="https://www.w3schools.com/js/js_htmldom_html.asp">HTML DOM</a>, <a href="https://www.w3schools.com/jquery/jquery_intro.asp">jQuery intro</a>, <a href="https://www.w3schools.com/jquery/jquery_get_started.asp">Get Started</a>, <a href="https://www.w3schools.com/jquery/jquery_syntax.asp">syntax</a>, <a href="https://www.w3schools.com/jquery/jquery_selectors.asp">selectors</a>, <a href="https://www.w3schools.com/jquery/jquery_events.asp">event methods</a></li>
+<li>w3schools <a href="https://www.w3schools.com/js/exercise_js.asp">Javascript practice</a></li>
 </ul>
 </section>
 <script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.2.0/lib/bespoke.js.LICENSE.txt */

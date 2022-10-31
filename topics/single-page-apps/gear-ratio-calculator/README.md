@@ -17,3 +17,6 @@ https://www.youtube.com/watch?v=Jyj-4LtyYWU&t=525s&ab_channel=DirtWireTV
 1. Start with the template [on codepen.io](https://codepen.io/owenmundy/pen/ZEoyMGw?editors=1011) or [the file](gear-ratio-calc-v0.html)
 1. Try to code each version of The Lottery without viewing the Javascript source.
 1. You can look at the console, but not the source code.
+
+
+1. [Lottery v.1]

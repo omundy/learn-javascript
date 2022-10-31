@@ -47,6 +47,16 @@ Students who complete this module will be able to:
 
 </details>
 
+<details>
+<summary>Homework</summary>
+
+- [Haverbeke Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222)
+- [Haverbeke Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
+- [Haverbeke Ch15 Handling Events](https://eloquentjavascript.net/15_event.html) (243-259)
+- [Haverbeke Ch18 HTTP and Forms](https://eloquentjavascript.net/18_http.html) (308-328)
+
+</details>
+
 
 
 
@@ -60,6 +70,28 @@ Students who complete this module will be able to:
 <img src="../../assets/img/javascript-diagram-dom.png" width="100%">
 
 
+
+
+
+---
+
+## Selecting HTML elements
+
+Many properties can be access with "vanilla" Javascript
+
+```js
+// get the current URL
+window.alert(document.URL);
+// set a new value for the bgColor property
+window.document.bgColor = "red"
+// replace the content of the body
+window.document.body.innerText = "😃"
+```
+
+
+
+
+---
 
 ## Selecting HTML elements
 
@@ -92,16 +124,28 @@ element.textContent = "Hello world!";
 
 
 
+---
+
+## jQuery and The DOM
+
+How to access properties and methods in the HTML DOM with Javascript and jQuery
+
+```js
+// select all divs, set backgrounds red
+$('div').css({ 'background': 'red' });
+// select all elements with myClass, add text to end
+$('.myClass').append(' - here is some new text');
+```
 
 
-
+NOTE: https://youmightnotneedjquery.com/
 
 
 
 
 ---
 
-## Web Forms
+## Forms and Events
 
 
 ```html
@@ -124,71 +168,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 
 
-
-
-
-
-
-
-
-
-
-
 ---
 
-## jQuery and The DOM
-
-
-NOTE: https://youmightnotneedjquery.com/
-
-**Overview**: How to access properties and methods in the HTML DOM with Javascript and jQuery
-
-```js
-// get the current URL
-window.alert(document.URL);
-// set a new value for the bgColor property
-window.document.bgColor = "red"
-// replace the content of the body
-window.document.body.innerText = "😃"
-// select all divs, set backgrounds red
-$('div').css({ 'background': 'red' });
-// select all elements with myClass, add text to end
-$('.myClass').append(' - here is some new text');
-```
-
-- Lecture: [The DOM](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga8da2c3fcb_0_52), [jQuery](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.gb2d4fd0026_0_24)
-- Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
-- Exercise: Add a way to spend more money in the lottery game
-
-#### Homework
-
-- Haverbeke:
-	- [Ch13 JavaScript and the Browser](https://eloquentjavascript.net/13_browser.html) (216-222)
-	- [Ch14 The Document Object Model](https://eloquentjavascript.net/14_dom.html) (224-241)
-- Exercises: Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
-
-
-
-
-#### Review
-
-- Codecademy Cheatsheet(s) [jquery introduction](reference-sheets/jquery-01-introduction.pdf), [effects](reference-sheets/jquery-02-effects.pdf)
-- w3schools [DOM](https://www.w3schools.com/js/js_htmldom.asp), [HTML DOM](https://www.w3schools.com/js/js_htmldom_html.asp)
-
-**Assessment**: Quiz; Homework review
-
-
-
-
-
-
-
-
-
-
----
-
-## Forms and Events
+## Forms and Events with jQuery
 
 **Overview**: Events and using forms with Javascript and jQuery
 
@@ -202,39 +184,6 @@ $('#submitButton').click(function() {
 });
 ```
 
-- Lecture: [Forms & Events](https://docs.google.com/presentation/d/1mTMY_jT3nVvrdE2JNrFNVsRBjnFFf90LhKB3W-2w3Fg/edit#slide=id.ga4ca8d22b7_0_115)
-- Demo: [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
-- Exercise: Add a way to spend more money in the lottery game
-
----
-
-#### Homework
-
-- Haverbeke:
-	- [Ch15 Handling Events](https://eloquentjavascript.net/15_event.html) (243-259)
-	- [Ch18 HTTP and Forms](https://eloquentjavascript.net/18_http.html) (308-328)
-- Exercises:
-	- Ch15 [Balloon](https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA), [Mouse trail](https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st), [Tabs](https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ)
-	- Ch18 [Content negotiation](https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf), [A JavaScript workbench](https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds), [Conway’s Game of Life](https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN)
-
-
-
-
----
-
-#### Review
-
-- Codecademy Cheatsheet(s) [jquery events](reference-sheets/jquery-03-events.pdf), [style methods](reference-sheets/jquery-04-style-methods.pdf), [dom traversing](reference-sheets/jquery-05-dom-traversing.pdf)
-- w3schools [jQuery intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [event methods](https://www.w3schools.com/jquery/jquery_events.asp)
-- w3schools [Javascript practice](https://www.w3schools.com/js/exercise_js.asp)
-
-**Assessment**: Quiz; Homework review
-
-
-
-
-
-
 
 
 
@@ -246,7 +195,26 @@ $('#submitButton').click(function() {
 
 1. Try the [Exercises](#exercises) below.
 1. Start working on homework listed in the schedule.
-1. Continue to the [next lesson](../../README.md#javascript-part1).
+1. Continue to the [next lesson](../../).
+
+
+---
+
+## Exercises
+
+👉 **Try it out**
+
+1. [The Lottery v.2](demos/games/the-lottery/) - responding to events, [The Lottery v.3](demos/games/the-lottery/) - displaying content in the browser
+	- Already finished? Add a way to spend more money in the lottery game
+1. Exercises from Eloquent Javascript
+	- Exercises: Ch14 [Build a table](https://eloquentjavascript.net/14_dom.html#h_TcUD2vzyMe), [Elements by tag name](https://eloquentjavascript.net/14_dom.html#i_VSftnyRTsV), [The cat’s hat](https://eloquentjavascript.net/14_dom.html#i_b/LAqZUqyo)
+	- Ch15 [Balloon](https://eloquentjavascript.net/15_event.html#i_ZPJB9UFdQA), [Mouse trail](https://eloquentjavascript.net/15_event.html#i_NOgRH0Y9st), [Tabs](https://eloquentjavascript.net/15_event.html#i_Kk1WKx2anJ)
+	- Ch18 [Content negotiation](https://eloquentjavascript.net/18_http.html#i_uaWwL8WGXf), [A JavaScript workbench](https://eloquentjavascript.net/18_http.html#i_wTXvIH5Wds), [Conway’s Game of Life](https://eloquentjavascript.net/18_http.html#i_XyKQVmCbTN)
+
+
+
+
+
 
 ---
 
@@ -254,4 +222,6 @@ $('#submitButton').click(function() {
 
 - Haverbeke [Ch2 Program Structure](https://eloquentjavascript.net/02_program_structure.html) (22-26)
 - Codecademy Cheatsheet(s) [Conditionals](../../reference-sheets/js-02-conditionals.pdf)
-- W3schools [operators](https://www.w3schools.com/js/js_operators.asp), [assignment](https://www.w3schools.com/js/js_assignment.asp), [arithmetic](https://www.w3schools.com/js/js_arithmetic.asp), [comparisons](https://www.w3schools.com/js/js_comparisons.asp), [conditions](https://www.w3schools.com/js/js_if_else.asp), [output](https://www.w3schools.com/js/js_output.asp)
+- Codecademy Cheatsheet(s) [jquery introduction](reference-sheets/jquery-01-introduction.pdf), [effects](reference-sheets/jquery-02-effects.pdf), [jquery events](reference-sheets/jquery-03-events.pdf), [style methods](reference-sheets/jquery-04-style-methods.pdf), [dom traversing](reference-sheets/jquery-05-dom-traversing.pdf)
+- w3schools [DOM](https://www.w3schools.com/js/js_htmldom.asp), [HTML DOM](https://www.w3schools.com/js/js_htmldom_html.asp), [jQuery intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [event methods](https://www.w3schools.com/jquery/jquery_events.asp)
+- w3schools [Javascript practice](https://www.w3schools.com/js/exercise_js.asp)
