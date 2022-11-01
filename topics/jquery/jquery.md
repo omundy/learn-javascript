@@ -74,7 +74,6 @@ Students who complete this module will be able to:
 
 ---
 
-
 ## What is jquery
 
 jquery is a Javascript library that reduces the complexity of working with HTML.
@@ -135,8 +134,10 @@ The [google hosted library](https://developers.google.com/speed/libraries#jquery
 For the same reason you add Javascript after the page elements have loaded, you can only use jquery functions ***after you import the library***.
 
 
----
 
+
+
+---
 
 ## jQuery syntax
 
@@ -153,8 +154,9 @@ $(selector).action()
 1. The `action()` to be performed on the element(s)
 
 
----
 
+
+---
 
 ## jQuery examples
 
@@ -252,8 +254,10 @@ $(document).ready(function(){
 
 [More event examples](../../topics/jquery/demos/jquery-events.html)
 
----
 
+
+
+---
 
 ## Method chaining
 

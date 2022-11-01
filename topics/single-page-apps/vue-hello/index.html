@@ -146,11 +146,13 @@
 		// give each todo a unique id
 		let id = 0
 		// create the app using vue
+		// This method uses the Vue.js v.3 Options API
 		import {
 			createApp
 		} from 'vue'
-		// the createApp function
-		createApp({
+
+		// pass the root component using the createApp function
+		const app = createApp({
 			// component options, // declare some reactive state here.
 			data() {
 				// return all the data components
@@ -212,8 +214,11 @@
 						this.$refs.p.textContent = "Count is odd";
 				}
 			},
-		}).mount('#app')
-		// the ^ id where the app will be mounted
+		});
+
+		// Make sure to apply all app configurations before mounting the app!
+		// mount the app to the page using the id
+		app.mount('#app')
 	</script>
 
 

@@ -352,7 +352,7 @@ people.forEach(function(item, index){
 ```
 
 <script>
-let colors = [
+let subtractiveColors = [
 	{ "color":"red", "rgb": [255,0,0] },
 	{ "color":"orange", "rgb": [255,165,0] },
 	{ "color":"yellow", "rgb": [255,255,0] },
@@ -362,7 +362,7 @@ let colors = [
 	{ "color":"violet", "rgb": [238,130,238] },
 ];
 console.log("JSON output to string");
-colors.forEach(function(item, index){
+subtractiveColors.forEach(function(item, index){
 	console.log(JSON.stringify(item));
 });
 </script>

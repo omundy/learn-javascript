@@ -6,7 +6,7 @@
 
 # Single Page Applications
 
-A simple introduction
+Introduction to Vue.js
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="single-page-apps.md">md</a></span>
 
@@ -153,7 +153,7 @@ var pages = {
 
 ## Simple SPA Chart - Update a section of the page
 
-This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/index.html) uses "views", or small sections of html pages
+This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/index.html) loads html pages for different "views"
 
 ```html
 <!-- contents of intro.html -->
@@ -166,8 +166,9 @@ This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/
 $("#main").load('views/intro.html');
 ```
 
-Note: Since this page is changing by loading remote content, it (like most SPAs) must by run using a web server. How do you know when you are running on a server? Look at the protocol. If it is a `file://` then it is not. Look for `http://` or `https://` to see that your serving over the http protocol. See instructions to run a server on the next slide...
-
+<div>
+Note: In order for Javascript to load remote content (most SPAs) it must be running on a web server using the <b>http protocol</b>, like <code>http://</code> or <code>https://</code>. If your url begins with <code>file://</code> then it won't work. See instructions on the next slide to run a server...
+</div>
 
 
 ---
@@ -179,11 +180,11 @@ Note: Since this page is changing by loading remote content, it (like most SPAs)
 
 To test the example...
 
-1. Install Node using the [installer](https://nodejs.org/en/) or [Homebrew](https://formulae.brew.sh/formula/node) (Mac)
+1. Install Node using the [installer](https://nodejs.org/en/) or [Homebrew](https://formulae.brew.sh/formula/node) (Mac) or [Scoop](https://scoop.sh/) (Windows)
 1. Install [serve package](https://www.npmjs.com/package/serve) globally:
 	`npm install --global serve`
 1. Change to your project directory `cd <directory>` and run `serve` to start the server.
-1. Or specify which folder you want to serve:
+1. Or specify the folder you want to serve:
 	`serve <directory>`
 
 </div>
@@ -193,6 +194,13 @@ To test the example...
 
 </div>
 </div>
+
+
+
+
+
+
+
 
 
 ---
@@ -225,9 +233,15 @@ Other simple examples that manage state / change views:
 <div class="col">
 
 ```html
+<div id="app">
+	<h1>{{ title }}</h1>
+	<button @click="count++">
+		Count is: {{ count }}
+	</button>
+</div>
 <script type="module">
 import { createApp } from 'vue'
-
+// create and mount the app
 createApp({
 	data() {
 		return {
@@ -237,16 +251,79 @@ createApp({
 	}
 }).mount('#app')
 </script>
-<div id="app">
-	<h1>{{ title }}</h1>
-	<button @click="count++">
-		Count is: {{ count }}
-	</button>
-</div>
 ```
 
 </div>
 </div>
+
+
+
+
+
+
+
+
+---
+
+## Vue.js Components
+
+- The Vue.js component-based architecture means all content and functionality is stored inside external files, or **components**.
+- The application imports components as needed, making them easy to reuse (e.g. a footer across your website is always the same).
+- A typical architecture (for a todo application) might look <a href="https://vuejs.org/guide/essentials/application.html#the-root-component" target="_blank">like</a>:
+
+```text
+App (root component)
+├─ TodoList
+│  └─ TodoItem
+│     ├─ TodoDeleteButton
+│     └─ TodoEditButton
+└─ TodoFooter
+   ├─ TodoClearButton
+   └─ TodoStatistics
+```
+
+
+
+
+
+---
+
+## Vue.js vs. jQuery
+
+1. All JS apps need to change the DOM (to update/insert/remove elements and content)...
+	1. Vue.js updates the DOM automatically to reflect the state of variables in the app.
+	1. jQuery (and Vanilla Js) manipulate the DOM directly, leaving it up to the programmer to manage and keep the state of the application consistent with the DOM.
+1. Don't use them together: If you manipulate the DOM with jQuery then Vue.js won’t be informed that something was changed externally, so can't manage state automatically.
+
+
+Action | Vue.js | jQuery or Vanilla JS
+--- | --- | ---
+Selection of elements | Automatic | `$(selector)` (required)
+Change the DOM | Automatic "Reactive" | `$(selector).html()` required
+Component architecture | [Built-in (default)](https://vuejs.org/guide/essentials/application.html#the-root-component) | Custom code required
+Text Interpolation | `{{ }}` [template syntax](https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation) | `"string " + value` required
+Update attributes | `:id` [attribute binding](https://vuejs.org/guide/essentials/template-syntax.html#attribute-bindings) | `$(selector).css({...})`
+
+
+[jQuery vs Vue.js](https://medium.com/nerd-for-tech/jquery-vs-vue-js-aaa69744ebef)
+
+
+
+
+
+---
+
+## Ways to use Vue.js
+
+Vue.js is quite flexible in how you implement it within a project. These are listed from simple to advanced concepts.
+
+1. Single page  Mixing static content with Vue.js can be done easily.
+1. [Single-File Components (SFC)](https://vuejs.org/guide/scaling-up/sfc.html) encapsulate the template (`HTML`), logic (`JS`), and styling (`CSS`) of a Vue component in a single file.
+	1. Pros: Co-location and coupling of concerns, component-scoped CSS
+	1. Cons: SFCs require a build step
+1. [Server-Side Rendering (SSR)](https://vuejs.org/guide/scaling-up/ssr.html) where Vue.js can be used with Node to create strings on the server.
+1. [Static Site Generation (SSG)](https://vuejs.org/guide/scaling-up/ssr.html#ssr-vs-ssg) like SSR but can be served as static pages.
+
 
 
 

@@ -1171,11 +1171,6 @@ div#p > svg > foreignObject > section img[data-marp-twemoji]{
 /* @theme owen */
 /* Styles for slides only, they don't work on github.com */
 
-
-/* @import "../../assets/libs/prism/1.25.0/prism.min.css";
-@import "../../assets/libs/prism/themes/prism-vsc-dark-plus.css"; */
-
-
 /* PROJECT-SPECIFIC
 ***********************************************************/
 /* TEXT
@@ -1248,32 +1243,21 @@ div#p > svg > foreignObject > section a[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     margin: 0 3px 0 5px;
 }
-
-
-
+/* fix line height in code samples  */
 div#p > svg > foreignObject > section :is(pre, marp-pre) {
 	line-height: 130%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] {
   columns: initial !important;
   display: block !important;
   padding: 0 !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after {
   display: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
   all: initial;
   display: flex;
@@ -1282,27 +1266,15 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   overflow: hidden;
   width: 100%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"] {
   flex-direction: column;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container] {
   width: var(--marpit-advanced-background-split, 50%);
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container] {
   margin-left: calc(100% - var(--marpit-advanced-background-split, 50%));
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure {
   all: initial;
   background-position: center;
@@ -1311,23 +1283,14 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   flex: auto;
   margin: 0;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"],
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"] {
   background: transparent !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"],
 div#p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"] {
   pointer-events: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
@@ -1365,8 +1328,8 @@ brew install nvm
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">/bin/bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span>
 brew install node
 </code></pre>
-<p><strong>Windows</strong> - Install <a href="https://chocolatey.org/">chocolatey</a> (Windows package manager) using <a href="https://www.youtube.com/watch?v=KTUO1g_Btfk&amp;ab_channel=SonarSystems">these instructions</a></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">choco install nodejs
+<p><strong>Windows</strong> - Install <a href="https://scoop.sh/">Scoop</a> (Windows package manager)</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">scoop install nodejs
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="7" style="--paginate:true;--theme:owen;">
@@ -1404,6 +1367,7 @@ npm install -g nodemon     <span class="hljs-comment"># install nodemon globally
 brew upgrade
 brew install nvm
 </code></pre>
+<p>See <a href="https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows">these instructions for NVM, Node, NPM on Windows</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="7" style="--paginate:true;--theme:owen;">
 <h2>How to install Node (versions) using NVM</h2>

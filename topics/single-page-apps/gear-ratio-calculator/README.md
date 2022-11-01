@@ -19,4 +19,4 @@ https://www.youtube.com/watch?v=Jyj-4LtyYWU&t=525s&ab_channel=DirtWireTV
 1. You can look at the console, but not the source code.
 
 
-1. [Lottery v.1]
+1. Coming soon

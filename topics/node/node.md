@@ -55,10 +55,10 @@ How to install node and npm on your machine. There are three ways, I recommend #
 brew install node
 ```
 
-**Windows** - Install [chocolatey](https://chocolatey.org/) (Windows package manager) using [these instructions](https://www.youtube.com/watch?v=KTUO1g_Btfk&ab_channel=SonarSystems)
+**Windows** - Install [Scoop](https://scoop.sh/) (Windows package manager)
 
 ```bash
-choco install nodejs
+scoop install nodejs
 ```
 
 
@@ -109,6 +109,8 @@ brew update
 brew upgrade
 brew install nvm
 ```
+
+See [these instructions for NVM, Node, NPM on Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
 
 
 

@@ -1171,11 +1171,6 @@ div#p > svg > foreignObject > section img[data-marp-twemoji]{
 /* @theme owen */
 /* Styles for slides only, they don't work on github.com */
 
-
-/* @import "../../assets/libs/prism/1.25.0/prism.min.css";
-@import "../../assets/libs/prism/themes/prism-vsc-dark-plus.css"; */
-
-
 /* PROJECT-SPECIFIC
 ***********************************************************/
 /* TEXT
@@ -1248,32 +1243,21 @@ div#p > svg > foreignObject > section a[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     margin: 0 3px 0 5px;
 }
-
-
-
+/* fix line height in code samples  */
 div#p > svg > foreignObject > section :is(pre, marp-pre) {
 	line-height: 130%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] {
   columns: initial !important;
   display: block !important;
   padding: 0 !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after {
   display: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
   all: initial;
   display: flex;
@@ -1282,27 +1266,15 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   overflow: hidden;
   width: 100%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"] {
   flex-direction: column;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container] {
   width: var(--marpit-advanced-background-split, 50%);
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container] {
   margin-left: calc(100% - var(--marpit-advanced-background-split, 50%));
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure {
   all: initial;
   background-position: center;
@@ -1311,23 +1283,14 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   flex: auto;
   margin: 0;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"],
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"] {
   background: transparent !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"],
 div#p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"] {
   pointer-events: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
@@ -1564,7 +1527,7 @@ people.<span class="hljs-title function_">forEach</span>(<span class="hljs-keywo
 <span class="hljs-punctuation">]</span>
 </code></pre>
 <script>
-let colors = [
+let subtractiveColors = [
 	{ "color":"red", "rgb": [255,0,0] },
 	{ "color":"orange", "rgb": [255,165,0] },
 	{ "color":"yellow", "rgb": [255,255,0] },
@@ -1574,7 +1537,7 @@ let colors = [
 	{ "color":"violet", "rgb": [238,130,238] },
 ];
 console.log("JSON output to string");
-colors.forEach(function(item, index){
+subtractiveColors.forEach(function(item, index){
 	console.log(JSON.stringify(item));
 });
 </script>

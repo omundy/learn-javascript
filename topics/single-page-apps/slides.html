@@ -1171,11 +1171,6 @@ div#p > svg > foreignObject > section img[data-marp-twemoji]{
 /* @theme owen */
 /* Styles for slides only, they don't work on github.com */
 
-
-/* @import "../../assets/libs/prism/1.25.0/prism.min.css";
-@import "../../assets/libs/prism/themes/prism-vsc-dark-plus.css"; */
-
-
 /* PROJECT-SPECIFIC
 ***********************************************************/
 /* TEXT
@@ -1248,32 +1243,21 @@ div#p > svg > foreignObject > section a[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     margin: 0 3px 0 5px;
 }
-
-
-
+/* fix line height in code samples  */
 div#p > svg > foreignObject > section :is(pre, marp-pre) {
 	line-height: 130%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] {
   columns: initial !important;
   display: block !important;
   padding: 0 !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before,
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after {
   display: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
   all: initial;
   display: flex;
@@ -1282,27 +1266,15 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   overflow: hidden;
   width: 100%;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"] {
   flex-direction: column;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container] {
   width: var(--marpit-advanced-background-split, 50%);
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container] {
   margin-left: calc(100% - var(--marpit-advanced-background-split, 50%));
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure {
   all: initial;
   background-position: center;
@@ -1311,45 +1283,36 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background="backgroun
   flex: auto;
   margin: 0;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="content"],
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"] {
   background: transparent !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"],
 div#p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"] {
   pointer-events: none !important;
 }
-
-
-
 div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
 }
-</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <p>← <a href="../../">Learn Javascript</a></p>
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a></p>
 <h1>Single Page Applications</h1>
-<p>A simple introduction</p>
+<p>Introduction to Vue.js</p>
 <p><span class="slides-small"><a href="slides.html">slides</a> | <a href="single-page-apps.md">md</a></span></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Traditional websites</h2>
 <p>In a traditional approach to loading new content, users click on a hyperlink, leave the current page, and the browser loads an <strong>entirely new page</strong> (including all its resources).</p>
 <p><img src="../../assets/img/javascript-spa-traditional-website.png" alt="true" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Single Page Applications</h2>
 <p>A single-page application (SPA) is a web app or website that dynamically rewrites the web page with new data from the server.</p>
 <p><img src="../../assets/img/javascript-spa-single-page-app.png" alt="true" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Benefits</h2>
 <ul>
 <li>The browser doesn’t have to load and re-render a brand new page for each new &quot;view&quot; because data loads asynchronously (in the background) to give users new content <strong>faster</strong>.</li>
@@ -1357,7 +1320,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <li>A web app with functionality that runs in the client is <strong>easier</strong> to host (you don't need a PHP server for app functions).</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Considerations</h2>
 <p>The main cons with SPAs are related to the fact they load data without changing the URL.</p>
 <ul>
@@ -1367,7 +1330,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <li>Site analytics have to be handled specific to the solution.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f449.svg" data-marp-twemoji=""/> Can you spot an SPA?</h2>
 <p>See if you can spot an SPA in the wild.</p>
 <ol>
@@ -1381,7 +1344,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <li>See the next section for ways to test the site...</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2><img class="emoji" draggable="false" alt="👉" src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f449.svg" data-marp-twemoji=""/> Can you spot an SPA?</h2>
 <div class="twocolumn">
 <div class="col">
@@ -1401,7 +1364,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Frameworks</h2>
 <p>There are several frameworks for creating SPAs.</p>
 <ul>
@@ -1412,7 +1375,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <p>Popular SPAs like Facebook and Google docs are complex to create and manage. That is why these frameworks are often developed to try to speed up their own projects.</p>
 <p>Each of these libraries <a href="https://www.codeinwp.com/blog/angular-vs-vue-vs-react/" target="_blank">have benefits and drawbacks</a>. Angular and React are the most popular, but Vue is the easiest to learn.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Simple SPA - Update specific text</h2>
 <ul>
 <li>It is quite easy to tap into the benefits of an SPA with your own, simple solution.</li>
@@ -1431,28 +1394,30 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 };
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Simple SPA Chart - Update a section of the page</h2>
-<p>This <a href="../../topics/single-page-apps/simple-spa-chart/solution/index.html">simple SPA chart</a> uses &quot;views&quot;, or small sections of html pages</p>
+<p>This <a href="../../topics/single-page-apps/simple-spa-chart/solution/index.html">simple SPA chart</a> loads html pages for different &quot;views&quot;</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- contents of intro.html --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Intro<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre>
 <p>...which are loaded dynamically into <code>div#main</code> of index.html.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;#main&quot;</span>).<span class="hljs-title function_">load</span>(<span class="hljs-string">&#x27;views/intro.html&#x27;</span>);
 </code></pre>
-<p>Note: Since this page is changing by loading remote content, it (like most SPAs) must by run using a web server. How do you know when you are running on a server? Look at the protocol. If it is a <code>file://</code> then it is not. Look for <code>http://</code> or <code>https://</code> to see that your serving over the http protocol. See instructions to run a server on the next slide...</p>
+<div>
+Note: In order for Javascript to load remote content (most SPAs) it must be running on a web server using the <b>http protocol</b>, like <code>http://</code> or <code>https://</code>. If your url begins with <code>file://</code> then it won't work. See instructions on the next slide to run a server...
+</div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>How to start a web server</h2>
 <div class="twocolumn2x1">
 <div class="col">
 <p>To test the example...</p>
 <ol>
-<li>Install Node using the <a href="https://nodejs.org/en/">installer</a> or <a href="https://formulae.brew.sh/formula/node">Homebrew</a> (Mac)</li>
+<li>Install Node using the <a href="https://nodejs.org/en/">installer</a> or <a href="https://formulae.brew.sh/formula/node">Homebrew</a> (Mac) or <a href="https://scoop.sh/">Scoop</a> (Windows)</li>
 <li>Install <a href="https://www.npmjs.com/package/serve">serve package</a> globally:<br />
 <code>npm install --global serve</code></li>
 <li>Change to your project directory <code>cd &lt;directory&gt;</code> and run <code>serve</code> to start the server.</li>
-<li>Or specify which folder you want to serve:<br />
+<li>Or specify the folder you want to serve:<br />
 <code>serve &lt;directory&gt;</code></li>
 </ol>
 </div>
@@ -1461,7 +1426,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>More examples</h2>
 <p>Other simple examples that manage state / change views:</p>
 <ul>
@@ -1471,7 +1436,7 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <li><a href="../../topics/single-page-apps/quiz-simple/index.html">quiz-simple</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Vue.js</h2>
 <div class="twocolumn">
 <div class="col">
@@ -1483,9 +1448,15 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <p><a href="vue-hello/index.html" target="_blank">Open the Vue demo</a></p>
 </div>
 <div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;count++&quot;</span>&gt;</span>
+		Count is: {{ count }}
+	<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript">
 <span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
-
+<span class="hljs-comment">// create and mount the app</span>
 <span class="hljs-title function_">createApp</span>({
 	<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) {
 		<span class="hljs-keyword">return</span> {
@@ -1495,24 +1466,99 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 	}
 }).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;count++&quot;</span>&gt;</span>
-		Count is: {{ count }}
-	<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" data-marpit-pagination="14" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" data-marpit-pagination="14" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+<h2>Vue.js Components</h2>
+<ul>
+<li>The Vue.js component-based architecture means all content and functionality is stored inside external files, or <strong>components</strong>.</li>
+<li>The application imports components as needed, making them easy to reuse (e.g. a footer across your website is always the same).</li>
+<li>A typical architecture (for a todo application) might look <a href="https://vuejs.org/guide/essentials/application.html#the-root-component" target="_blank">like</a>:</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-text">App (root component)
+├─ TodoList
+│  └─ TodoItem
+│     ├─ TodoDeleteButton
+│     └─ TodoEditButton
+└─ TodoFooter
+   ├─ TodoClearButton
+   └─ TodoStatistics
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" data-marpit-pagination="15" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+<h2>Vue.js vs. jQuery</h2>
+<ol>
+<li>All JS apps need to change the DOM (to update/insert/remove elements and content)...
+<ol>
+<li>Vue.js updates the DOM automatically to reflect the state of variables in the app.</li>
+<li>jQuery (and Vanilla Js) manipulate the DOM directly, leaving it up to the programmer to manage and keep the state of the application consistent with the DOM.</li>
+</ol>
+</li>
+<li>Don't use them together: If you manipulate the DOM with jQuery then Vue.js won’t be informed that something was changed externally, so can't manage state automatically.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Vue.js</th>
+<th>jQuery or Vanilla JS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selection of elements</td>
+<td>Automatic</td>
+<td><code>$(selector)</code> (required)</td>
+</tr>
+<tr>
+<td>Change the DOM</td>
+<td>Automatic &quot;Reactive&quot;</td>
+<td><code>$(selector).html()</code> required</td>
+</tr>
+<tr>
+<td>Component architecture</td>
+<td><a href="https://vuejs.org/guide/essentials/application.html#the-root-component">Built-in (default)</a></td>
+<td>Custom code required</td>
+</tr>
+<tr>
+<td>Text Interpolation</td>
+<td><code>{{ }}</code> <a href="https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation">template syntax</a></td>
+<td><code>&quot;string &quot; + value</code> required</td>
+</tr>
+<tr>
+<td>Update attributes</td>
+<td><code>:id</code> <a href="https://vuejs.org/guide/essentials/template-syntax.html#attribute-bindings">attribute binding</a></td>
+<td><code>$(selector).css({...})</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://medium.com/nerd-for-tech/jquery-vs-vue-js-aaa69744ebef">jQuery vs Vue.js</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="owen" data-marpit-pagination="16" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
+<h2>Ways to use Vue.js</h2>
+<p>Vue.js is quite flexible in how you implement it within a project. These are listed from simple to advanced concepts.</p>
+<ol>
+<li>Single page  Mixing static content with Vue.js can be done easily.</li>
+<li><a href="https://vuejs.org/guide/scaling-up/sfc.html">Single-File Components (SFC)</a> encapsulate the template (<code>HTML</code>), logic (<code>JS</code>), and styling (<code>CSS</code>) of a Vue component in a single file.
+<ol>
+<li>Pros: Co-location and coupling of concerns, component-scoped CSS</li>
+<li>Cons: SFCs require a build step</li>
+</ol>
+</li>
+<li><a href="https://vuejs.org/guide/scaling-up/ssr.html">Server-Side Rendering (SSR)</a> where Vue.js can be used with Node to create strings on the server.</li>
+<li><a href="https://vuejs.org/guide/scaling-up/ssr.html#ssr-vs-ssg">Static Site Generation (SSG)</a> like SSR but can be served as static pages.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="owen" data-marpit-pagination="17" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>Next steps</h2>
 <ol>
 <li>Complete the <a href="https://vuejs.org/tutorial">Vue.js tutorial</a></li>
 <li>Start working on homework listed in the schedule.</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" data-marpit-pagination="15" data-marpit-pagination-total="15" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="owen" data-marpit-pagination="18" data-marpit-pagination-total="18" style="--paginate:true;--theme:owen;">
 <h2>References</h2>
 <ul>
 <li><a href="https://www.itechart.com/blog/pros-cons-of-single-page-applications/">The pros and cons of single page applications (SPAs)</a></li>
