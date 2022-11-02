@@ -26,3 +26,5 @@ This exercise illustrates variables, conditionals, functions, event listeners, a
 1. [Lottery v.3](https://omundy.github.io/learn-javascript/topics/games/the-lottery/the-lottery-v3.html)
 	- Update elements in the page via the [DOM](../../dom/slides.html) Javascript
 	- Display all results within the HTML of the page
+1. Lottery v.4
+	- Use `fetch()` to get data from an API to somehow "seed" the randomness in your lottery game.

@@ -21,7 +21,7 @@ Presentation comments ...
 
 
 
-
+<!-- 
 ---
 
 ## Install Node & NPM
@@ -32,8 +32,8 @@ Presentation comments ...
 ```bash
 brew update
 brew upgrade
-brew install nvm
-```
+brew install node
+``` -->
 
 
 
