@@ -1498,7 +1498,7 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource.
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" data-marpit-pagination="13" data-marpit-pagination-total="30" style="--paginate:true;--theme:owen;">
 <h2>Load data with Fetch</h2>
 <ul>
-<li>In order to use the data that fetch returns we must deserialize the <code>response.body</code> with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/json"><code>response.json()</code></a></li>
+<li>In order to use the data that fetch returns we must deserialize the <code>response.body</code> with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/json"><code>response.json()</code></a> (see <a href="https://codepen.io/owenmundy/pen/dyKMRBN?editors=0011">demo</a>)</li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-title function_">fetch</span>(<span class="hljs-string">&#x27;https://catfact.ninja/fact&#x27;</span>) <span class="hljs-comment">// request external resource</span>
     .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {

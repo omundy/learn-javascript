@@ -304,7 +304,7 @@ fetch('https://catfact.ninja/fact')
 
 ## Load data with Fetch
 
-- In order to use the data that fetch returns we must deserialize the `response.body` with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json)
+- In order to use the data that fetch returns we must deserialize the `response.body` with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json) (see [demo](https://codepen.io/owenmundy/pen/dyKMRBN?editors=0011))
 
 ```js
 fetch('https://catfact.ninja/fact') // request external resource
