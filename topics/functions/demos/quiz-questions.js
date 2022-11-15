@@ -1,7 +1,6 @@
-
-
-
-
+/**
+ *	Example code from quiz questions in Functions / Scope
+ */
 
 
 

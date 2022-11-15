@@ -19,80 +19,113 @@ Presentation comments ...
 
 ## About Node
 
-
-
-<!-- 
----
-
-## Install Node & NPM
-
-1. Install [Homebrew](https://brew.sh/)
-2. Update then install NVM (Node Version Manager)
-
-```bash
-brew update
-brew upgrade
-brew install node
-``` -->
-
-
+- Node.js is Javascript for the command line.
+- With Node you can build servers, connect to databases, create APIs, full stack websites, standalone software, and much more.
+- NPM (Node Package Manager) lets you install / manager open source software packages you can include in your projects.
 
 
 ---
 
 ## Node Installation
 
-How to install node and npm on your machine. There are three ways, I recommend #2
+There are several ways to install Node (which includes NPM) on your machine (ordered easiest to hardest)
 
-1. Use an [installer via node website](https://nodejs.org/en/download/). **Not recommended** because it is difficult to upgrade.
-1. Installing using a system package manager (below) gives you flexibility to update or change versions later.
-1. Installing using [nvm](https://github.com/nvm-sh/nvm) is the most flexible method but potentially adds complexity for new users.
+1. Use an [installer via node website](https://nodejs.org/en/download/) (fastest, but difficult to upgrade).
+1. Use a system package manager like Homebrew or Scoop (easy to upgrade)
+1. Use [nvm](https://github.com/nvm-sh/nvm) (is the most flexible method but potentially adds complexity for new users).
 
-**Mac** - Install [homebrew](https://brew.sh/) (Mac package manager), then [node](https://formulae.brew.sh/formula/node)
+
+
+
+
+
+---
+
+## Install Node using Homebrew (Mac)
+
+1. Install [Homebrew](https://brew.sh/) (Mac package manager) using their instructions
+2. Install [Node](https://formulae.brew.sh/formula/node)
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install node
 ```
 
-**Windows** - Install [Scoop](https://scoop.sh/) (Windows package manager)
+
+---
+
+## Install Node & NPM using Scoop (Windows)
+
+1. Install [Scoop](https://scoop.sh/) (Windows package manager) using their instructions
+2. Install [Node](https://scoop.sh/#/apps?q=nodejs&s=0&d=1&o=true)
 
 ```bash
 scoop install nodejs
 ```
 
 
+
+
+
 ---
 
-## After node is installed
+## Confirm your Node version
 
 ```bash
 node -v                    # check node version
 npm -v                     # check npm version
-npm install -g nodemon     # install nodemon globally, auto-restart projects on file change
 ```
 
 
-- Lecture: [DIG 245 Review](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_58), [Web Applications](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_22), [Node Introduction](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_27), [Node Installation](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_236), [Asynchronous Programming](https://docs.google.com/document/d/1-vxKtmWfCSOVyUeqG3tcw-lry6aBttONk6UPF2PBOzI/edit#slide=id.gafb807d421_0_247)
-- Demo: Install node, confirm version #
+---
 
-#### Homework
+## Install Nodemon
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/):
-	- Ch1 Introducing Express (1-9)
-	- Ch2 Getting Started with Node (11-20)
+- Nodemon will automatically restart your node scripts when you save your file.
 
-#### Review
-- w3schools [nodejs](https://www.w3schools.com/nodejs/default.asp), [intro](https://www.w3schools.com/nodejs/default.asp), [command line](https://www.w3schools.com/nodejs/nodejs_get_started.asp), [npm](https://www.w3schools.com/nodejs/nodejs_npm.asp)
-
+```bash
+npm install -g nodemon     # install a package globally
+nodemon index.js # run your node script, restarting for each save
+```
 
 
 
+## Next Steps
+
+Check out the sample projects using Node/Express and other tools:
+
+- [Sample Node/Express Template](https://github.com/omundy/sample-node-express-template)
+- [sample-node-express-site](https://github.com/omundy/sample-node-express-site) - Node/Express + Handlebars
+- [Node/Express Username Generator](https://github.com/omundy/sample-node-express-username-generator)
+[Node/Express + Leaflet](https://github.com/omundy/sample-node-osm-leaflet)
+- [Async Javascript Examples](https://github.com/omundy/sample-node-async)
+- [Sample Node Tools 🦋](https://github.com/omundy/sample-node-tools)
+- [Sample Node Proxy Server](https://github.com/omundy/sample-node-proxy-server)
+- [Use the Zotero API](https://github.com/omundy/sample-node-zotero-api)
+
+
+---
+
+## References
+
+1. [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch1 Introducing Express (1-9) and Ch2 Getting Started with Node (11-20)
+1. w3schools [nodejs](https://www.w3schools.com/nodejs/default.asp), [intro](https://www.w3schools.com/nodejs/default.asp), [command line](https://www.w3schools.com/nodejs/nodejs_get_started.asp), [npm](https://www.w3schools.com/nodejs/nodejs_npm.asp)
 
 
 
 
 
+
+
+
+
+
+
+---
+
+## Advanced Node Installation
+
+- Using NVM
+- Managing NPM packages
 
 
 ---
@@ -111,10 +144,6 @@ brew install nvm
 ```
 
 See [these instructions for NVM, Node, NPM on Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
-
-
-
-
 
 
 ---
@@ -138,8 +167,7 @@ nvm use <NUMBER>
 ```
 
 
-
-
+---
 
 ## How to ... NVM
 
@@ -158,7 +186,7 @@ nvm install-latest-npm
 
 
 
-
+---
 
 ## How to upgrade NPM packages
 
