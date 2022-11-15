@@ -24,7 +24,7 @@ fs.readFile(filename, 'utf8', function(err, html) {
 	var urlArr = [...html.matchAll(/"text">(.*)<span/gi)];
 
 	// loop through the object returned
-	for (let i = 0; i < titleArr.length; i++) {
+	for (let i = 0; i < titleArr.length; i++) { 
 		console.log(titleArr[i][1]);
 	}
 	for (let i = 0; i < urlArr.length; i++) {
