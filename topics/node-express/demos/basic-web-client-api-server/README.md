@@ -31,3 +31,11 @@ nodemon index.js
 5. Go to url (that serves pages inside /public directory)
 
 http://localhost:3000/
+
+
+
+## Notes
+
+- Uses [randomuser.me](https://randomuser.me/) API just to illustrate getting remote daa
+- See [Express docs](https://expressjs.com/en/starter/hello-world.html) for more on [routing](https://expressjs.com/en/guide/routing.html), [params]()https://expressjs.com/en/5x/api.html#app.param), [static files](https://expressjs.com/en/starter/static-files.html)
+- [node-fetch](https://www.npmjs.com/package/node-fetch) uses v2
