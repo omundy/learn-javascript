@@ -10,7 +10,7 @@
 
 ## Instructions
 
-1. Create `index.js`, `public/index.html`
+1. Copy `index.js` and `public/index.html` to your project directory
 2. Open the terminal and navigate to the directory with `index.js`
 3. Install these packages (run these in the Terminal)
 
