@@ -227,7 +227,7 @@ Other simple examples that manage state / change views:
 - **Declarative Rendering** Vue extends standard HTML with a template syntax `{{ }}` to describe output from your program.
 - **Reactivity** Vue automatically tracks and updates the DOM when your program state changes.
 
-<a href="vue-hello/index.html" target="_blank">Open the Vue demo</a>
+<a href="vue-hello/demo.html" target="_blank">Open the Vue demo</a>
 
 </div>
 <div class="col">
@@ -324,6 +324,13 @@ Vue.js is quite flexible in how you implement it within a project. These are lis
 1. [Server-Side Rendering (SSR)](https://vuejs.org/guide/scaling-up/ssr.html) where Vue.js can be used with Node to create strings on the server.
 1. [Static Site Generation (SSG)](https://vuejs.org/guide/scaling-up/ssr.html#ssr-vs-ssg) like SSR but can be served as static pages.
 
+
+
+
+
+---
+
+## React
 
 
 
