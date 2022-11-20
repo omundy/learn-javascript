@@ -28,7 +28,7 @@ Presentation comments ...
 
 ## Node Installation
 
-There are several ways to install Node (which includes NPM) on your machine (ordered easiest to hardest)
+There are several ways to install Node (which includes NPM) on your machine (starting with the easiest)
 
 1. Use an [installer via node website](https://nodejs.org/en/download/) (fastest, but difficult to upgrade).
 1. Use a system package manager like Homebrew or Scoop (easy to upgrade)
@@ -41,7 +41,7 @@ There are several ways to install Node (which includes NPM) on your machine (ord
 
 ---
 
-## Install Node using Homebrew (Mac)
+## 👉 Install Node using Homebrew (Mac)
 
 1. Install [Homebrew](https://brew.sh/) (Mac package manager) using their instructions
 2. Install [Node](https://formulae.brew.sh/formula/node)
@@ -53,7 +53,7 @@ brew install node
 
 ---
 
-## Install Node & NPM using Scoop (Windows)
+## 👉 Install Node & NPM using Scoop (Windows)
 
 1. Install [Scoop](https://scoop.sh/) (Windows package manager) using their instructions
 2. Install [Node](https://scoop.sh/#/apps?q=nodejs&s=0&d=1&o=true)
@@ -68,7 +68,9 @@ scoop install nodejs
 
 ---
 
-## Confirm your Node version
+## 👉 Confirm your Node version
+
+Run these to make sure that Node installed correctly:
 
 ```bash
 node -v                    # check node version
@@ -76,22 +78,58 @@ npm -v                     # check npm version
 ```
 
 
+
 ---
 
-## Install Nodemon
+## 👉 Run a script with Node
 
-- Nodemon will automatically restart your node scripts when you save your file.
+Node is just Javascript, so almost any code will run.
+
+1. Create a file on your computer named `index.js` and paste the below code.
+2. Navigate to the folder on the command line
+3. Run the code with `node index.js`
+
+```js
+let greeting = "Hello, from Node";
+console.log(greeting);
+```
+
+
+
+
+---
+
+## 👉 Install Nodemon
+
+- Nodemon will automatically restart your node scripts when you save your file (so you don't have to every time).
 
 ```bash
 npm install -g nodemon     # install a package globally
 nodemon index.js # run your node script, restarting for each save
 ```
 
+To exit from nodemon use `ctl+c`
 
+
+---
+
+## 👉 Basic Demo
+
+Look inside the [basic-node](./basic-node) demo in this tutorial and read through and run the `index.js` file for more on node:
+
+1. Hello, World
+2. Creating a custom module
+3. Writing to a file
+
+
+
+
+
+---
 
 ## Next Steps
 
-Check out the sample projects using Node/Express and other tools:
+Read through [one](https://www.tutorialspoint.com/nodejs/index.htm) of the [many](https://nodejs.dev/en/learn/introduction-to-nodejs/) [tutorials](https://www.guru99.com/node-js-tutorial.html) [online](https://www.tutorialsteacher.com/nodejs) or check out the sample projects using Node/Express and other tools:
 
 - [Sample Node/Express Template](https://github.com/omundy/sample-node-express-template)
 - [sample-node-express-site](https://github.com/omundy/sample-node-express-site) - Node/Express + Handlebars
@@ -101,7 +139,7 @@ Check out the sample projects using Node/Express and other tools:
 - [Sample Node Tools 🦋](https://github.com/omundy/sample-node-tools)
 - [Sample Node Proxy Server](https://github.com/omundy/sample-node-proxy-server)
 - [Use the Zotero API](https://github.com/omundy/sample-node-zotero-api)
-
+- [Intro to web scraping with Node](https://github.com/omundy/sample-node-scrape-parse)
 
 ---
 

@@ -15,6 +15,9 @@ Presentation comments ...
 -->
 
 
+
+
+
 ---
 
 ## About Express
@@ -24,6 +27,8 @@ Presentation comments ...
 ---
 
 
+
+---
 
 # Node Express Part.1
 Introduction to Node and Express
@@ -80,7 +85,7 @@ app.listen(port, () => console.log(
 
 
 
-
+---
 
 ## Testing
 
@@ -105,7 +110,7 @@ app.get('/about', (req, res) => {
 
 
 
-
+---
 
 ## Requests and Templating
 
@@ -137,7 +142,7 @@ app.get ('/api/tours', (req, res) => res.json(tours));
 
 
 
-
+---
 
 ## Forms and Sessions
 
@@ -160,7 +165,7 @@ app.post ( '/api/newsletter-signup', handlers.api.newsletterSignup );
 
 
 
-
+----
 
 ## Middleware and Production
 
@@ -185,7 +190,7 @@ app.use (( req, res, next ) => {
 
 
 
-
+---
 
 ![node logo](assets/img/logos/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logos/logo-express-200w.png)
 
@@ -194,7 +199,7 @@ Using Node, Express for server-side, desktop, and mobile application development
 
 
 
-
+---
 
 ## Express and databases
 
@@ -222,7 +227,7 @@ mongoose.connect ( connectionString );
 
 
 
-
+---
 
 ## Express routes, APIs, JSON
 
@@ -250,7 +255,7 @@ app.get ( '/staff/:name', ( req, res ) => {
 
 
 
-
+---
 
 ## Express SPAs, static content
 
@@ -276,7 +281,7 @@ import React from 'react';
 
 
 
-
+---
 
 ## Express security, APIs
 
@@ -303,7 +308,7 @@ const db = require ( '../db' );
 
 
 
-
+---
 
 ## Express debugging, production
 
