@@ -188,8 +188,97 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 [Why do we need asynchronous code?](https://codepen.io/owenmundy/pen/dyKMRBN?editors=1111)
 [How to wrap fetch() in a function](https://codepen.io/owenmundy/pen/dyKOveX?editors=1011)
 
+```js
+fetch('https://jsonplaceholder.typicode.com/todos')
+	.then(response => response.json())
+	.then(json => {
+		console.log(json);
+	});
+```
 
 
+
+
+
+
+
+
+<!--
+FROM THE OLD REPO, NEED TO DELETE OR INTEGRATE
+
+```js
+// callback example
+function log(answer) {
+	console.log("The answer is " + answer);
+}
+function sum(n1, n2, callback) {
+	// sum n1, n2 and invoke callback function
+	callback(n1 + n2);
+}
+// pass a function as a callback
+sum(5, 5, log);
+
+// promise example
+function waitForPromise(param) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(param);
+		}, 2000);
+	});
+}
+// async function
+async function test() {
+	let str = "";
+	// use await to wait for promise in synchronous code
+	str += await waitForPromise("🤡");
+	console.log(str);
+	str += await waitForPromise(" lurks");
+	console.log(str);
+	str += await waitForPromise(" in the shadows");
+	console.log(str);
+}
+test();
+```
+
+-->
+
+
+
+
+
+
+
+
+
+
+---
+
+## Next steps
+
+1. Explore [./demos](./demos).
+1. Try the [Exercises](#exercises) below.
+1. Start working on homework listed in the schedule.
+1. Continue to the [next lesson](../../).
+
+
+
+---
+
+## Exercises
+
+👉 **Try it out**
+
+1. Ch11 [Tracking the scalpel](https://eloquentjavascript.net/11_async.html#i_UvyahfUnfl), [Building Promise.all](https://eloquentjavascript.net/11_async.html#i_Ug+Dv9Mmsw)
+
+
+
+
+## References
+
+- Codecademy Cheatsheet(s) [promises](reference-sheets/js-12-promises.pdf), [async-await](reference-sheets/js-13-async-await.pdf), [Requests](reference-sheets/js-14-requests.pdf)
+- w3schools [callbacks](https://www.w3schools.com/js/js_callback.asp), [asynchronous](https://www.w3schools.com/js/js_asynchronous.asp), [promises](https://www.w3schools.com/js/js_promise.asp), [async-await](https://www.w3schools.com/js/js_async.asp), [AJAX](https://www.w3schools.com/jquery/jquery_ajax_intro.asp), [jquery get/post](https://www.w3schools.com/jquery/jquery_ajax_get_post.asp), [fetch](https://www.w3schools.com/js/js_api_fetch.asp)
+- [Modern Asynchronous JavaScript with Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
+- Haverbeke: [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
 
 
 

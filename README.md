@@ -25,8 +25,8 @@ An introduction to the language
 1. jquery [slides](topics/jquery/slides.html) | [md](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
 1. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
 
-
-## Examples / Demos
+<details>
+<summary>My Codepen Examples</summary>
 
 - Basics
 	- [Cycle through all RGB values](https://codepen.io/owenmundy/pen/ExEWjXW)
@@ -48,6 +48,31 @@ An introduction to the language
 	- [Add new content to a web page with JS (overlay, setTimeout)](https://codepen.io/owenmundy/pen/eYgajNq)
 Tools
 	- [How to Create Bookmarklets!](https://codepen.io/owenmundy/pen/ZEoBPzZ)
+
+</details>
+
+
+
+
+
+
+## Javascript Part.2
+
+Advanced Javascript topics
+
+8. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
+8. Node & NPM [slides](topics/node/slides.html) | [md](topics/node/node.md) - Introduction to command line Javascript
+8. 📌 Regular Expressions
+8. 📌 Higher-order functions
+8. 📌 Object Oriented Programming
+8. 📌 Errors and Debugging
+8. Modules [slides](topics/modules/slides.html) | [md](topics/modules/modules.md) - How to use modules in Node and the browser
+8. 📌 Node & Express
+8. 📌 Node & Databases
+
+
+
+
 
 
 

@@ -7,24 +7,24 @@ Javascript / Node for data visualization, mapping, browser extensions, desktop a
 
 
 ## Working with Dates and Times
-See [topics-time.md](topics-time.md) to work with time, events, or running code at specific times.
+See [topics/time.md](topics/time.md) to work with time, events, or running code at specific times.
 
 
 
 ## Working with Data
-See [topics-data.md](topics-data.md) to learn how to work with, import, clean, and transform data with Javascript.
+See [topics/data.md](topics/data.md) to learn how to work with, import, clean, and transform data with Javascript.
 
 
 ## Data Visualization
-See [topics-data-visualization.md](topics-data-visualization.md) for information about developing charts and data visualizations with Javascript.
+See [topics/data-visualization.md](topics/data-visualization.md) for information about developing charts and data visualizations with Javascript.
 
 
 ## Browser Extensions
-See [topics-extensions.md](topics-extensions.md) for information about developing browser extensions.
+See [topics/extensions.md](topics/extensions.md) for information about developing browser extensions.
 
 
 ## Mapping
-See [topics-maps.md](topics-maps.md) for information about developing interactive maps with Javascript.
+See [topics/maps.md](topics/maps.md) for information about developing interactive maps with Javascript.
 
 
 

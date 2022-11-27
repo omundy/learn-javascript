@@ -21,7 +21,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 - While there are some exceptions (Codecademy, which I use for homework) I have found most books and websites that teach Javascript too verbose. You could say the material in my project contains the highlights, or essentials, to get up and running with Javascript.
 - The Javascript instruction is only part of what I teach. I pair this with other materials focused on computing, culture, and critical design & technology perspectives. Specifically, I teach Part.1 in DIG 245 Critical Web Design and Part.2 in DIG 345 Radical Software.
-- I believe in hands-on, active learning. I often will have students work on this in pairs, where they gain the knowledge and *experience* running the examples, answering the prompts, etc.  
+- I believe in hands-on, active learning. I often will have students work on this in pairs, where they gain the knowledge and *experience* running the examples, answering the prompts, etc.
 
 
 
@@ -96,7 +96,7 @@ https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.c
 
 ## Credit
 
-Owen Mundy [Learn Javascript](https://github.com/omundy/learn-javascript) 2021.
+Owen Mundy [Learn Javascript](https://github.com/omundy/learn-javascript) 2021–2022.
 
 The slides were generated using https://marp.app/ - details in https://github.com/omundy/learn-computing
 

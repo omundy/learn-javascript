@@ -225,7 +225,7 @@ new Date()
 
 <!-- Variations of this section:
 learn-javascript/topics/introduction.md
-learn-computing/topics-data-types.md
+learn-computing/topics/data-types.md
 -->
 
 ## Expressions
