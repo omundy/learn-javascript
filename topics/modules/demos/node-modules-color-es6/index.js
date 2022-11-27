@@ -1,5 +1,6 @@
-
-// note: run this file with "node index.js" to test 
+/**
+ *	A module example: run with "node index.js"
+ */
 
 let ColorModule = require('./nodeColorModule');
 ColorModule.rand(); // -> "green"

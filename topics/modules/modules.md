@@ -1,100 +1,191 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../README.md)
+← [Learn Javascript](../../)
+
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Javascript Modules
-Tutorials, references, and tips
+
+How to use modules in the browser and node
+
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="modules.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
 
 
-> Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality — wikipedia
+---
+
+## About modules
+
+> In programming, modules are self-contained units of functionality that can be shared and reused across projects. They make our lives as developers easier, as we can use them to augment our applications with functionality that we haven’t had to write ourselves. They also allow us to organize and decouple our code, leading to applications that are easier to understand, debug and maintain.
+
+<div class="caption slides-small">
+	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
+</div>
 
 
+
+
+---
 
 ## The benefits of modularity
 
-Modules are a way to split an application into separate files instead of having all of your application in one file. This concept is also present in other languages with minor differences in syntax and behavior, like C's `include`, Python's `import`, and so on. Modular design makes your application easy to understand, scale, and reuse.
+- Modules are a way to split an application into separate files instead of having all of your application in one file.
+- This concept is also present in other languages with minor differences in syntax and behavior, like C's `include`, Python's `import`, and so on.
+- Modular design makes your application easy to understand, scale, and reuse.
 
 
+
+---
+
+## NPM packages are modules
+
+- NPM is a package repository service that hosts published JS modules. `npm install` will download and install packages from the repository.
+- The npm cli puts all the downloaded modules in a `node_modules` directory where you ran `npm install`.
+
+
+
+---
 
 ## Modular design in Node
 
-One big difference between Node.js modules and browser JavaScript is how one script's code is accessed from another script's code.
+<div class="twocolumn">
+<div class="col">
 
-- In browser JavaScript, scripts are added via the `<script>` element. When they execute, they all have direct access to the global scope, a "shared space" among all scripts. Any script can freely define/modify/remove/call anything on the global scope.
-- In Node.js, each module has its own scope. A module cannot directly access things defined in another module unless it chooses to expose them. To expose things from a module, they must be assigned to `exports` or `module.exports`. For a module to access another module's `exports` or `module.exports`, it must use `require()`.
+- Node.js and NPM use the <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS (CJS) format</a>, `require` and `module.exports`, to define dependencies and modules.
+
+</div>
+<div class="col">
 
 ```js
-// nodeColorModule.js
-var exports = module.exports = {}; // create exports object
-// vars and methods are private by default unless we export them
-let color = "",
-	palette = ["red", "green", "blue"];
-const log = () => { console.log(`The current color is ${color}`); };
-// expose color var using get and set
-exports.color = function() {
-	return {
-		get color() { return color; },
-		set color(newColor) { color = newColor; }
-	};
-};
-// expose a method
-exports.rand = () => {
-	color = palette[Math.floor(Math.random() * palette.length)];
-	log(color);
+// module.js
+var exports = module.exports = {};
+exports.randomNumber = (max = 1) => {
+	return Math.random() * max;
 };
 
 // index.js
-let ColorModule = require('nodeColorModule'); // import the module
-ColorModule.rand(); // -> "green"
-ColorModule.rand(); // -> "blue"
-ColorModule.color = "pink";
-console.log(ColorModule.color); // -> "pink"
-console.log(ColorModule.palette); // -> undefined
+const modEx = require('./module');
+modEx.randomNumber(); // -> 0.927759
 ```
 
-NPM is a package repository service that hosts published JavaScript modules. `npm install` is a command that lets you download packages from their repository. The npm cli puts all the downloaded modules in a `node_modules` directory where you ran `npm install`.
+<div class="caption slides-small">
+	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
+</div>
+
+</div>
+</div>
 
 
+
+
+---
+
+## Modular design in Javascript (the old way)
+
+<div class="twocolumn">
+<div class="col">
+
+Modular design in the browser is achieved by simply including multiple files with `<script>`. But there are drawbacks:
+- Each new script initiates a new HTTP request (and potential lantency)
+- Dependencies must be managed manually
+- Each script is in the global scope, <a href="https://www.patterns.dev/" target="_blank">requiring creative design patterns</a> to prevent contamination.
+
+</div>
+<div class="col">
+
+```html
+<!-- index.html -->
+<script src="lib1.js"></script>
+<script src="lib2.js"></script>
+<script src="core.js"></script>
+<script>
+console.log('inline code');
+</script>
+```
+
+<div class="caption slides-small">
+	<a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank">Understanding ES6 Modules</a>
+</div>
+
+</div>
+</div>
+
+
+
+
+---
+
+## ES6 Modules + Node
+
+<div class="twocolumn">
+<div class="col">
+
+- As of ES6 (ES2015), JavaScript supports a native module format.
+- It uses the `export` keyword to export a module’s public API and an import keyword to import it.
+
+
+</div>
+<div class="col">
+
+```js
+// lib-module.js
+const hello = "Hello, World!"; // "private" var
+export const sayHello = () => hello;
+
+// main.js
+import { hello } from './lib-module.js';
+console.log(hello()); // -> "Hello, World!"
+```
+
+<div class="caption slides-small">
+	<a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank">Understanding ES6 Modules</a>
+</div>
+
+</div>
+</div>
+
+
+
+
+---
+
+## Private vars
+
+- Each module has its own scope so that vars are not exposed unless the module intentionally uses `exports` (node) or `export` (ES6) to make them accessible. (see previous slide)
+
+
+
+
+
+
+
+
+---
 
 ## Modular design in the browser
 
-Note that `require()`, `module.exports` and `exports` are APIs of a module system that is specific to Node.js. While browsers do not implement this module system, similar benefits can be achieved with the [Revealing Module Pattern](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html).
+- Note that `require()`, `module.exports` and `exports` are APIs of a module system that is specific to Node.js.
+- While browsers do not implement this module system, similar benefits can be achieved with the [Revealing Module Pattern](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html).
 
 
+---
 
 ## Revealing Module Pattern
 
-The Revealing Module Pattern is a design pattern for Javascript *in a web browser* that mimics private and public access modifiers of other languages (e.g. C# or Java). All functions and variables are hidden by default within the scope of an IIFE (immediately-invoked function expression), and exposed as needed.
+- The Revealing Module Pattern is a JS design pattern *in a web browser* that mimics private and public access modifiers of other languages (e.g. C# or Java).
+- All functions and variables are hidden by default within the scope of an IIFE (immediately-invoked function expression), and exposed as needed.
+- See [./demos](./demos) for examples
 
-```js
-// ColorModule.js
-// add a new binding to the window object
-window.ColorModule = (function() {
-	// vars and methods are private by default unless we expose them
-	let color = "",
-		palette = ["red", "green", "blue"];
-	const log = () => { console.log(`The current color is ${color}`); };
-	// this method will be public
-	function rand() {
-		color = palette[Math.floor(Math.random() * palette.length)];
-		log(color);
-	}
-	return {
-		// expose method
-		rand: rand,
-		// expose color var using get and set
-		get color() { return color; },
-		set color(newColor) { color = newColor; }
-	};
-})();
-// index.html -> script src points at above file so we invoke "public" methods
-ColorModule.rand(); // -> "red"
-ColorModule.rand(); // -> "green"
-ColorModule.color = "magenta";
-console.log(ColorModule.color); // -> "magenta"
-console.log(ColorModule.palette); // -> undefined
-```
 
-### References
+
+
+---
+
+## References
+
 - w3schools [JavaScript Object Accessors](https://www.w3schools.com/js/js_object_accessors.asp), [Node.js Modules](https://www.w3schools.com/nodejs/nodejs_modules.asp)
 - Zach Caceres [The Revealing Module Pattern in Javascript](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md)
 - Cheatsheets [Modules](../reference-sheets/js-11-modules.pdf)
