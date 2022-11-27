@@ -188,4 +188,5 @@ console.log(hello()); // -> "Hello, World!"
 
 - w3schools [JavaScript Object Accessors](https://www.w3schools.com/js/js_object_accessors.asp), [Node.js Modules](https://www.w3schools.com/nodejs/nodejs_modules.asp)
 - Zach Caceres [The Revealing Module Pattern in Javascript](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md)
-- Cheatsheets [Modules](../reference-sheets/js-11-modules.pdf)
+- Cheatsheets [Compatibility](../reference-sheets/js-10-compatibility.pdf) and [Modules](../reference-sheets/js-11-modules.pdf)
+- Haverbeke: [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)

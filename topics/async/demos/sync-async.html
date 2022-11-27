@@ -29,7 +29,7 @@
 	<script>
 		// synchronous code
 		function example1(num) {
-			console.log("🐱", num);
+			console.log("🐱 example1()", num);
 		}
 		example1(1);
 		console.log("🐱", 2);
@@ -38,7 +38,7 @@
 		// asynchronous code
 		function example2(num) {
 			setTimeout(function() {
-				console.log("🐨", num);
+				console.log("🐨 example2()", num);
 			}, 1000);
 		}
 		example2(1);

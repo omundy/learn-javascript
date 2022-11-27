@@ -134,8 +134,7 @@ Read through [one](https://www.tutorialspoint.com/nodejs/index.htm) of the [many
 - [Sample Node/Express Template](https://github.com/omundy/sample-node-express-template)
 - [sample-node-express-site](https://github.com/omundy/sample-node-express-site) - Node/Express + Handlebars
 - [Node/Express Username Generator](https://github.com/omundy/sample-node-express-username-generator)
-[Node/Express + Leaflet](https://github.com/omundy/sample-node-osm-leaflet)
-- [Async Javascript Examples](https://github.com/omundy/sample-node-async)
+- [Node/Express + Leaflet](https://github.com/omundy/sample-node-osm-leaflet)
 - [Sample Node Tools 🦋](https://github.com/omundy/sample-node-tools)
 - [Sample Node Proxy Server](https://github.com/omundy/sample-node-proxy-server)
 - [Use the Zotero API](https://github.com/omundy/sample-node-zotero-api)
