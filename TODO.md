@@ -126,6 +126,15 @@ console.log("a regular message");
 console.error("an error message")
 ```
 
+
+## Debugging Node
+
+
+run with `--inspect ` to view debugger in dev tools
+https://nodejs.org/en/docs/guides/debugging-getting-started/#inspector-clients
+
+
+
 - Lecture: [Debugging HTML CSS JS and Networks](https://docs.google.com/presentation/d/1X1sPqk5rhafSDTbg1SEhCLcw0qJz1qZ-pnh0WE4MP1c/edit#slide=id.p)
 - Demo: How to use Dev Tools
 

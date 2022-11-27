@@ -1,14 +1,23 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../README.md)
+← [Learn Javascript](../../)
+
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-node-ltgreen-150w.png"></a>
 
 # Testing
-Tutorials, references, and tips
+
+Unit and integration testing 
+
+<span class="slides-small"><a href="slides.html">slides</a> | <a href="testing.md">md</a></span>
+
+<!--
+Presentation comments ...
+-->
 
 
+---
 
-
-
-## Overview
+## About testing
 
 Software testing automates checking whether code is defect free and that its outcomes match expected requirements. Testing usually involves either [white box testing](https://www.guru99.com/white-box-testing.html), executing one or more parts of the internal code, or [black box testing](https://www.guru99.com/black-box-testing.html), treating the software as a closed system with access to only inputs and outputs to evaluate the overall functionality.
 

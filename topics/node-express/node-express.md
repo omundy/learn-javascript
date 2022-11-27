@@ -24,8 +24,6 @@ Presentation comments ...
 
 
 
----
-
 
 
 ---
@@ -135,9 +133,6 @@ app.get ('/api/tours', (req, res) => res.json(tours));
 	- Ch6 Request and Response (59-72)
 	- Ch7 Templating with Handlebars (73-88)
 
-#### Review
-
-- APIs
 
 
 
@@ -241,9 +236,7 @@ app.get ( '/staff/:name', ( req, res ) => {
 	res.render ( 'staff', info );
 });
 
-
 ```
-
 
 #### Homework
 
@@ -251,7 +244,7 @@ app.get ( '/staff/:name', ( req, res ) => {
 	- Ch14 Routing (173-184)
 	- Ch15 REST APIs and JSON (185-192)
 
-#### Review
+
 
 
 
@@ -268,16 +261,14 @@ import React from 'react';
 ```
 
 
-
 #### Homework
 
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch16 Single-Page Applications (193-212)
 	- Ch17 Static Content (215-221)
 
-#### Review
 
-**Assessment**: Homework review
+
 
 
 
@@ -301,9 +292,8 @@ const db = require ( '../db' );
 	- Ch18 Security (223-248)
 	- Ch19 Third Party APIs (249-263)
 
-#### Review
 
-**Assessment**: Homework review
+
 
 
 
@@ -317,12 +307,6 @@ const db = require ( '../db' );
 ```bash
 node inspect index.js
 ```
-
-<!--
-- Lecture:
-- Demo:
-- Exercise:
--->
 
 #### Homework
 
