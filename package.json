@@ -37,7 +37,11 @@
                     "assets/js/main.js"
                 ]
             },
-            "minifyCSS": false
+            "minifyCSS": false,
+			"emoji": {
+				"shortcode": false,
+				"unicode": false
+			}
         },
         "watch": false
     },
