@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 			},
 			grunt: {
 				files: [
-					'package.json', 'Gruntfile.js', 'topics/*/*.md', 'README.md',
+					'package.json', 'Gruntfile.js', 'build/*', 'topics/*/*.md', 'README.md',
 					'assets/css/*', 'assets/js/*', 'assets/md2html/templates/*'],
 				tasks: ['shell', 'md2html', 'build_slides', 'alldone']
 			},
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 	// see build_slides.sh for more
 	grunt.task.registerTask('build_slides', '', function() {
 		var exec = require('child_process').execSync;
-		var result = exec("./build-tools/build_slides.sh", {
+		var result = exec("./build/build_slides.sh", {
 			encoding: 'utf8'
 		});
 		grunt.log.writeln(result);
