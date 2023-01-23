@@ -1299,8 +1299,8 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <h2>About Node</h2>
 <ul>
 <li>Node.js is Javascript for the command line.</li>
-<li>With Node you can build servers, connect to databases, create APIs, full stack websites, standalone software, and much more.</li>
-<li>NPM (Node Package Manager) lets you install / manager open source software packages you can include in your projects.</li>
+<li>Use Node to create web servers, APIs, database-driven websites, standalone software, and much more.</li>
+<li>It has its own package manager, NPM (Node Package Manager), to install and use open source software packages in your projects.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="16" style="--paginate:true;--theme:owen;">
@@ -1308,9 +1308,10 @@ div#p > svg > foreignObject > section[data-marpit-advanced-background-split] {
 <p>There are several ways to install Node (which includes NPM) on your machine (starting with the easiest)</p>
 <ol>
 <li>Use an <a href="https://nodejs.org/en/download/">installer via node website</a> (fastest, but difficult to upgrade).</li>
-<li>Use a system package manager like Homebrew or Scoop (easy to upgrade)</li>
-<li>Use <a href="https://github.com/nvm-sh/nvm">nvm</a> (is the most flexible method but potentially adds complexity for new users).</li>
+<li>Use a system package manager like Homebrew or Scoop (this makes it easy to upgrade)</li>
+<li>Use <a href="https://github.com/nvm-sh/nvm">nvm</a> (the most flexible method but potentially adds complexity for new users).</li>
 </ol>
+<p>For my students, I recommend #2. Choose your OS and install Node below.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="16" style="--paginate:true;--theme:owen;">
 <h2>👉 Install Node using Homebrew (Mac)</h2>
@@ -1341,9 +1342,9 @@ npm -v                     <span class="hljs-comment"># check npm version</span>
 <h2>👉 Run a script with Node</h2>
 <p>Node is just Javascript, so almost any code will run.</p>
 <ol>
-<li>Create a file on your computer named <code>index.js</code> and paste the below code.</li>
-<li>Navigate to the folder on the command line</li>
-<li>Run the code with <code>node index.js</code></li>
+<li>Create a new folder named: <code>basic-node</code> and drag it into VS Code</li>
+<li>Create a file in this folder named <code>index.js</code> and paste the below code.</li>
+<li>Navigate to the folder on the command line and run the code with <code>node index.js</code></li>
 </ol>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> greeting = <span class="hljs-string">&quot;Hello, from Node&quot;</span>;
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting);
@@ -1351,9 +1352,7 @@ npm -v                     <span class="hljs-comment"># check npm version</span>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="16" style="--paginate:true;--theme:owen;">
 <h2>👉 Install Nodemon</h2>
-<ul>
-<li>Nodemon will automatically restart your node scripts when you save your file (so you don't have to every time).</li>
-</ul>
+<p>Nodemon will automatically restart your node scripts when you save your file (so you don't have to every time).</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">npm install -g nodemon     <span class="hljs-comment"># install a package globally</span>
 nodemon index.js <span class="hljs-comment"># run your node script, restarting for each save</span>
 </code></pre>
@@ -1370,10 +1369,14 @@ nodemon index.js <span class="hljs-comment"># run your node script, restarting f
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="16" style="--paginate:true;--theme:owen;">
 <h2>Next Steps</h2>
-<p>Read through <a href="https://www.tutorialspoint.com/nodejs/index.htm">one</a> of the <a href="https://nodejs.dev/en/learn/introduction-to-nodejs/">many</a> <a href="https://www.guru99.com/node-js-tutorial.html">tutorials</a> <a href="https://www.tutorialsteacher.com/nodejs">online</a> or check out the sample projects using Node/Express and other tools:</p>
+<ol>
+<li>Continue with Node Express Presentation</li>
+<li>Explore tutorials <a href="https://www.tutorialspoint.com/nodejs/index.htm">tutorialspoint</a>, <a href="https://nodejs.dev/en/learn/introduction-to-nodejs/">nodejs.dev</a>, <a href="https://www.guru99.com/node-js-tutorial.html">guru99.com</a>, <a href="https://www.tutorialsteacher.com/nodejs">tutorialsteacher.com</a></li>
+<li>Check out these sample projects using Node/Express and other tools:</li>
+</ol>
 <ul>
-<li><a href="https://github.com/omundy/sample-node-express-template">Sample Node/Express Template</a></li>
-<li><a href="https://github.com/omundy/sample-node-express-site">sample-node-express-site</a> - Node/Express + Handlebars</li>
+<li><a href="https://github.com/omundy/sample-node-express-template">Node/Express Sample Template</a></li>
+<li><a href="https://github.com/omundy/sample-node-express-site">Node/Express Site</a> - Node/Express + Handlebars</li>
 <li><a href="https://github.com/omundy/sample-node-express-username-generator">Node/Express Username Generator</a></li>
 <li><a href="https://github.com/omundy/sample-node-osm-leaflet">Node/Express + Leaflet</a></li>
 <li><a href="https://github.com/omundy/sample-node-tools">Sample Node Tools 🦋</a></li>

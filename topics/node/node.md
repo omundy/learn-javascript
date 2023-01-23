@@ -20,8 +20,8 @@ Presentation comments ...
 ## About Node
 
 - Node.js is Javascript for the command line.
-- With Node you can build servers, connect to databases, create APIs, full stack websites, standalone software, and much more.
-- NPM (Node Package Manager) lets you install / manager open source software packages you can include in your projects.
+- Use Node to create web servers, APIs, database-driven websites, standalone software, and much more.
+- It has its own package manager, NPM (Node Package Manager), to install and use open source software packages in your projects.
 
 
 ---
@@ -31,9 +31,10 @@ Presentation comments ...
 There are several ways to install Node (which includes NPM) on your machine (starting with the easiest)
 
 1. Use an [installer via node website](https://nodejs.org/en/download/) (fastest, but difficult to upgrade).
-1. Use a system package manager like Homebrew or Scoop (easy to upgrade)
-1. Use [nvm](https://github.com/nvm-sh/nvm) (is the most flexible method but potentially adds complexity for new users).
+1. Use a system package manager like Homebrew or Scoop (this makes it easy to upgrade)
+1. Use [nvm](https://github.com/nvm-sh/nvm) (the most flexible method but potentially adds complexity for new users).
 
+For my students, I recommend #2. Choose your OS and install Node below.
 
 
 
@@ -85,9 +86,9 @@ npm -v                     # check npm version
 
 Node is just Javascript, so almost any code will run.
 
-1. Create a file on your computer named `index.js` and paste the below code.
-2. Navigate to the folder on the command line
-3. Run the code with `node index.js`
+1. Create a new folder named: `basic-node` and drag it into VS Code
+1. Create a file in this folder named `index.js` and paste the below code.
+1. Navigate to the folder on the command line and run the code with `node index.js`
 
 ```js
 let greeting = "Hello, from Node";
@@ -101,7 +102,7 @@ console.log(greeting);
 
 ## 👉 Install Nodemon
 
-- Nodemon will automatically restart your node scripts when you save your file (so you don't have to every time).
+Nodemon will automatically restart your node scripts when you save your file (so you don't have to every time).
 
 ```bash
 npm install -g nodemon     # install a package globally
@@ -129,10 +130,12 @@ Look inside the [basic-node](./basic-node) demo in this tutorial and read throug
 
 ## Next Steps
 
-Read through [one](https://www.tutorialspoint.com/nodejs/index.htm) of the [many](https://nodejs.dev/en/learn/introduction-to-nodejs/) [tutorials](https://www.guru99.com/node-js-tutorial.html) [online](https://www.tutorialsteacher.com/nodejs) or check out the sample projects using Node/Express and other tools:
+1. Continue with Node Express Presentation
+1. Explore tutorials [tutorialspoint](https://www.tutorialspoint.com/nodejs/index.htm), [nodejs.dev](https://nodejs.dev/en/learn/introduction-to-nodejs/), [guru99.com](https://www.guru99.com/node-js-tutorial.html), [tutorialsteacher.com](https://www.tutorialsteacher.com/nodejs) 
+1. Check out these sample projects using Node/Express and other tools:
 
-- [Sample Node/Express Template](https://github.com/omundy/sample-node-express-template)
-- [sample-node-express-site](https://github.com/omundy/sample-node-express-site) - Node/Express + Handlebars
+- [Node/Express Sample Template](https://github.com/omundy/sample-node-express-template)
+- [Node/Express Site](https://github.com/omundy/sample-node-express-site) - Node/Express + Handlebars
 - [Node/Express Username Generator](https://github.com/omundy/sample-node-express-username-generator)
 - [Node/Express + Leaflet](https://github.com/omundy/sample-node-osm-leaflet)
 - [Sample Node Tools 🦋](https://github.com/omundy/sample-node-tools)
