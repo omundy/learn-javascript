@@ -22,61 +22,229 @@ Presentation comments ...
 
 ## About Express
 
+- Express is a Node.js framework for creating web applications
+- It provides several built in tools for creating backends and APIs
+- Express simplifies much of the work to create endpoints and link components for full-stack applications
+
+
+---
+
+## Express Basics
+
+👉 The following steps walk through a simple Express site 
+
+Source: [Express > Getting started](https://expressjs.com/en/starter/installing.html)
+
 
 
 
 
 ---
 
-# Node Express Part.1
-Introduction to Node and Express
+## Install Express 
 
+👉 Create your project folder, install express
 
-## Node Express Introduction
-
-**Overview**: How to get started with node and express
-
-Setup your project
 ```bash
-mkdir express-site && cd express-site  # make a new directory and move to it
-npm init                               # create a node project in the new directory
-npm install express                    # install express
+# make a new directory and move to it
+mkdir express-site && cd express-site  
+# initialize a node project in the new directory, add a package.json file
+npm init                               
+# install express, saving it to your package.json file
+npm install express --save 
+# run the project and restart on changes (press Ctl-C to terminate)
+nodemon                 
 ```
 
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Getting started > Install express](https://expressjs.com/en/starter/installing.html)
+
+</details>
+
+
+---
+
+## Hello world example
+
+👉 Create a new file named `server.js` inside this project and add:
+
 ```js
-// import package
-const express = require('express');
-// create express app
-const app = express();
-// set port either from env file or default
-const port = process.env.PORT || 3000;
+const express = require('express'); // import package
+const app = express(); // create express app
+const port = 3000; // the port to access
 // add routes
 app.get('/', (req, res) => {
 	res.send('Hello World!');
 });
 // start server and listen on <port>
 app.listen(port, () => console.log(
-	`Express started on http://localhost:${port}; press Ctrl-C to terminate.`
+	`Express started on http://localhost:${port}`
 ));
 ```
 
-- Lecture: [Node Express Introduction](https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gafb807d421_0_33)
-- Demo:
-- Exercise: Start homework...
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Getting started > Hello world example](https://expressjs.com/en/starter/hello-world.html)
+See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch3 Saving Time with Express (21-30) & Ch4 Tidying Up (31–39)
+
+</details>
 
 
-#### Homework
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/):
-	- Ch3 Saving Time with Express (21-30)
-	- Ch4 Tidying Up (31–39)
-- Exercise: Begin Meadowlark Website
 
-#### Review
 
-- Codecademy Cheatsheet(s) [node introduction](../reference-sheets/node-01-introduction.pdf)
+---
+
+## Basic routing
+
+👉 Add these routes with new [HTTP methods](https://www.w3schools.com/tags/ref_httpmethods.asp) and endpoints. Test them with [Postman](https://www.postman.com/)
+
+```js
+// this is the same as the route above
+app.get('/', (req, res) => {
+	res.send('Hello World!')
+})
+// the same endpoint as above with POST
+app.post('/', (req, res) => {
+	res.send('Got a POST request')
+})
+// an "API" is simply an endpoint + JSON response
+app.get('/api', (req, res) => {
+	res.json({"message": "Hello, world!"})
+})
+```
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Getting started > Basic routing](https://expressjs.com/en/starter/basic-routing.html)
+
+</details>
+
+
+
+
+
+---
+
+## Middleware basics
+
+<div class="twocolumn1x2">
+<div class="col">
+
+- Middleware allows you to add functionality to the "call stack" as needed.
+- Use the `next` parameter and `next()` callback in any function (see example) and then add it as middleware to either a single route or all the routes on the server.   
+
+</div>
+<div class="col">
+
+```js
+// log the requested url
+let logger = function(req,res,next) {
+	console.log(`url: ${req.url}`)	
+	// go to next function in the call stack
+	next() 
+}
+
+// add middleware to this request only 
+app.get('/login', auth, (req, res) => {
+	res.send('Hello World!')
+})
+
+// add middleware to each request
+app.use (logger);
+```
+
+</div>
+</div>
+
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Guide > Writing middleware](https://expressjs.com/en/guide/writing-middleware.html)
+See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch10 Middleware (113-120)
+
+</details>
+
+
+
+
+
+---
+
+## Static files
+
+To serve static files (images, CSS, client-side JS), use the express.static built-in middleware function in Express.
+
+```js
+// serve static files from public in root
+app.use(express.static('public'))
+
+// serve static files from public in current dir
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+```
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source [Getting started > Static files](https://expressjs.com/en/starter/static-files.html)
+See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch17 Static Content (215-221)
+
+</details>
+
+
+
+
+---
+
+## Express application generator
+
+```bash
+# generate a new express project in a directory, using handlebars
+npx express-generator --view=hbs myapp
+# change into it
+cd myapp
+# install dependencies
+npm install
+# run
+DEBUG=myapp:* npm start
+```
+
+> The app structure created by the generator is just one of many ways to structure Express apps. Feel free to use this structure or modify it to best suit your needs.
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Getting started > Express application generator](https://expressjs.com/en/starter/generator.html)
+
+</details>
+
+
+
+
+
+
+<!-- 
+
+---
+
+## Use modules for organization
+
+```js
+
+```
+
+<details class="caption slides-small">
+<summary>References</summary>
+
 - w3schools [modules](https://www.w3schools.com/nodejs/nodejs_modules.asp), [http module](https://www.w3schools.com/nodejs/nodejs_http.asp), [file system module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp), [url module](https://www.w3schools.com/nodejs/nodejs_url.asp)
-- Express [hello world](https://expressjs.com/en/starter/hello-world.html), [basic routing](https://expressjs.com/en/starter/basic-routing.html), [static files](https://expressjs.com/en/starter/static-files.html)
+
+</details>
 
 
 
@@ -124,7 +292,7 @@ app.get ('/api/tours', (req, res) => res.json(tours));
 
 - Lecture: [Node, Express, Handlebars, Heroku - Part 1 - Set up a node express project template
 ](https://docs.google.com/presentation/d/17bIeMMJnZQy-tb3GLhMC3JuTfcgMEOqnK4WsCt52CLM/edit#slide=id.gafb807d421_0_39)
-- Demo: [omundy/sample-node-express-template](https://github.com/omundy/sample-node-express-template) and [live demo](https://sample-node-express-template.herokuapp.com/)
+- Demo: [omundy/sample-node-express-cat-api](https://github.com/omundy/sample-node-express-cat-api) and ~~[live demo](https://sample-node-express-template.herokuapp.com/)~~
 
 
 #### Homework
@@ -153,41 +321,20 @@ app.post ( '/api/newsletter-signup', handlers.api.newsletterSignup );
 
 #### Homework
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch8 Form Handling (89-100)
-	- Ch9 Cookies and Sessions (103-112)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch8 Form Handling (89-100) & Ch9 Cookies and Sessions (103-112)
 
 
 
 
-----
-
-## Middleware and Production
-
-**Overview**: How to use middleware, send email, PM2
-
-```js
-app.use (( req, res, next ) => {
-	console.log ( `processing request for ${ req.url } ....` );
-	next ();
-});
-
-```
 
 
-#### Homework
-
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch10 Middleware (113-120)
-	- Ch11 Sending Email (121-131)
-	- Ch12 Production Concerns (133-145)
 
 
 
 
 ---
 
-![node logo](assets/img/logos/logo-node-ltgreen-75w.png) &nbsp; ![express logo](assets/img/logos/logo-express-200w.png)
+![node logo](../../assets/img/logos/logo-node-ltgreen-75w.png) &nbsp; ![express logo](../../assets/img/logos/logo-express-200w.png)
 
 # Node Express Part.2
 Using Node, Express for server-side, desktop, and mobile application development
@@ -211,8 +358,7 @@ mongoose.connect ( connectionString );
 
 #### Homework
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch13 Persistence (147-172)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch13 Persistence (147-172)
 
 #### Review
 
@@ -222,11 +368,11 @@ mongoose.connect ( connectionString );
 
 
 
+
 ---
 
-## Express routes, APIs, JSON
+## Advanced routing
 
-**Overview**: How to ...
 
 ```js
 app.get ( '/user(name)?', ( req, res ) => res.render ( 'user' ));
@@ -235,14 +381,19 @@ app.get ( '/staff/:name', ( req, res ) => {
 	if ( !info ) return next (); // will eventually fall through to 404
 	res.render ( 'staff', info );
 });
-
 ```
 
-#### Homework
+<details class="caption slides-small">
+<summary>References</summary>
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch14 Routing (173-184)
-	- Ch15 REST APIs and JSON (185-192)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch14 Routing (173-184) & Ch15 REST APIs and JSON (185-192)
+
+</details>
+
+
+
+
+
 
 
 
@@ -250,7 +401,7 @@ app.get ( '/staff/:name', ( req, res ) => {
 
 ---
 
-## Express SPAs, static content
+## Express SPAs
 
 **Overview**: How to ...
 
@@ -261,13 +412,25 @@ import React from 'react';
 ```
 
 
-#### Homework
+<details class="caption slides-small">
+<summary>References</summary>
 
-- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
-	- Ch16 Single-Page Applications (193-212)
-	- Ch17 Static Content (215-221)
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch16 Single-Page Applications (193-212)
+
+</details>
 
 
+
+---
+
+## Production
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+- [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch11 Sending Email (121-131) & Ch12 Production Concerns (133-145)
+
+</details>
 
 
 
@@ -313,4 +476,4 @@ node inspect index.js
 - [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/)
 	- Ch20 Debugging (265-275)
 	- Ch21 Going Live (277-288) - https://heroku.com/
-	- Ch22 Maintenance (291-300)
+	- Ch22 Maintenance (291-300) -->

@@ -156,7 +156,10 @@ showNextResult(); // start
 
 ## What is a Cronjob?
 
-See this [cron example using Python](https://github.com/omundy/dig333-physical-computing/tree/master/raspberry-pi/cron-example)
+Cron examples:
+
+- [cron with node](../node/slides.html)
+- [cron example using Python](https://github.com/omundy/dig333-physical-computing/tree/master/raspberry-pi/cron-example)
 
 
 

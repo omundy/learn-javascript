@@ -38,10 +38,10 @@
                 ]
             },
             "minifyCSS": false,
-			"emoji": {
-				"shortcode": false,
-				"unicode": false
-			}
+            "emoji": {
+                "shortcode": false,
+                "unicode": false
+            }
         },
         "watch": false
     },
