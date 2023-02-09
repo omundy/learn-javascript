@@ -128,34 +128,77 @@ Source: [Getting started > Basic routing](https://expressjs.com/en/starter/basic
 
 
 
+
 ---
 
-## Middleware basics
+## Middleware 
 
 <div class="twocolumn1x2">
 <div class="col">
 
 - Middleware allows you to add functionality to the "call stack" as needed.
-- Use the `next` parameter and `next()` callback in any function (see example) and then add it as middleware to either a single route or all the routes on the server.   
+- Any function can be middleware by adding the `(req,res,next)` parameters and calling `next()` at the end to go to the next function in the stack.
 
 </div>
 <div class="col">
 
-```js
-// log the requested url
-let logger = function(req,res,next) {
-	console.log(`url: ${req.url}`)	
-	// go to next function in the call stack
-	next() 
-}
+👉 Try the example
 
-// add middleware to this request only 
-app.get('/login', auth, (req, res) => {
-	res.send('Hello World!')
-})
+```js
+// log the url
+let logger = (req,res,next) => {
+	console.log(`url: ${req.url}`)		
+	next() // continue call stack
+}
 
 // add middleware to each request
 app.use (logger);
+```
+
+</div>
+</div>
+
+<details class="caption slides-small">
+<summary>References</summary>
+
+Source: [Guide > Writing middleware](https://expressjs.com/en/guide/writing-middleware.html)
+See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781492053507/) Ch10 Middleware (113-120)
+
+</details>
+
+
+
+
+
+
+---
+
+## Middleware 
+
+<div class="twocolumn1x2">
+<div class="col">
+
+You can also add middleware to any page or endpoint by including the name as a parameter in the route.
+
+</div>
+<div class="col">
+
+👉 Try the example
+
+```js
+// check if user is logged in
+let auth = (req,res,next) => {
+	if (true) // authentication check
+		// continue call stack
+		return next(); 
+	// redirect to signin page	
+	res.redirect('/signin');
+}
+
+// add middleware to this request only 
+app.get('/dashboard', auth, (req, res) => {
+	res.send('Hello Admin!')
+})
 ```
 
 </div>
@@ -174,19 +217,24 @@ See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781
 
 
 
+
 ---
 
 ## Static files
 
-To serve static files (images, CSS, client-side JS), use the express.static built-in middleware function in Express.
+To serve static files (images, CSS, client-side JS), use the `express.static` middleware built-into Express.
+
+👉 Try the example
 
 ```js
-// serve static files from public in root
+// serve static files from project root; /public => foo.com/
 app.use(express.static('public'))
 
-// serve static files from public in current dir
 const path = require('path');
+// serve files from working dir; ./public => foo.com/
 app.use(express.static(path.join(__dirname, 'public')));
+// serve files *as folder* from wd; ./uploads => foo.com/uploads
+app.use('/uploads', express.static(path.resolve('./uploads')));
 ```
 
 <details class="caption slides-small">
@@ -200,18 +248,23 @@ See also: [Brown](https://www.oreilly.com/library/view/web-development-with/9781
 
 
 
+
+
+
 ---
 
 ## Express application generator
 
+👉 Generate a new app (see `express -h` for options)
+
 ```bash
-# generate a new express project in a directory, using handlebars
+# generate a new express project in a new directory, using handlebars
 npx express-generator --view=hbs myapp
 # change into it
 cd myapp
 # install dependencies
 npm install
-# run
+# start "myapp" (see package.json), tell node to turn on logging
 DEBUG=myapp:* npm start
 ```
 
