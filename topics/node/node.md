@@ -163,7 +163,8 @@ A `package.json` file contains information about a project, including its name, 
 
 1. Run `npm i cron --save` in the Terminal. 
 1. A dependency (e.g. `"cron": "^2.2.0"`) has been added to `package.json` as well as a new folder `node_modules` with all the dependencies it needs. 
-1. Add the code below to your `index.js` file and run `nodemon` in the Terminal.
+1. Add the code below to your `index.js` file.
+1. Run it with `nodemon index.js` in the Terminal.
 1. Use [crontab.guru](https://crontab.guru/) to experiment with the time.
 
 
@@ -180,9 +181,9 @@ var CronJob = require('cron').CronJob;
 var job = new CronJob(
 	'* * * * * *',
 	function() {
-		console.log('You will see this message every second');
+		console.log('The local time is: '+ new Date().toLocaleString());
 	},
-	null, true, 'America/Los_Angeles'
+	null, true, 'America/New_York'
 );
 ```
 

@@ -1398,7 +1398,8 @@ npm -v                     <span class="hljs-comment"># check npm version</span>
 <ol>
 <li>Run <code>npm i cron --save</code> in the Terminal.</li>
 <li>A dependency (e.g. <code>&quot;cron&quot;: &quot;^2.2.0&quot;</code>) has been added to <code>package.json</code> as well as a new folder <code>node_modules</code> with all the dependencies it needs.</li>
-<li>Add the code below to your <code>index.js</code> file and run <code>nodemon</code> in the Terminal.</li>
+<li>Add the code below to your <code>index.js</code> file.</li>
+<li>Run it with <code>nodemon index.js</code> in the Terminal.</li>
 <li>Use <a href="https://crontab.guru/">crontab.guru</a> to experiment with the time.</li>
 </ol>
 </section>
@@ -1410,9 +1411,9 @@ npm -v                     <span class="hljs-comment"># check npm version</span>
 <span class="hljs-keyword">var</span> job = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CronJob</span>(
 	<span class="hljs-string">&#x27;* * * * * *&#x27;</span>,
 	<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;You will see this message every second&#x27;</span>);
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;The local time is: &#x27;</span>+ <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toLocaleString</span>());
 	},
-	<span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;America/Los_Angeles&#x27;</span>
+	<span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;America/New_York&#x27;</span>
 );
 </code></pre>
 </section>

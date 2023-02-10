@@ -1546,6 +1546,70 @@ Note: In order for Javascript to load remote content (most SPAs) it must be runn
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="owen" data-marpit-pagination="17" data-marpit-pagination-total="20" style="--paginate:true;--theme:owen;">
 <h2>React</h2>
+<div class="twocolumn">
+<div class="col">
+<ul>
+<li>React is a JavaScript library for building user interfaces and single-page applications.</li>
+<li>React uses <a href="https://www.w3schools.com/react/react_jsx.asp">JSX</a> (JavaScript XML), a syntax extension to JavaScript that makes it easier to write and add HTML in React.</li>
+<li>JSX elements are the same as JavaScript expressions. They can be saved in a variable, passed to a function, stored in an object or array.</li>
+</ul>
+</div>
+<div class="col">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-comment">// JSX element being saved in a variable:</span>
+<span class="hljs-keyword">const</span> navBar = <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>I am a nav bar<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>;
+<span class="hljs-comment">// ... or an object</span>
+<span class="hljs-keyword">const</span> colors = {
+	<span class="hljs-attr">red</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>A sunset<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+	<span class="hljs-attr">green</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Some grass<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+	<span class="hljs-attr">blue</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>The sky<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+}
+</code></pre>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="owen" data-marpit-pagination="18" data-marpit-pagination-total="20" style="--paginate:true;--theme:owen;">
+<h2>JSX Syntax</h2>
+<ul>
+<li>Wrap multi-line JSX expression in parentheses.</li>
+<li>JSX expressions must have exactly one outermost element, even if its a simple <code>&lt;div&gt;&lt;/div&gt;</code></li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">const</span> myDiv = (
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);
+</code></pre>
+<h2>Rendering JSX</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// import libraries</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ReactDOM</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom&#x27;</span>;
+<span class="hljs-comment">// render to #app</span>
+<span class="hljs-title class_">ReactDOM</span>.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>, <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;app&#x27;</span>));
+</code></pre>
+<div class="caption slides-small">
+	[Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+</div>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ReactDOM</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom/client&#x27;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">HelloComponent</span>(<span class="hljs-params">props</span>) {
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+}
+
+<span class="hljs-keyword">const</span> root = <span class="hljs-title class_">ReactDOM</span>.<span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;root&quot;</span>));
+root.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Hello</span> /&gt;</span></span>);
+</code></pre>
+<p>In React, for every DOM object, there is a corresponding “<a href="https://www.codecademy.com/article/react-virtual-dom">virtual DOM object</a>.” A virtual DOM object is a representation of a DOM object, like a lightweight copy.</p>
+<p>JSX gotchas<br />
+<a href="https://reactjs.org/docs/jsx-in-depth.html">https://reactjs.org/docs/jsx-in-depth.html</a></p>
+<p>Supported events<br />
+<a href="https://reactjs.org/docs/events.html#supported-events">https://reactjs.org/docs/events.html#supported-events</a></p>
+<h2>React Components</h2>
+<ul>
+<li>React separates <em>concerns</em> (not technologies) within reusable UI <strong>components</strong> that contain both markup and logic.</li>
+<li>A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.</li>
+</ul>
+<p>To use React in production, you need Node / NPM and a compiler to translate JSX into regular Javascript.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="owen" data-marpit-pagination="19" data-marpit-pagination-total="20" style="--paginate:true;--theme:owen;">
 <h2>Next steps</h2>

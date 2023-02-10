@@ -6,7 +6,7 @@
 
 # Single Page Applications
 
-Introduction to Vue.js
+Using vanilla JS, jquery, Vue.js, or React
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="single-page-apps.md">md</a></span>
 
