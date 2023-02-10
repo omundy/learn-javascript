@@ -4,7 +4,7 @@
 
 <a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-node-ltgreen-150w.png"></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-express-200w.png"></a>
 
-# Node & Express
+# Node & Express 
 
 Introduction to Node + Express
 

@@ -6,7 +6,7 @@
 
 # Full Stack Crash Course
 
-Shell, HTML, CSS, DevTools, Javascript, Node, NPM, SPIs, Databases
+Command line > HTML > CSS, DevTools, Javascript, Node, NPM, SPIs, Databases
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="functions.md">md</a></span>
 
@@ -51,19 +51,10 @@ Students who complete this module will be able to:
 
 ## What is Full Stack Development?
 
-<div class="twocolumn">
-<div class="col">
+<img src="../../assets/img/what-is-full-stack.png" width="100%">
 
-- A stack describes the essential technology components of a given website or application
-- ADD IMAGE
+A stack describes the essential technology components of a given website or application 
 
-</div>
-<div class="col">
-
-
-
-</div>
-</div>
 
 
 
@@ -77,23 +68,62 @@ Students who complete this module will be able to:
 
 ## HTML
 
-- 
+<div class="twocolumn">
+<div class="col">
 
-<img src="../../assets/img/javascript-anatomy-function.png" width="100%">
+- HTML (HyperText Markup Language) structures and organizes information in web pages
+- HTML elements can contain text or other elements between an open and close tag.
+- Every HTML document has a `head` and `body` element, nested inside the root `html` element. 
 
-<div class="caption slides-small"></div>
+</div>
+<div class="col">
+
+```html
+<html>
+	<head>
+		<title>The head 
+			contains meta data</title>
+	</head>
+	<body>
+		<p>The body contains 
+			visible content</p> 
+	</body>
+</html>	
+```
+
+<!-- <div class="caption slides-small"></div> -->
+
+</div>
+</div>
 
 
 
 
 ---
 
+## HTML Attributes
+
+<img src="../../assets/img/html-attribute.svg" width="100%">
+
+HTML attributes add information to elements, in this case *wrapping* "Just google it!" will create a link.
 
 
 
 
+---
+
+## CSS
+
+<img src="../../assets/img/css-anatomy.svg" width="100%">
 
 
+
+---
+
+## Javascript
+
+
+<img src="../../assets/img/javascript-anatomy-function.png" width="100%">
 
 
 
