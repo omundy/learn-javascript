@@ -1,0 +1,13 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "info": "be here now 🤩"
+        },
+        "geometry": {
+            "coordinates": [-80.84841429929385, 35.50168511342781],
+            "type": "Point"
+        }
+    }]
+}
