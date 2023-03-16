@@ -328,9 +328,139 @@ Vue.js is quite flexible in how you implement it within a project. These are lis
 
 
 
+
+
+
+
+
+
 ---
 
 ## React
+
+<div class="twocolumn">
+<div class="col">
+
+- React is a JavaScript library for building user interfaces and single-page applications.
+- React uses [JSX](https://www.w3schools.com/react/react_jsx.asp) (JavaScript XML), a syntax extension to JavaScript that makes it easier to write and add HTML in React.
+- JSX elements are the same as JavaScript expressions. They can be saved in a variable, passed to a function, stored in an object or array.
+
+</div>
+<div class="col">
+
+```jsx
+// JSX element being saved in a variable:
+const navBar = <nav>I am a nav bar</nav>;
+// ... or an object
+const colors = {
+	red: <h1>A sunset</h1>
+	green: <h1>Some grass</h1>
+	blue: <h1>The sky</h1>
+}
+```
+
+</div>
+</div>
+
+
+
+---
+
+## JSX Syntax
+
+- Wrap multi-line JSX expression in parentheses.
+- JSX expressions must have exactly one outermost element, even if its a simple `<div></div>`
+
+```jsx
+const myDiv = (
+  <div>
+    <h1>Hello world</h1>
+  </div>
+);
+```
+
+
+
+## Rendering JSX
+
+
+
+```js
+// import libraries
+import React from 'react';
+import ReactDOM from 'react-dom';
+// render to #app
+ReactDOM.render(<h1>Hello world</h1>, document.getElementById('app'));
+```
+
+
+
+
+
+
+<div class="caption slides-small">
+	[Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+</div>
+
+
+
+
+
+
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function HelloComponent(props) {
+  return <h1>Hello World!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Hello />);
+```
+
+
+
+
+
+
+
+
+In React, for every DOM object, there is a corresponding “[virtual DOM object](https://www.codecademy.com/article/react-virtual-dom).” A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+
+
+
+JSX gotchas
+https://reactjs.org/docs/jsx-in-depth.html
+
+Supported events
+https://reactjs.org/docs/events.html#supported-events
+
+
+
+
+
+## React Components
+
+- React separates *concerns* (not technologies) within reusable UI **components** that contain both markup and logic.
+- A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
+
+
+
+To use React in production, you need Node / NPM and a compiler to translate JSX into regular Javascript.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
