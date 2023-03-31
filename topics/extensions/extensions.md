@@ -11,8 +11,7 @@ Presentation comments ...
 -->
 
 
-
-
+<!-- 
 ---
 
 ### Contents
@@ -21,13 +20,28 @@ Presentation comments ...
 1. [More Tutorials](#more-tutorials) - Mozilla, Chrome, etc. web tutorials
 1. [Sample Browser Extensions](#sample-browser-extensions) - Code samples to get started
 1. [Documentation](#documentation) - Cross-browser compatibility, publishing, packaging
-1. [FAQ & Tips](#faq-tips) - Browsers, specific issues
+1. [FAQ & Tips](#faq-tips) - Browsers, specific issues 
+
+-->
+
+
+---
+
+## About Extensions
+
+- Browser extensions are software that add features to a web browser.
+- A browser extension is built using HTML, CSS, and Javascript.
+- Extensions can use special features of the browser to add useful or even playful functions.
+- Follow one of the tutorials below to learn how to build extensions.
+
+
+
 
 
 
 ---
 
-## Browser Blowup Tutorial
+### Tutorial > Browser Blowup Tutorial
 
 An introduction to browser extensions, starting with the basics and building up to an extension that can detect web trackers and explode web pages.<sup>*</sup>
 
@@ -38,26 +52,14 @@ An introduction to browser extensions, starting with the basics and building up 
 - [4-Explosion](https://sneakaway-studio.github.io/explode-the-web/tutorial/slides/4-explosion.html) ([md](https://github.com/sneakaway-studio/explode-the-web/blob/main/tutorial/markdown/4-explosion.md)) - Report trackers in the console, wrapping up
 
 
-<div class="slides-small">* Originally published in 2019 as <a href="https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf">Browser Blowup: Explode Web Pages Containing Third-Party Trackers</a> in <a href="http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4">Signal Culture Cookbook Vol.2</a>, the tutorial has been updated to Manifest 3 as of 2022. Also see this <a href="https://www.youtube.com/watch?v=IKsM8fWyBvs&list=PLhpnnpt3tw-SGxCwGuTLMgKpf4I74Ftdn&index=2&ab_channel=OwenMundy">video</a> (44:41)</div>
-
-
-
-
-
-
-
-
+<div class="slides-small">* Originally published in the <a href="http://signalculture.org/cookbookvol2.html#.XvZmqJNKiL4">Signal Culture Cookbook Vol.2</a> (2019), the <a href="https://owenmundy.com/_site/content/_info/writing/sc_cookbook_2_browser_blowup.pdf">Browser Blowup tutorial</a> has been updated to Manifest v.3 (2022). Also see this <a href="https://www.youtube.com/watch?v=IKsM8fWyBvs&list=PLhpnnpt3tw-SGxCwGuTLMgKpf4I74Ftdn&index=2&ab_channel=OwenMundy">video</a> (44:41)</div>
 
 
 
 
 ---
 
-## More Tutorials
-
-
-
-### MDN Web Docs Tutorial
+### Tutorial > MDN Web Docs Tutorial
 
 1. [What are extensions?](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)
 1. [Your first extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension)
@@ -67,9 +69,11 @@ An introduction to browser extensions, starting with the basics and building up 
 1. [Content scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts)
 
 
-### Advanced Tutorials
+### Tutorial > Advanced
 
 - [Setting up Chrome Extensions for use with ES6](https://www.coreycleary.me/setting-up-chrome-extensions-for-use-with-es6) - Webpack, testing, modules
+- Use [chrome.storage](https://developer.chrome.com/docs/extensions/reference/storage/) and [storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage) APIs to persist states across multiple pages.
+
 
 
 
@@ -138,7 +142,13 @@ See links above for platforms.
 
 ---
 
-## FAQ & Tips > What web browsers should I target?
+## FAQ & Tips > 
+
+
+
+---
+
+### FAQ > What web browsers should I target?
 
 There are many web browser brands, but most are based on just three [browser engines](https://en.wikipedia.org/wiki/Browser_engine) "types".
 
@@ -149,7 +159,7 @@ There are many web browser brands, but most are based on just three [browser eng
 
 ---
 
-## FAQ & Tips > What are some notable examples of browser extensions?
+### FAQ > What are some notable examples of browser extensions?
 
 - Add-Art [source](https://github.com/coreytegeler/add-art-chrome/)
 - [Catblock](https://getcatblock.com/) [source](https://github.com/CatBlock/catblock)
@@ -157,7 +167,7 @@ There are many web browser brands, but most are based on just three [browser eng
 
 ---
 
-## FAQ & Tips > Issues with CSS and browser extensions
+### FAQ > Issues with CSS and browser extensions
 
 CSS from web pages will affect ("pollute") display properties in your extension, often messing up your own styling. For example, if this rule is set on a page your extension then html that you show in the content scripts will inherit it:
 
@@ -167,7 +177,7 @@ p { color: red; }
 
 ---
 
-## FAQ & Tips > Issues with CSS and browser extensions
+### FAQ > Issues with CSS and browser extensions
 
 These tips help ensure your code won't inherit other styles (listed in increasing potential to protect your own):
 - Use uncommon class and id names. This works unless the styling rules are applied very broadly (like above).
@@ -182,7 +192,7 @@ These tips help ensure your code won't inherit other styles (listed in increasin
 
 ---
 
-## FAQ & Tips > Common Errors and Issues
+### FAQ > Common Errors and Issues
 
 
 #### Uncaught Error: Extension context invalidated.
