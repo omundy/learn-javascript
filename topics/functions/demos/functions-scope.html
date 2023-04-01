@@ -13,21 +13,28 @@
 
 	<script>
 
+// GLOBAL SCOPE EXAMPLE
 
 let foo = "hello";
-if (true) {
-	// ✅ global variables can be accessed anywhere
-	foo = "goodbye";
+function updateFoo() {
+	foo = "goodbye"; // ✅ we can access a global variable
 }
-console.log("foo =", foo);
-// -> "goodbye?"
+updateFoo();
+console.log("foo =", foo); // -> "goodbye"
 
-if (true){
-	// a local variable
-	let bar = 123;
+
+
+
+// LOCAL SCOPE EXAMPLE
+
+function updateBar() {
+	let bar = 123; // variable declared with local scope
 }
-// ❌ this will fail because it was defined (scoped) in a block
+updateBar();
+// ❌ bar is local because was defined (scoped) in a block
 console.log("bar =", bar);
+// -> "Uncaught ReferenceError: bar is not defined"
+
 
 
 	</script>

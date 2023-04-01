@@ -62,27 +62,31 @@ Students who complete this module will be able to:
 <div class="twocolumn">
 <div class="col">
 
-- Functions let you reuse blocks of code.
-- Functions are also called "methods", especially in OOP (Object Oriented Programming).
+- In programming, functions are a way to organize and reuse blocks of code.
+- Javascript contains several built-in functions that make it easy to perform common tasks.* 
+- To use a function, "call" it with the name and two parentheses `()`
+
+<div class="caption slides-small">
+*Functions are also called "methods", especially in OOP (Object Oriented Programming).
+</div>
 
 </div>
 <div class="col">
 
 ```js
-// some built-in functions
+// these built-in functions
 alert("hello world!");
-console.log(123);
+
+// all require parameters
+console.log(123); // -> 123
+
+// to do things 
 Math.ceil(1.3); // -> 2
 ```
 
-```js
-// a custom function
-function coolNewFunction(){
-	// this code runs each
-	// time you call the function
-}
-coolNewFunction();
-```
+<div class="caption slides-small">
+The task a function performs can be customized using one or more parameters placed between the parentheses.
+</div>
 
 </div>
 </div>
@@ -99,7 +103,7 @@ coolNewFunction();
 
 ## Anatomy of a Function
 
-- Functions can be customized using **parameters** to change their **return values**.
+Use the **function** keyword to write custom functions, one or more **parameters** to customize its task, and **return** to send data back to the location where it was called.
 
 <img src="../../assets/img/javascript-anatomy-function.png" width="100%">
 
@@ -108,17 +112,58 @@ coolNewFunction();
 
 
 
+
 ---
 
-## Code reuse
+## Code Reuse
 
-- The <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">D.R.Y.</a> principle says that reusing code makes it easier to write and manage.
+Writing the same code over and over is not only inefficient and boring, it also makes it difficult to detect and fix errors. 
 
-<img src="../../assets/img/javascript-diagram-function-io.png" width="100%">
+```js
+let hexChars = "0123456789abcdef"
+document.body.backgroundColor = "#" + 
+    hexChars[Math.floor(Math.random() * hexChars.length)] + 
+    hexChars[Math.floor(Math.random() * hexChars.length)] +
+    hexChars[Math.floor(Math.random() * hexChars.length)] +
+    hexChars[Math.floor(Math.random() * hexChars.length)] +
+    hexChars[Math.floor(Math.random() * hexChars.length)] +
+    hexChars[Math.floor(Math.random() * hexChars.length)]
+```
 
-<div class="caption slides-small">Flow of a typical program</div>
+<div class="caption slides-small">
+Several lines of code in this example perform the same task. Copy and paste this code into the console to see what it does!
+</div>
 
 
+
+
+---
+
+## Custom Functions
+
+If you find yourself typing the same instructions, consider using a **custom function** to make it easier to write and manage the code. 
+ 
+
+```js
+let hexChars = "0123456789abcdef"
+function hexChar(){
+	return hexChars[Math.floor(Math.random() * hexChars.length)]
+}
+document.body.backgroundColor = "#" + hexChar() + hexChar() + 
+    hexChar() + hexChar() + hexChar() + hexChar();
+```
+
+<div class="caption slides-small">
+In the updated example the repeated code is "wrapped" with a function which "returns" the value of the expression back to the location where it was called. The changes reflect the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">D.R.Y.</a> ("Don't Repeat Yourself") principle in action.
+</div>
+
+ 
+
+
+
+
+
+<!-- 
 
 ---
 
@@ -177,7 +222,7 @@ console.log(`${canPie("berries", 101)}`);
 
 </div>
 </div>
-
+ -->
 
 
 
@@ -186,37 +231,45 @@ console.log(`${canPie("berries", 101)}`);
 
 ---
 
-## Scope
+## Global Scope
 
-Where you declare a variable determines its **scope**, or how it can be accessed by other parts of your program
-
-- **Global Scope** - Variables can be accessed anywhere in your program
-- **Local Scope** - Variables are accessible only within their statement block
-
-
-
----
-
-## Scope
+The location in your code where you declare a variable determines its **scope**, or how it can be accessed by other parts of your program. With **global scope**, variables can be accessed from anywhere.
 
 ```js
-// ✅ global variables can be accessed anywhere
 let foo = "hello";
-if (true) {
-	foo = "goodbye";
+function updateFoo() {
+	foo = "goodbye"; // ✅ we can access a global variable
 }
+updateFoo();
 console.log("foo =", foo); // -> "goodbye"
+```
 
-// ❌ this will fail because it was defined (scoped) in a block
-if (true){
-	let bar = 123; // a local variable
+<div class="slides-small">
+	Example: <a href="demos/functions-scope.html" target="_blank">demos/functions-scope.html</a>
+</div>
+
+
+
+---
+
+## Local Scope
+
+Alternately, with **local scope**, variables are accessible only within the statement block (and nested blocks) where they were declared.
+
+```js
+function updateBar() {
+	let bar = 123; // variable declared with local scope
 }
+updateBar();
+// ❌ bar is local because was defined (scoped) in a block
 console.log("bar =", bar);
 // -> "Uncaught ReferenceError: bar is not defined"
 ```
+
 <div class="slides-small">
-	<a href="demos/functions-scope.html" target="_blank">demos/functions-scope.html</a>
+	Example: <a href="demos/functions-scope.html" target="_blank">demos/functions-scope.html</a>
 </div>
+
 
 
 
@@ -225,20 +278,28 @@ console.log("bar =", bar);
 
 ## Function Expressions
 
-- Previously we used the [function declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) to define a function.
-- Also common is the [function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function), here using the ["fat arrow"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) syntax
+We have only used the [function declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) to define functions so far, but another common method is with the [function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function). 
 
 ```js
-const isPizzaTime = () => {
-	let today = new Date();
-	if (today.getHours() > 10 && today.getHours() < 24){
-		return "yes, it is";
-	} else {
-		return "I'm afraid not";
-	}
+const getCurrentHour = () => {
+    let today = new Date();
+    return today.getHours();  
 }
-console.log(isPizzaTime());
+console.log(getCurrentHour());
 ```
+
+Here we use the ["fat arrow"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) syntax, since the function body can be shortened to a single line;
+
+```js
+const getCurrentHour = () => new Date().getHours(); 
+console.log(getCurrentHour());
+```
+
+
+<div class="slides-small">
+	<a href="https://codepen.io/owenmundy/pen/RwYzMEp?editors=1011" target="_blank">rollTheDice() function expression example</a>
+</div>
+
 
 
 
@@ -252,7 +313,47 @@ console.log(isPizzaTime());
 
 - **Anonymous functions** are function expressions that are not assigned to a name.
 - Often used as callbacks from jquery and other event listeners.
-- Right, callbacks can be stored as function expressions or plain anonymous functions
+- Callbacks can be stored as function expressions or plain anonymous functions
+
+</div>
+<div class="col">
+
+```js
+let button = document.querySelector(".btn");
+
+// #1
+button.addEventListener(function() {
+	// the code in this function is used 
+	// as a callback from the listener
+});
+
+// #2 
+button.addEventListener(myCallback);
+// callback stored in named function
+var myCallback = function() {
+	// same as above
+}
+```
+
+<div class="slides-small">
+	These examples do the same thing.
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+---
+
+## Anonymous Functions (jQuery example)
+
+
+<div class="twocolumn">
+<div class="col">
 
 </div>
 <div class="col">
@@ -275,11 +376,6 @@ var myCallback = function() {
 
 </div>
 </div>
-
-
-
-
-
 
 
 
