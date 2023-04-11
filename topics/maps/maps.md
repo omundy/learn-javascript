@@ -41,7 +41,7 @@ Presentation comments ...
 - Imagery in a web map consists of a base layer and overlay layers.
 - The base layer is created from a **tileset**, or collection of raster (e.g. satellite photos), or vector images, displayed in a grid.
 - Loading maps as tiles is efficient because the browser only needs to request those images needed in the viewport. 
-- It also makes it easy to change the base image by simply pointing to a different tileset server. Example servers: [Mapbox](https://www.mapbox.com/gallery) and [OSM](https://wiki.openstreetmap.org/wiki/Raster_tile_providers)
+- It also makes it easy to change the base image by simply pointing to a different tileset server. Example servers: [Mapbox](https://www.mapbox.com/gallery), [OSM](https://wiki.openstreetmap.org/wiki/Raster_tile_providers), [leaflet-providers](https://leaflet-extras.github.io/leaflet-providers/preview/) [more](https://leafletjs.com/plugins.html#basemap-providers)  
 
 </div>
 <div class="col">
