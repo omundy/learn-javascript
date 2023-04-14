@@ -208,7 +208,7 @@ Here is the syntax for a basic `if` statement.
 
 <img src="../../assets/img/javascript-anatomy-if-code-block.png" width="800">
 
-In this case, if of `apples` is a number greater than 3, then the message will be logged to the console.
+In this case, if `apples` is a number greater than 3, then the message will be logged to the console.
 
 
 ---
