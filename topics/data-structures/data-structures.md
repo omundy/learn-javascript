@@ -49,7 +49,7 @@ Students who complete this module will be able to:
 
 ---
 
-## Data Collections
+## Data collections
 
 In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primitive data types</a>, Javascript can store **collections** of data like `arrays` and `objects`, as well as more complex entities.
 
@@ -61,24 +61,42 @@ In addition to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primit
 
 ## Arrays
 
-- A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">array</a> is a list of values, separated by commas.
-- You can **get** or **set** an array value using its index.
-- Arrays are zero-indexed. Their length counts from `1`, but the first index is `0`.
+- A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">array</a> is a data type that can store multiple values.
+- Create an array using a variable declaration, a name, and multiple comma-separated values between square brackets.
+- To **get** an array value, use the **index**, the position or order of the data in the array, between two square brackets. 
 
 ```js
-let numbers = [-2, -1, 0, 1, 2]; // array of numbers
 let colors = ["purple", "green", "blue"]; // array of strings
-colors.length; // -> 3
 colors[0]; // -> "purple"
+```
+
+
+<div class="caption slides-small">
+👉 Try these blocks of code in the console.
+</div>
+
+
+---
+
+## Array indexes
+
+- Arrays are **zero-indexed**, with the first value is stored at index `0`, then `1`, and so on. 
+- While indexes start at zero, their `length` reflects the total indexes in the array.
+- Like variables, you can also **set** values using the index.
+
+```js
+colors.length; // -> 3
 colors[0] = "red"; // set the value of the first index
 colors[0]; // -> "red"
 ```
 
 
 
+
+
 ---
 
-## Array Methods
+## Array methods
 
 <div class="twocolumn2x1">
 <div class="col">
@@ -131,45 +149,99 @@ colors.slice(1,3) // -> ["green", "blue"]
 
 ## Loops
 
-- One of the biggest benefits to working with arrays is that you can loop through them.
-- A loop will repeat a block of code based on some condition.
+- One of the benefits to working with arrays is that you can write code that automatically repeats some task for each index. 
+- All languages have **loop** statements which practically do the same thing: repeat a block of code based on some condition.
 
 <img src="../../assets/img/javascript-diagram-control-structures-loop.png">
 
 
 ---
 
-## Loop Anatomy
+## Loop anatomy
 
-The `for` loop in Javascript explicitly shows the three parts of a loop control structure: 1) Create control variable 2) Test the condition 3) Iterate on each loop
+The `for` loop in Javascript makes explicit the three essential components of a loop: 1) Create control variable 2) Test the condition 3) Iterate on each loop
 
 <img  src="../../assets/img/javascript-anatomy-loop-for.png">
 
 
-
 ---
 
-## Loops
+## `for` and `while` loops
+
+Both the `for` and `while` loops do the same thing with a slightly different structure, running the code in the statement block until the condition is false.
 
 <div class="twocolumn">
 <div class="col">
 
-- This code shows both the `for` loop and the `forEach` built-in to the `Array` type.
-- `Array.forEach` uses a callback function that receives the value and iterator (here we name it `index`)
-- These both output the same values
+```js
+// the three parts on one line
+for (let i = 0; i < 10; i++){
+	console.log(i);
+}
+
+```
 
 </div>
 <div class="col">
 
 ```js
-// for loop
-for (var i = 0; i < colors.length; i++){
-	console.log(i, colors[i]);
+let i = 0;
+while (i < 10) {
+	console.log(i);
+	i++;
 }
+```
 
+</div>
+</div>
+
+
+
+---
+
+## ⚠️ Infinite loops 
+
+<div class="twocolumn">
+<div class="col">
+
+- An **infinite loop** is a loop that never stops because it has no condition to exit. 
+- This will cause your page to become unresponsive, crash the browser, or even freeze your computer.
+- This code example will crash your web page because the condition will never be false!
+
+</div>
+<div class="col">
+
+```js
+let i = 0;
+while (true) {
+	console.log(i++);
+}
+```
+
+</div>
+</div>
+
+
+
+
+---
+
+## `forEach` loops
+
+<div class="twocolumn">
+<div class="col">
+
+- The `Array` type has a built-in `Array.forEach` function to loop through indexes.
+- It uses a callback that receives the item and index (below named `i`).
+
+</div>
+<div class="col">
+
+```js
+let colors = ["red", "green", "blue"]
 // built-in array forEach
-colors.forEach(function(value, index){
-	console.log(index, value);
+colors.forEach(function(item, i){
+	console.log(i, item);
 });
 
 // -> 0 "red"
@@ -192,20 +264,12 @@ colors.forEach(function(value, index){
 
 ## Multi-Dimensional Arrays
 
-You can store different data types in a JS array. This includes other arrays.
+<div class="twocolumn">
+<div class="col">
 
-```js
-// an array of arrays
-const table = [
-	['name', 'age', 'favoriteColor'],
-	['Mary', 18, 'mauve'],
-	['Pam', 33, 'periwinkle'],
-	['Chalet', 81, 'chartreuse']
-];
-table[1][2] // -> 'mauve'
-```
+JS arrays can store the same or different data types, including other arrays. 
 
-👉 How would you loop through this array to output all individual the values?
+👉 How would you loop through this array to output all individual values?
 
 <details>
 <summary>Solution</summary>
@@ -213,6 +277,48 @@ table[1][2] // -> 'mauve'
 A loop inside a loop
 
 </details>
+
+</div>
+<div class="col">
+
+```js
+// an array of arrays
+const people = [
+	['name', 'age', 'color'],
+	['Mary', 18, 'mauve'],
+	['Pam', 33, 'periwinkle'],
+	['Chad', 81, 'chartreuse']
+];
+people[1][2] // -> 'mauve'
+```
+
+</div>
+</div>
+
+
+
+---
+
+## Looping through multi-dimensional arrays
+
+An array inside an array adds a second dimension. Like a table, looping through a 2D array will need to not only go down a single column of indexes, but across each row as well.
+
+```js
+// ... using array from previous slide
+for (let i = 0; i < people.length; i++){
+    // the 2nd loop uses a new iterator and condition
+	for (let j = 0; j < people[i].length; j++){
+        console.log(people[i][j]);
+    }
+}
+// -> 'name'
+// -> 'age'
+// -> 'color' 
+// -> ...
+```
+
+
+
 
 
 ---
@@ -243,8 +349,7 @@ dates[1].toUTCString()
 ## Objects
 
 - A Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">object</a> is another hierarchical format for storing collections.
-- A key difference from arrays: data in objects must be stored with `key:value` relationships where `key` is a string, and `value` is any data type.
-- You can **get** or **set** object values using dot notation and the key.
+- While an array stores a list of values, data in objects is stored and retrieved using a `key` and dot notation.
 
 ```js
 const color = {
@@ -252,12 +357,11 @@ const color = {
 	"hex": "#ff0000",
 	"rgb": [255,0,0]
 }
-console.log(color.name); // -> "red" via dot notation
-console.log(color['name']); // -> "red" via square brackets
+console.log(color.name); // -> "red"
 ```
 
 <div class="caption slides-small">
-	You can also use square brackets to fetch the value, which is required if there is a special character or space in the key name.
+	Use square brackets <code>color['name']</code> to fetch a value if there is a special character or space in the key name.    
 </div>
 
 
@@ -268,6 +372,8 @@ console.log(color['name']); // -> "red" via square brackets
 ---
 
 ## Object Methods
+
+Objects can even store functions. For example, these methods (a function stored in an object) of the built-in `Date` object:
 
 👉 **Try it out** - Run these in the console
 
@@ -293,7 +399,7 @@ d.valueOf()
 // -> 1667044804566
 ```
 [`Date.toISOString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) converts to the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) date format
-[`Date.valueOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf) returns date and time as milliseconds since January 1, 1970 00:00:00 UTC
+[`Date.valueOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf) returns date and time as seconds since January 1, 1970 00:00:00 UTC
 
 </details>
 
@@ -319,7 +425,7 @@ var people = [
 	{ name: "John", age: 66 },
 	{ name: "Jack", age: 33 }
 ];
-people.forEach(function(item, index){
+people.forEach(function(item, i){
 	console.log(`${item.name} is ${item.age} years old`);
 });
 // -> Joel is 99 years old
@@ -362,7 +468,7 @@ let subtractiveColors = [
 	{ "color":"violet", "rgb": [238,130,238] },
 ];
 console.log("JSON output to string");
-subtractiveColors.forEach(function(item, index){
+subtractiveColors.forEach(function(item, i){
 	console.log(JSON.stringify(item));
 });
 </script>

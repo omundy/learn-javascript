@@ -1,17 +1,18 @@
 
 # The Lottery (game)
 
-This exercise illustrates variables, conditionals, functions, event listeners, and html DOM manipulation using pure (a.k.a. "vanilla") Javascript.
+This exercise incorporates variables, conditionals, functions, event listeners, and HTML DOM manipulation using pure ("vanilla") Javascript.
 
 
 
 ## Instructions
 
-> In application development, one typically builds a simple prototype to work out the core logic or proof of concept (POC) of their program. Then, each successive version builds on top of the original, adding features and polishing. —Owen Mundy
+The following prompt to create a lottery game follows a typical app development process. 
 
-1. Start with the template [on codepen.io](https://codepen.io/owenmundy/pen/ZEoyMGw?editors=1011) or [the file](the-lottery-v0.html)
-1. Try to code each version of The Lottery without viewing the Javascript source.
-1. You can look at the console, but not the source code.
+1. Fork the template [on codepen.io](https://codepen.io/owenmundy/pen/ZEoyMGw?editors=1011) or copy [the file](the-lottery-v0.html)
+1. Start by building the simple prototype (`v.1`) containing the core logic or proof of concept of the program, then add the interface and features in each successive version. 
+1. Try to code each version by only looking at the interface and Javascript console, but not the actual source code.
+1. You can use MDN docs, Google, class notes, etc.
 
 
 ## Versions
@@ -28,3 +29,4 @@ This exercise illustrates variables, conditionals, functions, event listeners, a
 	- Display all results within the HTML of the page
 1. Lottery v.4
 	- Use `fetch()` to get data from an API to somehow "seed" the randomness in your lottery game.
+    - Add a section of "behind the curtain" controls to manipulate the odds of the game (mwah hah hah!)
