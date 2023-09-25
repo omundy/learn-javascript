@@ -25,10 +25,22 @@
 				<h4 class="mt-3">Random User API <a href="https://randomuser.me/documentation">docs</a></h4>
 				<button class="btn btn-sm btn-dark randomUserBtn mt-1" name="button">randomUserBtn</button>
 
-				<h4 class="mt-3">Sentiment API <a href="https://sentim-api.herokuapp.com/">docs</a></h4>
+				<h4 class="mt-3">Bored API <a href="https://www.boredapi.com/">docs</a></h4>
+				<button class="btn btn-sm btn-dark boredBtn mt-1" name="button">boredBtn</button>		
+
+				<h4 class="mt-3">Tally API (not public)</h4>
+				<button class="btn btn-sm btn-dark tallyBtn mt-1" name="button">tallyBtn</button>	
+
+				<h4 class="mt-3">Cors demo <a href="https://web.dev/cross-origin-resource-sharing/">docs</a></h4>
+				<button class="btn btn-sm btn-dark corsDemoFailBtn mt-1" name="button">corsDemoFailBtn</button>	
+				<button class="btn btn-sm btn-dark corsDemoSuccessBtn mt-1" name="button">corsDemoSuccessBtn</button>	
+				
+				
+
+				<!-- <h4 class="mt-3">Sentiment API <a href="https://sentim-api.herokuapp.com/">docs</a></h4>
 				<button class="btn btn-sm btn-dark sentimentBtnLoveChoco mt-1" name="button">"I love chocolate"</button>
 				<button class="btn btn-sm btn-dark sentimentBtnLikeChoco mt-1" name="button">"I like chocolate"</button>
-				<button class="btn btn-sm btn-dark sentimentBtnHateChoco mt-1" name="button">"I hate chocolate"</button>
+				<button class="btn btn-sm btn-dark sentimentBtnHateChoco mt-1" name="button">"I hate chocolate"</button> -->
 			</div>
 		</div>
 	</div>
@@ -41,34 +53,49 @@
 		$('.randomUserBtn').click(function() {
 			fetchRandomUser();
 		});
-		$('.sentimentBtnLoveChoco').click(() => {
-			fetchSentiment("I love chocolate")
+
+		$('.boredBtn').click(async function() {
+			let data = await fetchData('https://www.boredapi.com/api/activity/');
+			// console.log(data);
+			displayJSON(data);
 		});
-		$('.sentimentBtnLikeChoco').click(() => {
-			fetchSentiment("I like chocolate")
+		$('.tallyBtn').click(async function() {
+			let data = await fetchData('https://tallysavestheinternet.com/api');
+			// console.log(data);
+			displayJSON(data);
 		});
-		$('.sentimentBtnHateChoco').click(() => {
-			fetchSentiment("I hate chocolate")
+		$('.corsDemoFailBtn').click(async function() {
+			let data = await fetchData('https://cors-demo.glitch.me/');
+			// console.log(data);
+			displayJSON(data);
+		});
+		$('.corsDemoSuccessBtn').click(async function() {
+			let data = await fetchData('https://cors-demo.glitch.me/allow-cors');
+			// console.log(data);
+			displayJSON(data);
 		});
 
-
-		function displayJSON(d) {
-			$("textarea").html(d)
-		}
-
-
-
+		
+		
 		async function fetchRandomUser() {
 			let data = await fetchData('https://randomuser.me/api/');
-			displayJSON(data);
+			console.log(data.results[0]);
+			displayJSON(data.results[0]);
 		}
 		async function fetchRandomUserBadUrl() {
 			let data = await fetchData('https://randomuser.me/asdf/');
 			displayJSON(data);
 		}
 
+		
+
+
 		// FUNCTIONS
 
+
+		function displayJSON(d) {
+			$("textarea").html(JSON.stringify(d, null, 4));
+		}
 
 		/**
 		 *	A generic fetch function
@@ -83,13 +110,13 @@
 						// instantly jumps to catch() statement at end
 						throw new Error(`HTTP error! Status: ${response.status}`);
 					}
-					// console.log(response.status); // -> 200
-					// console.log(response.statusText); // -> "OK"
-					// console.log(response); // log the response object
+					console.log(response.status); // -> 200
+					console.log(response.statusText); // -> "OK"
+					console.log(response); // log the response object
 					return response.json(); // parse response body (convert to JSON)
 				})
 				.then(data => {
-					// console.log(data); // log the object
+					console.log(data); // log the object
 					response = data;
 				})
 				.catch((err) => {
@@ -100,31 +127,45 @@
 		}
 
 
-		async function fetchSentiment(text) {
-			// data to send to the sentiment api
-			var requestData = {
-				"text": text
-			};
 
-			await fetch('https://sentim-api.herokuapp.com/api/v1/', {
-					method: "POST",
-					headers: {
-						'Accept': 'application/json',
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify(requestData)
-				})
-				.then(response => {
-					return response.json();
-				})
-				.then(responseData => {
-					console.log(
-						responseData.sentences[0].sentence,
-						responseData.sentences[0].sentiment.polarity,
-						responseData.sentences[0].sentiment.type,
-						responseData);
-				});
-		}
+
+		// THIS API PROBABLY DOESN'T WORK ANY LONGER
+
+		// $('.sentimentBtnLoveChoco').click(() => {
+		// 	fetchSentiment("I love chocolate")
+		// });
+		// $('.sentimentBtnLikeChoco').click(() => {
+		// 	fetchSentiment("I like chocolate")
+		// });
+		// $('.sentimentBtnHateChoco').click(() => {
+		// 	fetchSentiment("I hate chocolate")
+		// });
+
+		// async function fetchSentiment(text) {
+		// 	// data to send to the sentiment api
+		// 	var requestData = {
+		// 		"text": text
+		// 	};
+
+		// 	await fetch('https://sentim-api.herokuapp.com/api/v1/', {
+		// 			method: "POST",
+		// 			headers: {
+		// 				'Accept': 'application/json',
+		// 				'Content-Type': 'application/json'
+		// 			},
+		// 			body: JSON.stringify(requestData)
+		// 		})
+		// 		.then(response => {
+		// 			return response.json();
+		// 		})
+		// 		.then(responseData => {
+		// 			console.log(
+		// 				responseData.sentences[0].sentence,
+		// 				responseData.sentences[0].sentiment.polarity,
+		// 				responseData.sentences[0].sentiment.type,
+		// 				responseData);
+		// 		});
+		// }
 
 	</script>
 </body>

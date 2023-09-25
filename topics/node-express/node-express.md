@@ -268,6 +268,11 @@ npm install
 DEBUG=myapp:* npm start
 ```
 
+*Note you can also [use handlebars for frontend](https://www.codecademy.com/learn/learn-handlebars/modules/templating-with-handlebars/cheatsheet)
+
+
+
+
 > The app structure created by the generator is just one of many ways to structure Express apps. Feel free to use this structure or modify it to best suit your needs.
 
 <details class="caption slides-small">

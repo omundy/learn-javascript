@@ -65,10 +65,43 @@ Students who complete this module will be able to:
 ## About the DOM
 
 - Every time a web page loads, a new DOM object is created.
-- Accessible at `window.document` or just `document` it points to the page structure, content, and properties.
+- The DOM provides properties and methods for the page, as well as the potential to access (or change) all its HTML and CSS.
 
 <img src="../../assets/img/javascript-diagram-dom.png" width="100%">
 
+
+
+
+---
+
+## The window object
+
+We can view these properties and functions in the console or access them with javascript using dot syntax.
+
+1. In the console, type `window` and press return
+1. Expand a property or method to see more.
+1. The *`f`* tells us that `alert()` is a function. 
+1. Call this in the console by typing `alert(123)` or `window.alert(123)` and pressing return.
+
+<img src="../../assets/img/console-window-obj.png" width="100%">
+
+
+
+
+---
+
+## The document object
+
+The `window` includes the entire browser tab, while `window.document` or just `document` contains the page structure, content, and properties for the page only. Explore these in the console:
+
+```js
+// get web page url property
+window.document.URL
+// get page background color property
+window.document.bgColor
+// set a new value for the bgColor property
+window.document.bgColor = "red"
+```
 
 
 
@@ -82,10 +115,12 @@ Many properties can be access with "vanilla" Javascript
 ```js
 // get the current URL
 window.alert(document.URL);
-// set a new value for the bgColor property
-window.document.bgColor = "red"
 // replace the content of the body
 window.document.body.innerText = "😃"
+// return an array of all <a> elements on the page: 
+window.document.querySelectorAll("a")
+// set a new location for this window: 
+window.document.location = "https://davidson.edu"
 ```
 
 

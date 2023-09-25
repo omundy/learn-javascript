@@ -45,7 +45,7 @@ Presentation comments ...
 <details class="caption slides-small">
 <summary>References</summary>
 
-https://medium.com/@adolfokrah/top-javascript-frameworks-for-native-mobile-apps-2019-5e43cc4166df
+[Top Javascript Frameworks for Native Mobile Apps 2023](https://medium.com/@adolfokrah/top-javascript-frameworks-for-native-mobile-apps-2019-5e43cc4166df)
 
 </details>
 
@@ -56,33 +56,25 @@ https://medium.com/@adolfokrah/top-javascript-frameworks-for-native-mobile-apps-
 
 
 
----
-
-## About Electron
-
-Electron is a JS framework for building [desktop](https://patrickhq.medium.com/react-native-vs-electron-js-what-is-better-for-cross-platform-app-development-9cf64ef399f9) applications
-
-
 
 
 
 ---
 
-## About React Native
+## React Native / Expo
 
-React Native is a JS library that uses React's declarative UI to render native components for Android and iOS.
-
-
-1. Read about core components and react fundamentals in the [introduction](https://reactnative.dev/docs/getting-started)
-1. Follow their [quickstart](https://reactnative.dev/docs/environment-setup?guide=quickstart) to create a project and run the hello world
+- React Native is a JS library that uses React's declarative UI to create native (not hybrid) mobile applications
+- React Native renders native UI on Android and iOS (the appearance/behavior matches the platform), and gives you access to all the native APIs on each platform (Gyroscope, Camera, etc.).
+- [Expo](https://reactnative.dev/docs/environment-setup) is a framework and set of services that make it easy to get started writing, testing, building, and even publishing mobile apps. 
 
 
 
----
+## React Native / Expo - Quickstart
 
-## Start with Expo
+The easiest way to get started building and testing your app on a phone is with Expo. The following is based on the [React Native](https://reactnative.dev/docs/environment-setup?guide=quickstart) and [Expo](https://docs.expo.dev/tutorial/create-your-first-app/) introductions.
 
-The easiest way to get started building and testing your app on a phone is [with Expo](https://reactnative.dev/docs/environment-setup). 
+1. Review the [React Fundamentals](https://reactnative.dev/docs/intro-react?language=javascript) as needed
+2. Create and start a demo Expo app. This will install a basic project, then start a server to make your compiled app available on your local network. Several options will appear for testing, including a QR code.
 
 ```bash
 # create new project and cd into it
@@ -91,18 +83,44 @@ npx create-expo-app AwesomeProject && cd AwesomeProject
 npx expo start
 ```
 
-Apps published with Expo require the [Expo SDK](https://docs.expo.dev/versions/latest/) which provides decent (but abstracted) access to native APIs. There are also [a few other considerations](https://adhithiravi.medium.com/building-react-native-apps-expo-or-not-d49770d1f5b8).
+3. Expo Go allows you to test your React Native app on a physical device. Install it on your device, connect to the same wireless network as your computer, and scan the QR code to access Expo app.
+4. To modify your app open App.js and edit some lines. The application will reload automatically once you save your changes.
+
+
+To run your app directly on your machine using an Android Virtual Device `npm run android`, or iOS Simulator `npm run ios` (mac only) you will need to install the Android (JDK, Android Studio) and Mac (Xcode) development environments. See [React Native CLI Quickstart](https://reactnative.dev/docs/environment-setup?guide=native) tab.
 
 
 
 
----
 
-## Cross-Platform Differences
 
-- Much Expo/React Native code can be reused across platforms, but there are some differences.
-- Native components look different because of design guidelines on each platform (see [Apple Human Interface](https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/) and [Android Material Design guidelines](https://material.io/design))
-- For example, the `<Button>` component is rendered differently on iOS and Android.
+## React Native / Expo Quickstart - Publish
+
+```bash
+npm install -g expo-cli
+expo publish
+```
+
+Reference: [How to publish a React Native application to Expo](https://www.educative.io/answers/how-to-publish-a-react-native-application-to-expo)
+
+
+
+## React Native / Expo Quickstart - Build
+
+[EAS Build allows you to build a ready-to-submit binary of your app for the Google Play Store or Apple App Store](https://docs.expo.dev/build/setup/)
+
+```bash
+# 1 Install the EAS (Expo) CLI
+npm install -g eas-cli
+# 2 Log in to your Expo account
+eas login
+# 3 Configure the project
+eas build:configure
+
+```
+
+
+
 
 
 
@@ -123,9 +141,32 @@ Name | Description
 <details class="caption slides-small">
 <summary>References</summary>
 
-https://www.codecademy.com/learn/learn-react-native/modules/introduction-to-react-native/cheatsheet
+- [Codecademy cheatsheet](https://www.codecademy.com/learn/learn-react-native/modules/introduction-to-react-native/cheatsheet)
+- [A few considerations about Expo](https://adhithiravi.medium.com/building-react-native-apps-expo-or-not-d49770d1f5b8)
 
 </details>
+
+
+
+
+
+---
+
+## Cross-Platform Differences
+
+- Much Expo/React Native code can be reused across platforms, but there are some differences.
+- Native components look different because of design guidelines on each platform (see [Apple Human Interface](https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/) and [Android Material Design guidelines](https://material.io/design))
+- For example, the `<Button>` component is rendered differently on iOS and Android.
+
+
+
+
+
+---
+
+## Desktop apps
+
+Electron is a JS framework for building [desktop only](https://patrickhq.medium.com/react-native-vs-electron-js-what-is-better-for-cross-platform-app-development-9cf64ef399f9) applications.
 
 
 
@@ -134,9 +175,10 @@ https://www.codecademy.com/learn/learn-react-native/modules/introduction-to-reac
 
 ## Tutorials
 
-- [Add fonts](https://blog.logrocket.com/adding-custom-fonts-react-native/#adding-fonts-the-expo-way)
-- [Codecademy React Native](https://www.codecademy.com/learn/learn-react-native)
-
+1. [Codecademy React Native](https://www.codecademy.com/learn/learn-react-native)
+1. Expo [Introduction](https://docs.expo.dev/tutorial/introduction/)
+1. Expo [Build Tutorial](https://docs.expo.dev/build/introduction/)
+1. [Add fonts](https://blog.logrocket.com/adding-custom-fonts-react-native/#adding-fonts-the-expo-way)
 
 
 ---

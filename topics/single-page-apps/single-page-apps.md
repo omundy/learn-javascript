@@ -301,7 +301,7 @@ All JS apps need to change the DOM (to update/insert/remove elements and content
 - Vue.js updates the DOM automatically to reflect the state of variables in the app.
 - jQuery (and Vanilla Js) manipulate the DOM directly, leaving it up to the programmer to manage and keep the state of the application consistent with the DOM.
 
-Don't use them together: If you manipulate the DOM with jQuery then Vue.js won’t be informed that something was changed externally, so can't manage state automatically.
+Don't use them together: If you manipulate the DOM with jQuery then Vue.js (or React) won’t be informed that something was changed externally, so can't manage state automatically.
 
 
 
@@ -362,7 +362,7 @@ Vue.js is flexible in how you implement it within a project. These are listed fr
 <div class="col">
 
 ```jsx
-// JSX element being saved in a variable:
+// JSX element being saved in a variable...
 const navBar = <nav>I am a nav bar</nav>;
 // ... or an object
 const colors = {
@@ -401,7 +401,7 @@ const myDiv = (
 
 ## Rendering JSX
 
-In React, for every DOM object, there is a corresponding **[virtual DOM object](https://www.codecademy.com/article/react-virtual-dom)** (see `ReactDOM` below). A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+In React, for every DOM object, there is a corresponding **[virtual DOM object](https://www.codecademy.com/article/react-virtual-dom)** (see `ReactDOM` in the code example). A virtual DOM object is a representation of a DOM object, like a lightweight copy.
 
 
 ```js
@@ -418,32 +418,69 @@ ReactDOM.render(<h1>Hello world</h1>, document.getElementById('app'));
 
 
 
----
-
-## React Components
-
-- React separates *concerns* (not technologies) within reusable UI **components** that contain both markup and logic.
-- A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
-
 
 
 ---
 
 ## Rendering JSX with a component
 
-The same as the previous example, but with a component:
+This code example is the same as the previous example, but the JSX is stored in a reusable component:
 
 ```js
+// import libraries
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+// JSX is stored in a reusable component
 function HelloComponent(props) {
   return <h1>Hello World!</h1>;
 }
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Hello />);
+// render to #app
+const app = ReactDOM.createRoot(document.getElementById("app"));
+app.render(<HelloComponent />);
 ```
+
+
+
+
+---
+
+## React Components
+
+- A React **components** are pieces of reusable UI (user interface) that contain their own markup, appearance, and logic. 
+- A component can be as small as a button, or as large as an entire page.
+- Traditional website development separates code by technology (HTML, CSS, JS in separate files). React separates code by *concern*—so a component will contain Javascript, HTML (JSX), and CSS inside a single file.  
+
+
+
+
+--- 
+
+## React & CSS
+
+Because React components are "drag and drop" they must contain all the information about appearance. There are several different [ways to write CSS in React](https://css-tricks.com/different-ways-to-write-css-in-react/) including external stylesheets, inline styles `<div className="main" style={{color:"red"}}>`, and (what appears to be the most common) using styles inside objects:
+
+```js
+// example component
+import { React } from "react";
+function App() {
+  const styles = {
+    main: {
+      backgroundColor: "#f1f1f1",
+    },
+    inputText: {
+      color: "red",
+    },
+  };
+  return (
+    <div className="main" style={styles.main}>
+      <input type="text" style={styles.inputText}></input>
+    </div>
+  );
+}
+export default App;
+```
+
+
 
 
 
@@ -452,7 +489,7 @@ root.render(<Hello />);
 
 ## React adds complexity
 
-These examples are intended to show the basics, keep in mind that to use React in production
+These examples are intended to show the basics, keep in mind that to use React in production:
 
 - You need Node / NPM to run...
 - A compiler (e.g. [webpack](https://webpack.js.org/concepts/)) to keep track of dependencies and modules and bundle them into a single Javascript.
@@ -469,6 +506,7 @@ Using React with Express (ES5) requires Babel...
 
 - [Get started with ES6 JavaScript for writing Node.js using Express](https://dev.to/geekygeeky/get-started-with-es6-javascript-for-writing-nodejs-using-express-544h)
 - [How to enable ES6 (and beyond) syntax with Node and Express](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
+
 
 
 
