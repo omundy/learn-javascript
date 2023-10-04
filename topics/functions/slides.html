@@ -1484,13 +1484,12 @@ In the updated example the repeated code is "wrapped" with a function which "ret
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.btn&quot;</span>);
 
 <span class="hljs-comment">// #1</span>
-button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// the code in this function is used </span>
-	<span class="hljs-comment">// as a callback from the listener</span>
+button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-comment">// anoymous function is handler / callback</span>
 });
 
 <span class="hljs-comment">// #2 </span>
-button.<span class="hljs-title function_">addEventListener</span>(myCallback);
+button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, myCallback);
 <span class="hljs-comment">// callback stored in named function</span>
 <span class="hljs-keyword">var</span> myCallback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
 	<span class="hljs-comment">// same as above</span>
@@ -1506,18 +1505,17 @@ button.<span class="hljs-title function_">addEventListener</span>(myCallback);
 <h2 id="anonymous-functions-jquery-example">Anonymous Functions (jQuery example)</h2>
 <div class="twocolumn">
 <div class="col">
-</div>
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;form&quot;</span>).<span class="hljs-title function_">submit</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// the code in this function</span>
-	<span class="hljs-comment">// is used as a callback from</span>
-	<span class="hljs-comment">// the submit listener</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-comment">// jquery click() adds listener</span>
+    <span class="hljs-comment">// anonymouse function used as handler</span>
 });
 </code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;form&quot;</span>).<span class="hljs-title function_">submit</span>(myCallback);
+</div>
+<div class="col">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(myCallback);
 
 <span class="hljs-keyword">var</span> myCallback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// this is the same</span>
+	<span class="hljs-comment">// this is the same as the pure JS example</span>
 }
 </code></pre>
 </div>

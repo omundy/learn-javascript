@@ -322,13 +322,12 @@ console.log(getCurrentHour());
 let button = document.querySelector(".btn");
 
 // #1
-button.addEventListener(function() {
-	// the code in this function is used 
-	// as a callback from the listener
+button.addEventListener("click", function() {
+	// anoymous function is handler / callback
 });
 
 // #2 
-button.addEventListener(myCallback);
+button.addEventListener("click", myCallback);
 // callback stored in named function
 var myCallback = function() {
 	// same as above
@@ -355,22 +354,22 @@ var myCallback = function() {
 <div class="twocolumn">
 <div class="col">
 
-</div>
-<div class="col">
-
 ```js
-$("form").submit(function() {
-	// the code in this function
-	// is used as a callback from
-	// the submit listener
+$("button").click(function() {
+	// jquery click() adds listener
+    // anonymouse function used as handler
 });
 ```
 
+</div>
+<div class="col">
+
+
 ```js
-$("form").submit(myCallback);
+$("button").click(myCallback);
 
 var myCallback = function() {
-	// this is the same
+	// this is the same as the pure JS example
 }
 ```
 
