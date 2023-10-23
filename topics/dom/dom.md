@@ -78,14 +78,20 @@ Students who complete this module will be able to:
 
 We can view these properties and functions in the console or access them with javascript using dot syntax.
 
-1. In the console, type `window` and press return
-1. Expand a property or method to see more.
-1. The *`f`* tells us that `alert()` is a function. 
-1. Call this in the console by typing `alert(123)` or `window.alert(123)` and pressing return.
+<div class="twocolumn">
+<div class="col">
+
+1. Type `window` and press return
+1. Expand a property *`{}`* or function *`f`* to see more. 
+1. Functions can be called in the console: `alert(123)` or `window.alert(123)` and press return.
+
+</div>
+<div class="col">
 
 <img src="../../assets/img/console-window-obj.png" width="100%">
 
-
+</div>
+</div>
 
 
 ---
@@ -116,7 +122,7 @@ Many properties can be access with "vanilla" Javascript
 // get the current URL
 window.alert(document.URL);
 // replace the content of the body
-window.document.body.innerText = "😃"
+window.document.body.innerHTML = "😃"
 // return an array of all <a> elements on the page: 
 window.document.querySelectorAll("a")
 // set a new location for this window: 
@@ -144,12 +150,12 @@ window.document.location = "https://davidson.edu"
 ```
 
 ```js
-// store a reference to the dom element using the id to select it
-let element = document.querySelector("p#greeting");
+// store reference to element using id selector
+let ele = document.querySelector("#greeting");
 // get the text
-console.log(element.textContent);
+console.log(ele.textContent);
 // set the text
-element.textContent = "Hello world!";
+ele.textContent = "Hello world!";
 ```
 
 </div>
@@ -173,7 +179,7 @@ $('.myClass').append(' - here is some new text');
 ```
 
 
-NOTE: https://youmightnotneedjquery.com/
+NOTE: [youmightnotneedjquery.com](https://youmightnotneedjquery.com)
 
 
 

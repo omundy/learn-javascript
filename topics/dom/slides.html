@@ -1383,13 +1383,18 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="14" style="--paginate:true;--theme:owen;">
 <h2 id="the-window-object">The window object</h2>
 <p>We can view these properties and functions in the console or access them with javascript using dot syntax.</p>
+<div class="twocolumn">
+<div class="col">
 <ol>
-<li>In the console, type <code>window</code> and press return</li>
-<li>Expand a property or method to see more.</li>
-<li>The <em><code>f</code></em> tells us that <code>alert()</code> is a function.</li>
-<li>Call this in the console by typing <code>alert(123)</code> or <code>window.alert(123)</code> and pressing return.</li>
+<li>Type <code>window</code> and press return</li>
+<li>Expand a property <em><code>{}</code></em> or function <em><code>f</code></em> to see more.</li>
+<li>Functions can be called in the console: <code>alert(123)</code> or <code>window.alert(123)</code> and press return.</li>
 </ol>
+</div>
+<div class="col">
 <img src="../../assets/img/console-window-obj.png" width="100%" />
+</div>
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="14" style="--paginate:true;--theme:owen;">
 <h2 id="the-document-object">The document object</h2>
@@ -1408,7 +1413,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// get the current URL</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">URL</span>);
 <span class="hljs-comment">// replace the content of the body</span>
-<span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">innerText</span> = <span class="hljs-string">&quot;😃&quot;</span>
+<span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;😃&quot;</span>
 <span class="hljs-comment">// return an array of all &lt;a&gt; elements on the page: </span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;a&quot;</span>)
 <span class="hljs-comment">// set a new location for this window: </span>
@@ -1427,12 +1432,12 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <div class="col">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;greeting&quot;</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// store a reference to the dom element using the id to select it</span>
-<span class="hljs-keyword">let</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;p#greeting&quot;</span>);
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// store reference to element using id selector</span>
+<span class="hljs-keyword">let</span> ele = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#greeting&quot;</span>);
 <span class="hljs-comment">// get the text</span>
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(element.<span class="hljs-property">textContent</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ele.<span class="hljs-property">textContent</span>);
 <span class="hljs-comment">// set the text</span>
-element.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Hello world!&quot;</span>;
+ele.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Hello world!&quot;</span>;
 </code></pre>
 </div>
 </div>
@@ -1445,7 +1450,7 @@ $(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title func
 <span class="hljs-comment">// select all elements with myClass, add text to end</span>
 $(<span class="hljs-string">&#x27;.myClass&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27; - here is some new text&#x27;</span>);
 </code></pre>
-<p>NOTE: <a href="https://youmightnotneedjquery.com/">https://youmightnotneedjquery.com/</a></p>
+<p>NOTE: <a href="https://youmightnotneedjquery.com">youmightnotneedjquery.com</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="14" style="--paginate:true;--theme:owen;">
 <h2 id="forms-and-events">Forms and Events</h2>
