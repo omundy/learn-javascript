@@ -1204,6 +1204,106 @@ div#\:\$p > svg > foreignObject > section::after {
 div#\:\$p > svg > foreignObject > section[data-color] :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section[data-color] :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section[data-color] :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section[data-color] :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section[data-color] :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section[data-color] :is(h6, marp-h6){
   color:currentcolor;
 }
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > line[data-line], div#\:\$p > svg > foreignObject > section svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > rect[data-frame], div#\:\$p > svg > foreignObject > section svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dashed, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dotted, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+div#\:\$p > svg > foreignObject > section mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+div#\:\$p > svg > foreignObject > section g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+div#\:\$p > svg > foreignObject > section mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+div#\:\$p > svg > foreignObject > section foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] path[data-c], div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+@media print{
+  div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] path[data-c],div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] use[data-c]{
+    stroke-width:0;
+  }
+}
 /* @theme owen */
 /* Styles for slides only, they don't work on github.com */
 
@@ -1331,37 +1431,108 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
   width: 100%;
   height: 100%;
 }
-</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
 <p>← <a href="../../">Learn Javascript</a></p>
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-node-ltgreen-150w.png" /></a></p>
 <h1 id="servers">Servers</h1>
 <p>Hosting a Javascript application, including security and production</p>
 <p><span class="slides-small"><a href="slides.html">slides</a> | <a href="servers.md">md</a></span></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
-<h2 id="about-servers">About Servers</h2>
-<p>An overview of hosting options for hosting a website built with node:</p>
-<ul>
-<li>Websites and APIs that require node to run continuously
-<ul>
-<li>Localhost - Test code locally, start server when needed. Not live.</li>
-<li>Vercel.com - A good option for free, node (Express, Next, etc.) hosting (see below)</li>
-<li>Shared hosting - Most of these will not let you run node</li>
-<li>VPS hosting - An affordable option. Use PM2 to keep server running (see below)</li>
-</ul>
-</li>
-<li>Static websites (node was used in development to build static files)
-<ul>
-<li>Github Pages - You can host only static files here</li>
-<li>React projects <a href="https://create-react-app.dev/docs/production-build/">must be built for production</a></li>
-</ul>
-</li>
-</ul>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
+<h2 id="server-options">Server options</h2>
+<small>
+<table>
+<thead>
+<tr>
+<th>Web host</th>
+<th style="text-align:center">Static</th>
+<th style="text-align:center">Dynamic</th>
+<th style="text-align:center">Node</th>
+<th style="text-align:center">PHP</th>
+<th style="text-align:center">database</th>
+<th style="text-align:center">.env</th>
+<th style="text-align:center">Live</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Github Pages</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td>free</td>
+</tr>
+<tr>
+<td>Localhost</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td>free</td>
+</tr>
+<tr>
+<td>Shared host</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td>$</td>
+</tr>
+<tr>
+<td>VPS hosting</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td>$$</td>
+</tr>
+<tr>
+<td><a href="https://glitch.com/">glitch.com </a></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center"><a href="https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data">✅</a></td>
+<td style="text-align:center">✅</td>
+<td>free(mium)</td>
+</tr>
+<tr>
+<td><a href="https://vercel.com">vercel.com </a></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">✅</td>
+<td>free(mium)</td>
+</tr>
+</tbody>
+</table>
+<p>Notes: Databases require PHP or node. React or Next projects <a href="https://create-react-app.dev/docs/production-build/">can be built for static</a></p>
+</small>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
 <h2 id="host-a-node-app-on-vercel">Host a node app on Vercel</h2>
+<div class="twocolumn">
+<div class="col">
 <ol>
-<li>Add a file <code>vercel.json</code> to your repo (see below)</li>
+<li>Add a <code>vercel.json</code> file</li>
 </ol>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-json"><span class="hljs-punctuation">{</span>
 	<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
@@ -1376,52 +1547,111 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 	<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
+</div>
+<div class="col">
 <ol start="2">
-<li>Export your main app</li>
+<li>Export your application</li>
 </ol>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// server.js</span>
 <span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
 <span class="hljs-keyword">var</span> app = <span class="hljs-title function_">express</span>();
-<span class="hljs-comment">// routers, parsers, middleware, start server ...</span>
+<span class="hljs-comment">// routers</span>
+<span class="hljs-comment">// middleware</span>
+<span class="hljs-comment">// start server</span>
+<span class="hljs-comment">// finally ...</span>
 <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = app;
 </code></pre>
 <ol start="3">
-<li>Continue with this tutorial: <a href="https://dev.to/adafycheng/deploy-nodejs-application-to-vercel-in-5-minutes-171m">Deploy Node.js application to Vercel in 5 minutes</a></li>
+<li>Continue with this tutorial: <a href="https://dev.to/adafycheng/deploy-nodejs-application-to-vercel-in-5-minutes-171m">Deploy Node.js application to Vercel</a></li>
 </ol>
+</div>
+</div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
 <h2 id="running-node-on-a-server">Running node on a server</h2>
 <p>Use <a href="https://pm2.keymetrics.io/docs/usage/quick-start/">pm2</a> to monitor, manage, and restart your node/express app.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="5" style="--paginate:true;--theme:owen;">
-<h2 id="keep-your-passwords-safe-with-env">Keep your passwords safe with .env</h2>
-<p>Before you add any passwords in you projects</p>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
+<h2 id="securing-information">Securing information</h2>
+<p>Never commit secure information (database passwords, API keys, etc.) to git.</p>
 <ol>
-<li>Create a <a href="http://toptal.com/developers/gitignore/api/node,macos,windows">.gitignore</a> file in you project root directory so you don't commit specific files to your repo.</li>
+<li>Use <code>.gitignore</code> to prevent adding secure files to git</li>
+<li>If the secret information is required for your project then you will also need to add the secret file to your server</li>
+</ol>
+<p>See below for tutorials.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
+<h2 id="securing-information-with-gitignore">Securing information with .gitignore</h2>
+<div class="twocolumn">
+<div class="col">
+<ol>
+<li>Create a new file for the secret information.</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// secure.js</span>
+<span class="hljs-keyword">let</span> key = <span class="hljs-number">12345</span>;
+</code></pre>
+<ol start="2">
+<li>Import the file (before your other code!)</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;secure.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>  
+</code></pre>
+</div>
+<div class="col">
+<ol start="3">
+<li>Create a <code>.gitignore</code> file in the root of your project. Add the name of the secret file on a new line.</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># .gitignore</span>
+passwords.js
+</code></pre>
+<ol start="4">
+<li>Commit the <code>.gitignore</code> file and then git will not track the file containing your secret information.</li>
+</ol>
+<p><small>*Your file will only run on your computer</small></p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
+<h2 id="keep-your-passwords-safe-with-env">Keep your passwords safe with .env</h2>
+<div class="twocolumn">
+<div class="col">
+<ol>
+<li>Create a <code>.env</code> in the project root and add secure information</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>USER=&quot;admin&quot;
+PASS=&quot;123456&quot;
+</code></pre>
+<ol start="2">
+<li>Create a <a href="http://toptal.com/developers/gitignore">.gitignore</a> file in your project root. Add the <code>.env</code>.</li>
 </ol>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>node_modules
 .DS_Store
 .env
-...
 </code></pre>
-<ol start="2">
-<li>Create a .env (also in root) and add secure information (passwords, API keys, etc.)</li>
-</ol>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>DB_USER=&quot;admin&quot;
-DB_PASS=&quot;123456&quot;
-</code></pre>
+</div>
+<div class="col">
 <ol start="3">
-<li>Install <a href="https://www.npmjs.com/package/dotenv">dotenv</a> <code>npm install dotenv</code> then import the module (below). This loads variables from <code>.env</code> file.</li>
+<li>Install <a href="https://www.npmjs.com/package/dotenv">dotenv</a></li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">npm install dotenv
+</code></pre>
+<ol start="4">
+<li>Import the dotenv module, which loads variables from <code>.env</code> file.</li>
 </ol>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// import package</span>
 <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;dotenv&#x27;</span>).<span class="hljs-title function_">config</span>()
-
 <span class="hljs-comment">// vars are now available</span>
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(process.<span class="hljs-property">env</span>.<span class="hljs-property">DB_USER</span>)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(process.<span class="hljs-property">env</span>.<span class="hljs-property">USER</span>)
 </code></pre>
-<ol start="4">
-<li>(optional) Create a <code>.env.example</code> file with placeholder information so you can duplicate, rename, and then replace the values on your server</li>
-<li>(optional) You will need to make a copy on your server (e.g. Vercel) with the correct contents. This also allows different (ahem, more secure) DB user/pass on your server vs. your localhost</li>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="8" style="--paginate:true;--theme:owen;">
+<h2 id="keep-your-passwords-safe-with-env-part-2">Keep your passwords safe with .env (part 2)</h2>
+<ol start="5">
+<li><code>(optional)</code> Make a copy of the file to your server (e.g. Vercel) with the correct contents. This also allows different (ahem, more secure) DB user/pass on your server vs. your localhost</li>
+<li><code>(optional)</code> Create a <code>.env.example</code> file with placeholder information so you can duplicate, rename, and then replace the values on your server</li>
 </ol>
 </section>
 <script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.2.0/lib/bespoke.js.LICENSE.txt */
