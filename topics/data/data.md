@@ -167,6 +167,20 @@ Two important concepts to know when importing external data into your program:
 
 ---
 
+## CORS error message
+
+If you see the following error it likely means you are trying to load data:
+
+- from a server or API that doesn't allow cross-origin requests
+- from your local file system `file:///` or `C:`
+
+<pre><code class="slides-small">Access to fetch at 'remote-url' from origin 'your-url' has been blocked by CORS policy
+No 'Access-Control-Allow-Origin' header is present on the requested resource.</code></pre>
+
+
+
+---
+
 ## CORS Rules
 
 - You **can** import files [from the same origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) as the file you are importing it into.
@@ -183,7 +197,7 @@ Two important concepts to know when importing external data into your program:
 
 ## How to fix CORS (simple)
 
-If you are loading a `.json` file from within your own project, you can change the file type and store the data as an object in a Javascript variable:
+If you are loading a `.json` file from within your own project, just change the file type and store the data as an object in a Javascript variable:
 
 <div class="twocolumn">
 <div class="col">
@@ -199,7 +213,7 @@ e.g. `data.json`
 </div>
 <div class="col">
 
-...to `data.js` with a variable
+...becomes `data.js` with a variable
 
 ```js
 let data = {
@@ -212,16 +226,35 @@ let data = {
 
 
 
+---
+
+## Test for CORS
+
+1. Open a page that uses remote data (e.g. Bootstrap or Google Fonts)
+2. Open DevTools, click on the Network tab, and refresh the page
+3. Select a Bootstrap file in the resources list.
+4. Under Headers, look for `Access-Control-Allow-Origin`: 
+    - ✅ A wildcard `*` (asterisk) = all requests are accepted.
+    - 🚫 If not set, then cross-origin is not allowed 
+5. Run these in the console and repeat #4 for each resource. Also see [this tester](https://cors-test.codehappy.dev)
+
+```js
+fetch("https://github.com").catch(e => console.log(e)); // 🚫
+fetch("https://cdn.jsdelivr.net/").catch(e => console.log(e)); // 🚫
+fetch("https://cdn.jsdelivr.net/npm/").catch(e => console.log(e)); // ✅
+```
+
+
+
 
 ---
 
 ## How to fix CORS
 
-- If you see the following error it likely means you are trying to access an API on a server that hasn't enabled CORS.
+Unless the remote host has explicitely banned cross-origin requests
 
-<pre><code class="slides-small">Access to fetch at '<remote-url>' from origin '<your-website-url>' has been blocked by CORS policy
-No 'Access-Control-Allow-Origin' header is present on the requested resource.
-</code></pre>
+
+ you are using remote data you will need to 
 
 To get around this while you are developing locally, you can do one of the following:
 
@@ -463,15 +496,14 @@ See https://omundy.github.io/learn-computing/slides/data-apis.html
 
 ## Tips for writing code using APIs
 
-When you use remote data it adds additional latency and points where problems can occur:
+Using remote data adds latency and points where problems can occur:
 
-- There are more points where things can fail.
-    - Make sure your requests work in the browser or Postman
-- Save sample responses (test data) locally so you can develop your application without bumping into a rate limit.
-- APIs introduce latency so use asynchronous programming (`async`/`await`, promises, etc.)
-- Many APIs use rate limiting to prevent abuse. They identify your requests using your key.
+- Start with a tool that makes it easy to see what is returned. For example, test that your requests work in the browser or Postman
+- Save sample responses (test data) locally to develop your application without bumping into a rate limit.
+- **APIs introduce latency** so use asynchronous programming (`async`/`await`, promises, etc.)
+- Many APIs use **rate limiting** to prevent abuse. They identify your requests using your key.
 
-Start with a tool that makes it easy to see what is returned:
+
 
 
 
@@ -481,21 +513,21 @@ Start with a tool that makes it easy to see what is returned:
 
 ## Data Storage
 
-When you use data in a project you should address which of the following applies to your application:
+Considerations for using data in a project:
 
-1. Is your data **static** (unchanging) or **dynamic** (and how often does it changes)?
-1. Do you need to **insert** or **update** data (from users, a scraper, or other means)?
-1. Will you need to **query** the data (by searching, sorting, etc.)?
-1. How much data will you need to **store** or **request** across a network?
-1. What data **formats** do you have / will you need?
-1. Do you need to **clean** or **transform** your data (e.g. some fields are incorrect or need to be altered)?
+1. Is your data `static` (unchanging) or `dynamic` (and how often does it changes)?
+1. Do you need to `insert` or `update` data (from users, a scraper, or other means)?
+1. Will you need to `query` the data (by searching, sorting, etc.)?
+1. How much data will you need to `store` or `request` across a network?
+1. What data `formats` do you have / will you need?
+1. Do you need to `clean` or `transform` your data?
 1. Do all of your datasets need to be treated the same?
 
-Some example situations:
+Example situations:
 
-- I already have a spreadsheet, but it has many columns I do not need; It is `static` not `clean`
-- I want users to be able to add, edit, and search content; It is `dynamic`, I need to `insert`, `update`, and `query`
-- I want to use live data via a remote API; It is `dynamic` accessed via a `request`
+- I have a spreadsheet (`static`), with many columns I don't need (not `clean`)
+- I want users to be able to (`dynamic`) add (`insert`) or edit (`update`) content
+- I want to use live data (`dynamic`) via a remote API (`request`)
 
 
 
@@ -516,8 +548,8 @@ Some example situations:
 
 - A "flat file" is any single or collection of plain text files that stores data (e.g. CSV, TSV, JSON, etc.) They are easy to write, transform, or transmit, but since they must be read from memory they are slow and difficult to `query`.
 - A database requires some additional work to set up the software and write the code that uses it. The benefit is that it is easy to `insert`, `update`, and `query` your data.
+- [How to install MySQL on MacOS](https://flaviocopes.com/mysql-how-to-install/)
 
-https://flaviocopes.com/mysql-how-to-install/
 
 
 
@@ -617,10 +649,10 @@ console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} 
 
 
 
----
+<!-- ---
 
 ## FAQ & Tips
-
+ -->
 
 
 
