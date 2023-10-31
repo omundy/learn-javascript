@@ -1452,23 +1452,19 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="31" style="--paginate:true;--theme:owen;">
 <h2 id="how-to-fix-cors-simple">How to fix CORS (simple)</h2>
-<p>If you are loading a <code>.json</code> file from within your own project, you can...</p>
+<p>If you are loading a <code>.json</code> file from within your own project, you can change the file type and store the data as an object in a Javascript variable:</p>
 <div class="twocolumn">
 <div class="col">
-<p>Change this:</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-json"><span class="hljs-comment">// data.json</span>
-<span class="hljs-punctuation">{</span>
+<p>e.g. <code>data.json</code></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-json"><span class="hljs-punctuation">{</span>
     <span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;value&quot;</span>
-    ...
 <span class="hljs-punctuation">}</span>
 </code></pre>
 </div>
 <div class="col">
-<p>To this:</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// data.js</span>
-<span class="hljs-keyword">let</span> data = {
+<p>...to <code>data.js</code> with a variable</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> data = {
     <span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;value&quot;</span>
-    ...
 }
 </code></pre>
 </div>

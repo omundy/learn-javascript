@@ -183,31 +183,27 @@ Two important concepts to know when importing external data into your program:
 
 ## How to fix CORS (simple)
 
-If you are loading a `.json` file from within your own project, you can...
+If you are loading a `.json` file from within your own project, you can change the file type and store the data as an object in a Javascript variable:
 
 <div class="twocolumn">
 <div class="col">
 
-Change this:
+e.g. `data.json` 
 
 ```json
-// data.json
 {
     "key": "value"
-    ...
 }
 ```
 
 </div>
 <div class="col">
 
-To this:
+...to `data.js` with a variable
 
 ```js
-// data.js
 let data = {
     "key": "value"
-    ...
 }
 ```
 
