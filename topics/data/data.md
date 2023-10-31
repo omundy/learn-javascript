@@ -179,6 +179,42 @@ Two important concepts to know when importing external data into your program:
 
 
 
+---
+
+## How to fix CORS (simple)
+
+If you are loading a `.json` file from within your own project, you can...
+
+<div class="twocolumn">
+<div class="col">
+
+Change this:
+
+```json
+// data.json
+{
+    "key": "value"
+    ...
+}
+```
+
+</div>
+<div class="col">
+
+To this:
+
+```js
+// data.js
+let data = {
+    "key": "value"
+    ...
+}
+```
+
+</div>
+</div>
+
+
 
 
 ---
