@@ -93,7 +93,7 @@ var singer = {
 <div class="col">
 
 - Data collections can be stored (serialized) in code, or imported from external files, databases, or API servers.
-- Exchange formats standardize how data is stored and transmitted. These are generally tabluar or hierarchical.
+- Exchange formats standardize how data is stored and transmitted. These are generally tabular or hierarchical.
 
 <div class="caption slides-small">
 	For more see:
@@ -148,10 +148,135 @@ var singer = {
 
 ## Using External Data
 
-Two important concepts to know when importing external data into your program:
+Important concepts to know when importing external data into your program:
 
-- Your program must be given **access** to the data by the [CORS policy](#cross-origin-resource-sharing) of the data host.
-- A `json` file is plain text, and so it must be **deserialized** and stored in computer memory to use.
+- External data sent over a network is **serialized** (as a string) and must be **deserialized** (stored as data in computer memory) to use in your program.
+- The most common method to retrieve external data in Javascript is the `fetch()`, which can deserialize using the `.json()` method.
+- Your program must have **access** to retrieve external data by the [CORS policy](#cross-origin-resource-sharing) on the remote server.
+
+
+
+
+
+---
+
+## Serialization
+
+- When you create a variable in your program it stores data in the memory of the computer. If you restart your computer that data is lost.
+- To save data that can be accessed again or sent across a network you must [serialize](https://en.wikipedia.org/wiki/Serialization) it using a [data exchange format](https://en.wikipedia.org/wiki/Data_exchange#Popular_languages_used_for_data_exchange) 
+
+
+
+---
+
+## Deserialization
+
+
+- Likewise, when you load data from an external source it arrives as plain text. For example, [`data`](../datasets/cat-facts.json) returned from this [random cat facts API](https://catfact.ninja/fact) ([docs](https://catfact.ninja/)) arrives as one large string:
+
+
+```text
+[{"type":"cat", "text":"In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."}, {"type":"cat","text":"When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."}];
+```
+
+
+
+
+
+
+---
+
+## Deserialization
+
+- Before you can use external data in your code, you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can read and use.
+- [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can be used to convert a string of serialized JSON data into a Javascript Object.
+
+```js
+let obj = JSON.parse(str);
+console.log(obj[1].text);
+// -> "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
+```
+
+
+---
+
+## Deserialization
+
+After the above, the JSON string has now been deserialized, and is an object that Javascript can use.
+
+```json
+[{
+	"type": "cat",
+	"text": "In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."
+}, {
+	"type": "cat",
+	"text": "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
+}]
+```
+
+You can also convert a Javascript Object back to a string with [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+
+```js
+console.log(JSON.stringify(str)); // -> "[{"type":"cat","text":"In the original Italian version ... ]"
+```
+
+
+
+
+
+---
+
+## Load data with Fetch
+
+- Javascript's [`Fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) is the most common method to load external data over HTTP.
+- Fetch is asynchronous, and return a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object, which is **resolved** once the asynchronous response has been received.
+
+```js
+// fetch requests an external resource from endpoint
+fetch('https://catfact.ninja/fact')
+    // then passes response to next item in chain
+	.then(response => { 
+        // log the entire response object stored in variable
+        console.log(response);
+        // -> 200, "OK"
+	    console.log(response.status, response.statusText);     
+    });
+```
+
+---
+
+## Load data with Fetch
+
+
+
+- To use the data that fetch returns we must deserialize the `response.body` with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json) 
+- Demo: [Why do we need asynchronous code?](https://codepen.io/owenmundy/pen/dyKMRBN?editors=0011) on codepen
+
+
+
+```js
+fetch('https://catfact.ninja/fact') 
+    .then(response => {
+		// parse response.body (convert to JSON), pass to next
+        return response.json();  
+    })
+    // data = deserialized response body
+    .then(data => { 
+        console.log(data); 
+    });
+```
+
+
+
+
+
+---
+
+## Load data with Fetch
+
+![fetch](../../assets/img/demo-fetch.png)
+
+
 
 
 
@@ -293,102 +418,6 @@ Long term solutions:
 
 </div>
 </div>
-
-
-
----
-
-## Serialization and Deserialization
-
-- Data must be [serialized](https://en.wikipedia.org/wiki/Serialization) into a [data exchange format](https://en.wikipedia.org/wiki/Data_exchange#Popular_languages_used_for_data_exchange) to be stored or sent across a network as a single entity.
-- Likewise, when you load data from an external source it arrives as plain text.
-- For example, [`data`](../datasets/cat-facts.json) returned from this [random cat facts API](https://catfact.ninja/fact) ([docs](https://catfact.ninja/)) arrives as one large string:
-
-```text
-[{"type":"cat", "text":"In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."}, {"type":"cat","text":"When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."}];
-```
-
-
-
-
-
----
-
-## Deserialization
-
-- Before you can use external data in your code, you must conversely [*deserialize*](https://developer.mozilla.org/en-US/docs/Glossary/Deserialization) the string into a data structure that Javascript can read and use.
-- [`JSON.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can be used to convert a string of serialized JSON data into a Javascript Object.
-
-```js
-let obj = JSON.parse(str);
-console.log(obj[1].text);
-// -> "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
-```
-
-
----
-
-## Deserialization
-
-After the above, the JSON string has now been deserialized, and is an object that Javascript can use.
-
-```json
-[{
-	"type": "cat",
-	"text": "In the original Italian version of Cinderella, the benevolent fairy godmother figure was a cat."
-}, {
-	"type": "cat",
-	"text": "When a cats rubs up against you, the cat is marking you with it's scent claiming ownership."
-}]
-```
-
-You can also convert a Javascript Object back to a string with [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
-
-```js
-console.log(JSON.stringify(str)); // -> "[{"type":"cat","text":"In the original Italian version ... ]"
-```
-
-
-
-
-
----
-
-## Load data with Fetch
-
-- Javascript's [`Fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) is a common method to load external data.
-- Fetch makes an HTTP request, passing in the URI for your resource.
-- Fetch is asynchronous, and return a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object, which is **resolved** once the asynchronous response has been received.
-
-```js
-fetch('https://catfact.ninja/fact')
-	.then(response => console.log(response));
-```
-
----
-
-## Load data with Fetch
-
-- In order to use the data that fetch returns we must deserialize the `response.body` with [`response.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/json) (see [demo](https://codepen.io/owenmundy/pen/dyKMRBN?editors=0011))
-
-```js
-fetch('https://catfact.ninja/fact') // request external resource
-    .then(response => {
-		console.log(response); // the entire response object
-	    console.log(response.status, response.statusText); // -> 200, "OK"
-		// parse response.body (convert to JSON), pass to next
-        return response.json();  .then()
-    })
-    .then(data => { // data = the deserialized data of the external file
-        console.log(data); // log the object
-    });
-```
-
----
-
-## Load data with Fetch
-
-![fetch](../../assets/img/demo-fetch.png)
 
 
 
