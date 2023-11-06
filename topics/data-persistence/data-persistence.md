@@ -15,13 +15,13 @@ How to save, update, and display dynamic data.
 
 ## What is data persistence?
 
-Data persistence describes the ability to store data beyond the life of a program. Some common examples:
+Data persistence describes storing/using data beyond the life of a program (or web page). For example:
 
-1. Use a text editor to create a file, save it to your computer, and open it again later.
-1. Open a mobile app like Instagram and it remembers you have already logged in.
-1. Use a web-based CMS (Content Management System) like Wordpress to post text and images to the internet.
+1. Add text to file, save it to your computer, and you can ***view it again*** later.
+1. A mobile app (e.g. Instagram) ***remembers you*** have already logged in.
+1. Use a website (e.g. Wordpress) to post text on the internet for ***others to see***.
 
-The various technologies in each case may change, but the concept remains the same: the software stores information as part of its function, security, or customization.
+The technologies may change, but the concept does not—the software allows information to persist as part of its function, security, or customization.
 
 
 
@@ -29,13 +29,13 @@ The various technologies in each case may change, but the concept remains the sa
 
 ## Methods
 
-In the above examples, the data persists because it is saved in one or more locations:
+In most examples, these software actually saves data in multiple locations:
 
-Software | Data on your PC | Data in a client | Data across a network
+Software | Data on PC | Data in client | Data on network
 --- | --- | --- | ---
-TextEdit | Saves text files to your hard drive | Stores settings in `~/Library/Preferences/` | Can also store files in the cloud
-Instagram mobile app | Saves edited photos in your library | Stores preferences and user authentication | Stores text in database and images on server via their API
-Google Docs | Saves files for offline use | Stores authentication (cookies) in browser | Stores text in database and images on server via their API
+TextEdit | Text files to hard drive | Settings in `~/Library/Preferences/` | Files in the cloud
+Instagram mobile app | Edited photos in your library | Stores preferences and user authentication | Text in database, images on server via API
+Google Docs | Saves files for offline use | Stores authentication (cookies) in browser | Text in database, images on server
 
 
 
@@ -45,10 +45,7 @@ Google Docs | Saves files for offline use | Stores authentication (cookies) in b
 
 ## Client-side storage
 
-> There are a number of ways for web sites to store data on the user's computer — with the user's permission — then retrieve it when necessary. This lets you persist data for long-term storage, save sites or documents for offline use, retain user-specific settings for your site, and more.
-— [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
-
-Javascript in a browser can use the following methods to persist data for a user.
+Javascript in a browser can persist data in a browser in many ways:
 
 1. **Cookies** - A small piece of data stored in the browser.
 1. **Web-based storage APIs** (localStorage and sessionStorage)
@@ -63,9 +60,19 @@ Node.js (run-time Javascript) can write data directly to the hard drive.
 
 ## Cookies
 
-- Cookies can store user preferences, inputs, or authentication information to customize a web experience.
-- A user can customize their web browser to accept, reject, or delete cookies.
+- Cookies can store any string of text (user preferences, inputs, or authentication information) to customize a web experience.
+- A user can set their web browser to accept, reject, or delete cookies.
 - Cookies can be set and modified at the server level using the Set-Cookie HTTP header, or with JavaScript using document.cookie.
+
+👉 Run these and look in the DevTools > Application. See MDN for more on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+```js
+document.cookie = "name=jane";
+document.cookie = "message=hello, world!";
+console.log(document.cookie);
+//-> "name=jane; message=hello, world!"
+```
+
 
 
 
@@ -87,11 +94,8 @@ console.log(location) //-> "Davidson College"
 See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
 
 
-<!-- [demos/client-side-storage.html](demos/client-side-storage.html) -->
 
 
-
-See MDN for more on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 
 
@@ -100,25 +104,26 @@ See MDN for more on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/
 ## Other client-side storage options
 
 When you create an app that runs on its own (outside of a web browser) you have many additional options for storing data in the client.
-
-- Use a mobile app to comment on your friend's photo.
-
+- For example, a mobile app has access to native features on the phone or device
 
 
 
 ---
 
-## Databases
+## Persisting data online
 
-Database | tabular | MySQL RDBMS
-- Database
-- Server
-- API - A web service that save data in either of the above.
+To save data for the world to see you need a server with `PHP` or `Node` to write data*.
 
+- A simple way: save + read a `txt`, `json`, or `csv` **file on a server**
+- Use **a web service** to save data (untested) [remotemysql.com](https://remotemysql.com/) and [freedb.tech](https://freedb.tech/)
+- More complex: **Use a database** (MySQL, SQLite, MongoDb, etc.) [glitch.com](https://glitch.com/), [vercel.com](https://vercel.com/), or Davidson Domains.
 
+Examples
+- https://ai-candy-hearts-api.vercel.app - Vercel (free plan)
+- https://iknowwhereyourcatlives.com - VDS (Virtual Dedicated Server)
+- https://owenmundy.com/work/term-vs-term/index.php - Shared server
 
----
+<div class="caption slides-small">
+	*Github Pages cannot run server-side scripts
+</div>
 
-## References
-
-1. 
