@@ -1,5 +1,8 @@
+<!-- paginate: true -->
 
-← [Learn Javascript](../README.md)
+← [Learn Javascript](../../)
+
+<a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
 # Javascript – Data Persistence
 
@@ -42,7 +45,7 @@ Google Docs | Saves files for offline use | Stores authentication (cookies) in b
 
 ## Client-side storage
 
-> Modern web browsers support a number of ways for web sites to store data on the user's computer — with the user's permission — then retrieve it when necessary. This lets you persist data for long-term storage, save sites or documents for offline use, retain user-specific settings for your site, and more.
+> There are a number of ways for web sites to store data on the user's computer — with the user's permission — then retrieve it when necessary. This lets you persist data for long-term storage, save sites or documents for offline use, retain user-specific settings for your site, and more.
 — [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
 
 Javascript in a browser can use the following methods to persist data for a user.
@@ -60,16 +63,9 @@ Node.js (run-time Javascript) can write data directly to the hard drive.
 
 ## Cookies
 
-Cookies can be used to personalize a user’s web experience with a website.
-
-Cookies can store user preferences, inputs, or authentication information to customize a web experience.
-
-
-
-
- or inputs when accessing that website. A user can customize their web browser to accept, reject, or delete cookies.
-
-Cookies can be set and modified at the server level using the Set-Cookie HTTP header, or with JavaScript using document.cookie.
+- Cookies can store user preferences, inputs, or authentication information to customize a web experience.
+- A user can customize their web browser to accept, reject, or delete cookies.
+- Cookies can be set and modified at the server level using the Set-Cookie HTTP header, or with JavaScript using document.cookie.
 
 
 
@@ -78,23 +74,24 @@ Cookies can be set and modified at the server level using the Set-Cookie HTTP he
 
 ## LocalStorage
 
+The Web Storage API allows you to store simple name/value pairs of data and retrieve these values when needed. 
+
+👉 Run these and look in the DevTools > Application
+
 ```js
 localStorage.setItem('location','Davidson College');
+let location = localStorage.getItem("location");
+console.log(location) //-> "Davidson College"
 ```
 
+See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
+
+
+<!-- [demos/client-side-storage.html](demos/client-side-storage.html) -->
 
 
 
-
-
-
-
-
-[demos/client-side-storage.html](demos/client-side-storage.html)
-
-
-
-
+See MDN for more on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 
 
@@ -109,7 +106,7 @@ When you create an app that runs on its own (outside of a web browser) you have 
 
 
 
-
+---
 
 ## Databases
 
@@ -120,8 +117,8 @@ Database | tabular | MySQL RDBMS
 
 
 
-
+---
 
 ## References
 
-1. Mozilla Web Docs [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
+1. 
