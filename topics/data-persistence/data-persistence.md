@@ -73,7 +73,7 @@ console.log(document.cookie);
 //-> "name=jane; message=hello, world!"
 ```
 
-
+- An example: https://stickyscreen.org 
 
 
 

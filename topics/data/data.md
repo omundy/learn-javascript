@@ -44,7 +44,7 @@
 
 ## Data Collections
 
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 
 In addition to [primitive types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (`boolean`, `number`, and `string`), Javascript can store collections (e.g. `arrays`, `objects`, etc.)
@@ -120,19 +120,19 @@ var singer = {
 ```json
 {
     "cars": [{
-			"make": "Pontiac",
-            "model": "Vibe",
-            "year": 2009
-        }, {
-			"make": "Honda",
-            "model": "Fit",
-            "year": 2007
-        }, {
-			"make": "Chevrolet",
-            "model": "Blazer",
-            "year": 2000
-        },
-		...]
+        "make": "Pontiac",
+        "model": "Vibe",
+        "year": 2009
+    }, {
+        "make": "Honda",
+        "model": "Fit",
+        "year": 2007
+    }, {
+        "make": "Chevrolet",
+        "model": "Blazer",
+        "year": 2000
+    },
+    ...]
 }
 ```
 <div class="caption slides-small">
@@ -440,6 +440,8 @@ Install D3 in your HTML
 
 ---
 
+## Load data with D3 (.json, .csv, ...)
+
 [`d3.json()`](https://github.com/d3/d3-fetch/tree/v2.0.0) return a Javascript object from JSON
 ```js
 // as of v5 D3 uses a promise-based syntax
@@ -552,7 +554,9 @@ Considerations for using data in a project:
 1. Do you need to `clean` or `transform` your data?
 1. Do all of your datasets need to be treated the same?
 
-Example situations:
+---
+
+## Example storage situations:
 
 - I have a spreadsheet (`static`), with many columns I don't need (not `clean`)
 - I want users to be able to (`dynamic`) add (`insert`) or edit (`update`) content
@@ -590,6 +594,7 @@ Example situations:
 - localStorage - For Storing data locally in your users' browser. Can be used by extensions or websites.
 - cookies - Another form of storage, typically used to identify users who are logged-in to an application.
 
+See https://omundy.github.io/learn-javascript/topics/data-persistence/slides.html
 
 
 
@@ -647,7 +652,7 @@ const tempsArr = [
 
 ---
 
-Depending on your application you may want to convert your data to a Javascript object to make it easier to use. Below, each row has been converted so that the column values can be referenced by their keys, and those which are numbers have been retyped from a `string` to `number` type.
+Convert data to a JS object can make it easier to use. Below, each row can be referenced using their their keys, and numbers have been retyped.
 
 ```js
 const tempsObjectsArr = [
@@ -678,12 +683,6 @@ console.log(`${tempsObjectsArr[2].description} is about ${tempsObjectsArr[2].F} 
 
 
 
-<!-- ---
-
-## FAQ & Tips
- -->
-
-
 
 
 ---
@@ -701,6 +700,9 @@ Daniel Shiffman's - Working with Data & APIs in Javascript ([playlist](https://w
 - [2.1 Server-side with Node.js](https://www.youtube.com/watch?v=wxbQP1LMZsw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=9)
 - [2.2 Geolocation Web API](https://www.youtube.com/watch?v=3ls013DBcww&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=10)
 - [2.3 HTTP Post Request with fetch()](https://www.youtube.com/watch?v=Kw5tC5nQMRY&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=11)
+
+---
+
 - [2.4 Saving to a Database](https://www.youtube.com/watch?v=xVYa20DCUv0&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=12)
 - [2.5 Database Query](https://www.youtube.com/watch?v=q-lUgFxwjEM&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=13)
 - [2.6 Saving Images and Base64 Encoding](https://www.youtube.com/watch?v=9Rhsb3GU2Iw&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=14)
