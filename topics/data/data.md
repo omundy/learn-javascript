@@ -272,10 +272,12 @@ fetch('https://catfact.ninja/fact')
 
 ---
 
-## Load data with Fetch
+## Fetch examples
 
-![fetch](../../assets/img/demo-fetch.png)
-
+1. [Fetch (simple) => catfact.ninja](https://codepen.io/owenmundy/pen/QWYpZzL?editors=1011)
+1. [Fetch in a function (randomuser.me)](https://codepen.io/owenmundy/pen/dyKOveX?editors=1011)
+1. [Fetch in a function - Asynchronous code demo](https://codepen.io/owenmundy/pen/dyKMRBN)
+1. [More fetch() examples](https://omundy.github.io/learn-javascript/topics/data/demos/fetch.html)
 
 
 
