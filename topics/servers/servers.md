@@ -23,14 +23,14 @@ Presentation comments ...
 
 <small>
 
-Web host | Static | Dynamic | Node | PHP | database | .env | Live | Cost
---- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | ---
-Github Pages   | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | free 
-Localhost      | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | free
-Shared host | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | $
+Web host | Static | Dynamic | Node | PHP | Python | database | .env | Live | Cost
+--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | ---
+Github Pages   | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | free 
+Localhost      | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | free
+Shared host | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | $
 VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
-[glitch.com ](https://glitch.com/) | ✅ | ✅ | ✅ | ❌ | ✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
-[vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
+[glitch.com ](https://glitch.com/) | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
+[vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
 
 Notes: Databases require PHP or node. React or Next projects [can be built for static](https://create-react-app.dev/docs/production-build/)
 
