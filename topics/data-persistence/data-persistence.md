@@ -91,7 +91,11 @@ let location = localStorage.getItem("location");
 console.log(location) //-> "Davidson College"
 ```
 
+See this [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) for an example
 See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
+
+
+
 
 
 
