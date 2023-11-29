@@ -25,6 +25,26 @@ An introduction to the language
 1. jquery [slides](topics/jquery/slides.html) | [md](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
 1. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
 
+
+## Javascript Part.2
+
+Working with data
+
+1. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
+1. Working with Data [slides](topics/data/slides.html) | [md](topics/data/data.md) - JSON, CSV, fetch, serialization, CORS, APIs, data cleaning
+1. Data Persistance [slides](topics/data-persistence/slides.html) | [md](topics/data-persistence/data-persistence.md) - Client vs server-side data, cookies, local storage
+1. Data Visualization [slides](topics/data-visualization/slides.html) | [md](topics/data-visualization/data-visualization.md) - Chart.js vs. D3
+1. Data Scraping [slides](topics/data-scraping/slides.html) | [md](topics/data-scraping/data-scraping.md) - A short introduction to scraping with JS
+1. Servers [slides](topics/servers/slides.html) | [md](topics/servers/servers.md) - Chart.js vs. D3
+
+
+
+maps
+https://sneakaway-studio.github.io/explode-the-web/tutorial/slides/0-introduction.html
+
+
+
+
 <details>
 <summary>My Codepen Examples</summary>
 
@@ -60,7 +80,7 @@ Tools
 
 Advanced Javascript topics
 
-8. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
+
 8. Node & NPM [slides](topics/node/slides.html) | [md](topics/node/node.md) - Introduction to command line Javascript
 8. 📌 Regular Expressions
 8. 📌 Higher-order functions
