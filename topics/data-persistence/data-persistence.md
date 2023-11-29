@@ -91,7 +91,7 @@ let location = localStorage.getItem("location");
 console.log(location) //-> "Davidson College"
 ```
 
-See this [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) for an example
+See this [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) to store an array or object with `JSON.stringify()` 
 See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
 
 
@@ -116,16 +116,14 @@ When you create an app that runs on its own (outside of a web browser) you have 
 
 ## Persisting data online
 
-To save data for the world to see you need a server with `PHP` or `Node` to write data*.
+To save data for the world to see you need to run code on a server* like `PHP` or `Node`:
 
-- A simple way: save + read a `txt`, `json`, or `csv` **file on a server**
-- Use **a web service** to save data (untested) [remotemysql.com](https://remotemysql.com/) and [freedb.tech](https://freedb.tech/)
-- More complex: **Use a database** (MySQL, SQLite, MongoDb, etc.) [glitch.com](https://glitch.com/), [vercel.com](https://vercel.com/), or Davidson Domains.
-
-Examples
-- https://ai-candy-hearts-api.vercel.app - Vercel (free plan)
-- https://iknowwhereyourcatlives.com - VDS (Virtual Dedicated Server)
-- https://owenmundy.com/work/term-vs-term/index.php - Shared server
+- **Read/Write files to disk** (simple, not performant) like `txt`, `json`, or `csv` 
+- **Use a web service** to save data in a database [remotemysql.com](https://remotemysql.com/) and [freedb.tech](https://freedb.tech/)
+- **Create your own server application using a database** (MySQL, SQLite, MongoDb, etc.). This can be done a number of ways:
+    - <s>($)</s> Cloud-hosting services like [Glitch](https://glitch.com/) or [Vercel](https://vercel.com/) - [ai-candy-hearts-api](https://ai-candy-hearts-api.vercel.app) (Node)
+    - ($) Shared servers (e.g. Davidson Domains) - [Term vs. Term](https://owenmundy.com/work/term-vs-term/) (PHP)
+    - ($$) VDS (Virtual Dedicated Servers) - [I Know Where Your Cat Lives](https://iknowwhereyourcatlives.com) (PHP/MySQL)
 
 <div class="caption slides-small">
 	*Github Pages cannot run server-side scripts

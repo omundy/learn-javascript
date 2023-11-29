@@ -146,7 +146,7 @@ This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/
 <h1>Intro</h1>
 ```
 
-...which are loaded dynamically into `div#main` of index.html.
+...which are loaded dynamically into `div#main` of index.html. See the [vanilla JS](../../topics/single-page-apps/simple-spa-chart/solution/index.html) or [jquery](../../topics/single-page-apps/simple-spa-chart/solution/index-jquery.html) examples for more.
 
 ```js
 $("#main").load('views/intro.html');
