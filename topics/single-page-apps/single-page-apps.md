@@ -118,8 +118,8 @@ Popular examples: Facebook, Twitter, Gmail, Netflix, Trello, Google Maps, Google
 
 ## Simple SPA - Update specific text
 
-- It is quite easy to tap into the benefits of an SPA with your own, simple solution.
-- This [simple SPA](../../topics/single-page-apps/simple-spa/solution/index.html) uses JS objects for content in each page:
+- There are multiple ways to tap into the benefits of an SPA without using a fancy framework.
+- This [simple SPA](../../topics/single-page-apps/simple-spa/solution/index.html) gets data for content in each page from a JS object:
 
 ```js
 var pages = {
@@ -135,9 +135,47 @@ var pages = {
 };
 ```
 
+
+
 ---
 
-## Simple SPA Chart - Update a section of the page
+## Simple SPA Chart - Hide / reveal sections of a page
+
+[This "show-hide" version](../../topics/single-page-apps/simple-spa-chart-show-hide/solution/index.html) contains all the sections of a site (hidden by default) then JS reveals them as needed, hiding all others.
+
+<div class="twocolumn">
+<div class="col">
+
+```html
+<!-- index.html -->
+<section class="page1">
+    <h1>Page 1</h1>
+</section>
+<section class="page2">
+    <h1>Page 2</h1>
+</section>
+```
+
+</div>
+<div class="col">
+
+```js
+// main.js (simplified)
+function displayView(next){
+    prev.style.display = "none";
+    next.style.display = "block";
+}
+```
+
+</div>
+</div>
+
+
+
+
+---
+
+## Simple SPA Chart - Update sections of a page with external files
 
 This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/index.html) loads html pages for different "views"
 
