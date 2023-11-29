@@ -13,7 +13,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 - [Credit](ABOUT.md#credit) & [License](ABOUT.md#license)
 
 
-## Part.1 - An introduction to the language
+## 1 - An introduction to the language
 
 1. Introduction [slides](topics/introduction/slides.html) | [md](topics/introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
 1. Data & Variables [slides](topics/variables/slides.html) | [md](topics/variables/variables.md) - How to store and compare values and data types
@@ -23,7 +23,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 
 
-## Javascript Part.2
+## 2 - Intermediate topics
 
 6. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
 6. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
@@ -35,10 +35,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 
 
-## Javascript Part.3
-
-Working with data
-
+## 3 - Working with data
 
 10. Working with Data [slides](topics/data/slides.html) | [md](topics/data/data.md) - JSON, CSV, fetch, serialization, CORS, APIs, data cleaning
 10. Data Persistance [slides](topics/data-persistence/slides.html) | [md](topics/data-persistence/data-persistence.md) - Client vs server-side data, cookies, local storage
@@ -84,9 +81,7 @@ Tools
 
 
 
-## Javascript Part.4
-
-Advanced Javascript topics
+## 4 - Advanced Javascript topics
 
 
 15. Node & NPM [slides](topics/node/slides.html) | [md](topics/node/node.md) - Introduction to server-side Javascript
