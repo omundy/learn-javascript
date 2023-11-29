@@ -22,31 +22,41 @@ An introduction to the language
 1. Control Flow [slides](topics/control-flow/slides.html) | [md](topics/control-flow/control-flow.md) - Comparison and logical operators, conditional statements
 1. Functions [slides](topics/functions/slides.html) | [md](topics/functions/functions.md) - Reusing code, protecting variables
 1. Data Structures [slides](topics/data-structures/slides.html) | [md](topics/data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
-1. jquery [slides](topics/jquery/slides.html) | [md](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
-1. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
+
 
 
 ## Javascript Part.2
 
+6. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
+6. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
+6. Working with Maps [slides](topics/maps/slides.html) | [md](topics/maps/maps.md) - Leaflet vs. Google Maps
+6. Browser Extensions [slides](topics/extensions/slides.html) | [md](topics/extensions/extensions.md) - An introduction and tutorials
+6. jquery [slides](topics/jquery/slides.html) | [md](topics/jquery/jquery.md) - How to use jquery for interaction, display, and data
+
+
+
+
+
+## Javascript Part.3
+
 Working with data
 
-1. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
-1. Working with Data [slides](topics/data/slides.html) | [md](topics/data/data.md) - JSON, CSV, fetch, serialization, CORS, APIs, data cleaning
-1. Data Persistance [slides](topics/data-persistence/slides.html) | [md](topics/data-persistence/data-persistence.md) - Client vs server-side data, cookies, local storage
-1. Data Visualization [slides](topics/data-visualization/slides.html) | [md](topics/data-visualization/data-visualization.md) - Chart.js vs. D3
-1. Data Scraping [slides](topics/data-scraping/slides.html) | [md](topics/data-scraping/data-scraping.md) - A short introduction to scraping with JS
-1. Servers [slides](topics/servers/slides.html) | [md](topics/servers/servers.md) - Chart.js vs. D3
+
+10. Working with Data [slides](topics/data/slides.html) | [md](topics/data/data.md) - JSON, CSV, fetch, serialization, CORS, APIs, data cleaning
+10. Data Persistance [slides](topics/data-persistence/slides.html) | [md](topics/data-persistence/data-persistence.md) - Client vs server-side data, cookies, local storage
+10. Data Visualization [slides](topics/data-visualization/slides.html) | [md](topics/data-visualization/data-visualization.md) - Chart.js vs. D3
+10. Data Scraping [slides](topics/data-scraping/slides.html) | [md](topics/data-scraping/data-scraping.md) - A short introduction to scraping with JS
+10. Servers [slides](topics/servers/slides.html) | [md](topics/servers/servers.md) - Chart.js vs. D3
 
 
 
-maps
-https://sneakaway-studio.github.io/explode-the-web/tutorial/slides/0-introduction.html
+
 
 
 
 
 <details>
-<summary>My Codepen Examples</summary>
+<summary>Codepen Examples</summary>
 
 - Basics
 	- [Cycle through all RGB values](https://codepen.io/owenmundy/pen/ExEWjXW)
@@ -76,20 +86,19 @@ Tools
 
 
 
-## Javascript Part.2
+## Javascript Part.4
 
 Advanced Javascript topics
 
 
-8. Node & NPM [slides](topics/node/slides.html) | [md](topics/node/node.md) - Introduction to command line Javascript
-8. 📌 Regular Expressions
-8. 📌 Higher-order functions
-8. 📌 Object Oriented Programming
-8. 📌 Errors and Debugging
-8. Modules [slides](topics/modules/slides.html) | [md](topics/modules/modules.md) - How to use modules in Node and the browser
-8. 📌 Node & Express
-8. 📌 Node & Databases
-
+15. Node & NPM [slides](topics/node/slides.html) | [md](topics/node/node.md) - Introduction to server-side Javascript
+15. Node & Express [slides](topics/node-express/slides.html) | [md](topics/node-express/node-express.md) - Using node/express to build web applications and APIs
+15. 📌 Node & Databases
+15. 📌 Object Oriented Programming
+15. 📌 Errors and Debugging
+15. Modules [slides](topics/modules/slides.html) | [md](topics/modules/modules.md) - How to use modules in Node and the browser
+<!-- 15. 📌 Regular Expressions
+15. 📌 Higher-order functions -->
 
 
 
