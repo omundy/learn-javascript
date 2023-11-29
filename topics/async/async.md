@@ -167,17 +167,16 @@ getUser(1); // getting a list of connections
 
 ## Promises
 
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
+- A JS [promise](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises) lets you make asynchronous requests and use the result when a response is received.
+- A function (like `fetch()`) that returns a promise tells the calling function the request is in progress.
 
-- A promises is how we do asynchronous code in modern Javascript
-- Functions that return a promise give the calling function a way to get the response... once it is done.
-- Promises can be used several ways, but most often as **promise chain** or by using **async/await**.
-
-
-
-
-
-
+```js
+fetch('https://api.weather.gov/')
+// -> Promise {<pending>}
+// ->   [[Prototype]] : Promise 
+// ->   [[PromiseState]] : "fulfilled"
+// ->   [[PromiseResult]] : Response
+```
 
 
 
@@ -185,8 +184,9 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 
 ## Fetch
 
-[Why do we need asynchronous code?](https://codepen.io/owenmundy/pen/dyKMRBN?editors=1111)
-[How to wrap fetch() in a function](https://codepen.io/owenmundy/pen/dyKOveX?editors=1011)
+- The data in the response from `fetch()` can be use in a **promise chain** where each `.then()` is performed in order.
+- Below, the response is converted to JSON object in the first then, and finally logged to the console in the 2nd.
+
 
 ```js
 fetch('https://jsonplaceholder.typicode.com/todos')
@@ -196,10 +196,33 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 	});
 ```
 
+See: [Why do we need asynchronous code?](https://codepen.io/owenmundy/pen/dyKMRBN?editors=1111)
 
 
+--- 
 
+## Async/Await
 
+- Use **async/await** to wait for a promise to be fulfilled.
+- Below, `await` (inside async functions) causes the log statements to occur in order.
+
+```js
+async function fetchFunction(){
+    let jsonData;
+    await fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(json => { jsonData = json; });
+    return jsonData;    
+}
+(async function(){ 
+    console.log(123)
+    let data = await fetchFunction();
+    console.log(data);
+    console.log(456)
+})()
+```
+
+See: [How to wrap fetch() in a function](https://codepen.io/owenmundy/pen/dyKOveX?editors=1011)
 
 
 
