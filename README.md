@@ -13,9 +13,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 - [Credit](ABOUT.md#credit) & [License](ABOUT.md#license)
 
 
-## Javascript Part.1
-
-An introduction to the language
+## Part.1 - An introduction to the language
 
 1. Introduction [slides](topics/introduction/slides.html) | [md](topics/introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
 1. Data & Variables [slides](topics/variables/slides.html) | [md](topics/variables/variables.md) - How to store and compare values and data types
