@@ -32,6 +32,12 @@ VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
 [glitch.com ](https://glitch.com/) | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
 [vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
 
+Others
+https://codepen.io/
+https://codesandbox.io/
+https://stackblitz.com/
+
+
 Notes: Databases require PHP or node. React or Next projects [can be built for static](https://create-react-app.dev/docs/production-build/)
 
 </small>

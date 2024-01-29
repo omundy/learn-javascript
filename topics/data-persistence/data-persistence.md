@@ -130,5 +130,5 @@ To save data for the world to see you need to run code on a server* like `PHP` o
 
 <div class="caption slides-small">
 	*Github Pages cannot run server-side scripts
-</div>
+</div> 
 
