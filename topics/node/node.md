@@ -28,15 +28,15 @@ Presentation comments ...
 
 ## Node Installation
 
-There are several ways to install Node (which includes NPM) on your machine (starting with the easiest)
+There are several ways to install Node (which includes NPM) on your machine
 
 1. Use an [installer via node website](https://nodejs.org/en/download/) (fastest, but difficult to upgrade).
 1. Use a system package manager like Homebrew or Scoop (this makes it easy to upgrade)
-1. Use [nvm](https://github.com/nvm-sh/nvm) (the most flexible method but potentially adds complexity for new users).
+1. Use [nvm](https://nodejs.org/en/download/package-manager) (the most flexible method).
 
 For my students, I recommend #2. Choose your OS and install Node below.
 
-
+(2025 note: Try #3)
 
 
 

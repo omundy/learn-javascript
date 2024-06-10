@@ -137,6 +137,93 @@ See links above for platforms.
 
 
 
+---
+
+## Working with storage
+
+For an extension to store data that can persist across different web pages and domains you have two options: Use a remote server, or store it locally in the browser. 
+
+
+
+
+### [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)  
+
+- While `window.localStorage` is [easy to use with JS in your own pages](../data-persistence/data-persistence.md), saving data with an extension is different.
+
+Anything you store from your extension *content scripts* is shared with (and attached to) the user's current web domain. So...
+
+- ✅ Easy to view with Dev Tools (Application > Local Storage)
+- ❌ Data does not persist across web pages; attached to the specific domain
+
+
+Alternately, from an extension background script....
+
+- To share data across different web pages using `localStorage` you must use messaging between your content and background pages (manifest v3 requires all backend scripts to use service workers), which have a chrome:// URI (thus linked to the extension, not the domain). 
+
+- ⚠️ Difficult to view with Dev Tools
+- ⚠️ Browser extension ✅ service workers can store data (but content scripts require messaging)
+
+
+Additionally, for extension development, keep in mind that:
+
+- ⚠️ Data must be serialized / deserialized using `JSON.stringify()`
+- ⚠️ Synchonous (large amounts of data can create latency)
+- ❌ Data *will not* persist if users clear browsing history and data for privacy reasons 
+
+
+Example
+
+```js
+localStorage.setItem('myObject', JSON.stringify({"message":"hello"}));
+```
+
+
+
+### [browser.storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage) and [chrome.storage](https://developer.chrome.com/docs/extensions/reference/api/storage)
+
+`chrome.storage` lets extensions to store data in a location that isn't accessible to normal web pages.
+
+- Can be used from (both!) Browser extension ✅ content scripts and ✅ service workers
+- ✅ Asynchronous (Promise-based)
+- ✅ Data *will* persist if users clear browsing history and data for privacy reasons 
+
+One caveat, in Chrome, JavaScript APIs are accessed under the `chrome` namespace. [In Firefox and Edge, they are accessed under the `browser` namespace](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities). But, Firefox supports both the chrome and browser namespaces.
+
+
+
+
+```js
+let results = chrome.storage.local.get('abc')
+```
+
+
+#### Development
+
+Quick method
+
+1. From chrome://extensions open the service worker for your extension
+2. In DevTools, run the following in the console `chrome.storage.local.get(console.log)`
+
+For ongoing development
+
+1. Install https://github.com/jusio/storage-area-explorer
+2. Get your extension id at chrome://extensions 
+3. Open `chrome-extension://<your_extension_id>/manifest.json`
+
+
+
+
+
+
+
+### IndexedDB
+
+Another option - complex to use unless you have a go-between
+https://github.com/localForage/localForage
+
+
+
+
 
 
 

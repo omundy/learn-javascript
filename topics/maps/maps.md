@@ -63,8 +63,8 @@ Presentation comments ...
 ## Zoom levels
 
 
-- In addition to location, map tiles correspond to one of 22 specific zoom levels.
-- Zoom level `0` shows the full earth, while level `21` shows details of a city. 
+- In addition to location, map tiles correspond to specific zoom levels.
+- Zoom level `0` shows the full earth, while the highest level  (`18` [in Leaflet](https://leafletjs.com/examples/zoom-levels/), `23` [in MapBox](https://docs.mapbox.com/help/glossary/zoom-level/)) shows details of a city. 
 
 <img width="60%" src="./img/osm-zoom-levels.jpg">
 
@@ -85,12 +85,13 @@ This OSM (Open Street Map) tileset url refers to the zoom/x/y
 
 ```js
 // initialize the map
-var map = L.map('map').setView([51.505, -0.09], 13);
-// set the tileset
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap'
-}).addTo(map);
+var map = L.map('map').setView([35.5, -80.85], 13);
+```
+
+5. Before you can see the map you need to add a tile layer.
+
+```js
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 ```
 
 
