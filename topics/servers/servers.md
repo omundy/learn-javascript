@@ -35,12 +35,30 @@ VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
 Others
 https://codepen.io/
 https://codesandbox.io/
+
+    Consider mentioning CodeSandbox 
+    https://codesandbox.io/p/devbox/node-hello-878r6d
+    https://878r6d-8080.csb.app/
+
+
 https://stackblitz.com/
+
+https://medium.com/paperplanetechworks/8-best-sites-to-host-backend-code-for-free-in-2023-c66b2512051a
 
 
 Notes: Databases require PHP or node. React or Next projects [can be built for static](https://create-react-app.dev/docs/production-build/)
 
 </small>
+
+
+
+---
+
+## Using Glitch
+
+- [Change the Node version](https://help.glitch.com/hc/en-us/articles/16287495688845-What-version-of-Node-can-I-use-and-how-do-I-change-update-upgrade-it)
+
+
 
 
 
@@ -213,6 +231,8 @@ console.log(process.env.USER)
 
 5. `(optional)` Make a copy of the file to your server (e.g. Vercel) with the correct contents. This also allows different (ahem, more secure) DB user/pass on your server vs. your localhost
 6. `(optional)` Create a `.env.example` file with placeholder information so you can duplicate, rename, and then replace the values on your server
+
+
 
 
 

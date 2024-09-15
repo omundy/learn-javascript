@@ -187,13 +187,23 @@ localStorage.setItem('myObject', JSON.stringify({"message":"hello"}));
 - ✅ Asynchronous (Promise-based)
 - ✅ Data *will* persist if users clear browsing history and data for privacy reasons 
 
-One caveat, in Chrome, JavaScript APIs are accessed under the `chrome` namespace. [In Firefox and Edge, they are accessed under the `browser` namespace](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities). But, Firefox supports both the chrome and browser namespaces.
+One caveat, in Chrome, JavaScript APIs are accessed under the `chrome` namespace. [In Firefox and Edge, they are accessed under the `browser` namespace](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities). But, Firefox supports both the chrome and browser namespaces. You can fix it with
 
+```js
+if (typeof browser === "undefined") {
+	var browser = chrome;
+}
+```
 
+Here is an example of `chrome.storage`
 
 
 ```js
+let obj = { message: 123 }
+chrome.storage.local.set({obj})
 let results = chrome.storage.local.get('abc')
+console.log(results)
+//  { message: 123 }
 ```
 
 
@@ -230,6 +240,14 @@ https://github.com/localForage/localForage
 ---
 
 ## FAQ & Tips > 
+
+
+---
+
+### FAQ > Is there a hot reload tool for extension development?
+
+Yes! See this StackOverflow answer https://stackoverflow.com/a/56380458/441878
+
 
 
 

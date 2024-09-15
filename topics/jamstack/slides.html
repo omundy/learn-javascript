@@ -1335,170 +1335,183 @@ div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background
 div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
-}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
+}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" data-marpit-pagination="1" data-marpit-pagination-total="2" style="--paginate:true;--theme:owen;">
 <p>← <a href="../../">Learn Javascript</a></p>
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a></p>
-<h1 id="javascript-modules">Javascript Modules</h1>
-<p>How to use modules in the browser and node</p>
-<p><span class="slides-small"><a href="slides.html">slides</a> | <a href="modules.md">md</a></span></p>
+<h1 id="jamstack">Jamstack</h1>
+<p>How to save, update, and display dynamic data.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<p>TO ADD</p>
-<p>tl;dr</p>
-<p><a href="https://www.thedreaming.org/2017/04/28/es6-imports-babel/">https://www.thedreaming.org/2017/04/28/es6-imports-babel/</a></p>
-<p>Example - import leaflet in an .astro file</p>
-<p><a href="https://leafletjs.com/2022/09/21/leaflet-1.9.0.html">Leaflet</a> uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">ECMAScript modules</a></p>
-<p>Benefits</p>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" data-marpit-pagination="2" data-marpit-pagination-total="2" style="--paginate:true;--theme:owen;">
+<h2 id="what-is-a-jamstack">What is a Jamstack?</h2>
+<p>Originally, &quot;JAM&quot; in Jamstack stood for JavaScript, API &amp; Markup Jamstack, but now it refer to an architectural approach for building websites:</p>
+<ol>
+<li>The frontend is static, typically built using a static site generator (SSG).</li>
+<li>With no backend, benefits include faster response times, better security, and cheaper to host.</li>
+<li>Additionally, the project can scale easily and (with static files) traffic can be offloaded to a CDN.</li>
+</ol>
+<p>Read more <a href="https://jamstack.wtf/">jamstack.wtf</a></p>
+<p>ADD THIS SEOMEEHWKHJHWEH<br />
+<a href="https://www.cloudflare.com/en-gb/learning/performance/static-site-generator/">https://www.cloudflare.com/en-gb/learning/performance/static-site-generator/</a></p>
+<h2 id="convert-a-phpmysql-site-to-jamstack-to-host-on-github-pages">Convert a PHP/MySQL site to Jamstack to host on Github Pages</h2>
+<p>I decided my first sabbatical project would be to convert the site I created during <a href="https://owenmundy.com/site/camp-la-jolla" target="_blank" rel="noopener">my master's thesis</a> to a static <a href="https://jamstack.wtf/">Jamstack</a> site. This post documents that process.</p>
+<p>Moving the project to Github Pages would simplify maintenance and hosting costs, but it would be no small task. I originally created the site as a research tool using PHP/MySQL database, to record, organize, and ultimately publish research about the military history of UCSD. There are a <a href="https://news.ycombinator.com/item?id=24683127" target="_blank" rel="noopener">plethora of tools</a> one can use to publish a database-driven site on a static host. They mostly can be categorized as follows (ordered by most to least dynamic data sources):</p>
 <ul>
-<li>Organization - Explicit dependency declaration includes version number</li>
-<li>Better code - <code>&lt;script&gt;</code> type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated</li>
-<li>Performance - Import and ship only what you need <code>import { thing1, thing2 } from 'package'</code>.</li>
-<li>Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)</li>
+ 	<li><b>Continue using a database</b> but move it (including reading/writing) to a remote service (like <a href="https://firebase.google.com" target="_blank" rel="noopener">Firebase</a>, <a href="https://www.mongodb.com/atlas/database" target="_blank" rel="noopener">Atlas</a>, et al) — ⚠️ This will ultimately create vendor lock-in, potential hidden costs, and probably more maintenance issues in the future.</li>
+ 	<li><b>Create a static version of the database</b> by converting MySQL to flat files (JSON, CSV, etc.) which still allows for querying using one of various tools — 🤔 This method is interesting, because it still decouples the data from the presentation and allows for potentially more options later, including a remote database. I am already using this in various forms (JSON is JSON after all) but worry again about maintenance, or issues with the client's ability to manipulate the data as needed.</li>
+ 	<li><b>Generate a static version of the site</b>, including all its pages which contain the data formerly dynamically inserted from MySQL. — 🤔 I like this concept, and have been using it to auto-publish my class lectures and tutorials using Markdown and Grunt with <a href="https://marp.app/" target="_blank" rel="noopener">Marp</a>. Plus, there <a href="https://jamstack.org/generators/" target="_blank" rel="noopener">are many site generators</a> to choose from, which I explore below.</li>
+ 	<li><b>Scrape the site and save pages as static files</b>. After all, everything is static once the HTML is rendered on the frontend. — ⚠️ While fast, this requires the site be built first and would make updates difficult.</li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- old old way - still works but --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// &quot;CommonJS&quot; - old</span>
-<span class="hljs-keyword">const</span> L = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;leaflet&#x27;</span>);
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">&lt;script&gt;
-<span class="hljs-comment">// ES6 Modules</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet/dist/leaflet.css&#x27;</span>
-<span class="hljs-comment">//   import * as L from &#x27;leaflet&#x27;</span>
-<span class="hljs-comment">// this version is better </span>
-<span class="hljs-comment">//   import L from &#x27;leaflet&#x27;</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet&#x27;</span>
-  &lt;/script&gt;
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" data-marpit-pagination="3" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="about-modules">About modules</h2>
-<blockquote>
-<p>In programming, modules are self-contained units of functionality that can be shared and reused across projects. They make our lives as developers easier, as we can use them to augment our applications with functionality that we haven’t had to write ourselves. They also allow us to organize and decouple our code, leading to applications that are easier to understand, debug and maintain.</p>
-</blockquote>
-<div class="caption slides-small">
-	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
-</div>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" data-marpit-pagination="4" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="the-benefits-of-modularity">The benefits of modularity</h2>
+<h4>Essential Concepts</h4>
+<p>Before I go further, it would be good to establish some concepts about rendering. See <a href="https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg" target="_blank" rel="noopener">SSR vs CSR vs ISR vs SSG</a> for more.</p>
 <ul>
-<li>Modules are a way to split an application into separate files instead of having all of your application in one file.</li>
-<li>This concept is also present in other languages with minor differences in syntax and behavior, like C's <code>include</code>, Python's <code>import</code>, and so on.</li>
-<li>Modular design makes your application easy to understand, scale, and reuse.</li>
+ 	<li><strong>Single-Page Application (SPA)</strong> || <strong>Client-Side Rendering (CSR)</strong> - JS renders pages in client’s browser with empty HTML files + raw data from the server. See: React, Vue, Angular...</li>
+ 	<li><strong>Fullstack</strong> || <strong>Server-Side Rendering (SSR)</strong> - generates pages on server with dynamic data before delivering to client. Improves SEO and loading, decreases server performance. See: <a href="https://ejs.co/" target="_blank" rel="noopener">EJS</a>, PHP, or Next.js</li>
+ 	<li><strong>JAMStack</strong> || <strong>Static Site Generation (SSG)</strong> - pre-renders all pages as static HTML during build process. Fast loading times, enhanced security, .</li>
+ 	<li><strong>Incremental Static Regeneration (ISR)</strong> - combines SSR and SSG to pre-render static pages during build time while periodically regenerating specific pages with updated data.</li>
+ 	<li><strong>Edge-Side Rendering (ESR)</strong> - rendering process is pushed to the CDN's edge servers which handles requests and generates the HTML. Requires Nitro engine.</li>
 </ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" data-marpit-pagination="5" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="npm-packages-are-modules">NPM packages are modules</h2>
+<h4>Requirements</h4>
+<p>Here are the reqs for most of the projects I mention above.</p>
+<ol>
+ 	<li>The data will be static, but editable using Git</li>
+ 	<li>The data should be searchable using a tool like <a href="https://harvesthq.github.io/chosen/">chosen</a></li>
+ 	<li>The site design will be simple, but I should have creative control</li>
+ 	<li>The site will be public, and be presented mostly using the same design as the original site</li>
+ 	<li>HTML/CSS validation + Accessibility checks</li>
+ 	<li>Convert from Google Maps to Leaflet</li>
+ 	<li>Host the site on Github Pages</li>
+</ol>
+<p>While planning the project I also wanted to select a method I could use for other potential static (or nearly static) sites like:</p>
+<ol>
+ 	<li>A new site documenting the hundreds of examples and overlapping categories of Critical Web Design and internet art I've been collecting for an upcoming book</li>
+ 	<li>Converting <a href="https://tallysavestheinternet.com" target="_blank" rel="noopener">tallysavestheinternet.com</a> to a static site (currently SSR) and unlinking the extension from the server to use local data only</li>
+ 	<li>Moving away from Wordpress (and its security problems) and blogging with Markdown, starting with this blog (NO MORE TYPING IN A WEB FORM!!)</li>
+</ol>
+<p>Finally, it's always great to learn new tools. I already have some experiences with React, Next.js, and Vue.js, but wouldn't say I'm confident in any. I had some very bad experiences trying to publish an app using React Native, and my general distrust of Facebook makes me lean towards Vue. Still, I'm going in with an open attitude.</p>
+<h4>Tool Comparison</h4>
+<p>Here is a breakdown of tools I considered:</p>
+<p><a href="https://github.com/myles/awesome-static-generators">https://github.com/myles/awesome-static-generators</a></p>
+<table class="table">
+<tbody>
+<tr>
+<th>Framework</th>
+<th>SPA</th>
+<th>SSR</th>
+<th>SSG</th>
+<th>MD</th>
+<th>Themes</th>
+<th>Search</th>
+<th>Cons</th>
+</tr>
+<tr>
+<td><a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a></td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td><a href="https://jamstackthemes.dev/ssg/jekyll/" rel="noopener" target="_blank">✅</a></td>
+<td>?</td>
+<td>❌ Ruby</td>
+</tr>
+<tr>
+<td><a href="https://gohugo.io/about/what-is-hugo/" target="_blank" rel="noopener">Hugo</a></td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td><a href="https://themes.gohugo.io/" rel="noopener" target="_blank">✅</a></td>
+<td>?</td>
+<td>❌ Go</td>
+</tr>
+<tr>
+<td><a href="https://astro.build/" target="_blank" rel="noopener">Astro</a></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td><a href="https://docs.astro.build/en/guides/markdown-content/" target="_blank">✅</a></td>
+<td><a href="https://astro.build/themes/?categories%5B%5D=blog" target="_blank" rel="noopener">✅</a></td>
+<td><a href="https://docs.astro.build/en/guides/content-collections/#querying-collections" rel="noopener" target="_blank">✅</a></td>
+<td>Add React or Vue if you like. <a href="https://johnzanussi.com/posts/nextjs-to-astro-migration#client-side-events" rel="noopener" target="_blank">Testimonial</a>, <a href="https://docs.astro.build/en/core-concepts/routing/">routing</a> is easy</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a></td>
+<td><a href="https://vuejs.org/guide/extras/ways-of-using-vue.html#single-page-application-spa" target="_blank" rel="noopener">✅</a></td>
+<td><a href="https://vuejs.org/guide/scaling-up/ssr.html" target="_blank" rel="noopener">✅</a></td>
+<td><a href="https://vuejs.org/guide/extras/ways-of-using-vue.html#jamstack-ssg">✅</a></td>
+<td><a href="https://vuejs.org/examples/#markdown" rel="noopener" target="_blank">✅</a></td>
+<td><a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">✅ vuepress</a></td>
+<td>?</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://nuxt.com/" target="_blank" rel="noopener">Nuxt.js</a></td>
+<td>✅</td>
+<td>✅</td>
+<td><a href="https://nuxt.com/docs/guide/concepts/rendering" target="_blank" rel="noopener">✅</a></td>
+<td>✅</td>
+<td><a href="https://vitepress.dev/guide/custom-theme" rel="noopener" target="_blank">✅</a></td>
+<td>?</td>
+<td>Built on Vue</td>
+</tr>
+</tbody>
+</table>
+<p>Use JS components in Markdown files <a href="https://mdxjs.com/">https://mdxjs.com/</a></p>
+<p><a href="https://nextjs.org/docs/pages/building-your-application/configuring/mdx">https://nextjs.org/docs/pages/building-your-application/configuring/mdx</a></p>
+<p><a href="https://nextjs.org/docs/app/building-your-application/configuring/mdx">https://nextjs.org/docs/app/building-your-application/configuring/mdx</a></p>
+<p>Astro</p>
+<p><a href="https://7.dev/how-to-create-astro-js-project/">https://7.dev/how-to-create-astro-js-project/</a></p>
+<p><a href="https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog?file=src%2Fcontent%2Fblog%2Fsecond-post.md">https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog?file=src%2Fcontent%2Fblog%2Fsecond-post.md</a></p>
+<p><a href="https://caisy.io/blog/astro-vs-next">https://caisy.io/blog/astro-vs-next</a></p>
+<p>Process<br />
+<a href="https://docs.astro.build/en/install/auto/">https://docs.astro.build/en/install/auto/</a></p>
+<ol>
+<li>Install <code>npm create astro@latest</code></li>
+<li>Start <code>npm run dev</code></li>
+</ol>
+<p>Deploy<br />
+<a href="https://docs.astro.build/en/guides/deploy/">https://docs.astro.build/en/guides/deploy/</a></p>
+<ol>
+<li>Continuous deployment (Vercel) with Git</li>
+<li>Or build locally <code>npm run build</code></li>
+</ol>
+<p>Themes</p>
+<ol>
+<li>
+<p>Install with theme <a href="https://github.com/satnaing/astro-paper">https://github.com/satnaing/astro-paper</a><br />
+<code>npm create astro@latest -- --template satnaing/astro-paper</code></p>
+</li>
+<li>
+<p>Rip out tailwind, add <a href="https://stackoverflow.com/questions/73879494/import-bootstrap-in-astro">bootstrap</a></p>
+</li>
+</ol>
+<p>Other good (non TS) Astro 3 examples (with search)</p>
 <ul>
-<li>NPM is a package repository service that hosts published JS modules. <code>npm install</code> will download and install packages from the repository.</li>
-<li>The npm cli puts all the downloaded modules in a <code>node_modules</code> directory where you ran <code>npm install</code>.</li>
+<li><a href="https://github.com/markteekman/accessible-astro-starter">https://github.com/markteekman/accessible-astro-starter</a> - no search</li>
+<li><a href="https://github.com/one-aalam/astro-ink">https://github.com/one-aalam/astro-ink</a> - ugly search</li>
+<li><a href="https://github.com/robertguss/Astro-Theme-Creek">https://github.com/robertguss/Astro-Theme-Creek</a> - not updated</li>
+<li><a href="https://github.com/ixartz/Astro-boilerplate/">https://github.com/ixartz/Astro-boilerplate/</a> - no search</li>
+<li><a href="https://github.com/onwidget/astrowind">https://github.com/onwidget/astrowind</a> - no search</li>
+<li><a href="https://astro.build/themes/details/astro-paper/">https://astro.build/themes/details/astro-paper/</a> - TS, ugly animation</li>
 </ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" data-marpit-pagination="6" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="modular-design-in-node">Modular design in Node</h2>
-<div class="twocolumn">
-<div class="col">
+<p>Next</p>
+<p>Process with Next.js SSG - painful.</p>
 <ul>
-<li>Node.js and NPM use the <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS (CJS) format</a>, <code>require</code> and <code>module.exports</code>, to define dependencies and modules.</li>
+<li>Constantly running into subtle changes in syntax across versions</li>
+<li>Adding an image is rediculously inane.</li>
+<li>Exporting the SSG ultimately created dead links, packaged up in Next code that was hard to understand.</li>
+<li>So much automation to make a static site in the end you can't do anything unless you have the exact right code, in the right version, in the right paths.</li>
+<li>Error messages are rarely helpful or pinpoint the line number causing the issue in the stack.</li>
 </ul>
-</div>
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// module.js</span>
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">exports</span> = <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {};
-<span class="hljs-built_in">exports</span>.<span class="hljs-property">randomNumber</span> = <span class="hljs-function">(<span class="hljs-params">max = <span class="hljs-number">1</span></span>) =&gt;</span> {
-	<span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * max;
-};
-
-<span class="hljs-comment">// index.js</span>
-<span class="hljs-keyword">const</span> modEx = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./module&#x27;</span>);
-modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hljs-comment">// -&gt; 0.927759</span>
-</code></pre>
-<div class="caption slides-small">
-	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
-</div>
-</div>
-</div>
+<ol>
+<li>This one failed <a href="https://tina.io/blog/simple-markdown-blog-nextjs/">https://tina.io/blog/simple-markdown-blog-nextjs/</a></li>
+<li>Then followed this series <a href="https://medium.com/frontendweb/build-the-static-blog-with-next-js-and-markdown-59576c75fbf2">https://medium.com/frontendweb/build-the-static-blog-with-next-js-and-markdown-59576c75fbf2</a></li>
+<li>Get new code <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">https://getbootstrap.com/docs/5.3/getting-started/introduction/</a></li>
+<li>Integrate with Next <a href="https://blog.logrocket.com/handling-bootstrap-integration-next-js/">https://blog.logrocket.com/handling-bootstrap-integration-next-js/</a></li>
+<li><a href="https://pagepro.co/blog/how-to-use-next-js-static-site-generator/">https://pagepro.co/blog/how-to-use-next-js-static-site-generator/</a></li>
+</ol>
+<p>Others</p>
+<p><a href="https://cmdcolin.github.io/posts/2023-04-08-nextjs-appdir-blog">https://cmdcolin.github.io/posts/2023-04-08-nextjs-appdir-blog</a><br />
+<a href="https://vercel.com/templates/next.js/blog-starter-kit">https://vercel.com/templates/next.js/blog-starter-kit</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" data-marpit-pagination="7" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="modular-design-in-javascript-the-old-way">Modular design in Javascript (the old way)</h2>
-<div class="twocolumn">
-<div class="col">
-<p>Modular design in the browser is achieved by simply including multiple files with <code>&lt;script&gt;</code>. But there are drawbacks:</p>
-<ul>
-<li>Each new script initiates a new HTTP request (and potential lantency)</li>
-<li>Dependencies must be managed manually</li>
-<li>Each script is in the global scope, <a href="https://www.patterns.dev/" target="_blank">requiring creative design patterns</a> to prevent contamination.</li>
-</ul>
-</div>
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;lib1.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;lib2.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;core.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;inline code&#x27;</span>);
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<div class="caption slides-small">
-	<a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank">Understanding ES6 Modules</a>
-</div>
-</div>
-</div>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" data-marpit-pagination="8" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="es6-modules--node">ES6 Modules + Node</h2>
-<div class="twocolumn">
-<div class="col">
-<ul>
-<li>As of ES6 (ES2015), JavaScript supports a native module format.</li>
-<li>It uses the <code>export</code> keyword to export a module’s public API and an import keyword to import it.</li>
-</ul>
-</div>
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// lib-module.js</span>
-<span class="hljs-keyword">const</span> hello = <span class="hljs-string">&quot;Hello, World!&quot;</span>; <span class="hljs-comment">// &quot;private&quot; var</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params"></span>) =&gt; hello;
-
-<span class="hljs-comment">// main.js</span>
-<span class="hljs-keyword">import</span> { hello } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./lib-module.js&#x27;</span>;
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">hello</span>()); <span class="hljs-comment">// -&gt; &quot;Hello, World!&quot;</span>
-</code></pre>
-<div class="caption slides-small">
-	<a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank">Understanding ES6 Modules</a>
-</div>
-</div>
-</div>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" data-marpit-pagination="9" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="private-vars">Private vars</h2>
-<ul>
-<li>Each module has its own scope so that vars are not exposed unless the module intentionally uses <code>exports</code> (node) or <code>export</code> (ES6) to make them accessible. (see previous slide)</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" data-marpit-pagination="10" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="modular-design-in-the-browser">Modular design in the browser</h2>
-<ul>
-<li>Note that <code>require()</code>, <code>module.exports</code> and <code>exports</code> are APIs of a module system that is specific to Node.js.</li>
-<li>While browsers do not implement this module system, similar benefits can be achieved with the <a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html">Revealing Module Pattern</a>.</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" data-marpit-pagination="11" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="revealing-module-pattern">Revealing Module Pattern</h2>
-<ul>
-<li>The Revealing Module Pattern is a JS design pattern <em>in a web browser</em> that mimics private and public access modifiers of other languages (e.g. C# or Java).</li>
-<li>All functions and variables are hidden by default within the scope of an IIFE (immediately-invoked function expression), and exposed as needed.</li>
-<li>See <a href="./demos">./demos</a> for examples</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" data-marpit-pagination="12" data-marpit-pagination-total="12" style="--paginate:true;--theme:owen;">
-<h2 id="references">References</h2>
-<ul>
-<li>w3schools <a href="https://www.w3schools.com/js/js_object_accessors.asp">JavaScript Object Accessors</a>, <a href="https://www.w3schools.com/nodejs/nodejs_modules.asp">Node.js Modules</a></li>
-<li>Zach Caceres <a href="https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md">The Revealing Module Pattern in Javascript</a></li>
-<li>Cheatsheets <a href="../reference-sheets/js-10-compatibility.pdf">Compatibility</a> and <a href="../reference-sheets/js-11-modules.pdf">Modules</a></li>
-<li>Haverbeke: <a href="https://eloquentjavascript.net/10_modules.html">Ch10 Modules</a> (167-178)</li>
-</ul>
-</section>
-<script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.2.0/lib/bespoke.js.LICENSE.txt */
+<script></script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.2.0/lib/bespoke.js.LICENSE.txt */
 !function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(i[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u}},n=e(t);const r=document.body,o=(...e)=>history.replaceState(...e),i="presenter",a="next",s=["",i,a],l="bespoke-marp-",c=`data-${l}`,d=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},u=()=>r.dataset.bespokeView,f=e=>new URLSearchParams(location.search).get(e),m=(e,t={})=>{var n;const r={location,setter:o,...t},i=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{r.setter({...null!==(n=window.history.state)&&void 0!==n?n:{}},"",d(i,r.location))}catch(e){console.error(e)}},g=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}})(),p=e=>{try{return localStorage.getItem(e)}catch(e){return null}},v=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},h=e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}},y=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},b=e=>{e.parent.classList.add(`${l}parent`),e.slides.forEach((e=>e.classList.add(`${l}slide`))),e.on("activate",(t=>{const n=`${l}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),y(e,!0)})),o.add(n),y(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},w=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${c}fragment`,(i?"":"in")+"active");const a=`${c}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}})),e.on("prev",(({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},x=document,k=()=>!(!x.fullscreenEnabled&&!x.webkitFullscreenEnabled),$=()=>!(!x.fullscreenElement&&!x.webkitFullscreenElement),E=e=>{e.fullscreen=()=>{k()&&(async()=>{return $()?null===(e=x.exitFullscreen||x.webkitExitFullscreen)||void 0===e?void 0:e.call(x):((e=x.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!k()||(e.fullscreen(),t.preventDefault())}))},L=`${l}inactive`,S=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout((()=>{r.add(L),o()}),e),r.contains(L)&&(r.remove(L),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},P=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],_=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(P.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},T=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${c}load`,e?"":"hideable")}}))},I=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},M=(e=`.${l}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${c}osc=${JSON.stringify(e)}]`).forEach(n)};return k()||n("fullscreen",(e=>e.style.display="none")),g||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>y(t,!1))),e.on("marp-inactive",(()=>y(t,!0))),k()&&(e=>{for(const t of["","webkit"])x.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",k()&&$())))))}},O=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}}))};var A=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let C=e=>String(e).replace(/[&<>"']/g,(e=>`&${D[e]};`)),D={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},N="dangerouslySetInnerHTML",B={className:"class",htmlFor:"for"},q={};function K(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==N&&(r+=` ${B[e]?B[e]:C(e)}="${C(t[e])}"`);r+=">"}if(-1===A.indexOf(e)){if(t[N])r+=t[N].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===q[e]?e:C(e)}r+=e?`</${e}>`:""}return q[r]=!0,r}const j=({children:e})=>K(null,null,...e),F=`${l}presenter-`,V={container:`${F}container`,dragbar:`${F}dragbar-container`,next:`${F}next`,nextContainer:`${F}next-container`,noteContainer:`${F}note-container`,noteWrapper:`${F}note-wrapper`,noteButtons:`${F}note-buttons`,infoContainer:`${F}info-container`,infoPage:`${F}info-page`,infoPageText:`${F}info-page-text`,infoPagePrev:`${F}info-page-prev`,infoPageNext:`${F}info-page-next`,noteButtonsBigger:`${F}note-bigger`,noteButtonsSmaller:`${F}note-smaller`,infoTime:`${F}info-time`,infoTimer:`${F}info-timer`},U=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=V.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",K(j,null,K("div",{class:V.nextContainer},K("iframe",{class:V.next,src:"?view=next"})),K("div",{class:V.dragbar}),K("div",{class:V.noteContainer},K("div",{class:V.noteWrapper}),K("div",{class:V.noteButtons},K("button",{class:V.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),K("button",{class:V.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),K("div",{class:V.infoContainer},K("div",{class:V.infoPage},K("button",{class:V.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),K("span",{class:V.infoPageText}),K("button",{class:V.infoPageNext,tabindex:"-1",title:"Next"},"Next")),K("time",{class:V.infoTime,title:"Current time"}),K("time",{class:V.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(V.dragbar).addEventListener("mousedown",(()=>{t=!0,r(V.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(V.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(V.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(V.nextContainer).addEventListener("click",(()=>e.next()));const n=r(V.next),o=(i=n,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;n.addEventListener("load",(()=>{r(V.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const a=document.querySelectorAll(".bespoke-marp-note");a.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(V.noteWrapper).appendChild(e)})),e.on("activate",(()=>a.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(V.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(V.noteButtonsBigger),f=r(V.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),c()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&c(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(V.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(V.infoPagePrev),g=r(V.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(V.infoTime).textContent=e.toLocaleTimeString(),r(V.infoTimer).textContent=`${a}:${i}:${o}`};v(),setInterval(v,250),r(V.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},X=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:H},presenterUrl:{enumerable:!0,get:R}}),g&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function H(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,F+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function R(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),d(e)}const W=e=>{const t=u();return t===a&&e.appendChild(document.createElement("span")),{"":X,[i]:U,[a]:O}[t]},J=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},Y=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},z=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?Y(f("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{var t,r;if(location.hash){const[o]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(o))return(null!==(t=Y(o))&&void 0!==t?t:1)-1;const i=document.getElementById(o)||document.querySelector(`a[name="${CSS.escape(o)}"]`);if(i){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(i)){const t=null===(r=e.fragments)||void 0===r?void 0:r[o],a=i.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||m({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),m({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},G=(e={})=>{var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var i;i={marpBespokeSyncKey:n},m({},{setter:(e,...t)=>o({...e,...i},...t)});const a=()=>{const e=p(r);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=a(),n={...t,...e(t)};return v(r,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const o=()=>{const{reference:e}=a();void 0===e||e<=1?h(r):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),o()})),e.on("destroy",o)}},{PI:Q,abs:Z,sqrt:ee,atan2:te}=Math,ne={passive:!0},re=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?i(e[0]):void 0}),ne),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ee(Z(n)**2+Z(o)**2),r.radian=te(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+Q)%(2*Q)-Q;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),ne)},oe=new Map;oe.clear(),oe.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ie={both:"",outgoing:"outgoing-",incoming:"incoming-"},ae={forward:"",backward:"-backward"},se=e=>`--marp-bespoke-transition-animation-${e}`,le=e=>`--marp-transition-${e}`,ce=se("name"),de=se("duration"),ue=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(le("duration"));i&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),fe=async e=>oe.has(e)?oe.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ie))for(const[i,a]of Object.entries(ae)){const s=`marp-${o}transition${a}-${e}`;n.push(ue(s).then((e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(oe.set(e,t),t))),me=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ge=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ce]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[se("direction")]="reverse"),e}})();return!o&&n?ge(e,{type:t,backward:!1}):o||{[ce]:"__bespoke_marp_transition_no_animation__"}},pe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch(e){}},ve="_tSId",he="_tA",ye="bespoke-marp-transition-warming-up",be=window.matchMedia("(prefers-reduced-motion: reduce)"),we="__bespoke_marp_transition_reduced_outgoing__",xe="__bespoke_marp_transition_reduced_incoming__",ke={forward:{both:void 0,incoming:{name:xe},outgoing:{name:we}},backward:{both:void 0,incoming:{name:xe},outgoing:{name:we}}},$e=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>fe(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=pe(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>i=>{var a;const s=t();if(s)return!!i[he]||!("object"!=typeof s||(s.skipTransition(),!i.forSync));if(!o(i))return!0;const l=e.slides[e.slide()],c=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:r},d="data-transition"+(c()?"-back":""),u=l.querySelector(`section[${d}]`);if(!u)return!0;const f=pe(null!==(a=u.getAttribute(d))&&void 0!==a?a:void 0);return!f||((async(e,{builtinFallback:t=!0}={})=>{let n=await fe(e);if(me(n)){if(!t)return;return n=await fe(`__builtin__${e}`),me(n)?void 0:n}return n})(f.name,{builtinFallback:f.builtinFallback}).then((e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;be.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=ke);const o=document.getElementById(ve);o&&o.remove();const a=document.createElement("style");a.id=ve,document.head.appendChild(a),((e,t)=>{const n=[`:root{${le("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{var n,o,i;const a=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(i=e[t].incoming)||void 0===i?void 0:i.defaultDuration);return"forward"===t?a:a||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${de}:${o};}`);const i=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${i(ge(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(ge(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:f.duration}).forEach((e=>{var t;return null===(t=a.sheet)||void 0===t?void 0:t.insertRule(e)}));const s=document.documentElement.classList;s.add(ye);let l=!1;const d=()=>{l||(n(i),l=!0,s.remove(ye))},u=()=>{t(!1),a.remove(),s.remove(ye)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(u)}catch(e){console.error(e),d(),u()}})),!1)};e.on("prev",r((t=>e.prev({...t,[he]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",r((t=>e.next({...t,[he]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[he]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Ee;const Le=()=>(void 0===Ee&&(Ee="wakeLock"in navigator&&navigator.wakeLock),Ee),Se=async()=>{const e=Le();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Pe=async()=>{if(!Le())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Se()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Se(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=f("view");r.dataset.bespokeView=e===a||e===i?e:""})();const t=(e=>{const t=f(e);return m({[e]:void 0}),t})("sync")||void 0;n.from(e,((...e)=>{const t=s.findIndex((e=>u()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],G({key:t})],[[1,1,1],W(e)],[[1,1,0],_],[[1,1,1],b],[[1,0,0],S()],[[1,1,1],T],[[1,1,1],z({history:!1})],[[1,1,0],I()],[[1,1,0],E],[[1,0,0],J],[[1,1,0],re()],[[1,0,0],M()],[[1,0,0],$e],[[1,1,1],w],[[1,1,0],Pe]))})()}();</script></body></html>

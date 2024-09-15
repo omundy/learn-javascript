@@ -17,6 +17,55 @@ Presentation comments ...
 
 ---
 
+TO ADD
+
+tl;dr
+
+
+
+
+
+
+https://www.thedreaming.org/2017/04/28/es6-imports-babel/
+
+Example - import leaflet in an .astro file
+
+[Leaflet](https://leafletjs.com/2022/09/21/leaflet-1.9.0.html) uses [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+
+Benefits
+- Organization - Explicit dependency declaration includes version number
+- Better code - `<script>` type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated
+- Performance - Import and ship only what you need `import { thing1, thing2 } from 'package'`.
+- Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)
+
+
+```html
+<!-- old old way - still works but -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+```
+
+```js
+// "CommonJS" - old
+const L = require('leaflet');
+```
+
+
+```js
+<script>
+// ES6 Modules
+import 'leaflet/dist/leaflet.css'
+//   import * as L from 'leaflet'
+// this version is better 
+//   import L from 'leaflet'
+import 'leaflet'
+  </script>
+```
+
+
+
+---
+
 ## About modules
 
 > In programming, modules are self-contained units of functionality that can be shared and reused across projects. They make our lives as developers easier, as we can use them to augment our applications with functionality that we haven’t had to write ourselves. They also allow us to organize and decouple our code, leading to applications that are easier to understand, debug and maintain.
