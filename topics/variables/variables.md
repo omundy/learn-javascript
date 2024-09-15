@@ -87,7 +87,7 @@ Add Javascript to a **web page** inside a `<script>` element, or load it into yo
 <h1>Javascript "hello world!"</h1>
 <script>
 
-alert("hello from the script tag!");
+alert("hello from script tag!");
 
 </script>
 </body>
@@ -148,24 +148,17 @@ Place CSS and JS into your HTML page in the following order:
 ```html
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Learn Javascript</title>
-
-<!-- 1. CSS in the <head> so HTML can access when it loads and renders -->
+<!-- 1. CSS in the <head> so HTML can access when it loads -->
 <link rel="stylesheet" href="styles.css">
 <style> h1 { color: blue; } </style>
-
 </head>
 <body>
-
 <!-- 2. HTML tags and visible content go in the body -->
 <h1>Content of your web page</h1>
-
-<!-- 3. Javascript goes after all content to ensure HTML elements have loaded and
-are ready to be used by your code. -->
-<script src="main.js"></script>
+<!-- 3. Javascript goes after all content to ensure HTML has loaded
+and is ready to be used by your code. -->
 <script> alert("Hello world!"); </script>
-
 </body>
 </html>
 ```
@@ -348,7 +341,7 @@ num += "10"; // -> ?
 
 ### Variable data types
 
-Unlike some other languages, with Javascript, you don’t have to supply a data type when you create a variable. That said, Javascript still keeps track of data types.
+A non-typed language like JS will infer the data type when you create a variable.
 
 👉 **Try it out** - How to explicitly change a variable type
 
@@ -357,7 +350,7 @@ Unlike some other languages, with Javascript, you don’t have to supply a data 
 1. Open the console to verify.
 
 
-<div class="twocolumn">
+<div class="twocolumn2x1">
 <div class="col">
 
 ```js
