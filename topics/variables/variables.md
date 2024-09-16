@@ -421,14 +421,18 @@ console.log(question + " " + (today.getFullYear() > 2020))
 
 ## Syntax
 
-While slightly more forgiving than other languages, Javascript still requires your syntax to be correct or your code won’t work as expected. For example, it is a good practice to always include the trailing semicolon. Read on for more tips and suggestions:
+While slightly more forgiving than other languages, Javascript still requires your syntax to be correct or your code won’t work as expected. For example, it is a good practice to always include the trailing semicolon. 
 
+```js
+let greeting = "hello";
+```
 
+Read on for more tips and suggestions.
 
 
 ---
 
-### Comments
+### Syntax > Comments
 
 Comments can be used to add notes about code. They are preceded by `//` or enclosed by `/* ... */` and are not evaluated when the program runs.
 
@@ -443,13 +447,22 @@ comment */
 
 ---
 
-### Whitespace
+### Syntax > Whitespace
 
-Whitespace, like spaces, tabs, and line breaks, in your code can help make it readable. These examples will be executed the same.
+Using whitespace (spaces, tabs, and line breaks) can help make your code more readable but ignored by JS. These examples will be executed the same.
+
+<div class="twocolumn">
+<div class="col">
 
 ```js
 // without whitespace
 if (true) { console.log(123); }
+```
+
+</div>
+<div class="col">
+
+```js
 // with whitespace
 if (true)
 {
@@ -457,13 +470,17 @@ if (true)
 }
 ```
 
-Some rich text editors will also have hidden whitespace characters that can cause errors. Copying / pasting code from Slack sometimes cause this issue.
+</div>
+</div>
+
+
+<small>Some rich text editors will also have hidden whitespace characters that can cause errors. Copying / pasting code from Slack sometimes cause this issue.</small>
 
 
 
 ---
 
-### Smart quotes
+### Syntax > Smart quotes
 
 Take care when copying / pasting from rich text editors (like Word or HTML pages) which sometimes use smart quotes (a.k.a. “curly quotes”). Note in the example below how the text color formatting is broken on the first example. Smart quotes are not acceptable for wrapping string data and will cause errors.
 
@@ -471,6 +488,9 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 “ An example string with smart quotes 😿 ”
 " An example string with dumb quotes 😀 "
 ```
+
+VS Code uses a Javascript Linter to check for these errors. You can also use websites like [jshint.com](https://jshint.com) or [jslint.com](https://www.jslint.com/) to save hours of frustration.
+
 
 
 ---
@@ -483,11 +503,7 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 
 
 
----
 
-### Use a linter
-
-Using a Javascript Linter in your code editor can save hours of frustration. My preference is [jshint](https://atom.io/packages/linter-jshint) but there are others packages available. You can also use a web version like [jshint.com](https://jshint.com) or [jslint.com](https://www.jslint.com/).
 
 
 
