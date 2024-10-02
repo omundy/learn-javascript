@@ -62,7 +62,7 @@ Students who complete this module will be able to:
 <div class="twocolumn">
 <div class="col">
 
-- In programming, functions are a way to organize and reuse blocks of code.
+- Functions are a way to organize and reuse blocks of code.
 - Javascript contains several built-in functions that make it easy to perform common tasks.* 
 - To use a function, "call" it with the name and two parentheses `()`
 
@@ -74,10 +74,10 @@ Students who complete this module will be able to:
 <div class="col">
 
 ```js
-// these built-in functions
+// these built-in functions ...
 alert("hello world!");
 
-// all require parameters
+// all require parameters ...
 console.log(123); // -> 123
 
 // to do things 
@@ -101,13 +101,15 @@ The task a function performs can be customized using one or more parameters plac
 
 ---
 
-## Anatomy of a Function
+## Create a Function
 
-Use the **function** keyword to write custom functions, one or more **parameters** to customize its task, and **return** to send data back to the location where it was called.
+Use the **function** keyword to create a new function. Include **parameters** to customize its task. Use **return** to send data back to the code where it was called.
 
-<img src="../../assets/img/javascript-anatomy-function.png" width="100%">
+<img src="../../assets/img/06-16-JS-function-anatomy.png" width="100%">
 
-<div class="caption slides-small"></div>
+<div class="caption slides-small">
+👉 Paste into the console <code>function square() { return num * num }</code>, then call it with <code>square(2)</code> or <code>square(12)</code>
+</div>
 
 
 
@@ -120,18 +122,19 @@ Use the **function** keyword to write custom functions, one or more **parameters
 Writing the same code over and over is not only inefficient and boring, it also makes it difficult to detect and fix errors. 
 
 ```js
-let hexChars = "0123456789abcdef"
+let hex = "0123456789abcdef"
 document.body.backgroundColor = "#" + 
-    hexChars[Math.floor(Math.random() * hexChars.length)] + 
-    hexChars[Math.floor(Math.random() * hexChars.length)] +
-    hexChars[Math.floor(Math.random() * hexChars.length)] +
-    hexChars[Math.floor(Math.random() * hexChars.length)] +
-    hexChars[Math.floor(Math.random() * hexChars.length)] +
-    hexChars[Math.floor(Math.random() * hexChars.length)]
+	// create a random number between 0-15 to get a hexadecimal character
+    hex[Math.floor(Math.random() * hex.length)] + 
+    hex[Math.floor(Math.random() * hex.length)] +
+    hex[Math.floor(Math.random() * hex.length)] +
+    hex[Math.floor(Math.random() * hex.length)] +
+    hex[Math.floor(Math.random() * hex.length)] +
+    hex[Math.floor(Math.random() * hex.length)]
 ```
 
 <div class="caption slides-small">
-Several lines of code in this example perform the same task. Copy and paste this code into the console to see what it does!
+Several lines of code in this example perform the same task!
 </div>
 
 
@@ -145,12 +148,12 @@ If you find yourself typing the same instructions, consider using a **custom fun
  
 
 ```js
-let hexChars = "0123456789abcdef"
-function hexChar(){
-	return hexChars[Math.floor(Math.random() * hexChars.length)]
+let hex = "0123456789abcdef"
+function rand(arr){
+	return arr[Math.floor(Math.random() * arr.length)]
 }
-document.body.backgroundColor = "#" + hexChar() + hexChar() + 
-    hexChar() + hexChar() + hexChar() + hexChar();
+document.body.backgroundColor = "#" + 
+	rand() + rand() + rand() + rand() + rand() + rand();
 ```
 
 <div class="caption slides-small">
@@ -274,11 +277,12 @@ console.log("bar =", bar);
 
 
 
+
 ---
 
 ## Function Expressions
 
-We have only used the [function declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) to define functions so far, but another common method is with the [function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function). 
+So far we've used <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" target="_blank">function declarations</a>. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" target="_blank">function expression</a> is also common. 
 
 ```js
 const getCurrentHour = () => {
@@ -288,7 +292,7 @@ const getCurrentHour = () => {
 console.log(getCurrentHour());
 ```
 
-Here we use the ["fat arrow"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) syntax, since the function body can be shortened to a single line;
+The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">arrow function</a> is succinct when the function body can fit on a single line.
 
 ```js
 const getCurrentHour = () => new Date().getHours(); 
@@ -308,10 +312,10 @@ console.log(getCurrentHour());
 ## Anonymous Functions
 
 
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 
-- **Anonymous functions** are function expressions that are not assigned to a name.
+- A function expression without a name is **anonymous**.
 - Often used as callbacks from jquery and other event listeners.
 - Callbacks can be stored as function expressions or plain anonymous functions
 
@@ -321,60 +325,26 @@ console.log(getCurrentHour());
 ```js
 let button = document.querySelector(".btn");
 
-// #1
+// #1 - anonymous function used as click handler
 button.addEventListener("click", function() {
-	// anoymous function is handler / callback
+	console.log("click! 🎉")
 });
 
-// #2 
-button.addEventListener("click", myCallback);
-// callback stored in named function
-var myCallback = function() {
-	// same as above
+// #2 - named function used as the callback
+var myFunc = function() {
+	console.log("click! 🎉")
 }
+button.addEventListener("click", myFunc);
 ```
 
 <div class="slides-small">
-	These examples do the same thing.
+	Examples #1 and #2 do the same thing.
 </div>
 
 </div>
 </div>
 
 
-
-
-
-
----
-
-## Anonymous Functions (jQuery example)
-
-
-<div class="twocolumn">
-<div class="col">
-
-```js
-$("button").click(function() {
-	// jquery click() adds listener
-    // anonymouse function used as handler
-});
-```
-
-</div>
-<div class="col">
-
-
-```js
-$("button").click(myCallback);
-
-var myCallback = function() {
-	// this is the same as the pure JS example
-}
-```
-
-</div>
-</div>
 
 
 
@@ -474,3 +444,39 @@ console.log(1 < 2); // -> logs to the console
 <div class="caption slides-small">
 	<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank">What is Functional Programming?</a>
 </div>
+
+
+
+
+
+---
+
+## Anonymous Functions (jQuery example)
+
+NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
+
+<div class="twocolumn">
+<div class="col">
+
+```js
+$("button").click(function() {
+	// jquery click() adds listener
+    // anonymouse function used as handler
+});
+```
+
+</div>
+<div class="col">
+
+
+```js
+$("button").click(myCallback);
+
+var myCallback = function() {
+	// this is the same as the pure JS example
+}
+```
+
+</div>
+</div>
+

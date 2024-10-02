@@ -1387,7 +1387,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <div class="twocolumn">
 <div class="col">
 <ul>
-<li>In programming, functions are a way to organize and reuse blocks of code.</li>
+<li>Functions are a way to organize and reuse blocks of code.</li>
 <li>Javascript contains several built-in functions that make it easy to perform common tasks.*</li>
 <li>To use a function, &quot;call&quot; it with the name and two parentheses <code>()</code></li>
 </ul>
@@ -1396,10 +1396,10 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </div>
 </div>
 <div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// these built-in functions</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// these built-in functions ...</span>
 <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;hello world!&quot;</span>);
 
-<span class="hljs-comment">// all require parameters</span>
+<span class="hljs-comment">// all require parameters ...</span>
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">123</span>); <span class="hljs-comment">// -&gt; 123</span>
 
 <span class="hljs-comment">// to do things </span>
@@ -1412,36 +1412,39 @@ The task a function performs can be customized using one or more parameters plac
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
-<h2 id="anatomy-of-a-function">Anatomy of a Function</h2>
-<p>Use the <strong>function</strong> keyword to write custom functions, one or more <strong>parameters</strong> to customize its task, and <strong>return</strong> to send data back to the location where it was called.</p>
-<img src="../../assets/img/javascript-anatomy-function.png" width="100%" />
-<div class="caption slides-small"></div>
+<h2 id="create-a-function">Create a Function</h2>
+<p>Use the <strong>function</strong> keyword to create a new function. Include <strong>parameters</strong> to customize its task. Use <strong>return</strong> to send data back to the code where it was called.</p>
+<img src="../../assets/img/06-16-JS-function-anatomy.png" width="100%" />
+<div class="caption slides-small">
+👉 Paste into the console <code>function square() { return num * num }</code>, then call it with <code>square(2)</code> or <code>square(12)</code>
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="code-reuse">Code Reuse</h2>
 <p>Writing the same code over and over is not only inefficient and boring, it also makes it difficult to detect and fix errors.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> hexChars = <span class="hljs-string">&quot;0123456789abcdef&quot;</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> hex = <span class="hljs-string">&quot;0123456789abcdef&quot;</span>
 <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&quot;#&quot;</span> + 
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)] + 
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)] +
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)] +
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)] +
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)] +
-    hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)]
+	<span class="hljs-comment">// create a random number between 0-15 to get a hexadecimal character</span>
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)] + 
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)] +
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)] +
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)] +
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)] +
+    hex[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hex.<span class="hljs-property">length</span>)]
 </code></pre>
 <div class="caption slides-small">
-Several lines of code in this example perform the same task. Copy and paste this code into the console to see what it does!
+Several lines of code in this example perform the same task!
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="custom-functions">Custom Functions</h2>
 <p>If you find yourself typing the same instructions, consider using a <strong>custom function</strong> to make it easier to write and manage the code.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> hexChars = <span class="hljs-string">&quot;0123456789abcdef&quot;</span>
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">hexChar</span>(<span class="hljs-params"></span>){
-	<span class="hljs-keyword">return</span> hexChars[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * hexChars.<span class="hljs-property">length</span>)]
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> hex = <span class="hljs-string">&quot;0123456789abcdef&quot;</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">rand</span>(<span class="hljs-params">arr</span>){
+	<span class="hljs-keyword">return</span> arr[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * arr.<span class="hljs-property">length</span>)]
 }
-<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&quot;#&quot;</span> + <span class="hljs-title function_">hexChar</span>() + <span class="hljs-title function_">hexChar</span>() + 
-    <span class="hljs-title function_">hexChar</span>() + <span class="hljs-title function_">hexChar</span>() + <span class="hljs-title function_">hexChar</span>() + <span class="hljs-title function_">hexChar</span>();
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&quot;#&quot;</span> + 
+	<span class="hljs-title function_">rand</span>() + <span class="hljs-title function_">rand</span>() + <span class="hljs-title function_">rand</span>() + <span class="hljs-title function_">rand</span>() + <span class="hljs-title function_">rand</span>() + <span class="hljs-title function_">rand</span>();
 </code></pre>
 <div class="caption slides-small">
 In the updated example the repeated code is "wrapped" with a function which "returns" the value of the expression back to the location where it was called. The changes reflect the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">D.R.Y.</a> ("Don't Repeat Yourself") principle in action.
@@ -1478,14 +1481,14 @@ In the updated example the repeated code is "wrapped" with a function which "ret
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="function-expressions">Function Expressions</h2>
-<p>We have only used the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">function declaration</a> to define functions so far, but another common method is with the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">function expression</a>.</p>
+<p>So far we've used <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" target="_blank">function declarations</a>. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" target="_blank">function expression</a> is also common.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">getCurrentHour</span> = (<span class="hljs-params"></span>) =&gt; {
     <span class="hljs-keyword">let</span> today = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();
     <span class="hljs-keyword">return</span> today.<span class="hljs-title function_">getHours</span>();  
 }
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getCurrentHour</span>());
 </code></pre>
-<p>Here we use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">&quot;fat arrow&quot;</a> syntax, since the function body can be shortened to a single line;</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">arrow function</a> is succinct when the function body can fit on a single line.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">getCurrentHour</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getHours</span>(); 
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getCurrentHour</span>());
 </code></pre>
@@ -1495,10 +1498,10 @@ In the updated example the repeated code is "wrapped" with a function which "ret
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="anonymous-functions">Anonymous Functions</h2>
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 <ul>
-<li><strong>Anonymous functions</strong> are function expressions that are not assigned to a name.</li>
+<li>A function expression without a name is <strong>anonymous</strong>.</li>
 <li>Often used as callbacks from jquery and other event listeners.</li>
 <li>Callbacks can be stored as function expressions or plain anonymous functions</li>
 </ul>
@@ -1506,45 +1509,24 @@ In the updated example the repeated code is "wrapped" with a function which "ret
 <div class="col">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.btn&quot;</span>);
 
-<span class="hljs-comment">// #1</span>
+<span class="hljs-comment">// #1 - anonymous function used as click handler</span>
 button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// anoymous function is handler / callback</span>
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click! 🎉&quot;</span>)
 });
 
-<span class="hljs-comment">// #2 </span>
-button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, myCallback);
-<span class="hljs-comment">// callback stored in named function</span>
-<span class="hljs-keyword">var</span> myCallback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// same as above</span>
+<span class="hljs-comment">// #2 - named function used as the callback</span>
+<span class="hljs-keyword">var</span> myFunc = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click! 🎉&quot;</span>)
 }
+button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, myFunc);
 </code></pre>
 <div class="slides-small">
-	These examples do the same thing.
+	Examples #1 and #2 do the same thing.
 </div>
 </div>
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
-<h2 id="anonymous-functions-jquery-example">Anonymous Functions (jQuery example)</h2>
-<div class="twocolumn">
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// jquery click() adds listener</span>
-    <span class="hljs-comment">// anonymouse function used as handler</span>
-});
-</code></pre>
-</div>
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(myCallback);
-
-<span class="hljs-keyword">var</span> myCallback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-comment">// this is the same as the pure JS example</span>
-}
-</code></pre>
-</div>
-</div>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="next-steps">Next steps</h2>
 <ol>
 <li>Explore <a href="#more-concepts">More Concepts</a> at the end</li>
@@ -1553,7 +1535,7 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 <li>Continue to the next lesson: <strong>Data Structures</strong> <a href="../data-structures/slides.html">slides</a> | <a href="../data-structures/data-structures.md">md</a></li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="exercises">Exercises</h2>
 <p>👉 <strong>Try it out</strong></p>
 <ol>
@@ -1562,7 +1544,7 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 <li>Revisit <a href="../../topics/single-page-apps/javascript-lamp/index.html">this lamp demo</a> to explore how it uses functions</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="references">References</h2>
 <ul>
 <li>Haverbeke <a href="https://eloquentjavascript.net/03_functions.html">Ch3 Functions</a> (39-55)</li>
@@ -1571,11 +1553,11 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 <li><a href="https://medium.com/predict/javascript-functions-vs-methods-and-other-helpful-tips-e58a621b1d27">JavaScript Functions vs Methods (and other helpful tips)</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="15" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="more-concepts">More Concepts</h2>
 <p>Continue for more related concepts.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="16" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="15" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="iife">IIFE</h2>
 <div class="twocolumn">
 <div class="col">
@@ -1594,7 +1576,7 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="17" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="16" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
 <h2 id="side-effects">Side Effects</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)"><strong>Side effects</strong></a> are statements that evaluate an expression and produce some other effect instead of returning a value.</li>
@@ -1604,6 +1586,27 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 </code></pre>
 <div class="caption slides-small">
 	<a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" target="_blank">What is Functional Programming?</a>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="17" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="17">
+<h2 id="anonymous-functions-jquery-example">Anonymous Functions (jQuery example)</h2>
+<p>NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a></p>
+<div class="twocolumn">
+<div class="col">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-comment">// jquery click() adds listener</span>
+    <span class="hljs-comment">// anonymouse function used as handler</span>
+});
+</code></pre>
+</div>
+<div class="col">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(myCallback);
+
+<span class="hljs-keyword">var</span> myCallback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-comment">// this is the same as the pure JS example</span>
+}
+</code></pre>
+</div>
 </div>
 </section>
 <script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>---

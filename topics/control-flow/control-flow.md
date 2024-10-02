@@ -73,13 +73,13 @@ Students who complete this module will be able to:
 
 ## Operators
 
-Let's review some of the [operators](https://www.w3schools.com/js/js_operators.asp) we've seen thus far.
+Let's review some of the <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">operators</a> we've seen thus far.
 
 
 
 ---
 
-### [Arithmetic operators](https://www.w3schools.com/js/js_arithmetic.asp)
+<h3><a href="https://www.w3schools.com/js/js_arithmetic.asp" target="_blank">Arithmetic operators</a></h3>
 
 Perform addition `+`, subtraction `-`, multiplication `*`, division `/` on numbers
 
@@ -101,7 +101,7 @@ count --; // -> 1
 
 ---
 
-### [Arithmetic operators](https://www.w3schools.com/js/js_arithmetic.asp)
+<h3><a href="https://www.w3schools.com/js/js_arithmetic.asp" target="_blank">Arithmetic operators</a></h3>
 
 Modulus `%` to return the remainder from a division operation
 
@@ -119,7 +119,7 @@ The `+` operator is also used to concatenate (add) strings
 
 ---
 
-### [Assignment operators](https://www.w3schools.com/js/js_assignment.asp)
+<h3><a href="https://www.w3schools.com/js/js_assignment.asp" target="_blank">Assignment operators</a></h3>
 
 Perform an expression and then assign the value.
 
@@ -144,7 +144,7 @@ apples += " apples"; // -> "111 apples"
 
 ---
 
-### [Comparison operators](https://www.w3schools.com/js/js_comparisons.asp)
+<h3><a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank">Comparison operators</a></h3>
 
 A double `==` compares values only then returns `true` or `false`. If operands of different types are used, Javascript will first convert to the type **on the left** and compare.
 

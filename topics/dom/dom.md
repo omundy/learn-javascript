@@ -76,7 +76,7 @@ Students who complete this module will be able to:
 
 ## The window object
 
-We can view these properties and functions in the console or access them with javascript using dot syntax.
+👉 View these properties and functions in the console (or access them with javascript using dot syntax).
 
 <div class="twocolumn">
 <div class="col">
@@ -94,20 +94,41 @@ We can view these properties and functions in the console or access them with ja
 </div>
 
 
+
+
+
 ---
 
 ## The document object
 
-The `window` includes the entire browser tab, while `window.document` or just `document` contains the page structure, content, and properties for the page only. Explore these in the console:
+
+
+
+<div class="twocolumn">
+<div class="col">
+
+- The `window` refers to the page and browser tab
+- While `window.document` (or just `document`) references the page structure, content, and properties for the page only. 
+- 👉 Explore these in the console
+
+</div>
+<div class="col">
+
 
 ```js
 // get web page url property
 window.document.URL
-// get page background color property
+// get background color property
 window.document.bgColor
-// set a new value for the bgColor property
+// change the bgColor property
 window.document.bgColor = "red"
 ```
+
+</div>
+</div>
+
+
+
 
 
 
@@ -136,11 +157,11 @@ window.document.location = "https://davidson.edu"
 
 ## Selecting HTML elements
 
-<div class="twocolumn2x1">
+<div class="twocolumn1x2">
 <div class="col">
 
 - There are several methods to select an element in the DOM.
-- [`document.querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) returns the first Element within the document that matches the specified selector, or group of selectors.
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns the first element that matches the specified selector.
 
 </div>
 <div class="col">
@@ -150,11 +171,11 @@ window.document.location = "https://davidson.edu"
 ```
 
 ```js
-// store reference to element using id selector
+// use #id to store reference to element
 let ele = document.querySelector("#greeting");
 // get the text
 console.log(ele.textContent);
-// set the text
+// or set the text
 ele.textContent = "Hello world!";
 ```
 
@@ -165,11 +186,47 @@ ele.textContent = "Hello world!";
 
 
 
+
+---
+
+## Forms and Events
+
+- Add a `submit` listener to process each `input` in a web form. 
+- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loadinga new page. 
+
+
+```html
+<form action="#">
+  <input type="text" id="color">
+  <input type="submit">
+</form>
+```
+
+```js
+document.addEventListener("submit", function(e) {
+	e.preventDefault();
+	let colorVal = document.getElementById("color").value;
+	console.log(colorVal);
+	document.body.bgColor = colorVal;
+})
+```
+
+
+
+
+
+
+
+
+
 ---
 
 ## jQuery and The DOM
 
-How to access properties and methods in the HTML DOM with Javascript and jQuery
+jQuery is a Javascript library you will see often in code references. It provides easy access to properties and methods in the HTML DOM, but it is better to learn "pure JS".
+
+NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
+
 
 ```js
 // select all divs, set backgrounds red
@@ -179,41 +236,14 @@ $('.myClass').append(' - here is some new text');
 ```
 
 
-NOTE: [youmightnotneedjquery.com](https://youmightnotneedjquery.com)
-
-
-
-
----
-
-## Forms and Events
-
-
-```html
-<form action="#">
-  <input type="text" id="hi">
-  <input type="submit">
-</form>
-```
-
-```js
-document.addEventListener("submit", function(e){
-	console.log(document.getElementById("hi").value);
-  e.preventDefault();
-})
-```
-
-https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-
-
-
-
 
 ---
 
 ## Forms and Events with jQuery
 
 **Overview**: Events and using forms with Javascript and jQuery
+
+NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
 
 ```js
 // click event with callback

@@ -123,7 +123,7 @@ HTML attributes add information to elements, in this case *wrapping* "Just googl
 ## Javascript
 
 
-<img src="../../assets/img/javascript-anatomy-function.png" width="100%">
+<img src="../../assets/img/06-16-JS-function-anatomy.png" width="100%">
 
 
 

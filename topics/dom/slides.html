@@ -1405,7 +1405,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="the-window-object">The window object</h2>
-<p>We can view these properties and functions in the console or access them with javascript using dot syntax.</p>
+<p>👉 View these properties and functions in the console (or access them with javascript using dot syntax).</p>
 <div class="twocolumn">
 <div class="col">
 <ol>
@@ -1421,14 +1421,24 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="the-document-object">The document object</h2>
-<p>The <code>window</code> includes the entire browser tab, while <code>window.document</code> or just <code>document</code> contains the page structure, content, and properties for the page only. Explore these in the console:</p>
+<div class="twocolumn">
+<div class="col">
+<ul>
+<li>The <code>window</code> refers to the page and browser tab</li>
+<li>While <code>window.document</code> (or just <code>document</code>) references the page structure, content, and properties for the page only.</li>
+<li>👉 Explore these in the console</li>
+</ul>
+</div>
+<div class="col">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// get web page url property</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">URL</span>
-<span class="hljs-comment">// get page background color property</span>
+<span class="hljs-comment">// get background color property</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">bgColor</span>
-<span class="hljs-comment">// set a new value for the bgColor property</span>
+<span class="hljs-comment">// change the bgColor property</span>
 <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">bgColor</span> = <span class="hljs-string">&quot;red&quot;</span>
 </code></pre>
+</div>
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="selecting-html-elements">Selecting HTML elements</h2>
@@ -1445,53 +1455,59 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="selecting-html-elements-1">Selecting HTML elements</h2>
-<div class="twocolumn2x1">
+<div class="twocolumn1x2">
 <div class="col">
 <ul>
 <li>There are several methods to select an element in the DOM.</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>document.querySelector()</code></a> returns the first Element within the document that matches the specified selector, or group of selectors.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns the first element that matches the specified selector.</li>
 </ul>
 </div>
 <div class="col">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;greeting&quot;</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// store reference to element using id selector</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// use #id to store reference to element</span>
 <span class="hljs-keyword">let</span> ele = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#greeting&quot;</span>);
 <span class="hljs-comment">// get the text</span>
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ele.<span class="hljs-property">textContent</span>);
-<span class="hljs-comment">// set the text</span>
+<span class="hljs-comment">// or set the text</span>
 ele.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Hello world!&quot;</span>;
 </code></pre>
 </div>
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
+<h2 id="forms-and-events">Forms and Events</h2>
+<ul>
+<li>Add a <code>submit</code> listener to process each <code>input</code> in a web form.</li>
+<li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank"><code>preventDefault</code></a> to prevent the form from loadinga new page.</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;submit&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+	e.<span class="hljs-title function_">preventDefault</span>();
+	<span class="hljs-keyword">let</span> colorVal = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;color&quot;</span>).<span class="hljs-property">value</span>;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colorVal);
+	<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">bgColor</span> = colorVal;
+})
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="jquery-and-the-dom">jQuery and The DOM</h2>
-<p>How to access properties and methods in the HTML DOM with Javascript and jQuery</p>
+<p>jQuery is a Javascript library you will see often in code references. It provides easy access to properties and methods in the HTML DOM, but it is better to learn &quot;pure JS&quot;.</p>
+<p>NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// select all divs, set backgrounds red</span>
 $(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">css</span>({ <span class="hljs-string">&#x27;background&#x27;</span>: <span class="hljs-string">&#x27;red&#x27;</span> });
 <span class="hljs-comment">// select all elements with myClass, add text to end</span>
 $(<span class="hljs-string">&#x27;.myClass&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27; - here is some new text&#x27;</span>);
 </code></pre>
-<p>NOTE: <a href="https://youmightnotneedjquery.com">youmightnotneedjquery.com</a></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
-<h2 id="forms-and-events">Forms and Events</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hi&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;submit&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>){
-	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;hi&quot;</span>).<span class="hljs-property">value</span>);
-  e.<span class="hljs-title function_">preventDefault</span>();
-})
-</code></pre>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="14">
 <h2 id="forms-and-events-with-jquery">Forms and Events with jQuery</h2>
 <p><strong>Overview</strong>: Events and using forms with Javascript and jQuery</p>
+<p>NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// click event with callback</span>
 $(<span class="hljs-string">&#x27;#submitButton&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
 	<span class="hljs-comment">// set the value of a form element</span>
