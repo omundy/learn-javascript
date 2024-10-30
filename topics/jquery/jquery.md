@@ -15,8 +15,8 @@ Presentation comments ...
 -->
 
 
+<!-- 
 ---
-
 
 ## Contents
 
@@ -30,7 +30,11 @@ Presentation comments ...
 1. [Events](#eevnt)
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
-1. [References](#references)
+1. [References](#references) 
+-->
+
+
+
 
 
 ---

@@ -4,17 +4,24 @@
 
 <a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# Document Object Model (DOM)
+# Web forms and the DOM
 
-Working with the dom
+Use form data via the Document Object Model (DOM)
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="dom.md">md</a></span>
+
+
+
+
+
+
+
 
 <!--
 Presentation comments ...
 -->
 
-
+<!-- 
 ---
 
 ## Contents
@@ -24,16 +31,19 @@ Presentation comments ...
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
-
+ -->
 
 
 ---
 
 ## Introduction
 
-Review the following sections and perform the activities on your own or with your group.
+<details>
+<summary>Notes</summary>
 
-Perform the task(s) when you see this 👉  emoji
+Review the following sections and perform the activities on your own or with your group. Perform the task(s) when you see this 👉  emoji
+
+</details>
 
 <details>
 <summary>Learning Objectives</summary>
@@ -64,8 +74,8 @@ Students who complete this module will be able to:
 
 ## About the DOM
 
-- Every time a web page loads, a new DOM object is created.
-- The DOM provides properties and methods for the page, as well as the potential to access (or change) all its HTML and CSS.
+- When the browser parses a web page it creates a `document` object containing references to all the page elements
+- This makes it easy to select element and access their HTML and CSS code.
 
 <img src="../../assets/img/javascript-diagram-dom.png" width="100%">
 
@@ -99,7 +109,7 @@ Students who complete this module will be able to:
 
 ---
 
-## The document object
+## window.document
 
 
 
@@ -107,8 +117,8 @@ Students who complete this module will be able to:
 <div class="twocolumn">
 <div class="col">
 
-- The `window` refers to the page and browser tab
-- While `window.document` (or just `document`) references the page structure, content, and properties for the page only. 
+- `window` refers to the page and browser tab
+- `document` (full name is `window.document`) references the page structure, content, and properties for the page only. 
 - 👉 Explore these in the console
 
 </div>
@@ -118,10 +128,12 @@ Students who complete this module will be able to:
 ```js
 // get web page url property
 window.document.URL
-// get background color property
-window.document.bgColor
-// change the bgColor property
-window.document.bgColor = "red"
+// set a new location for this window 
+document.location = "https://davidson.edu"
+// get property
+window.document.body.style.background
+// set (same) property
+document.body.style.background = "red"
 ```
 
 </div>
@@ -137,18 +149,18 @@ window.document.bgColor = "red"
 
 ## Selecting HTML elements
 
-Many properties can be access with "vanilla" Javascript
+Some properties can be accessed directly using "direct selection"
 
 ```js
-// get the current URL
-window.alert(document.URL);
 // replace the content of the body
-window.document.body.innerHTML = "😃"
-// return an array of all <a> elements on the page: 
-window.document.querySelectorAll("a")
-// set a new location for this window: 
-window.document.location = "https://davidson.edu"
+document.body.innerHTML = "😃"
+// get a form value
+document.myForm.myInput.value
 ```
+
+
+
+
 
 
 
@@ -160,8 +172,7 @@ window.document.location = "https://davidson.edu"
 <div class="twocolumn1x2">
 <div class="col">
 
-- There are several methods to select an element in the DOM.
-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns the first element that matches the specified selector.
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns the first element in the DOM that matches the specified selector.
 
 </div>
 <div class="col">
@@ -185,6 +196,64 @@ ele.textContent = "Hello world!";
 
 
 
+---
+
+## Selecting HTML elements
+
+<div class="twocolumn1x2">
+<div class="col">
+
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">document.querySelectorAll()</a> returns <i>all</i> elements matching the specified selector in an array.
+
+</div>
+<div class="col">
+
+```html
+<p>Red</p>
+<p>Green</p>
+<p>Blue</p>
+```
+
+```js
+// return an array of all <a> elements on the page: 
+let ele = document.querySelectorAll("#greeting");
+// -> then use a loop to address them
+```
+
+
+
+</div>
+</div>
+
+
+
+---
+
+## Listening for Events
+
+- Create a web form using a `<form>` containing one or more `<input>` elements. 
+- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loading a new page (it's default behavior). 
+
+
+```html
+<form action="#" class="myForm">
+  <input type="text" id="color">
+  <button id="submit">Submit</button>
+</form>
+```
+
+```js
+// get reference
+let ele = document.querySelector(".myForm");
+// listens for when the form was submitted (any button inside)
+ele.addEventListener("submit", function(e) {
+	e.preventDefault();
+	console.log(colorVal);
+})
+```
+
+
+
 
 
 ---
@@ -192,7 +261,7 @@ ele.textContent = "Hello world!";
 ## Forms and Events
 
 - Add a `submit` listener to process each `input` in a web form. 
-- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loadinga new page. 
+- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loading a new page. 
 
 
 ```html
@@ -215,45 +284,6 @@ document.addEventListener("submit", function(e) {
 
 
 
-
-
-
-
----
-
-## jQuery and The DOM
-
-jQuery is a Javascript library you will see often in code references. It provides easy access to properties and methods in the HTML DOM, but it is better to learn "pure JS".
-
-NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
-
-
-```js
-// select all divs, set backgrounds red
-$('div').css({ 'background': 'red' });
-// select all elements with myClass, add text to end
-$('.myClass').append(' - here is some new text');
-```
-
-
-
----
-
-## Forms and Events with jQuery
-
-**Overview**: Events and using forms with Javascript and jQuery
-
-NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
-
-```js
-// click event with callback
-$('#submitButton').click(function() {
-	// set the value of a form element
-	$('#color').val("purple");
-	// do not perform the default form action
-	return false;
-});
-```
 
 
 
@@ -296,3 +326,46 @@ $('#submitButton').click(function() {
 - Codecademy Cheatsheet(s) [jquery introduction](reference-sheets/jquery-01-introduction.pdf), [effects](reference-sheets/jquery-02-effects.pdf), [jquery events](reference-sheets/jquery-03-events.pdf), [style methods](reference-sheets/jquery-04-style-methods.pdf), [dom traversing](reference-sheets/jquery-05-dom-traversing.pdf)
 - w3schools [DOM](https://www.w3schools.com/js/js_htmldom.asp), [HTML DOM](https://www.w3schools.com/js/js_htmldom_html.asp), [jQuery intro](https://www.w3schools.com/jquery/jquery_intro.asp), [Get Started](https://www.w3schools.com/jquery/jquery_get_started.asp), [syntax](https://www.w3schools.com/jquery/jquery_syntax.asp), [selectors](https://www.w3schools.com/jquery/jquery_selectors.asp), [event methods](https://www.w3schools.com/jquery/jquery_events.asp)
 - w3schools [Javascript practice](https://www.w3schools.com/js/exercise_js.asp)
+
+
+
+
+
+
+
+---
+
+## jQuery and The DOM
+
+jQuery is a Javascript library you will see often in code references. It provides easy access to properties and methods in the HTML DOM, but it is better to learn "pure JS" (a.k.a. "vanilla").
+
+NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
+
+
+```js
+// select all divs, set backgrounds red
+$('div').css({ 'background': 'red' });
+// select all elements with myClass, add text to end
+$('.myClass').append(' - here is some new text');
+```
+
+
+
+---
+
+## Forms and Events with jQuery
+
+**Overview**: Events and using forms with Javascript and jQuery
+
+NOTE: <a href="https://youmightnotneedjquery.com)" target="_blank">youmightnotneedjquery.com</a>
+
+```js
+// click event with callback
+$('#submitButton').click(function() {
+	// set the value of a form element
+	$('#color').val("purple");
+	// do not perform the default form action
+	return false;
+});
+```
+

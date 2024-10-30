@@ -14,14 +14,13 @@ Presentation comments ...
 <!-- 
 ---
 
-### Contents
+## Contents
 
 1. [Browser Blowup Tutorial](#hello-world-tutorial) - Introduction to browser extensions
 1. [More Tutorials](#more-tutorials) - Mozilla, Chrome, etc. web tutorials
 1. [Sample Browser Extensions](#sample-browser-extensions) - Code samples to get started
 1. [Documentation](#documentation) - Cross-browser compatibility, publishing, packaging
 1. [FAQ & Tips](#faq-tips) - Browsers, specific issues 
-
 -->
 
 

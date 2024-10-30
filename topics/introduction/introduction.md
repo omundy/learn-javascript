@@ -15,9 +15,10 @@ Presentation comments ...
 -->
 
 
+<!-- 
 ---
 
-### Contents
+## Contents
 
 1. [Introduction](#introduction)
 1. [What is Javascript?](#what-is-javascript) `5 min`
@@ -27,7 +28,8 @@ Presentation comments ...
 1. [Statements](#statements) `2 min`
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
-1. [References](#references)
+1. [References](#references) 
+-->
 
 
 ---

@@ -15,7 +15,7 @@ How to store and compare values and data types
 Presentation comments ...
 -->
 
-
+<!-- 
 ---
 
 ## Contents
@@ -28,6 +28,8 @@ Presentation comments ...
 1. [Next steps](#next-steps)
 1. [Exercises](#exercises)
 1. [References](#references)
+ -->
+
 
 
 ---
