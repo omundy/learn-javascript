@@ -6,7 +6,7 @@
 
 # Asynchronous Javascript
 
-How to use callbacks, fetch, promises, async/await, etc.
+Using callbacks, fetch, promises, async/await, etc.
 
 <span class="slides-small"><a href="slides.html">slides</a> | <a href="async.md">md</a></span>
 
@@ -23,39 +23,42 @@ Presentation comments ...
 
 ## Sync vs. Async
 
-- When getting data from the hard disk or network you will encounter **latency**—the amount of time it takes the data to arrive.
-- **Asynchronous** code ensures such operations (e.g. API responses) have completed before using the data of the response.
+**Latency** describes the time it takes to retrieve data across the web.
 
 <div class="twocolumn">
 <div class="col">
 
+**Synchronous** code runs in succession, after previous lines have finished.
+
 ```js
-// synchronous code
-function example1(num) {
-	console.log("🐱", num);
-}
-example1(1);
-console.log("🐱", 2);
+console.log(1, "These will...");
+console.log(2, "execute");
+console.log(3, "in order");
+// -> 1 These will...
+// -> 2 execute
+// -> 3 in order
 ```
 
-<details class="slides-small">
+<!-- <details class="slides-small">
 <summary>What is the order?</summary>
 Left: 1,2; Right: 2,1<br>
-Also see <a href="https://codepen.io/owenmundy/pen/dyKMRBN" target="_blank">Why do we need asynchronous code? (codepen)</a>
-</details>
+</details> -->
 
 </div>
 <div class="col">
 
+**Asynchronous** code can handle requests that depend on data from the response.
+
+
 ```js
-// asynchronous code
-function example2(num){
-	setTimeout(function(){
-		console.log("🐨", num);
-	}, 1000);
-}
-example2(1);
-console.log("🐨", 2);
+console.log(1, "1st.");
+setTimeout(function(){
+	console.log(2, "2nd");
+}, 1000);
+console.log(3, "3rd");
+// -> 1 1st...
+// -> 3 3rd
+// -> 2 2nd
 ```
 
 </div>
@@ -145,30 +148,53 @@ $("button").click(callback);
 Since callbacks require nesting functions, it makes your code difficult to manage.
 
 ```js
-let arr = []; // a rather extreme version of callback hell or "the pyramid of doom"
+let arr = []; 
 getUser(id1, function(user1){
 	arr.push(user1.name);
 	if (user1.friends.length > 0){
 		getUser(user1.friends[0], function(user2){
 			arr.push(user2.name);
 			if (user2.friends.length > 0){
-				getUser(user2.friends[0], function(user3){
-					arr.push(user3.name); // and so on until done
-				});
+				// and so on until done...
 			}
 		});
 	}
 });
-getUser(1); // getting a list of connections
+getUser(1); // get a list of connections
 ```
+
+
+---
+
+<img src="../../assets/img/09-22-sync-async-compared.png" style="height: 90%">
+
+<div class="slides-small">Synchronous code (with multiple embedded callbacks) is also slower</div>
+
+
+
+
+
+
 
 
 ---
 
 ## Promises
 
-- A JS [promise](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises) lets you make asynchronous requests and use the result when a response is received.
-- A function (like `fetch()`) that returns a promise tells the calling function the request is in progress.
+![alt text](../../assets/img/09-23-request-response.png)
+
+<div class="slides-small">
+	A JS <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises" target="_blank">promise</a> lets you make asynchronous requests and use the result when a response is received.
+</div>
+
+
+
+
+---
+
+## Promises
+
+- Javascript's `fetch()` returns a promise tells the calling function the request is in progress.
 
 ```js
 fetch('https://api.weather.gov/')
@@ -184,8 +210,8 @@ fetch('https://api.weather.gov/')
 
 ## Fetch
 
-- The data in the response from `fetch()` can be use in a **promise chain** where each `.then()` is performed in order.
-- Below, the response is converted to JSON object in the first then, and finally logged to the console in the 2nd.
+- The `fetch()` response is handled using a **promise chain** where each `.then()` is performed in order.
+- Below, the response is converted to JSON object in the first `then`, and finally logged to the console in the 2nd.
 
 
 ```js
@@ -196,15 +222,35 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 	});
 ```
 
-See: [Why do we need asynchronous code?](https://codepen.io/owenmundy/pen/dyKMRBN?editors=1111)
 
 
 --- 
 
 ## Async/Await
 
-- Use **async/await** to wait for a promise to be fulfilled.
-- Below, `await` (inside async functions) causes the log statements to occur in order.
+- Use **async/await** to wait for a promise to be fulfilled. 
+- Remove `await` <a href="https://codepen.io/owenmundy/pen/WNVaewo?editors=1011" target="_blank">in the example</a> to change the order
+
+```js
+(async function(){ 
+  // 1st
+  console.log("⭐️ first");
+  
+  // 2nd - 👉 remove the await keyword to change the order
+  await fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then((json) => console.log(json[0]));
+  
+  // 3rd
+  console.log("🟢 last");
+})()
+```
+
+
+
+--- 
+
+## Fetch in a function
 
 ```js
 async function fetchFunction(){
@@ -214,15 +260,11 @@ async function fetchFunction(){
         .then(json => { jsonData = json; });
     return jsonData;    
 }
-(async function(){ 
-    console.log(123)
-    let data = await fetchFunction();
-    console.log(data);
-    console.log(456)
-})()
 ```
 
-See: [How to wrap fetch() in a function](https://codepen.io/owenmundy/pen/dyKOveX?editors=1011)
+<div class="slides-small">
+Codepen <a href="https://codepen.io/owenmundy/pen/dyKOveX?editors=1011" target="_blank">fetch() in a function (random user)</a> or <a href="https://codepen.io/owenmundy/pen/dyKMRBN?editors=1011" target="_blank">fetch() - Why we need asynchronous code</a>
+</div>
 
 
 
