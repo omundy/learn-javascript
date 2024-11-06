@@ -1652,8 +1652,8 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <p>The Web Storage API allows you to store simple name/value pairs of data and retrieve these values when needed.</p>
 <p>👉 Run these and look in the DevTools &gt; Application</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">&#x27;location&#x27;</span>,<span class="hljs-string">&#x27;Davidson College&#x27;</span>);
-<span class="hljs-keyword">let</span> location = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;location&quot;</span>);
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(location) <span class="hljs-comment">//-&gt; &quot;Davidson College&quot;</span>
+<span class="hljs-keyword">let</span> val = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;location&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(val) <span class="hljs-comment">//-&gt; &quot;Davidson College&quot;</span>
 </code></pre>
 <p>See this <a href="https://codepen.io/owenmundy/pen/GRzOpNv">codepen</a> to store an array or object with <code>JSON.stringify()</code><br />
 See MDN for more on <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">Client-side storage</a></p>

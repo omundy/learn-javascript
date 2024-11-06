@@ -87,8 +87,8 @@ The Web Storage API allows you to store simple name/value pairs of data and retr
 
 ```js
 localStorage.setItem('location','Davidson College');
-let location = localStorage.getItem("location");
-console.log(location) //-> "Davidson College"
+let val = localStorage.getItem("location");
+console.log(val) //-> "Davidson College"
 ```
 
 See this [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) to store an array or object with `JSON.stringify()` 
