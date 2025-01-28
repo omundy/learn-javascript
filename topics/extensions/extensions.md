@@ -40,7 +40,7 @@ Presentation comments ...
 
 ---
 
-### Tutorial > Browser Blowup Tutorial
+## Tutorial > Browser Blowup Tutorial
 
 An introduction to browser extensions, starting with the basics and building up to an extension that can detect web trackers and explode web pages.<sup>*</sup>
 
@@ -58,7 +58,7 @@ An introduction to browser extensions, starting with the basics and building up 
 
 ---
 
-### Tutorial > MDN Web Docs Tutorial
+## Tutorial > MDN Web Docs Tutorial
 
 1. [What are extensions?](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)
 1. [Your first extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension)
@@ -68,7 +68,7 @@ An introduction to browser extensions, starting with the basics and building up 
 1. [Content scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts)
 
 
-### Tutorial > Advanced
+## Tutorial > Advanced
 
 - [Setting up Chrome Extensions for use with ES6](https://www.coreycleary.me/setting-up-chrome-extensions-for-use-with-es6) - Webpack, testing, modules
 - Use [chrome.storage](https://developer.chrome.com/docs/extensions/reference/storage/) and [storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage) APIs to persist states across multiple pages.
@@ -112,7 +112,7 @@ An introduction to browser extensions, starting with the basics and building up 
 
 ---
 
-### Cross-browser compatibility
+## Cross-browser compatibility
 
 - [Porting a Google Chrome extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Porting_a_Google_Chrome_extension)
 - [Mozilla > Chrome incompatibilities](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities)
@@ -121,11 +121,11 @@ An introduction to browser extensions, starting with the basics and building up 
 
 ---
 
-### Publishing
+## Publishing
 
 See links above for platforms.
 
-### Packaging
+## Packaging
 
 1. Zip extension files
 	- Chrome: Zip the `extension/` directory
@@ -138,55 +138,102 @@ See links above for platforms.
 
 ---
 
-## Working with storage
+## Sharing data in extensions
 
-For an extension to store data that can persist across different web pages and domains you have two options: Use a remote server, or store it locally in the browser. 
+Options for storing and accessing extension data across different web pages and domains: 
 
-
-
-
-### [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)  
-
-- While `window.localStorage` is [easy to use with JS in your own pages](../data-persistence/data-persistence.md), saving data with an extension is different.
-
-Anything you store from your extension *content scripts* is shared with (and attached to) the user's current web domain. So...
-
-- ✅ Easy to view with Dev Tools (Application > Local Storage)
-- ❌ Data does not persist across web pages; attached to the specific domain
+1. Pass data between contexts using [`sendMessage`](https://developer.chrome.com/docs/extensions/develop/concepts/messaging) (action > background, etc.)
+	- ⚠️ Data does not persist, so only good for temporary information
+1. Set/get data locally in the browser 
+	- ⚠️ Data persists but only available to the user
+	- `localStorage` (e.g. Web Storage API) ⚠️ requires using background
+	- `chrome.storage` (a.k.a. `browser.storage`) ✅ built for extensions
+1. Send/receive from a remote server
+	- ⚠️ Most difficult, but can be seen by everyone
 
 
-Alternately, from an extension background script....
-
-- To share data across different web pages using `localStorage` you must use messaging between your content and background pages (manifest v3 requires all backend scripts to use service workers), which have a chrome:// URI (thus linked to the extension, not the domain). 
-
-- ⚠️ Difficult to view with Dev Tools
-- ⚠️ Browser extension ✅ service workers can store data (but content scripts require messaging)
 
 
-Additionally, for extension development, keep in mind that:
 
+---
+
+## localStorage vs. chrome.storage
+
+<small>
+
+| &nbsp;               | localStorage       | chrome.storage                               |
+| -------------------- | ------------------ | -------------------------------------------- |
+| Data accessible from | ⚠️ background only | ✅ any (content, popup, options, background) |
+| Storing objects      | de/serialization   | ✅ yes                                       |
+| View with DevTools   | ✅ (in background) | ⚠️ `chrome.storage.local.get(console.log)`   |
+| Sync/Async           | Synchronous        | Asynchronous                                 |
+| Sync across browsers | ❌ no              | ✅ yes                                       |
+
+\*Manifest v3 requires all backend scripts to use service workers
+
+</small>
+
+
+
+
+---
+
+## localStorage
+
+Saving extension data with [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) is different than saving from a [web page](../data-persistence/data-persistence.md).
+
+- ⚠️ Content scripts must use `sendMessage` to send data to background to store
 - ⚠️ Data must be serialized / deserialized using `JSON.stringify()`
+- ✅ Easy to view with Dev Tools (Background > Application > Local Storage)
 - ⚠️ Synchonous (large amounts of data can create latency)
 - ❌ Data *will not* persist if users clear browsing history and data for privacy reasons 
-
-
-Example
+- ❌ Data you store from your extension *content scripts* is attached to the user's current web domain.
 
 ```js
-localStorage.setItem('myObject', JSON.stringify({"message":"hello"}));
+localStorage.setItem('key', JSON.stringify({"message":"hello"}));
 ```
 
+- Examples: [tally-api/storage](https://github.com/sneakaway-studio/tally-extension/blob/094582892a40f25a4e706803728fd1a4697cfc35/extension/assets/js/functions/fs-storage.js#L11)
 
 
-### [browser.storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage) and [chrome.storage](https://developer.chrome.com/docs/extensions/reference/api/storage)
 
-`chrome.storage` lets extensions to store data in a location that isn't accessible to normal web pages.
 
-- Can be used from (both!) Browser extension ✅ content scripts and ✅ service workers
+
+
+
+---
+
+## chrome.storage
+
+- Can be used from (both!) extension ✅ content scripts and ✅ service workers
 - ✅ Asynchronous (Promise-based)
 - ✅ Data *will* persist if users clear browsing history and data for privacy reasons 
+- ⚠️ Requires add the `storage` permission
 
-One caveat, in Chrome, JavaScript APIs are accessed under the `chrome` namespace. [In Firefox and Edge, they are accessed under the `browser` namespace](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities). But, Firefox supports both the chrome and browser namespaces. You can fix it with
+```js
+(async function(){ // async iife wrapper
+	let obj = { abc: 123 }
+	await chrome.storage.local.set(obj).then(() 
+		=> console.log("Value is set") );
+	chrome.storage.local.get(["abc"]).then((result) => {
+		console.log(results) //-> { abc: 123 }
+	});	
+});	
+```
+
+- Examples: [omundy/sample-extension-web-tools](https://github.com/omundy/sample-extension-web-tools/)
+
+
+
+
+
+
+
+---
+
+## chrome.storage
+
+One caveat, in Chrome, JavaScript APIs are accessed under the `chrome` namespace. [In Firefox and Edge, they are accessed under the `browser` namespace](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities). But, Firefox supports both the chrome and [browser](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage) and [chrome.storage](https://developer.chrome.com/docs/extensions/reference/api/storage) namespaces. You can fix it with
 
 ```js
 if (typeof browser === "undefined") {
@@ -194,19 +241,11 @@ if (typeof browser === "undefined") {
 }
 ```
 
-Here is an example of `chrome.storage`
 
 
-```js
-let obj = { message: 123 }
-chrome.storage.local.set({obj})
-let results = chrome.storage.local.get('abc')
-console.log(results)
-//  { message: 123 }
-```
+---
 
-
-#### Development
+## Development
 
 Quick method
 
@@ -225,7 +264,7 @@ For ongoing development
 
 
 
-### IndexedDB
+## IndexedDB
 
 Another option - complex to use unless you have a go-between
 https://github.com/localForage/localForage
@@ -243,7 +282,7 @@ https://github.com/localForage/localForage
 
 ---
 
-### FAQ > Is there a hot reload tool for extension development?
+## FAQ > Is there a hot reload tool for extension development?
 
 Yes! See this StackOverflow answer https://stackoverflow.com/a/56380458/441878
 
@@ -252,7 +291,7 @@ Yes! See this StackOverflow answer https://stackoverflow.com/a/56380458/441878
 
 ---
 
-### FAQ > What web browsers should I target?
+## FAQ > What web browsers should I target?
 
 There are many web browser brands, but most are based on just three [browser engines](https://en.wikipedia.org/wiki/Browser_engine) "types".
 
@@ -263,7 +302,7 @@ There are many web browser brands, but most are based on just three [browser eng
 
 ---
 
-### FAQ > What are some notable examples of browser extensions?
+## FAQ > What are some notable examples of browser extensions?
 
 - Add-Art [source](https://github.com/coreytegeler/add-art-chrome/)
 - [Catblock](https://getcatblock.com/) [source](https://github.com/CatBlock/catblock)
@@ -271,7 +310,7 @@ There are many web browser brands, but most are based on just three [browser eng
 
 ---
 
-### FAQ > Issues with CSS and browser extensions
+## FAQ > Issues with CSS and browser extensions
 
 CSS from web pages will affect ("pollute") display properties in your extension, often messing up your own styling. For example, if this rule is set on a page your extension then html that you show in the content scripts will inherit it:
 
@@ -281,7 +320,7 @@ p { color: red; }
 
 ---
 
-### FAQ > Issues with CSS and browser extensions
+## FAQ > Issues with CSS and browser extensions
 
 These tips help ensure your code won't inherit other styles (listed in increasing potential to protect your own):
 - Use uncommon class and id names. This works unless the styling rules are applied very broadly (like above).
@@ -296,8 +335,15 @@ These tips help ensure your code won't inherit other styles (listed in increasin
 
 ---
 
-### FAQ > Common Errors and Issues
+## FAQ > Common Errors and Issues
 
 
-#### Uncaught Error: Extension context invalidated.
+## Uncaught Error: Extension context invalidated.
 The error, `Uncaught Error: Extension context invalidated`, can occur when you update an in-development extension and then interact with a web page without refreshing the page to get the newly updated extension. The issue is that the (now outdated) content scripts injected and running on the page have attempted to access an extension that no longer exists (since it was updated).
+
+
+--- 
+
+## FAQ > Accessing pages
+
+- Content and background pages have a chrome:// URI

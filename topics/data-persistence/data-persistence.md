@@ -73,7 +73,7 @@ console.log(document.cookie);
 //-> "name=jane; message=hello, world!"
 ```
 
-- An example: https://stickyscreen.org 
+- Examples: https://stickyscreen.org 
 
 
 
@@ -84,6 +84,7 @@ console.log(document.cookie);
 The Web Storage API allows you to store simple name/value pairs of data and retrieve these values when needed. 
 
 👉 Run these and look in the DevTools > Application
+⚠️ For extensions, send messages to Background 
 
 ```js
 localStorage.setItem('location','Davidson College');
@@ -91,9 +92,8 @@ let val = localStorage.getItem("location");
 console.log(val) //-> "Davidson College"
 ```
 
-See this [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) to store an array or object with `JSON.stringify()` 
-See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
-
+- Examples: This [codepen](https://codepen.io/owenmundy/pen/GRzOpNv) stores an array or object with `JSON.stringify()` 
+- See MDN for more on [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)
 
 
 
