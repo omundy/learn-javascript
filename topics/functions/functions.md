@@ -316,7 +316,7 @@ console.log(getCurrentHour());
 <div class="col">
 
 - A function expression without a name is **anonymous**.
-- Often used as callbacks from jquery and other event listeners.
+- Often used as callbacks event listeners.
 - Callbacks can be stored as function expressions or plain anonymous functions
 
 </div>

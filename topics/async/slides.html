@@ -1516,43 +1516,48 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="15">
 <h2 id="event-handlers">Event Handlers</h2>
-<p>If you have used event listeners or jQuery then you are already know <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing#event_handlers" target="_blank">Event Handlers</a>.</p>
+<p>If you have used event listeners then you are already know <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing#event_handlers" target="_blank">Event Handlers</a>.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// vanilla JS</span>
 <span class="hljs-keyword">let</span> btn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;button&#x27;</span>);
 btn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
 	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click!!&quot;</span>);
 });
-
-<span class="hljs-comment">// jQuery</span>
-$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+</code></pre>
+<small>
+<details>
+<summary>jQuery</summary>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
 	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click!!&quot;</span>);
 });
 </code></pre>
+</details>
+</small>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="15">
 <h2 id="callbacks">Callbacks</h2>
 <ul>
 <li>A <strong>callback</strong> is a function that is passed to another function, to be called once the function is complete.</li>
-<li>Callbacks were once the primary strategy for asynchronous code in JavaScript.</li>
-<li>The jQuery function from the previous lesson can be written either way...</li>
+<li>The function from the previous slide can also be stored in a variable instead...</li>
 </ul>
-<div class="twocolumn">
-<div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// callback function is embedded</span>
-$(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click!!&quot;</span>);
-});
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">let</span> btn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;button&#x27;</span>);
+<span class="hljs-comment">// callback stored in variable</span>
+<span class="hljs-keyword">let</span> callback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { 
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click!!&quot;</span>); 
+}
+<span class="hljs-comment">// use just the function name (adding &quot;()&quot; will call it immediately)</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, callback);
 </code></pre>
-</div>
-<div class="col">
+<small>
+<details>
+<summary>jQuery</summary>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// callback stored in variable</span>
 <span class="hljs-keyword">let</span> callback = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
 	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;click!!&quot;</span>);
 }
 $(<span class="hljs-string">&quot;button&quot;</span>).<span class="hljs-title function_">click</span>(callback);
 </code></pre>
-</div>
-</div>
+</details>
+</small>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="15">
 <h2 id="callback-hell">Callback Hell</h2>
@@ -1660,7 +1665,7 @@ Codepen <a href="https://codepen.io/owenmundy/pen/dyKOveX?editors=1011" target="
 <h2 id="references">References</h2>
 <ul>
 <li>Codecademy Cheatsheet(s) <a href="reference-sheets/js-12-promises.pdf">promises</a>, <a href="reference-sheets/js-13-async-await.pdf">async-await</a>, <a href="reference-sheets/js-14-requests.pdf">Requests</a></li>
-<li>w3schools <a href="https://www.w3schools.com/js/js_callback.asp">callbacks</a>, <a href="https://www.w3schools.com/js/js_asynchronous.asp">asynchronous</a>, <a href="https://www.w3schools.com/js/js_promise.asp">promises</a>, <a href="https://www.w3schools.com/js/js_async.asp">async-await</a>, <a href="https://www.w3schools.com/jquery/jquery_ajax_intro.asp">AJAX</a>, <a href="https://www.w3schools.com/jquery/jquery_ajax_get_post.asp">jquery get/post</a>, <a href="https://www.w3schools.com/js/js_api_fetch.asp">fetch</a></li>
+<li>w3schools <a href="https://www.w3schools.com/js/js_callback.asp">callbacks</a>, <a href="https://www.w3schools.com/js/js_asynchronous.asp">asynchronous</a>, <a href="https://www.w3schools.com/js/js_promise.asp">promises</a>, <a href="https://www.w3schools.com/js/js_async.asp">async-await</a>, <a href="https://www.w3schools.com/js/js_api_fetch.asp">fetch</a></li>
 <li><a href="https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await">Modern Asynchronous JavaScript with Async and Await</a></li>
 <li>Haverbeke: <a href="https://eloquentjavascript.net/11_async.html">Ch11 Asynchronous Programming</a> (180-201)</li>
 </ul>

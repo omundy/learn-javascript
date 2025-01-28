@@ -70,7 +70,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 	- [Secret Knock Detector](https://codepen.io/owenmundy/pen/abErxLv)
 - DOM manipulation
 	- [Create an SVG with vanilla JS](https://codepen.io/owenmundy/pen/abGQENR)
-	- [Swap images with Javascript / jQuery](https://codepen.io/owenmundy/pen/OJRWQoY)
+	- [Swap images with Javascript](https://codepen.io/owenmundy/pen/OJRWQoY)
 	- [Add new content to a web page with JS (overlay, setTimeout)](https://codepen.io/owenmundy/pen/eYgajNq)
 Tools
 	- [How to Create Bookmarklets!](https://codepen.io/owenmundy/pen/ZEoBPzZ)

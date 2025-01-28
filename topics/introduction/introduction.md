@@ -153,7 +153,7 @@ alert("hello world!");
 
 Some examples from class:
 
-- codepen.io <a href="https://codepen.io/owenmundy/pen/PomvjqW" target="_blank">Random Article Generator</a> and <a href="https://codepen.io/owenmundy/pen/OJRWQoY" target="_blank">Javascript / jQuery Cat Image Swapper</a>
+- codepen.io <a href="https://codepen.io/owenmundy/pen/PomvjqW" target="_blank">Random Article Generator</a> and <a href="https://codepen.io/owenmundy/pen/OJRWQoY" target="_blank">Javascript Cat Image Swapper</a>
 - jsfiddle.net <a href="https://jsfiddle.net/ow3n/sw6ek1wb/" target="_blank">Choropleth map with Mapbox</a>
 
 

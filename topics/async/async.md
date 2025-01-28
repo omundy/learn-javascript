@@ -85,7 +85,7 @@ Here are some ways you can deal with latency in Javascript:
 
 ## Event Handlers
 
-If you have used event listeners or jQuery then you are already know <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing#event_handlers" target="_blank">Event Handlers</a>.
+If you have used event listeners then you are already know <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing#event_handlers" target="_blank">Event Handlers</a>.
 
 ```js
 // vanilla JS
@@ -93,12 +93,20 @@ let btn = document.querySelector('button');
 btn.addEventListener('click', () => {
 	console.log("click!!");
 });
+```
 
-// jQuery
+<small>
+<details>
+<summary>jQuery</summary>
+
+```js
 $("button").click(function() {
 	console.log("click!!");
 });
 ```
+
+</details>
+</small>
 
 
 
@@ -111,21 +119,22 @@ $("button").click(function() {
 ## Callbacks
 
 - A **callback** is a function that is passed to another function, to be called once the function is complete.
-- Callbacks were once the primary strategy for asynchronous code in JavaScript.
-- The jQuery function from the previous lesson can be written either way...
-
-<div class="twocolumn">
-<div class="col">
+- The function from the previous slide can also be stored in a variable instead...
 
 ```js
-// callback function is embedded
-$("button").click(function() {
-	console.log("click!!");
-});
+let btn = document.querySelector('button');
+// callback stored in variable
+let callback = function() { 
+	console.log("click!!"); 
+}
+// use just the function name (adding "()" will call it immediately)
+document.querySelector("button").addEventListener("click", callback);
 ```
 
-</div>
-<div class="col">
+
+<small>
+<details>
+<summary>jQuery</summary>
 
 ```js
 // callback stored in variable
@@ -135,8 +144,10 @@ let callback = function() {
 $("button").click(callback);
 ```
 
-</div>
-</div>
+</details>
+</small>
+
+
 
 
 
@@ -341,7 +352,7 @@ test();
 ## References
 
 - Codecademy Cheatsheet(s) [promises](reference-sheets/js-12-promises.pdf), [async-await](reference-sheets/js-13-async-await.pdf), [Requests](reference-sheets/js-14-requests.pdf)
-- w3schools [callbacks](https://www.w3schools.com/js/js_callback.asp), [asynchronous](https://www.w3schools.com/js/js_asynchronous.asp), [promises](https://www.w3schools.com/js/js_promise.asp), [async-await](https://www.w3schools.com/js/js_async.asp), [AJAX](https://www.w3schools.com/jquery/jquery_ajax_intro.asp), [jquery get/post](https://www.w3schools.com/jquery/jquery_ajax_get_post.asp), [fetch](https://www.w3schools.com/js/js_api_fetch.asp)
+- w3schools [callbacks](https://www.w3schools.com/js/js_callback.asp), [asynchronous](https://www.w3schools.com/js/js_asynchronous.asp), [promises](https://www.w3schools.com/js/js_promise.asp), [async-await](https://www.w3schools.com/js/js_async.asp), [fetch](https://www.w3schools.com/js/js_api_fetch.asp)
 - [Modern Asynchronous JavaScript with Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 - Haverbeke: [Ch11 Asynchronous Programming](https://eloquentjavascript.net/11_async.html) (180-201)
 

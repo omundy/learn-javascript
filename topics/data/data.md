@@ -461,12 +461,6 @@ d3.csv("/path/to/file.csv").then(function(data) {
 
 
 
-Several other CSV parsers exist, including:
-
-- [jquery-csv](https://github.com/typeiii/jquery-csv) - a jQuery CSV parser (returns a 2D array from CSV string)
-- [CSV](https://github.com/vanillaes/csv) - a universal JavaScript CSV parser (returns a 2D array from CSV string)
-
-
 
 
 

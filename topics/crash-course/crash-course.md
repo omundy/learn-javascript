@@ -143,7 +143,7 @@ HTML attributes add information to elements, in this case *wrapping* "Just googl
 👉 **Try it out**
 
 1. [Lottery v.2](https://omundy.github.io/learn-javascript/topics/games/the-lottery/) - Show results of the game in HTML
-1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions, functions, and jquery.
+1. [Gradebook](../../topics/single-page-apps/grade-book/README.md) - Code a gradebook app using conditions and functions.
 1. Revisit [this lamp demo](../../topics/single-page-apps/javascript-lamp/index.html) to explore how it uses functions
 
 
