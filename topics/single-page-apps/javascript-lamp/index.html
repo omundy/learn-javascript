@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <title>Javascript Lamp</title>
 
@@ -25,51 +26,48 @@
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-8 offset-2 offset-sm-0 col-sm-3 col-md-4">
+            <div class="col-8 offset-2 offset-sm-0 col-sm-3 col-md-4 text-center">
                 <img id="light" src="img/light-off.png" class="img-fluid">
+                <div class="my-5">
+                    <div class="badge rounded-pill btn-danger" id="bulbWorks">bulbWorks</div>
+                    <div class="badge rounded-pill btn-danger" id="pluggedIn">pluggedIn</div>
+                    <div class="badge rounded-pill bg-danger" id="lampSwitchIsOn">lampSwitchIsOn</div>
+                    <div class="badge rounded-pill bg-danger" id="lampIsOn">lampIsOn</div>
+                </div>
             </div>
             <div class="col-12 col-sm-9 col-md-8  my-5 my-sm-1">
 
                 <h2>Javascript Lamp</h2>
-                <p>A high level view of programming</p>
+
+                <p>A high level view of programming. Open the DevTools console to see the more.</p>
 
 
 
+                <p class="mt-4">1. <b>Variables</b> store data to let you manage <b>state</b>. For example, you can keep
+                    track of
+                    whether a variable called <code>bulbWorks</code> is true or false. Click the button at the bottom of
+                    the page to change its state.</p>
 
-
-                <p class="mt-4"><b>Variables</b> keep track of <b>state</b> or any other data you wish to store in them.</p>
-
-<pre class="highlight"><code id="lampIsOnCode">
-lampIsOn = false;
-</code></pre>
-
-                <p>This program has three variables, two of which need to be <b>true</b> before the light will turn on.</p>
-
-                <div class="badge rounded-pill btn-danger" id="bulbWorks">bulbWorks</div>
-                <div class="badge rounded-pill btn-danger" id="pluggedIn">pluggedIn</div>
-                <div class="badge rounded-pill bg-danger" id="lampIsOn">lampIsOn</div>
+                <pre class="highlight"><code id="bulbWorksCode">bulbWorks = false;</code></pre>
 
 
 
+                <p class="mt-4">2. <b>Logic</b> is the decision-making part of your code. It runs code depending on the
+                    conditions of your variables. This program has three variables, two of which need to be <b>true</b>
+                    before the light will turn on. </p>
 
-
-                <p class="mt-4"><b>Logic</b> is the decision-making part of your code. It runs code depending on the conditions of your variables.</p>
-
-<pre class="highlight"><code>
-if (bulbWorks && pluggedIn) {
+                <pre class="highlight"><code>if (bulbWorks && pluggedIn && lampSwitchIsOn) {
     // then we can turn light on
 }
 </code></pre>
 
 
-                <p class="mt-4"><b>Functions</b> are collections of statements that can be run together, and are often called by <b>Events</b>, like when a user clicks a button.</p>
+                <p class="mt-4">3. <b>Functions</b> contain multiple statements that can run together, and are often
+                    called by <b>Events</b>, like when a user clicks a button.</p>
 
                 <button type="button" class="btn btn-outline-dark" id="replaceBulbBtn">replaceBulb()</button>
                 <button type="button" class="btn btn-outline-dark" id="plugInLampBtn">plugInLamp()</button>
-                <button type="button" class="btn btn-outline-dark" id="turnOnLampBtn">turnOnLamp()</button>
-
-
-
+                <button type="button" class="btn btn-outline-dark" id="lampSwitchBtn">lampSwitch()</button>
 
 
 
@@ -80,18 +78,18 @@ if (bulbWorks && pluggedIn) {
 
     <script>
         // track the state of things
-        var lampIsOn = false;
-        var pluggedIn = false;
         var bulbWorks = false;
+        var pluggedIn = false;
+        var lampSwitchIsOn = false;
+        var lampIsOn = false;
 
-        function turnOnLamp() {
-            console.log("\nTurning on lamp...");
-            // decision making process
-            if (!lampIsOn && pluggedIn && bulbWorks) {
-                // update state
-                lampIsOn = true;
+        function lampSwitch() {
+            console.log("\nTrying lamp switch...");
+            // set variable to opposite of its current value
+            if (!lampSwitchIsOn) {
+                lampSwitchIsOn = true;
             } else {
-                lampIsOn = false;
+                lampSwitchIsOn = false;
             }
             // update the display
             updateDisplay();
@@ -99,21 +97,14 @@ if (bulbWorks && pluggedIn) {
 
         function plugInLamp() {
             console.log("\nPlugging in lamp...");
-            if (!pluggedIn) {
-                // update state
-                pluggedIn = true;
-            } else {
-                pluggedIn = false;
-            }
-            // update the display
+            // a shortcut for the logic in lampSwitch()
+            pluggedIn = !pluggedIn;
             updateDisplay();
         }
 
         function replaceBulb() {
             console.log("\nReplacing bulb...");
-            // update state
             bulbWorks = true;
-            // update the display
             updateDisplay();
         }
 
@@ -139,19 +130,26 @@ if (bulbWorks && pluggedIn) {
                 lampIsOn = false;
             }
 
+            if (lampSwitchIsOn) {
+                document.getElementById("lampSwitchIsOn").className = onBadgeClass;
+            } else {
+                document.getElementById("lampSwitchIsOn").className = offBadgeClass;
+                lampIsOn = false;
+            }
+
+            // decision making process
+            lampIsOn = bulbWorks && pluggedIn && lampSwitchIsOn;
+
             if (lampIsOn) {
                 document.getElementById("lampIsOn").className = onBadgeClass;
-                document.getElementById("turnOnLampBtn").textContent = "turnOffLamp()";
                 document.getElementById("light").src = "img/light-on.png";
                 document.getElementById("lampIsOn").className = onBadgeClass;
-                document.getElementById("lampIsOnCode").textContent = "\nlampIsOn = true;";
-
+                document.getElementById("bulbWorksCode").textContent = `bulbWorks = ${bulbWorks};`;
             } else {
                 document.getElementById("lampIsOn").className = offBadgeClass;
-                document.getElementById("turnOnLampBtn").textContent = "turnOnLamp()";
                 document.getElementById("light").src = "img/light-off.png";
                 document.getElementById("lampIsOn").className = offBadgeClass;
-                document.getElementById("lampIsOnCode").textContent = "\nlampIsOn = false;";
+                document.getElementById("bulbWorksCode").textContent = `bulbWorks = ${bulbWorks};`;
             }
 
 
@@ -165,13 +163,15 @@ if (bulbWorks && pluggedIn) {
         updateDisplay();
 
         // event listeners
-        document.getElementById("turnOnLampBtn").addEventListener("click", turnOnLamp);
-        document.getElementById("plugInLampBtn").addEventListener("click", plugInLamp);
         document.getElementById("replaceBulbBtn").addEventListener("click", replaceBulb);
+        document.getElementById("plugInLampBtn").addEventListener("click", plugInLamp);
+        document.getElementById("lampSwitchBtn").addEventListener("click", lampSwitch);
     </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
