@@ -66,6 +66,9 @@ Notes: Databases require PHP or node. React or Next projects [can be built for s
 
 ## Host a node app on Vercel
 
+
+<!-- Note: Update these in the future to https://github.com/criticalwebdesign/book/wiki/Chapter-09#vercel-instructions -->
+
 <div class="twocolumn">
 <div class="col">
 
