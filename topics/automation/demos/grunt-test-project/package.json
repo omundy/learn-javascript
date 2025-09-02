@@ -1,0 +1,17 @@
+{
+    "name": "grunt-test-project",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Owen Mundy",
+    "title": "grunt-test-project",
+    "license": "Attribution-NonCommercial 4.0 International",
+    "devDependencies": {
+        "grunt": "^1.4.1",
+        "grunt-cli": "^1.4.3",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-shell": "^4.0.0"
+    }
+}
