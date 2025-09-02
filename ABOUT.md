@@ -100,6 +100,14 @@ Owen Mundy [Learn Javascript](https://github.com/omundy/learn-javascript) 2021â€
 
 The slides were generated using https://marp.app/ - details in https://github.com/omundy/learn-computing
 
+```bash
+# install marl-cli
+brew install marp-cli
+# install dependencies
+npm i
+# start watching 
+grunt watch
+```
 
 ## License
 
