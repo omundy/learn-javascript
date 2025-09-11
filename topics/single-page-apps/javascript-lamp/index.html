@@ -19,6 +19,18 @@
             margin-bottom: 1rem;
             background-color: #f8f9fa;
         }
+
+        .red {
+            color: #dc3545;
+        }
+
+        .green {
+            color: #198754;
+        }
+
+        code {
+            color: grey;
+        }
     </style>
 </head>
 
@@ -31,7 +43,7 @@
                 <div class="my-5">
                     <div class="badge rounded-pill btn-danger" id="bulbWorks">bulbWorks</div>
                     <div class="badge rounded-pill btn-danger" id="pluggedIn">pluggedIn</div>
-                    <div class="badge rounded-pill bg-danger" id="lampSwitchIsOn">lampSwitchIsOn</div>
+                    <div class="badge rounded-pill bg-danger" id="lampSwitchOn">lampSwitchOn</div>
                     <div class="badge rounded-pill bg-danger" id="lampIsOn">lampIsOn</div>
                 </div>
             </div>
@@ -44,30 +56,49 @@
 
 
                 <p class="mt-4">1. <b>Variables</b> store data to let you manage <b>state</b>. For example, you can keep
-                    track of
-                    whether a variable called <code>bulbWorks</code> is true or false. Click the button at the bottom of
-                    the page to change its state.</p>
+                    track of whether a variable called <code>bulbWorks</code> is <span class='green'>true</span> or
+                    <span class='red'>false</span>.
+                </p>
 
-                <pre class="highlight"><code id="bulbWorksCode">bulbWorks = false;</code></pre>
+                <p>Click <button type="button" class="btn btn-sm btn-outline-dark"
+                        id="changeBulbBtn">changeBulb()</button> to
+                    change its state. </p>
+
+                <pre class="highlight" id="bulbWorksCode">bulbWorks = false; </pre>
 
 
 
-                <p class="mt-4">2. <b>Logic</b> is the decision-making part of your code. It runs code depending on the
-                    conditions of your variables. This program has three variables, two of which need to be <b>true</b>
-                    before the light will turn on. </p>
 
-                <pre class="highlight"><code>if (bulbWorks && pluggedIn && lampSwitchIsOn) {
-    // then we can turn light on
-}
+
+                <p class="mt-4">2. <b>Events</b>, like when a user clicks a button, can execute <b>Functions</b>
+                    containing
+                    multiple statements that run together.</p>
+
+                <p>Click <button type="button" class="btn btn-sm btn-outline-dark"
+                        id="plugInLampBtn">plugInLamp()</button> to
+                    change the state of <code>pluggedIn</code>.</p>
+
+                <pre class="highlight"><code>pluggedInBtn.addEventListener("click", () => {
+    pluggedIn = !pluggedIn; // change to opposite value 
+    updateDisplay(); // another function!            
+});
 </code></pre>
 
 
-                <p class="mt-4">3. <b>Functions</b> contain multiple statements that can run together, and are often
-                    called by <b>Events</b>, like when a user clicks a button.</p>
 
-                <button type="button" class="btn btn-outline-dark" id="replaceBulbBtn">replaceBulb()</button>
-                <button type="button" class="btn btn-outline-dark" id="plugInLampBtn">plugInLamp()</button>
-                <button type="button" class="btn btn-outline-dark" id="lampSwitchBtn">lampSwitch()</button>
+                <p class="mt-4">3. <b>Logic</b> is the decision-making part of your code. It runs other code depending
+                    on the
+                    state of your variables. This program has three variables, two of which need to be <code>true</code>
+                    before the light will turn on. </p>
+
+                <p>Click <button type="button" class="btn btn-sm btn-outline-dark"
+                        id="lampSwitchBtn">lampSwitch()</button> to
+                    change its state. </p>
+
+                <pre class="highlight" id="bulbWorksLogic"><code></code></pre>
+
+
+
 
 
 
@@ -80,34 +111,8 @@
         // track the state of things
         var bulbWorks = false;
         var pluggedIn = false;
-        var lampSwitchIsOn = false;
+        var lampSwitchOn = false;
         var lampIsOn = false;
-
-        function lampSwitch() {
-            console.log("\nTrying lamp switch...");
-            // set variable to opposite of its current value
-            if (!lampSwitchIsOn) {
-                lampSwitchIsOn = true;
-            } else {
-                lampSwitchIsOn = false;
-            }
-            // update the display
-            updateDisplay();
-        }
-
-        function plugInLamp() {
-            console.log("\nPlugging in lamp...");
-            // a shortcut for the logic in lampSwitch()
-            pluggedIn = !pluggedIn;
-            updateDisplay();
-        }
-
-        function replaceBulb() {
-            console.log("\nReplacing bulb...");
-            bulbWorks = true;
-            updateDisplay();
-        }
-
         var onBadgeClass = "badge rounded-pill bg-success";
         var offBadgeClass = "badge rounded-pill bg-danger";
 
@@ -115,57 +120,75 @@
         function updateDisplay() {
 
             if (bulbWorks) {
-                document.getElementById("bulbWorks").className = onBadgeClass;
+                document.querySelector("#bulbWorks").className = onBadgeClass;
             } else {
-                document.getElementById("bulbWorks").className = offBadgeClass;
+                document.querySelector("#bulbWorks").className = offBadgeClass;
                 lampIsOn = false;
             }
 
             if (pluggedIn) {
-                document.getElementById("pluggedIn").className = onBadgeClass;
-                document.getElementById("plugInLampBtn").textContent = "unplugLamp()";
+                document.querySelector("#pluggedIn").className = onBadgeClass;
+                document.querySelector("#plugInLampBtn").textContent = "unplugLamp()";
             } else {
-                document.getElementById("pluggedIn").className = offBadgeClass;
-                document.getElementById("plugInLampBtn").textContent = "plugInLamp()";
+                document.querySelector("#pluggedIn").className = offBadgeClass;
+                document.querySelector("#plugInLampBtn").textContent = "plugInLamp()";
                 lampIsOn = false;
             }
 
-            if (lampSwitchIsOn) {
-                document.getElementById("lampSwitchIsOn").className = onBadgeClass;
+            if (lampSwitchOn) {
+                document.querySelector("#lampSwitchOn").className = onBadgeClass;
             } else {
-                document.getElementById("lampSwitchIsOn").className = offBadgeClass;
+                document.querySelector("#lampSwitchOn").className = offBadgeClass;
                 lampIsOn = false;
             }
 
             // decision making process
-            lampIsOn = bulbWorks && pluggedIn && lampSwitchIsOn;
+            lampIsOn = bulbWorks && pluggedIn && lampSwitchOn;
 
             if (lampIsOn) {
-                document.getElementById("lampIsOn").className = onBadgeClass;
-                document.getElementById("light").src = "img/light-on.png";
-                document.getElementById("lampIsOn").className = onBadgeClass;
-                document.getElementById("bulbWorksCode").textContent = `bulbWorks = ${bulbWorks};`;
+                document.querySelector("#lampIsOn").className = onBadgeClass;
+                document.querySelector("#light").src = "img/light-on.png";
             } else {
-                document.getElementById("lampIsOn").className = offBadgeClass;
-                document.getElementById("light").src = "img/light-off.png";
-                document.getElementById("lampIsOn").className = offBadgeClass;
-                document.getElementById("bulbWorksCode").textContent = `bulbWorks = ${bulbWorks};`;
+                document.querySelector("#lampIsOn").className = offBadgeClass;
+                document.querySelector("#light").src = "img/light-off.png";
             }
 
+            document.querySelector("#bulbWorksCode").innerHTML = `<span class='${bulbWorks ? 'green' : 'red'}'>bulbWorks = ${bulbWorks};</span>`;
+            document.querySelector("#bulbWorksLogic").innerHTML = `function updateDisplay() {
+    if (<span class='${bulbWorks ? 'green' : 'red'}'>bulbWorks</span> && <span class='${pluggedIn ? 'green' : 'red'}'>pluggedIn</span> && <span class='${lampSwitchOn ? 'green' : 'red'}'>lampSwitchOn</span>) {
+        // then we can turn light on
+        document.querySelector("#light").src = "img/light-on.png";
+    }
+    ...
+}`;
 
             // log state to console
-            let str = "\nLamp is on = " + lampIsOn +
-                "\nLamp plugged-in = " + pluggedIn +
-                "\nLamp bulb is OK = " + bulbWorks;
+            let str = "\nbulbWorks = " + bulbWorks +
+                "\npluggedIn = " + pluggedIn +
+                "\nlampSwitchOn = " + lampIsOn;
             console.log(str);
         }
 
         updateDisplay();
 
         // event listeners
-        document.getElementById("replaceBulbBtn").addEventListener("click", replaceBulb);
-        document.getElementById("plugInLampBtn").addEventListener("click", plugInLamp);
-        document.getElementById("lampSwitchBtn").addEventListener("click", lampSwitch);
+        document.querySelector("#changeBulbBtn").addEventListener("click", function () {
+            console.log("\nChanging bulb...");
+            // sets variable to opposite of its current value
+            bulbWorks = !bulbWorks;
+            updateDisplay();
+        });
+        document.querySelector("#plugInLampBtn").addEventListener("click", function () {
+            console.log("\nPlugging in lamp...");
+            pluggedIn = !pluggedIn;
+            updateDisplay();
+        });
+        document.querySelector("#lampSwitchBtn").addEventListener("click", () => {
+            console.log("\nTrying lamp switch...");
+            lampSwitchOn = !lampSwitchOn;
+            // update the display
+            updateDisplay();
+        });
     </script>
 
 
