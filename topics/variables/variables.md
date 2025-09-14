@@ -73,7 +73,12 @@ Students who complete this module will be able to:
 <div class="twocolumn">
 <div class="col">
 
-Add Javascript to a **web page** inside a `<script>` element, or load it into your page from an external `.js` file. The browser will run your code when it loads the page, or in response to a user’s actions.
+Two ways to add Javascript to a web page:
+
+1. Use a `<script>` element
+2. Load it from an external `.js` file. 
+
+With both methods, the browser runs your code when the page loads.
 
 </div>
 <div class="col">
@@ -100,24 +105,24 @@ alert("hello from script tag!");
 </div>
 
 
----
 
+
+---
 
 ## Add Javascript to a web page
 
 <div class="twocolumn">
 <div class="col">
 
-Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. View this page <a href="demos/0-hello.html" target="_blank">demos/0-hello.html</a>.
-
-</div>
-<div class="col">
-
+Using an external `.js` file is usually preferred because, like external CSS, a single file used across your whole site makes your code easier to edit and maintain. 
 
 ```js
 // 0-hello.js
-console.log("Hello from an external .js!");
+console.log("Hello from an external js file!");
 ```
+
+</div>
+<div class="col">
 
 ```html
 <!-- 0-hello.html -->
@@ -133,6 +138,10 @@ console.log("Hello from an external .js!");
 </body>
 </html>
 ```
+
+<div class="slides-small">
+	<a href="demos/0-hello.html" target="_blank">demos/0-hello.html</a>
+</div>
 
 </div>
 </div>
@@ -150,17 +159,17 @@ Place CSS and JS into your HTML page in the following order:
 ```html
 <html>
 <head>
-<title>Learn Javascript</title>
-<!-- 1. CSS in the <head> so HTML can access when it loads -->
-<link rel="stylesheet" href="styles.css">
-<style> h1 { color: blue; } </style>
+    <title>Learn Javascript</title>
+    <!-- 1. ✅ CSS in the <head> so HTML can access when it loads -->
+    <link rel="stylesheet" href="styles.css">
+    <style> h1 { color: blue; } </style>
 </head>
 <body>
-<!-- 2. HTML tags and visible content go in the body -->
-<h1>Content of your web page</h1>
-<!-- 3. Javascript goes after all content to ensure HTML has loaded
-and is ready to be used by your code. -->
-<script> alert("Hello world!"); </script>
+    <!-- 2. HTML tags and visible content go in the body -->
+    <h1>Content of your web page</h1>
+    <!-- 3. ✅ Add Javascript after all content to ensure HTML 
+    has loaded and is ready to be used by your code. -->
+    <script> alert("Hello world!"); </script>
 </body>
 </html>
 ```
@@ -173,7 +182,7 @@ and is ready to be used by your code. -->
 
 ---
 
-## Keep that Console open
+## Keep Console open
 
 
 The Console displays a message from the `console.log()` **function**, as well as the line number where it was called in your code.
@@ -197,7 +206,6 @@ Errors in your code appear with a red flag and the line number where you can fix
 
 
 ---
-
 
 ## 👉 Try it out - Tips for using the Console
 
@@ -243,7 +251,7 @@ console.log("abc", 123);
 <div class="col">
 
 - Use **Variables** to store data in your program.
-- Variables, like water bottles, can store things to use later when you need to.
+- Variables, like other containers, store information that you can use later.
 
 </div>
 <div class="col">
@@ -268,11 +276,13 @@ console.log("abc", 123);
 
 ![true](../../assets/img/javascript-anatomy-statement.png)
 
-From the left, this statement
-1. **Creates** a new variable named `greeting` and
-2. **Assigns** the string `"hello"` as the value (using the assignment operator)
+1. **Create** a new variable named `greeting` and
+2. **Assign** the string `"hello"` as the value (using the assignment operator)
 
-> The assignment process is also referred to as "binding", because the data is actually stored in the memory of the computer, not the variable.
+<div class="slides-small">
+    The assignment is referred to as "binding", because data is actually stored in the memory of the computer, not the variable.
+</div>
+
 
 
 
@@ -281,13 +291,13 @@ From the left, this statement
 
 ---
 
-### var, let, and const
+### var | let | const
 
-Javascript is based on the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), which in [ES6](https://www.w3schools.com/js/js_es6.asp) added new variable declaration keywords to address [issues](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
+Javascript is based on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources" target="_blank">ECMAScript</a>. <a href="https://www.w3schools.com/js/js_es6.asp" target="_blank">ES6</a> added new variable declaration keywords to address <a href="https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/" target="_blank">issues</a>
 
-**`var`** (old method, still works)
-- Variables can be redeclared
-- Variable have global scope
+**`var`** 
+- The old method, still works
+- Variables can be redeclared and have global scope
 
 **`let` and `const`**
 - You can't use a variable before it is declared.
@@ -326,13 +336,15 @@ num += "10"; // -> ?
 
 
 
+
 ---
 
 👉 **Try it out** - Examine code examples
 
 1. View the source of this page <a href="demos/2-variables.html" target="_blank">demos/2-variables.html</a>
+2. Don't open the console (yet)
 1. Try to determine what each `console.log()` function will output?
-1. Open the console to verify.
+1. Show the console to verify.
 
 
 
@@ -345,10 +357,9 @@ num += "10"; // -> ?
 
 A non-typed language like JS will infer the data type when you create a variable.
 
-👉 **Try it out** - How to explicitly change a variable type
+👉 **Changing variable types**
 
-1. Examine the lines below.
-1. Try to determine what each `console.log()` function will output?
+1. What will each call to `console.log()` output below?
 1. Open the console to verify.
 
 
@@ -394,7 +405,7 @@ true "boolean"
 
 You can store complex types like the [Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp) in variables as well.
 
-Run these lines in the Console to see the output. The last line concatenates the value of question, an empty space, and the return value of a logical expression.
+1. Run these lines in the Console. 
 
 ```js
 // bind a string
@@ -405,6 +416,13 @@ console.log(typeof today);
 // concatenate the string binding with the return value from an expression
 console.log(question + " " + (today.getFullYear() > 2020))
 ```
+
+<details>
+<summary>Solution</summary>
+
+The last line concatenates the value of <code>question</code> with an empty space and the return value of a logical expression.
+
+</details>
 
 
 
@@ -491,7 +509,7 @@ Take care when copying / pasting from rich text editors (like Word or HTML pages
 " An example string with dumb quotes 😀 "
 ```
 
-VS Code uses a Javascript Linter to check for these errors. You can also use websites like [jshint.com](https://jshint.com) or [jslint.com](https://www.jslint.com/) to save hours of frustration.
+VS Code uses a Javascript Linter to check for these errors. You can also use websites like <a href="https://jshint.com" target="_blank">jshint.com</a> or <a href="https://www.jslint.com/" target="_blank">jslint.com</a> to save hours of frustration.
 
 
 
