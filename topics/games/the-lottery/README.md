@@ -27,6 +27,6 @@ The following prompt to create a lottery game follows a typical app development 
 1. [Lottery v.3](https://omundy.github.io/learn-javascript/topics/games/the-lottery/the-lottery-v3.html)
 	- Update elements in the page via the [DOM](../../dom/slides.html) Javascript
 	- Display all results within the HTML of the page
-1. Lottery v.4
-	- Use `fetch()` to get data from an API to somehow "seed" the randomness in your lottery game.
+1. [Lottery v.4](https://omundy.github.io/learn-javascript/topics/games/the-lottery/the-lottery-v4.html)
+	- Use [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from an API to somehow "seed" the randomness in your lottery game.
     - Add a section of "behind the curtain" controls to manipulate the odds of the game (mwah hah hah!)
