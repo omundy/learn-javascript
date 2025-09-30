@@ -2,97 +2,168 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>Learn Javascript</title>
-	<style>
-		input {
-			border: 1px solid #333;
-			width: 50px;
-			text-align: right;
-			padding: 5px 8px;
-			margin: 5px 2px;
-		}
+    <meta charset="UTF-8">
+    <title>Learn Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-		button {
-			border: none;
-			background: #000;
-			color: #fff;
-			padding: 5px 8px;
-			margin: 5px 2px;
-		}
-	</style>
+    <style>
+    </style>
 </head>
 
 <body>
 
-	<h3>The Lottery (game) v.3</h3>
-	<p>Change the DOM with Javascript</p>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xxl-4 offset-xxl-4">
 
-	<form>
-		<input type="text" id="moneyLeft" value=""> Money left<br>
-		<input type="text" id="moneySpent" value=""> Money spent<br>
-		<input type="text" id="winningNumber" value=""> Winning number<br>
-		<input type="text" id="yourNumber" value=""> Your number<br>
-		<button type="button" id="playButton">Play</button>
-	</form>
+                <h3>The Lottery (game) v.4</h3>
+                <p>Use an API and form elements to somehow “seed” the randomness in your lottery game</p>
 
-	<p id="lotteryOutcome"></p>
+                <form>
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="text" class="form-control" id="moneyLeft" value="">
+                        </div>
+                        <div class="col">Money left</div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="text" class="form-control" id="moneySpent" value="">
+                        </div>
+                        <div class="col">Money spent</div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="text" class="form-control" id="winningNumber" value="">
+                        </div>
+                        <div class="col">Winning number</div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="text" class="form-control" id="yourNumber" value="">
+                        </div>
+                        <div class="col">Your number</div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="range" min="1" max="100" value="0" id="slider" style="width: 100%;">
+                        </div>
+                        <div class="col">Manipulate the results? </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" id="playButton">Play</button>
+                        </div>
+                    </div>
+                </form>
+
+                <p id="lotteryOutcome"></p>
+
+            </div>
+        </div>
+    </div>
 
 
-	<script>
-		let moneySpent = 0,
-			moneyLeft = 5;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
-		// show current money
-		document.getElementById("moneyLeft").value = "$" + moneyLeft;
-		document.getElementById("lotteryOutcome").innerHTML = "Welcome to the lottery. You have $" + moneyLeft + ". Click to play.";
+    <script>
+        let moneySpent = 0,
+            moneyLeft = 5;
+
+        // show current money
+        document.getElementById("moneyLeft").value = "$" + moneyLeft;
+        document.getElementById("lotteryOutcome").innerHTML = "Welcome to the lottery. You have $" + moneyLeft + ". Click to play.";
+
+        let slider = document.querySelector("#slider")
+
+        // listener for button clicks
+        document.getElementById("playButton").addEventListener("click", playTheLottery);
 
 
-		// listener for button clicks
-		document.getElementById("playButton").addEventListener("click", playTheLottery);
+        async function checkTheWeather() {
+            let temp = 0;
+            await fetch('https://api.weather.gov/gridpoints/GSP/116,76/forecast')
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json);
+                    temp = json.properties.periods[0].temperature;
+                });
+            return temp;
+        }
 
-		// play the lottery function
-		async function playTheLottery() {
-			// clear outcome
-			document.getElementById("lotteryOutcome").innerHTML = "";
-			// variable to hold new outcome
-			let lotteryOutcome = "";
-			// don't let them play if they have no money
-			if (moneyLeft <= 0) {
-				lotteryOutcome = "You are out of 💲";
-			} else {
-				// update $
-				moneySpent++;
-				moneyLeft--;
-				// generate values
-				let yourNumber = Math.ceil(Math.random() * 999);
-				let winningNumber = Math.ceil(Math.random() * 999);
+        function randomInt(min = 0, max = 100) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-				// await fetch()
+        // play the lottery function
+        async function playTheLottery() {
+            // clear outcome
+            document.getElementById("lotteryOutcome").innerHTML = "";
+            // variable to hold new outcome
+            let lotteryOutcome = "";
+            // don't let them play if they have no money
+            if (moneyLeft <= 0) {
+                lotteryOutcome = "You are out of 💲";
+            } else {
+                // update $
+                moneySpent++;
+                moneyLeft--;
 
-				// show on page
-				document.getElementById("moneyLeft").value = "$" + moneyLeft;
-				document.getElementById("moneySpent").value = "$" + moneySpent;
-				document.getElementById("winningNumber").value = winningNumber;
-				document.getElementById("yourNumber").value = yourNumber;
-				// was it a winner?
-				if (winningNumber === yourNumber) {
-					lotteryOutcome = "You win! 🎉";
-				} else {
-					lotteryOutcome = "Not a winning ticket 🤑";
-					// check if they are out of money
-					if (moneyLeft <= 0) {
-						lotteryOutcome += "<br>You are out of 💲 Game over 😿"
-					}
-				}
-			}
-			// adds a slight delay to the out come to make it look like a process is happening
-			setTimeout(function() {
-				document.getElementById("lotteryOutcome").innerHTML = lotteryOutcome;
-			}, 250);
+                let min = 0;
+                let max = 999;
 
-		};
-	</script>
+                // get the current temperature
+                let temp = await checkTheWeather();
+                console.log("temp", temp)
+
+                if (temp > 55 && temp < 80) {
+                    min += 100;
+                    max -= 100;
+                }
+
+                min += Number(slider.value) * 4;
+                max -= Number(slider.value) * 4;
+                console.log("slider.value", slider.value)
+
+                // generate values
+                let yourNumber = randomInt(min, max);
+                let winningNumber = randomInt(min, max);
+
+                // show on page
+                document.getElementById("moneyLeft").value = "$" + moneyLeft;
+                document.getElementById("moneySpent").value = "$" + moneySpent;
+                document.getElementById("winningNumber").value = winningNumber;
+                document.getElementById("yourNumber").value = yourNumber;
+                // was it a winner?
+                if (winningNumber === yourNumber) {
+                    lotteryOutcome = "You win! 🎉";
+                } else {
+                    lotteryOutcome = "Not a winning ticket 🤑";
+                    if (temp > 55 && temp < 80) {
+                        lotteryOutcome += `<br>The weather (${temp}º) may have something to do with your luck!`;
+                    }
+                    if (Number(slider.value) > 0) {
+                        lotteryOutcome += `<br>The results are being influenced!`;
+                    }
+                    // check if they are out of money
+                    if (moneyLeft <= 0) {
+                        lotteryOutcome += "<br>You are out of 💲 Game over 😿"
+                    }
+                }
+            }
+            // adds a slight delay to the out come to make it look like a process is happening
+            setTimeout(function () {
+                document.getElementById("lotteryOutcome").innerHTML = lotteryOutcome;
+            }, 250);
+
+        };
+    </script>
 
 </body>
 
