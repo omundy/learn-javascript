@@ -238,3 +238,15 @@ Perhaps the most capable free JS framework available. My demos ([Bouncing ball](
 </p>
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 
+
+
+---
+
+## Scroll Animation
+
+Listed (I believe) by complexity, ascending...
+ 
+- [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll Library) [Github](https://github.com/michalsnik/aos)
+- [ScrollMagic](https://scrollmagic.io/) - see install on [Github](https://github.com/janpaepke/ScrollMagic)
+- LENIS [Smooth Scroll](https://lenis.darkroom.engineering/)
+- GSAP (GreenSock Animation Platform) has [scroll features](https://gsap.com/scroll/) - [demos](https://codepen.io/collection/DkvGzg)
