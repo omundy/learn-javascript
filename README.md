@@ -26,6 +26,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 
 ## 2 - Intermediate topics
 
+7. Animation [slides](topics/animation/slides.html) | [md](topics/animation/animation.md) - How to create animations with CSS and JS
 7. Asynchronous Javascript [slides](topics/async/slides.html) | [md](topics/async/async.md) - How to use callbacks, fetch, promises, async/await, etc.
 7. Single Page Apps [slides](topics/single-page-apps/slides.html) | [md](topics/single-page-apps/single-page-apps.md) - How to create basic single page applications
 7. Working with Maps [slides](topics/maps/slides.html) | [md](topics/maps/maps.md) - Leaflet vs. Google Maps

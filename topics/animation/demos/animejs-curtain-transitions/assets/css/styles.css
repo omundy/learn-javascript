@@ -16,11 +16,12 @@ body { padding: 0; margin: 0; color: white; font: 12px Arial; text-align: center
 #redCurtains { z-index: 3; position: absolute; }
 #redCurtainBehind { padding-top: 300px; background: red; }
 .redCurtainTexture {
-    background-image: url(https://slm-assets0.secondlife.com/assets/7901350/view_large/Satin_drapes_curtains_3_s.jpg?1371118815);
+    background-color: #900;
+    /* background-image: url(https://slm-assets0.secondlife.com/assets/7901350/view_large/Satin_drapes_curtains_3_s.jpg?1371118815);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
 }
 
 
