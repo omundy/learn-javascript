@@ -73,6 +73,7 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 	- [Create an SVG with vanilla JS](https://codepen.io/owenmundy/pen/abGQENR)
 	- [Swap images with Javascript](https://codepen.io/owenmundy/pen/OJRWQoY)
 	- [Add new content to a web page with JS (overlay, setTimeout)](https://codepen.io/owenmundy/pen/eYgajNq)
+	- [JS Simple SPA "show/hide")](https://codepen.io/owenmundy/pen/JjgQrEg?editors=1011)
 Tools
 	- [How to Create Bookmarklets!](https://codepen.io/owenmundy/pen/ZEoBPzZ)
 
