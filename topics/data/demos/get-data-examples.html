@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 	<title>Get data examples</title>
 	<style media="screen">
 		.refresh-svg {
@@ -25,8 +25,7 @@
 					Note: Some domains (like google.com and github.com, though not github.io) use a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS policy</a> that blocks remote resource sharing. This includes
 					any resource (text from web pages as well as images). Open the console to see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors">errors</a> generated.</li>
 					Also notice that resources imported with these methods <b><i>from the same domain</i></b> will fail if you are loading this page from your local filesytem (i.e. using file:// method). However you can load files (webpages or JSON)
-					from the same domain if you run this page in a web server environment such as <a href="https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps" target="_blank">localhost</a> or <a
-					 href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server" target="_blank">python -m SimpleHTTPServer</a>
+					from the same domain if you run this page in a web server environment such as <a href="https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps" target="_blank">localhost</a> or <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server" target="_blank">python -m SimpleHTTPServer</a>
 
 				</div>
 			</div>
@@ -37,7 +36,7 @@
 		<div class="row">
 
 
-			<div class="col-6">
+			<div class="col-6 my-3">
 				<h5>1. $.load() web page</h5>
 				<form>
 					<div class="form-group row">
@@ -61,7 +60,7 @@
 
 
 
-			<div class="col-6">
+			<div class="col-6 my-3">
 				<h5>2. web page as &lt;object&gt;</h5>
 				<form>
 					<div class="form-group row">
@@ -88,7 +87,7 @@
 
 
 
-			<div class="col-6">
+			<div class="col-6 my-3">
 				<h5>3. $.get() remote resource</h5>
 				<form>
 					<div class="form-group row">
@@ -114,7 +113,7 @@
 
 
 
-			<div class="col-6">
+			<div class="col-6 my-3">
 				<h5>4. $.get() remote JSON file</h5>
 				<form>
 					<div class="form-group row">
@@ -140,24 +139,51 @@
 
 
 
+			<div class="col-6 my-3">
+				<h5>5. load web page using fetch() .text()</h5>
+				<form>
+					<div class="form-group row">
+						<div class="col-sm-8">
+							<input type="text" name="remote-url" class="form-control form-control-sm u5" placeholder="Full url of web page" value="">
+						</div>
+						<div class="col-sm-1">
+							<button type="button" name="button" class="btn btn-sm btn-light r5">
+								<img src="refresh.svg" class="refresh-svg" alt="">
+							</button>
+						</div>
+						<div class="col-sm-1">
+							<button type="button" name="button" class="btn btn-sm btn-dark b5">Go</button>
+						</div>
+					</div>
+				</form>
+				<p>
+					Load a remote JSON file in a textarea using <code>$.get()</code>
+				</p>
+				<textarea class="o5 form-control" name="name"></textarea>
+				<div class="o5page"></div>
+			</div>
+
+
+
+
 		</div>
 	</div>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 	<script>
 
 		// example 1
 
 		// on click
-		$(".r1").on("click", function() {
+		$(".r1").on("click", function () {
 			// insert random url
 			$(".u1").val(randomUrl(pageUrls));
 		});
 		// on click
-		$(".b1").on("click", function() {
+		$(".b1").on("click", function () {
 			// get the url
 			var url = $(".u1").val();
 			// load remote resource
@@ -167,12 +193,12 @@
 		// example 2
 
 		// on click
-		$(".r2").on("click", function() {
+		$(".r2").on("click", function () {
 			// insert random url
 			$(".u2").val(randomUrl(pageUrls));
 		});
 		// on click
-		$(".b2").on("click", function() {
+		$(".b2").on("click", function () {
 			// get the url
 			var url = $(".u2").val();
 			// load remote resource
@@ -182,16 +208,16 @@
 		// example 3
 
 		// on click
-		$(".r3").on("click", function() {
+		$(".r3").on("click", function () {
 			// insert random url
 			$(".u3").val(randomUrl(pageUrls));
 		});
 		// on click
-		$(".b3").on("click", function() {
+		$(".b3").on("click", function () {
 			// get the value in the input
 			var url = $(".u3").val();
 			// "get" remote data at url
-			$.get(url, function(data) {
+			$.get(url, function (data) {
 				$('.o3').val(data);
 			});
 		});
@@ -199,18 +225,35 @@
 		// example 4
 
 		// on click
-		$(".r4").on("click", function() {
+		$(".r4").on("click", function () {
 			// insert random url
 			$(".u4").val(randomUrl(dataUrls));
 		});
 		// on click
-		$(".b4").on("click", function() {
+		$(".b4").on("click", function () {
 			// get the value in the input
 			var url = $(".u4").val();
 			// "get" remote data at url
-			$.get(url, function(data) {
+			$.get(url, function (data) {
 				$('.o4').val(JSON.stringify(data));
 			});
+		});
+
+		// example 5
+
+		// on click
+		$(".r5").on("click", function () {
+			// insert random url
+			$(".u5").val(randomUrl(pageUrls));
+		});
+		// on click
+		$(".b5").on("click", async function () {
+			// get the value in the input
+			var url = $(".u5").val();
+			// "get" remote data at url
+			let data = await getRemotePage(url);
+			document.querySelector('.o5page').innerHTML = data;
+			$('.o5').val(JSON.stringify(data));
 		});
 
 
@@ -223,7 +266,7 @@
 			"https://cnn.com",
 			"https://github.com/omundy/dig245-critical-web-design",
 			"https://omundy.github.io/dig245-critical-web-design/",
-			"./get-data-examples.html"
+			"./get-data-example-page.html"
 		];
 		// sample json files
 		var dataUrls = [
@@ -241,6 +284,19 @@
 
 		// trigger buttons to load urls when page loads
 		$(".r1,.r2,.r3,.r4").trigger("click");
+
+
+
+		async function getRemotePage(url) {
+			return fetch(url)
+				.then(data => {
+					return data.text()
+				})
+				.then(data => {
+					return data;
+				})
+		}
+
 
 
 
