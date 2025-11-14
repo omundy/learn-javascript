@@ -13,19 +13,19 @@ How to save, update, and display dynamic data.
 
 ---
 
-## What is a Jamstack?
+## What is a JAMstack?
 
-Originally, "JAM" in Jamstack stood for JavaScript, API & Markup Jamstack, but now it refer to an architectural approach for building websites:
+While "JAM" in Jamstack stands for JavaScript, API & Markup Jamstack. It generally [refers](https://www.cloudflare.com/en-gb/learning/performance/static-site-generator/) to an architectural approach for building websites:
 
 1. The frontend is static, typically built using a static site generator (SSG).
 1. With no backend, benefits include faster response times, better security, and cheaper to host.
 1. Additionally, the project can scale easily and (with static files) traffic can be offloaded to a CDN. 
 
-Read more [jamstack.wtf](https://jamstack.wtf/)
 
 
-ADD THIS SEOMEEHWKHJHWEH
-https://www.cloudflare.com/en-gb/learning/performance/static-site-generator/
+
+
+
 
 
 ## Convert a PHP/MySQL site to Jamstack to host on Github Pages
