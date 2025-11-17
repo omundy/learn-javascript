@@ -13,7 +13,7 @@ How to save, update, and display dynamic data.
 
 ---
 
-## What is a Jamstack?
+## What is a JAMstack?
 
 [Jamstack](https://jamstack.org/) is an architectural approach for building websites that uses "JAM" (Javascript + API + Markup) to render a fully- or mostly-static site:
 
