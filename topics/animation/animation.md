@@ -249,4 +249,4 @@ Listed (I believe) by complexity, ascending...
 - [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll Library) [Github](https://github.com/michalsnik/aos), [Codepen](https://codepen.io/owenmundy/pen/NPNqERv?editors=1111)
 - [ScrollMagic](https://scrollmagic.io/) - see install on [Github](https://github.com/janpaepke/ScrollMagic), [Codepen](https://codepen.io/michalsnik/pen/jrOYVO?editors=1000)
 - LENIS [Smooth Scroll](https://lenis.darkroom.engineering/)
-- GSAP (GreenSock Animation Platform) has [scroll features](https://gsap.com/scroll/) - [demos](https://codepen.io/collection/DkvGzg)
+- GSAP (GreenSock Animation Platform) has [scroll features](https://gsap.com/scroll/) - [Codepen](https://codepen.io/owenmundy/pen/LENMedo?editors=0111) has many [demos](https://codepen.io/collection/DkvGzg)
