@@ -488,3 +488,29 @@ nvm install-latest-npm
 npm i -g npm-upgrade
 npm-upgrade check
 ```
+
+
+
+
+---
+
+## Install Node using NVM
+
+While you can download and run a [prebuilt installer](https://nodejs.org/en/download) NVM (Node Version Manager) let's you manage and upgrade your installation later.
+
+1. Install NVM with Homebrew (Mac only) or run the [Node NVM install scripts](https://nodejs.org/en/download/package-manager) (all platforms) one line at a time on the command line.
+
+```bash
+# installs NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+2. Use NVM to install Node
+
+```bash
+# download and install Node.js
+nvm install 20
+```
+
+
+
