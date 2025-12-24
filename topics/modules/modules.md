@@ -15,53 +15,6 @@ Presentation comments ...
 -->
 
 
----
-
-TO ADD
-
-tl;dr
-
-
-
-
-
-
-https://www.thedreaming.org/2017/04/28/es6-imports-babel/
-
-Example - import leaflet in an .astro file
-
-[Leaflet](https://leafletjs.com/2022/09/21/leaflet-1.9.0.html) uses [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-
-
-Benefits
-- Organization - Explicit dependency declaration includes version number
-- Better code - `<script>` type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated
-- Performance - Import and ship only what you need `import { thing1, thing2 } from 'package'`.
-- Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)
-
-
-```html
-<!-- old old way - still works but -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-```
-
-```js
-// "CommonJS" - old
-const L = require('leaflet');
-```
-
-
-```js
-<script>
-// ES6 Modules
-import 'leaflet/dist/leaflet.css'
-//   import * as L from 'leaflet'
-// this version is better 
-//   import L from 'leaflet'
-import 'leaflet'
-  </script>
-```
-
 
 
 ---
@@ -73,6 +26,8 @@ import 'leaflet'
 <div class="caption slides-small">
 	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
 </div>
+
+
 
 
 
@@ -100,7 +55,7 @@ import 'leaflet'
 
 ## Modular design in Node
 
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 
 - Node.js and NPM use the <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS (CJS) format</a>, `require` and `module.exports`, to define dependencies and modules.
@@ -169,7 +124,7 @@ console.log('inline code');
 
 ## ES6 Modules + Node
 
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 
 - As of ES6 (ES2015), JavaScript supports a native module format.
@@ -239,3 +194,57 @@ console.log(hello()); // -> "Hello, World!"
 - Zach Caceres [The Revealing Module Pattern in Javascript](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md)
 - Cheatsheets [Compatibility](../reference-sheets/js-10-compatibility.pdf) and [Modules](../reference-sheets/js-11-modules.pdf)
 - Haverbeke: [Ch10 Modules](https://eloquentjavascript.net/10_modules.html) (167-178)
+
+
+
+
+
+
+
+---
+
+## Example: Import leaflet in an .astro file
+
+
+https://www.thedreaming.org/2017/04/28/es6-imports-babel/
+
+
+[Leaflet](https://leafletjs.com/2022/09/21/leaflet-1.9.0.html) uses [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+
+
+
+
+```html
+<!-- old old way - still works but -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+```
+
+```js
+// "CommonJS" - old
+const L = require('leaflet');
+```
+
+
+```html
+<script>
+// ES6 Modules
+import 'leaflet/dist/leaflet.css'
+//   import * as L from 'leaflet'
+// this version is better 
+//   import L from 'leaflet'
+import 'leaflet'
+  </script>
+```
+
+
+
+---
+
+## More Benefits
+
+Benefits
+- Organization - Explicit dependency declaration includes version number
+- Better code - `<script>` type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated
+- Performance - Import and ship only what you need `import { thing1, thing2 } from 'package'`.
+- Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)

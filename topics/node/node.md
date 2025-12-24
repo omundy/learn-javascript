@@ -21,7 +21,7 @@ Presentation comments ...
 
 - Node.js is Javascript for the command line.
 - Use Node to create web servers, APIs, database-driven websites, standalone software, and much more.
-- NPM (Node Package Manager) to install, manage, and incorporate open source software packages (dependencies) in your projects.
+- Use NPM (Node Package Manager) to install, manage, and incorporate open source software packages (dependencies) in your projects.
 
 
 ---
@@ -31,18 +31,23 @@ Presentation comments ...
 There are several ways to install Node (which includes NPM) on your machine
 
 1. Use an [installer via node website](https://nodejs.org/en/download/) (fastest, but difficult to upgrade).
-1. Use a system package manager like Homebrew or Scoop (this makes it easy to upgrade)
-1. Use [nvm](https://nodejs.org/en/download/package-manager) (the most flexible method).
+1. Use a system package manager like Homebrew or Scoop (easy to upgrade)
+1. Use [nvm](https://nodejs.org/en/download) (the most flexible method, but takes longer).
 
-For my students, I recommend #2. Choose your OS and install Node below.
+I recommend #2. Choose your OS and install Node below.
 
-(2025 note: Try #3)
+
 
 
 
 ---
 
-## 👉 Install Node & NPM using Homebrew (Mac)
+## 👉 Install Node & NPM
+
+<div class="twocolumn">
+<div class="col">
+
+**Mac**
 
 1. Install [Homebrew](https://brew.sh/) (Mac package manager) using their instructions
 2. Install [Node](https://formulae.brew.sh/formula/node)
@@ -51,10 +56,15 @@ For my students, I recommend #2. Choose your OS and install Node below.
 brew install node
 ```
 
+<div class="slides-small">
+	Tutorial for <a href="https://nodesource.com/blog/update-Node.js-versions-on-MacOS" target="_blank">updating</a> MacOS installations
+</div>
 
----
 
-## 👉 Install Node & NPM using Scoop (Windows)
+</div>
+<div class="col">
+
+**Windows**
 
 1. Install [Scoop](https://scoop.sh/) (Windows package manager) using their instructions
 2. Install [Node](https://scoop.sh/#/apps?q=nodejs&s=0&d=1&o=true)
@@ -62,6 +72,10 @@ brew install node
 ```bash
 scoop install nodejs
 ```
+
+</div>
+</div>
+
 
 
 
@@ -74,8 +88,8 @@ scoop install nodejs
 Run these to make sure that Node installed correctly:
 
 ```bash
-node -v                    # check node version
-npm -v                     # check npm version
+node -v     # check node version
+npm -v      # check npm version
 ```
 
 
@@ -94,6 +108,8 @@ Node is just Javascript, so almost any code will run.
 > 1+1
 2
 ```
+3. Type `Ctl+C` to cancel in the shell
+
 
 
 
@@ -109,9 +125,81 @@ let greeting = "Hello, from Node";
 console.log(greeting);
 ```
 
-3. In the Terminal, run* the script with `node index.js`
+3. In the VS Code Terminal, run* the script with 
 
-*The name `index.js` is arbitrary. Other names like `server.js` and `app.js` are also popular for different use cases.
+```bash
+node index.js
+```
+
+<div class="slides-small">
+
+1. The name `index.js` is arbitrary. Other names like `server.js` and `app.js` are also popular for different use cases.
+1. Notice that Node stops automatically after it runs all the code.
+
+</div>
+
+
+
+
+
+
+
+
+
+
+---
+
+## 👉 Initialize a new project with NPM
+
+A `package.json` file contains project information, like a name, version, and dependencies.
+
+1. Open `cron-demo` in VS Code (above)
+2. Run `npm init` to initialize a new project. Press return at each prompt. This creates a `package.json` file with data you entered. 
+3. Open your new `package.json` file. Confirm the `main` field is set to `index.js`.
+4. Add a new sub-property under `scripts`. Add a comma after the `test` property, then add `"start": "node index.js"` below it.
+5. Run `npm run start` which runs the command stored in `start`.
+
+
+<details>
+<summary>Example</summary>
+
+```json 
+{
+  "name": "cron-demo",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  }
+}
+```
+
+</details>
+
+
+<!-- 
+<div class="twocolumn">
+<div class="col">
+
+1. Open `cron-demo` in VS Code (above)
+2. Run `npm init` to initialize a new project. Press return at each prompt. This creates a `package.json` file with data you entered. 
+3. Open your new `package.json` file. Confirm the `main` field is set to `index.js`.
+
+
+</div>
+<div class="col">
+
+4. Edit the `scripts` property. Add a comma to the end of the `test` property, then add `"start": "node index.js"` below it.
+5. In the Terminal run, `npm run start`
+
+</div>
+</div>
+ -->
 
 
 
@@ -119,51 +207,36 @@ console.log(greeting);
 
 ## 👉 Run a script with Nodemon
 
-[Nodemon](https://www.npmjs.com/package/nodemon) is an NPM package that automatically restarts your node application when file changes in the directory are detected. Run the following in the Terminal:
+[Nodemon](https://www.npmjs.com/package/nodemon) is an NPM package that automatically restarts your node application when it detects file changes your the project directory. 
 
-1. Run `npm install -g nodemon` to install the nodemon package globally
-1. Run `nodemon index.js` (instead of node)
-1. Edit `index.js` and save it. The nodemon process will see the change and run your code each time you save. 
+1. Install the nodemon package globally `npm install -g nodemon` (`-g` = global)
+2. Run `index.js` using nodemon (instead of node) `nodemon index.js`
+3. Edit and save `index.js`. Nodemon will restart your script each time you save. 
+4. Exit the process with `Ctl+C` (this exits any process on the Terminal).
+5. Run `nodemon` again (omit the filename) to default to the script in `main`.
 
 ```bash
-[nodemon] clean exit - waiting for changes before restart
 [nodemon] restarting due to changes...
 [nodemon] starting `node index.js`
 ```
 
-<div class="caption slides-small">
-    Before proceding, exit from nodemon with <code>ctl+c</code>
-</div>
 
 
 
 
 
----
 
-## 👉 The package.json file
-
-A `package.json` file contains information about a project, including its name, how to test it, and dependencies.
-
-1. Create a new folder named `cron-demo` and open it in Terminal
-1. Run `npm init` and press return at each dialog prompt. This step initializes the project and creates a `package.json` file that contains any data you entered. 
-1. Confirm the `main` field is set to `index.js` in your `package.json` file. It is simply json and you can edit it by hand.
-1. Run `nodemon` again (without the filename) which now knows the "main entry point" of your project and starts it.
-
-<div class="caption slides-small">
-    Exit from nodemon with <code>ctl+c</code>
-</div>
 
 
 ---
 
 ## 👉 Use the Cron package
 
-[Cron](https://www.npmjs.com/package/cron) is an NPM package that executes scripts on a schedule (e.g. each/second, once/day) or at a particular time. Use it to automate tasks like database backups, or data or image conversion.
+[Cron](https://www.npmjs.com/package/cron) is an NPM package that executes scripts on a schedule (e.g. each/second, once/day) or at particular times. Use it to automate any common task like database backups, etc..
 
-1. Run `npm i cron --save` in the Terminal. 
-1. A dependency (e.g. `"cron": "^2.2.0"`) has been added to `package.json` as well as a new folder `node_modules` with all the dependencies it needs. 
-1. Add the code below to your `index.js` file.
+1. Run `npm i cron --save` in the Terminal (`i` = shortcut for `install`, `--save` ) 
+1. In `package.json` a new dependency has been added, as well as a new `node_modules` folder, which contains the cron package and packages it uses. 
+1. Add the code from the next slide to your `index.js` file.
 1. Run it with `nodemon index.js` in the Terminal.
 1. Use [crontab.guru](https://crontab.guru/) to experiment with the time.
 
@@ -190,11 +263,114 @@ var job = new CronJob(
 
 ---
 
-## 👉 More about packages 
+## More about packages 
 
 - Every package has a README with documentation. Explore it on github or [npmjs.com](https://www.npmjs.com/)
-- The `package-lock.json` manages the dependencies of your project dependencies. Best to let NPM manage this file.
-- Never commit the `node_modules` folder to your git repository. Instead, if you need to use this code on a new computer (or server) run `npm install` and it will install all your dependencies, including any security updates. 
+- The `package-lock.json` manages the dependencies *of your project dependencies*. Do not edit this file.
+- Never commit the `node_modules` folder to your git repository. To run your project on another machine (or server), just clone it and run `npm install` install all your dependencies. 
+
+
+
+
+---
+
+## 👉 Commit your project
+
+
+
+<div class="twocolumn2x1">
+<div class="col">
+
+1. With your project open in VS Code, type in the Terminal to create a repo
+
+```bash
+git init
+```
+
+2. Notice all your files are now considered <span style="color:green">additions</span>
+3. Before you commit, add a `.gitignore` file using 
+
+```bash
+touch .gitignore
+```
+
+4. Paste the text to the right in the file and save.
+5. Drag your project folder into Github Desktop. Then publish it.
+
+
+</div>
+<div class="col">
+
+
+```gitignore
+# Windows
+Thumbs.db
+desktop.ini
+
+# OS X
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+
+# JS
+node_modules
+```
+
+
+</div>
+</div>
+
+
+
+
+---
+
+## CommonJS vs Modules (ES)
+
+If you see this message, you might be mixing old and new methods for importing code. See [Modules](../modules/slides.html)
+
+```text
+ReferenceError: require is not defined in ES module scope, you can use import instead
+```
+
+
+<div class="twocolumn">
+<div class="col">
+
+**CommonJS**
+
+The [old way](https://nodejs.org/api/modules.html) for importing packages and reusable code in your projects.
+`var one = require('./one.js');`
+
+</div>
+<div class="col">
+
+**ESM**
+
+The [new way](https://nodejs.org/api/esm.html). Now mostly universal.
+`import { two } from './two.js';`
+You have to add `"type": "module"` in package.json to use `import`
+
+</div>
+</div>
+
+
+<div class="slides-small">
+
+[CommonJS vs. ES modules in Node.js](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/), 2024
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 

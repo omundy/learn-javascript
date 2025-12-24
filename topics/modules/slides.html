@@ -1481,43 +1481,14 @@ div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background
 div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
-}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <p>← <a href="../../">Learn Javascript</a></p>
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a></p>
 <h1 id="javascript-modules">Javascript Modules</h1>
 <p>How to use modules in the browser and node</p>
 <p><span class="slides-small"><a href="slides.html">slides</a> | <a href="modules.md">md</a></span></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
-<p>TO ADD</p>
-<p>tl;dr</p>
-<p><a href="https://www.thedreaming.org/2017/04/28/es6-imports-babel/">https://www.thedreaming.org/2017/04/28/es6-imports-babel/</a></p>
-<p>Example - import leaflet in an .astro file</p>
-<p><a href="https://leafletjs.com/2022/09/21/leaflet-1.9.0.html">Leaflet</a> uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">ECMAScript modules</a></p>
-<p>Benefits</p>
-<ul>
-<li>Organization - Explicit dependency declaration includes version number</li>
-<li>Better code - <code>&lt;script&gt;</code> type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated</li>
-<li>Performance - Import and ship only what you need <code>import { thing1, thing2 } from 'package'</code>.</li>
-<li>Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- old old way - still works but --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// &quot;CommonJS&quot; - old</span>
-<span class="hljs-keyword">const</span> L = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;leaflet&#x27;</span>);
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">&lt;script&gt;
-<span class="hljs-comment">// ES6 Modules</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet/dist/leaflet.css&#x27;</span>
-<span class="hljs-comment">//   import * as L from &#x27;leaflet&#x27;</span>
-<span class="hljs-comment">// this version is better </span>
-<span class="hljs-comment">//   import L from &#x27;leaflet&#x27;</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet&#x27;</span>
-  &lt;/script&gt;
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="about-modules">About modules</h2>
 <blockquote>
 <p>In programming, modules are self-contained units of functionality that can be shared and reused across projects. They make our lives as developers easier, as we can use them to augment our applications with functionality that we haven’t had to write ourselves. They also allow us to organize and decouple our code, leading to applications that are easier to understand, debug and maintain.</p>
@@ -1526,7 +1497,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="the-benefits-of-modularity">The benefits of modularity</h2>
 <ul>
 <li>Modules are a way to split an application into separate files instead of having all of your application in one file.</li>
@@ -1534,16 +1505,16 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <li>Modular design makes your application easy to understand, scale, and reuse.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="npm-packages-are-modules">NPM packages are modules</h2>
 <ul>
 <li>NPM is a package repository service that hosts published JS modules. <code>npm install</code> will download and install packages from the repository.</li>
 <li>The npm cli puts all the downloaded modules in a <code>node_modules</code> directory where you ran <code>npm install</code>.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="modular-design-in-node">Modular design in Node</h2>
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 <ul>
 <li>Node.js and NPM use the <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS (CJS) format</a>, <code>require</code> and <code>module.exports</code>, to define dependencies and modules.</li>
@@ -1566,7 +1537,7 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="modular-design-in-javascript-the-old-way">Modular design in Javascript (the old way)</h2>
 <div class="twocolumn">
 <div class="col">
@@ -1592,9 +1563,9 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="es6-modules--node">ES6 Modules + Node</h2>
-<div class="twocolumn">
+<div class="twocolumn1x2">
 <div class="col">
 <ul>
 <li>As of ES6 (ES2015), JavaScript supports a native module format.</li>
@@ -1616,20 +1587,20 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="private-vars">Private vars</h2>
 <ul>
 <li>Each module has its own scope so that vars are not exposed unless the module intentionally uses <code>exports</code> (node) or <code>export</code> (ES6) to make them accessible. (see previous slide)</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="modular-design-in-the-browser">Modular design in the browser</h2>
 <ul>
 <li>Note that <code>require()</code>, <code>module.exports</code> and <code>exports</code> are APIs of a module system that is specific to Node.js.</li>
 <li>While browsers do not implement this module system, similar benefits can be achieved with the <a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html">Revealing Module Pattern</a>.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="revealing-module-pattern">Revealing Module Pattern</h2>
 <ul>
 <li>The Revealing Module Pattern is a JS design pattern <em>in a web browser</em> that mimics private and public access modifiers of other languages (e.g. C# or Java).</li>
@@ -1637,13 +1608,43 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 <li>See <a href="./demos">./demos</a> for examples</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="references">References</h2>
 <ul>
 <li>w3schools <a href="https://www.w3schools.com/js/js_object_accessors.asp">JavaScript Object Accessors</a>, <a href="https://www.w3schools.com/nodejs/nodejs_modules.asp">Node.js Modules</a></li>
 <li>Zach Caceres <a href="https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2#file-revealing-module-pattern-md">The Revealing Module Pattern in Javascript</a></li>
 <li>Cheatsheets <a href="../reference-sheets/js-10-compatibility.pdf">Compatibility</a> and <a href="../reference-sheets/js-11-modules.pdf">Modules</a></li>
 <li>Haverbeke: <a href="https://eloquentjavascript.net/10_modules.html">Ch10 Modules</a> (167-178)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
+<h2 id="example-import-leaflet-in-an-astro-file">Example: Import leaflet in an .astro file</h2>
+<p><a href="https://www.thedreaming.org/2017/04/28/es6-imports-babel/">https://www.thedreaming.org/2017/04/28/es6-imports-babel/</a></p>
+<p><a href="https://leafletjs.com/2022/09/21/leaflet-1.9.0.html">Leaflet</a> uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">ECMAScript modules</a></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-comment">&lt;!-- old old way - still works but --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// &quot;CommonJS&quot; - old</span>
+<span class="hljs-keyword">const</span> L = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;leaflet&#x27;</span>);
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+<span class="hljs-comment">// ES6 Modules</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet/dist/leaflet.css&#x27;</span>
+<span class="hljs-comment">//   import * as L from &#x27;leaflet&#x27;</span>
+<span class="hljs-comment">// this version is better </span>
+<span class="hljs-comment">//   import L from &#x27;leaflet&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;leaflet&#x27;</span>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
+<h2 id="more-benefits">More Benefits</h2>
+<p>Benefits</p>
+<ul>
+<li>Organization - Explicit dependency declaration includes version number</li>
+<li>Better code - <code>&lt;script&gt;</code> type imports global scope, can cause issues with your and other code. Wheras module files are encapsulated</li>
+<li>Performance - Import and ship only what you need <code>import { thing1, thing2 } from 'package'</code>.</li>
+<li>Performance - Modules declare what they depend on (import) they can share dependencies and you aren't importing the same script (latency and pollution)</li>
 </ul>
 </section>
 <script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.3/lib/bespoke.js.LICENSE.txt */
