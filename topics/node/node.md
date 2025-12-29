@@ -50,7 +50,7 @@ I recommend #2. Choose your OS and install Node below.
 **Mac**
 
 1. Install [Homebrew](https://brew.sh/) (Mac package manager) using their instructions
-2. Install [Node](https://formulae.brew.sh/formula/node)
+2. Install [Node](https://formulae.brew.sh/formula/node) using Homebrew
 
 ```bash
 brew install node
@@ -66,11 +66,14 @@ brew install node
 
 **Windows**
 
+⚠️ Many Unix commands do not work in Windows PowerShell. Install and use [Git Bash](https://gitforwindows.org/) instead.
+
 1. Install [Scoop](https://scoop.sh/) (Windows package manager) using their instructions
-2. Install [Node](https://scoop.sh/#/apps?q=nodejs&s=0&d=1&o=true)
+2. Install [Node](https://scoop.sh/#/apps?q=nodejs&s=0&d=1&o=true) using Scoop
 
 ```bash
-scoop install nodejs
+  scoop bucket add main
+  scoop install main/nodejs-lts
 ```
 
 </div>
@@ -151,7 +154,7 @@ node index.js
 
 ## 👉 Initialize a new project with NPM
 
-A `package.json` file contains project information, like a name, version, and dependencies.
+Every Node.js project has a `package.json` to store project dependencies and other metadata. 
 
 1. Open `cron-demo` in VS Code (above)
 2. Run `npm init` to initialize a new project. Press return at each prompt. This creates a `package.json` file with data you entered. 
@@ -205,11 +208,11 @@ A `package.json` file contains project information, like a name, version, and de
 
 ---
 
-## 👉 Run a script with Nodemon
+## 👉 Install Nodemon using NPM
 
 [Nodemon](https://www.npmjs.com/package/nodemon) is an NPM package that automatically restarts your node application when it detects file changes your the project directory. 
 
-1. Install the nodemon package globally `npm install -g nodemon` (`-g` = global)
+1. Install the nodemon package globally `npm install -g nodemon` (the `-g` flag makes it global)
 2. Run `index.js` using nodemon (instead of node) `nodemon index.js`
 3. Edit and save `index.js`. Nodemon will restart your script each time you save. 
 4. Exit the process with `Ctl+C` (this exits any process on the Terminal).
@@ -234,8 +237,8 @@ A `package.json` file contains project information, like a name, version, and de
 
 [Cron](https://www.npmjs.com/package/cron) is an NPM package that executes scripts on a schedule (e.g. each/second, once/day) or at particular times. Use it to automate any common task like database backups, etc..
 
-1. Run `npm i cron --save` in the Terminal (`i` = shortcut for `install`, `--save` ) 
-1. In `package.json` a new dependency has been added, as well as a new `node_modules` folder, which contains the cron package and packages it uses. 
+1. Run `npm i cron --save` in the Terminal (`i` is a shortcut for `install`, `--save` adds a dependency to your project's `package.json`) 
+1. In `package.json` a new dependency has been added, as well as a new `node_modules` folder, where the cron package and packages it uses was just installed. 
 1. Add the code from the next slide to your `index.js` file.
 1. Run it with `nodemon index.js` in the Terminal.
 1. Use [crontab.guru](https://crontab.guru/) to experiment with the time.
@@ -485,10 +488,13 @@ nvm install-latest-npm
 [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) is an interactive CLI utility to easily update outdated NPM dependencies
 
 ```js
+// install utility globally
 npm i -g npm-upgrade
+// run in a project
 npm-upgrade check
 ```
 
+![npm-upgrade](./img/npm-upgrade.png)
 
 
 
