@@ -124,7 +124,7 @@ To save data for the world to see you need to run code on a server* like `PHP` o
     - [firebase.google.com](https://firebase.google.com/)
     - [remotemysql.com](https://remotemysql.com/) and [freedb.tech](https://freedb.tech/)
 - **Create your own server application using a database** (MySQL, SQLite, MongoDb, etc.). This can be done a number of ways:
-    - <s>($)</s> Cloud-hosting services like [Glitch](https://glitch.com/) or [Vercel](https://vercel.com/) - [ai-candy-hearts-api](https://ai-candy-hearts-api.vercel.app) (Node)
+    - <s>($)</s> Cloud-hosting services like ~~[Glitch](https://glitch.com/) or~~ [Vercel](https://vercel.com/) - [ai-candy-hearts-api](https://ai-candy-hearts-api.vercel.app) (Node)
     - ($) Shared servers (e.g. Davidson Domains) - [Term vs. Term](https://owenmundy.com/work/term-vs-term/) (PHP)
     - ($$) VDS (Virtual Dedicated Servers) - [I Know Where Your Cat Lives](https://iknowwhereyourcatlives.com) (PHP/MySQL)
 

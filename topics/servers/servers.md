@@ -29,8 +29,15 @@ Github Pages   | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | free
 Localhost      | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | free
 Shared host | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | $
 VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
-[glitch.com ](https://glitch.com/) | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
+~~[glitch.com ](https://glitch.com/)~~ | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
 [vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
+
+
+
+Add data from 
+http://localhost:4321/wiki/chapter-09/9-4-bad-password-api/#publish-a-full-stack-website
+
+
 
 Others
 https://codepen.io/
@@ -52,14 +59,6 @@ Notes: Databases require PHP or node. React or Next projects [can be built for s
 
 
 
----
-
-## Using Glitch
-
-- [Change the Node version](https://help.glitch.com/hc/en-us/articles/16287495688845-What-version-of-Node-can-I-use-and-how-do-I-change-update-upgrade-it)
-
-
-
 
 
 ---
@@ -67,7 +66,7 @@ Notes: Databases require PHP or node. React or Next projects [can be built for s
 ## Host a node app on Vercel
 
 
-<!-- Note: Update these in the future to https://github.com/criticalwebdesign/book/wiki/Chapter-09#vercel-instructions -->
+<!-- Note: Update these in the future to https://criticalwebdesign.github.io/wiki/chapter-09/9-4-bad-password-api/ -->
 
 <div class="twocolumn">
 <div class="col">
