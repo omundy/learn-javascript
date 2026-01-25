@@ -1501,7 +1501,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 <h2 id="the-benefits-of-modularity">The benefits of modularity</h2>
 <ul>
 <li>Modules are a way to split an application into separate files instead of having all of your application in one file.</li>
-<li>This concept is also present in other languages with minor differences in syntax and behavior, like C's <code>include</code>, Python's <code>import</code>, and so on.</li>
+<li>Also present in other languages (with minor differences in syntax and behavior) like C's <code>include</code>, Python's <code>import</code>, and so on.</li>
 <li>Modular design makes your application easy to understand, scale, and reuse.</li>
 </ul>
 </section>
@@ -1513,7 +1513,7 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
-<h2 id="modular-design-in-node">Modular design in Node</h2>
+<h2 id="using-require">Using require()</h2>
 <div class="twocolumn1x2">
 <div class="col">
 <ul>
@@ -1521,16 +1521,16 @@ div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]
 </ul>
 </div>
 <div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// module.js</span>
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">exports</span> = <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {};
-<span class="hljs-built_in">exports</span>.<span class="hljs-property">randomNumber</span> = <span class="hljs-function">(<span class="hljs-params">max = <span class="hljs-number">1</span></span>) =&gt;</span> {
-	<span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * max;
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// hello-module.js</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello!&#x27;</span>;
 };
+<span class="hljs-built_in">exports</span>.<span class="hljs-property">sayHello</span> = sayHello;
 
 <span class="hljs-comment">// index.js</span>
-<span class="hljs-keyword">const</span> modEx = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./module&#x27;</span>);
-modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hljs-comment">// -&gt; 0.927759</span>
-</code></pre>
+<span class="hljs-keyword">const</span> helloModule = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./hello-module&#x27;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(helloModule.<span class="hljs-title function_">sayHello</span>()}<span class="hljs-string">`);
+</span></code></pre>
 <div class="caption slides-small">
 	<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">Understanding module.exports and exports in Node.js</a>
 </div>
@@ -1573,13 +1573,13 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 </ul>
 </div>
 <div class="col">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// lib-module.js</span>
-<span class="hljs-keyword">const</span> hello = <span class="hljs-string">&quot;Hello, World!&quot;</span>; <span class="hljs-comment">// &quot;private&quot; var</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params"></span>) =&gt; hello;
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// hello-module.js</span>
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-string">&quot;Hello!&quot;</span>; <span class="hljs-comment">// &quot;private&quot; var</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params"></span>) =&gt; greeting;
 
 <span class="hljs-comment">// main.js</span>
-<span class="hljs-keyword">import</span> { hello } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./lib-module.js&#x27;</span>;
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">hello</span>()); <span class="hljs-comment">// -&gt; &quot;Hello, World!&quot;</span>
+<span class="hljs-keyword">import</span> { sayHello } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hello-module.js&#x27;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sayHello</span>()); <span class="hljs-comment">// -&gt; &quot;Hello!&quot;</span>
 </code></pre>
 <div class="caption slides-small">
 	<a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank">Understanding ES6 Modules</a>
@@ -1591,19 +1591,22 @@ modEx.<span class="hljs-title function_">randomNumber</span>(); <span class="hlj
 <h2 id="private-vars">Private vars</h2>
 <ul>
 <li>Each module has its own scope so that vars are not exposed unless the module intentionally uses <code>exports</code> (node) or <code>export</code> (ES6) to make them accessible. (see previous slide)</li>
+<li>You can export functions or variables.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="modular-design-in-the-browser">Modular design in the browser</h2>
 <ul>
-<li>Note that <code>require()</code>, <code>module.exports</code> and <code>exports</code> are APIs of a module system that is specific to Node.js.</li>
-<li>While browsers do not implement this module system, similar benefits can be achieved with the <a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html">Revealing Module Pattern</a>.</li>
+<li>Note that CommonJS's <code>require()</code>, <code>module.exports</code> and <code>exports</code> are APIs of a module system that is specific to Node.js (they won't work in the browser).</li>
+<li>ES6 functionality will work in the browser, but you need to mark the script as a module:</li>
 </ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">&lt;script type=<span class="hljs-string">&quot;module&quot;</span> src=<span class="hljs-string">&quot;./main.js&quot;</span>&gt;&lt;/script&gt;
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="13">
 <h2 id="revealing-module-pattern">Revealing Module Pattern</h2>
 <ul>
-<li>The Revealing Module Pattern is a JS design pattern <em>in a web browser</em> that mimics private and public access modifiers of other languages (e.g. C# or Java).</li>
+<li>The <a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html">Revealing Module Pattern</a>. is a JS design pattern <em>in a web browser</em> that mimics private and public access modifiers of other languages (e.g. C# or Java).</li>
 <li>All functions and variables are hidden by default within the scope of an IIFE (immediately-invoked function expression), and exposed as needed.</li>
 <li>See <a href="./demos">./demos</a> for examples</li>
 </ul>

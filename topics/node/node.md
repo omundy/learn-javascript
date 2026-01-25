@@ -277,8 +277,7 @@ var job = new CronJob(
 
 ---
 
-## 👉 Commit your project
-
+## 👉 Create a Git repo and commit a `.gitignore` file
 
 
 <div class="twocolumn2x1">
@@ -395,7 +394,7 @@ You have to add `"type": "module"` in package.json to use `import`
     - [Use the Zotero API](https://github.com/omundy/sample-node-zotero-api)
     - [Intro to web scraping with Node](https://github.com/omundy/sample-node-scrape-parse)
 
-
+<!-- TODO: Clean up all these projects -->
 
 
 ---

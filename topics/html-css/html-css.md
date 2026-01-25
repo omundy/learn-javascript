@@ -296,6 +296,13 @@ Code playgrounds let you test and share HTML, CSS, and Javascript in a “web en
 
 
 
+---
+
+## VS Code Tips 
+
+- Access `settings.json`: Type Cmd + SHIFT + P, then typing 'JSON'
+- Default to word wrap: Open `settins.json` and add `"editor.wordWrap": "on",` and save
+
 
 
 

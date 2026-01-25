@@ -37,7 +37,7 @@ Presentation comments ...
 ## The benefits of modularity
 
 - Modules are a way to split an application into separate files instead of having all of your application in one file.
-- This concept is also present in other languages with minor differences in syntax and behavior, like C's `include`, Python's `import`, and so on.
+- Also present in other languages (with minor differences in syntax and behavior) like C's `include`, Python's `import`, and so on.
 - Modular design makes your application easy to understand, scale, and reuse.
 
 
@@ -53,7 +53,7 @@ Presentation comments ...
 
 ---
 
-## Modular design in Node
+## Using require()
 
 <div class="twocolumn1x2">
 <div class="col">
@@ -64,15 +64,15 @@ Presentation comments ...
 <div class="col">
 
 ```js
-// module.js
-var exports = module.exports = {};
-exports.randomNumber = (max = 1) => {
-	return Math.random() * max;
+// hello-module.js
+const sayHello = () => {
+  return 'Hello!';
 };
+exports.sayHello = sayHello;
 
 // index.js
-const modEx = require('./module');
-modEx.randomNumber(); // -> 0.927759
+const helloModule = require('./hello-module');
+console.log(helloModule.sayHello()}`);
 ```
 
 <div class="caption slides-small">
@@ -135,13 +135,13 @@ console.log('inline code');
 <div class="col">
 
 ```js
-// lib-module.js
-const hello = "Hello, World!"; // "private" var
-export const sayHello = () => hello;
+// hello-module.js
+const greeting = "Hello!"; // "private" var
+export const sayHello = () => greeting;
 
 // main.js
-import { hello } from './lib-module.js';
-console.log(hello()); // -> "Hello, World!"
+import { sayHello } from './hello-module.js';
+console.log(sayHello()); // -> "Hello!"
 ```
 
 <div class="caption slides-small">
@@ -154,12 +154,13 @@ console.log(hello()); // -> "Hello, World!"
 
 
 
+
 ---
 
 ## Private vars
 
 - Each module has its own scope so that vars are not exposed unless the module intentionally uses `exports` (node) or `export` (ES6) to make them accessible. (see previous slide)
-
+- You can export functions or variables.
 
 
 
@@ -171,15 +172,19 @@ console.log(hello()); // -> "Hello, World!"
 
 ## Modular design in the browser
 
-- Note that `require()`, `module.exports` and `exports` are APIs of a module system that is specific to Node.js.
-- While browsers do not implement this module system, similar benefits can be achieved with the [Revealing Module Pattern](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html).
+- Note that CommonJS's `require()`, `module.exports` and `exports` are APIs of a module system that is specific to Node.js (they won't work in the browser).
+- ES6 functionality will work in the browser, but you need to mark the script as a module:
+
+```js
+<script type="module" src="./main.js"></script>
+```
 
 
 ---
 
 ## Revealing Module Pattern
 
-- The Revealing Module Pattern is a JS design pattern *in a web browser* that mimics private and public access modifiers of other languages (e.g. C# or Java).
+- The [Revealing Module Pattern](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s03.html). is a JS design pattern *in a web browser* that mimics private and public access modifiers of other languages (e.g. C# or Java).
 - All functions and variables are hidden by default within the scope of an IIFE (immediately-invoked function expression), and exposed as needed.
 - See [./demos](./demos) for examples
 
