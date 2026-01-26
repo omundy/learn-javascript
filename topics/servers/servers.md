@@ -31,7 +31,7 @@ Shared host | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | $
 VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
 ~~[glitch.com ](https://glitch.com/)~~ | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
 [vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
-
+[Netlify](https://www.netlify.com/) | ✅ | ✅ | ✅ | ❌ | [❌](https://answers.netlify.com/t/hosting-python-apps/94405) | ✅ | ✅ | ✅ |free(mium)
 
 
 Add data from 
