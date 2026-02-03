@@ -1481,72 +1481,74 @@ div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background
 div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split] {
   width: 100%;
   height: 100%;
-}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+}</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <p>← <a href="../../">Learn Javascript</a></p>
 <p><a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png" /></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-node-ltgreen-150w.png" /></a> <a href="../../"><img width="150" src="../../assets/img/logos/logo-express-200w.png" /></a></p>
 <h1 id="node--express">Node &amp; Express</h1>
 <p>Introduction to Node + Express</p>
 <p><span class="slides-small"><a href="slides.html">slides</a> | <a href="node-express.md">md</a></span></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <h2 id="about-express">About Express</h2>
 <ul>
 <li>Express is a Node.js framework for creating web applications</li>
 <li>It provides several built in tools for creating backends and APIs</li>
-<li>Express simplifies much of the work to create endpoints and link components for full-stack applications</li>
+<li>You could write all this from scratch in JS, but Express simplifies much of the work to create endpoints and link components for full-stack applications</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <h2 id="express-basics">Express Basics</h2>
 <p>👉 The following steps walk through a simple Express site</p>
 <p>Source: <a href="https://expressjs.com/en/starter/installing.html">Express &gt; Getting started</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
-<h2 id="install-express">Install Express</h2>
-<p>👉 Create your project folder, install express</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># make a new directory and move to it</span>
-<span class="hljs-built_in">mkdir</span> express-site &amp;&amp; <span class="hljs-built_in">cd</span> express-site  
-<span class="hljs-comment"># initialize a node project in the new directory, add a package.json file</span>
-npm init                               
-<span class="hljs-comment"># install express, saving it to your package.json file</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
+<h2 id="%F0%9F%91%89-install-express">👉 Install Express</h2>
+<ol>
+<li>Create project folder named <code>express-site</code> and open it in VS Code</li>
+<li>Run below commands</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># initialize npm; Change type to &quot;module&quot;</span>
+npm init
+
+<span class="hljs-comment"># install express</span>
 npm install express --save 
+
+<span class="hljs-comment"># add index file</span>
+<span class="hljs-built_in">touch</span> index.js
+
 <span class="hljs-comment"># run the project and restart on changes (press Ctl-C to terminate)</span>
-nodemon                 
+nodemon
 </code></pre>
-<details class="caption slides-small">
-<summary>References</summary>
-<p>Source: <a href="https://expressjs.com/en/starter/installing.html">Getting started &gt; Install express</a></p>
-</details>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
-<h2 id="hello-world-example">Hello world example</h2>
-<p>👉 Create a new file named <code>server.js</code> inside this project and add:</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>); <span class="hljs-comment">// import package</span>
-<span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>(); <span class="hljs-comment">// create express app</span>
-<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>; <span class="hljs-comment">// the port to access</span>
-<span class="hljs-comment">// add routes</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="5" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
+<h2 id="%F0%9F%91%89-express-hello-world">👉 Express Hello World</h2>
+<ol>
+<li>In <code>index.js</code> import express, create app and route, and start server.</li>
+<li>Save and open: <a href="http://localhost:3000">http://localhost:3000</a></li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span>;
+<span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PORT</span> = <span class="hljs-number">3000</span>;
 app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
-	res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);
+	res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Hello from Express!&#x27;</span>);
 });
-<span class="hljs-comment">// start server and listen on &lt;port&gt;</span>
-app.<span class="hljs-title function_">listen</span>(port, <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(
-	<span class="hljs-string">`Express started on http://localhost:<span class="hljs-subst">${port}</span>`</span>
-));
+app.<span class="hljs-title function_">listen</span>(<span class="hljs-variable constant_">PORT</span>, <span class="hljs-function">() =&gt;</span> {
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Server running at http://localhost:<span class="hljs-subst">${PORT}</span>`</span>);
+});
 </code></pre>
 <details class="caption slides-small">
 <summary>References</summary>
-<p>Source: <a href="https://expressjs.com/en/starter/hello-world.html">Getting started &gt; Hello world example</a><br />
-See also: <a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch3 Saving Time with Express (21-30) &amp; Ch4 Tidying Up (31–39)</p>
+<ul>
+<li><a href="https://expressjs.com/en/starter/hello-world.html">Getting started &gt; Hello world example</a></li>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch3 Saving Time with Express (21-30) &amp; Ch4 Tidying Up (31–39)</li>
+<li>Require <code>const express = require('express');</code> is for non-module based projects. While this method <code>import express from 'express';</code> means you need to use <code>type: module</code> in package.json</li>
+</ul>
 </details>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <h2 id="basic-routing">Basic routing</h2>
 <p>👉 Add these routes with new <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">HTTP methods</a> and endpoints. Test them with <a href="https://www.postman.com/">Postman</a></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// this is the same as the route above</span>
-app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
-	res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>)
-})
-<span class="hljs-comment">// the same endpoint as above with POST</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// the same endpoint as above with POST</span>
 app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
 	res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Got a POST request&#x27;</span>)
 })
@@ -1560,17 +1562,17 @@ app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x2
 <p>Source: <a href="https://expressjs.com/en/starter/basic-routing.html">Getting started &gt; Basic routing</a></p>
 </details>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <h2 id="middleware">Middleware</h2>
 <div class="twocolumn1x2">
 <div class="col">
 <ul>
-<li>Middleware allows you to add functionality to the &quot;call stack&quot; as needed.</li>
-<li>Any function can be middleware by adding the <code>(req,res,next)</code> parameters and calling <code>next()</code> at the end to go to the next function in the stack.</li>
+<li>Add a function to the application request-response cycle</li>
+<li>It should have <code>(req,res,next)</code> parameters and call <code>next()</code> at the end to go to the next function in the stack.</li>
 </ul>
 </div>
 <div class="col">
-<p>👉 Try the example</p>
+<p>👉 Add this after you create the app()</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// log the url</span>
 <span class="hljs-keyword">let</span> <span class="hljs-title function_">logger</span> = (<span class="hljs-params">req,res,next</span>) =&gt; {
 	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`url: <span class="hljs-subst">${req.url}</span>`</span>)		
@@ -1584,23 +1586,23 @@ app.<span class="hljs-property">use</span> (logger);
 </div>
 <details class="caption slides-small">
 <summary>References</summary>
-<p>Source: <a href="https://expressjs.com/en/guide/writing-middleware.html">Guide &gt; Writing middleware</a><br />
-See also: <a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch10 Middleware (113-120)</p>
+<ul>
+<li><a href="https://expressjs.com/en/guide/writing-middleware.html">Guide &gt; Writing middleware</a></li>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch10 Middleware (113-120)</li>
+</ul>
 </details>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
 <h2 id="middleware-1">Middleware</h2>
 <div class="twocolumn1x2">
 <div class="col">
-<p>You can also add middleware to any page or endpoint by including the name as a parameter in the route.</p>
+<p>Also add middleware to any endpoint by including the name as a parameter in the route.</p>
 </div>
 <div class="col">
-<p>👉 Try the example</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// check if user is logged in</span>
 <span class="hljs-keyword">let</span> <span class="hljs-title function_">auth</span> = (<span class="hljs-params">req,res,next</span>) =&gt; {
 	<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) <span class="hljs-comment">// authentication check</span>
-		<span class="hljs-comment">// continue call stack</span>
-		<span class="hljs-keyword">return</span> <span class="hljs-title function_">next</span>(); 
+		<span class="hljs-keyword">return</span> <span class="hljs-title function_">next</span>(); <span class="hljs-comment">// continue call stack</span>
 	<span class="hljs-comment">// redirect to signin page	</span>
 	res.<span class="hljs-title function_">redirect</span>(<span class="hljs-string">&#x27;/signin&#x27;</span>);
 }
@@ -1614,51 +1616,105 @@ app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x2
 </div>
 <details class="caption slides-small">
 <summary>References</summary>
-<p>Source: <a href="https://expressjs.com/en/guide/writing-middleware.html">Guide &gt; Writing middleware</a><br />
-See also: <a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch10 Middleware (113-120)</p>
+<ul>
+<li><a href="https://expressjs.com/en/guide/writing-middleware.html">Guide &gt; Writing middleware</a></li>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch10 Middleware (113-120)</li>
+</ul>
 </details>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
-<h2 id="static-files">Static files</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
+<h2 id="%F0%9F%91%89-static-files">👉 Static files</h2>
 <p>To serve static files (images, CSS, client-side JS), use the <code>express.static</code> middleware built-into Express.</p>
-<p>👉 Try the example</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// serve static files from project root; /public =&gt; foo.com/</span>
-app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">static</span>(<span class="hljs-string">&#x27;public&#x27;</span>))
+<ol>
+<li>Create a <code>public</code> directory</li>
+<li>Add the following after creating the app()</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// make all files inside /public available using static</span>
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;path&quot;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">URL</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;url&quot;</span>;
+<span class="hljs-keyword">const</span> __filename = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">pathname</span>;
+<span class="hljs-keyword">const</span> __dirname = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">pathname</span>;
+app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">static</span>(path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;./public&#x27;</span>)));
+</code></pre>
+<details class="caption slides-small">
+<summary>References</summary>
+<ul>
+<li><a href="https://expressjs.com/en/starter/static-files.html">Getting started &gt; Static files</a></li>
+<li><a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch17 Static Content (215-221)</li>
+</ul>
+</details>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
+<h2 id="%F0%9F%91%89-organize-routes-into-a-separate-file">👉 Organize routes into a separate file</h2>
+<div class="twocolumn">
+<div class="col">
+<p>Make a new file called <code>route.js</code> and add...</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// routes.js</span>
 
-<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
-<span class="hljs-comment">// serve files from working dir; ./public =&gt; foo.com/</span>
-app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">static</span>(path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;public&#x27;</span>)));
-<span class="hljs-comment">// serve files *as folder* from wd; ./uploads =&gt; foo.com/uploads</span>
-app.<span class="hljs-title function_">use</span>(<span class="hljs-string">&#x27;/uploads&#x27;</span>, express.<span class="hljs-title function_">static</span>(path.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;./uploads&#x27;</span>)));
+<span class="hljs-comment">// import express, create router</span>
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span>;
+<span class="hljs-keyword">const</span> router = express.<span class="hljs-title class_">Router</span>();
+
+<span class="hljs-comment">// move routes from index.js here</span>
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// export module</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router;
 </code></pre>
-<details class="caption slides-small">
-<summary>References</summary>
-<p>Source <a href="https://expressjs.com/en/starter/static-files.html">Getting started &gt; Static files</a><br />
-See also: <a href="https://www.oreilly.com/library/view/web-development-with/9781492053507/">Brown</a> Ch17 Static Content (215-221)</p>
-</details>
+</div>
+<div class="col">
+<p>Replace routes in index.js with...</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-comment">// index.js</span>
+
+<span class="hljs-comment">// import file for routes</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./routes.js&#x27;</span>;
+app.<span class="hljs-title function_">use</span>(<span class="hljs-string">&#x27;/&#x27;</span>, router);
+</code></pre>
+</div>
+</div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="10">
-<h2 id="express-application-generator">Express application generator</h2>
-<p>👉 Generate a new app (see <code>express -h</code> for options)</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># generate a new express project in a new directory, using handlebars</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="owen" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:owen;" data-marpit-pagination-total="11">
+<h2 id="tutorial">Tutorial</h2>
+<p>So far we've been create a test API from scratch. Now that you know the basics, continue this tutorial to work with a more complete project.<br />
+<a href="https://criticalwebdesign.github.io/wiki/chapter-09/9-4-bad-password-api/">https://criticalwebdesign.github.io/wiki/chapter-09/9-4-bad-password-api/</a></p>
+</section>
+<script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>OTHER EXAMPLES 
+// serve static files from project root; /public =&gt; foo.com/
+app.use(express.static('public'))
+const path = require('path');
+// serve files from working dir; ./public =&gt; foo.com/
+app.use(express.static(path.join(__dirname, 'public')));
+// serve files *as folder* from wd; ./uploads =&gt; foo.com/uploads
+app.use('/uploads', express.static(path.resolve('./uploads')));</p></div><div class="bespoke-marp-note" data-index="10" tabindex="0"><p>---
+
+## Express application generator
+
+👉 Generate a new app (see `express -h` for options)
+
+```bash
+# generate a new express project in a new directory, using handlebars
 npx express-generator --view=hbs myapp
-<span class="hljs-comment"># change into it</span>
-<span class="hljs-built_in">cd</span> myapp
-<span class="hljs-comment"># install dependencies</span>
+# change into it
+cd myapp
+# install dependencies
 npm install
-<span class="hljs-comment"># start &quot;myapp&quot; (see package.json), tell node to turn on logging</span>
+# start &quot;myapp&quot; (see package.json), tell node to turn on logging
 DEBUG=myapp:* npm start
-</code></pre>
-<p>*Note you can also <a href="https://www.codecademy.com/learn/learn-handlebars/modules/templating-with-handlebars/cheatsheet">use handlebars for frontend</a></p>
-<blockquote>
-<p>The app structure created by the generator is just one of many ways to structure Express apps. Feel free to use this structure or modify it to best suit your needs.</p>
-</blockquote>
-<details class="caption slides-small">
-<summary>References</summary>
-<p>Source: <a href="https://expressjs.com/en/starter/generator.html">Getting started &gt; Express application generator</a></p>
-</details>
-</section>
-<script></script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>Presentation comments ...</p></div><div class="bespoke-marp-note" data-index="9" tabindex="0"><p>---
+```
+
+*Note you can also [use handlebars for frontend](https://www.codecademy.com/learn/learn-handlebars/modules/templating-with-handlebars/cheatsheet)
+
+
+
+
+&gt; The app structure created by the generator is just one of many ways to structure Express apps. Feel free to use this structure or modify it to best suit your needs.
+
+&lt;details class=&quot;caption slides-small&quot;&gt;
+&lt;summary&gt;References&lt;/summary&gt;
+
+Source: [Getting started &gt; Express application generator](https://expressjs.com/en/starter/generator.html)
+
+&lt;/details&gt;</p><p>---
 
 ## Use modules for organization
 
