@@ -386,9 +386,6 @@ You have to add `"type": "module"` in package.json to use `import`
 1. Examine code in [demos/basic-node](./demos/basic-node) (modules and writing files) or see slides at end of this presentation
 1. Explore tutorials [tutorialspoint](https://www.tutorialspoint.com/nodejs/index.htm), [nodejs.dev](https://nodejs.dev/en/learn/introduction-to-nodejs/), [guru99.com](https://www.guru99.com/node-js-tutorial.html), [tutorialsteacher.com](https://www.tutorialsteacher.com/nodejs) 
 1. Check out sample projects using Node:
-    - [Node/Express Cat API](https://github.com/omundy/sample-node-express-cat-api)
-    - [Node/Express Username Generator](https://github.com/omundy/sample-node-express-username-generator)
-    - [Node/Express + Leaflet](https://github.com/omundy/sample-node-osm-leaflet)
     - [Sample Node Tools 🦋](https://github.com/omundy/sample-node-tools)
     - [Sample Node Proxy Server](https://github.com/omundy/sample-node-proxy-server)
     - [Use the Zotero API](https://github.com/omundy/sample-node-zotero-api)
@@ -416,10 +413,68 @@ You have to add `"type": "module"` in package.json to use `import`
 
 ---
 
-## Advanced Node Installation
+## Advanced Node / NPM usage
 
-- Using NVM
 - Managing NPM packages
+- Using NVM
+
+
+
+
+
+---
+
+## How to upgrade NPM packages
+
+[npm-upgrade](https://www.npmjs.com/package/npm-upgrade) is an interactive CLI utility to easily update outdated NPM dependencies
+
+```js
+// check global packages
+npm i -g npm-upgrade
+
+// or... check project packages (run in project folder)
+npm-upgrade check
+```
+
+![npm-upgrade](./img/npm-upgrade.png)
+
+
+
+
+---
+
+## How to install a dev dependency
+
+Simply add `--save-dev` to the end of the install command. For example:
+
+```js
+npm install nodemon --save-dev
+```
+
+
+
+
+---
+
+## Github Dependabot
+
+[Dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide#) can send alerts or even upgrade packages if there is a security vulnerability in an NPM package in your project. To enable:
+
+1. Go to: your repo > Settings > Advanced Security
+1. Enable Dependabot alerts
+
+Alerts are usually in packages used by your dependencies (in `package-lock.json`). When you get an alert, you can [fix or dismiss it](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide#fixing-or-dismissing-a-dependabot-alert). Best practices for fixing:
+
+- Upgrade the package that uses the vulnerable package (just reinstall)
+- If possible, move the parent package in `devDepencies` (use the `--save-dev` flag)
+
+Update `package.json` and push, refresh the list of alerts using the gear drop down.
+
+
+
+
+
+
 
 
 ---
@@ -479,21 +534,6 @@ nvm install-latest-npm
 ```
 
 
-
----
-
-## How to upgrade NPM packages
-
-[npm-upgrade](https://www.npmjs.com/package/npm-upgrade) is an interactive CLI utility to easily update outdated NPM dependencies
-
-```js
-// install utility globally
-npm i -g npm-upgrade
-// run in a project
-npm-upgrade check
-```
-
-![npm-upgrade](./img/npm-upgrade.png)
 
 
 
