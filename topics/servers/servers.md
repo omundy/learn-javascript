@@ -21,43 +21,49 @@ Presentation comments ...
 ## Server options
 
 
-<small>
+<span class="slides-small">
 
-Web host | Static | Dynamic | Node | PHP | Python | database | .env | Live | Cost
---- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | ---
-Github Pages   | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | free 
-Localhost      | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | free
-Shared host | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | $
-VPS hosting    | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
-~~[glitch.com ](https://glitch.com/)~~ | ✅ | ✅ | ✅ | ❌ |  ? |✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
-[vercel.com ](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
-[Netlify](https://www.netlify.com/) | ✅ | ✅ | ✅ | ❌ | [❌](https://answers.netlify.com/t/hosting-python-apps/94405) | ✅ | ✅ | ✅ |free(mium)
-
-
-Add data from 
-http://localhost:4321/wiki/chapter-09/9-4-bad-password-api/#publish-a-full-stack-website
+Web host | Static | Build tools | Dynamic | Node | PHP | Python | database | .env | Live | Cost
+--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | ---
+Localhost      | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | free
+Github Pages   | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | free 
+Shared host | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ | $
+VPS hosting    | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$
+[Vercel](https://vercel.com) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |free(mium)
+[Netlify](https://netlify.com/) | ✅ | ✅ | ✅ | ✅ | ❌ | [❌](https://answers.netlify.com/t/hosting-python-apps/94405) | ✅ | ✅ | ✅ |free(mium)
+[Render](https://render.com) | ✅ | ✅ | ✅ | ✅ | ? | ? | ✅ | ✅ | ✅ |free(mium)
+~~Glitch~~ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | [✅](https://help.glitch.com/hc/en-us/articles/16287550167437-Adding-Private-Data) | ✅ | free(mium)
+~~Heroku~~ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | free(mium)
 
 
 
-Others
-https://codepen.io/
-https://codesandbox.io/
-
-    Consider mentioning CodeSandbox 
-    https://codesandbox.io/p/devbox/node-hello-878r6d
-    https://878r6d-8080.csb.app/
 
 
-https://stackblitz.com/
+Notes: 
+- See also https://criticalwebdesign.github.io/wiki/chapter-09/9-4-bad-password-api/#publishing-full-stack-sites
+- Other services to examine:
+  - https://railway.com/
+  - https://codepen.io/
+  - [CodeSandbox](https://codesandbox.io/) <!-- https://codesandbox.io/p/devbox/node-hello-878r6d and https://878r6d-8080.csb.app/ -->
+  - https://stackblitz.com/
+  - Cloudflare https://blog.cloudflare.com/bringing-node-js-http-servers-to-cloudflare-workers/
 
-https://medium.com/paperplanetechworks/8-best-sites-to-host-backend-code-for-free-in-2023-c66b2512051a
+<!-- 
+React and Next projects [can be built for static](https://create-react-app.dev/docs/production-build/) 
+-->
+
+</span>
 
 
-Notes: Databases require PHP or node. React or Next projects [can be built for static](https://create-react-app.dev/docs/production-build/)
-
-</small>
 
 
+---
+
+## Database Options
+
+- MongoDB Atlas
+- Supabase
+- Firebase
 
 
 
@@ -172,7 +178,9 @@ passwords.js
 
 4. Commit the `.gitignore` file and then git will not track the file containing your secret information.
 
-<small>*Your file will only run on your computer</small>
+<span class="slides-small">
+*Your file will only run on your computer
+</span>
 
 </div>
 </div>
