@@ -76,3 +76,10 @@ pre, code {
     white-space: pre-wrap !important;
     word-wrap: break-word;
 }
+
+
+
+
+
+.example { border: 2px solid #ccc; padding: .5rem; font: .7rem/.7rem monospace; }
+.example p { margin: 0; margin-left: .5rem; margin-top: .5rem }

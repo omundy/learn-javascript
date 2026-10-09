@@ -4,7 +4,7 @@
 
 <a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# Functions
+# Functions & Events
 
 How to reuse code, protect variables, and organize code
 
@@ -98,19 +98,38 @@ The task a function performs can be customized using one or more parameters plac
 
 
 
-
 ---
 
 ## Create a Function
 
-Use the **function** keyword to create a new function. Include **parameters** to customize its task. Use **return** to send data back to the code where it was called.
+Use the <code>function</code> keyword, followed by two parentheses.  The open and closing curly braces contain the code that is executed when the function is called.
 
-<img src="../../assets/img/06-16-JS-function-anatomy.png" width="100%">
+```js
+function hello(){
+	console.log("hello back!");
+}
+```
+
+👉 Paste the above into the console, press return, and then run it with... 
+
+```js
+hello()
+```
+
+
+
+
+---
+
+## Use Parameters and a Return Value
+
+Declare a new <code>function</code> with **parameters** to customize its task. Use **return** to send data back to the code where it was called.
+
+<img src="../../assets/img/06-16-JS-function-anatomy.png" width="80%">
 
 <div class="caption slides-small">
 👉 Paste into the console <code>function square() { return num * num }</code>, then call it with <code>square(2)</code> or <code>square(12)</code>
 </div>
-
 
 
 
@@ -123,7 +142,7 @@ Writing the same code over and over is not only inefficient and boring, it also 
 
 ```js
 let hex = "0123456789abcdef"
-document.body.backgroundColor = "#" + 
+document.body.style.backgroundColor = "#" + 
 	// create a random number between 0-15 to get a hexadecimal character
     hex[Math.floor(Math.random() * hex.length)] + 
     hex[Math.floor(Math.random() * hex.length)] +
@@ -133,9 +152,7 @@ document.body.backgroundColor = "#" +
     hex[Math.floor(Math.random() * hex.length)]
 ```
 
-<div class="caption slides-small">
-Several lines of code in this example perform the same task!
-</div>
+
 
 
 
@@ -149,11 +166,10 @@ If you find yourself typing the same instructions, consider using a **custom fun
 
 ```js
 let hex = "0123456789abcdef"
-function rand(arr){
-	return arr[Math.floor(Math.random() * arr.length)]
+function r(){
+	return hex[Math.floor(Math.random() * hex.length)]
 }
-document.body.backgroundColor = "#" + 
-	rand() + rand() + rand() + rand() + rand() + rand();
+document.body.style.backgroundColor = "#" +r() +r() +r() +r() +r() +r();
 ```
 
 <div class="caption slides-small">
@@ -162,70 +178,6 @@ In the updated example the repeated code is "wrapped" with a function which "ret
 
  
 
-
-
-
-
-<!-- 
-
----
-
-## Code reuse
-
-This is the code from the previous lesson. This code runs just once.
-
-```js
-let apples = 2;
-
-if (apples > 3) {
-	console.log(`We have ${apples} apples! We can make pie!`)
-} else {
-	console.log(`We have ${apples} apples! We need more apples`)
-}
-// -> "We have 2 apples! We need more fruit."
-```
-
-
----
-
-## Code reuse
-
-<div class="twocolumn">
-<div class="col">
-
-Wrapping this code inside a function lets us...
-
-1. Run the code multiple times with different values
-1. Change the value that determines the logical flow
-
-</div>
-<div class="col">
-
-
-```js
-function canPie(fruit, count){
-    let str = `We have ${count} ${fruit}! `;
-    if (count > 3) {
-        str += `We can make pie!`;
-    } else {
-        str += `We need more fruit.`;
-    }
-    return str;
-}
-
-console.log(`${canPie("apples", 2)}`);
-// -> "We have 2 apples! We need more fruit."
-
-console.log(`${canPie("pears", 5)}`);
-// -> "We have 5 pears! We can make pie!"
-
-console.log(`${canPie("berries", 101)}`);
-// -> "We have 101 berries! We can make pie!"
-```
-
-</div>
-</div>
- -->
 
 
 
@@ -325,12 +277,12 @@ console.log(getCurrentHour());
 ```js
 let button = document.querySelector(".btn");
 
-// #1 - anonymous function used as click handler
+// #1 - anonymous function as click handler
 button.addEventListener("click", function() {
 	console.log("click! 🎉")
 });
 
-// #2 - named function used as the callback
+// #2 - named function as callback
 var myFunc = function() {
 	console.log("click! 🎉")
 }

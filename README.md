@@ -18,8 +18,8 @@ A linear progression through full stack Javascript, with tutorials, exercises, a
 1. Introduction [slides](topics/introduction/slides.html) | [md](topics/introduction/introduction.md) - Introduction to Javascript, expressions, statements, and operators
 1. Data & Variables [slides](topics/variables/slides.html) | [md](topics/variables/variables.md) - How to store and compare values and data types
 1. Control Flow [slides](topics/control-flow/slides.html) | [md](topics/control-flow/control-flow.md) - Comparison and logical operators, conditional statements
-1. DOM [slides](topics/dom/slides.html) | [md](topics/dom/dom.md) - Forms and the Document Object Model (DOM)
-1. Functions [slides](topics/functions/slides.html) | [md](topics/functions/functions.md) - Reusing code, protecting variables
+1. Functions & Events [slides](topics/functions/slides.html) | [md](topics/functions/functions.md) - Reusing code, protecting variables
+1. The DOM & Web Forms [slides](topics/dom/slides.html) | [md](topics/dom/dom.md) - Forms and the Document Object Model (DOM)
 1. Data Structures [slides](topics/data-structures/slides.html) | [md](topics/data-structures/data-structures.md) - How to use arrays, objects, properties, methods, and loops
 
 

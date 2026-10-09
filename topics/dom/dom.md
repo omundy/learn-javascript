@@ -4,7 +4,7 @@
 
 <a href="../../"><img width="150" src="../../assets/img/logos/logo-javascript-150w.png"></a>
 
-# Web forms and the DOM
+# The DOM & Web Forms
 
 Use form data via the Document Object Model (DOM)
 
@@ -74,7 +74,7 @@ Students who complete this module will be able to:
 
 ## About the DOM
 
-- When the browser parses a web page it creates a `document` object containing references to all the page elements
+- A browser parses a page and creates a `document` object with all the page elements
 - This makes it easy to select element and access their HTML and CSS code.
 
 <img src="../../assets/img/javascript-diagram-dom.png" width="100%">
@@ -84,9 +84,7 @@ Students who complete this module will be able to:
 
 ---
 
-## The window object
-
-👉 View these properties and functions in the console (or access them with javascript using dot syntax).
+## The `window` object
 
 <div class="twocolumn">
 <div class="col">
@@ -104,42 +102,9 @@ Students who complete this module will be able to:
 </div>
 
 
-
-
-
----
-
-## window.document
-
-
-
-
-<div class="twocolumn">
-<div class="col">
-
-- `window` refers to the page and browser tab
-- `document` (full name is `window.document`) references the page structure, content, and properties for the page only. 
-- 👉 Explore these in the console
-
+<div class="caption slides-small">
+👉 View these properties and functions in the console (or access them with javascript using dot syntax).
 </div>
-<div class="col">
-
-
-```js
-// get web page url property
-window.document.URL
-// set a new location for this window 
-document.location = "https://davidson.edu"
-// get property
-window.document.body.style.background
-// set (same) property
-document.body.style.background = "red"
-```
-
-</div>
-</div>
-
-
 
 
 
@@ -147,32 +112,61 @@ document.body.style.background = "red"
 
 ---
 
-## Selecting HTML elements
+## `window.document`
 
-Some properties can be accessed directly using "direct selection"
-
-```js
-// replace the content of the body
-document.body.innerHTML = "😃"
-// get a form value
-document.myForm.myInput.value
-```
-
-
-
-
-
-
-
-
----
-
-## Selecting HTML elements
 
 <div class="twocolumn1x2">
 <div class="col">
 
-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns the first element in the DOM that matches the specified selector.
+- `window` includes the page and browser tab
+- `window.document` or just `document` contains structure, content, and properties for the page only. 
+
+</div>
+<div class="col">
+
+
+```js
+// get property
+window.document.body.style.background
+// set the property
+document.body.style.background = "red"
+
+// get web page url property
+window.document.URL
+// set a property
+document.location = "https://davidson.edu"
+
+// replace the content of the body
+document.body.innerHTML = "😃"
+```
+
+<div class="caption slides-small">
+👉 Explore these in the console
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## Select elements with `document.querySelector()`
+
+<div class="twocolumn1x2">
+<div class="col">
+
+- The number of properties that can be accessed using *direct selection* (what we've done so far) is limited.
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">document.querySelector()</a> returns references to any element you like using its CSS selector. 
 
 </div>
 <div class="col">
@@ -182,10 +176,12 @@ document.myForm.myInput.value
 ```
 
 ```js
-// use #id to store reference to element
+// store reference to element
 let ele = document.querySelector("#greeting");
+
 // get the text
 console.log(ele.textContent);
+
 // or set the text
 ele.textContent = "Hello world!";
 ```
@@ -198,57 +194,95 @@ ele.textContent = "Hello world!";
 
 ---
 
-## Selecting HTML elements
+## Selecting *Many* HTML elements
 
 <div class="twocolumn1x2">
 <div class="col">
 
 - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">document.querySelectorAll()</a> returns <i>all</i> elements matching the specified selector in an array.
 
+<div class="example">
+Example:
+<p style="color:red">Red</p>
+<p style="color:green">Green</p>
+<p style="color:blue">Blue</p>
+</div>
+
 </div>
 <div class="col">
 
 ```html
-<p>Red</p>
-<p>Green</p>
-<p>Blue</p>
+<p style="color:red">Red</p>
+<p style="color:green">Green</p>
+<p style="color:blue">Blue</p>
 ```
 
 ```js
-// return an array of all <a> elements on the page: 
-let ele = document.querySelectorAll("#greeting");
-// -> then use a loop to address them
+// get array of all <p> elements on a page 
+let eles = document.querySelectorAll("p");
+// use a loop to log them
+eles.forEach(function(ele){
+	console.log(ele)
+})
 ```
 
-
-
 </div>
 </div>
+
+
+
+
+
 
 
 
 ---
 
-## Listening for Events
+## Listening for Form Events
 
-- Create a web form using a `<form>` containing one or more `<input>` elements. 
-- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loading a new page (it's default behavior). 
-
+👉 In <a href="https://codepen.io/pen" target="_blank">codepen</a> create `<form>` and `<input>` elements and add a `submit` listener.
 
 ```html
 <form action="#" class="myForm">
-  <input type="text" id="color">
-  <button id="submit">Submit</button>
+	<input type="text" id="color">
+	<button type="submit">Submit</button>
 </form>
 ```
 
 ```js
 // get reference
-let ele = document.querySelector(".myForm");
-// listens for when the form was submitted (any button inside)
-ele.addEventListener("submit", function(e) {
-	e.preventDefault();
-	console.log(colorVal);
+let myForm = document.querySelector(".myForm");
+// listens for when the form was submitted
+myForm.addEventListener("submit", function(event) {
+	console.log("Form was submitted!");
+})
+```
+
+<div class="caption slides-small">
+❌ This is going to have issues. Anyone know why?
+</div>
+
+
+
+
+
+
+
+
+---
+
+## Getting Form Data
+
+- By default all web forms load a new page. Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> on the returned `event` object to prevent this. 
+- Set the background color by referencing the `this` (the form) `.color` (the input's id) and `.value` (its value).
+
+```js
+// get reference
+let myForm = document.querySelector(".myForm");
+// listens for when the form was submitted
+myForm.addEventListener("submit", function(event) {
+	event.preventDefault();
+	document.body.bgColor = this.color.value;
 })
 ```
 
@@ -258,35 +292,41 @@ ele.addEventListener("submit", function(e) {
 
 ---
 
-## Forms and Events
+## Change your HTML to start building the SUS form
 
-- Add a `submit` listener to process each `input` in a web form. 
-- Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">`preventDefault`</a> to prevent the form from loading a new page. 
+Follow the book's prompt to make the form for Usability Test...
 
+<div class="twocolumn">
+<div class="col">
 
 ```html
-<form action="#">
-  <input type="text" id="color">
-  <input type="submit">
+<form action="#" class="myForm">
+	<input type="number" id="q1">
+	<input type="number" id="q2">
+	<button type="submit">Submit</button>
+	<input type="number" id="answer">
 </form>
 ```
 
+</div>
+<div class="col">
+
+
 ```js
-document.addEventListener("submit", function(e) {
-	e.preventDefault();
-	let colorVal = document.getElementById("color").value;
-	console.log(colorVal);
-	document.body.bgColor = colorVal;
-})
+myForm.addEventListener("submit", (event) => {
+	event.preventDefault();
+	let q1 = Number(this.q1.value);
+	let q2 = Number(this.q2.value);
+	// add all converted responses
+	let answer = (q1 + q2);
+	// store in a new input and log to the console
+	this.answer.value = answer;
+	console.log(answer);
+});
 ```
 
-
-
-
-
-
-
-
+</div>
+</div>
 
 
 
