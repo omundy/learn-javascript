@@ -80,7 +80,7 @@ colors[0]; // -> "purple"
 
 ## Array indexes
 
-- Arrays are **zero-indexed**, with the first value is stored at index `0`, then `1`, and so on. 
+- Arrays are **zero-indexed**, with the first value stored at index `0`, then `1`, and so on. 
 - While indexes start at zero, their `length` reflects the total indexes in the array.
 - Like variables, you can also **set** values using the index.
 
@@ -109,7 +109,7 @@ Like other Javascript types, the console can list properties and methods specifi
 [] // the array constructor
 // how many indexes?
 ["abc", 123].length
-// create array, confirm length
+// create array
 let colors = ["red", "green", "blue"]
 // what is the index of "green"?
 colors.indexOf("green")
@@ -260,87 +260,6 @@ colors.forEach(function(item, i){
 
 
 
----
-
-## Multi-Dimensional Arrays
-
-<div class="twocolumn">
-<div class="col">
-
-JS arrays can store the same or different data types, including other arrays. 
-
-👉 How would you loop through this array to output all individual values?
-
-<details>
-<summary>Solution</summary>
-
-A loop inside a loop
-
-</details>
-
-</div>
-<div class="col">
-
-```js
-// an array of arrays
-const people = [
-	['name', 'age', 'color'],
-	['Mary', 18, 'mauve'],
-	['Pam', 33, 'periwinkle'],
-	['Chad', 81, 'chartreuse']
-];
-people[1][2] // -> 'mauve'
-```
-
-</div>
-</div>
-
-
-
----
-
-## Looping through multi-dimensional arrays
-
-An array inside an array adds a second dimension. Like a table, looping through a 2D array will need to not only go down a single column of indexes, but across each row as well.
-
-```js
-// ... using array from previous slide
-for (let i = 0; i < people.length; i++){
-    // the 2nd loop uses a new iterator and condition
-	for (let j = 0; j < people[i].length; j++){
-        console.log(people[i][j]);
-    }
-}
-// -> 'name'
-// -> 'age'
-// -> 'color' 
-// -> ...
-```
-
-
-
-
-
----
-
-## Multi-Dimensional Arrays
-
-Arrays can also store objects and other complex types.
-
-```js
-// array of date objects
-const dates = [
-	new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
-	new Date("9 November 1989 18:53 UTC+1"), // BERLIN
-	new Date("November 9, 1989 12:53 UTC-5") // NYC
-];
-dates[1].toUTCString()
-// -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
-```
-
-
-
-
 
 
 
@@ -373,16 +292,14 @@ console.log(color.name); // -> "red"
 
 ## Object Methods
 
-Objects can even store functions. For example, these methods (a function stored in an object) of the built-in `Date` object:
-
-👉 **Try it out** - Run these in the console
+Objects can even store functions. For example, these methods (a function stored in an object) of the built-in `Date` object. 👉 Run these in the console
 
 ```js
-// expand object the constructor to see more methods
+// expand object to see more methods
 {}
 // create instance of built-in Date() object
 let d = new Date()
-// The following methods are specific to the Date object
+// These methods are specific to the Date object
 d.getFullYear()
 // and show how objects can "encapsulate" their properties
 d.toISOString()
@@ -488,7 +405,7 @@ subtractiveColors.forEach(function(item, i){
 <div class="col">
 
 - Practically every mobile app you use is sending and receiving JSON data “behind the scenes”.
-- Here are some examples from Tally Saves the Internet! <a href="https://tallysavestheinternet.com/api/" target="_blank">hello</a>, <a href="https://tallysavestheinternet.com/api/user/verifyUser" target="_blank">auth</a>, <a href="https://tallysavestheinternet.com/api/user/getTallyUser" target="_blank">game data</a>, <a href="https://tallysavestheinternet.com/api/anonyname" target="_blank">anonyname</a> and I Know Where Your Cat Lives <a href="https://iknowwhereyourcatlives.com/inc/get_data.php?action=select_random" target="_blank">random cat</a>, <a href="https://iknowwhereyourcatlives.com/inc/get_data.php?action=select_cat&guid=thisisnotaguid&init=true" target="_blank">cat not found</a>
+- Here are some examples from Tally Saves the Internet! <a href="https://tallysavestheinternet.com/api/user/verifyUser" target="_blank">auth</a>, <a href="https://tallysavestheinternet.com/api/user/getTallyUser" target="_blank">game data</a>, <a href="https://tallysavestheinternet.com/api/anonyname" target="_blank">anonyname</a> (which provides data to the [anonyname form](https://tallysavestheinternet.com/get-anonyname))
 
 </div>
 <div class="col">
@@ -572,3 +489,86 @@ console.log(`${ev.name}, ${ev.date.getUTCFullYear()}`);
 // -> "Fall of the Berlin Wall, 1989"
 console.log(ev.getLocalTimeStr()); // -> "9.11.1989, 18:53:00"
 ```
+
+
+
+---
+
+## Multi-Dimensional Arrays
+
+<div class="twocolumn">
+<div class="col">
+
+JS arrays can store the same or different data types, including other arrays. 
+
+👉 How would you loop through this array to output all individual values?
+
+<details>
+<summary>Solution</summary>
+
+A loop inside a loop
+
+</details>
+
+</div>
+<div class="col">
+
+```js
+// an array of arrays
+const people = [
+	['name', 'age', 'color'],
+	['Mary', 18, 'mauve'],
+	['Pam', 33, 'periwinkle'],
+	['Chad', 81, 'chartreuse']
+];
+people[1][2] // -> 'mauve'
+```
+
+</div>
+</div>
+
+
+
+---
+
+## Looping through multi-dimensional arrays
+
+An array inside an array adds a second dimension. Like a table, looping through a 2D array will need to not only go down a single column of indexes, but across each row as well.
+
+```js
+// ... using array from previous slide
+for (let i = 0; i < people.length; i++){
+    // the 2nd loop uses a new iterator and condition
+	for (let j = 0; j < people[i].length; j++){
+        console.log(people[i][j]);
+    }
+}
+// -> 'name'
+// -> 'age'
+// -> 'color' 
+// -> ...
+```
+
+
+
+
+
+---
+
+## Multi-Dimensional Arrays
+
+Arrays can also store objects and other complex types.
+
+```js
+// array of date objects
+const dates = [
+	new Date(Date.UTC(1989, 10, 9, 17, 53, 0)), // UTC
+	new Date("9 November 1989 18:53 UTC+1"), // BERLIN
+	new Date("November 9, 1989 12:53 UTC-5") // NYC
+];
+dates[1].toUTCString()
+// -> "Thu, 09 Nov 1989 17:53:00 GMT" (Berlin local time)
+```
+
+
+
