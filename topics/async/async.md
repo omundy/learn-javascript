@@ -279,6 +279,24 @@ Codepen <a href="https://codepen.io/owenmundy/pen/dyKOveX?editors=1011" target="
 
 
 
+
+--- 
+
+## 👉 Challenge
+
+
+In a [new Codepen](https://codepen.io/pen), use fetch to get data from an [API](https://omundy.github.io/learn-computing/slides/data-apis.html) you might use for your final project and display one data point on the page.
+
+
+
+
+
+
+
+
+
+
+
 <!--
 FROM THE OLD REPO, NEED TO DELETE OR INTEGRATE
 
