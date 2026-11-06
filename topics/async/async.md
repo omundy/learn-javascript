@@ -208,7 +208,7 @@ getUser(1); // get a list of connections
 - Javascript's `fetch()` returns a promise tells the calling function the request is in progress.
 
 ```js
-fetch('https://api.weather.gov/')
+fetch('https://jsonplaceholder.typicode.com/todos')
 // -> Promise {<pending>}
 // ->   [[Prototype]] : Promise 
 // ->   [[PromiseState]] : "fulfilled"

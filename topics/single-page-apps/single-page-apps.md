@@ -184,14 +184,21 @@ This [simple SPA chart](../../topics/single-page-apps/simple-spa-chart/solution/
 <h1>Intro</h1>
 ```
 
-...which are loaded dynamically into `div#main` of index.html. See the [vanilla JS](../../topics/single-page-apps/simple-spa-chart/solution/index.html) or [jquery](../../topics/single-page-apps/simple-spa-chart/solution/index-jquery.html) examples for more.
+...which are loaded dynamically into `div#main` of index.html. See the [vanilla JS](../../topics/single-page-apps/simple-spa-chart/solution/index.html) example for more.
+
+<!-- 
+
+or [jquery](../../topics/single-page-apps/simple-spa-chart/solution/index-jquery.html) 
 
 ```js
 $("#main").load('views/intro.html');
-```
+``` 
+-->
 
-<div>
-Note: In order for Javascript to load remote content (most SPAs) it must be running on a web server using the <b>http protocol</b>, like <code>http://</code> or <code>https://</code>. If your url begins with <code>file://</code> then it won't work. See instructions on the next slide to run a server...
+
+
+<div class="caption slides-small">
+  Note: In order for Javascript to load remote content (most SPAs) it must be running on a web server using the <b>http protocol</b>, like <code>http://</code> or <code>https://</code>. If your url begins with <code>file://</code> then it won't work. See instructions on the next slide to run a server...
 </div>
 
 
